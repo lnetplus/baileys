@@ -1,5 +1,4 @@
 import * as $protobuf from "protobufjs";
-import Long = require("long");
 /** Namespace MdStorageChatRowOpaqueData. */
 export namespace MdStorageChatRowOpaqueData {
 
@@ -94,13 +93,6 @@ export namespace MdStorageChatRowOpaqueData {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ChatRowOpaqueData
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace ChatRowOpaqueData {
@@ -232,13 +224,6 @@ export namespace MdStorageChatRowOpaqueData {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for DraftMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace DraftMessage {
@@ -433,13 +418,6 @@ export namespace MdStorageChatRowOpaqueData {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for CtwaContextData
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace CtwaContextData {
@@ -570,13 +548,6 @@ export namespace MdStorageChatRowOpaqueData {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for CtwaContextLinkData
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
     }

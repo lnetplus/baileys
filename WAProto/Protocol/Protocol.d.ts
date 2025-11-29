@@ -1,5 +1,4 @@
 import * as $protobuf from "protobufjs";
-import Long = require("long");
 /** Namespace Protocol. */
 export namespace Protocol {
 
@@ -121,13 +120,6 @@ export namespace Protocol {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for LimitSharing
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace LimitSharing {
@@ -259,12 +251,5 @@ export namespace Protocol {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MessageKey
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 }

@@ -1,5 +1,4 @@
 import * as $protobuf from "protobufjs";
-import Long = require("long");
 /** Namespace HistorySync. */
 export namespace HistorySync {
 
@@ -35,22 +34,40 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.INotificationSettings);
 
         /** NotificationSettings messageVibrate. */
-        public messageVibrate: string;
+        public messageVibrate?: (string|null);
 
         /** NotificationSettings messagePopup. */
-        public messagePopup: string;
+        public messagePopup?: (string|null);
 
         /** NotificationSettings messageLight. */
-        public messageLight: string;
+        public messageLight?: (string|null);
 
         /** NotificationSettings lowPriorityNotifications. */
-        public lowPriorityNotifications: boolean;
+        public lowPriorityNotifications?: (boolean|null);
 
         /** NotificationSettings reactionsMuted. */
-        public reactionsMuted: boolean;
+        public reactionsMuted?: (boolean|null);
 
         /** NotificationSettings callVibrate. */
-        public callVibrate: string;
+        public callVibrate?: (string|null);
+
+        /** NotificationSettings _messageVibrate. */
+        public _messageVibrate?: "messageVibrate";
+
+        /** NotificationSettings _messagePopup. */
+        public _messagePopup?: "messagePopup";
+
+        /** NotificationSettings _messageLight. */
+        public _messageLight?: "messageLight";
+
+        /** NotificationSettings _lowPriorityNotifications. */
+        public _lowPriorityNotifications?: "lowPriorityNotifications";
+
+        /** NotificationSettings _reactionsMuted. */
+        public _reactionsMuted?: "reactionsMuted";
+
+        /** NotificationSettings _callVibrate. */
+        public _callVibrate?: "callVibrate";
 
         /**
          * Creates a new NotificationSettings instance using the specified properties.
@@ -121,13 +138,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for NotificationSettings
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an AvatarUserSettings. */
@@ -150,10 +160,16 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.IAvatarUserSettings);
 
         /** AvatarUserSettings fbid. */
-        public fbid: string;
+        public fbid?: (string|null);
 
         /** AvatarUserSettings password. */
-        public password: string;
+        public password?: (string|null);
+
+        /** AvatarUserSettings _fbid. */
+        public _fbid?: "fbid";
+
+        /** AvatarUserSettings _password. */
+        public _password?: "password";
 
         /**
          * Creates a new AvatarUserSettings instance using the specified properties.
@@ -224,13 +240,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AvatarUserSettings
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PastParticipant. */
@@ -256,13 +265,22 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.IPastParticipant);
 
         /** PastParticipant userJid. */
-        public userJid: string;
+        public userJid?: (string|null);
 
         /** PastParticipant leaveReason. */
-        public leaveReason: HistorySync.PastParticipant.LeaveReason;
+        public leaveReason?: (HistorySync.PastParticipant.LeaveReason|null);
 
         /** PastParticipant leaveTs. */
-        public leaveTs: (number|Long);
+        public leaveTs?: (number|Long|null);
+
+        /** PastParticipant _userJid. */
+        public _userJid?: "userJid";
+
+        /** PastParticipant _leaveReason. */
+        public _leaveReason?: "leaveReason";
+
+        /** PastParticipant _leaveTs. */
+        public _leaveTs?: "leaveTs";
 
         /**
          * Creates a new PastParticipant instance using the specified properties.
@@ -333,13 +351,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PastParticipant
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace PastParticipant {
@@ -371,10 +382,13 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.IPastParticipants);
 
         /** PastParticipants groupJid. */
-        public groupJid: string;
+        public groupJid?: (string|null);
 
         /** PastParticipants pastParticipants. */
         public pastParticipants: HistorySync.IPastParticipant[];
+
+        /** PastParticipants _groupJid. */
+        public _groupJid?: "groupJid";
 
         /**
          * Creates a new PastParticipants instance using the specified properties.
@@ -445,13 +459,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PastParticipants
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a StickerMetadata. */
@@ -510,46 +517,88 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.IStickerMetadata);
 
         /** StickerMetadata url. */
-        public url: string;
+        public url?: (string|null);
 
         /** StickerMetadata fileSha256. */
-        public fileSha256: Uint8Array;
+        public fileSha256?: (Uint8Array|null);
 
         /** StickerMetadata fileEncSha256. */
-        public fileEncSha256: Uint8Array;
+        public fileEncSha256?: (Uint8Array|null);
 
         /** StickerMetadata mediaKey. */
-        public mediaKey: Uint8Array;
+        public mediaKey?: (Uint8Array|null);
 
         /** StickerMetadata mimetype. */
-        public mimetype: string;
+        public mimetype?: (string|null);
 
         /** StickerMetadata height. */
-        public height: number;
+        public height?: (number|null);
 
         /** StickerMetadata width. */
-        public width: number;
+        public width?: (number|null);
 
         /** StickerMetadata directPath. */
-        public directPath: string;
+        public directPath?: (string|null);
 
         /** StickerMetadata fileLength. */
-        public fileLength: (number|Long);
+        public fileLength?: (number|Long|null);
 
         /** StickerMetadata weight. */
-        public weight: number;
+        public weight?: (number|null);
 
         /** StickerMetadata lastStickerSentTs. */
-        public lastStickerSentTs: (number|Long);
+        public lastStickerSentTs?: (number|Long|null);
 
         /** StickerMetadata isLottie. */
-        public isLottie: boolean;
+        public isLottie?: (boolean|null);
 
         /** StickerMetadata imageHash. */
-        public imageHash: string;
+        public imageHash?: (string|null);
 
         /** StickerMetadata isAvatarSticker. */
-        public isAvatarSticker: boolean;
+        public isAvatarSticker?: (boolean|null);
+
+        /** StickerMetadata _url. */
+        public _url?: "url";
+
+        /** StickerMetadata _fileSha256. */
+        public _fileSha256?: "fileSha256";
+
+        /** StickerMetadata _fileEncSha256. */
+        public _fileEncSha256?: "fileEncSha256";
+
+        /** StickerMetadata _mediaKey. */
+        public _mediaKey?: "mediaKey";
+
+        /** StickerMetadata _mimetype. */
+        public _mimetype?: "mimetype";
+
+        /** StickerMetadata _height. */
+        public _height?: "height";
+
+        /** StickerMetadata _width. */
+        public _width?: "width";
+
+        /** StickerMetadata _directPath. */
+        public _directPath?: "directPath";
+
+        /** StickerMetadata _fileLength. */
+        public _fileLength?: "fileLength";
+
+        /** StickerMetadata _weight. */
+        public _weight?: "weight";
+
+        /** StickerMetadata _lastStickerSentTs. */
+        public _lastStickerSentTs?: "lastStickerSentTs";
+
+        /** StickerMetadata _isLottie. */
+        public _isLottie?: "isLottie";
+
+        /** StickerMetadata _imageHash. */
+        public _imageHash?: "imageHash";
+
+        /** StickerMetadata _isAvatarSticker. */
+        public _isAvatarSticker?: "isAvatarSticker";
 
         /**
          * Creates a new StickerMetadata instance using the specified properties.
@@ -620,13 +669,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for StickerMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an AutoDownloadSettings. */
@@ -655,16 +697,28 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.IAutoDownloadSettings);
 
         /** AutoDownloadSettings downloadImages. */
-        public downloadImages: boolean;
+        public downloadImages?: (boolean|null);
 
         /** AutoDownloadSettings downloadAudio. */
-        public downloadAudio: boolean;
+        public downloadAudio?: (boolean|null);
 
         /** AutoDownloadSettings downloadVideo. */
-        public downloadVideo: boolean;
+        public downloadVideo?: (boolean|null);
 
         /** AutoDownloadSettings downloadDocuments. */
-        public downloadDocuments: boolean;
+        public downloadDocuments?: (boolean|null);
+
+        /** AutoDownloadSettings _downloadImages. */
+        public _downloadImages?: "downloadImages";
+
+        /** AutoDownloadSettings _downloadAudio. */
+        public _downloadAudio?: "downloadAudio";
+
+        /** AutoDownloadSettings _downloadVideo. */
+        public _downloadVideo?: "downloadVideo";
+
+        /** AutoDownloadSettings _downloadDocuments. */
+        public _downloadDocuments?: "downloadDocuments";
 
         /**
          * Creates a new AutoDownloadSettings instance using the specified properties.
@@ -735,13 +789,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AutoDownloadSettings
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a GlobalSettings. */
@@ -821,7 +868,7 @@ export namespace HistorySync {
         public lightThemeWallpaper?: (HistorySync.IWallpaperSettings|null);
 
         /** GlobalSettings mediaVisibility. */
-        public mediaVisibility: HistorySync.MediaVisibility;
+        public mediaVisibility?: (HistorySync.MediaVisibility|null);
 
         /** GlobalSettings darkThemeWallpaper. */
         public darkThemeWallpaper?: (HistorySync.IWallpaperSettings|null);
@@ -836,34 +883,34 @@ export namespace HistorySync {
         public autoDownloadRoaming?: (HistorySync.IAutoDownloadSettings|null);
 
         /** GlobalSettings showIndividualNotificationsPreview. */
-        public showIndividualNotificationsPreview: boolean;
+        public showIndividualNotificationsPreview?: (boolean|null);
 
         /** GlobalSettings showGroupNotificationsPreview. */
-        public showGroupNotificationsPreview: boolean;
+        public showGroupNotificationsPreview?: (boolean|null);
 
         /** GlobalSettings disappearingModeDuration. */
-        public disappearingModeDuration: number;
+        public disappearingModeDuration?: (number|null);
 
         /** GlobalSettings disappearingModeTimestamp. */
-        public disappearingModeTimestamp: (number|Long);
+        public disappearingModeTimestamp?: (number|Long|null);
 
         /** GlobalSettings avatarUserSettings. */
         public avatarUserSettings?: (HistorySync.IAvatarUserSettings|null);
 
         /** GlobalSettings fontSize. */
-        public fontSize: number;
+        public fontSize?: (number|null);
 
         /** GlobalSettings securityNotifications. */
-        public securityNotifications: boolean;
+        public securityNotifications?: (boolean|null);
 
         /** GlobalSettings autoUnarchiveChats. */
-        public autoUnarchiveChats: boolean;
+        public autoUnarchiveChats?: (boolean|null);
 
         /** GlobalSettings videoQualityMode. */
-        public videoQualityMode: number;
+        public videoQualityMode?: (number|null);
 
         /** GlobalSettings photoQualityMode. */
-        public photoQualityMode: number;
+        public photoQualityMode?: (number|null);
 
         /** GlobalSettings individualNotificationSettings. */
         public individualNotificationSettings?: (HistorySync.INotificationSettings|null);
@@ -875,7 +922,67 @@ export namespace HistorySync {
         public chatLockSettings?: (ChatLockSettings.IChatLockSettings|null);
 
         /** GlobalSettings chatDbLidMigrationTimestamp. */
-        public chatDbLidMigrationTimestamp: (number|Long);
+        public chatDbLidMigrationTimestamp?: (number|Long|null);
+
+        /** GlobalSettings _lightThemeWallpaper. */
+        public _lightThemeWallpaper?: "lightThemeWallpaper";
+
+        /** GlobalSettings _mediaVisibility. */
+        public _mediaVisibility?: "mediaVisibility";
+
+        /** GlobalSettings _darkThemeWallpaper. */
+        public _darkThemeWallpaper?: "darkThemeWallpaper";
+
+        /** GlobalSettings _autoDownloadWiFi. */
+        public _autoDownloadWiFi?: "autoDownloadWiFi";
+
+        /** GlobalSettings _autoDownloadCellular. */
+        public _autoDownloadCellular?: "autoDownloadCellular";
+
+        /** GlobalSettings _autoDownloadRoaming. */
+        public _autoDownloadRoaming?: "autoDownloadRoaming";
+
+        /** GlobalSettings _showIndividualNotificationsPreview. */
+        public _showIndividualNotificationsPreview?: "showIndividualNotificationsPreview";
+
+        /** GlobalSettings _showGroupNotificationsPreview. */
+        public _showGroupNotificationsPreview?: "showGroupNotificationsPreview";
+
+        /** GlobalSettings _disappearingModeDuration. */
+        public _disappearingModeDuration?: "disappearingModeDuration";
+
+        /** GlobalSettings _disappearingModeTimestamp. */
+        public _disappearingModeTimestamp?: "disappearingModeTimestamp";
+
+        /** GlobalSettings _avatarUserSettings. */
+        public _avatarUserSettings?: "avatarUserSettings";
+
+        /** GlobalSettings _fontSize. */
+        public _fontSize?: "fontSize";
+
+        /** GlobalSettings _securityNotifications. */
+        public _securityNotifications?: "securityNotifications";
+
+        /** GlobalSettings _autoUnarchiveChats. */
+        public _autoUnarchiveChats?: "autoUnarchiveChats";
+
+        /** GlobalSettings _videoQualityMode. */
+        public _videoQualityMode?: "videoQualityMode";
+
+        /** GlobalSettings _photoQualityMode. */
+        public _photoQualityMode?: "photoQualityMode";
+
+        /** GlobalSettings _individualNotificationSettings. */
+        public _individualNotificationSettings?: "individualNotificationSettings";
+
+        /** GlobalSettings _groupNotificationSettings. */
+        public _groupNotificationSettings?: "groupNotificationSettings";
+
+        /** GlobalSettings _chatLockSettings. */
+        public _chatLockSettings?: "chatLockSettings";
+
+        /** GlobalSettings _chatDbLidMigrationTimestamp. */
+        public _chatDbLidMigrationTimestamp?: "chatDbLidMigrationTimestamp";
 
         /**
          * Creates a new GlobalSettings instance using the specified properties.
@@ -946,13 +1053,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for GlobalSettings
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a WallpaperSettings. */
@@ -975,10 +1075,16 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.IWallpaperSettings);
 
         /** WallpaperSettings filename. */
-        public filename: string;
+        public filename?: (string|null);
 
         /** WallpaperSettings opacity. */
-        public opacity: number;
+        public opacity?: (number|null);
+
+        /** WallpaperSettings _filename. */
+        public _filename?: "filename";
+
+        /** WallpaperSettings _opacity. */
+        public _opacity?: "opacity";
 
         /**
          * Creates a new WallpaperSettings instance using the specified properties.
@@ -1049,13 +1155,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for WallpaperSettings
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a GroupParticipant. */
@@ -1084,10 +1183,16 @@ export namespace HistorySync {
         public userJid: string;
 
         /** GroupParticipant rank. */
-        public rank: HistorySync.GroupParticipant.Rank;
+        public rank?: (HistorySync.GroupParticipant.Rank|null);
 
         /** GroupParticipant memberLabel. */
         public memberLabel?: (E2E.IMemberLabel|null);
+
+        /** GroupParticipant _rank. */
+        public _rank?: "rank";
+
+        /** GroupParticipant _memberLabel. */
+        public _memberLabel?: "memberLabel";
 
         /**
          * Creates a new GroupParticipant instance using the specified properties.
@@ -1158,13 +1263,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for GroupParticipant
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace GroupParticipant {
@@ -1197,10 +1295,16 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.IPushname);
 
         /** Pushname id. */
-        public id: string;
+        public id?: (string|null);
 
         /** Pushname pushname. */
-        public pushname: string;
+        public pushname?: (string|null);
+
+        /** Pushname _id. */
+        public _id?: "id";
+
+        /** Pushname _pushname. */
+        public _pushname?: "pushname";
 
         /**
          * Creates a new Pushname instance using the specified properties.
@@ -1271,13 +1375,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Pushname
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a HistorySyncMsg. */
@@ -1303,7 +1400,13 @@ export namespace HistorySync {
         public message?: (Web.IWebMessageInfo|null);
 
         /** HistorySyncMsg msgOrderId. */
-        public msgOrderId: (number|Long);
+        public msgOrderId?: (number|Long|null);
+
+        /** HistorySyncMsg _message. */
+        public _message?: "message";
+
+        /** HistorySyncMsg _msgOrderId. */
+        public _msgOrderId?: "msgOrderId";
 
         /**
          * Creates a new HistorySyncMsg instance using the specified properties.
@@ -1374,13 +1477,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for HistorySyncMsg
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an Account. */
@@ -1409,16 +1505,28 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.IAccount);
 
         /** Account lid. */
-        public lid: string;
+        public lid?: (string|null);
 
         /** Account username. */
-        public username: string;
+        public username?: (string|null);
 
         /** Account countryCode. */
-        public countryCode: string;
+        public countryCode?: (string|null);
 
         /** Account isUsernameDeleted. */
-        public isUsernameDeleted: boolean;
+        public isUsernameDeleted?: (boolean|null);
+
+        /** Account _lid. */
+        public _lid?: "lid";
+
+        /** Account _username. */
+        public _username?: "username";
+
+        /** Account _countryCode. */
+        public _countryCode?: "countryCode";
+
+        /** Account _isUsernameDeleted. */
+        public _isUsernameDeleted?: "isUsernameDeleted";
 
         /**
          * Creates a new Account instance using the specified properties.
@@ -1489,13 +1597,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Account
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PhoneNumberToLIDMapping. */
@@ -1518,10 +1619,16 @@ export namespace HistorySync {
         constructor(properties?: HistorySync.IPhoneNumberToLIDMapping);
 
         /** PhoneNumberToLIDMapping pnJid. */
-        public pnJid: string;
+        public pnJid?: (string|null);
 
         /** PhoneNumberToLIDMapping lidJid. */
-        public lidJid: string;
+        public lidJid?: (string|null);
+
+        /** PhoneNumberToLIDMapping _pnJid. */
+        public _pnJid?: "pnJid";
+
+        /** PhoneNumberToLIDMapping _lidJid. */
+        public _lidJid?: "lidJid";
 
         /**
          * Creates a new PhoneNumberToLIDMapping instance using the specified properties.
@@ -1592,13 +1699,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PhoneNumberToLIDMapping
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a Conversation. */
@@ -1783,160 +1883,313 @@ export namespace HistorySync {
         public messages: HistorySync.IHistorySyncMsg[];
 
         /** Conversation newJid. */
-        public newJid: string;
+        public newJid?: (string|null);
 
         /** Conversation oldJid. */
-        public oldJid: string;
+        public oldJid?: (string|null);
 
         /** Conversation lastMsgTimestamp. */
-        public lastMsgTimestamp: (number|Long);
+        public lastMsgTimestamp?: (number|Long|null);
 
         /** Conversation unreadCount. */
-        public unreadCount: number;
+        public unreadCount?: (number|null);
 
         /** Conversation readOnly. */
-        public readOnly: boolean;
+        public readOnly?: (boolean|null);
 
         /** Conversation endOfHistoryTransfer. */
-        public endOfHistoryTransfer: boolean;
+        public endOfHistoryTransfer?: (boolean|null);
 
         /** Conversation ephemeralExpiration. */
-        public ephemeralExpiration: number;
+        public ephemeralExpiration?: (number|null);
 
         /** Conversation ephemeralSettingTimestamp. */
-        public ephemeralSettingTimestamp: (number|Long);
+        public ephemeralSettingTimestamp?: (number|Long|null);
 
         /** Conversation endOfHistoryTransferType. */
-        public endOfHistoryTransferType: HistorySync.Conversation.EndOfHistoryTransferType;
+        public endOfHistoryTransferType?: (HistorySync.Conversation.EndOfHistoryTransferType|null);
 
         /** Conversation conversationTimestamp. */
-        public conversationTimestamp: (number|Long);
+        public conversationTimestamp?: (number|Long|null);
 
         /** Conversation name. */
-        public name: string;
+        public name?: (string|null);
 
         /** Conversation pHash. */
-        public pHash: string;
+        public pHash?: (string|null);
 
         /** Conversation notSpam. */
-        public notSpam: boolean;
+        public notSpam?: (boolean|null);
 
         /** Conversation archived. */
-        public archived: boolean;
+        public archived?: (boolean|null);
 
         /** Conversation disappearingMode. */
         public disappearingMode?: (E2E.IDisappearingMode|null);
 
         /** Conversation unreadMentionCount. */
-        public unreadMentionCount: number;
+        public unreadMentionCount?: (number|null);
 
         /** Conversation markedAsUnread. */
-        public markedAsUnread: boolean;
+        public markedAsUnread?: (boolean|null);
 
         /** Conversation participant. */
         public participant: HistorySync.IGroupParticipant[];
 
         /** Conversation tcToken. */
-        public tcToken: Uint8Array;
+        public tcToken?: (Uint8Array|null);
 
         /** Conversation tcTokenTimestamp. */
-        public tcTokenTimestamp: (number|Long);
+        public tcTokenTimestamp?: (number|Long|null);
 
         /** Conversation contactPrimaryIdentityKey. */
-        public contactPrimaryIdentityKey: Uint8Array;
+        public contactPrimaryIdentityKey?: (Uint8Array|null);
 
         /** Conversation pinned. */
-        public pinned: number;
+        public pinned?: (number|null);
 
         /** Conversation muteEndTime. */
-        public muteEndTime: (number|Long);
+        public muteEndTime?: (number|Long|null);
 
         /** Conversation wallpaper. */
         public wallpaper?: (HistorySync.IWallpaperSettings|null);
 
         /** Conversation mediaVisibility. */
-        public mediaVisibility: HistorySync.MediaVisibility;
+        public mediaVisibility?: (HistorySync.MediaVisibility|null);
 
         /** Conversation tcTokenSenderTimestamp. */
-        public tcTokenSenderTimestamp: (number|Long);
+        public tcTokenSenderTimestamp?: (number|Long|null);
 
         /** Conversation suspended. */
-        public suspended: boolean;
+        public suspended?: (boolean|null);
 
         /** Conversation terminated. */
-        public terminated: boolean;
+        public terminated?: (boolean|null);
 
         /** Conversation createdAt. */
-        public createdAt: (number|Long);
+        public createdAt?: (number|Long|null);
 
         /** Conversation createdBy. */
-        public createdBy: string;
+        public createdBy?: (string|null);
 
         /** Conversation description. */
-        public description: string;
+        public description?: (string|null);
 
         /** Conversation support. */
-        public support: boolean;
+        public support?: (boolean|null);
 
         /** Conversation isParentGroup. */
-        public isParentGroup: boolean;
+        public isParentGroup?: (boolean|null);
 
         /** Conversation parentGroupId. */
-        public parentGroupId: string;
+        public parentGroupId?: (string|null);
 
         /** Conversation isDefaultSubgroup. */
-        public isDefaultSubgroup: boolean;
+        public isDefaultSubgroup?: (boolean|null);
 
         /** Conversation displayName. */
-        public displayName: string;
+        public displayName?: (string|null);
 
         /** Conversation pnJid. */
-        public pnJid: string;
+        public pnJid?: (string|null);
 
         /** Conversation shareOwnPn. */
-        public shareOwnPn: boolean;
+        public shareOwnPn?: (boolean|null);
 
         /** Conversation pnhDuplicateLidThread. */
-        public pnhDuplicateLidThread: boolean;
+        public pnhDuplicateLidThread?: (boolean|null);
 
         /** Conversation lidJid. */
-        public lidJid: string;
+        public lidJid?: (string|null);
 
         /** Conversation username. */
-        public username: string;
+        public username?: (string|null);
 
         /** Conversation lidOriginType. */
-        public lidOriginType: string;
+        public lidOriginType?: (string|null);
 
         /** Conversation commentsCount. */
-        public commentsCount: number;
+        public commentsCount?: (number|null);
 
         /** Conversation locked. */
-        public locked: boolean;
+        public locked?: (boolean|null);
 
         /** Conversation systemMessageToInsert. */
-        public systemMessageToInsert: HistorySync.PrivacySystemMessage;
+        public systemMessageToInsert?: (HistorySync.PrivacySystemMessage|null);
 
         /** Conversation capiCreatedGroup. */
-        public capiCreatedGroup: boolean;
+        public capiCreatedGroup?: (boolean|null);
 
         /** Conversation accountLid. */
-        public accountLid: string;
+        public accountLid?: (string|null);
 
         /** Conversation limitSharing. */
-        public limitSharing: boolean;
+        public limitSharing?: (boolean|null);
 
         /** Conversation limitSharingSettingTimestamp. */
-        public limitSharingSettingTimestamp: (number|Long);
+        public limitSharingSettingTimestamp?: (number|Long|null);
 
         /** Conversation limitSharingTrigger. */
-        public limitSharingTrigger: Protocol.LimitSharing.TriggerType;
+        public limitSharingTrigger?: (Protocol.LimitSharing.TriggerType|null);
 
         /** Conversation limitSharingInitiatedByMe. */
-        public limitSharingInitiatedByMe: boolean;
+        public limitSharingInitiatedByMe?: (boolean|null);
 
         /** Conversation maibaAiThreadEnabled. */
-        public maibaAiThreadEnabled: boolean;
+        public maibaAiThreadEnabled?: (boolean|null);
+
+        /** Conversation _newJid. */
+        public _newJid?: "newJid";
+
+        /** Conversation _oldJid. */
+        public _oldJid?: "oldJid";
+
+        /** Conversation _lastMsgTimestamp. */
+        public _lastMsgTimestamp?: "lastMsgTimestamp";
+
+        /** Conversation _unreadCount. */
+        public _unreadCount?: "unreadCount";
+
+        /** Conversation _readOnly. */
+        public _readOnly?: "readOnly";
+
+        /** Conversation _endOfHistoryTransfer. */
+        public _endOfHistoryTransfer?: "endOfHistoryTransfer";
+
+        /** Conversation _ephemeralExpiration. */
+        public _ephemeralExpiration?: "ephemeralExpiration";
+
+        /** Conversation _ephemeralSettingTimestamp. */
+        public _ephemeralSettingTimestamp?: "ephemeralSettingTimestamp";
+
+        /** Conversation _endOfHistoryTransferType. */
+        public _endOfHistoryTransferType?: "endOfHistoryTransferType";
+
+        /** Conversation _conversationTimestamp. */
+        public _conversationTimestamp?: "conversationTimestamp";
+
+        /** Conversation _name. */
+        public _name?: "name";
+
+        /** Conversation _pHash. */
+        public _pHash?: "pHash";
+
+        /** Conversation _notSpam. */
+        public _notSpam?: "notSpam";
+
+        /** Conversation _archived. */
+        public _archived?: "archived";
+
+        /** Conversation _disappearingMode. */
+        public _disappearingMode?: "disappearingMode";
+
+        /** Conversation _unreadMentionCount. */
+        public _unreadMentionCount?: "unreadMentionCount";
+
+        /** Conversation _markedAsUnread. */
+        public _markedAsUnread?: "markedAsUnread";
+
+        /** Conversation _tcToken. */
+        public _tcToken?: "tcToken";
+
+        /** Conversation _tcTokenTimestamp. */
+        public _tcTokenTimestamp?: "tcTokenTimestamp";
+
+        /** Conversation _contactPrimaryIdentityKey. */
+        public _contactPrimaryIdentityKey?: "contactPrimaryIdentityKey";
+
+        /** Conversation _pinned. */
+        public _pinned?: "pinned";
+
+        /** Conversation _muteEndTime. */
+        public _muteEndTime?: "muteEndTime";
+
+        /** Conversation _wallpaper. */
+        public _wallpaper?: "wallpaper";
+
+        /** Conversation _mediaVisibility. */
+        public _mediaVisibility?: "mediaVisibility";
+
+        /** Conversation _tcTokenSenderTimestamp. */
+        public _tcTokenSenderTimestamp?: "tcTokenSenderTimestamp";
+
+        /** Conversation _suspended. */
+        public _suspended?: "suspended";
+
+        /** Conversation _terminated. */
+        public _terminated?: "terminated";
+
+        /** Conversation _createdAt. */
+        public _createdAt?: "createdAt";
+
+        /** Conversation _createdBy. */
+        public _createdBy?: "createdBy";
+
+        /** Conversation _description. */
+        public _description?: "description";
+
+        /** Conversation _support. */
+        public _support?: "support";
+
+        /** Conversation _isParentGroup. */
+        public _isParentGroup?: "isParentGroup";
+
+        /** Conversation _parentGroupId. */
+        public _parentGroupId?: "parentGroupId";
+
+        /** Conversation _isDefaultSubgroup. */
+        public _isDefaultSubgroup?: "isDefaultSubgroup";
+
+        /** Conversation _displayName. */
+        public _displayName?: "displayName";
+
+        /** Conversation _pnJid. */
+        public _pnJid?: "pnJid";
+
+        /** Conversation _shareOwnPn. */
+        public _shareOwnPn?: "shareOwnPn";
+
+        /** Conversation _pnhDuplicateLidThread. */
+        public _pnhDuplicateLidThread?: "pnhDuplicateLidThread";
+
+        /** Conversation _lidJid. */
+        public _lidJid?: "lidJid";
+
+        /** Conversation _username. */
+        public _username?: "username";
+
+        /** Conversation _lidOriginType. */
+        public _lidOriginType?: "lidOriginType";
+
+        /** Conversation _commentsCount. */
+        public _commentsCount?: "commentsCount";
+
+        /** Conversation _locked. */
+        public _locked?: "locked";
+
+        /** Conversation _systemMessageToInsert. */
+        public _systemMessageToInsert?: "systemMessageToInsert";
+
+        /** Conversation _capiCreatedGroup. */
+        public _capiCreatedGroup?: "capiCreatedGroup";
+
+        /** Conversation _accountLid. */
+        public _accountLid?: "accountLid";
+
+        /** Conversation _limitSharing. */
+        public _limitSharing?: "limitSharing";
+
+        /** Conversation _limitSharingSettingTimestamp. */
+        public _limitSharingSettingTimestamp?: "limitSharingSettingTimestamp";
+
+        /** Conversation _limitSharingTrigger. */
+        public _limitSharingTrigger?: "limitSharingTrigger";
+
+        /** Conversation _limitSharingInitiatedByMe. */
+        public _limitSharingInitiatedByMe?: "limitSharingInitiatedByMe";
+
+        /** Conversation _maibaAiThreadEnabled. */
+        public _maibaAiThreadEnabled?: "maibaAiThreadEnabled";
 
         /**
          * Creates a new Conversation instance using the specified properties.
@@ -2007,13 +2260,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Conversation
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace Conversation {
@@ -2100,10 +2346,10 @@ export namespace HistorySync {
         public statusV3Messages: Web.IWebMessageInfo[];
 
         /** HistorySync chunkOrder. */
-        public chunkOrder: number;
+        public chunkOrder?: (number|null);
 
         /** HistorySync progress. */
-        public progress: number;
+        public progress?: (number|null);
 
         /** HistorySync pushnames. */
         public pushnames: HistorySync.IPushname[];
@@ -2112,10 +2358,10 @@ export namespace HistorySync {
         public globalSettings?: (HistorySync.IGlobalSettings|null);
 
         /** HistorySync threadIdUserSecret. */
-        public threadIdUserSecret: Uint8Array;
+        public threadIdUserSecret?: (Uint8Array|null);
 
         /** HistorySync threadDsTimeframeOffset. */
-        public threadDsTimeframeOffset: number;
+        public threadDsTimeframeOffset?: (number|null);
 
         /** HistorySync recentStickers. */
         public recentStickers: HistorySync.IStickerMetadata[];
@@ -2127,19 +2373,43 @@ export namespace HistorySync {
         public callLogRecords: SyncAction.ICallLogRecord[];
 
         /** HistorySync aiWaitListState. */
-        public aiWaitListState: HistorySync.HistorySync.BotAIWaitListState;
+        public aiWaitListState?: (HistorySync.HistorySync.BotAIWaitListState|null);
 
         /** HistorySync phoneNumberToLidMappings. */
         public phoneNumberToLidMappings: HistorySync.IPhoneNumberToLIDMapping[];
 
         /** HistorySync companionMetaNonce. */
-        public companionMetaNonce: string;
+        public companionMetaNonce?: (string|null);
 
         /** HistorySync shareableChatIdentifierEncryptionKey. */
-        public shareableChatIdentifierEncryptionKey: Uint8Array;
+        public shareableChatIdentifierEncryptionKey?: (Uint8Array|null);
 
         /** HistorySync accounts. */
         public accounts: HistorySync.IAccount[];
+
+        /** HistorySync _chunkOrder. */
+        public _chunkOrder?: "chunkOrder";
+
+        /** HistorySync _progress. */
+        public _progress?: "progress";
+
+        /** HistorySync _globalSettings. */
+        public _globalSettings?: "globalSettings";
+
+        /** HistorySync _threadIdUserSecret. */
+        public _threadIdUserSecret?: "threadIdUserSecret";
+
+        /** HistorySync _threadDsTimeframeOffset. */
+        public _threadDsTimeframeOffset?: "threadDsTimeframeOffset";
+
+        /** HistorySync _aiWaitListState. */
+        public _aiWaitListState?: "aiWaitListState";
+
+        /** HistorySync _companionMetaNonce. */
+        public _companionMetaNonce?: "companionMetaNonce";
+
+        /** HistorySync _shareableChatIdentifierEncryptionKey. */
+        public _shareableChatIdentifierEncryptionKey?: "shareableChatIdentifierEncryptionKey";
 
         /**
          * Creates a new HistorySync instance using the specified properties.
@@ -2210,13 +2480,6 @@ export namespace HistorySync {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for HistorySync
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace HistorySync {
@@ -2277,10 +2540,16 @@ export namespace ChatLockSettings {
         constructor(properties?: ChatLockSettings.IChatLockSettings);
 
         /** ChatLockSettings hideLockedChats. */
-        public hideLockedChats: boolean;
+        public hideLockedChats?: (boolean|null);
 
         /** ChatLockSettings secretCode. */
         public secretCode?: (UserPassword.IUserPassword|null);
+
+        /** ChatLockSettings _hideLockedChats. */
+        public _hideLockedChats?: "hideLockedChats";
+
+        /** ChatLockSettings _secretCode. */
+        public _secretCode?: "secretCode";
 
         /**
          * Creates a new ChatLockSettings instance using the specified properties.
@@ -2351,13 +2620,6 @@ export namespace ChatLockSettings {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ChatLockSettings
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 }
 
@@ -2390,16 +2652,25 @@ export namespace UserPassword {
         constructor(properties?: UserPassword.IUserPassword);
 
         /** UserPassword encoding. */
-        public encoding: UserPassword.UserPassword.Encoding;
+        public encoding?: (UserPassword.UserPassword.Encoding|null);
 
         /** UserPassword transformer. */
-        public transformer: UserPassword.UserPassword.Transformer;
+        public transformer?: (UserPassword.UserPassword.Transformer|null);
 
         /** UserPassword transformerArg. */
         public transformerArg: UserPassword.UserPassword.ITransformerArg[];
 
         /** UserPassword transformedData. */
-        public transformedData: Uint8Array;
+        public transformedData?: (Uint8Array|null);
+
+        /** UserPassword _encoding. */
+        public _encoding?: "encoding";
+
+        /** UserPassword _transformer. */
+        public _transformer?: "transformer";
+
+        /** UserPassword _transformedData. */
+        public _transformedData?: "transformedData";
 
         /**
          * Creates a new UserPassword instance using the specified properties.
@@ -2470,13 +2741,6 @@ export namespace UserPassword {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for UserPassword
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace UserPassword {
@@ -2514,10 +2778,16 @@ export namespace UserPassword {
             constructor(properties?: UserPassword.UserPassword.ITransformerArg);
 
             /** TransformerArg key. */
-            public key: string;
+            public key?: (string|null);
 
             /** TransformerArg value. */
             public value?: (UserPassword.UserPassword.TransformerArg.IValue|null);
+
+            /** TransformerArg _key. */
+            public _key?: "key";
+
+            /** TransformerArg _value. */
+            public _value?: "value";
 
             /**
              * Creates a new TransformerArg instance using the specified properties.
@@ -2588,13 +2858,6 @@ export namespace UserPassword {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for TransformerArg
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace TransformerArg {
@@ -2696,13 +2959,6 @@ export namespace UserPassword {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Value
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
     }
@@ -2740,7 +2996,16 @@ export namespace E2E {
         public message?: (E2E.IMessage|null);
 
         /** AIQueryFanout timestamp. */
-        public timestamp: (number|Long);
+        public timestamp?: (number|Long|null);
+
+        /** AIQueryFanout _messageKey. */
+        public _messageKey?: "messageKey";
+
+        /** AIQueryFanout _message. */
+        public _message?: "message";
+
+        /** AIQueryFanout _timestamp. */
+        public _timestamp?: "timestamp";
 
         /**
          * Creates a new AIQueryFanout instance using the specified properties.
@@ -2811,13 +3076,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIQueryFanout
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a AIRichResponseMessage. */
@@ -2846,7 +3104,7 @@ export namespace E2E {
         constructor(properties?: E2E.IAIRichResponseMessage);
 
         /** AIRichResponseMessage messageType. */
-        public messageType: AICommon.AIRichResponseMessageType;
+        public messageType?: (AICommon.AIRichResponseMessageType|null);
 
         /** AIRichResponseMessage submessages. */
         public submessages: AICommon.IAIRichResponseSubMessage[];
@@ -2856,6 +3114,15 @@ export namespace E2E {
 
         /** AIRichResponseMessage contextInfo. */
         public contextInfo?: (E2E.IContextInfo|null);
+
+        /** AIRichResponseMessage _messageType. */
+        public _messageType?: "messageType";
+
+        /** AIRichResponseMessage _unifiedResponse. */
+        public _unifiedResponse?: "unifiedResponse";
+
+        /** AIRichResponseMessage _contextInfo. */
+        public _contextInfo?: "contextInfo";
 
         /**
          * Creates a new AIRichResponseMessage instance using the specified properties.
@@ -2926,13 +3193,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a MemberLabel. */
@@ -2955,10 +3215,16 @@ export namespace E2E {
         constructor(properties?: E2E.IMemberLabel);
 
         /** MemberLabel label. */
-        public label: string;
+        public label?: (string|null);
 
         /** MemberLabel labelTimestamp. */
-        public labelTimestamp: (number|Long);
+        public labelTimestamp?: (number|Long|null);
+
+        /** MemberLabel _label. */
+        public _label?: "label";
+
+        /** MemberLabel _labelTimestamp. */
+        public _labelTimestamp?: "labelTimestamp";
 
         /**
          * Creates a new MemberLabel instance using the specified properties.
@@ -3029,13 +3295,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MemberLabel
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an UrlTrackingMap. */
@@ -3126,13 +3385,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for UrlTrackingMap
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace UrlTrackingMap {
@@ -3163,16 +3415,28 @@ export namespace E2E {
             constructor(properties?: E2E.UrlTrackingMap.IUrlTrackingMapElement);
 
             /** UrlTrackingMapElement originalUrl. */
-            public originalUrl: string;
+            public originalUrl?: (string|null);
 
             /** UrlTrackingMapElement unconsentedUsersUrl. */
-            public unconsentedUsersUrl: string;
+            public unconsentedUsersUrl?: (string|null);
 
             /** UrlTrackingMapElement consentedUsersUrl. */
-            public consentedUsersUrl: string;
+            public consentedUsersUrl?: (string|null);
 
             /** UrlTrackingMapElement cardIndex. */
-            public cardIndex: number;
+            public cardIndex?: (number|null);
+
+            /** UrlTrackingMapElement _originalUrl. */
+            public _originalUrl?: "originalUrl";
+
+            /** UrlTrackingMapElement _unconsentedUsersUrl. */
+            public _unconsentedUsersUrl?: "unconsentedUsersUrl";
+
+            /** UrlTrackingMapElement _consentedUsersUrl. */
+            public _consentedUsersUrl?: "consentedUsersUrl";
+
+            /** UrlTrackingMapElement _cardIndex. */
+            public _cardIndex?: "cardIndex";
 
             /**
              * Creates a new UrlTrackingMapElement instance using the specified properties.
@@ -3243,13 +3507,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for UrlTrackingMapElement
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -3291,28 +3548,49 @@ export namespace E2E {
         constructor(properties?: E2E.IProcessedVideo);
 
         /** ProcessedVideo directPath. */
-        public directPath: string;
+        public directPath?: (string|null);
 
         /** ProcessedVideo fileSha256. */
-        public fileSha256: Uint8Array;
+        public fileSha256?: (Uint8Array|null);
 
         /** ProcessedVideo height. */
-        public height: number;
+        public height?: (number|null);
 
         /** ProcessedVideo width. */
-        public width: number;
+        public width?: (number|null);
 
         /** ProcessedVideo fileLength. */
-        public fileLength: (number|Long);
+        public fileLength?: (number|Long|null);
 
         /** ProcessedVideo bitrate. */
-        public bitrate: number;
+        public bitrate?: (number|null);
 
         /** ProcessedVideo quality. */
-        public quality: E2E.ProcessedVideo.VideoQuality;
+        public quality?: (E2E.ProcessedVideo.VideoQuality|null);
 
         /** ProcessedVideo capabilities. */
         public capabilities: string[];
+
+        /** ProcessedVideo _directPath. */
+        public _directPath?: "directPath";
+
+        /** ProcessedVideo _fileSha256. */
+        public _fileSha256?: "fileSha256";
+
+        /** ProcessedVideo _height. */
+        public _height?: "height";
+
+        /** ProcessedVideo _width. */
+        public _width?: "width";
+
+        /** ProcessedVideo _fileLength. */
+        public _fileLength?: "fileLength";
+
+        /** ProcessedVideo _bitrate. */
+        public _bitrate?: "bitrate";
+
+        /** ProcessedVideo _quality. */
+        public _quality?: "quality";
 
         /**
          * Creates a new ProcessedVideo instance using the specified properties.
@@ -3383,13 +3661,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ProcessedVideo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace ProcessedVideo {
@@ -3420,7 +3691,10 @@ export namespace E2E {
         constructor(properties?: E2E.ILIDMigrationMappingSyncMessage);
 
         /** LIDMigrationMappingSyncMessage encodedMappingPayload. */
-        public encodedMappingPayload: Uint8Array;
+        public encodedMappingPayload?: (Uint8Array|null);
+
+        /** LIDMigrationMappingSyncMessage _encodedMappingPayload. */
+        public _encodedMappingPayload?: "encodedMappingPayload";
 
         /**
          * Creates a new LIDMigrationMappingSyncMessage instance using the specified properties.
@@ -3491,13 +3765,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for LIDMigrationMappingSyncMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a MediaNotifyMessage. */
@@ -3523,13 +3790,22 @@ export namespace E2E {
         constructor(properties?: E2E.IMediaNotifyMessage);
 
         /** MediaNotifyMessage expressPathUrl. */
-        public expressPathUrl: string;
+        public expressPathUrl?: (string|null);
 
         /** MediaNotifyMessage fileEncSha256. */
-        public fileEncSha256: Uint8Array;
+        public fileEncSha256?: (Uint8Array|null);
 
         /** MediaNotifyMessage fileLength. */
-        public fileLength: (number|Long);
+        public fileLength?: (number|Long|null);
+
+        /** MediaNotifyMessage _expressPathUrl. */
+        public _expressPathUrl?: "expressPathUrl";
+
+        /** MediaNotifyMessage _fileEncSha256. */
+        public _fileEncSha256?: "fileEncSha256";
+
+        /** MediaNotifyMessage _fileLength. */
+        public _fileLength?: "fileLength";
 
         /**
          * Creates a new MediaNotifyMessage instance using the specified properties.
@@ -3600,13 +3876,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MediaNotifyMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a MessageSecretMessage. */
@@ -3632,13 +3901,22 @@ export namespace E2E {
         constructor(properties?: E2E.IMessageSecretMessage);
 
         /** MessageSecretMessage version. */
-        public version: number;
+        public version?: (number|null);
 
         /** MessageSecretMessage encIv. */
-        public encIv: Uint8Array;
+        public encIv?: (Uint8Array|null);
 
         /** MessageSecretMessage encPayload. */
-        public encPayload: Uint8Array;
+        public encPayload?: (Uint8Array|null);
+
+        /** MessageSecretMessage _version. */
+        public _version?: "version";
+
+        /** MessageSecretMessage _encIv. */
+        public _encIv?: "encIv";
+
+        /** MessageSecretMessage _encPayload. */
+        public _encPayload?: "encPayload";
 
         /**
          * Creates a new MessageSecretMessage instance using the specified properties.
@@ -3709,13 +3987,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MessageSecretMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a GroupMention. */
@@ -3738,10 +4009,16 @@ export namespace E2E {
         constructor(properties?: E2E.IGroupMention);
 
         /** GroupMention groupJid. */
-        public groupJid: string;
+        public groupJid?: (string|null);
 
         /** GroupMention groupSubject. */
-        public groupSubject: string;
+        public groupSubject?: (string|null);
+
+        /** GroupMention _groupJid. */
+        public _groupJid?: "groupJid";
+
+        /** GroupMention _groupSubject. */
+        public _groupSubject?: "groupSubject";
 
         /**
          * Creates a new GroupMention instance using the specified properties.
@@ -3812,13 +4089,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for GroupMention
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an ActionLink. */
@@ -3841,10 +4111,16 @@ export namespace E2E {
         constructor(properties?: E2E.IActionLink);
 
         /** ActionLink url. */
-        public url: string;
+        public url?: (string|null);
 
         /** ActionLink buttonTitle. */
-        public buttonTitle: string;
+        public buttonTitle?: (string|null);
+
+        /** ActionLink _url. */
+        public _url?: "url";
+
+        /** ActionLink _buttonTitle. */
+        public _buttonTitle?: "buttonTitle";
 
         /**
          * Creates a new ActionLink instance using the specified properties.
@@ -3915,13 +4191,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ActionLink
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a DisappearingMode. */
@@ -3950,16 +4219,28 @@ export namespace E2E {
         constructor(properties?: E2E.IDisappearingMode);
 
         /** DisappearingMode initiator. */
-        public initiator: E2E.DisappearingMode.Initiator;
+        public initiator?: (E2E.DisappearingMode.Initiator|null);
 
         /** DisappearingMode trigger. */
-        public trigger: E2E.DisappearingMode.Trigger;
+        public trigger?: (E2E.DisappearingMode.Trigger|null);
 
         /** DisappearingMode initiatorDeviceJid. */
-        public initiatorDeviceJid: string;
+        public initiatorDeviceJid?: (string|null);
 
         /** DisappearingMode initiatedByMe. */
-        public initiatedByMe: boolean;
+        public initiatedByMe?: (boolean|null);
+
+        /** DisappearingMode _initiator. */
+        public _initiator?: "initiator";
+
+        /** DisappearingMode _trigger. */
+        public _trigger?: "trigger";
+
+        /** DisappearingMode _initiatorDeviceJid. */
+        public _initiatorDeviceJid?: "initiatorDeviceJid";
+
+        /** DisappearingMode _initiatedByMe. */
+        public _initiatedByMe?: "initiatedByMe";
 
         /**
          * Creates a new DisappearingMode instance using the specified properties.
@@ -4030,13 +4311,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for DisappearingMode
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace DisappearingMode {
@@ -4104,34 +4378,64 @@ export namespace E2E {
         constructor(properties?: E2E.IPaymentBackground);
 
         /** PaymentBackground id. */
-        public id: string;
+        public id?: (string|null);
 
         /** PaymentBackground fileLength. */
-        public fileLength: (number|Long);
+        public fileLength?: (number|Long|null);
 
         /** PaymentBackground width. */
-        public width: number;
+        public width?: (number|null);
 
         /** PaymentBackground height. */
-        public height: number;
+        public height?: (number|null);
 
         /** PaymentBackground mimetype. */
-        public mimetype: string;
+        public mimetype?: (string|null);
 
         /** PaymentBackground placeholderArgb. */
-        public placeholderArgb: number;
+        public placeholderArgb?: (number|null);
 
         /** PaymentBackground textArgb. */
-        public textArgb: number;
+        public textArgb?: (number|null);
 
         /** PaymentBackground subtextArgb. */
-        public subtextArgb: number;
+        public subtextArgb?: (number|null);
 
         /** PaymentBackground mediaData. */
         public mediaData?: (E2E.PaymentBackground.IMediaData|null);
 
         /** PaymentBackground type. */
-        public type: E2E.PaymentBackground.Type;
+        public type?: (E2E.PaymentBackground.Type|null);
+
+        /** PaymentBackground _id. */
+        public _id?: "id";
+
+        /** PaymentBackground _fileLength. */
+        public _fileLength?: "fileLength";
+
+        /** PaymentBackground _width. */
+        public _width?: "width";
+
+        /** PaymentBackground _height. */
+        public _height?: "height";
+
+        /** PaymentBackground _mimetype. */
+        public _mimetype?: "mimetype";
+
+        /** PaymentBackground _placeholderArgb. */
+        public _placeholderArgb?: "placeholderArgb";
+
+        /** PaymentBackground _textArgb. */
+        public _textArgb?: "textArgb";
+
+        /** PaymentBackground _subtextArgb. */
+        public _subtextArgb?: "subtextArgb";
+
+        /** PaymentBackground _mediaData. */
+        public _mediaData?: "mediaData";
+
+        /** PaymentBackground _type. */
+        public _type?: "type";
 
         /**
          * Creates a new PaymentBackground instance using the specified properties.
@@ -4202,13 +4506,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PaymentBackground
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace PaymentBackground {
@@ -4242,19 +4539,34 @@ export namespace E2E {
             constructor(properties?: E2E.PaymentBackground.IMediaData);
 
             /** MediaData mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** MediaData mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** MediaData fileSha256. */
-            public fileSha256: Uint8Array;
+            public fileSha256?: (Uint8Array|null);
 
             /** MediaData fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** MediaData directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
+
+            /** MediaData _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** MediaData _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** MediaData _fileSha256. */
+            public _fileSha256?: "fileSha256";
+
+            /** MediaData _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** MediaData _directPath. */
+            public _directPath?: "directPath";
 
             /**
              * Creates a new MediaData instance using the specified properties.
@@ -4325,13 +4637,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MediaData
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Type enum. */
@@ -4364,13 +4669,22 @@ export namespace E2E {
         constructor(properties?: E2E.IMoney);
 
         /** Money value. */
-        public value: (number|Long);
+        public value?: (number|Long|null);
 
         /** Money offset. */
-        public offset: number;
+        public offset?: (number|null);
 
         /** Money currencyCode. */
-        public currencyCode: string;
+        public currencyCode?: (string|null);
+
+        /** Money _value. */
+        public _value?: "value";
+
+        /** Money _offset. */
+        public _offset?: "offset";
+
+        /** Money _currencyCode. */
+        public _currencyCode?: "currencyCode";
 
         /**
          * Creates a new Money instance using the specified properties.
@@ -4441,13 +4755,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Money
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a HydratedTemplateButton. */
@@ -4476,7 +4783,7 @@ export namespace E2E {
         constructor(properties?: E2E.IHydratedTemplateButton);
 
         /** HydratedTemplateButton index. */
-        public index: number;
+        public index?: (number|null);
 
         /** HydratedTemplateButton quickReplyButton. */
         public quickReplyButton?: (E2E.HydratedTemplateButton.IHydratedQuickReplyButton|null);
@@ -4486,6 +4793,9 @@ export namespace E2E {
 
         /** HydratedTemplateButton callButton. */
         public callButton?: (E2E.HydratedTemplateButton.IHydratedCallButton|null);
+
+        /** HydratedTemplateButton _index. */
+        public _index?: "index";
 
         /** HydratedTemplateButton hydratedButton. */
         public hydratedButton?: ("quickReplyButton"|"urlButton"|"callButton");
@@ -4559,13 +4869,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for HydratedTemplateButton
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace HydratedTemplateButton {
@@ -4590,10 +4893,16 @@ export namespace E2E {
             constructor(properties?: E2E.HydratedTemplateButton.IHydratedCallButton);
 
             /** HydratedCallButton displayText. */
-            public displayText: string;
+            public displayText?: (string|null);
 
             /** HydratedCallButton phoneNumber. */
-            public phoneNumber: string;
+            public phoneNumber?: (string|null);
+
+            /** HydratedCallButton _displayText. */
+            public _displayText?: "displayText";
+
+            /** HydratedCallButton _phoneNumber. */
+            public _phoneNumber?: "phoneNumber";
 
             /**
              * Creates a new HydratedCallButton instance using the specified properties.
@@ -4664,13 +4973,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for HydratedCallButton
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a HydratedQuickReplyButton. */
@@ -4693,10 +4995,16 @@ export namespace E2E {
             constructor(properties?: E2E.HydratedTemplateButton.IHydratedQuickReplyButton);
 
             /** HydratedQuickReplyButton displayText. */
-            public displayText: string;
+            public displayText?: (string|null);
 
             /** HydratedQuickReplyButton id. */
-            public id: string;
+            public id?: (string|null);
+
+            /** HydratedQuickReplyButton _displayText. */
+            public _displayText?: "displayText";
+
+            /** HydratedQuickReplyButton _id. */
+            public _id?: "id";
 
             /**
              * Creates a new HydratedQuickReplyButton instance using the specified properties.
@@ -4767,13 +5075,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for HydratedQuickReplyButton
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a HydratedURLButton. */
@@ -4802,16 +5103,28 @@ export namespace E2E {
             constructor(properties?: E2E.HydratedTemplateButton.IHydratedURLButton);
 
             /** HydratedURLButton displayText. */
-            public displayText: string;
+            public displayText?: (string|null);
 
             /** HydratedURLButton url. */
-            public url: string;
+            public url?: (string|null);
 
             /** HydratedURLButton consentedUsersUrl. */
-            public consentedUsersUrl: string;
+            public consentedUsersUrl?: (string|null);
 
             /** HydratedURLButton webviewPresentation. */
-            public webviewPresentation: E2E.HydratedTemplateButton.HydratedURLButton.WebviewPresentationType;
+            public webviewPresentation?: (E2E.HydratedTemplateButton.HydratedURLButton.WebviewPresentationType|null);
+
+            /** HydratedURLButton _displayText. */
+            public _displayText?: "displayText";
+
+            /** HydratedURLButton _url. */
+            public _url?: "url";
+
+            /** HydratedURLButton _consentedUsersUrl. */
+            public _consentedUsersUrl?: "consentedUsersUrl";
+
+            /** HydratedURLButton _webviewPresentation. */
+            public _webviewPresentation?: "webviewPresentation";
 
             /**
              * Creates a new HydratedURLButton instance using the specified properties.
@@ -4882,13 +5195,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for HydratedURLButton
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace HydratedURLButton {
@@ -4928,7 +5234,7 @@ export namespace E2E {
         constructor(properties?: E2E.ITemplateButton);
 
         /** TemplateButton index. */
-        public index: number;
+        public index?: (number|null);
 
         /** TemplateButton quickReplyButton. */
         public quickReplyButton?: (E2E.TemplateButton.IQuickReplyButton|null);
@@ -4938,6 +5244,9 @@ export namespace E2E {
 
         /** TemplateButton callButton. */
         public callButton?: (E2E.TemplateButton.ICallButton|null);
+
+        /** TemplateButton _index. */
+        public _index?: "index";
 
         /** TemplateButton button. */
         public button?: ("quickReplyButton"|"urlButton"|"callButton");
@@ -5011,13 +5320,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for TemplateButton
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace TemplateButton {
@@ -5046,6 +5348,12 @@ export namespace E2E {
 
             /** CallButton phoneNumber. */
             public phoneNumber?: (E2E.Message.IHighlyStructuredMessage|null);
+
+            /** CallButton _displayText. */
+            public _displayText?: "displayText";
+
+            /** CallButton _phoneNumber. */
+            public _phoneNumber?: "phoneNumber";
 
             /**
              * Creates a new CallButton instance using the specified properties.
@@ -5116,13 +5424,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CallButton
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a QuickReplyButton. */
@@ -5148,7 +5449,13 @@ export namespace E2E {
             public displayText?: (E2E.Message.IHighlyStructuredMessage|null);
 
             /** QuickReplyButton id. */
-            public id: string;
+            public id?: (string|null);
+
+            /** QuickReplyButton _displayText. */
+            public _displayText?: "displayText";
+
+            /** QuickReplyButton _id. */
+            public _id?: "id";
 
             /**
              * Creates a new QuickReplyButton instance using the specified properties.
@@ -5219,13 +5526,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for QuickReplyButton
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a URLButton. */
@@ -5252,6 +5552,12 @@ export namespace E2E {
 
             /** URLButton url. */
             public url?: (E2E.Message.IHighlyStructuredMessage|null);
+
+            /** URLButton _displayText. */
+            public _displayText?: "displayText";
+
+            /** URLButton _url. */
+            public _url?: "url";
 
             /**
              * Creates a new URLButton instance using the specified properties.
@@ -5322,13 +5628,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for URLButton
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -5355,13 +5654,22 @@ export namespace E2E {
         constructor(properties?: E2E.ILocation);
 
         /** Location degreesLatitude. */
-        public degreesLatitude: number;
+        public degreesLatitude?: (number|null);
 
         /** Location degreesLongitude. */
-        public degreesLongitude: number;
+        public degreesLongitude?: (number|null);
 
         /** Location name. */
-        public name: string;
+        public name?: (string|null);
+
+        /** Location _degreesLatitude. */
+        public _degreesLatitude?: "degreesLatitude";
+
+        /** Location _degreesLongitude. */
+        public _degreesLongitude?: "degreesLongitude";
+
+        /** Location _name. */
+        public _name?: "name";
 
         /**
          * Creates a new Location instance using the specified properties.
@@ -5432,13 +5740,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Location
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a Point. */
@@ -5467,16 +5768,28 @@ export namespace E2E {
         constructor(properties?: E2E.IPoint);
 
         /** Point xDeprecated. */
-        public xDeprecated: number;
+        public xDeprecated?: (number|null);
 
         /** Point yDeprecated. */
-        public yDeprecated: number;
+        public yDeprecated?: (number|null);
 
         /** Point x. */
-        public x: number;
+        public x?: (number|null);
 
         /** Point y. */
-        public y: number;
+        public y?: (number|null);
+
+        /** Point _xDeprecated. */
+        public _xDeprecated?: "xDeprecated";
+
+        /** Point _yDeprecated. */
+        public _yDeprecated?: "yDeprecated";
+
+        /** Point _x. */
+        public _x?: "x";
+
+        /** Point _y. */
+        public _y?: "y";
 
         /**
          * Creates a new Point instance using the specified properties.
@@ -5547,13 +5860,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Point
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an InteractiveAnnotation. */
@@ -5597,13 +5903,13 @@ export namespace E2E {
         public polygonVertices: E2E.IPoint[];
 
         /** InteractiveAnnotation shouldSkipConfirmation. */
-        public shouldSkipConfirmation: boolean;
+        public shouldSkipConfirmation?: (boolean|null);
 
         /** InteractiveAnnotation embeddedContent. */
         public embeddedContent?: (E2E.IEmbeddedContent|null);
 
         /** InteractiveAnnotation statusLinkType. */
-        public statusLinkType: E2E.InteractiveAnnotation.StatusLinkType;
+        public statusLinkType?: (E2E.InteractiveAnnotation.StatusLinkType|null);
 
         /** InteractiveAnnotation location. */
         public location?: (E2E.ILocation|null);
@@ -5616,6 +5922,15 @@ export namespace E2E {
 
         /** InteractiveAnnotation tapAction. */
         public tapAction?: (E2E.ITapLinkAction|null);
+
+        /** InteractiveAnnotation _shouldSkipConfirmation. */
+        public _shouldSkipConfirmation?: "shouldSkipConfirmation";
+
+        /** InteractiveAnnotation _embeddedContent. */
+        public _embeddedContent?: "embeddedContent";
+
+        /** InteractiveAnnotation _statusLinkType. */
+        public _statusLinkType?: "statusLinkType";
 
         /** InteractiveAnnotation action. */
         public action?: ("location"|"newsletter"|"embeddedAction"|"tapAction");
@@ -5689,13 +6004,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for InteractiveAnnotation
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace InteractiveAnnotation {
@@ -5728,10 +6036,16 @@ export namespace E2E {
         constructor(properties?: E2E.ITapLinkAction);
 
         /** TapLinkAction title. */
-        public title: string;
+        public title?: (string|null);
 
         /** TapLinkAction tapUrl. */
-        public tapUrl: string;
+        public tapUrl?: (string|null);
+
+        /** TapLinkAction _title. */
+        public _title?: "title";
+
+        /** TapLinkAction _tapUrl. */
+        public _tapUrl?: "tapUrl";
 
         /**
          * Creates a new TapLinkAction instance using the specified properties.
@@ -5802,13 +6116,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for TapLinkAction
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an EmbeddedContent. */
@@ -5908,13 +6215,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for EmbeddedContent
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an EmbeddedMusic. */
@@ -5964,37 +6264,70 @@ export namespace E2E {
         constructor(properties?: E2E.IEmbeddedMusic);
 
         /** EmbeddedMusic musicContentMediaId. */
-        public musicContentMediaId: string;
+        public musicContentMediaId?: (string|null);
 
         /** EmbeddedMusic songId. */
-        public songId: string;
+        public songId?: (string|null);
 
         /** EmbeddedMusic author. */
-        public author: string;
+        public author?: (string|null);
 
         /** EmbeddedMusic title. */
-        public title: string;
+        public title?: (string|null);
 
         /** EmbeddedMusic artworkDirectPath. */
-        public artworkDirectPath: string;
+        public artworkDirectPath?: (string|null);
 
         /** EmbeddedMusic artworkSha256. */
-        public artworkSha256: Uint8Array;
+        public artworkSha256?: (Uint8Array|null);
 
         /** EmbeddedMusic artworkEncSha256. */
-        public artworkEncSha256: Uint8Array;
+        public artworkEncSha256?: (Uint8Array|null);
 
         /** EmbeddedMusic artworkMediaKey. */
-        public artworkMediaKey: Uint8Array;
+        public artworkMediaKey?: (Uint8Array|null);
 
         /** EmbeddedMusic artistAttribution. */
-        public artistAttribution: string;
+        public artistAttribution?: (string|null);
 
         /** EmbeddedMusic countryBlocklist. */
-        public countryBlocklist: Uint8Array;
+        public countryBlocklist?: (Uint8Array|null);
 
         /** EmbeddedMusic isExplicit. */
-        public isExplicit: boolean;
+        public isExplicit?: (boolean|null);
+
+        /** EmbeddedMusic _musicContentMediaId. */
+        public _musicContentMediaId?: "musicContentMediaId";
+
+        /** EmbeddedMusic _songId. */
+        public _songId?: "songId";
+
+        /** EmbeddedMusic _author. */
+        public _author?: "author";
+
+        /** EmbeddedMusic _title. */
+        public _title?: "title";
+
+        /** EmbeddedMusic _artworkDirectPath. */
+        public _artworkDirectPath?: "artworkDirectPath";
+
+        /** EmbeddedMusic _artworkSha256. */
+        public _artworkSha256?: "artworkSha256";
+
+        /** EmbeddedMusic _artworkEncSha256. */
+        public _artworkEncSha256?: "artworkEncSha256";
+
+        /** EmbeddedMusic _artworkMediaKey. */
+        public _artworkMediaKey?: "artworkMediaKey";
+
+        /** EmbeddedMusic _artistAttribution. */
+        public _artistAttribution?: "artistAttribution";
+
+        /** EmbeddedMusic _countryBlocklist. */
+        public _countryBlocklist?: "countryBlocklist";
+
+        /** EmbeddedMusic _isExplicit. */
+        public _isExplicit?: "isExplicit";
 
         /**
          * Creates a new EmbeddedMusic instance using the specified properties.
@@ -6065,13 +6398,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for EmbeddedMusic
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an EmbeddedMessage. */
@@ -6094,10 +6420,16 @@ export namespace E2E {
         constructor(properties?: E2E.IEmbeddedMessage);
 
         /** EmbeddedMessage stanzaId. */
-        public stanzaId: string;
+        public stanzaId?: (string|null);
 
         /** EmbeddedMessage message. */
         public message?: (E2E.IMessage|null);
+
+        /** EmbeddedMessage _stanzaId. */
+        public _stanzaId?: "stanzaId";
+
+        /** EmbeddedMessage _message. */
+        public _message?: "message";
 
         /**
          * Creates a new EmbeddedMessage instance using the specified properties.
@@ -6168,13 +6500,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for EmbeddedMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a DeviceListMetadata. */
@@ -6215,28 +6540,46 @@ export namespace E2E {
         constructor(properties?: E2E.IDeviceListMetadata);
 
         /** DeviceListMetadata senderKeyHash. */
-        public senderKeyHash: Uint8Array;
+        public senderKeyHash?: (Uint8Array|null);
 
         /** DeviceListMetadata senderTimestamp. */
-        public senderTimestamp: (number|Long);
+        public senderTimestamp?: (number|Long|null);
 
         /** DeviceListMetadata senderKeyIndexes. */
         public senderKeyIndexes: number[];
 
         /** DeviceListMetadata senderAccountType. */
-        public senderAccountType: Adv.ADVEncryptionType;
+        public senderAccountType?: (Adv.ADVEncryptionType|null);
 
         /** DeviceListMetadata receiverAccountType. */
-        public receiverAccountType: Adv.ADVEncryptionType;
+        public receiverAccountType?: (Adv.ADVEncryptionType|null);
 
         /** DeviceListMetadata recipientKeyHash. */
-        public recipientKeyHash: Uint8Array;
+        public recipientKeyHash?: (Uint8Array|null);
 
         /** DeviceListMetadata recipientTimestamp. */
-        public recipientTimestamp: (number|Long);
+        public recipientTimestamp?: (number|Long|null);
 
         /** DeviceListMetadata recipientKeyIndexes. */
         public recipientKeyIndexes: number[];
+
+        /** DeviceListMetadata _senderKeyHash. */
+        public _senderKeyHash?: "senderKeyHash";
+
+        /** DeviceListMetadata _senderTimestamp. */
+        public _senderTimestamp?: "senderTimestamp";
+
+        /** DeviceListMetadata _senderAccountType. */
+        public _senderAccountType?: "senderAccountType";
+
+        /** DeviceListMetadata _receiverAccountType. */
+        public _receiverAccountType?: "receiverAccountType";
+
+        /** DeviceListMetadata _recipientKeyHash. */
+        public _recipientKeyHash?: "recipientKeyHash";
+
+        /** DeviceListMetadata _recipientTimestamp. */
+        public _recipientTimestamp?: "recipientTimestamp";
 
         /**
          * Creates a new DeviceListMetadata instance using the specified properties.
@@ -6307,13 +6650,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for DeviceListMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a MessageContextInfo. */
@@ -6378,37 +6714,37 @@ export namespace E2E {
         public deviceListMetadata?: (E2E.IDeviceListMetadata|null);
 
         /** MessageContextInfo deviceListMetadataVersion. */
-        public deviceListMetadataVersion: number;
+        public deviceListMetadataVersion?: (number|null);
 
         /** MessageContextInfo messageSecret. */
-        public messageSecret: Uint8Array;
+        public messageSecret?: (Uint8Array|null);
 
         /** MessageContextInfo paddingBytes. */
-        public paddingBytes: Uint8Array;
+        public paddingBytes?: (Uint8Array|null);
 
         /** MessageContextInfo messageAddOnDurationInSecs. */
-        public messageAddOnDurationInSecs: number;
+        public messageAddOnDurationInSecs?: (number|null);
 
         /** MessageContextInfo botMessageSecret. */
-        public botMessageSecret: Uint8Array;
+        public botMessageSecret?: (Uint8Array|null);
 
         /** MessageContextInfo botMetadata. */
         public botMetadata?: (AICommon.IBotMetadata|null);
 
         /** MessageContextInfo reportingTokenVersion. */
-        public reportingTokenVersion: number;
+        public reportingTokenVersion?: (number|null);
 
         /** MessageContextInfo messageAddOnExpiryType. */
-        public messageAddOnExpiryType: E2E.MessageContextInfo.MessageAddonExpiryType;
+        public messageAddOnExpiryType?: (E2E.MessageContextInfo.MessageAddonExpiryType|null);
 
         /** MessageContextInfo messageAssociation. */
         public messageAssociation?: (E2E.IMessageAssociation|null);
 
         /** MessageContextInfo capiCreatedGroup. */
-        public capiCreatedGroup: boolean;
+        public capiCreatedGroup?: (boolean|null);
 
         /** MessageContextInfo supportPayload. */
-        public supportPayload: string;
+        public supportPayload?: (string|null);
 
         /** MessageContextInfo limitSharing. */
         public limitSharing?: (Protocol.ILimitSharing|null);
@@ -6418,6 +6754,48 @@ export namespace E2E {
 
         /** MessageContextInfo threadId. */
         public threadId: E2E.IThreadID[];
+
+        /** MessageContextInfo _deviceListMetadata. */
+        public _deviceListMetadata?: "deviceListMetadata";
+
+        /** MessageContextInfo _deviceListMetadataVersion. */
+        public _deviceListMetadataVersion?: "deviceListMetadataVersion";
+
+        /** MessageContextInfo _messageSecret. */
+        public _messageSecret?: "messageSecret";
+
+        /** MessageContextInfo _paddingBytes. */
+        public _paddingBytes?: "paddingBytes";
+
+        /** MessageContextInfo _messageAddOnDurationInSecs. */
+        public _messageAddOnDurationInSecs?: "messageAddOnDurationInSecs";
+
+        /** MessageContextInfo _botMessageSecret. */
+        public _botMessageSecret?: "botMessageSecret";
+
+        /** MessageContextInfo _botMetadata. */
+        public _botMetadata?: "botMetadata";
+
+        /** MessageContextInfo _reportingTokenVersion. */
+        public _reportingTokenVersion?: "reportingTokenVersion";
+
+        /** MessageContextInfo _messageAddOnExpiryType. */
+        public _messageAddOnExpiryType?: "messageAddOnExpiryType";
+
+        /** MessageContextInfo _messageAssociation. */
+        public _messageAssociation?: "messageAssociation";
+
+        /** MessageContextInfo _capiCreatedGroup. */
+        public _capiCreatedGroup?: "capiCreatedGroup";
+
+        /** MessageContextInfo _supportPayload. */
+        public _supportPayload?: "supportPayload";
+
+        /** MessageContextInfo _limitSharing. */
+        public _limitSharing?: "limitSharing";
+
+        /** MessageContextInfo _limitSharingV2. */
+        public _limitSharingV2?: "limitSharingV2";
 
         /**
          * Creates a new MessageContextInfo instance using the specified properties.
@@ -6488,13 +6866,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MessageContextInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace MessageContextInfo {
@@ -6526,10 +6897,16 @@ export namespace E2E {
         constructor(properties?: E2E.IThreadID);
 
         /** ThreadID threadType. */
-        public threadType: E2E.ThreadID.ThreadType;
+        public threadType?: (E2E.ThreadID.ThreadType|null);
 
         /** ThreadID threadKey. */
         public threadKey?: (Protocol.IMessageKey|null);
+
+        /** ThreadID _threadType. */
+        public _threadType?: "threadType";
+
+        /** ThreadID _threadKey. */
+        public _threadKey?: "threadKey";
 
         /**
          * Creates a new ThreadID instance using the specified properties.
@@ -6600,13 +6977,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ThreadID
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace ThreadID {
@@ -6642,13 +7012,22 @@ export namespace E2E {
         constructor(properties?: E2E.IMessageAssociation);
 
         /** MessageAssociation associationType. */
-        public associationType: E2E.MessageAssociation.AssociationType;
+        public associationType?: (E2E.MessageAssociation.AssociationType|null);
 
         /** MessageAssociation parentMessageKey. */
         public parentMessageKey?: (Protocol.IMessageKey|null);
 
         /** MessageAssociation messageIndex. */
-        public messageIndex: number;
+        public messageIndex?: (number|null);
+
+        /** MessageAssociation _associationType. */
+        public _associationType?: "associationType";
+
+        /** MessageAssociation _parentMessageKey. */
+        public _parentMessageKey?: "parentMessageKey";
+
+        /** MessageAssociation _messageIndex. */
+        public _messageIndex?: "messageIndex";
 
         /**
          * Creates a new MessageAssociation instance using the specified properties.
@@ -6719,13 +7098,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MessageAssociation
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace MessageAssociation {
@@ -6929,34 +7301,34 @@ export namespace E2E {
         constructor(properties?: E2E.IContextInfo);
 
         /** ContextInfo stanzaId. */
-        public stanzaId: string;
+        public stanzaId?: (string|null);
 
         /** ContextInfo participant. */
-        public participant: string;
+        public participant?: (string|null);
 
         /** ContextInfo quotedMessage. */
         public quotedMessage?: (E2E.IMessage|null);
 
         /** ContextInfo remoteJid. */
-        public remoteJid: string;
+        public remoteJid?: (string|null);
 
         /** ContextInfo mentionedJid. */
         public mentionedJid: string[];
 
         /** ContextInfo conversionSource. */
-        public conversionSource: string;
+        public conversionSource?: (string|null);
 
         /** ContextInfo conversionData. */
-        public conversionData: Uint8Array;
+        public conversionData?: (Uint8Array|null);
 
         /** ContextInfo conversionDelaySeconds. */
-        public conversionDelaySeconds: number;
+        public conversionDelaySeconds?: (number|null);
 
         /** ContextInfo forwardingScore. */
-        public forwardingScore: number;
+        public forwardingScore?: (number|null);
 
         /** ContextInfo isForwarded. */
-        public isForwarded: boolean;
+        public isForwarded?: (boolean|null);
 
         /** ContextInfo quotedAd. */
         public quotedAd?: (E2E.ContextInfo.IAdReplyInfo|null);
@@ -6965,25 +7337,25 @@ export namespace E2E {
         public placeholderKey?: (Protocol.IMessageKey|null);
 
         /** ContextInfo expiration. */
-        public expiration: number;
+        public expiration?: (number|null);
 
         /** ContextInfo ephemeralSettingTimestamp. */
-        public ephemeralSettingTimestamp: (number|Long);
+        public ephemeralSettingTimestamp?: (number|Long|null);
 
         /** ContextInfo ephemeralSharedSecret. */
-        public ephemeralSharedSecret: Uint8Array;
+        public ephemeralSharedSecret?: (Uint8Array|null);
 
         /** ContextInfo externalAdReply. */
         public externalAdReply?: (E2E.ContextInfo.IExternalAdReplyInfo|null);
 
         /** ContextInfo entryPointConversionSource. */
-        public entryPointConversionSource: string;
+        public entryPointConversionSource?: (string|null);
 
         /** ContextInfo entryPointConversionApp. */
-        public entryPointConversionApp: string;
+        public entryPointConversionApp?: (string|null);
 
         /** ContextInfo entryPointConversionDelaySeconds. */
-        public entryPointConversionDelaySeconds: number;
+        public entryPointConversionDelaySeconds?: (number|null);
 
         /** ContextInfo disappearingMode. */
         public disappearingMode?: (E2E.IDisappearingMode|null);
@@ -6992,19 +7364,19 @@ export namespace E2E {
         public actionLink?: (E2E.IActionLink|null);
 
         /** ContextInfo groupSubject. */
-        public groupSubject: string;
+        public groupSubject?: (string|null);
 
         /** ContextInfo parentGroupJid. */
-        public parentGroupJid: string;
+        public parentGroupJid?: (string|null);
 
         /** ContextInfo trustBannerType. */
-        public trustBannerType: string;
+        public trustBannerType?: (string|null);
 
         /** ContextInfo trustBannerAction. */
-        public trustBannerAction: number;
+        public trustBannerAction?: (number|null);
 
         /** ContextInfo isSampled. */
-        public isSampled: boolean;
+        public isSampled?: (boolean|null);
 
         /** ContextInfo groupMentions. */
         public groupMentions: E2E.IGroupMention[];
@@ -7019,64 +7391,64 @@ export namespace E2E {
         public businessMessageForwardInfo?: (E2E.ContextInfo.IBusinessMessageForwardInfo|null);
 
         /** ContextInfo smbClientCampaignId. */
-        public smbClientCampaignId: string;
+        public smbClientCampaignId?: (string|null);
 
         /** ContextInfo smbServerCampaignId. */
-        public smbServerCampaignId: string;
+        public smbServerCampaignId?: (string|null);
 
         /** ContextInfo dataSharingContext. */
         public dataSharingContext?: (E2E.ContextInfo.IDataSharingContext|null);
 
         /** ContextInfo alwaysShowAdAttribution. */
-        public alwaysShowAdAttribution: boolean;
+        public alwaysShowAdAttribution?: (boolean|null);
 
         /** ContextInfo featureEligibilities. */
         public featureEligibilities?: (E2E.ContextInfo.IFeatureEligibilities|null);
 
         /** ContextInfo entryPointConversionExternalSource. */
-        public entryPointConversionExternalSource: string;
+        public entryPointConversionExternalSource?: (string|null);
 
         /** ContextInfo entryPointConversionExternalMedium. */
-        public entryPointConversionExternalMedium: string;
+        public entryPointConversionExternalMedium?: (string|null);
 
         /** ContextInfo ctwaSignals. */
-        public ctwaSignals: string;
+        public ctwaSignals?: (string|null);
 
         /** ContextInfo ctwaPayload. */
-        public ctwaPayload: Uint8Array;
+        public ctwaPayload?: (Uint8Array|null);
 
         /** ContextInfo forwardedAiBotMessageInfo. */
         public forwardedAiBotMessageInfo?: (AICommon.IForwardedAIBotMessageInfo|null);
 
         /** ContextInfo statusAttributionType. */
-        public statusAttributionType: E2E.ContextInfo.StatusAttributionType;
+        public statusAttributionType?: (E2E.ContextInfo.StatusAttributionType|null);
 
         /** ContextInfo urlTrackingMap. */
         public urlTrackingMap?: (E2E.IUrlTrackingMap|null);
 
         /** ContextInfo pairedMediaType. */
-        public pairedMediaType: E2E.ContextInfo.PairedMediaType;
+        public pairedMediaType?: (E2E.ContextInfo.PairedMediaType|null);
 
         /** ContextInfo rankingVersion. */
-        public rankingVersion: number;
+        public rankingVersion?: (number|null);
 
         /** ContextInfo memberLabel. */
         public memberLabel?: (E2E.IMemberLabel|null);
 
         /** ContextInfo isQuestion. */
-        public isQuestion: boolean;
+        public isQuestion?: (boolean|null);
 
         /** ContextInfo statusSourceType. */
-        public statusSourceType: E2E.ContextInfo.StatusSourceType;
+        public statusSourceType?: (E2E.ContextInfo.StatusSourceType|null);
 
         /** ContextInfo statusAttributions. */
         public statusAttributions: StatusAttributions.IStatusAttribution[];
 
         /** ContextInfo isGroupStatus. */
-        public isGroupStatus: boolean;
+        public isGroupStatus?: (boolean|null);
 
         /** ContextInfo forwardOrigin. */
-        public forwardOrigin: E2E.ContextInfo.ForwardOrigin;
+        public forwardOrigin?: (E2E.ContextInfo.ForwardOrigin|null);
 
         /** ContextInfo questionReplyQuotedMessage. */
         public questionReplyQuotedMessage?: (E2E.ContextInfo.IQuestionReplyQuotedMessage|null);
@@ -7085,10 +7457,163 @@ export namespace E2E {
         public statusAudienceMetadata?: (E2E.ContextInfo.IStatusAudienceMetadata|null);
 
         /** ContextInfo nonJidMentions. */
-        public nonJidMentions: number;
+        public nonJidMentions?: (number|null);
 
         /** ContextInfo quotedType. */
-        public quotedType: E2E.ContextInfo.QuotedType;
+        public quotedType?: (E2E.ContextInfo.QuotedType|null);
+
+        /** ContextInfo _stanzaId. */
+        public _stanzaId?: "stanzaId";
+
+        /** ContextInfo _participant. */
+        public _participant?: "participant";
+
+        /** ContextInfo _quotedMessage. */
+        public _quotedMessage?: "quotedMessage";
+
+        /** ContextInfo _remoteJid. */
+        public _remoteJid?: "remoteJid";
+
+        /** ContextInfo _conversionSource. */
+        public _conversionSource?: "conversionSource";
+
+        /** ContextInfo _conversionData. */
+        public _conversionData?: "conversionData";
+
+        /** ContextInfo _conversionDelaySeconds. */
+        public _conversionDelaySeconds?: "conversionDelaySeconds";
+
+        /** ContextInfo _forwardingScore. */
+        public _forwardingScore?: "forwardingScore";
+
+        /** ContextInfo _isForwarded. */
+        public _isForwarded?: "isForwarded";
+
+        /** ContextInfo _quotedAd. */
+        public _quotedAd?: "quotedAd";
+
+        /** ContextInfo _placeholderKey. */
+        public _placeholderKey?: "placeholderKey";
+
+        /** ContextInfo _expiration. */
+        public _expiration?: "expiration";
+
+        /** ContextInfo _ephemeralSettingTimestamp. */
+        public _ephemeralSettingTimestamp?: "ephemeralSettingTimestamp";
+
+        /** ContextInfo _ephemeralSharedSecret. */
+        public _ephemeralSharedSecret?: "ephemeralSharedSecret";
+
+        /** ContextInfo _externalAdReply. */
+        public _externalAdReply?: "externalAdReply";
+
+        /** ContextInfo _entryPointConversionSource. */
+        public _entryPointConversionSource?: "entryPointConversionSource";
+
+        /** ContextInfo _entryPointConversionApp. */
+        public _entryPointConversionApp?: "entryPointConversionApp";
+
+        /** ContextInfo _entryPointConversionDelaySeconds. */
+        public _entryPointConversionDelaySeconds?: "entryPointConversionDelaySeconds";
+
+        /** ContextInfo _disappearingMode. */
+        public _disappearingMode?: "disappearingMode";
+
+        /** ContextInfo _actionLink. */
+        public _actionLink?: "actionLink";
+
+        /** ContextInfo _groupSubject. */
+        public _groupSubject?: "groupSubject";
+
+        /** ContextInfo _parentGroupJid. */
+        public _parentGroupJid?: "parentGroupJid";
+
+        /** ContextInfo _trustBannerType. */
+        public _trustBannerType?: "trustBannerType";
+
+        /** ContextInfo _trustBannerAction. */
+        public _trustBannerAction?: "trustBannerAction";
+
+        /** ContextInfo _isSampled. */
+        public _isSampled?: "isSampled";
+
+        /** ContextInfo _utm. */
+        public _utm?: "utm";
+
+        /** ContextInfo _forwardedNewsletterMessageInfo. */
+        public _forwardedNewsletterMessageInfo?: "forwardedNewsletterMessageInfo";
+
+        /** ContextInfo _businessMessageForwardInfo. */
+        public _businessMessageForwardInfo?: "businessMessageForwardInfo";
+
+        /** ContextInfo _smbClientCampaignId. */
+        public _smbClientCampaignId?: "smbClientCampaignId";
+
+        /** ContextInfo _smbServerCampaignId. */
+        public _smbServerCampaignId?: "smbServerCampaignId";
+
+        /** ContextInfo _dataSharingContext. */
+        public _dataSharingContext?: "dataSharingContext";
+
+        /** ContextInfo _alwaysShowAdAttribution. */
+        public _alwaysShowAdAttribution?: "alwaysShowAdAttribution";
+
+        /** ContextInfo _featureEligibilities. */
+        public _featureEligibilities?: "featureEligibilities";
+
+        /** ContextInfo _entryPointConversionExternalSource. */
+        public _entryPointConversionExternalSource?: "entryPointConversionExternalSource";
+
+        /** ContextInfo _entryPointConversionExternalMedium. */
+        public _entryPointConversionExternalMedium?: "entryPointConversionExternalMedium";
+
+        /** ContextInfo _ctwaSignals. */
+        public _ctwaSignals?: "ctwaSignals";
+
+        /** ContextInfo _ctwaPayload. */
+        public _ctwaPayload?: "ctwaPayload";
+
+        /** ContextInfo _forwardedAiBotMessageInfo. */
+        public _forwardedAiBotMessageInfo?: "forwardedAiBotMessageInfo";
+
+        /** ContextInfo _statusAttributionType. */
+        public _statusAttributionType?: "statusAttributionType";
+
+        /** ContextInfo _urlTrackingMap. */
+        public _urlTrackingMap?: "urlTrackingMap";
+
+        /** ContextInfo _pairedMediaType. */
+        public _pairedMediaType?: "pairedMediaType";
+
+        /** ContextInfo _rankingVersion. */
+        public _rankingVersion?: "rankingVersion";
+
+        /** ContextInfo _memberLabel. */
+        public _memberLabel?: "memberLabel";
+
+        /** ContextInfo _isQuestion. */
+        public _isQuestion?: "isQuestion";
+
+        /** ContextInfo _statusSourceType. */
+        public _statusSourceType?: "statusSourceType";
+
+        /** ContextInfo _isGroupStatus. */
+        public _isGroupStatus?: "isGroupStatus";
+
+        /** ContextInfo _forwardOrigin. */
+        public _forwardOrigin?: "forwardOrigin";
+
+        /** ContextInfo _questionReplyQuotedMessage. */
+        public _questionReplyQuotedMessage?: "questionReplyQuotedMessage";
+
+        /** ContextInfo _statusAudienceMetadata. */
+        public _statusAudienceMetadata?: "statusAudienceMetadata";
+
+        /** ContextInfo _nonJidMentions. */
+        public _nonJidMentions?: "nonJidMentions";
+
+        /** ContextInfo _quotedType. */
+        public _quotedType?: "quotedType";
 
         /**
          * Creates a new ContextInfo instance using the specified properties.
@@ -7159,13 +7684,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ContextInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace ContextInfo {
@@ -7196,16 +7714,28 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IAdReplyInfo);
 
             /** AdReplyInfo advertiserName. */
-            public advertiserName: string;
+            public advertiserName?: (string|null);
 
             /** AdReplyInfo mediaType. */
-            public mediaType: E2E.ContextInfo.AdReplyInfo.MediaType;
+            public mediaType?: (E2E.ContextInfo.AdReplyInfo.MediaType|null);
 
             /** AdReplyInfo jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** AdReplyInfo caption. */
-            public caption: string;
+            public caption?: (string|null);
+
+            /** AdReplyInfo _advertiserName. */
+            public _advertiserName?: "advertiserName";
+
+            /** AdReplyInfo _mediaType. */
+            public _mediaType?: "mediaType";
+
+            /** AdReplyInfo _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** AdReplyInfo _caption. */
+            public _caption?: "caption";
 
             /**
              * Creates a new AdReplyInfo instance using the specified properties.
@@ -7276,13 +7806,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AdReplyInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace AdReplyInfo {
@@ -7312,7 +7835,10 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IBusinessMessageForwardInfo);
 
             /** BusinessMessageForwardInfo businessOwnerJid. */
-            public businessOwnerJid: string;
+            public businessOwnerJid?: (string|null);
+
+            /** BusinessMessageForwardInfo _businessOwnerJid. */
+            public _businessOwnerJid?: "businessOwnerJid";
 
             /**
              * Creates a new BusinessMessageForwardInfo instance using the specified properties.
@@ -7383,13 +7909,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BusinessMessageForwardInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a DataSharingContext. */
@@ -7418,16 +7937,25 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IDataSharingContext);
 
             /** DataSharingContext showMmDisclosure. */
-            public showMmDisclosure: boolean;
+            public showMmDisclosure?: (boolean|null);
 
             /** DataSharingContext encryptedSignalTokenConsented. */
-            public encryptedSignalTokenConsented: string;
+            public encryptedSignalTokenConsented?: (string|null);
 
             /** DataSharingContext parameters. */
             public parameters: E2E.ContextInfo.DataSharingContext.IParameters[];
 
             /** DataSharingContext dataSharingFlags. */
-            public dataSharingFlags: number;
+            public dataSharingFlags?: (number|null);
+
+            /** DataSharingContext _showMmDisclosure. */
+            public _showMmDisclosure?: "showMmDisclosure";
+
+            /** DataSharingContext _encryptedSignalTokenConsented. */
+            public _encryptedSignalTokenConsented?: "encryptedSignalTokenConsented";
+
+            /** DataSharingContext _dataSharingFlags. */
+            public _dataSharingFlags?: "dataSharingFlags";
 
             /**
              * Creates a new DataSharingContext instance using the specified properties.
@@ -7498,13 +8026,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for DataSharingContext
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace DataSharingContext {
@@ -7544,19 +8065,34 @@ export namespace E2E {
                 constructor(properties?: E2E.ContextInfo.DataSharingContext.IParameters);
 
                 /** Parameters key. */
-                public key: string;
+                public key?: (string|null);
 
                 /** Parameters stringData. */
-                public stringData: string;
+                public stringData?: (string|null);
 
                 /** Parameters intData. */
-                public intData: (number|Long);
+                public intData?: (number|Long|null);
 
                 /** Parameters floatData. */
-                public floatData: number;
+                public floatData?: (number|null);
 
                 /** Parameters contents. */
                 public contents?: (E2E.ContextInfo.DataSharingContext.IParameters|null);
+
+                /** Parameters _key. */
+                public _key?: "key";
+
+                /** Parameters _stringData. */
+                public _stringData?: "stringData";
+
+                /** Parameters _intData. */
+                public _intData?: "intData";
+
+                /** Parameters _floatData. */
+                public _floatData?: "floatData";
+
+                /** Parameters _contents. */
+                public _contents?: "contents";
 
                 /**
                  * Creates a new Parameters instance using the specified properties.
@@ -7627,13 +8163,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Parameters
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -7732,85 +8261,166 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IExternalAdReplyInfo);
 
             /** ExternalAdReplyInfo title. */
-            public title: string;
+            public title?: (string|null);
 
             /** ExternalAdReplyInfo body. */
-            public body: string;
+            public body?: (string|null);
 
             /** ExternalAdReplyInfo mediaType. */
-            public mediaType: E2E.ContextInfo.ExternalAdReplyInfo.MediaType;
+            public mediaType?: (E2E.ContextInfo.ExternalAdReplyInfo.MediaType|null);
 
             /** ExternalAdReplyInfo thumbnailUrl. */
-            public thumbnailUrl: string;
+            public thumbnailUrl?: (string|null);
 
             /** ExternalAdReplyInfo mediaUrl. */
-            public mediaUrl: string;
+            public mediaUrl?: (string|null);
 
             /** ExternalAdReplyInfo thumbnail. */
-            public thumbnail: Uint8Array;
+            public thumbnail?: (Uint8Array|null);
 
             /** ExternalAdReplyInfo sourceType. */
-            public sourceType: string;
+            public sourceType?: (string|null);
 
             /** ExternalAdReplyInfo sourceId. */
-            public sourceId: string;
+            public sourceId?: (string|null);
 
             /** ExternalAdReplyInfo sourceUrl. */
-            public sourceUrl: string;
+            public sourceUrl?: (string|null);
 
             /** ExternalAdReplyInfo containsAutoReply. */
-            public containsAutoReply: boolean;
+            public containsAutoReply?: (boolean|null);
 
             /** ExternalAdReplyInfo renderLargerThumbnail. */
-            public renderLargerThumbnail: boolean;
+            public renderLargerThumbnail?: (boolean|null);
 
             /** ExternalAdReplyInfo showAdAttribution. */
-            public showAdAttribution: boolean;
+            public showAdAttribution?: (boolean|null);
 
             /** ExternalAdReplyInfo ctwaClid. */
-            public ctwaClid: string;
+            public ctwaClid?: (string|null);
 
             /** ExternalAdReplyInfo ref. */
-            public ref: string;
+            public ref?: (string|null);
 
             /** ExternalAdReplyInfo clickToWhatsappCall. */
-            public clickToWhatsappCall: boolean;
+            public clickToWhatsappCall?: (boolean|null);
 
             /** ExternalAdReplyInfo adContextPreviewDismissed. */
-            public adContextPreviewDismissed: boolean;
+            public adContextPreviewDismissed?: (boolean|null);
 
             /** ExternalAdReplyInfo sourceApp. */
-            public sourceApp: string;
+            public sourceApp?: (string|null);
 
             /** ExternalAdReplyInfo automatedGreetingMessageShown. */
-            public automatedGreetingMessageShown: boolean;
+            public automatedGreetingMessageShown?: (boolean|null);
 
             /** ExternalAdReplyInfo greetingMessageBody. */
-            public greetingMessageBody: string;
+            public greetingMessageBody?: (string|null);
 
             /** ExternalAdReplyInfo ctaPayload. */
-            public ctaPayload: string;
+            public ctaPayload?: (string|null);
 
             /** ExternalAdReplyInfo disableNudge. */
-            public disableNudge: boolean;
+            public disableNudge?: (boolean|null);
 
             /** ExternalAdReplyInfo originalImageUrl. */
-            public originalImageUrl: string;
+            public originalImageUrl?: (string|null);
 
             /** ExternalAdReplyInfo automatedGreetingMessageCtaType. */
-            public automatedGreetingMessageCtaType: string;
+            public automatedGreetingMessageCtaType?: (string|null);
 
             /** ExternalAdReplyInfo wtwaAdFormat. */
-            public wtwaAdFormat: boolean;
+            public wtwaAdFormat?: (boolean|null);
 
             /** ExternalAdReplyInfo adType. */
-            public adType: E2E.ContextInfo.ExternalAdReplyInfo.AdType;
+            public adType?: (E2E.ContextInfo.ExternalAdReplyInfo.AdType|null);
 
             /** ExternalAdReplyInfo wtwaWebsiteUrl. */
-            public wtwaWebsiteUrl: string;
+            public wtwaWebsiteUrl?: (string|null);
 
             /** ExternalAdReplyInfo adPreviewUrl. */
-            public adPreviewUrl: string;
+            public adPreviewUrl?: (string|null);
+
+            /** ExternalAdReplyInfo _title. */
+            public _title?: "title";
+
+            /** ExternalAdReplyInfo _body. */
+            public _body?: "body";
+
+            /** ExternalAdReplyInfo _mediaType. */
+            public _mediaType?: "mediaType";
+
+            /** ExternalAdReplyInfo _thumbnailUrl. */
+            public _thumbnailUrl?: "thumbnailUrl";
+
+            /** ExternalAdReplyInfo _mediaUrl. */
+            public _mediaUrl?: "mediaUrl";
+
+            /** ExternalAdReplyInfo _thumbnail. */
+            public _thumbnail?: "thumbnail";
+
+            /** ExternalAdReplyInfo _sourceType. */
+            public _sourceType?: "sourceType";
+
+            /** ExternalAdReplyInfo _sourceId. */
+            public _sourceId?: "sourceId";
+
+            /** ExternalAdReplyInfo _sourceUrl. */
+            public _sourceUrl?: "sourceUrl";
+
+            /** ExternalAdReplyInfo _containsAutoReply. */
+            public _containsAutoReply?: "containsAutoReply";
+
+            /** ExternalAdReplyInfo _renderLargerThumbnail. */
+            public _renderLargerThumbnail?: "renderLargerThumbnail";
+
+            /** ExternalAdReplyInfo _showAdAttribution. */
+            public _showAdAttribution?: "showAdAttribution";
+
+            /** ExternalAdReplyInfo _ctwaClid. */
+            public _ctwaClid?: "ctwaClid";
+
+            /** ExternalAdReplyInfo _ref. */
+            public _ref?: "ref";
+
+            /** ExternalAdReplyInfo _clickToWhatsappCall. */
+            public _clickToWhatsappCall?: "clickToWhatsappCall";
+
+            /** ExternalAdReplyInfo _adContextPreviewDismissed. */
+            public _adContextPreviewDismissed?: "adContextPreviewDismissed";
+
+            /** ExternalAdReplyInfo _sourceApp. */
+            public _sourceApp?: "sourceApp";
+
+            /** ExternalAdReplyInfo _automatedGreetingMessageShown. */
+            public _automatedGreetingMessageShown?: "automatedGreetingMessageShown";
+
+            /** ExternalAdReplyInfo _greetingMessageBody. */
+            public _greetingMessageBody?: "greetingMessageBody";
+
+            /** ExternalAdReplyInfo _ctaPayload. */
+            public _ctaPayload?: "ctaPayload";
+
+            /** ExternalAdReplyInfo _disableNudge. */
+            public _disableNudge?: "disableNudge";
+
+            /** ExternalAdReplyInfo _originalImageUrl. */
+            public _originalImageUrl?: "originalImageUrl";
+
+            /** ExternalAdReplyInfo _automatedGreetingMessageCtaType. */
+            public _automatedGreetingMessageCtaType?: "automatedGreetingMessageCtaType";
+
+            /** ExternalAdReplyInfo _wtwaAdFormat. */
+            public _wtwaAdFormat?: "wtwaAdFormat";
+
+            /** ExternalAdReplyInfo _adType. */
+            public _adType?: "adType";
+
+            /** ExternalAdReplyInfo _wtwaWebsiteUrl. */
+            public _wtwaWebsiteUrl?: "wtwaWebsiteUrl";
+
+            /** ExternalAdReplyInfo _adPreviewUrl. */
+            public _adPreviewUrl?: "adPreviewUrl";
 
             /**
              * Creates a new ExternalAdReplyInfo instance using the specified properties.
@@ -7881,13 +8491,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ExternalAdReplyInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ExternalAdReplyInfo {
@@ -7935,19 +8538,34 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IFeatureEligibilities);
 
             /** FeatureEligibilities cannotBeReactedTo. */
-            public cannotBeReactedTo: boolean;
+            public cannotBeReactedTo?: (boolean|null);
 
             /** FeatureEligibilities cannotBeRanked. */
-            public cannotBeRanked: boolean;
+            public cannotBeRanked?: (boolean|null);
 
             /** FeatureEligibilities canRequestFeedback. */
-            public canRequestFeedback: boolean;
+            public canRequestFeedback?: (boolean|null);
 
             /** FeatureEligibilities canBeReshared. */
-            public canBeReshared: boolean;
+            public canBeReshared?: (boolean|null);
 
             /** FeatureEligibilities canReceiveMultiReact. */
-            public canReceiveMultiReact: boolean;
+            public canReceiveMultiReact?: (boolean|null);
+
+            /** FeatureEligibilities _cannotBeReactedTo. */
+            public _cannotBeReactedTo?: "cannotBeReactedTo";
+
+            /** FeatureEligibilities _cannotBeRanked. */
+            public _cannotBeRanked?: "cannotBeRanked";
+
+            /** FeatureEligibilities _canRequestFeedback. */
+            public _canRequestFeedback?: "canRequestFeedback";
+
+            /** FeatureEligibilities _canBeReshared. */
+            public _canBeReshared?: "canBeReshared";
+
+            /** FeatureEligibilities _canReceiveMultiReact. */
+            public _canReceiveMultiReact?: "canReceiveMultiReact";
 
             /**
              * Creates a new FeatureEligibilities instance using the specified properties.
@@ -8018,13 +8636,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for FeatureEligibilities
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** ForwardOrigin enum. */
@@ -8066,19 +8677,34 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IForwardedNewsletterMessageInfo);
 
             /** ForwardedNewsletterMessageInfo newsletterJid. */
-            public newsletterJid: string;
+            public newsletterJid?: (string|null);
 
             /** ForwardedNewsletterMessageInfo serverMessageId. */
-            public serverMessageId: number;
+            public serverMessageId?: (number|null);
 
             /** ForwardedNewsletterMessageInfo newsletterName. */
-            public newsletterName: string;
+            public newsletterName?: (string|null);
 
             /** ForwardedNewsletterMessageInfo contentType. */
-            public contentType: E2E.ContextInfo.ForwardedNewsletterMessageInfo.ContentType;
+            public contentType?: (E2E.ContextInfo.ForwardedNewsletterMessageInfo.ContentType|null);
 
             /** ForwardedNewsletterMessageInfo accessibilityText. */
-            public accessibilityText: string;
+            public accessibilityText?: (string|null);
+
+            /** ForwardedNewsletterMessageInfo _newsletterJid. */
+            public _newsletterJid?: "newsletterJid";
+
+            /** ForwardedNewsletterMessageInfo _serverMessageId. */
+            public _serverMessageId?: "serverMessageId";
+
+            /** ForwardedNewsletterMessageInfo _newsletterName. */
+            public _newsletterName?: "newsletterName";
+
+            /** ForwardedNewsletterMessageInfo _contentType. */
+            public _contentType?: "contentType";
+
+            /** ForwardedNewsletterMessageInfo _accessibilityText. */
+            public _accessibilityText?: "accessibilityText";
 
             /**
              * Creates a new ForwardedNewsletterMessageInfo instance using the specified properties.
@@ -8149,13 +8775,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ForwardedNewsletterMessageInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ForwardedNewsletterMessageInfo {
@@ -8202,13 +8821,22 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IQuestionReplyQuotedMessage);
 
             /** QuestionReplyQuotedMessage serverQuestionId. */
-            public serverQuestionId: number;
+            public serverQuestionId?: (number|null);
 
             /** QuestionReplyQuotedMessage quotedQuestion. */
             public quotedQuestion?: (E2E.IMessage|null);
 
             /** QuestionReplyQuotedMessage quotedResponse. */
             public quotedResponse?: (E2E.IMessage|null);
+
+            /** QuestionReplyQuotedMessage _serverQuestionId. */
+            public _serverQuestionId?: "serverQuestionId";
+
+            /** QuestionReplyQuotedMessage _quotedQuestion. */
+            public _quotedQuestion?: "quotedQuestion";
+
+            /** QuestionReplyQuotedMessage _quotedResponse. */
+            public _quotedResponse?: "quotedResponse";
 
             /**
              * Creates a new QuestionReplyQuotedMessage instance using the specified properties.
@@ -8279,13 +8907,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for QuestionReplyQuotedMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** QuotedType enum. */
@@ -8320,7 +8941,10 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IStatusAudienceMetadata);
 
             /** StatusAudienceMetadata audienceType. */
-            public audienceType: E2E.ContextInfo.StatusAudienceMetadata.AudienceType;
+            public audienceType?: (E2E.ContextInfo.StatusAudienceMetadata.AudienceType|null);
+
+            /** StatusAudienceMetadata _audienceType. */
+            public _audienceType?: "audienceType";
 
             /**
              * Creates a new StatusAudienceMetadata instance using the specified properties.
@@ -8391,13 +9015,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StatusAudienceMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace StatusAudienceMetadata {
@@ -8439,10 +9056,16 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IUTMInfo);
 
             /** UTMInfo utmSource. */
-            public utmSource: string;
+            public utmSource?: (string|null);
 
             /** UTMInfo utmCampaign. */
-            public utmCampaign: string;
+            public utmCampaign?: (string|null);
+
+            /** UTMInfo _utmSource. */
+            public _utmSource?: "utmSource";
+
+            /** UTMInfo _utmCampaign. */
+            public _utmCampaign?: "utmCampaign";
 
             /**
              * Creates a new UTMInfo instance using the specified properties.
@@ -8513,13 +9136,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for UTMInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -8816,7 +9432,7 @@ export namespace E2E {
         constructor(properties?: E2E.IMessage);
 
         /** Message conversation. */
-        public conversation: string;
+        public conversation?: (string|null);
 
         /** Message senderKeyDistributionMessage. */
         public senderKeyDistributionMessage?: (E2E.Message.ISenderKeyDistributionMessage|null);
@@ -9094,6 +9710,285 @@ export namespace E2E {
         /** Message statusQuotedMessage. */
         public statusQuotedMessage?: (E2E.Message.IStatusQuotedMessage|null);
 
+        /** Message _conversation. */
+        public _conversation?: "conversation";
+
+        /** Message _senderKeyDistributionMessage. */
+        public _senderKeyDistributionMessage?: "senderKeyDistributionMessage";
+
+        /** Message _imageMessage. */
+        public _imageMessage?: "imageMessage";
+
+        /** Message _contactMessage. */
+        public _contactMessage?: "contactMessage";
+
+        /** Message _locationMessage. */
+        public _locationMessage?: "locationMessage";
+
+        /** Message _extendedTextMessage. */
+        public _extendedTextMessage?: "extendedTextMessage";
+
+        /** Message _documentMessage. */
+        public _documentMessage?: "documentMessage";
+
+        /** Message _audioMessage. */
+        public _audioMessage?: "audioMessage";
+
+        /** Message _videoMessage. */
+        public _videoMessage?: "videoMessage";
+
+        /** Message _call. */
+        public _call?: "call";
+
+        /** Message _chat. */
+        public _chat?: "chat";
+
+        /** Message _protocolMessage. */
+        public _protocolMessage?: "protocolMessage";
+
+        /** Message _contactsArrayMessage. */
+        public _contactsArrayMessage?: "contactsArrayMessage";
+
+        /** Message _highlyStructuredMessage. */
+        public _highlyStructuredMessage?: "highlyStructuredMessage";
+
+        /** Message _fastRatchetKeySenderKeyDistributionMessage. */
+        public _fastRatchetKeySenderKeyDistributionMessage?: "fastRatchetKeySenderKeyDistributionMessage";
+
+        /** Message _sendPaymentMessage. */
+        public _sendPaymentMessage?: "sendPaymentMessage";
+
+        /** Message _liveLocationMessage. */
+        public _liveLocationMessage?: "liveLocationMessage";
+
+        /** Message _requestPaymentMessage. */
+        public _requestPaymentMessage?: "requestPaymentMessage";
+
+        /** Message _declinePaymentRequestMessage. */
+        public _declinePaymentRequestMessage?: "declinePaymentRequestMessage";
+
+        /** Message _cancelPaymentRequestMessage. */
+        public _cancelPaymentRequestMessage?: "cancelPaymentRequestMessage";
+
+        /** Message _templateMessage. */
+        public _templateMessage?: "templateMessage";
+
+        /** Message _stickerMessage. */
+        public _stickerMessage?: "stickerMessage";
+
+        /** Message _groupInviteMessage. */
+        public _groupInviteMessage?: "groupInviteMessage";
+
+        /** Message _templateButtonReplyMessage. */
+        public _templateButtonReplyMessage?: "templateButtonReplyMessage";
+
+        /** Message _productMessage. */
+        public _productMessage?: "productMessage";
+
+        /** Message _deviceSentMessage. */
+        public _deviceSentMessage?: "deviceSentMessage";
+
+        /** Message _messageContextInfo. */
+        public _messageContextInfo?: "messageContextInfo";
+
+        /** Message _listMessage. */
+        public _listMessage?: "listMessage";
+
+        /** Message _viewOnceMessage. */
+        public _viewOnceMessage?: "viewOnceMessage";
+
+        /** Message _orderMessage. */
+        public _orderMessage?: "orderMessage";
+
+        /** Message _listResponseMessage. */
+        public _listResponseMessage?: "listResponseMessage";
+
+        /** Message _ephemeralMessage. */
+        public _ephemeralMessage?: "ephemeralMessage";
+
+        /** Message _invoiceMessage. */
+        public _invoiceMessage?: "invoiceMessage";
+
+        /** Message _buttonsMessage. */
+        public _buttonsMessage?: "buttonsMessage";
+
+        /** Message _buttonsResponseMessage. */
+        public _buttonsResponseMessage?: "buttonsResponseMessage";
+
+        /** Message _paymentInviteMessage. */
+        public _paymentInviteMessage?: "paymentInviteMessage";
+
+        /** Message _interactiveMessage. */
+        public _interactiveMessage?: "interactiveMessage";
+
+        /** Message _reactionMessage. */
+        public _reactionMessage?: "reactionMessage";
+
+        /** Message _stickerSyncRmrMessage. */
+        public _stickerSyncRmrMessage?: "stickerSyncRmrMessage";
+
+        /** Message _interactiveResponseMessage. */
+        public _interactiveResponseMessage?: "interactiveResponseMessage";
+
+        /** Message _pollCreationMessage. */
+        public _pollCreationMessage?: "pollCreationMessage";
+
+        /** Message _pollUpdateMessage. */
+        public _pollUpdateMessage?: "pollUpdateMessage";
+
+        /** Message _keepInChatMessage. */
+        public _keepInChatMessage?: "keepInChatMessage";
+
+        /** Message _documentWithCaptionMessage. */
+        public _documentWithCaptionMessage?: "documentWithCaptionMessage";
+
+        /** Message _requestPhoneNumberMessage. */
+        public _requestPhoneNumberMessage?: "requestPhoneNumberMessage";
+
+        /** Message _viewOnceMessageV2. */
+        public _viewOnceMessageV2?: "viewOnceMessageV2";
+
+        /** Message _encReactionMessage. */
+        public _encReactionMessage?: "encReactionMessage";
+
+        /** Message _editedMessage. */
+        public _editedMessage?: "editedMessage";
+
+        /** Message _viewOnceMessageV2Extension. */
+        public _viewOnceMessageV2Extension?: "viewOnceMessageV2Extension";
+
+        /** Message _pollCreationMessageV2. */
+        public _pollCreationMessageV2?: "pollCreationMessageV2";
+
+        /** Message _scheduledCallCreationMessage. */
+        public _scheduledCallCreationMessage?: "scheduledCallCreationMessage";
+
+        /** Message _groupMentionedMessage. */
+        public _groupMentionedMessage?: "groupMentionedMessage";
+
+        /** Message _pinInChatMessage. */
+        public _pinInChatMessage?: "pinInChatMessage";
+
+        /** Message _pollCreationMessageV3. */
+        public _pollCreationMessageV3?: "pollCreationMessageV3";
+
+        /** Message _scheduledCallEditMessage. */
+        public _scheduledCallEditMessage?: "scheduledCallEditMessage";
+
+        /** Message _ptvMessage. */
+        public _ptvMessage?: "ptvMessage";
+
+        /** Message _botInvokeMessage. */
+        public _botInvokeMessage?: "botInvokeMessage";
+
+        /** Message _callLogMesssage. */
+        public _callLogMesssage?: "callLogMesssage";
+
+        /** Message _messageHistoryBundle. */
+        public _messageHistoryBundle?: "messageHistoryBundle";
+
+        /** Message _encCommentMessage. */
+        public _encCommentMessage?: "encCommentMessage";
+
+        /** Message _bcallMessage. */
+        public _bcallMessage?: "bcallMessage";
+
+        /** Message _lottieStickerMessage. */
+        public _lottieStickerMessage?: "lottieStickerMessage";
+
+        /** Message _eventMessage. */
+        public _eventMessage?: "eventMessage";
+
+        /** Message _encEventResponseMessage. */
+        public _encEventResponseMessage?: "encEventResponseMessage";
+
+        /** Message _commentMessage. */
+        public _commentMessage?: "commentMessage";
+
+        /** Message _newsletterAdminInviteMessage. */
+        public _newsletterAdminInviteMessage?: "newsletterAdminInviteMessage";
+
+        /** Message _placeholderMessage. */
+        public _placeholderMessage?: "placeholderMessage";
+
+        /** Message _secretEncryptedMessage. */
+        public _secretEncryptedMessage?: "secretEncryptedMessage";
+
+        /** Message _albumMessage. */
+        public _albumMessage?: "albumMessage";
+
+        /** Message _eventCoverImage. */
+        public _eventCoverImage?: "eventCoverImage";
+
+        /** Message _stickerPackMessage. */
+        public _stickerPackMessage?: "stickerPackMessage";
+
+        /** Message _statusMentionMessage. */
+        public _statusMentionMessage?: "statusMentionMessage";
+
+        /** Message _pollResultSnapshotMessage. */
+        public _pollResultSnapshotMessage?: "pollResultSnapshotMessage";
+
+        /** Message _pollCreationOptionImageMessage. */
+        public _pollCreationOptionImageMessage?: "pollCreationOptionImageMessage";
+
+        /** Message _associatedChildMessage. */
+        public _associatedChildMessage?: "associatedChildMessage";
+
+        /** Message _groupStatusMentionMessage. */
+        public _groupStatusMentionMessage?: "groupStatusMentionMessage";
+
+        /** Message _pollCreationMessageV4. */
+        public _pollCreationMessageV4?: "pollCreationMessageV4";
+
+        /** Message _pollCreationMessageV5. */
+        public _pollCreationMessageV5?: "pollCreationMessageV5";
+
+        /** Message _statusAddYours. */
+        public _statusAddYours?: "statusAddYours";
+
+        /** Message _groupStatusMessage. */
+        public _groupStatusMessage?: "groupStatusMessage";
+
+        /** Message _richResponseMessage. */
+        public _richResponseMessage?: "richResponseMessage";
+
+        /** Message _statusNotificationMessage. */
+        public _statusNotificationMessage?: "statusNotificationMessage";
+
+        /** Message _limitSharingMessage. */
+        public _limitSharingMessage?: "limitSharingMessage";
+
+        /** Message _botTaskMessage. */
+        public _botTaskMessage?: "botTaskMessage";
+
+        /** Message _questionMessage. */
+        public _questionMessage?: "questionMessage";
+
+        /** Message _messageHistoryNotice. */
+        public _messageHistoryNotice?: "messageHistoryNotice";
+
+        /** Message _groupStatusMessageV2. */
+        public _groupStatusMessageV2?: "groupStatusMessageV2";
+
+        /** Message _botForwardedMessage. */
+        public _botForwardedMessage?: "botForwardedMessage";
+
+        /** Message _statusQuestionAnswerMessage. */
+        public _statusQuestionAnswerMessage?: "statusQuestionAnswerMessage";
+
+        /** Message _questionReplyMessage. */
+        public _questionReplyMessage?: "questionReplyMessage";
+
+        /** Message _questionResponseMessage. */
+        public _questionResponseMessage?: "questionResponseMessage";
+
+        /** Message _newsletterFollowerInviteMessage. */
+        public _newsletterFollowerInviteMessage?: "newsletterFollowerInviteMessage";
+
+        /** Message _statusQuotedMessage. */
+        public _statusQuotedMessage?: "statusQuotedMessage";
+
         /**
          * Creates a new Message instance using the specified properties.
          * @param [properties] Properties to set
@@ -9163,13 +10058,6 @@ export namespace E2E {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Message
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace Message {
@@ -9197,13 +10085,22 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAlbumMessage);
 
             /** AlbumMessage expectedImageCount. */
-            public expectedImageCount: number;
+            public expectedImageCount?: (number|null);
 
             /** AlbumMessage expectedVideoCount. */
-            public expectedVideoCount: number;
+            public expectedVideoCount?: (number|null);
 
             /** AlbumMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** AlbumMessage _expectedImageCount. */
+            public _expectedImageCount?: "expectedImageCount";
+
+            /** AlbumMessage _expectedVideoCount. */
+            public _expectedVideoCount?: "expectedVideoCount";
+
+            /** AlbumMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new AlbumMessage instance using the specified properties.
@@ -9274,13 +10171,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AlbumMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an AppStateFatalExceptionNotification. */
@@ -9306,7 +10196,10 @@ export namespace E2E {
             public collectionNames: string[];
 
             /** AppStateFatalExceptionNotification timestamp. */
-            public timestamp: (number|Long);
+            public timestamp?: (number|Long|null);
+
+            /** AppStateFatalExceptionNotification _timestamp. */
+            public _timestamp?: "timestamp";
 
             /**
              * Creates a new AppStateFatalExceptionNotification instance using the specified properties.
@@ -9377,13 +10270,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AppStateFatalExceptionNotification
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an AppStateSyncKey. */
@@ -9410,6 +10296,12 @@ export namespace E2E {
 
             /** AppStateSyncKey keyData. */
             public keyData?: (E2E.Message.IAppStateSyncKeyData|null);
+
+            /** AppStateSyncKey _keyId. */
+            public _keyId?: "keyId";
+
+            /** AppStateSyncKey _keyData. */
+            public _keyData?: "keyData";
 
             /**
              * Creates a new AppStateSyncKey instance using the specified properties.
@@ -9480,13 +10372,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AppStateSyncKey
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an AppStateSyncKeyData. */
@@ -9512,13 +10397,22 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAppStateSyncKeyData);
 
             /** AppStateSyncKeyData keyData. */
-            public keyData: Uint8Array;
+            public keyData?: (Uint8Array|null);
 
             /** AppStateSyncKeyData fingerprint. */
             public fingerprint?: (E2E.Message.IAppStateSyncKeyFingerprint|null);
 
             /** AppStateSyncKeyData timestamp. */
-            public timestamp: (number|Long);
+            public timestamp?: (number|Long|null);
+
+            /** AppStateSyncKeyData _keyData. */
+            public _keyData?: "keyData";
+
+            /** AppStateSyncKeyData _fingerprint. */
+            public _fingerprint?: "fingerprint";
+
+            /** AppStateSyncKeyData _timestamp. */
+            public _timestamp?: "timestamp";
 
             /**
              * Creates a new AppStateSyncKeyData instance using the specified properties.
@@ -9589,13 +10483,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AppStateSyncKeyData
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an AppStateSyncKeyFingerprint. */
@@ -9621,13 +10508,19 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAppStateSyncKeyFingerprint);
 
             /** AppStateSyncKeyFingerprint rawId. */
-            public rawId: number;
+            public rawId?: (number|null);
 
             /** AppStateSyncKeyFingerprint currentIndex. */
-            public currentIndex: number;
+            public currentIndex?: (number|null);
 
             /** AppStateSyncKeyFingerprint deviceIndexes. */
             public deviceIndexes: number[];
+
+            /** AppStateSyncKeyFingerprint _rawId. */
+            public _rawId?: "rawId";
+
+            /** AppStateSyncKeyFingerprint _currentIndex. */
+            public _currentIndex?: "currentIndex";
 
             /**
              * Creates a new AppStateSyncKeyFingerprint instance using the specified properties.
@@ -9698,13 +10591,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AppStateSyncKeyFingerprint
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an AppStateSyncKeyId. */
@@ -9724,7 +10610,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAppStateSyncKeyId);
 
             /** AppStateSyncKeyId keyId. */
-            public keyId: Uint8Array;
+            public keyId?: (Uint8Array|null);
+
+            /** AppStateSyncKeyId _keyId. */
+            public _keyId?: "keyId";
 
             /**
              * Creates a new AppStateSyncKeyId instance using the specified properties.
@@ -9795,13 +10684,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AppStateSyncKeyId
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an AppStateSyncKeyRequest. */
@@ -9892,13 +10774,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AppStateSyncKeyRequest
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an AppStateSyncKeyShare. */
@@ -9989,13 +10864,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AppStateSyncKeyShare
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an AudioMessage. */
@@ -10063,55 +10931,106 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAudioMessage);
 
             /** AudioMessage url. */
-            public url: string;
+            public url?: (string|null);
 
             /** AudioMessage mimetype. */
-            public mimetype: string;
+            public mimetype?: (string|null);
 
             /** AudioMessage fileSha256. */
-            public fileSha256: Uint8Array;
+            public fileSha256?: (Uint8Array|null);
 
             /** AudioMessage fileLength. */
-            public fileLength: (number|Long);
+            public fileLength?: (number|Long|null);
 
             /** AudioMessage seconds. */
-            public seconds: number;
+            public seconds?: (number|null);
 
             /** AudioMessage ptt. */
-            public ptt: boolean;
+            public ptt?: (boolean|null);
 
             /** AudioMessage mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** AudioMessage fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** AudioMessage directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
 
             /** AudioMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** AudioMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** AudioMessage streamingSidecar. */
-            public streamingSidecar: Uint8Array;
+            public streamingSidecar?: (Uint8Array|null);
 
             /** AudioMessage waveform. */
-            public waveform: Uint8Array;
+            public waveform?: (Uint8Array|null);
 
             /** AudioMessage backgroundArgb. */
-            public backgroundArgb: number;
+            public backgroundArgb?: (number|null);
 
             /** AudioMessage viewOnce. */
-            public viewOnce: boolean;
+            public viewOnce?: (boolean|null);
 
             /** AudioMessage accessibilityLabel. */
-            public accessibilityLabel: string;
+            public accessibilityLabel?: (string|null);
 
             /** AudioMessage mediaKeyDomain. */
-            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
+            public mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
+
+            /** AudioMessage _url. */
+            public _url?: "url";
+
+            /** AudioMessage _mimetype. */
+            public _mimetype?: "mimetype";
+
+            /** AudioMessage _fileSha256. */
+            public _fileSha256?: "fileSha256";
+
+            /** AudioMessage _fileLength. */
+            public _fileLength?: "fileLength";
+
+            /** AudioMessage _seconds. */
+            public _seconds?: "seconds";
+
+            /** AudioMessage _ptt. */
+            public _ptt?: "ptt";
+
+            /** AudioMessage _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** AudioMessage _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** AudioMessage _directPath. */
+            public _directPath?: "directPath";
+
+            /** AudioMessage _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** AudioMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** AudioMessage _streamingSidecar. */
+            public _streamingSidecar?: "streamingSidecar";
+
+            /** AudioMessage _waveform. */
+            public _waveform?: "waveform";
+
+            /** AudioMessage _backgroundArgb. */
+            public _backgroundArgb?: "backgroundArgb";
+
+            /** AudioMessage _viewOnce. */
+            public _viewOnce?: "viewOnce";
+
+            /** AudioMessage _accessibilityLabel. */
+            public _accessibilityLabel?: "accessibilityLabel";
+
+            /** AudioMessage _mediaKeyDomain. */
+            public _mediaKeyDomain?: "mediaKeyDomain";
 
             /**
              * Creates a new AudioMessage instance using the specified properties.
@@ -10182,13 +11101,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AudioMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a BCallMessage. */
@@ -10217,16 +11129,28 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IBCallMessage);
 
             /** BCallMessage sessionId. */
-            public sessionId: string;
+            public sessionId?: (string|null);
 
             /** BCallMessage mediaType. */
-            public mediaType: E2E.Message.BCallMessage.MediaType;
+            public mediaType?: (E2E.Message.BCallMessage.MediaType|null);
 
             /** BCallMessage masterKey. */
-            public masterKey: Uint8Array;
+            public masterKey?: (Uint8Array|null);
 
             /** BCallMessage caption. */
-            public caption: string;
+            public caption?: (string|null);
+
+            /** BCallMessage _sessionId. */
+            public _sessionId?: "sessionId";
+
+            /** BCallMessage _mediaType. */
+            public _mediaType?: "mediaType";
+
+            /** BCallMessage _masterKey. */
+            public _masterKey?: "masterKey";
+
+            /** BCallMessage _caption. */
+            public _caption?: "caption";
 
             /**
              * Creates a new BCallMessage instance using the specified properties.
@@ -10297,13 +11221,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BCallMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace BCallMessage {
@@ -10360,10 +11277,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IButtonsMessage);
 
             /** ButtonsMessage contentText. */
-            public contentText: string;
+            public contentText?: (string|null);
 
             /** ButtonsMessage footerText. */
-            public footerText: string;
+            public footerText?: (string|null);
 
             /** ButtonsMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
@@ -10372,7 +11289,7 @@ export namespace E2E {
             public buttons: E2E.Message.ButtonsMessage.IButton[];
 
             /** ButtonsMessage headerType. */
-            public headerType: E2E.Message.ButtonsMessage.HeaderType;
+            public headerType?: (E2E.Message.ButtonsMessage.HeaderType|null);
 
             /** ButtonsMessage text. */
             public text?: (string|null);
@@ -10388,6 +11305,18 @@ export namespace E2E {
 
             /** ButtonsMessage locationMessage. */
             public locationMessage?: (E2E.Message.ILocationMessage|null);
+
+            /** ButtonsMessage _contentText. */
+            public _contentText?: "contentText";
+
+            /** ButtonsMessage _footerText. */
+            public _footerText?: "footerText";
+
+            /** ButtonsMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** ButtonsMessage _headerType. */
+            public _headerType?: "headerType";
 
             /** ButtonsMessage header. */
             public header?: ("text"|"documentMessage"|"imageMessage"|"videoMessage"|"locationMessage");
@@ -10461,13 +11390,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ButtonsMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ButtonsMessage {
@@ -10498,16 +11420,28 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ButtonsMessage.IButton);
 
                 /** Button buttonId. */
-                public buttonId: string;
+                public buttonId?: (string|null);
 
                 /** Button buttonText. */
                 public buttonText?: (E2E.Message.ButtonsMessage.Button.IButtonText|null);
 
                 /** Button type. */
-                public type: E2E.Message.ButtonsMessage.Button.Type;
+                public type?: (E2E.Message.ButtonsMessage.Button.Type|null);
 
                 /** Button nativeFlowInfo. */
                 public nativeFlowInfo?: (E2E.Message.ButtonsMessage.Button.INativeFlowInfo|null);
+
+                /** Button _buttonId. */
+                public _buttonId?: "buttonId";
+
+                /** Button _buttonText. */
+                public _buttonText?: "buttonText";
+
+                /** Button _type. */
+                public _type?: "type";
+
+                /** Button _nativeFlowInfo. */
+                public _nativeFlowInfo?: "nativeFlowInfo";
 
                 /**
                  * Creates a new Button instance using the specified properties.
@@ -10578,13 +11512,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Button
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace Button {
@@ -10606,7 +11533,10 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.ButtonsMessage.Button.IButtonText);
 
                     /** ButtonText displayText. */
-                    public displayText: string;
+                    public displayText?: (string|null);
+
+                    /** ButtonText _displayText. */
+                    public _displayText?: "displayText";
 
                     /**
                      * Creates a new ButtonText instance using the specified properties.
@@ -10677,13 +11607,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for ButtonText
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 /** Properties of a NativeFlowInfo. */
@@ -10706,10 +11629,16 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.ButtonsMessage.Button.INativeFlowInfo);
 
                     /** NativeFlowInfo name. */
-                    public name: string;
+                    public name?: (string|null);
 
                     /** NativeFlowInfo paramsJson. */
-                    public paramsJson: string;
+                    public paramsJson?: (string|null);
+
+                    /** NativeFlowInfo _name. */
+                    public _name?: "name";
+
+                    /** NativeFlowInfo _paramsJson. */
+                    public _paramsJson?: "paramsJson";
 
                     /**
                      * Creates a new NativeFlowInfo instance using the specified properties.
@@ -10780,13 +11709,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for NativeFlowInfo
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 /** Type enum. */
@@ -10835,16 +11757,25 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IButtonsResponseMessage);
 
             /** ButtonsResponseMessage selectedButtonId. */
-            public selectedButtonId: string;
+            public selectedButtonId?: (string|null);
 
             /** ButtonsResponseMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** ButtonsResponseMessage type. */
-            public type: E2E.Message.ButtonsResponseMessage.Type;
+            public type?: (E2E.Message.ButtonsResponseMessage.Type|null);
 
             /** ButtonsResponseMessage selectedDisplayText. */
             public selectedDisplayText?: (string|null);
+
+            /** ButtonsResponseMessage _selectedButtonId. */
+            public _selectedButtonId?: "selectedButtonId";
+
+            /** ButtonsResponseMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** ButtonsResponseMessage _type. */
+            public _type?: "type";
 
             /** ButtonsResponseMessage response. */
             public response?: "selectedDisplayText";
@@ -10918,13 +11849,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ButtonsResponseMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ButtonsResponseMessage {
@@ -10977,31 +11901,58 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ICall);
 
             /** Call callKey. */
-            public callKey: Uint8Array;
+            public callKey?: (Uint8Array|null);
 
             /** Call conversionSource. */
-            public conversionSource: string;
+            public conversionSource?: (string|null);
 
             /** Call conversionData. */
-            public conversionData: Uint8Array;
+            public conversionData?: (Uint8Array|null);
 
             /** Call conversionDelaySeconds. */
-            public conversionDelaySeconds: number;
+            public conversionDelaySeconds?: (number|null);
 
             /** Call ctwaSignals. */
-            public ctwaSignals: string;
+            public ctwaSignals?: (string|null);
 
             /** Call ctwaPayload. */
-            public ctwaPayload: Uint8Array;
+            public ctwaPayload?: (Uint8Array|null);
 
             /** Call contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** Call nativeFlowCallButtonPayload. */
-            public nativeFlowCallButtonPayload: string;
+            public nativeFlowCallButtonPayload?: (string|null);
 
             /** Call deeplinkPayload. */
-            public deeplinkPayload: string;
+            public deeplinkPayload?: (string|null);
+
+            /** Call _callKey. */
+            public _callKey?: "callKey";
+
+            /** Call _conversionSource. */
+            public _conversionSource?: "conversionSource";
+
+            /** Call _conversionData. */
+            public _conversionData?: "conversionData";
+
+            /** Call _conversionDelaySeconds. */
+            public _conversionDelaySeconds?: "conversionDelaySeconds";
+
+            /** Call _ctwaSignals. */
+            public _ctwaSignals?: "ctwaSignals";
+
+            /** Call _ctwaPayload. */
+            public _ctwaPayload?: "ctwaPayload";
+
+            /** Call _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** Call _nativeFlowCallButtonPayload. */
+            public _nativeFlowCallButtonPayload?: "nativeFlowCallButtonPayload";
+
+            /** Call _deeplinkPayload. */
+            public _deeplinkPayload?: "deeplinkPayload";
 
             /**
              * Creates a new Call instance using the specified properties.
@@ -11072,13 +12023,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for Call
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a CallLogMessage. */
@@ -11110,19 +12054,31 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ICallLogMessage);
 
             /** CallLogMessage isVideo. */
-            public isVideo: boolean;
+            public isVideo?: (boolean|null);
 
             /** CallLogMessage callOutcome. */
-            public callOutcome: E2E.Message.CallLogMessage.CallOutcome;
+            public callOutcome?: (E2E.Message.CallLogMessage.CallOutcome|null);
 
             /** CallLogMessage durationSecs. */
-            public durationSecs: (number|Long);
+            public durationSecs?: (number|Long|null);
 
             /** CallLogMessage callType. */
-            public callType: E2E.Message.CallLogMessage.CallType;
+            public callType?: (E2E.Message.CallLogMessage.CallType|null);
 
             /** CallLogMessage participants. */
             public participants: E2E.Message.CallLogMessage.ICallParticipant[];
+
+            /** CallLogMessage _isVideo. */
+            public _isVideo?: "isVideo";
+
+            /** CallLogMessage _callOutcome. */
+            public _callOutcome?: "callOutcome";
+
+            /** CallLogMessage _durationSecs. */
+            public _durationSecs?: "durationSecs";
+
+            /** CallLogMessage _callType. */
+            public _callType?: "callType";
 
             /**
              * Creates a new CallLogMessage instance using the specified properties.
@@ -11193,13 +12149,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CallLogMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace CallLogMessage {
@@ -11236,10 +12185,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.CallLogMessage.ICallParticipant);
 
                 /** CallParticipant jid. */
-                public jid: string;
+                public jid?: (string|null);
 
                 /** CallParticipant callOutcome. */
-                public callOutcome: E2E.Message.CallLogMessage.CallOutcome;
+                public callOutcome?: (E2E.Message.CallLogMessage.CallOutcome|null);
+
+                /** CallParticipant _jid. */
+                public _jid?: "jid";
+
+                /** CallParticipant _callOutcome. */
+                public _callOutcome?: "callOutcome";
 
                 /**
                  * Creates a new CallParticipant instance using the specified properties.
@@ -11310,13 +12265,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for CallParticipant
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** CallType enum. */
@@ -11345,6 +12293,9 @@ export namespace E2E {
 
             /** CancelPaymentRequestMessage key. */
             public key?: (Protocol.IMessageKey|null);
+
+            /** CancelPaymentRequestMessage _key. */
+            public _key?: "key";
 
             /**
              * Creates a new CancelPaymentRequestMessage instance using the specified properties.
@@ -11415,13 +12366,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CancelPaymentRequestMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a Chat. */
@@ -11444,10 +12388,16 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IChat);
 
             /** Chat displayName. */
-            public displayName: string;
+            public displayName?: (string|null);
 
             /** Chat id. */
-            public id: string;
+            public id?: (string|null);
+
+            /** Chat _displayName. */
+            public _displayName?: "displayName";
+
+            /** Chat _id. */
+            public _id?: "id";
 
             /**
              * Creates a new Chat instance using the specified properties.
@@ -11518,13 +12468,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for Chat
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a CloudAPIThreadControlNotification. */
@@ -11559,22 +12502,40 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ICloudAPIThreadControlNotification);
 
             /** CloudAPIThreadControlNotification status. */
-            public status: E2E.Message.CloudAPIThreadControlNotification.CloudAPIThreadControl;
+            public status?: (E2E.Message.CloudAPIThreadControlNotification.CloudAPIThreadControl|null);
 
             /** CloudAPIThreadControlNotification senderNotificationTimestampMs. */
-            public senderNotificationTimestampMs: (number|Long);
+            public senderNotificationTimestampMs?: (number|Long|null);
 
             /** CloudAPIThreadControlNotification consumerLid. */
-            public consumerLid: string;
+            public consumerLid?: (string|null);
 
             /** CloudAPIThreadControlNotification consumerPhoneNumber. */
-            public consumerPhoneNumber: string;
+            public consumerPhoneNumber?: (string|null);
 
             /** CloudAPIThreadControlNotification notificationContent. */
             public notificationContent?: (E2E.Message.CloudAPIThreadControlNotification.ICloudAPIThreadControlNotificationContent|null);
 
             /** CloudAPIThreadControlNotification shouldSuppressNotification. */
-            public shouldSuppressNotification: boolean;
+            public shouldSuppressNotification?: (boolean|null);
+
+            /** CloudAPIThreadControlNotification _status. */
+            public _status?: "status";
+
+            /** CloudAPIThreadControlNotification _senderNotificationTimestampMs. */
+            public _senderNotificationTimestampMs?: "senderNotificationTimestampMs";
+
+            /** CloudAPIThreadControlNotification _consumerLid. */
+            public _consumerLid?: "consumerLid";
+
+            /** CloudAPIThreadControlNotification _consumerPhoneNumber. */
+            public _consumerPhoneNumber?: "consumerPhoneNumber";
+
+            /** CloudAPIThreadControlNotification _notificationContent. */
+            public _notificationContent?: "notificationContent";
+
+            /** CloudAPIThreadControlNotification _shouldSuppressNotification. */
+            public _shouldSuppressNotification?: "shouldSuppressNotification";
 
             /**
              * Creates a new CloudAPIThreadControlNotification instance using the specified properties.
@@ -11645,13 +12606,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CloudAPIThreadControlNotification
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace CloudAPIThreadControlNotification {
@@ -11683,10 +12637,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.CloudAPIThreadControlNotification.ICloudAPIThreadControlNotificationContent);
 
                 /** CloudAPIThreadControlNotificationContent handoffNotificationText. */
-                public handoffNotificationText: string;
+                public handoffNotificationText?: (string|null);
 
                 /** CloudAPIThreadControlNotificationContent extraJson. */
-                public extraJson: string;
+                public extraJson?: (string|null);
+
+                /** CloudAPIThreadControlNotificationContent _handoffNotificationText. */
+                public _handoffNotificationText?: "handoffNotificationText";
+
+                /** CloudAPIThreadControlNotificationContent _extraJson. */
+                public _extraJson?: "extraJson";
 
                 /**
                  * Creates a new CloudAPIThreadControlNotificationContent instance using the specified properties.
@@ -11757,13 +12717,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for CloudAPIThreadControlNotificationContent
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -11791,6 +12744,12 @@ export namespace E2E {
 
             /** CommentMessage targetMessageKey. */
             public targetMessageKey?: (Protocol.IMessageKey|null);
+
+            /** CommentMessage _message. */
+            public _message?: "message";
+
+            /** CommentMessage _targetMessageKey. */
+            public _targetMessageKey?: "targetMessageKey";
 
             /**
              * Creates a new CommentMessage instance using the specified properties.
@@ -11861,13 +12820,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CommentMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a ContactMessage. */
@@ -11893,13 +12845,22 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IContactMessage);
 
             /** ContactMessage displayName. */
-            public displayName: string;
+            public displayName?: (string|null);
 
             /** ContactMessage vcard. */
-            public vcard: string;
+            public vcard?: (string|null);
 
             /** ContactMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** ContactMessage _displayName. */
+            public _displayName?: "displayName";
+
+            /** ContactMessage _vcard. */
+            public _vcard?: "vcard";
+
+            /** ContactMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new ContactMessage instance using the specified properties.
@@ -11970,13 +12931,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ContactMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a ContactsArrayMessage. */
@@ -12002,13 +12956,19 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IContactsArrayMessage);
 
             /** ContactsArrayMessage displayName. */
-            public displayName: string;
+            public displayName?: (string|null);
 
             /** ContactsArrayMessage contacts. */
             public contacts: E2E.Message.IContactMessage[];
 
             /** ContactsArrayMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** ContactsArrayMessage _displayName. */
+            public _displayName?: "displayName";
+
+            /** ContactsArrayMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new ContactsArrayMessage instance using the specified properties.
@@ -12079,13 +13039,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ContactsArrayMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a DeclinePaymentRequestMessage. */
@@ -12106,6 +13059,9 @@ export namespace E2E {
 
             /** DeclinePaymentRequestMessage key. */
             public key?: (Protocol.IMessageKey|null);
+
+            /** DeclinePaymentRequestMessage _key. */
+            public _key?: "key";
 
             /**
              * Creates a new DeclinePaymentRequestMessage instance using the specified properties.
@@ -12176,13 +13132,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for DeclinePaymentRequestMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a DeviceSentMessage. */
@@ -12208,13 +13157,22 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IDeviceSentMessage);
 
             /** DeviceSentMessage destinationJid. */
-            public destinationJid: string;
+            public destinationJid?: (string|null);
 
             /** DeviceSentMessage message. */
             public message?: (E2E.IMessage|null);
 
             /** DeviceSentMessage phash. */
-            public phash: string;
+            public phash?: (string|null);
+
+            /** DeviceSentMessage _destinationJid. */
+            public _destinationJid?: "destinationJid";
+
+            /** DeviceSentMessage _message. */
+            public _message?: "message";
+
+            /** DeviceSentMessage _phash. */
+            public _phash?: "phash";
 
             /**
              * Creates a new DeviceSentMessage instance using the specified properties.
@@ -12285,13 +13243,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for DeviceSentMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a DocumentMessage. */
@@ -12374,70 +13325,136 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IDocumentMessage);
 
             /** DocumentMessage url. */
-            public url: string;
+            public url?: (string|null);
 
             /** DocumentMessage mimetype. */
-            public mimetype: string;
+            public mimetype?: (string|null);
 
             /** DocumentMessage title. */
-            public title: string;
+            public title?: (string|null);
 
             /** DocumentMessage fileSha256. */
-            public fileSha256: Uint8Array;
+            public fileSha256?: (Uint8Array|null);
 
             /** DocumentMessage fileLength. */
-            public fileLength: (number|Long);
+            public fileLength?: (number|Long|null);
 
             /** DocumentMessage pageCount. */
-            public pageCount: number;
+            public pageCount?: (number|null);
 
             /** DocumentMessage mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** DocumentMessage fileName. */
-            public fileName: string;
+            public fileName?: (string|null);
 
             /** DocumentMessage fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** DocumentMessage directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
 
             /** DocumentMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** DocumentMessage contactVcard. */
-            public contactVcard: boolean;
+            public contactVcard?: (boolean|null);
 
             /** DocumentMessage thumbnailDirectPath. */
-            public thumbnailDirectPath: string;
+            public thumbnailDirectPath?: (string|null);
 
             /** DocumentMessage thumbnailSha256. */
-            public thumbnailSha256: Uint8Array;
+            public thumbnailSha256?: (Uint8Array|null);
 
             /** DocumentMessage thumbnailEncSha256. */
-            public thumbnailEncSha256: Uint8Array;
+            public thumbnailEncSha256?: (Uint8Array|null);
 
             /** DocumentMessage jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** DocumentMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** DocumentMessage thumbnailHeight. */
-            public thumbnailHeight: number;
+            public thumbnailHeight?: (number|null);
 
             /** DocumentMessage thumbnailWidth. */
-            public thumbnailWidth: number;
+            public thumbnailWidth?: (number|null);
 
             /** DocumentMessage caption. */
-            public caption: string;
+            public caption?: (string|null);
 
             /** DocumentMessage accessibilityLabel. */
-            public accessibilityLabel: string;
+            public accessibilityLabel?: (string|null);
 
             /** DocumentMessage mediaKeyDomain. */
-            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
+            public mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
+
+            /** DocumentMessage _url. */
+            public _url?: "url";
+
+            /** DocumentMessage _mimetype. */
+            public _mimetype?: "mimetype";
+
+            /** DocumentMessage _title. */
+            public _title?: "title";
+
+            /** DocumentMessage _fileSha256. */
+            public _fileSha256?: "fileSha256";
+
+            /** DocumentMessage _fileLength. */
+            public _fileLength?: "fileLength";
+
+            /** DocumentMessage _pageCount. */
+            public _pageCount?: "pageCount";
+
+            /** DocumentMessage _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** DocumentMessage _fileName. */
+            public _fileName?: "fileName";
+
+            /** DocumentMessage _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** DocumentMessage _directPath. */
+            public _directPath?: "directPath";
+
+            /** DocumentMessage _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** DocumentMessage _contactVcard. */
+            public _contactVcard?: "contactVcard";
+
+            /** DocumentMessage _thumbnailDirectPath. */
+            public _thumbnailDirectPath?: "thumbnailDirectPath";
+
+            /** DocumentMessage _thumbnailSha256. */
+            public _thumbnailSha256?: "thumbnailSha256";
+
+            /** DocumentMessage _thumbnailEncSha256. */
+            public _thumbnailEncSha256?: "thumbnailEncSha256";
+
+            /** DocumentMessage _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** DocumentMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** DocumentMessage _thumbnailHeight. */
+            public _thumbnailHeight?: "thumbnailHeight";
+
+            /** DocumentMessage _thumbnailWidth. */
+            public _thumbnailWidth?: "thumbnailWidth";
+
+            /** DocumentMessage _caption. */
+            public _caption?: "caption";
+
+            /** DocumentMessage _accessibilityLabel. */
+            public _accessibilityLabel?: "accessibilityLabel";
+
+            /** DocumentMessage _mediaKeyDomain. */
+            public _mediaKeyDomain?: "mediaKeyDomain";
 
             /**
              * Creates a new DocumentMessage instance using the specified properties.
@@ -12508,13 +13525,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for DocumentMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an EncCommentMessage. */
@@ -12543,10 +13553,19 @@ export namespace E2E {
             public targetMessageKey?: (Protocol.IMessageKey|null);
 
             /** EncCommentMessage encPayload. */
-            public encPayload: Uint8Array;
+            public encPayload?: (Uint8Array|null);
 
             /** EncCommentMessage encIv. */
-            public encIv: Uint8Array;
+            public encIv?: (Uint8Array|null);
+
+            /** EncCommentMessage _targetMessageKey. */
+            public _targetMessageKey?: "targetMessageKey";
+
+            /** EncCommentMessage _encPayload. */
+            public _encPayload?: "encPayload";
+
+            /** EncCommentMessage _encIv. */
+            public _encIv?: "encIv";
 
             /**
              * Creates a new EncCommentMessage instance using the specified properties.
@@ -12617,13 +13636,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for EncCommentMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an EncEventResponseMessage. */
@@ -12652,10 +13664,19 @@ export namespace E2E {
             public eventCreationMessageKey?: (Protocol.IMessageKey|null);
 
             /** EncEventResponseMessage encPayload. */
-            public encPayload: Uint8Array;
+            public encPayload?: (Uint8Array|null);
 
             /** EncEventResponseMessage encIv. */
-            public encIv: Uint8Array;
+            public encIv?: (Uint8Array|null);
+
+            /** EncEventResponseMessage _eventCreationMessageKey. */
+            public _eventCreationMessageKey?: "eventCreationMessageKey";
+
+            /** EncEventResponseMessage _encPayload. */
+            public _encPayload?: "encPayload";
+
+            /** EncEventResponseMessage _encIv. */
+            public _encIv?: "encIv";
 
             /**
              * Creates a new EncEventResponseMessage instance using the specified properties.
@@ -12726,13 +13747,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for EncEventResponseMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an EncReactionMessage. */
@@ -12761,10 +13775,19 @@ export namespace E2E {
             public targetMessageKey?: (Protocol.IMessageKey|null);
 
             /** EncReactionMessage encPayload. */
-            public encPayload: Uint8Array;
+            public encPayload?: (Uint8Array|null);
 
             /** EncReactionMessage encIv. */
-            public encIv: Uint8Array;
+            public encIv?: (Uint8Array|null);
+
+            /** EncReactionMessage _targetMessageKey. */
+            public _targetMessageKey?: "targetMessageKey";
+
+            /** EncReactionMessage _encPayload. */
+            public _encPayload?: "encPayload";
+
+            /** EncReactionMessage _encIv. */
+            public _encIv?: "encIv";
 
             /**
              * Creates a new EncReactionMessage instance using the specified properties.
@@ -12835,13 +13858,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for EncReactionMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an EventMessage. */
@@ -12891,31 +13907,61 @@ export namespace E2E {
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** EventMessage isCanceled. */
-            public isCanceled: boolean;
+            public isCanceled?: (boolean|null);
 
             /** EventMessage name. */
-            public name: string;
+            public name?: (string|null);
 
             /** EventMessage description. */
-            public description: string;
+            public description?: (string|null);
 
             /** EventMessage location. */
             public location?: (E2E.Message.ILocationMessage|null);
 
             /** EventMessage joinLink. */
-            public joinLink: string;
+            public joinLink?: (string|null);
 
             /** EventMessage startTime. */
-            public startTime: (number|Long);
+            public startTime?: (number|Long|null);
 
             /** EventMessage endTime. */
-            public endTime: (number|Long);
+            public endTime?: (number|Long|null);
 
             /** EventMessage extraGuestsAllowed. */
-            public extraGuestsAllowed: boolean;
+            public extraGuestsAllowed?: (boolean|null);
 
             /** EventMessage isScheduleCall. */
-            public isScheduleCall: boolean;
+            public isScheduleCall?: (boolean|null);
+
+            /** EventMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** EventMessage _isCanceled. */
+            public _isCanceled?: "isCanceled";
+
+            /** EventMessage _name. */
+            public _name?: "name";
+
+            /** EventMessage _description. */
+            public _description?: "description";
+
+            /** EventMessage _location. */
+            public _location?: "location";
+
+            /** EventMessage _joinLink. */
+            public _joinLink?: "joinLink";
+
+            /** EventMessage _startTime. */
+            public _startTime?: "startTime";
+
+            /** EventMessage _endTime. */
+            public _endTime?: "endTime";
+
+            /** EventMessage _extraGuestsAllowed. */
+            public _extraGuestsAllowed?: "extraGuestsAllowed";
+
+            /** EventMessage _isScheduleCall. */
+            public _isScheduleCall?: "isScheduleCall";
 
             /**
              * Creates a new EventMessage instance using the specified properties.
@@ -12986,13 +14032,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for EventMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an EventResponseMessage. */
@@ -13018,13 +14057,22 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IEventResponseMessage);
 
             /** EventResponseMessage response. */
-            public response: E2E.Message.EventResponseMessage.EventResponseType;
+            public response?: (E2E.Message.EventResponseMessage.EventResponseType|null);
 
             /** EventResponseMessage timestampMs. */
-            public timestampMs: (number|Long);
+            public timestampMs?: (number|Long|null);
 
             /** EventResponseMessage extraGuestCount. */
-            public extraGuestCount: number;
+            public extraGuestCount?: (number|null);
+
+            /** EventResponseMessage _response. */
+            public _response?: "response";
+
+            /** EventResponseMessage _timestampMs. */
+            public _timestampMs?: "timestampMs";
+
+            /** EventResponseMessage _extraGuestCount. */
+            public _extraGuestCount?: "extraGuestCount";
 
             /**
              * Creates a new EventResponseMessage instance using the specified properties.
@@ -13095,13 +14143,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for EventResponseMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace EventResponseMessage {
@@ -13222,79 +14263,79 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IExtendedTextMessage);
 
             /** ExtendedTextMessage text. */
-            public text: string;
+            public text?: (string|null);
 
             /** ExtendedTextMessage matchedText. */
-            public matchedText: string;
+            public matchedText?: (string|null);
 
             /** ExtendedTextMessage description. */
-            public description: string;
+            public description?: (string|null);
 
             /** ExtendedTextMessage title. */
-            public title: string;
+            public title?: (string|null);
 
             /** ExtendedTextMessage textArgb. */
-            public textArgb: number;
+            public textArgb?: (number|null);
 
             /** ExtendedTextMessage backgroundArgb. */
-            public backgroundArgb: number;
+            public backgroundArgb?: (number|null);
 
             /** ExtendedTextMessage font. */
-            public font: E2E.Message.ExtendedTextMessage.FontType;
+            public font?: (E2E.Message.ExtendedTextMessage.FontType|null);
 
             /** ExtendedTextMessage previewType. */
-            public previewType: E2E.Message.ExtendedTextMessage.PreviewType;
+            public previewType?: (E2E.Message.ExtendedTextMessage.PreviewType|null);
 
             /** ExtendedTextMessage jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** ExtendedTextMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** ExtendedTextMessage doNotPlayInline. */
-            public doNotPlayInline: boolean;
+            public doNotPlayInline?: (boolean|null);
 
             /** ExtendedTextMessage thumbnailDirectPath. */
-            public thumbnailDirectPath: string;
+            public thumbnailDirectPath?: (string|null);
 
             /** ExtendedTextMessage thumbnailSha256. */
-            public thumbnailSha256: Uint8Array;
+            public thumbnailSha256?: (Uint8Array|null);
 
             /** ExtendedTextMessage thumbnailEncSha256. */
-            public thumbnailEncSha256: Uint8Array;
+            public thumbnailEncSha256?: (Uint8Array|null);
 
             /** ExtendedTextMessage mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** ExtendedTextMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** ExtendedTextMessage thumbnailHeight. */
-            public thumbnailHeight: number;
+            public thumbnailHeight?: (number|null);
 
             /** ExtendedTextMessage thumbnailWidth. */
-            public thumbnailWidth: number;
+            public thumbnailWidth?: (number|null);
 
             /** ExtendedTextMessage inviteLinkGroupType. */
-            public inviteLinkGroupType: E2E.Message.ExtendedTextMessage.InviteLinkGroupType;
+            public inviteLinkGroupType?: (E2E.Message.ExtendedTextMessage.InviteLinkGroupType|null);
 
             /** ExtendedTextMessage inviteLinkParentGroupSubjectV2. */
-            public inviteLinkParentGroupSubjectV2: string;
+            public inviteLinkParentGroupSubjectV2?: (string|null);
 
             /** ExtendedTextMessage inviteLinkParentGroupThumbnailV2. */
-            public inviteLinkParentGroupThumbnailV2: Uint8Array;
+            public inviteLinkParentGroupThumbnailV2?: (Uint8Array|null);
 
             /** ExtendedTextMessage inviteLinkGroupTypeV2. */
-            public inviteLinkGroupTypeV2: E2E.Message.ExtendedTextMessage.InviteLinkGroupType;
+            public inviteLinkGroupTypeV2?: (E2E.Message.ExtendedTextMessage.InviteLinkGroupType|null);
 
             /** ExtendedTextMessage viewOnce. */
-            public viewOnce: boolean;
+            public viewOnce?: (boolean|null);
 
             /** ExtendedTextMessage videoHeight. */
-            public videoHeight: number;
+            public videoHeight?: (number|null);
 
             /** ExtendedTextMessage videoWidth. */
-            public videoWidth: number;
+            public videoWidth?: (number|null);
 
             /** ExtendedTextMessage faviconMMSMetadata. */
             public faviconMMSMetadata?: (E2E.Message.IMMSThumbnailMetadata|null);
@@ -13309,10 +14350,100 @@ export namespace E2E {
             public endCardTiles: E2E.Message.IVideoEndCard[];
 
             /** ExtendedTextMessage videoContentUrl. */
-            public videoContentUrl: string;
+            public videoContentUrl?: (string|null);
 
             /** ExtendedTextMessage musicMetadata. */
             public musicMetadata?: (E2E.IEmbeddedMusic|null);
+
+            /** ExtendedTextMessage _text. */
+            public _text?: "text";
+
+            /** ExtendedTextMessage _matchedText. */
+            public _matchedText?: "matchedText";
+
+            /** ExtendedTextMessage _description. */
+            public _description?: "description";
+
+            /** ExtendedTextMessage _title. */
+            public _title?: "title";
+
+            /** ExtendedTextMessage _textArgb. */
+            public _textArgb?: "textArgb";
+
+            /** ExtendedTextMessage _backgroundArgb. */
+            public _backgroundArgb?: "backgroundArgb";
+
+            /** ExtendedTextMessage _font. */
+            public _font?: "font";
+
+            /** ExtendedTextMessage _previewType. */
+            public _previewType?: "previewType";
+
+            /** ExtendedTextMessage _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** ExtendedTextMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** ExtendedTextMessage _doNotPlayInline. */
+            public _doNotPlayInline?: "doNotPlayInline";
+
+            /** ExtendedTextMessage _thumbnailDirectPath. */
+            public _thumbnailDirectPath?: "thumbnailDirectPath";
+
+            /** ExtendedTextMessage _thumbnailSha256. */
+            public _thumbnailSha256?: "thumbnailSha256";
+
+            /** ExtendedTextMessage _thumbnailEncSha256. */
+            public _thumbnailEncSha256?: "thumbnailEncSha256";
+
+            /** ExtendedTextMessage _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** ExtendedTextMessage _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** ExtendedTextMessage _thumbnailHeight. */
+            public _thumbnailHeight?: "thumbnailHeight";
+
+            /** ExtendedTextMessage _thumbnailWidth. */
+            public _thumbnailWidth?: "thumbnailWidth";
+
+            /** ExtendedTextMessage _inviteLinkGroupType. */
+            public _inviteLinkGroupType?: "inviteLinkGroupType";
+
+            /** ExtendedTextMessage _inviteLinkParentGroupSubjectV2. */
+            public _inviteLinkParentGroupSubjectV2?: "inviteLinkParentGroupSubjectV2";
+
+            /** ExtendedTextMessage _inviteLinkParentGroupThumbnailV2. */
+            public _inviteLinkParentGroupThumbnailV2?: "inviteLinkParentGroupThumbnailV2";
+
+            /** ExtendedTextMessage _inviteLinkGroupTypeV2. */
+            public _inviteLinkGroupTypeV2?: "inviteLinkGroupTypeV2";
+
+            /** ExtendedTextMessage _viewOnce. */
+            public _viewOnce?: "viewOnce";
+
+            /** ExtendedTextMessage _videoHeight. */
+            public _videoHeight?: "videoHeight";
+
+            /** ExtendedTextMessage _videoWidth. */
+            public _videoWidth?: "videoWidth";
+
+            /** ExtendedTextMessage _faviconMMSMetadata. */
+            public _faviconMMSMetadata?: "faviconMMSMetadata";
+
+            /** ExtendedTextMessage _linkPreviewMetadata. */
+            public _linkPreviewMetadata?: "linkPreviewMetadata";
+
+            /** ExtendedTextMessage _paymentLinkMetadata. */
+            public _paymentLinkMetadata?: "paymentLinkMetadata";
+
+            /** ExtendedTextMessage _videoContentUrl. */
+            public _videoContentUrl?: "videoContentUrl";
+
+            /** ExtendedTextMessage _musicMetadata. */
+            public _musicMetadata?: "musicMetadata";
 
             /**
              * Creates a new ExtendedTextMessage instance using the specified properties.
@@ -13383,13 +14514,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ExtendedTextMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ExtendedTextMessage {
@@ -13442,7 +14566,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IFullHistorySyncOnDemandRequestMetadata);
 
             /** FullHistorySyncOnDemandRequestMetadata requestId. */
-            public requestId: string;
+            public requestId?: (string|null);
+
+            /** FullHistorySyncOnDemandRequestMetadata _requestId. */
+            public _requestId?: "requestId";
 
             /**
              * Creates a new FullHistorySyncOnDemandRequestMetadata instance using the specified properties.
@@ -13513,13 +14640,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for FullHistorySyncOnDemandRequestMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a FutureProofMessage. */
@@ -13540,6 +14660,9 @@ export namespace E2E {
 
             /** FutureProofMessage message. */
             public message?: (E2E.IMessage|null);
+
+            /** FutureProofMessage _message. */
+            public _message?: "message";
 
             /**
              * Creates a new FutureProofMessage instance using the specified properties.
@@ -13610,13 +14733,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for FutureProofMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a GroupInviteMessage. */
@@ -13657,28 +14773,52 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IGroupInviteMessage);
 
             /** GroupInviteMessage groupJid. */
-            public groupJid: string;
+            public groupJid?: (string|null);
 
             /** GroupInviteMessage inviteCode. */
-            public inviteCode: string;
+            public inviteCode?: (string|null);
 
             /** GroupInviteMessage inviteExpiration. */
-            public inviteExpiration: (number|Long);
+            public inviteExpiration?: (number|Long|null);
 
             /** GroupInviteMessage groupName. */
-            public groupName: string;
+            public groupName?: (string|null);
 
             /** GroupInviteMessage jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** GroupInviteMessage caption. */
-            public caption: string;
+            public caption?: (string|null);
 
             /** GroupInviteMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** GroupInviteMessage groupType. */
-            public groupType: E2E.Message.GroupInviteMessage.GroupType;
+            public groupType?: (E2E.Message.GroupInviteMessage.GroupType|null);
+
+            /** GroupInviteMessage _groupJid. */
+            public _groupJid?: "groupJid";
+
+            /** GroupInviteMessage _inviteCode. */
+            public _inviteCode?: "inviteCode";
+
+            /** GroupInviteMessage _inviteExpiration. */
+            public _inviteExpiration?: "inviteExpiration";
+
+            /** GroupInviteMessage _groupName. */
+            public _groupName?: "groupName";
+
+            /** GroupInviteMessage _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** GroupInviteMessage _caption. */
+            public _caption?: "caption";
+
+            /** GroupInviteMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** GroupInviteMessage _groupType. */
+            public _groupType?: "groupType";
 
             /**
              * Creates a new GroupInviteMessage instance using the specified properties.
@@ -13749,13 +14889,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for GroupInviteMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace GroupInviteMessage {
@@ -13808,31 +14941,52 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IHighlyStructuredMessage);
 
             /** HighlyStructuredMessage namespace. */
-            public namespace: string;
+            public namespace?: (string|null);
 
             /** HighlyStructuredMessage elementName. */
-            public elementName: string;
+            public elementName?: (string|null);
 
             /** HighlyStructuredMessage params. */
             public params: string[];
 
             /** HighlyStructuredMessage fallbackLg. */
-            public fallbackLg: string;
+            public fallbackLg?: (string|null);
 
             /** HighlyStructuredMessage fallbackLc. */
-            public fallbackLc: string;
+            public fallbackLc?: (string|null);
 
             /** HighlyStructuredMessage localizableParams. */
             public localizableParams: E2E.Message.HighlyStructuredMessage.IHSMLocalizableParameter[];
 
             /** HighlyStructuredMessage deterministicLg. */
-            public deterministicLg: string;
+            public deterministicLg?: (string|null);
 
             /** HighlyStructuredMessage deterministicLc. */
-            public deterministicLc: string;
+            public deterministicLc?: (string|null);
 
             /** HighlyStructuredMessage hydratedHsm. */
             public hydratedHsm?: (E2E.Message.ITemplateMessage|null);
+
+            /** HighlyStructuredMessage _namespace. */
+            public _namespace?: "namespace";
+
+            /** HighlyStructuredMessage _elementName. */
+            public _elementName?: "elementName";
+
+            /** HighlyStructuredMessage _fallbackLg. */
+            public _fallbackLg?: "fallbackLg";
+
+            /** HighlyStructuredMessage _fallbackLc. */
+            public _fallbackLc?: "fallbackLc";
+
+            /** HighlyStructuredMessage _deterministicLg. */
+            public _deterministicLg?: "deterministicLg";
+
+            /** HighlyStructuredMessage _deterministicLc. */
+            public _deterministicLc?: "deterministicLc";
+
+            /** HighlyStructuredMessage _hydratedHsm. */
+            public _hydratedHsm?: "hydratedHsm";
 
             /**
              * Creates a new HighlyStructuredMessage instance using the specified properties.
@@ -13903,13 +15057,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for HighlyStructuredMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace HighlyStructuredMessage {
@@ -13937,13 +15084,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.HighlyStructuredMessage.IHSMLocalizableParameter);
 
                 /** HSMLocalizableParameter default. */
-                public default: string;
+                public default?: (string|null);
 
                 /** HSMLocalizableParameter currency. */
                 public currency?: (E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.IHSMCurrency|null);
 
                 /** HSMLocalizableParameter dateTime. */
                 public dateTime?: (E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.IHSMDateTime|null);
+
+                /** HSMLocalizableParameter _default. */
+                public _default?: "default";
 
                 /** HSMLocalizableParameter paramOneof. */
                 public paramOneof?: ("currency"|"dateTime");
@@ -14017,13 +15167,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for HSMLocalizableParameter
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace HSMLocalizableParameter {
@@ -14048,10 +15191,16 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.IHSMCurrency);
 
                     /** HSMCurrency currencyCode. */
-                    public currencyCode: string;
+                    public currencyCode?: (string|null);
 
                     /** HSMCurrency amount1000. */
-                    public amount1000: (number|Long);
+                    public amount1000?: (number|Long|null);
+
+                    /** HSMCurrency _currencyCode. */
+                    public _currencyCode?: "currencyCode";
+
+                    /** HSMCurrency _amount1000. */
+                    public _amount1000?: "amount1000";
 
                     /**
                      * Creates a new HSMCurrency instance using the specified properties.
@@ -14122,13 +15271,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for HSMCurrency
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 /** Properties of a HSMDateTime. */
@@ -14228,13 +15370,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for HSMDateTime
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 namespace HSMDateTime {
@@ -14274,25 +15409,46 @@ export namespace E2E {
                         constructor(properties?: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.IHSMDateTimeComponent);
 
                         /** HSMDateTimeComponent dayOfWeek. */
-                        public dayOfWeek: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.DayOfWeekType;
+                        public dayOfWeek?: (E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.DayOfWeekType|null);
 
                         /** HSMDateTimeComponent year. */
-                        public year: number;
+                        public year?: (number|null);
 
                         /** HSMDateTimeComponent month. */
-                        public month: number;
+                        public month?: (number|null);
 
                         /** HSMDateTimeComponent dayOfMonth. */
-                        public dayOfMonth: number;
+                        public dayOfMonth?: (number|null);
 
                         /** HSMDateTimeComponent hour. */
-                        public hour: number;
+                        public hour?: (number|null);
 
                         /** HSMDateTimeComponent minute. */
-                        public minute: number;
+                        public minute?: (number|null);
 
                         /** HSMDateTimeComponent calendar. */
-                        public calendar: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.CalendarType;
+                        public calendar?: (E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.CalendarType|null);
+
+                        /** HSMDateTimeComponent _dayOfWeek. */
+                        public _dayOfWeek?: "dayOfWeek";
+
+                        /** HSMDateTimeComponent _year. */
+                        public _year?: "year";
+
+                        /** HSMDateTimeComponent _month. */
+                        public _month?: "month";
+
+                        /** HSMDateTimeComponent _dayOfMonth. */
+                        public _dayOfMonth?: "dayOfMonth";
+
+                        /** HSMDateTimeComponent _hour. */
+                        public _hour?: "hour";
+
+                        /** HSMDateTimeComponent _minute. */
+                        public _minute?: "minute";
+
+                        /** HSMDateTimeComponent _calendar. */
+                        public _calendar?: "calendar";
 
                         /**
                          * Creates a new HSMDateTimeComponent instance using the specified properties.
@@ -14363,13 +15519,6 @@ export namespace E2E {
                          * @returns JSON object
                          */
                         public toJSON(): { [k: string]: any };
-
-                        /**
-                         * Gets the default type url for HSMDateTimeComponent
-                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                         * @returns The default type url
-                         */
-                        public static getTypeUrl(typeUrlPrefix?: string): string;
                     }
 
                     namespace HSMDateTimeComponent {
@@ -14409,7 +15558,10 @@ export namespace E2E {
                         constructor(properties?: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.IHSMDateTimeUnixEpoch);
 
                         /** HSMDateTimeUnixEpoch timestamp. */
-                        public timestamp: (number|Long);
+                        public timestamp?: (number|Long|null);
+
+                        /** HSMDateTimeUnixEpoch _timestamp. */
+                        public _timestamp?: "timestamp";
 
                         /**
                          * Creates a new HSMDateTimeUnixEpoch instance using the specified properties.
@@ -14480,13 +15632,6 @@ export namespace E2E {
                          * @returns JSON object
                          */
                         public toJSON(): { [k: string]: any };
-
-                        /**
-                         * Gets the default type url for HSMDateTimeUnixEpoch
-                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                         * @returns The default type url
-                         */
-                        public static getTypeUrl(typeUrlPrefix?: string): string;
                     }
                 }
             }
@@ -14548,46 +15693,88 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IHistorySyncNotification);
 
             /** HistorySyncNotification fileSha256. */
-            public fileSha256: Uint8Array;
+            public fileSha256?: (Uint8Array|null);
 
             /** HistorySyncNotification fileLength. */
-            public fileLength: (number|Long);
+            public fileLength?: (number|Long|null);
 
             /** HistorySyncNotification mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** HistorySyncNotification fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** HistorySyncNotification directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
 
             /** HistorySyncNotification syncType. */
-            public syncType: E2E.Message.HistorySyncType;
+            public syncType?: (E2E.Message.HistorySyncType|null);
 
             /** HistorySyncNotification chunkOrder. */
-            public chunkOrder: number;
+            public chunkOrder?: (number|null);
 
             /** HistorySyncNotification originalMessageId. */
-            public originalMessageId: string;
+            public originalMessageId?: (string|null);
 
             /** HistorySyncNotification progress. */
-            public progress: number;
+            public progress?: (number|null);
 
             /** HistorySyncNotification oldestMsgInChunkTimestampSec. */
-            public oldestMsgInChunkTimestampSec: (number|Long);
+            public oldestMsgInChunkTimestampSec?: (number|Long|null);
 
             /** HistorySyncNotification initialHistBootstrapInlinePayload. */
-            public initialHistBootstrapInlinePayload: Uint8Array;
+            public initialHistBootstrapInlinePayload?: (Uint8Array|null);
 
             /** HistorySyncNotification peerDataRequestSessionId. */
-            public peerDataRequestSessionId: string;
+            public peerDataRequestSessionId?: (string|null);
 
             /** HistorySyncNotification fullHistorySyncOnDemandRequestMetadata. */
             public fullHistorySyncOnDemandRequestMetadata?: (E2E.Message.IFullHistorySyncOnDemandRequestMetadata|null);
 
             /** HistorySyncNotification encHandle. */
-            public encHandle: string;
+            public encHandle?: (string|null);
+
+            /** HistorySyncNotification _fileSha256. */
+            public _fileSha256?: "fileSha256";
+
+            /** HistorySyncNotification _fileLength. */
+            public _fileLength?: "fileLength";
+
+            /** HistorySyncNotification _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** HistorySyncNotification _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** HistorySyncNotification _directPath. */
+            public _directPath?: "directPath";
+
+            /** HistorySyncNotification _syncType. */
+            public _syncType?: "syncType";
+
+            /** HistorySyncNotification _chunkOrder. */
+            public _chunkOrder?: "chunkOrder";
+
+            /** HistorySyncNotification _originalMessageId. */
+            public _originalMessageId?: "originalMessageId";
+
+            /** HistorySyncNotification _progress. */
+            public _progress?: "progress";
+
+            /** HistorySyncNotification _oldestMsgInChunkTimestampSec. */
+            public _oldestMsgInChunkTimestampSec?: "oldestMsgInChunkTimestampSec";
+
+            /** HistorySyncNotification _initialHistBootstrapInlinePayload. */
+            public _initialHistBootstrapInlinePayload?: "initialHistBootstrapInlinePayload";
+
+            /** HistorySyncNotification _peerDataRequestSessionId. */
+            public _peerDataRequestSessionId?: "peerDataRequestSessionId";
+
+            /** HistorySyncNotification _fullHistorySyncOnDemandRequestMetadata. */
+            public _fullHistorySyncOnDemandRequestMetadata?: "fullHistorySyncOnDemandRequestMetadata";
+
+            /** HistorySyncNotification _encHandle. */
+            public _encHandle?: "encHandle";
 
             /**
              * Creates a new HistorySyncNotification instance using the specified properties.
@@ -14658,13 +15845,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for HistorySyncNotification
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** HistorySyncType enum. */
@@ -14786,97 +15966,181 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IImageMessage);
 
             /** ImageMessage url. */
-            public url: string;
+            public url?: (string|null);
 
             /** ImageMessage mimetype. */
-            public mimetype: string;
+            public mimetype?: (string|null);
 
             /** ImageMessage caption. */
-            public caption: string;
+            public caption?: (string|null);
 
             /** ImageMessage fileSha256. */
-            public fileSha256: Uint8Array;
+            public fileSha256?: (Uint8Array|null);
 
             /** ImageMessage fileLength. */
-            public fileLength: (number|Long);
+            public fileLength?: (number|Long|null);
 
             /** ImageMessage height. */
-            public height: number;
+            public height?: (number|null);
 
             /** ImageMessage width. */
-            public width: number;
+            public width?: (number|null);
 
             /** ImageMessage mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** ImageMessage fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** ImageMessage interactiveAnnotations. */
             public interactiveAnnotations: E2E.IInteractiveAnnotation[];
 
             /** ImageMessage directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
 
             /** ImageMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** ImageMessage jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** ImageMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** ImageMessage firstScanSidecar. */
-            public firstScanSidecar: Uint8Array;
+            public firstScanSidecar?: (Uint8Array|null);
 
             /** ImageMessage firstScanLength. */
-            public firstScanLength: number;
+            public firstScanLength?: (number|null);
 
             /** ImageMessage experimentGroupId. */
-            public experimentGroupId: number;
+            public experimentGroupId?: (number|null);
 
             /** ImageMessage scansSidecar. */
-            public scansSidecar: Uint8Array;
+            public scansSidecar?: (Uint8Array|null);
 
             /** ImageMessage scanLengths. */
             public scanLengths: number[];
 
             /** ImageMessage midQualityFileSha256. */
-            public midQualityFileSha256: Uint8Array;
+            public midQualityFileSha256?: (Uint8Array|null);
 
             /** ImageMessage midQualityFileEncSha256. */
-            public midQualityFileEncSha256: Uint8Array;
+            public midQualityFileEncSha256?: (Uint8Array|null);
 
             /** ImageMessage viewOnce. */
-            public viewOnce: boolean;
+            public viewOnce?: (boolean|null);
 
             /** ImageMessage thumbnailDirectPath. */
-            public thumbnailDirectPath: string;
+            public thumbnailDirectPath?: (string|null);
 
             /** ImageMessage thumbnailSha256. */
-            public thumbnailSha256: Uint8Array;
+            public thumbnailSha256?: (Uint8Array|null);
 
             /** ImageMessage thumbnailEncSha256. */
-            public thumbnailEncSha256: Uint8Array;
+            public thumbnailEncSha256?: (Uint8Array|null);
 
             /** ImageMessage staticUrl. */
-            public staticUrl: string;
+            public staticUrl?: (string|null);
 
             /** ImageMessage annotations. */
             public annotations: E2E.IInteractiveAnnotation[];
 
             /** ImageMessage imageSourceType. */
-            public imageSourceType: E2E.Message.ImageMessage.ImageSourceType;
+            public imageSourceType?: (E2E.Message.ImageMessage.ImageSourceType|null);
 
             /** ImageMessage accessibilityLabel. */
-            public accessibilityLabel: string;
+            public accessibilityLabel?: (string|null);
 
             /** ImageMessage mediaKeyDomain. */
-            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
+            public mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
 
             /** ImageMessage qrUrl. */
-            public qrUrl: string;
+            public qrUrl?: (string|null);
+
+            /** ImageMessage _url. */
+            public _url?: "url";
+
+            /** ImageMessage _mimetype. */
+            public _mimetype?: "mimetype";
+
+            /** ImageMessage _caption. */
+            public _caption?: "caption";
+
+            /** ImageMessage _fileSha256. */
+            public _fileSha256?: "fileSha256";
+
+            /** ImageMessage _fileLength. */
+            public _fileLength?: "fileLength";
+
+            /** ImageMessage _height. */
+            public _height?: "height";
+
+            /** ImageMessage _width. */
+            public _width?: "width";
+
+            /** ImageMessage _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** ImageMessage _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** ImageMessage _directPath. */
+            public _directPath?: "directPath";
+
+            /** ImageMessage _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** ImageMessage _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** ImageMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** ImageMessage _firstScanSidecar. */
+            public _firstScanSidecar?: "firstScanSidecar";
+
+            /** ImageMessage _firstScanLength. */
+            public _firstScanLength?: "firstScanLength";
+
+            /** ImageMessage _experimentGroupId. */
+            public _experimentGroupId?: "experimentGroupId";
+
+            /** ImageMessage _scansSidecar. */
+            public _scansSidecar?: "scansSidecar";
+
+            /** ImageMessage _midQualityFileSha256. */
+            public _midQualityFileSha256?: "midQualityFileSha256";
+
+            /** ImageMessage _midQualityFileEncSha256. */
+            public _midQualityFileEncSha256?: "midQualityFileEncSha256";
+
+            /** ImageMessage _viewOnce. */
+            public _viewOnce?: "viewOnce";
+
+            /** ImageMessage _thumbnailDirectPath. */
+            public _thumbnailDirectPath?: "thumbnailDirectPath";
+
+            /** ImageMessage _thumbnailSha256. */
+            public _thumbnailSha256?: "thumbnailSha256";
+
+            /** ImageMessage _thumbnailEncSha256. */
+            public _thumbnailEncSha256?: "thumbnailEncSha256";
+
+            /** ImageMessage _staticUrl. */
+            public _staticUrl?: "staticUrl";
+
+            /** ImageMessage _imageSourceType. */
+            public _imageSourceType?: "imageSourceType";
+
+            /** ImageMessage _accessibilityLabel. */
+            public _accessibilityLabel?: "accessibilityLabel";
+
+            /** ImageMessage _mediaKeyDomain. */
+            public _mediaKeyDomain?: "mediaKeyDomain";
+
+            /** ImageMessage _qrUrl. */
+            public _qrUrl?: "qrUrl";
 
             /**
              * Creates a new ImageMessage instance using the specified properties.
@@ -14947,13 +16211,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ImageMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ImageMessage {
@@ -14984,7 +16241,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IInitialSecurityNotificationSettingSync);
 
             /** InitialSecurityNotificationSettingSync securityNotificationEnabled. */
-            public securityNotificationEnabled: boolean;
+            public securityNotificationEnabled?: (boolean|null);
+
+            /** InitialSecurityNotificationSettingSync _securityNotificationEnabled. */
+            public _securityNotificationEnabled?: "securityNotificationEnabled";
 
             /**
              * Creates a new InitialSecurityNotificationSettingSync instance using the specified properties.
@@ -15055,13 +16315,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InitialSecurityNotificationSettingSync
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an InteractiveMessage. */
@@ -15130,6 +16383,21 @@ export namespace E2E {
 
             /** InteractiveMessage carouselMessage. */
             public carouselMessage?: (E2E.Message.InteractiveMessage.ICarouselMessage|null);
+
+            /** InteractiveMessage _header. */
+            public _header?: "header";
+
+            /** InteractiveMessage _body. */
+            public _body?: "body";
+
+            /** InteractiveMessage _footer. */
+            public _footer?: "footer";
+
+            /** InteractiveMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** InteractiveMessage _urlTrackingMap. */
+            public _urlTrackingMap?: "urlTrackingMap";
 
             /** InteractiveMessage interactiveMessage. */
             public interactiveMessage?: ("shopStorefrontMessage"|"collectionMessage"|"nativeFlowMessage"|"carouselMessage");
@@ -15203,13 +16471,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InteractiveMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace InteractiveMessage {
@@ -15231,7 +16492,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.IBody);
 
                 /** Body text. */
-                public text: string;
+                public text?: (string|null);
+
+                /** Body _text. */
+                public _text?: "text";
 
                 /**
                  * Creates a new Body instance using the specified properties.
@@ -15302,13 +16566,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Body
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a CarouselMessage. */
@@ -15337,10 +16594,16 @@ export namespace E2E {
                 public cards: E2E.Message.IInteractiveMessage[];
 
                 /** CarouselMessage messageVersion. */
-                public messageVersion: number;
+                public messageVersion?: (number|null);
 
                 /** CarouselMessage carouselCardType. */
-                public carouselCardType: E2E.Message.InteractiveMessage.CarouselMessage.CarouselCardType;
+                public carouselCardType?: (E2E.Message.InteractiveMessage.CarouselMessage.CarouselCardType|null);
+
+                /** CarouselMessage _messageVersion. */
+                public _messageVersion?: "messageVersion";
+
+                /** CarouselMessage _carouselCardType. */
+                public _carouselCardType?: "carouselCardType";
 
                 /**
                  * Creates a new CarouselMessage instance using the specified properties.
@@ -15411,13 +16674,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for CarouselMessage
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace CarouselMessage {
@@ -15453,13 +16709,22 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.ICollectionMessage);
 
                 /** CollectionMessage bizJid. */
-                public bizJid: string;
+                public bizJid?: (string|null);
 
                 /** CollectionMessage id. */
-                public id: string;
+                public id?: (string|null);
 
                 /** CollectionMessage messageVersion. */
-                public messageVersion: number;
+                public messageVersion?: (number|null);
+
+                /** CollectionMessage _bizJid. */
+                public _bizJid?: "bizJid";
+
+                /** CollectionMessage _id. */
+                public _id?: "id";
+
+                /** CollectionMessage _messageVersion. */
+                public _messageVersion?: "messageVersion";
 
                 /**
                  * Creates a new CollectionMessage instance using the specified properties.
@@ -15530,13 +16795,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for CollectionMessage
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a Footer. */
@@ -15556,7 +16814,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.IFooter);
 
                 /** Footer text. */
-                public text: string;
+                public text?: (string|null);
+
+                /** Footer _text. */
+                public _text?: "text";
 
                 /**
                  * Creates a new Footer instance using the specified properties.
@@ -15627,13 +16888,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Footer
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a Header. */
@@ -15677,13 +16931,13 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.IHeader);
 
                 /** Header title. */
-                public title: string;
+                public title?: (string|null);
 
                 /** Header subtitle. */
-                public subtitle: string;
+                public subtitle?: (string|null);
 
                 /** Header hasMediaAttachment. */
-                public hasMediaAttachment: boolean;
+                public hasMediaAttachment?: (boolean|null);
 
                 /** Header documentMessage. */
                 public documentMessage?: (E2E.Message.IDocumentMessage|null);
@@ -15702,6 +16956,15 @@ export namespace E2E {
 
                 /** Header productMessage. */
                 public productMessage?: (E2E.Message.IProductMessage|null);
+
+                /** Header _title. */
+                public _title?: "title";
+
+                /** Header _subtitle. */
+                public _subtitle?: "subtitle";
+
+                /** Header _hasMediaAttachment. */
+                public _hasMediaAttachment?: "hasMediaAttachment";
 
                 /** Header media. */
                 public media?: ("documentMessage"|"imageMessage"|"jpegThumbnail"|"videoMessage"|"locationMessage"|"productMessage");
@@ -15775,13 +17038,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Header
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a NativeFlowMessage. */
@@ -15810,10 +17066,16 @@ export namespace E2E {
                 public buttons: E2E.Message.InteractiveMessage.NativeFlowMessage.INativeFlowButton[];
 
                 /** NativeFlowMessage messageParamsJson. */
-                public messageParamsJson: string;
+                public messageParamsJson?: (string|null);
 
                 /** NativeFlowMessage messageVersion. */
-                public messageVersion: number;
+                public messageVersion?: (number|null);
+
+                /** NativeFlowMessage _messageParamsJson. */
+                public _messageParamsJson?: "messageParamsJson";
+
+                /** NativeFlowMessage _messageVersion. */
+                public _messageVersion?: "messageVersion";
 
                 /**
                  * Creates a new NativeFlowMessage instance using the specified properties.
@@ -15884,13 +17146,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for NativeFlowMessage
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace NativeFlowMessage {
@@ -15915,10 +17170,16 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.InteractiveMessage.NativeFlowMessage.INativeFlowButton);
 
                     /** NativeFlowButton name. */
-                    public name: string;
+                    public name?: (string|null);
 
                     /** NativeFlowButton buttonParamsJson. */
-                    public buttonParamsJson: string;
+                    public buttonParamsJson?: (string|null);
+
+                    /** NativeFlowButton _name. */
+                    public _name?: "name";
+
+                    /** NativeFlowButton _buttonParamsJson. */
+                    public _buttonParamsJson?: "buttonParamsJson";
 
                     /**
                      * Creates a new NativeFlowButton instance using the specified properties.
@@ -15989,13 +17250,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for NativeFlowButton
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
             }
 
@@ -16022,13 +17276,22 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.IShopMessage);
 
                 /** ShopMessage id. */
-                public id: string;
+                public id?: (string|null);
 
                 /** ShopMessage surface. */
-                public surface: E2E.Message.InteractiveMessage.ShopMessage.Surface;
+                public surface?: (E2E.Message.InteractiveMessage.ShopMessage.Surface|null);
 
                 /** ShopMessage messageVersion. */
-                public messageVersion: number;
+                public messageVersion?: (number|null);
+
+                /** ShopMessage _id. */
+                public _id?: "id";
+
+                /** ShopMessage _surface. */
+                public _surface?: "surface";
+
+                /** ShopMessage _messageVersion. */
+                public _messageVersion?: "messageVersion";
 
                 /**
                  * Creates a new ShopMessage instance using the specified properties.
@@ -16099,13 +17362,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for ShopMessage
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace ShopMessage {
@@ -16150,6 +17406,12 @@ export namespace E2E {
 
             /** InteractiveResponseMessage nativeFlowResponseMessage. */
             public nativeFlowResponseMessage?: (E2E.Message.InteractiveResponseMessage.INativeFlowResponseMessage|null);
+
+            /** InteractiveResponseMessage _body. */
+            public _body?: "body";
+
+            /** InteractiveResponseMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /** InteractiveResponseMessage interactiveResponseMessage. */
             public interactiveResponseMessage?: "nativeFlowResponseMessage";
@@ -16223,13 +17485,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InteractiveResponseMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace InteractiveResponseMessage {
@@ -16254,10 +17509,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveResponseMessage.IBody);
 
                 /** Body text. */
-                public text: string;
+                public text?: (string|null);
 
                 /** Body format. */
-                public format: E2E.Message.InteractiveResponseMessage.Body.Format;
+                public format?: (E2E.Message.InteractiveResponseMessage.Body.Format|null);
+
+                /** Body _text. */
+                public _text?: "text";
+
+                /** Body _format. */
+                public _format?: "format";
 
                 /**
                  * Creates a new Body instance using the specified properties.
@@ -16328,13 +17589,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Body
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace Body {
@@ -16369,13 +17623,22 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveResponseMessage.INativeFlowResponseMessage);
 
                 /** NativeFlowResponseMessage name. */
-                public name: string;
+                public name?: (string|null);
 
                 /** NativeFlowResponseMessage paramsJson. */
-                public paramsJson: string;
+                public paramsJson?: (string|null);
 
                 /** NativeFlowResponseMessage version. */
-                public version: number;
+                public version?: (number|null);
+
+                /** NativeFlowResponseMessage _name. */
+                public _name?: "name";
+
+                /** NativeFlowResponseMessage _paramsJson. */
+                public _paramsJson?: "paramsJson";
+
+                /** NativeFlowResponseMessage _version. */
+                public _version?: "version";
 
                 /**
                  * Creates a new NativeFlowResponseMessage instance using the specified properties.
@@ -16446,13 +17709,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for NativeFlowResponseMessage
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -16500,34 +17756,64 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IInvoiceMessage);
 
             /** InvoiceMessage note. */
-            public note: string;
+            public note?: (string|null);
 
             /** InvoiceMessage token. */
-            public token: string;
+            public token?: (string|null);
 
             /** InvoiceMessage attachmentType. */
-            public attachmentType: E2E.Message.InvoiceMessage.AttachmentType;
+            public attachmentType?: (E2E.Message.InvoiceMessage.AttachmentType|null);
 
             /** InvoiceMessage attachmentMimetype. */
-            public attachmentMimetype: string;
+            public attachmentMimetype?: (string|null);
 
             /** InvoiceMessage attachmentMediaKey. */
-            public attachmentMediaKey: Uint8Array;
+            public attachmentMediaKey?: (Uint8Array|null);
 
             /** InvoiceMessage attachmentMediaKeyTimestamp. */
-            public attachmentMediaKeyTimestamp: (number|Long);
+            public attachmentMediaKeyTimestamp?: (number|Long|null);
 
             /** InvoiceMessage attachmentFileSha256. */
-            public attachmentFileSha256: Uint8Array;
+            public attachmentFileSha256?: (Uint8Array|null);
 
             /** InvoiceMessage attachmentFileEncSha256. */
-            public attachmentFileEncSha256: Uint8Array;
+            public attachmentFileEncSha256?: (Uint8Array|null);
 
             /** InvoiceMessage attachmentDirectPath. */
-            public attachmentDirectPath: string;
+            public attachmentDirectPath?: (string|null);
 
             /** InvoiceMessage attachmentJpegThumbnail. */
-            public attachmentJpegThumbnail: Uint8Array;
+            public attachmentJpegThumbnail?: (Uint8Array|null);
+
+            /** InvoiceMessage _note. */
+            public _note?: "note";
+
+            /** InvoiceMessage _token. */
+            public _token?: "token";
+
+            /** InvoiceMessage _attachmentType. */
+            public _attachmentType?: "attachmentType";
+
+            /** InvoiceMessage _attachmentMimetype. */
+            public _attachmentMimetype?: "attachmentMimetype";
+
+            /** InvoiceMessage _attachmentMediaKey. */
+            public _attachmentMediaKey?: "attachmentMediaKey";
+
+            /** InvoiceMessage _attachmentMediaKeyTimestamp. */
+            public _attachmentMediaKeyTimestamp?: "attachmentMediaKeyTimestamp";
+
+            /** InvoiceMessage _attachmentFileSha256. */
+            public _attachmentFileSha256?: "attachmentFileSha256";
+
+            /** InvoiceMessage _attachmentFileEncSha256. */
+            public _attachmentFileEncSha256?: "attachmentFileEncSha256";
+
+            /** InvoiceMessage _attachmentDirectPath. */
+            public _attachmentDirectPath?: "attachmentDirectPath";
+
+            /** InvoiceMessage _attachmentJpegThumbnail. */
+            public _attachmentJpegThumbnail?: "attachmentJpegThumbnail";
 
             /**
              * Creates a new InvoiceMessage instance using the specified properties.
@@ -16598,13 +17884,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InvoiceMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace InvoiceMessage {
@@ -16642,10 +17921,19 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** KeepInChatMessage keepType. */
-            public keepType: E2E.KeepType;
+            public keepType?: (E2E.KeepType|null);
 
             /** KeepInChatMessage timestampMs. */
-            public timestampMs: (number|Long);
+            public timestampMs?: (number|Long|null);
+
+            /** KeepInChatMessage _key. */
+            public _key?: "key";
+
+            /** KeepInChatMessage _keepType. */
+            public _keepType?: "keepType";
+
+            /** KeepInChatMessage _timestampMs. */
+            public _timestampMs?: "timestampMs";
 
             /**
              * Creates a new KeepInChatMessage instance using the specified properties.
@@ -16716,13 +18004,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for KeepInChatMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a LinkPreviewMetadata. */
@@ -16763,16 +18044,34 @@ export namespace E2E {
             public urlMetadata?: (E2E.Message.IURLMetadata|null);
 
             /** LinkPreviewMetadata fbExperimentId. */
-            public fbExperimentId: number;
+            public fbExperimentId?: (number|null);
 
             /** LinkPreviewMetadata linkMediaDuration. */
-            public linkMediaDuration: number;
+            public linkMediaDuration?: (number|null);
 
             /** LinkPreviewMetadata socialMediaPostType. */
-            public socialMediaPostType: E2E.Message.LinkPreviewMetadata.SocialMediaPostType;
+            public socialMediaPostType?: (E2E.Message.LinkPreviewMetadata.SocialMediaPostType|null);
 
             /** LinkPreviewMetadata linkInlineVideoMuted. */
-            public linkInlineVideoMuted: boolean;
+            public linkInlineVideoMuted?: (boolean|null);
+
+            /** LinkPreviewMetadata _paymentLinkMetadata. */
+            public _paymentLinkMetadata?: "paymentLinkMetadata";
+
+            /** LinkPreviewMetadata _urlMetadata. */
+            public _urlMetadata?: "urlMetadata";
+
+            /** LinkPreviewMetadata _fbExperimentId. */
+            public _fbExperimentId?: "fbExperimentId";
+
+            /** LinkPreviewMetadata _linkMediaDuration. */
+            public _linkMediaDuration?: "linkMediaDuration";
+
+            /** LinkPreviewMetadata _socialMediaPostType. */
+            public _socialMediaPostType?: "socialMediaPostType";
+
+            /** LinkPreviewMetadata _linkInlineVideoMuted. */
+            public _linkInlineVideoMuted?: "linkInlineVideoMuted";
 
             /**
              * Creates a new LinkPreviewMetadata instance using the specified properties.
@@ -16843,13 +18142,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LinkPreviewMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace LinkPreviewMetadata {
@@ -16903,16 +18195,16 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IListMessage);
 
             /** ListMessage title. */
-            public title: string;
+            public title?: (string|null);
 
             /** ListMessage description. */
-            public description: string;
+            public description?: (string|null);
 
             /** ListMessage buttonText. */
-            public buttonText: string;
+            public buttonText?: (string|null);
 
             /** ListMessage listType. */
-            public listType: E2E.Message.ListMessage.ListType;
+            public listType?: (E2E.Message.ListMessage.ListType|null);
 
             /** ListMessage sections. */
             public sections: E2E.Message.ListMessage.ISection[];
@@ -16921,10 +18213,31 @@ export namespace E2E {
             public productListInfo?: (E2E.Message.ListMessage.IProductListInfo|null);
 
             /** ListMessage footerText. */
-            public footerText: string;
+            public footerText?: (string|null);
 
             /** ListMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** ListMessage _title. */
+            public _title?: "title";
+
+            /** ListMessage _description. */
+            public _description?: "description";
+
+            /** ListMessage _buttonText. */
+            public _buttonText?: "buttonText";
+
+            /** ListMessage _listType. */
+            public _listType?: "listType";
+
+            /** ListMessage _productListInfo. */
+            public _productListInfo?: "productListInfo";
+
+            /** ListMessage _footerText. */
+            public _footerText?: "footerText";
+
+            /** ListMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new ListMessage instance using the specified properties.
@@ -16995,13 +18308,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ListMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ListMessage {
@@ -17030,7 +18336,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.IProduct);
 
                 /** Product productId. */
-                public productId: string;
+                public productId?: (string|null);
+
+                /** Product _productId. */
+                public _productId?: "productId";
 
                 /**
                  * Creates a new Product instance using the specified properties.
@@ -17101,13 +18410,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Product
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a ProductListHeaderImage. */
@@ -17130,10 +18432,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.IProductListHeaderImage);
 
                 /** ProductListHeaderImage productId. */
-                public productId: string;
+                public productId?: (string|null);
 
                 /** ProductListHeaderImage jpegThumbnail. */
-                public jpegThumbnail: Uint8Array;
+                public jpegThumbnail?: (Uint8Array|null);
+
+                /** ProductListHeaderImage _productId. */
+                public _productId?: "productId";
+
+                /** ProductListHeaderImage _jpegThumbnail. */
+                public _jpegThumbnail?: "jpegThumbnail";
 
                 /**
                  * Creates a new ProductListHeaderImage instance using the specified properties.
@@ -17204,13 +18512,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for ProductListHeaderImage
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a ProductListInfo. */
@@ -17242,7 +18543,13 @@ export namespace E2E {
                 public headerImage?: (E2E.Message.ListMessage.IProductListHeaderImage|null);
 
                 /** ProductListInfo businessOwnerJid. */
-                public businessOwnerJid: string;
+                public businessOwnerJid?: (string|null);
+
+                /** ProductListInfo _headerImage. */
+                public _headerImage?: "headerImage";
+
+                /** ProductListInfo _businessOwnerJid. */
+                public _businessOwnerJid?: "businessOwnerJid";
 
                 /**
                  * Creates a new ProductListInfo instance using the specified properties.
@@ -17313,13 +18620,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for ProductListInfo
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a ProductSection. */
@@ -17342,10 +18642,13 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.IProductSection);
 
                 /** ProductSection title. */
-                public title: string;
+                public title?: (string|null);
 
                 /** ProductSection products. */
                 public products: E2E.Message.ListMessage.IProduct[];
+
+                /** ProductSection _title. */
+                public _title?: "title";
 
                 /**
                  * Creates a new ProductSection instance using the specified properties.
@@ -17416,13 +18719,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for ProductSection
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a Row. */
@@ -17448,13 +18744,22 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.IRow);
 
                 /** Row title. */
-                public title: string;
+                public title?: (string|null);
 
                 /** Row description. */
-                public description: string;
+                public description?: (string|null);
 
                 /** Row rowId. */
-                public rowId: string;
+                public rowId?: (string|null);
+
+                /** Row _title. */
+                public _title?: "title";
+
+                /** Row _description. */
+                public _description?: "description";
+
+                /** Row _rowId. */
+                public _rowId?: "rowId";
 
                 /**
                  * Creates a new Row instance using the specified properties.
@@ -17525,13 +18830,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Row
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a Section. */
@@ -17554,10 +18852,13 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.ISection);
 
                 /** Section title. */
-                public title: string;
+                public title?: (string|null);
 
                 /** Section rows. */
                 public rows: E2E.Message.ListMessage.IRow[];
+
+                /** Section _title. */
+                public _title?: "title";
 
                 /**
                  * Creates a new Section instance using the specified properties.
@@ -17628,13 +18929,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Section
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -17667,10 +18961,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IListResponseMessage);
 
             /** ListResponseMessage title. */
-            public title: string;
+            public title?: (string|null);
 
             /** ListResponseMessage listType. */
-            public listType: E2E.Message.ListResponseMessage.ListType;
+            public listType?: (E2E.Message.ListResponseMessage.ListType|null);
 
             /** ListResponseMessage singleSelectReply. */
             public singleSelectReply?: (E2E.Message.ListResponseMessage.ISingleSelectReply|null);
@@ -17679,7 +18973,22 @@ export namespace E2E {
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** ListResponseMessage description. */
-            public description: string;
+            public description?: (string|null);
+
+            /** ListResponseMessage _title. */
+            public _title?: "title";
+
+            /** ListResponseMessage _listType. */
+            public _listType?: "listType";
+
+            /** ListResponseMessage _singleSelectReply. */
+            public _singleSelectReply?: "singleSelectReply";
+
+            /** ListResponseMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** ListResponseMessage _description. */
+            public _description?: "description";
 
             /**
              * Creates a new ListResponseMessage instance using the specified properties.
@@ -17750,13 +19059,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ListResponseMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ListResponseMessage {
@@ -17784,7 +19086,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListResponseMessage.ISingleSelectReply);
 
                 /** SingleSelectReply selectedRowId. */
-                public selectedRowId: string;
+                public selectedRowId?: (string|null);
+
+                /** SingleSelectReply _selectedRowId. */
+                public _selectedRowId?: "selectedRowId";
 
                 /**
                  * Creates a new SingleSelectReply instance using the specified properties.
@@ -17855,13 +19160,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for SingleSelectReply
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -17909,34 +19207,64 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ILiveLocationMessage);
 
             /** LiveLocationMessage degreesLatitude. */
-            public degreesLatitude: number;
+            public degreesLatitude?: (number|null);
 
             /** LiveLocationMessage degreesLongitude. */
-            public degreesLongitude: number;
+            public degreesLongitude?: (number|null);
 
             /** LiveLocationMessage accuracyInMeters. */
-            public accuracyInMeters: number;
+            public accuracyInMeters?: (number|null);
 
             /** LiveLocationMessage speedInMps. */
-            public speedInMps: number;
+            public speedInMps?: (number|null);
 
             /** LiveLocationMessage degreesClockwiseFromMagneticNorth. */
-            public degreesClockwiseFromMagneticNorth: number;
+            public degreesClockwiseFromMagneticNorth?: (number|null);
 
             /** LiveLocationMessage caption. */
-            public caption: string;
+            public caption?: (string|null);
 
             /** LiveLocationMessage sequenceNumber. */
-            public sequenceNumber: (number|Long);
+            public sequenceNumber?: (number|Long|null);
 
             /** LiveLocationMessage timeOffset. */
-            public timeOffset: number;
+            public timeOffset?: (number|null);
 
             /** LiveLocationMessage jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** LiveLocationMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** LiveLocationMessage _degreesLatitude. */
+            public _degreesLatitude?: "degreesLatitude";
+
+            /** LiveLocationMessage _degreesLongitude. */
+            public _degreesLongitude?: "degreesLongitude";
+
+            /** LiveLocationMessage _accuracyInMeters. */
+            public _accuracyInMeters?: "accuracyInMeters";
+
+            /** LiveLocationMessage _speedInMps. */
+            public _speedInMps?: "speedInMps";
+
+            /** LiveLocationMessage _degreesClockwiseFromMagneticNorth. */
+            public _degreesClockwiseFromMagneticNorth?: "degreesClockwiseFromMagneticNorth";
+
+            /** LiveLocationMessage _caption. */
+            public _caption?: "caption";
+
+            /** LiveLocationMessage _sequenceNumber. */
+            public _sequenceNumber?: "sequenceNumber";
+
+            /** LiveLocationMessage _timeOffset. */
+            public _timeOffset?: "timeOffset";
+
+            /** LiveLocationMessage _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** LiveLocationMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new LiveLocationMessage instance using the specified properties.
@@ -18007,13 +19335,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LiveLocationMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a LocationMessage. */
@@ -18066,40 +19387,76 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ILocationMessage);
 
             /** LocationMessage degreesLatitude. */
-            public degreesLatitude: number;
+            public degreesLatitude?: (number|null);
 
             /** LocationMessage degreesLongitude. */
-            public degreesLongitude: number;
+            public degreesLongitude?: (number|null);
 
             /** LocationMessage name. */
-            public name: string;
+            public name?: (string|null);
 
             /** LocationMessage address. */
-            public address: string;
+            public address?: (string|null);
 
             /** LocationMessage url. */
-            public url: string;
+            public url?: (string|null);
 
             /** LocationMessage isLive. */
-            public isLive: boolean;
+            public isLive?: (boolean|null);
 
             /** LocationMessage accuracyInMeters. */
-            public accuracyInMeters: number;
+            public accuracyInMeters?: (number|null);
 
             /** LocationMessage speedInMps. */
-            public speedInMps: number;
+            public speedInMps?: (number|null);
 
             /** LocationMessage degreesClockwiseFromMagneticNorth. */
-            public degreesClockwiseFromMagneticNorth: number;
+            public degreesClockwiseFromMagneticNorth?: (number|null);
 
             /** LocationMessage comment. */
-            public comment: string;
+            public comment?: (string|null);
 
             /** LocationMessage jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** LocationMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** LocationMessage _degreesLatitude. */
+            public _degreesLatitude?: "degreesLatitude";
+
+            /** LocationMessage _degreesLongitude. */
+            public _degreesLongitude?: "degreesLongitude";
+
+            /** LocationMessage _name. */
+            public _name?: "name";
+
+            /** LocationMessage _address. */
+            public _address?: "address";
+
+            /** LocationMessage _url. */
+            public _url?: "url";
+
+            /** LocationMessage _isLive. */
+            public _isLive?: "isLive";
+
+            /** LocationMessage _accuracyInMeters. */
+            public _accuracyInMeters?: "accuracyInMeters";
+
+            /** LocationMessage _speedInMps. */
+            public _speedInMps?: "speedInMps";
+
+            /** LocationMessage _degreesClockwiseFromMagneticNorth. */
+            public _degreesClockwiseFromMagneticNorth?: "degreesClockwiseFromMagneticNorth";
+
+            /** LocationMessage _comment. */
+            public _comment?: "comment";
+
+            /** LocationMessage _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** LocationMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new LocationMessage instance using the specified properties.
@@ -18170,13 +19527,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LocationMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a MMSThumbnailMetadata. */
@@ -18217,28 +19567,52 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IMMSThumbnailMetadata);
 
             /** MMSThumbnailMetadata thumbnailDirectPath. */
-            public thumbnailDirectPath: string;
+            public thumbnailDirectPath?: (string|null);
 
             /** MMSThumbnailMetadata thumbnailSha256. */
-            public thumbnailSha256: Uint8Array;
+            public thumbnailSha256?: (Uint8Array|null);
 
             /** MMSThumbnailMetadata thumbnailEncSha256. */
-            public thumbnailEncSha256: Uint8Array;
+            public thumbnailEncSha256?: (Uint8Array|null);
 
             /** MMSThumbnailMetadata mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** MMSThumbnailMetadata mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** MMSThumbnailMetadata thumbnailHeight. */
-            public thumbnailHeight: number;
+            public thumbnailHeight?: (number|null);
 
             /** MMSThumbnailMetadata thumbnailWidth. */
-            public thumbnailWidth: number;
+            public thumbnailWidth?: (number|null);
 
             /** MMSThumbnailMetadata mediaKeyDomain. */
-            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
+            public mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
+
+            /** MMSThumbnailMetadata _thumbnailDirectPath. */
+            public _thumbnailDirectPath?: "thumbnailDirectPath";
+
+            /** MMSThumbnailMetadata _thumbnailSha256. */
+            public _thumbnailSha256?: "thumbnailSha256";
+
+            /** MMSThumbnailMetadata _thumbnailEncSha256. */
+            public _thumbnailEncSha256?: "thumbnailEncSha256";
+
+            /** MMSThumbnailMetadata _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** MMSThumbnailMetadata _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** MMSThumbnailMetadata _thumbnailHeight. */
+            public _thumbnailHeight?: "thumbnailHeight";
+
+            /** MMSThumbnailMetadata _thumbnailWidth. */
+            public _thumbnailWidth?: "thumbnailWidth";
+
+            /** MMSThumbnailMetadata _mediaKeyDomain. */
+            public _mediaKeyDomain?: "mediaKeyDomain";
 
             /**
              * Creates a new MMSThumbnailMetadata instance using the specified properties.
@@ -18309,13 +19683,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MMSThumbnailMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** MediaKeyDomain enum. */
@@ -18365,28 +19732,52 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IMessageHistoryBundle);
 
             /** MessageHistoryBundle mimetype. */
-            public mimetype: string;
+            public mimetype?: (string|null);
 
             /** MessageHistoryBundle fileSha256. */
-            public fileSha256: Uint8Array;
+            public fileSha256?: (Uint8Array|null);
 
             /** MessageHistoryBundle mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** MessageHistoryBundle fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** MessageHistoryBundle directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
 
             /** MessageHistoryBundle mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** MessageHistoryBundle contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** MessageHistoryBundle messageHistoryMetadata. */
             public messageHistoryMetadata?: (E2E.Message.IMessageHistoryMetadata|null);
+
+            /** MessageHistoryBundle _mimetype. */
+            public _mimetype?: "mimetype";
+
+            /** MessageHistoryBundle _fileSha256. */
+            public _fileSha256?: "fileSha256";
+
+            /** MessageHistoryBundle _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** MessageHistoryBundle _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** MessageHistoryBundle _directPath. */
+            public _directPath?: "directPath";
+
+            /** MessageHistoryBundle _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** MessageHistoryBundle _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** MessageHistoryBundle _messageHistoryMetadata. */
+            public _messageHistoryMetadata?: "messageHistoryMetadata";
 
             /**
              * Creates a new MessageHistoryBundle instance using the specified properties.
@@ -18457,13 +19848,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MessageHistoryBundle
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a MessageHistoryMetadata. */
@@ -18492,10 +19876,16 @@ export namespace E2E {
             public historyReceivers: string[];
 
             /** MessageHistoryMetadata oldestMessageTimestamp. */
-            public oldestMessageTimestamp: (number|Long);
+            public oldestMessageTimestamp?: (number|Long|null);
 
             /** MessageHistoryMetadata messageCount. */
-            public messageCount: (number|Long);
+            public messageCount?: (number|Long|null);
+
+            /** MessageHistoryMetadata _oldestMessageTimestamp. */
+            public _oldestMessageTimestamp?: "oldestMessageTimestamp";
+
+            /** MessageHistoryMetadata _messageCount. */
+            public _messageCount?: "messageCount";
 
             /**
              * Creates a new MessageHistoryMetadata instance using the specified properties.
@@ -18566,13 +19956,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MessageHistoryMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a MessageHistoryNotice. */
@@ -18599,6 +19982,12 @@ export namespace E2E {
 
             /** MessageHistoryNotice messageHistoryMetadata. */
             public messageHistoryMetadata?: (E2E.Message.IMessageHistoryMetadata|null);
+
+            /** MessageHistoryNotice _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** MessageHistoryNotice _messageHistoryMetadata. */
+            public _messageHistoryMetadata?: "messageHistoryMetadata";
 
             /**
              * Creates a new MessageHistoryNotice instance using the specified properties.
@@ -18669,13 +20058,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MessageHistoryNotice
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a NewsletterAdminInviteMessage. */
@@ -18710,22 +20092,40 @@ export namespace E2E {
             constructor(properties?: E2E.Message.INewsletterAdminInviteMessage);
 
             /** NewsletterAdminInviteMessage newsletterJid. */
-            public newsletterJid: string;
+            public newsletterJid?: (string|null);
 
             /** NewsletterAdminInviteMessage newsletterName. */
-            public newsletterName: string;
+            public newsletterName?: (string|null);
 
             /** NewsletterAdminInviteMessage jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** NewsletterAdminInviteMessage caption. */
-            public caption: string;
+            public caption?: (string|null);
 
             /** NewsletterAdminInviteMessage inviteExpiration. */
-            public inviteExpiration: (number|Long);
+            public inviteExpiration?: (number|Long|null);
 
             /** NewsletterAdminInviteMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** NewsletterAdminInviteMessage _newsletterJid. */
+            public _newsletterJid?: "newsletterJid";
+
+            /** NewsletterAdminInviteMessage _newsletterName. */
+            public _newsletterName?: "newsletterName";
+
+            /** NewsletterAdminInviteMessage _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** NewsletterAdminInviteMessage _caption. */
+            public _caption?: "caption";
+
+            /** NewsletterAdminInviteMessage _inviteExpiration. */
+            public _inviteExpiration?: "inviteExpiration";
+
+            /** NewsletterAdminInviteMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new NewsletterAdminInviteMessage instance using the specified properties.
@@ -18796,13 +20196,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for NewsletterAdminInviteMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a NewsletterFollowerInviteMessage. */
@@ -18834,19 +20227,34 @@ export namespace E2E {
             constructor(properties?: E2E.Message.INewsletterFollowerInviteMessage);
 
             /** NewsletterFollowerInviteMessage newsletterJid. */
-            public newsletterJid: string;
+            public newsletterJid?: (string|null);
 
             /** NewsletterFollowerInviteMessage newsletterName. */
-            public newsletterName: string;
+            public newsletterName?: (string|null);
 
             /** NewsletterFollowerInviteMessage jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** NewsletterFollowerInviteMessage caption. */
-            public caption: string;
+            public caption?: (string|null);
 
             /** NewsletterFollowerInviteMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** NewsletterFollowerInviteMessage _newsletterJid. */
+            public _newsletterJid?: "newsletterJid";
+
+            /** NewsletterFollowerInviteMessage _newsletterName. */
+            public _newsletterName?: "newsletterName";
+
+            /** NewsletterFollowerInviteMessage _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** NewsletterFollowerInviteMessage _caption. */
+            public _caption?: "caption";
+
+            /** NewsletterFollowerInviteMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new NewsletterFollowerInviteMessage instance using the specified properties.
@@ -18917,13 +20325,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for NewsletterFollowerInviteMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an OrderMessage. */
@@ -18985,49 +20386,94 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IOrderMessage);
 
             /** OrderMessage orderId. */
-            public orderId: string;
+            public orderId?: (string|null);
 
             /** OrderMessage thumbnail. */
-            public thumbnail: Uint8Array;
+            public thumbnail?: (Uint8Array|null);
 
             /** OrderMessage itemCount. */
-            public itemCount: number;
+            public itemCount?: (number|null);
 
             /** OrderMessage status. */
-            public status: E2E.Message.OrderMessage.OrderStatus;
+            public status?: (E2E.Message.OrderMessage.OrderStatus|null);
 
             /** OrderMessage surface. */
-            public surface: E2E.Message.OrderMessage.OrderSurface;
+            public surface?: (E2E.Message.OrderMessage.OrderSurface|null);
 
             /** OrderMessage message. */
-            public message: string;
+            public message?: (string|null);
 
             /** OrderMessage orderTitle. */
-            public orderTitle: string;
+            public orderTitle?: (string|null);
 
             /** OrderMessage sellerJid. */
-            public sellerJid: string;
+            public sellerJid?: (string|null);
 
             /** OrderMessage token. */
-            public token: string;
+            public token?: (string|null);
 
             /** OrderMessage totalAmount1000. */
-            public totalAmount1000: (number|Long);
+            public totalAmount1000?: (number|Long|null);
 
             /** OrderMessage totalCurrencyCode. */
-            public totalCurrencyCode: string;
+            public totalCurrencyCode?: (string|null);
 
             /** OrderMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** OrderMessage messageVersion. */
-            public messageVersion: number;
+            public messageVersion?: (number|null);
 
             /** OrderMessage orderRequestMessageId. */
             public orderRequestMessageId?: (Protocol.IMessageKey|null);
 
             /** OrderMessage catalogType. */
-            public catalogType: string;
+            public catalogType?: (string|null);
+
+            /** OrderMessage _orderId. */
+            public _orderId?: "orderId";
+
+            /** OrderMessage _thumbnail. */
+            public _thumbnail?: "thumbnail";
+
+            /** OrderMessage _itemCount. */
+            public _itemCount?: "itemCount";
+
+            /** OrderMessage _status. */
+            public _status?: "status";
+
+            /** OrderMessage _surface. */
+            public _surface?: "surface";
+
+            /** OrderMessage _message. */
+            public _message?: "message";
+
+            /** OrderMessage _orderTitle. */
+            public _orderTitle?: "orderTitle";
+
+            /** OrderMessage _sellerJid. */
+            public _sellerJid?: "sellerJid";
+
+            /** OrderMessage _token. */
+            public _token?: "token";
+
+            /** OrderMessage _totalAmount1000. */
+            public _totalAmount1000?: "totalAmount1000";
+
+            /** OrderMessage _totalCurrencyCode. */
+            public _totalCurrencyCode?: "totalCurrencyCode";
+
+            /** OrderMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** OrderMessage _messageVersion. */
+            public _messageVersion?: "messageVersion";
+
+            /** OrderMessage _orderRequestMessageId. */
+            public _orderRequestMessageId?: "orderRequestMessageId";
+
+            /** OrderMessage _catalogType. */
+            public _catalogType?: "catalogType";
 
             /**
              * Creates a new OrderMessage instance using the specified properties.
@@ -19098,13 +20544,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for OrderMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace OrderMessage {
@@ -19142,10 +20581,16 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPaymentInviteMessage);
 
             /** PaymentInviteMessage serviceType. */
-            public serviceType: E2E.Message.PaymentInviteMessage.ServiceType;
+            public serviceType?: (E2E.Message.PaymentInviteMessage.ServiceType|null);
 
             /** PaymentInviteMessage expiryTimestamp. */
-            public expiryTimestamp: (number|Long);
+            public expiryTimestamp?: (number|Long|null);
+
+            /** PaymentInviteMessage _serviceType. */
+            public _serviceType?: "serviceType";
+
+            /** PaymentInviteMessage _expiryTimestamp. */
+            public _expiryTimestamp?: "expiryTimestamp";
 
             /**
              * Creates a new PaymentInviteMessage instance using the specified properties.
@@ -19216,13 +20661,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PaymentInviteMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace PaymentInviteMessage {
@@ -19266,6 +20704,15 @@ export namespace E2E {
 
             /** PaymentLinkMetadata provider. */
             public provider?: (E2E.Message.PaymentLinkMetadata.IPaymentLinkProvider|null);
+
+            /** PaymentLinkMetadata _button. */
+            public _button?: "button";
+
+            /** PaymentLinkMetadata _header. */
+            public _header?: "header";
+
+            /** PaymentLinkMetadata _provider. */
+            public _provider?: "provider";
 
             /**
              * Creates a new PaymentLinkMetadata instance using the specified properties.
@@ -19336,13 +20783,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PaymentLinkMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace PaymentLinkMetadata {
@@ -19364,7 +20804,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PaymentLinkMetadata.IPaymentLinkButton);
 
                 /** PaymentLinkButton displayText. */
-                public displayText: string;
+                public displayText?: (string|null);
+
+                /** PaymentLinkButton _displayText. */
+                public _displayText?: "displayText";
 
                 /**
                  * Creates a new PaymentLinkButton instance using the specified properties.
@@ -19435,13 +20878,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for PaymentLinkButton
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a PaymentLinkHeader. */
@@ -19461,7 +20897,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PaymentLinkMetadata.IPaymentLinkHeader);
 
                 /** PaymentLinkHeader headerType. */
-                public headerType: E2E.Message.PaymentLinkMetadata.PaymentLinkHeader.PaymentLinkHeaderType;
+                public headerType?: (E2E.Message.PaymentLinkMetadata.PaymentLinkHeader.PaymentLinkHeaderType|null);
+
+                /** PaymentLinkHeader _headerType. */
+                public _headerType?: "headerType";
 
                 /**
                  * Creates a new PaymentLinkHeader instance using the specified properties.
@@ -19532,13 +20971,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for PaymentLinkHeader
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace PaymentLinkHeader {
@@ -19567,7 +20999,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PaymentLinkMetadata.IPaymentLinkProvider);
 
                 /** PaymentLinkProvider paramsJson. */
-                public paramsJson: string;
+                public paramsJson?: (string|null);
+
+                /** PaymentLinkProvider _paramsJson. */
+                public _paramsJson?: "paramsJson";
 
                 /**
                  * Creates a new PaymentLinkProvider instance using the specified properties.
@@ -19638,13 +21073,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for PaymentLinkProvider
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -19686,7 +21114,7 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPeerDataOperationRequestMessage);
 
             /** PeerDataOperationRequestMessage peerDataOperationRequestType. */
-            public peerDataOperationRequestType: E2E.Message.PeerDataOperationRequestType;
+            public peerDataOperationRequestType?: (E2E.Message.PeerDataOperationRequestType|null);
 
             /** PeerDataOperationRequestMessage requestStickerReupload. */
             public requestStickerReupload: E2E.Message.PeerDataOperationRequestMessage.IRequestStickerReupload[];
@@ -19708,6 +21136,21 @@ export namespace E2E {
 
             /** PeerDataOperationRequestMessage historySyncChunkRetryRequest. */
             public historySyncChunkRetryRequest?: (E2E.Message.PeerDataOperationRequestMessage.IHistorySyncChunkRetryRequest|null);
+
+            /** PeerDataOperationRequestMessage _peerDataOperationRequestType. */
+            public _peerDataOperationRequestType?: "peerDataOperationRequestType";
+
+            /** PeerDataOperationRequestMessage _historySyncOnDemandRequest. */
+            public _historySyncOnDemandRequest?: "historySyncOnDemandRequest";
+
+            /** PeerDataOperationRequestMessage _fullHistorySyncOnDemandRequest. */
+            public _fullHistorySyncOnDemandRequest?: "fullHistorySyncOnDemandRequest";
+
+            /** PeerDataOperationRequestMessage _syncdCollectionFatalRecoveryRequest. */
+            public _syncdCollectionFatalRecoveryRequest?: "syncdCollectionFatalRecoveryRequest";
+
+            /** PeerDataOperationRequestMessage _historySyncChunkRetryRequest. */
+            public _historySyncChunkRetryRequest?: "historySyncChunkRetryRequest";
 
             /**
              * Creates a new PeerDataOperationRequestMessage instance using the specified properties.
@@ -19778,13 +21221,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PeerDataOperationRequestMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace PeerDataOperationRequestMessage {
@@ -19813,6 +21249,12 @@ export namespace E2E {
 
                 /** FullHistorySyncOnDemandRequest historySyncConfig. */
                 public historySyncConfig?: (CompanionReg.DeviceProps.IHistorySyncConfig|null);
+
+                /** FullHistorySyncOnDemandRequest _requestMetadata. */
+                public _requestMetadata?: "requestMetadata";
+
+                /** FullHistorySyncOnDemandRequest _historySyncConfig. */
+                public _historySyncConfig?: "historySyncConfig";
 
                 /**
                  * Creates a new FullHistorySyncOnDemandRequest instance using the specified properties.
@@ -19883,13 +21325,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for FullHistorySyncOnDemandRequest
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a HistorySyncChunkRetryRequest. */
@@ -19918,16 +21353,28 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestMessage.IHistorySyncChunkRetryRequest);
 
                 /** HistorySyncChunkRetryRequest syncType. */
-                public syncType: E2E.Message.HistorySyncType;
+                public syncType?: (E2E.Message.HistorySyncType|null);
 
                 /** HistorySyncChunkRetryRequest chunkOrder. */
-                public chunkOrder: number;
+                public chunkOrder?: (number|null);
 
                 /** HistorySyncChunkRetryRequest chunkNotificationId. */
-                public chunkNotificationId: string;
+                public chunkNotificationId?: (string|null);
 
                 /** HistorySyncChunkRetryRequest regenerateChunk. */
-                public regenerateChunk: boolean;
+                public regenerateChunk?: (boolean|null);
+
+                /** HistorySyncChunkRetryRequest _syncType. */
+                public _syncType?: "syncType";
+
+                /** HistorySyncChunkRetryRequest _chunkOrder. */
+                public _chunkOrder?: "chunkOrder";
+
+                /** HistorySyncChunkRetryRequest _chunkNotificationId. */
+                public _chunkNotificationId?: "chunkNotificationId";
+
+                /** HistorySyncChunkRetryRequest _regenerateChunk. */
+                public _regenerateChunk?: "regenerateChunk";
 
                 /**
                  * Creates a new HistorySyncChunkRetryRequest instance using the specified properties.
@@ -19998,13 +21445,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for HistorySyncChunkRetryRequest
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a HistorySyncOnDemandRequest. */
@@ -20039,22 +21479,40 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestMessage.IHistorySyncOnDemandRequest);
 
                 /** HistorySyncOnDemandRequest chatJid. */
-                public chatJid: string;
+                public chatJid?: (string|null);
 
                 /** HistorySyncOnDemandRequest oldestMsgId. */
-                public oldestMsgId: string;
+                public oldestMsgId?: (string|null);
 
                 /** HistorySyncOnDemandRequest oldestMsgFromMe. */
-                public oldestMsgFromMe: boolean;
+                public oldestMsgFromMe?: (boolean|null);
 
                 /** HistorySyncOnDemandRequest onDemandMsgCount. */
-                public onDemandMsgCount: number;
+                public onDemandMsgCount?: (number|null);
 
                 /** HistorySyncOnDemandRequest oldestMsgTimestampMs. */
-                public oldestMsgTimestampMs: (number|Long);
+                public oldestMsgTimestampMs?: (number|Long|null);
 
                 /** HistorySyncOnDemandRequest accountLid. */
-                public accountLid: string;
+                public accountLid?: (string|null);
+
+                /** HistorySyncOnDemandRequest _chatJid. */
+                public _chatJid?: "chatJid";
+
+                /** HistorySyncOnDemandRequest _oldestMsgId. */
+                public _oldestMsgId?: "oldestMsgId";
+
+                /** HistorySyncOnDemandRequest _oldestMsgFromMe. */
+                public _oldestMsgFromMe?: "oldestMsgFromMe";
+
+                /** HistorySyncOnDemandRequest _onDemandMsgCount. */
+                public _onDemandMsgCount?: "onDemandMsgCount";
+
+                /** HistorySyncOnDemandRequest _oldestMsgTimestampMs. */
+                public _oldestMsgTimestampMs?: "oldestMsgTimestampMs";
+
+                /** HistorySyncOnDemandRequest _accountLid. */
+                public _accountLid?: "accountLid";
 
                 /**
                  * Creates a new HistorySyncOnDemandRequest instance using the specified properties.
@@ -20125,13 +21583,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for HistorySyncOnDemandRequest
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a PlaceholderMessageResendRequest. */
@@ -20152,6 +21603,9 @@ export namespace E2E {
 
                 /** PlaceholderMessageResendRequest messageKey. */
                 public messageKey?: (Protocol.IMessageKey|null);
+
+                /** PlaceholderMessageResendRequest _messageKey. */
+                public _messageKey?: "messageKey";
 
                 /**
                  * Creates a new PlaceholderMessageResendRequest instance using the specified properties.
@@ -20222,13 +21676,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for PlaceholderMessageResendRequest
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a RequestStickerReupload. */
@@ -20248,7 +21695,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestMessage.IRequestStickerReupload);
 
                 /** RequestStickerReupload fileSha256. */
-                public fileSha256: string;
+                public fileSha256?: (string|null);
+
+                /** RequestStickerReupload _fileSha256. */
+                public _fileSha256?: "fileSha256";
 
                 /**
                  * Creates a new RequestStickerReupload instance using the specified properties.
@@ -20319,13 +21769,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for RequestStickerReupload
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a RequestUrlPreview. */
@@ -20348,10 +21791,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestMessage.IRequestUrlPreview);
 
                 /** RequestUrlPreview url. */
-                public url: string;
+                public url?: (string|null);
 
                 /** RequestUrlPreview includeHqThumbnail. */
-                public includeHqThumbnail: boolean;
+                public includeHqThumbnail?: (boolean|null);
+
+                /** RequestUrlPreview _url. */
+                public _url?: "url";
+
+                /** RequestUrlPreview _includeHqThumbnail. */
+                public _includeHqThumbnail?: "includeHqThumbnail";
 
                 /**
                  * Creates a new RequestUrlPreview instance using the specified properties.
@@ -20422,13 +21871,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for RequestUrlPreview
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a SyncDCollectionFatalRecoveryRequest. */
@@ -20451,10 +21893,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestMessage.ISyncDCollectionFatalRecoveryRequest);
 
                 /** SyncDCollectionFatalRecoveryRequest collectionName. */
-                public collectionName: string;
+                public collectionName?: (string|null);
 
                 /** SyncDCollectionFatalRecoveryRequest timestamp. */
-                public timestamp: (number|Long);
+                public timestamp?: (number|Long|null);
+
+                /** SyncDCollectionFatalRecoveryRequest _collectionName. */
+                public _collectionName?: "collectionName";
+
+                /** SyncDCollectionFatalRecoveryRequest _timestamp. */
+                public _timestamp?: "timestamp";
 
                 /**
                  * Creates a new SyncDCollectionFatalRecoveryRequest instance using the specified properties.
@@ -20525,13 +21973,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for SyncDCollectionFatalRecoveryRequest
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -20558,13 +21999,19 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPeerDataOperationRequestResponseMessage);
 
             /** PeerDataOperationRequestResponseMessage peerDataOperationRequestType. */
-            public peerDataOperationRequestType: E2E.Message.PeerDataOperationRequestType;
+            public peerDataOperationRequestType?: (E2E.Message.PeerDataOperationRequestType|null);
 
             /** PeerDataOperationRequestResponseMessage stanzaId. */
-            public stanzaId: string;
+            public stanzaId?: (string|null);
 
             /** PeerDataOperationRequestResponseMessage peerDataOperationResult. */
             public peerDataOperationResult: E2E.Message.PeerDataOperationRequestResponseMessage.IPeerDataOperationResult[];
+
+            /** PeerDataOperationRequestResponseMessage _peerDataOperationRequestType. */
+            public _peerDataOperationRequestType?: "peerDataOperationRequestType";
+
+            /** PeerDataOperationRequestResponseMessage _stanzaId. */
+            public _stanzaId?: "stanzaId";
 
             /**
              * Creates a new PeerDataOperationRequestResponseMessage instance using the specified properties.
@@ -20635,13 +22082,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PeerDataOperationRequestResponseMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace PeerDataOperationRequestResponseMessage {
@@ -20690,7 +22130,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.IPeerDataOperationResult);
 
                 /** PeerDataOperationResult mediaUploadResult. */
-                public mediaUploadResult: MmsRetry.MediaRetryNotification.ResultType;
+                public mediaUploadResult?: (MmsRetry.MediaRetryNotification.ResultType|null);
 
                 /** PeerDataOperationResult stickerMessage. */
                 public stickerMessage?: (E2E.Message.IStickerMessage|null);
@@ -20718,6 +22158,36 @@ export namespace E2E {
 
                 /** PeerDataOperationResult historySyncChunkRetryResponse. */
                 public historySyncChunkRetryResponse?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.IHistorySyncChunkRetryResponse|null);
+
+                /** PeerDataOperationResult _mediaUploadResult. */
+                public _mediaUploadResult?: "mediaUploadResult";
+
+                /** PeerDataOperationResult _stickerMessage. */
+                public _stickerMessage?: "stickerMessage";
+
+                /** PeerDataOperationResult _linkPreviewResponse. */
+                public _linkPreviewResponse?: "linkPreviewResponse";
+
+                /** PeerDataOperationResult _placeholderMessageResendResponse. */
+                public _placeholderMessageResendResponse?: "placeholderMessageResendResponse";
+
+                /** PeerDataOperationResult _waffleNonceFetchRequestResponse. */
+                public _waffleNonceFetchRequestResponse?: "waffleNonceFetchRequestResponse";
+
+                /** PeerDataOperationResult _fullHistorySyncOnDemandRequestResponse. */
+                public _fullHistorySyncOnDemandRequestResponse?: "fullHistorySyncOnDemandRequestResponse";
+
+                /** PeerDataOperationResult _companionMetaNonceFetchRequestResponse. */
+                public _companionMetaNonceFetchRequestResponse?: "companionMetaNonceFetchRequestResponse";
+
+                /** PeerDataOperationResult _syncdSnapshotFatalRecoveryResponse. */
+                public _syncdSnapshotFatalRecoveryResponse?: "syncdSnapshotFatalRecoveryResponse";
+
+                /** PeerDataOperationResult _companionCanonicalUserNonceFetchRequestResponse. */
+                public _companionCanonicalUserNonceFetchRequestResponse?: "companionCanonicalUserNonceFetchRequestResponse";
+
+                /** PeerDataOperationResult _historySyncChunkRetryResponse. */
+                public _historySyncChunkRetryResponse?: "historySyncChunkRetryResponse";
 
                 /**
                  * Creates a new PeerDataOperationResult instance using the specified properties.
@@ -20788,13 +22258,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for PeerDataOperationResult
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace PeerDataOperationResult {
@@ -20822,13 +22285,22 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ICompanionCanonicalUserNonceFetchResponse);
 
                     /** CompanionCanonicalUserNonceFetchResponse nonce. */
-                    public nonce: string;
+                    public nonce?: (string|null);
 
                     /** CompanionCanonicalUserNonceFetchResponse waFbid. */
-                    public waFbid: string;
+                    public waFbid?: (string|null);
 
                     /** CompanionCanonicalUserNonceFetchResponse forceRefresh. */
-                    public forceRefresh: boolean;
+                    public forceRefresh?: (boolean|null);
+
+                    /** CompanionCanonicalUserNonceFetchResponse _nonce. */
+                    public _nonce?: "nonce";
+
+                    /** CompanionCanonicalUserNonceFetchResponse _waFbid. */
+                    public _waFbid?: "waFbid";
+
+                    /** CompanionCanonicalUserNonceFetchResponse _forceRefresh. */
+                    public _forceRefresh?: "forceRefresh";
 
                     /**
                      * Creates a new CompanionCanonicalUserNonceFetchResponse instance using the specified properties.
@@ -20899,13 +22371,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for CompanionCanonicalUserNonceFetchResponse
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 /** Properties of a CompanionMetaNonceFetchResponse. */
@@ -20925,7 +22390,10 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ICompanionMetaNonceFetchResponse);
 
                     /** CompanionMetaNonceFetchResponse nonce. */
-                    public nonce: string;
+                    public nonce?: (string|null);
+
+                    /** CompanionMetaNonceFetchResponse _nonce. */
+                    public _nonce?: "nonce";
 
                     /**
                      * Creates a new CompanionMetaNonceFetchResponse instance using the specified properties.
@@ -20996,13 +22464,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for CompanionMetaNonceFetchResponse
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 /** Properties of a FullHistorySyncOnDemandRequestResponse. */
@@ -21028,7 +22489,13 @@ export namespace E2E {
                     public requestMetadata?: (E2E.Message.IFullHistorySyncOnDemandRequestMetadata|null);
 
                     /** FullHistorySyncOnDemandRequestResponse responseCode. */
-                    public responseCode: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandResponseCode;
+                    public responseCode?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandResponseCode|null);
+
+                    /** FullHistorySyncOnDemandRequestResponse _requestMetadata. */
+                    public _requestMetadata?: "requestMetadata";
+
+                    /** FullHistorySyncOnDemandRequestResponse _responseCode. */
+                    public _responseCode?: "responseCode";
 
                     /**
                      * Creates a new FullHistorySyncOnDemandRequestResponse instance using the specified properties.
@@ -21099,13 +22566,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for FullHistorySyncOnDemandRequestResponse
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 /** FullHistorySyncOnDemandResponseCode enum. */
@@ -21148,19 +22608,34 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.IHistorySyncChunkRetryResponse);
 
                     /** HistorySyncChunkRetryResponse syncType. */
-                    public syncType: E2E.Message.HistorySyncType;
+                    public syncType?: (E2E.Message.HistorySyncType|null);
 
                     /** HistorySyncChunkRetryResponse chunkOrder. */
-                    public chunkOrder: number;
+                    public chunkOrder?: (number|null);
 
                     /** HistorySyncChunkRetryResponse requestId. */
-                    public requestId: string;
+                    public requestId?: (string|null);
 
                     /** HistorySyncChunkRetryResponse responseCode. */
-                    public responseCode: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponseCode;
+                    public responseCode?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponseCode|null);
 
                     /** HistorySyncChunkRetryResponse canRecover. */
-                    public canRecover: boolean;
+                    public canRecover?: (boolean|null);
+
+                    /** HistorySyncChunkRetryResponse _syncType. */
+                    public _syncType?: "syncType";
+
+                    /** HistorySyncChunkRetryResponse _chunkOrder. */
+                    public _chunkOrder?: "chunkOrder";
+
+                    /** HistorySyncChunkRetryResponse _requestId. */
+                    public _requestId?: "requestId";
+
+                    /** HistorySyncChunkRetryResponse _responseCode. */
+                    public _responseCode?: "responseCode";
+
+                    /** HistorySyncChunkRetryResponse _canRecover. */
+                    public _canRecover?: "canRecover";
 
                     /**
                      * Creates a new HistorySyncChunkRetryResponse instance using the specified properties.
@@ -21231,13 +22706,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for HistorySyncChunkRetryResponse
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 /** HistorySyncChunkRetryResponseCode enum. */
@@ -21288,28 +22756,52 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ILinkPreviewResponse);
 
                     /** LinkPreviewResponse url. */
-                    public url: string;
+                    public url?: (string|null);
 
                     /** LinkPreviewResponse title. */
-                    public title: string;
+                    public title?: (string|null);
 
                     /** LinkPreviewResponse description. */
-                    public description: string;
+                    public description?: (string|null);
 
                     /** LinkPreviewResponse thumbData. */
-                    public thumbData: Uint8Array;
+                    public thumbData?: (Uint8Array|null);
 
                     /** LinkPreviewResponse matchText. */
-                    public matchText: string;
+                    public matchText?: (string|null);
 
                     /** LinkPreviewResponse previewType. */
-                    public previewType: string;
+                    public previewType?: (string|null);
 
                     /** LinkPreviewResponse hqThumbnail. */
                     public hqThumbnail?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.ILinkPreviewHighQualityThumbnail|null);
 
                     /** LinkPreviewResponse previewMetadata. */
                     public previewMetadata?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.IPaymentLinkPreviewMetadata|null);
+
+                    /** LinkPreviewResponse _url. */
+                    public _url?: "url";
+
+                    /** LinkPreviewResponse _title. */
+                    public _title?: "title";
+
+                    /** LinkPreviewResponse _description. */
+                    public _description?: "description";
+
+                    /** LinkPreviewResponse _thumbData. */
+                    public _thumbData?: "thumbData";
+
+                    /** LinkPreviewResponse _matchText. */
+                    public _matchText?: "matchText";
+
+                    /** LinkPreviewResponse _previewType. */
+                    public _previewType?: "previewType";
+
+                    /** LinkPreviewResponse _hqThumbnail. */
+                    public _hqThumbnail?: "hqThumbnail";
+
+                    /** LinkPreviewResponse _previewMetadata. */
+                    public _previewMetadata?: "previewMetadata";
 
                     /**
                      * Creates a new LinkPreviewResponse instance using the specified properties.
@@ -21380,13 +22872,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for LinkPreviewResponse
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 namespace LinkPreviewResponse {
@@ -21426,25 +22911,46 @@ export namespace E2E {
                         constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.ILinkPreviewHighQualityThumbnail);
 
                         /** LinkPreviewHighQualityThumbnail directPath. */
-                        public directPath: string;
+                        public directPath?: (string|null);
 
                         /** LinkPreviewHighQualityThumbnail thumbHash. */
-                        public thumbHash: string;
+                        public thumbHash?: (string|null);
 
                         /** LinkPreviewHighQualityThumbnail encThumbHash. */
-                        public encThumbHash: string;
+                        public encThumbHash?: (string|null);
 
                         /** LinkPreviewHighQualityThumbnail mediaKey. */
-                        public mediaKey: Uint8Array;
+                        public mediaKey?: (Uint8Array|null);
 
                         /** LinkPreviewHighQualityThumbnail mediaKeyTimestampMs. */
-                        public mediaKeyTimestampMs: (number|Long);
+                        public mediaKeyTimestampMs?: (number|Long|null);
 
                         /** LinkPreviewHighQualityThumbnail thumbWidth. */
-                        public thumbWidth: number;
+                        public thumbWidth?: (number|null);
 
                         /** LinkPreviewHighQualityThumbnail thumbHeight. */
-                        public thumbHeight: number;
+                        public thumbHeight?: (number|null);
+
+                        /** LinkPreviewHighQualityThumbnail _directPath. */
+                        public _directPath?: "directPath";
+
+                        /** LinkPreviewHighQualityThumbnail _thumbHash. */
+                        public _thumbHash?: "thumbHash";
+
+                        /** LinkPreviewHighQualityThumbnail _encThumbHash. */
+                        public _encThumbHash?: "encThumbHash";
+
+                        /** LinkPreviewHighQualityThumbnail _mediaKey. */
+                        public _mediaKey?: "mediaKey";
+
+                        /** LinkPreviewHighQualityThumbnail _mediaKeyTimestampMs. */
+                        public _mediaKeyTimestampMs?: "mediaKeyTimestampMs";
+
+                        /** LinkPreviewHighQualityThumbnail _thumbWidth. */
+                        public _thumbWidth?: "thumbWidth";
+
+                        /** LinkPreviewHighQualityThumbnail _thumbHeight. */
+                        public _thumbHeight?: "thumbHeight";
 
                         /**
                          * Creates a new LinkPreviewHighQualityThumbnail instance using the specified properties.
@@ -21515,13 +23021,6 @@ export namespace E2E {
                          * @returns JSON object
                          */
                         public toJSON(): { [k: string]: any };
-
-                        /**
-                         * Gets the default type url for LinkPreviewHighQualityThumbnail
-                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                         * @returns The default type url
-                         */
-                        public static getTypeUrl(typeUrlPrefix?: string): string;
                     }
 
                     /** Properties of a PaymentLinkPreviewMetadata. */
@@ -21544,10 +23043,16 @@ export namespace E2E {
                         constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.IPaymentLinkPreviewMetadata);
 
                         /** PaymentLinkPreviewMetadata isBusinessVerified. */
-                        public isBusinessVerified: boolean;
+                        public isBusinessVerified?: (boolean|null);
 
                         /** PaymentLinkPreviewMetadata providerName. */
-                        public providerName: string;
+                        public providerName?: (string|null);
+
+                        /** PaymentLinkPreviewMetadata _isBusinessVerified. */
+                        public _isBusinessVerified?: "isBusinessVerified";
+
+                        /** PaymentLinkPreviewMetadata _providerName. */
+                        public _providerName?: "providerName";
 
                         /**
                          * Creates a new PaymentLinkPreviewMetadata instance using the specified properties.
@@ -21618,13 +23123,6 @@ export namespace E2E {
                          * @returns JSON object
                          */
                         public toJSON(): { [k: string]: any };
-
-                        /**
-                         * Gets the default type url for PaymentLinkPreviewMetadata
-                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                         * @returns The default type url
-                         */
-                        public static getTypeUrl(typeUrlPrefix?: string): string;
                     }
                 }
 
@@ -21645,7 +23143,10 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.IPlaceholderMessageResendResponse);
 
                     /** PlaceholderMessageResendResponse webMessageInfoBytes. */
-                    public webMessageInfoBytes: Uint8Array;
+                    public webMessageInfoBytes?: (Uint8Array|null);
+
+                    /** PlaceholderMessageResendResponse _webMessageInfoBytes. */
+                    public _webMessageInfoBytes?: "webMessageInfoBytes";
 
                     /**
                      * Creates a new PlaceholderMessageResendResponse instance using the specified properties.
@@ -21716,13 +23217,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for PlaceholderMessageResendResponse
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 /** Properties of a SyncDSnapshotFatalRecoveryResponse. */
@@ -21745,10 +23239,16 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ISyncDSnapshotFatalRecoveryResponse);
 
                     /** SyncDSnapshotFatalRecoveryResponse collectionSnapshot. */
-                    public collectionSnapshot: Uint8Array;
+                    public collectionSnapshot?: (Uint8Array|null);
 
                     /** SyncDSnapshotFatalRecoveryResponse isCompressed. */
-                    public isCompressed: boolean;
+                    public isCompressed?: (boolean|null);
+
+                    /** SyncDSnapshotFatalRecoveryResponse _collectionSnapshot. */
+                    public _collectionSnapshot?: "collectionSnapshot";
+
+                    /** SyncDSnapshotFatalRecoveryResponse _isCompressed. */
+                    public _isCompressed?: "isCompressed";
 
                     /**
                      * Creates a new SyncDSnapshotFatalRecoveryResponse instance using the specified properties.
@@ -21819,13 +23319,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for SyncDSnapshotFatalRecoveryResponse
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
 
                 /** Properties of a WaffleNonceFetchResponse. */
@@ -21848,10 +23341,16 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.IWaffleNonceFetchResponse);
 
                     /** WaffleNonceFetchResponse nonce. */
-                    public nonce: string;
+                    public nonce?: (string|null);
 
                     /** WaffleNonceFetchResponse waEntFbid. */
-                    public waEntFbid: string;
+                    public waEntFbid?: (string|null);
+
+                    /** WaffleNonceFetchResponse _nonce. */
+                    public _nonce?: "nonce";
+
+                    /** WaffleNonceFetchResponse _waEntFbid. */
+                    public _waEntFbid?: "waEntFbid";
 
                     /**
                      * Creates a new WaffleNonceFetchResponse instance using the specified properties.
@@ -21922,13 +23421,6 @@ export namespace E2E {
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
-
-                    /**
-                     * Gets the default type url for WaffleNonceFetchResponse
-                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                     * @returns The default type url
-                     */
-                    public static getTypeUrl(typeUrlPrefix?: string): string;
                 }
             }
         }
@@ -21974,10 +23466,19 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** PinInChatMessage type. */
-            public type: E2E.Message.PinInChatMessage.Type;
+            public type?: (E2E.Message.PinInChatMessage.Type|null);
 
             /** PinInChatMessage senderTimestampMs. */
-            public senderTimestampMs: (number|Long);
+            public senderTimestampMs?: (number|Long|null);
+
+            /** PinInChatMessage _key. */
+            public _key?: "key";
+
+            /** PinInChatMessage _type. */
+            public _type?: "type";
+
+            /** PinInChatMessage _senderTimestampMs. */
+            public _senderTimestampMs?: "senderTimestampMs";
 
             /**
              * Creates a new PinInChatMessage instance using the specified properties.
@@ -22048,13 +23549,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PinInChatMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace PinInChatMessage {
@@ -22084,7 +23578,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPlaceholderMessage);
 
             /** PlaceholderMessage type. */
-            public type: E2E.Message.PlaceholderMessage.PlaceholderType;
+            public type?: (E2E.Message.PlaceholderMessage.PlaceholderType|null);
+
+            /** PlaceholderMessage _type. */
+            public _type?: "type";
 
             /**
              * Creates a new PlaceholderMessage instance using the specified properties.
@@ -22155,13 +23652,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PlaceholderMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace PlaceholderMessage {
@@ -22217,28 +23707,49 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPollCreationMessage);
 
             /** PollCreationMessage encKey. */
-            public encKey: Uint8Array;
+            public encKey?: (Uint8Array|null);
 
             /** PollCreationMessage name. */
-            public name: string;
+            public name?: (string|null);
 
             /** PollCreationMessage options. */
             public options: E2E.Message.PollCreationMessage.IOption[];
 
             /** PollCreationMessage selectableOptionsCount. */
-            public selectableOptionsCount: number;
+            public selectableOptionsCount?: (number|null);
 
             /** PollCreationMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** PollCreationMessage pollContentType. */
-            public pollContentType: E2E.Message.PollContentType;
+            public pollContentType?: (E2E.Message.PollContentType|null);
 
             /** PollCreationMessage pollType. */
-            public pollType: E2E.Message.PollCreationMessage.PollType;
+            public pollType?: (E2E.Message.PollCreationMessage.PollType|null);
 
             /** PollCreationMessage correctAnswer. */
             public correctAnswer?: (E2E.Message.PollCreationMessage.IOption|null);
+
+            /** PollCreationMessage _encKey. */
+            public _encKey?: "encKey";
+
+            /** PollCreationMessage _name. */
+            public _name?: "name";
+
+            /** PollCreationMessage _selectableOptionsCount. */
+            public _selectableOptionsCount?: "selectableOptionsCount";
+
+            /** PollCreationMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** PollCreationMessage _pollContentType. */
+            public _pollContentType?: "pollContentType";
+
+            /** PollCreationMessage _pollType. */
+            public _pollType?: "pollType";
+
+            /** PollCreationMessage _correctAnswer. */
+            public _correctAnswer?: "correctAnswer";
 
             /**
              * Creates a new PollCreationMessage instance using the specified properties.
@@ -22309,13 +23820,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PollCreationMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace PollCreationMessage {
@@ -22340,10 +23844,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PollCreationMessage.IOption);
 
                 /** Option optionName. */
-                public optionName: string;
+                public optionName?: (string|null);
 
                 /** Option optionHash. */
-                public optionHash: string;
+                public optionHash?: (string|null);
+
+                /** Option _optionName. */
+                public _optionName?: "optionName";
+
+                /** Option _optionHash. */
+                public _optionHash?: "optionHash";
 
                 /**
                  * Creates a new Option instance using the specified properties.
@@ -22414,13 +23924,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Option
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** PollType enum. */
@@ -22450,10 +23953,16 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPollEncValue);
 
             /** PollEncValue encPayload. */
-            public encPayload: Uint8Array;
+            public encPayload?: (Uint8Array|null);
 
             /** PollEncValue encIv. */
-            public encIv: Uint8Array;
+            public encIv?: (Uint8Array|null);
+
+            /** PollEncValue _encPayload. */
+            public _encPayload?: "encPayload";
+
+            /** PollEncValue _encIv. */
+            public _encIv?: "encIv";
 
             /**
              * Creates a new PollEncValue instance using the specified properties.
@@ -22524,13 +24033,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PollEncValue
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PollResultSnapshotMessage. */
@@ -22556,13 +24058,19 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPollResultSnapshotMessage);
 
             /** PollResultSnapshotMessage name. */
-            public name: string;
+            public name?: (string|null);
 
             /** PollResultSnapshotMessage pollVotes. */
             public pollVotes: E2E.Message.PollResultSnapshotMessage.IPollVote[];
 
             /** PollResultSnapshotMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** PollResultSnapshotMessage _name. */
+            public _name?: "name";
+
+            /** PollResultSnapshotMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new PollResultSnapshotMessage instance using the specified properties.
@@ -22633,13 +24141,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PollResultSnapshotMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace PollResultSnapshotMessage {
@@ -22664,10 +24165,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PollResultSnapshotMessage.IPollVote);
 
                 /** PollVote optionName. */
-                public optionName: string;
+                public optionName?: (string|null);
 
                 /** PollVote optionVoteCount. */
-                public optionVoteCount: (number|Long);
+                public optionVoteCount?: (number|Long|null);
+
+                /** PollVote _optionName. */
+                public _optionName?: "optionName";
+
+                /** PollVote _optionVoteCount. */
+                public _optionVoteCount?: "optionVoteCount";
 
                 /**
                  * Creates a new PollVote instance using the specified properties.
@@ -22738,13 +24245,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for PollVote
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -22783,7 +24283,19 @@ export namespace E2E {
             public metadata?: (E2E.Message.IPollUpdateMessageMetadata|null);
 
             /** PollUpdateMessage senderTimestampMs. */
-            public senderTimestampMs: (number|Long);
+            public senderTimestampMs?: (number|Long|null);
+
+            /** PollUpdateMessage _pollCreationMessageKey. */
+            public _pollCreationMessageKey?: "pollCreationMessageKey";
+
+            /** PollUpdateMessage _vote. */
+            public _vote?: "vote";
+
+            /** PollUpdateMessage _metadata. */
+            public _metadata?: "metadata";
+
+            /** PollUpdateMessage _senderTimestampMs. */
+            public _senderTimestampMs?: "senderTimestampMs";
 
             /**
              * Creates a new PollUpdateMessage instance using the specified properties.
@@ -22854,13 +24366,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PollUpdateMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PollUpdateMessageMetadata. */
@@ -22945,13 +24450,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PollUpdateMessageMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PollVoteMessage. */
@@ -23042,13 +24540,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PollVoteMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a ProductMessage. */
@@ -23086,19 +24577,37 @@ export namespace E2E {
             public product?: (E2E.Message.ProductMessage.IProductSnapshot|null);
 
             /** ProductMessage businessOwnerJid. */
-            public businessOwnerJid: string;
+            public businessOwnerJid?: (string|null);
 
             /** ProductMessage catalog. */
             public catalog?: (E2E.Message.ProductMessage.ICatalogSnapshot|null);
 
             /** ProductMessage body. */
-            public body: string;
+            public body?: (string|null);
 
             /** ProductMessage footer. */
-            public footer: string;
+            public footer?: (string|null);
 
             /** ProductMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** ProductMessage _product. */
+            public _product?: "product";
+
+            /** ProductMessage _businessOwnerJid. */
+            public _businessOwnerJid?: "businessOwnerJid";
+
+            /** ProductMessage _catalog. */
+            public _catalog?: "catalog";
+
+            /** ProductMessage _body. */
+            public _body?: "body";
+
+            /** ProductMessage _footer. */
+            public _footer?: "footer";
+
+            /** ProductMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new ProductMessage instance using the specified properties.
@@ -23169,13 +24678,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ProductMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ProductMessage {
@@ -23206,10 +24708,19 @@ export namespace E2E {
                 public catalogImage?: (E2E.Message.IImageMessage|null);
 
                 /** CatalogSnapshot title. */
-                public title: string;
+                public title?: (string|null);
 
                 /** CatalogSnapshot description. */
-                public description: string;
+                public description?: (string|null);
+
+                /** CatalogSnapshot _catalogImage. */
+                public _catalogImage?: "catalogImage";
+
+                /** CatalogSnapshot _title. */
+                public _title?: "title";
+
+                /** CatalogSnapshot _description. */
+                public _description?: "description";
 
                 /**
                  * Creates a new CatalogSnapshot instance using the specified properties.
@@ -23280,13 +24791,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for CatalogSnapshot
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a ProductSnapshot. */
@@ -23342,37 +24846,73 @@ export namespace E2E {
                 public productImage?: (E2E.Message.IImageMessage|null);
 
                 /** ProductSnapshot productId. */
-                public productId: string;
+                public productId?: (string|null);
 
                 /** ProductSnapshot title. */
-                public title: string;
+                public title?: (string|null);
 
                 /** ProductSnapshot description. */
-                public description: string;
+                public description?: (string|null);
 
                 /** ProductSnapshot currencyCode. */
-                public currencyCode: string;
+                public currencyCode?: (string|null);
 
                 /** ProductSnapshot priceAmount1000. */
-                public priceAmount1000: (number|Long);
+                public priceAmount1000?: (number|Long|null);
 
                 /** ProductSnapshot retailerId. */
-                public retailerId: string;
+                public retailerId?: (string|null);
 
                 /** ProductSnapshot url. */
-                public url: string;
+                public url?: (string|null);
 
                 /** ProductSnapshot productImageCount. */
-                public productImageCount: number;
+                public productImageCount?: (number|null);
 
                 /** ProductSnapshot firstImageId. */
-                public firstImageId: string;
+                public firstImageId?: (string|null);
 
                 /** ProductSnapshot salePriceAmount1000. */
-                public salePriceAmount1000: (number|Long);
+                public salePriceAmount1000?: (number|Long|null);
 
                 /** ProductSnapshot signedUrl. */
-                public signedUrl: string;
+                public signedUrl?: (string|null);
+
+                /** ProductSnapshot _productImage. */
+                public _productImage?: "productImage";
+
+                /** ProductSnapshot _productId. */
+                public _productId?: "productId";
+
+                /** ProductSnapshot _title. */
+                public _title?: "title";
+
+                /** ProductSnapshot _description. */
+                public _description?: "description";
+
+                /** ProductSnapshot _currencyCode. */
+                public _currencyCode?: "currencyCode";
+
+                /** ProductSnapshot _priceAmount1000. */
+                public _priceAmount1000?: "priceAmount1000";
+
+                /** ProductSnapshot _retailerId. */
+                public _retailerId?: "retailerId";
+
+                /** ProductSnapshot _url. */
+                public _url?: "url";
+
+                /** ProductSnapshot _productImageCount. */
+                public _productImageCount?: "productImageCount";
+
+                /** ProductSnapshot _firstImageId. */
+                public _firstImageId?: "firstImageId";
+
+                /** ProductSnapshot _salePriceAmount1000. */
+                public _salePriceAmount1000?: "salePriceAmount1000";
+
+                /** ProductSnapshot _signedUrl. */
+                public _signedUrl?: "signedUrl";
 
                 /**
                  * Creates a new ProductSnapshot instance using the specified properties.
@@ -23443,13 +24983,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for ProductSnapshot
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -23542,13 +25075,13 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** ProtocolMessage type. */
-            public type: E2E.Message.ProtocolMessage.Type;
+            public type?: (E2E.Message.ProtocolMessage.Type|null);
 
             /** ProtocolMessage ephemeralExpiration. */
-            public ephemeralExpiration: number;
+            public ephemeralExpiration?: (number|null);
 
             /** ProtocolMessage ephemeralSettingTimestamp. */
-            public ephemeralSettingTimestamp: (number|Long);
+            public ephemeralSettingTimestamp?: (number|Long|null);
 
             /** ProtocolMessage historySyncNotification. */
             public historySyncNotification?: (E2E.Message.IHistorySyncNotification|null);
@@ -23572,7 +25105,7 @@ export namespace E2E {
             public editedMessage?: (E2E.IMessage|null);
 
             /** ProtocolMessage timestampMs. */
-            public timestampMs: (number|Long);
+            public timestampMs?: (number|Long|null);
 
             /** ProtocolMessage peerDataOperationRequestMessage. */
             public peerDataOperationRequestMessage?: (E2E.Message.IPeerDataOperationRequestMessage|null);
@@ -23584,7 +25117,7 @@ export namespace E2E {
             public botFeedbackMessage?: (AICommon.IBotFeedbackMessage|null);
 
             /** ProtocolMessage invokerJid. */
-            public invokerJid: string;
+            public invokerJid?: (string|null);
 
             /** ProtocolMessage requestWelcomeMessageMetadata. */
             public requestWelcomeMessageMetadata?: (E2E.Message.IRequestWelcomeMessageMetadata|null);
@@ -23602,13 +25135,85 @@ export namespace E2E {
             public limitSharing?: (Protocol.ILimitSharing|null);
 
             /** ProtocolMessage aiPsiMetadata. */
-            public aiPsiMetadata: Uint8Array;
+            public aiPsiMetadata?: (Uint8Array|null);
 
             /** ProtocolMessage aiQueryFanout. */
             public aiQueryFanout?: (E2E.IAIQueryFanout|null);
 
             /** ProtocolMessage memberLabel. */
             public memberLabel?: (E2E.IMemberLabel|null);
+
+            /** ProtocolMessage _key. */
+            public _key?: "key";
+
+            /** ProtocolMessage _type. */
+            public _type?: "type";
+
+            /** ProtocolMessage _ephemeralExpiration. */
+            public _ephemeralExpiration?: "ephemeralExpiration";
+
+            /** ProtocolMessage _ephemeralSettingTimestamp. */
+            public _ephemeralSettingTimestamp?: "ephemeralSettingTimestamp";
+
+            /** ProtocolMessage _historySyncNotification. */
+            public _historySyncNotification?: "historySyncNotification";
+
+            /** ProtocolMessage _appStateSyncKeyShare. */
+            public _appStateSyncKeyShare?: "appStateSyncKeyShare";
+
+            /** ProtocolMessage _appStateSyncKeyRequest. */
+            public _appStateSyncKeyRequest?: "appStateSyncKeyRequest";
+
+            /** ProtocolMessage _initialSecurityNotificationSettingSync. */
+            public _initialSecurityNotificationSettingSync?: "initialSecurityNotificationSettingSync";
+
+            /** ProtocolMessage _appStateFatalExceptionNotification. */
+            public _appStateFatalExceptionNotification?: "appStateFatalExceptionNotification";
+
+            /** ProtocolMessage _disappearingMode. */
+            public _disappearingMode?: "disappearingMode";
+
+            /** ProtocolMessage _editedMessage. */
+            public _editedMessage?: "editedMessage";
+
+            /** ProtocolMessage _timestampMs. */
+            public _timestampMs?: "timestampMs";
+
+            /** ProtocolMessage _peerDataOperationRequestMessage. */
+            public _peerDataOperationRequestMessage?: "peerDataOperationRequestMessage";
+
+            /** ProtocolMessage _peerDataOperationRequestResponseMessage. */
+            public _peerDataOperationRequestResponseMessage?: "peerDataOperationRequestResponseMessage";
+
+            /** ProtocolMessage _botFeedbackMessage. */
+            public _botFeedbackMessage?: "botFeedbackMessage";
+
+            /** ProtocolMessage _invokerJid. */
+            public _invokerJid?: "invokerJid";
+
+            /** ProtocolMessage _requestWelcomeMessageMetadata. */
+            public _requestWelcomeMessageMetadata?: "requestWelcomeMessageMetadata";
+
+            /** ProtocolMessage _mediaNotifyMessage. */
+            public _mediaNotifyMessage?: "mediaNotifyMessage";
+
+            /** ProtocolMessage _cloudApiThreadControlNotification. */
+            public _cloudApiThreadControlNotification?: "cloudApiThreadControlNotification";
+
+            /** ProtocolMessage _lidMigrationMappingSyncMessage. */
+            public _lidMigrationMappingSyncMessage?: "lidMigrationMappingSyncMessage";
+
+            /** ProtocolMessage _limitSharing. */
+            public _limitSharing?: "limitSharing";
+
+            /** ProtocolMessage _aiPsiMetadata. */
+            public _aiPsiMetadata?: "aiPsiMetadata";
+
+            /** ProtocolMessage _aiQueryFanout. */
+            public _aiQueryFanout?: "aiQueryFanout";
+
+            /** ProtocolMessage _memberLabel. */
+            public _memberLabel?: "memberLabel";
 
             /**
              * Creates a new ProtocolMessage instance using the specified properties.
@@ -23679,13 +25284,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ProtocolMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ProtocolMessage {
@@ -23744,7 +25342,13 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** QuestionResponseMessage text. */
-            public text: string;
+            public text?: (string|null);
+
+            /** QuestionResponseMessage _key. */
+            public _key?: "key";
+
+            /** QuestionResponseMessage _text. */
+            public _text?: "text";
 
             /**
              * Creates a new QuestionResponseMessage instance using the specified properties.
@@ -23815,13 +25419,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for QuestionResponseMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a ReactionMessage. */
@@ -23853,13 +25450,25 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** ReactionMessage text. */
-            public text: string;
+            public text?: (string|null);
 
             /** ReactionMessage groupingKey. */
-            public groupingKey: string;
+            public groupingKey?: (string|null);
 
             /** ReactionMessage senderTimestampMs. */
-            public senderTimestampMs: (number|Long);
+            public senderTimestampMs?: (number|Long|null);
+
+            /** ReactionMessage _key. */
+            public _key?: "key";
+
+            /** ReactionMessage _text. */
+            public _text?: "text";
+
+            /** ReactionMessage _groupingKey. */
+            public _groupingKey?: "groupingKey";
+
+            /** ReactionMessage _senderTimestampMs. */
+            public _senderTimestampMs?: "senderTimestampMs";
 
             /**
              * Creates a new ReactionMessage instance using the specified properties.
@@ -23930,13 +25539,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ReactionMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a RequestPaymentMessage. */
@@ -23977,22 +25579,43 @@ export namespace E2E {
             public noteMessage?: (E2E.IMessage|null);
 
             /** RequestPaymentMessage currencyCodeIso4217. */
-            public currencyCodeIso4217: string;
+            public currencyCodeIso4217?: (string|null);
 
             /** RequestPaymentMessage amount1000. */
-            public amount1000: (number|Long);
+            public amount1000?: (number|Long|null);
 
             /** RequestPaymentMessage requestFrom. */
-            public requestFrom: string;
+            public requestFrom?: (string|null);
 
             /** RequestPaymentMessage expiryTimestamp. */
-            public expiryTimestamp: (number|Long);
+            public expiryTimestamp?: (number|Long|null);
 
             /** RequestPaymentMessage amount. */
             public amount?: (E2E.IMoney|null);
 
             /** RequestPaymentMessage background. */
             public background?: (E2E.IPaymentBackground|null);
+
+            /** RequestPaymentMessage _noteMessage. */
+            public _noteMessage?: "noteMessage";
+
+            /** RequestPaymentMessage _currencyCodeIso4217. */
+            public _currencyCodeIso4217?: "currencyCodeIso4217";
+
+            /** RequestPaymentMessage _amount1000. */
+            public _amount1000?: "amount1000";
+
+            /** RequestPaymentMessage _requestFrom. */
+            public _requestFrom?: "requestFrom";
+
+            /** RequestPaymentMessage _expiryTimestamp. */
+            public _expiryTimestamp?: "expiryTimestamp";
+
+            /** RequestPaymentMessage _amount. */
+            public _amount?: "amount";
+
+            /** RequestPaymentMessage _background. */
+            public _background?: "background";
 
             /**
              * Creates a new RequestPaymentMessage instance using the specified properties.
@@ -24063,13 +25686,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for RequestPaymentMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a RequestPhoneNumberMessage. */
@@ -24090,6 +25706,9 @@ export namespace E2E {
 
             /** RequestPhoneNumberMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
+
+            /** RequestPhoneNumberMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new RequestPhoneNumberMessage instance using the specified properties.
@@ -24160,13 +25779,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for RequestPhoneNumberMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a RequestWelcomeMessageMetadata. */
@@ -24186,7 +25798,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IRequestWelcomeMessageMetadata);
 
             /** RequestWelcomeMessageMetadata localChatState. */
-            public localChatState: E2E.Message.RequestWelcomeMessageMetadata.LocalChatState;
+            public localChatState?: (E2E.Message.RequestWelcomeMessageMetadata.LocalChatState|null);
+
+            /** RequestWelcomeMessageMetadata _localChatState. */
+            public _localChatState?: "localChatState";
 
             /**
              * Creates a new RequestWelcomeMessageMetadata instance using the specified properties.
@@ -24257,13 +25872,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for RequestWelcomeMessageMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace RequestWelcomeMessageMetadata {
@@ -24298,13 +25906,22 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IScheduledCallCreationMessage);
 
             /** ScheduledCallCreationMessage scheduledTimestampMs. */
-            public scheduledTimestampMs: (number|Long);
+            public scheduledTimestampMs?: (number|Long|null);
 
             /** ScheduledCallCreationMessage callType. */
-            public callType: E2E.Message.ScheduledCallCreationMessage.CallType;
+            public callType?: (E2E.Message.ScheduledCallCreationMessage.CallType|null);
 
             /** ScheduledCallCreationMessage title. */
-            public title: string;
+            public title?: (string|null);
+
+            /** ScheduledCallCreationMessage _scheduledTimestampMs. */
+            public _scheduledTimestampMs?: "scheduledTimestampMs";
+
+            /** ScheduledCallCreationMessage _callType. */
+            public _callType?: "callType";
+
+            /** ScheduledCallCreationMessage _title. */
+            public _title?: "title";
 
             /**
              * Creates a new ScheduledCallCreationMessage instance using the specified properties.
@@ -24375,13 +25992,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ScheduledCallCreationMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ScheduledCallCreationMessage {
@@ -24417,7 +26027,13 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** ScheduledCallEditMessage editType. */
-            public editType: E2E.Message.ScheduledCallEditMessage.EditType;
+            public editType?: (E2E.Message.ScheduledCallEditMessage.EditType|null);
+
+            /** ScheduledCallEditMessage _key. */
+            public _key?: "key";
+
+            /** ScheduledCallEditMessage _editType. */
+            public _editType?: "editType";
 
             /**
              * Creates a new ScheduledCallEditMessage instance using the specified properties.
@@ -24488,13 +26104,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ScheduledCallEditMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ScheduledCallEditMessage {
@@ -24535,13 +26144,25 @@ export namespace E2E {
             public targetMessageKey?: (Protocol.IMessageKey|null);
 
             /** SecretEncryptedMessage encPayload. */
-            public encPayload: Uint8Array;
+            public encPayload?: (Uint8Array|null);
 
             /** SecretEncryptedMessage encIv. */
-            public encIv: Uint8Array;
+            public encIv?: (Uint8Array|null);
 
             /** SecretEncryptedMessage secretEncType. */
-            public secretEncType: E2E.Message.SecretEncryptedMessage.SecretEncType;
+            public secretEncType?: (E2E.Message.SecretEncryptedMessage.SecretEncType|null);
+
+            /** SecretEncryptedMessage _targetMessageKey. */
+            public _targetMessageKey?: "targetMessageKey";
+
+            /** SecretEncryptedMessage _encPayload. */
+            public _encPayload?: "encPayload";
+
+            /** SecretEncryptedMessage _encIv. */
+            public _encIv?: "encIv";
+
+            /** SecretEncryptedMessage _secretEncType. */
+            public _secretEncType?: "secretEncType";
 
             /**
              * Creates a new SecretEncryptedMessage instance using the specified properties.
@@ -24612,13 +26233,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SecretEncryptedMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace SecretEncryptedMessage {
@@ -24666,7 +26280,19 @@ export namespace E2E {
             public background?: (E2E.IPaymentBackground|null);
 
             /** SendPaymentMessage transactionData. */
-            public transactionData: string;
+            public transactionData?: (string|null);
+
+            /** SendPaymentMessage _noteMessage. */
+            public _noteMessage?: "noteMessage";
+
+            /** SendPaymentMessage _requestMessageKey. */
+            public _requestMessageKey?: "requestMessageKey";
+
+            /** SendPaymentMessage _background. */
+            public _background?: "background";
+
+            /** SendPaymentMessage _transactionData. */
+            public _transactionData?: "transactionData";
 
             /**
              * Creates a new SendPaymentMessage instance using the specified properties.
@@ -24737,13 +26363,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SendPaymentMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a SenderKeyDistributionMessage. */
@@ -24766,10 +26385,16 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ISenderKeyDistributionMessage);
 
             /** SenderKeyDistributionMessage groupId. */
-            public groupId: string;
+            public groupId?: (string|null);
 
             /** SenderKeyDistributionMessage axolotlSenderKeyDistributionMessage. */
-            public axolotlSenderKeyDistributionMessage: Uint8Array;
+            public axolotlSenderKeyDistributionMessage?: (Uint8Array|null);
+
+            /** SenderKeyDistributionMessage _groupId. */
+            public _groupId?: "groupId";
+
+            /** SenderKeyDistributionMessage _axolotlSenderKeyDistributionMessage. */
+            public _axolotlSenderKeyDistributionMessage?: "axolotlSenderKeyDistributionMessage";
 
             /**
              * Creates a new SenderKeyDistributionMessage instance using the specified properties.
@@ -24840,13 +26465,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SenderKeyDistributionMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a StatusNotificationMessage. */
@@ -24878,7 +26496,16 @@ export namespace E2E {
             public originalMessageKey?: (Protocol.IMessageKey|null);
 
             /** StatusNotificationMessage type. */
-            public type: E2E.Message.StatusNotificationMessage.StatusNotificationType;
+            public type?: (E2E.Message.StatusNotificationMessage.StatusNotificationType|null);
+
+            /** StatusNotificationMessage _responseMessageKey. */
+            public _responseMessageKey?: "responseMessageKey";
+
+            /** StatusNotificationMessage _originalMessageKey. */
+            public _originalMessageKey?: "originalMessageKey";
+
+            /** StatusNotificationMessage _type. */
+            public _type?: "type";
 
             /**
              * Creates a new StatusNotificationMessage instance using the specified properties.
@@ -24949,13 +26576,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StatusNotificationMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace StatusNotificationMessage {
@@ -24992,7 +26612,13 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** StatusQuestionAnswerMessage text. */
-            public text: string;
+            public text?: (string|null);
+
+            /** StatusQuestionAnswerMessage _key. */
+            public _key?: "key";
+
+            /** StatusQuestionAnswerMessage _text. */
+            public _text?: "text";
 
             /**
              * Creates a new StatusQuestionAnswerMessage instance using the specified properties.
@@ -25063,13 +26689,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StatusQuestionAnswerMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a StatusQuotedMessage. */
@@ -25098,16 +26717,28 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IStatusQuotedMessage);
 
             /** StatusQuotedMessage type. */
-            public type: E2E.Message.StatusQuotedMessage.StatusQuotedMessageType;
+            public type?: (E2E.Message.StatusQuotedMessage.StatusQuotedMessageType|null);
 
             /** StatusQuotedMessage text. */
-            public text: string;
+            public text?: (string|null);
 
             /** StatusQuotedMessage thumbnail. */
-            public thumbnail: Uint8Array;
+            public thumbnail?: (Uint8Array|null);
 
             /** StatusQuotedMessage originalStatusId. */
             public originalStatusId?: (Protocol.IMessageKey|null);
+
+            /** StatusQuotedMessage _type. */
+            public _type?: "type";
+
+            /** StatusQuotedMessage _text. */
+            public _text?: "text";
+
+            /** StatusQuotedMessage _thumbnail. */
+            public _thumbnail?: "thumbnail";
+
+            /** StatusQuotedMessage _originalStatusId. */
+            public _originalStatusId?: "originalStatusId";
 
             /**
              * Creates a new StatusQuotedMessage instance using the specified properties.
@@ -25178,13 +26809,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StatusQuotedMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace StatusQuotedMessage {
@@ -25272,67 +26896,130 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IStickerMessage);
 
             /** StickerMessage url. */
-            public url: string;
+            public url?: (string|null);
 
             /** StickerMessage fileSha256. */
-            public fileSha256: Uint8Array;
+            public fileSha256?: (Uint8Array|null);
 
             /** StickerMessage fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** StickerMessage mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** StickerMessage mimetype. */
-            public mimetype: string;
+            public mimetype?: (string|null);
 
             /** StickerMessage height. */
-            public height: number;
+            public height?: (number|null);
 
             /** StickerMessage width. */
-            public width: number;
+            public width?: (number|null);
 
             /** StickerMessage directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
 
             /** StickerMessage fileLength. */
-            public fileLength: (number|Long);
+            public fileLength?: (number|Long|null);
 
             /** StickerMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** StickerMessage firstFrameLength. */
-            public firstFrameLength: number;
+            public firstFrameLength?: (number|null);
 
             /** StickerMessage firstFrameSidecar. */
-            public firstFrameSidecar: Uint8Array;
+            public firstFrameSidecar?: (Uint8Array|null);
 
             /** StickerMessage isAnimated. */
-            public isAnimated: boolean;
+            public isAnimated?: (boolean|null);
 
             /** StickerMessage pngThumbnail. */
-            public pngThumbnail: Uint8Array;
+            public pngThumbnail?: (Uint8Array|null);
 
             /** StickerMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** StickerMessage stickerSentTs. */
-            public stickerSentTs: (number|Long);
+            public stickerSentTs?: (number|Long|null);
 
             /** StickerMessage isAvatar. */
-            public isAvatar: boolean;
+            public isAvatar?: (boolean|null);
 
             /** StickerMessage isAiSticker. */
-            public isAiSticker: boolean;
+            public isAiSticker?: (boolean|null);
 
             /** StickerMessage isLottie. */
-            public isLottie: boolean;
+            public isLottie?: (boolean|null);
 
             /** StickerMessage accessibilityLabel. */
-            public accessibilityLabel: string;
+            public accessibilityLabel?: (string|null);
 
             /** StickerMessage mediaKeyDomain. */
-            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
+            public mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
+
+            /** StickerMessage _url. */
+            public _url?: "url";
+
+            /** StickerMessage _fileSha256. */
+            public _fileSha256?: "fileSha256";
+
+            /** StickerMessage _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** StickerMessage _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** StickerMessage _mimetype. */
+            public _mimetype?: "mimetype";
+
+            /** StickerMessage _height. */
+            public _height?: "height";
+
+            /** StickerMessage _width. */
+            public _width?: "width";
+
+            /** StickerMessage _directPath. */
+            public _directPath?: "directPath";
+
+            /** StickerMessage _fileLength. */
+            public _fileLength?: "fileLength";
+
+            /** StickerMessage _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** StickerMessage _firstFrameLength. */
+            public _firstFrameLength?: "firstFrameLength";
+
+            /** StickerMessage _firstFrameSidecar. */
+            public _firstFrameSidecar?: "firstFrameSidecar";
+
+            /** StickerMessage _isAnimated. */
+            public _isAnimated?: "isAnimated";
+
+            /** StickerMessage _pngThumbnail. */
+            public _pngThumbnail?: "pngThumbnail";
+
+            /** StickerMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** StickerMessage _stickerSentTs. */
+            public _stickerSentTs?: "stickerSentTs";
+
+            /** StickerMessage _isAvatar. */
+            public _isAvatar?: "isAvatar";
+
+            /** StickerMessage _isAiSticker. */
+            public _isAiSticker?: "isAiSticker";
+
+            /** StickerMessage _isLottie. */
+            public _isLottie?: "isLottie";
+
+            /** StickerMessage _accessibilityLabel. */
+            public _accessibilityLabel?: "accessibilityLabel";
+
+            /** StickerMessage _mediaKeyDomain. */
+            public _mediaKeyDomain?: "mediaKeyDomain";
 
             /**
              * Creates a new StickerMessage instance using the specified properties.
@@ -25403,13 +27090,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StickerMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a StickerPackMessage. */
@@ -25492,70 +27172,133 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IStickerPackMessage);
 
             /** StickerPackMessage stickerPackId. */
-            public stickerPackId: string;
+            public stickerPackId?: (string|null);
 
             /** StickerPackMessage name. */
-            public name: string;
+            public name?: (string|null);
 
             /** StickerPackMessage publisher. */
-            public publisher: string;
+            public publisher?: (string|null);
 
             /** StickerPackMessage stickers. */
             public stickers: E2E.Message.StickerPackMessage.ISticker[];
 
             /** StickerPackMessage fileLength. */
-            public fileLength: (number|Long);
+            public fileLength?: (number|Long|null);
 
             /** StickerPackMessage fileSha256. */
-            public fileSha256: Uint8Array;
+            public fileSha256?: (Uint8Array|null);
 
             /** StickerPackMessage fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** StickerPackMessage mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** StickerPackMessage directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
 
             /** StickerPackMessage caption. */
-            public caption: string;
+            public caption?: (string|null);
 
             /** StickerPackMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** StickerPackMessage packDescription. */
-            public packDescription: string;
+            public packDescription?: (string|null);
 
             /** StickerPackMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** StickerPackMessage trayIconFileName. */
-            public trayIconFileName: string;
+            public trayIconFileName?: (string|null);
 
             /** StickerPackMessage thumbnailDirectPath. */
-            public thumbnailDirectPath: string;
+            public thumbnailDirectPath?: (string|null);
 
             /** StickerPackMessage thumbnailSha256. */
-            public thumbnailSha256: Uint8Array;
+            public thumbnailSha256?: (Uint8Array|null);
 
             /** StickerPackMessage thumbnailEncSha256. */
-            public thumbnailEncSha256: Uint8Array;
+            public thumbnailEncSha256?: (Uint8Array|null);
 
             /** StickerPackMessage thumbnailHeight. */
-            public thumbnailHeight: number;
+            public thumbnailHeight?: (number|null);
 
             /** StickerPackMessage thumbnailWidth. */
-            public thumbnailWidth: number;
+            public thumbnailWidth?: (number|null);
 
             /** StickerPackMessage imageDataHash. */
-            public imageDataHash: string;
+            public imageDataHash?: (string|null);
 
             /** StickerPackMessage stickerPackSize. */
-            public stickerPackSize: (number|Long);
+            public stickerPackSize?: (number|Long|null);
 
             /** StickerPackMessage stickerPackOrigin. */
-            public stickerPackOrigin: E2E.Message.StickerPackMessage.StickerPackOrigin;
+            public stickerPackOrigin?: (E2E.Message.StickerPackMessage.StickerPackOrigin|null);
+
+            /** StickerPackMessage _stickerPackId. */
+            public _stickerPackId?: "stickerPackId";
+
+            /** StickerPackMessage _name. */
+            public _name?: "name";
+
+            /** StickerPackMessage _publisher. */
+            public _publisher?: "publisher";
+
+            /** StickerPackMessage _fileLength. */
+            public _fileLength?: "fileLength";
+
+            /** StickerPackMessage _fileSha256. */
+            public _fileSha256?: "fileSha256";
+
+            /** StickerPackMessage _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** StickerPackMessage _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** StickerPackMessage _directPath. */
+            public _directPath?: "directPath";
+
+            /** StickerPackMessage _caption. */
+            public _caption?: "caption";
+
+            /** StickerPackMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** StickerPackMessage _packDescription. */
+            public _packDescription?: "packDescription";
+
+            /** StickerPackMessage _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** StickerPackMessage _trayIconFileName. */
+            public _trayIconFileName?: "trayIconFileName";
+
+            /** StickerPackMessage _thumbnailDirectPath. */
+            public _thumbnailDirectPath?: "thumbnailDirectPath";
+
+            /** StickerPackMessage _thumbnailSha256. */
+            public _thumbnailSha256?: "thumbnailSha256";
+
+            /** StickerPackMessage _thumbnailEncSha256. */
+            public _thumbnailEncSha256?: "thumbnailEncSha256";
+
+            /** StickerPackMessage _thumbnailHeight. */
+            public _thumbnailHeight?: "thumbnailHeight";
+
+            /** StickerPackMessage _thumbnailWidth. */
+            public _thumbnailWidth?: "thumbnailWidth";
+
+            /** StickerPackMessage _imageDataHash. */
+            public _imageDataHash?: "imageDataHash";
+
+            /** StickerPackMessage _stickerPackSize. */
+            public _stickerPackSize?: "stickerPackSize";
+
+            /** StickerPackMessage _stickerPackOrigin. */
+            public _stickerPackOrigin?: "stickerPackOrigin";
 
             /**
              * Creates a new StickerPackMessage instance using the specified properties.
@@ -25626,13 +27369,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StickerPackMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace StickerPackMessage {
@@ -25669,22 +27405,37 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.StickerPackMessage.ISticker);
 
                 /** Sticker fileName. */
-                public fileName: string;
+                public fileName?: (string|null);
 
                 /** Sticker isAnimated. */
-                public isAnimated: boolean;
+                public isAnimated?: (boolean|null);
 
                 /** Sticker emojis. */
                 public emojis: string[];
 
                 /** Sticker accessibilityLabel. */
-                public accessibilityLabel: string;
+                public accessibilityLabel?: (string|null);
 
                 /** Sticker isLottie. */
-                public isLottie: boolean;
+                public isLottie?: (boolean|null);
 
                 /** Sticker mimetype. */
-                public mimetype: string;
+                public mimetype?: (string|null);
+
+                /** Sticker _fileName. */
+                public _fileName?: "fileName";
+
+                /** Sticker _isAnimated. */
+                public _isAnimated?: "isAnimated";
+
+                /** Sticker _accessibilityLabel. */
+                public _accessibilityLabel?: "accessibilityLabel";
+
+                /** Sticker _isLottie. */
+                public _isLottie?: "isLottie";
+
+                /** Sticker _mimetype. */
+                public _mimetype?: "mimetype";
 
                 /**
                  * Creates a new Sticker instance using the specified properties.
@@ -25755,13 +27506,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Sticker
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** StickerPackOrigin enum. */
@@ -25798,10 +27542,16 @@ export namespace E2E {
             public filehash: string[];
 
             /** StickerSyncRMRMessage rmrSource. */
-            public rmrSource: string;
+            public rmrSource?: (string|null);
 
             /** StickerSyncRMRMessage requestTimestamp. */
-            public requestTimestamp: (number|Long);
+            public requestTimestamp?: (number|Long|null);
+
+            /** StickerSyncRMRMessage _rmrSource. */
+            public _rmrSource?: "rmrSource";
+
+            /** StickerSyncRMRMessage _requestTimestamp. */
+            public _requestTimestamp?: "requestTimestamp";
 
             /**
              * Creates a new StickerSyncRMRMessage instance using the specified properties.
@@ -25872,13 +27622,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StickerSyncRMRMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a TemplateButtonReplyMessage. */
@@ -25910,19 +27653,34 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ITemplateButtonReplyMessage);
 
             /** TemplateButtonReplyMessage selectedId. */
-            public selectedId: string;
+            public selectedId?: (string|null);
 
             /** TemplateButtonReplyMessage selectedDisplayText. */
-            public selectedDisplayText: string;
+            public selectedDisplayText?: (string|null);
 
             /** TemplateButtonReplyMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** TemplateButtonReplyMessage selectedIndex. */
-            public selectedIndex: number;
+            public selectedIndex?: (number|null);
 
             /** TemplateButtonReplyMessage selectedCarouselCardIndex. */
-            public selectedCarouselCardIndex: number;
+            public selectedCarouselCardIndex?: (number|null);
+
+            /** TemplateButtonReplyMessage _selectedId. */
+            public _selectedId?: "selectedId";
+
+            /** TemplateButtonReplyMessage _selectedDisplayText. */
+            public _selectedDisplayText?: "selectedDisplayText";
+
+            /** TemplateButtonReplyMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** TemplateButtonReplyMessage _selectedIndex. */
+            public _selectedIndex?: "selectedIndex";
+
+            /** TemplateButtonReplyMessage _selectedCarouselCardIndex. */
+            public _selectedCarouselCardIndex?: "selectedCarouselCardIndex";
 
             /**
              * Creates a new TemplateButtonReplyMessage instance using the specified properties.
@@ -25993,13 +27751,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for TemplateButtonReplyMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a TemplateMessage. */
@@ -26040,7 +27791,7 @@ export namespace E2E {
             public hydratedTemplate?: (E2E.Message.TemplateMessage.IHydratedFourRowTemplate|null);
 
             /** TemplateMessage templateId. */
-            public templateId: string;
+            public templateId?: (string|null);
 
             /** TemplateMessage fourRowTemplate. */
             public fourRowTemplate?: (E2E.Message.TemplateMessage.IFourRowTemplate|null);
@@ -26050,6 +27801,15 @@ export namespace E2E {
 
             /** TemplateMessage interactiveMessageTemplate. */
             public interactiveMessageTemplate?: (E2E.Message.IInteractiveMessage|null);
+
+            /** TemplateMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** TemplateMessage _hydratedTemplate. */
+            public _hydratedTemplate?: "hydratedTemplate";
+
+            /** TemplateMessage _templateId. */
+            public _templateId?: "templateId";
 
             /** TemplateMessage format. */
             public format?: ("fourRowTemplate"|"hydratedFourRowTemplate"|"interactiveMessageTemplate");
@@ -26123,13 +27883,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for TemplateMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace TemplateMessage {
@@ -26194,6 +27947,12 @@ export namespace E2E {
 
                 /** FourRowTemplate locationMessage. */
                 public locationMessage?: (E2E.Message.ILocationMessage|null);
+
+                /** FourRowTemplate _content. */
+                public _content?: "content";
+
+                /** FourRowTemplate _footer. */
+                public _footer?: "footer";
 
                 /** FourRowTemplate title. */
                 public title?: ("documentMessage"|"highlyStructuredMessage"|"imageMessage"|"videoMessage"|"locationMessage");
@@ -26267,13 +28026,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for FourRowTemplate
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a HydratedFourRowTemplate. */
@@ -26320,19 +28072,19 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.TemplateMessage.IHydratedFourRowTemplate);
 
                 /** HydratedFourRowTemplate hydratedContentText. */
-                public hydratedContentText: string;
+                public hydratedContentText?: (string|null);
 
                 /** HydratedFourRowTemplate hydratedFooterText. */
-                public hydratedFooterText: string;
+                public hydratedFooterText?: (string|null);
 
                 /** HydratedFourRowTemplate hydratedButtons. */
                 public hydratedButtons: E2E.IHydratedTemplateButton[];
 
                 /** HydratedFourRowTemplate templateId. */
-                public templateId: string;
+                public templateId?: (string|null);
 
                 /** HydratedFourRowTemplate maskLinkedDevices. */
-                public maskLinkedDevices: boolean;
+                public maskLinkedDevices?: (boolean|null);
 
                 /** HydratedFourRowTemplate documentMessage. */
                 public documentMessage?: (E2E.Message.IDocumentMessage|null);
@@ -26348,6 +28100,18 @@ export namespace E2E {
 
                 /** HydratedFourRowTemplate locationMessage. */
                 public locationMessage?: (E2E.Message.ILocationMessage|null);
+
+                /** HydratedFourRowTemplate _hydratedContentText. */
+                public _hydratedContentText?: "hydratedContentText";
+
+                /** HydratedFourRowTemplate _hydratedFooterText. */
+                public _hydratedFooterText?: "hydratedFooterText";
+
+                /** HydratedFourRowTemplate _templateId. */
+                public _templateId?: "templateId";
+
+                /** HydratedFourRowTemplate _maskLinkedDevices. */
+                public _maskLinkedDevices?: "maskLinkedDevices";
 
                 /** HydratedFourRowTemplate title. */
                 public title?: ("documentMessage"|"hydratedTitleText"|"imageMessage"|"videoMessage"|"locationMessage");
@@ -26421,13 +28185,6 @@ export namespace E2E {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for HydratedFourRowTemplate
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -26448,7 +28205,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IURLMetadata);
 
             /** URLMetadata fbExperimentId. */
-            public fbExperimentId: number;
+            public fbExperimentId?: (number|null);
+
+            /** URLMetadata _fbExperimentId. */
+            public _fbExperimentId?: "fbExperimentId";
 
             /**
              * Creates a new URLMetadata instance using the specified properties.
@@ -26519,13 +28279,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for URLMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a VideoEndCard. */
@@ -26634,13 +28387,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for VideoEndCard
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a VideoMessage. */
@@ -26750,97 +28496,181 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IVideoMessage);
 
             /** VideoMessage url. */
-            public url: string;
+            public url?: (string|null);
 
             /** VideoMessage mimetype. */
-            public mimetype: string;
+            public mimetype?: (string|null);
 
             /** VideoMessage fileSha256. */
-            public fileSha256: Uint8Array;
+            public fileSha256?: (Uint8Array|null);
 
             /** VideoMessage fileLength. */
-            public fileLength: (number|Long);
+            public fileLength?: (number|Long|null);
 
             /** VideoMessage seconds. */
-            public seconds: number;
+            public seconds?: (number|null);
 
             /** VideoMessage mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** VideoMessage caption. */
-            public caption: string;
+            public caption?: (string|null);
 
             /** VideoMessage gifPlayback. */
-            public gifPlayback: boolean;
+            public gifPlayback?: (boolean|null);
 
             /** VideoMessage height. */
-            public height: number;
+            public height?: (number|null);
 
             /** VideoMessage width. */
-            public width: number;
+            public width?: (number|null);
 
             /** VideoMessage fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** VideoMessage interactiveAnnotations. */
             public interactiveAnnotations: E2E.IInteractiveAnnotation[];
 
             /** VideoMessage directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
 
             /** VideoMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp: (number|Long);
+            public mediaKeyTimestamp?: (number|Long|null);
 
             /** VideoMessage jpegThumbnail. */
-            public jpegThumbnail: Uint8Array;
+            public jpegThumbnail?: (Uint8Array|null);
 
             /** VideoMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** VideoMessage streamingSidecar. */
-            public streamingSidecar: Uint8Array;
+            public streamingSidecar?: (Uint8Array|null);
 
             /** VideoMessage gifAttribution. */
-            public gifAttribution: E2E.Message.VideoMessage.Attribution;
+            public gifAttribution?: (E2E.Message.VideoMessage.Attribution|null);
 
             /** VideoMessage viewOnce. */
-            public viewOnce: boolean;
+            public viewOnce?: (boolean|null);
 
             /** VideoMessage thumbnailDirectPath. */
-            public thumbnailDirectPath: string;
+            public thumbnailDirectPath?: (string|null);
 
             /** VideoMessage thumbnailSha256. */
-            public thumbnailSha256: Uint8Array;
+            public thumbnailSha256?: (Uint8Array|null);
 
             /** VideoMessage thumbnailEncSha256. */
-            public thumbnailEncSha256: Uint8Array;
+            public thumbnailEncSha256?: (Uint8Array|null);
 
             /** VideoMessage staticUrl. */
-            public staticUrl: string;
+            public staticUrl?: (string|null);
 
             /** VideoMessage annotations. */
             public annotations: E2E.IInteractiveAnnotation[];
 
             /** VideoMessage accessibilityLabel. */
-            public accessibilityLabel: string;
+            public accessibilityLabel?: (string|null);
 
             /** VideoMessage processedVideos. */
             public processedVideos: E2E.IProcessedVideo[];
 
             /** VideoMessage externalShareFullVideoDurationInSeconds. */
-            public externalShareFullVideoDurationInSeconds: number;
+            public externalShareFullVideoDurationInSeconds?: (number|null);
 
             /** VideoMessage motionPhotoPresentationOffsetMs. */
-            public motionPhotoPresentationOffsetMs: (number|Long);
+            public motionPhotoPresentationOffsetMs?: (number|Long|null);
 
             /** VideoMessage metadataUrl. */
-            public metadataUrl: string;
+            public metadataUrl?: (string|null);
 
             /** VideoMessage videoSourceType. */
-            public videoSourceType: E2E.Message.VideoMessage.VideoSourceType;
+            public videoSourceType?: (E2E.Message.VideoMessage.VideoSourceType|null);
 
             /** VideoMessage mediaKeyDomain. */
-            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
+            public mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
+
+            /** VideoMessage _url. */
+            public _url?: "url";
+
+            /** VideoMessage _mimetype. */
+            public _mimetype?: "mimetype";
+
+            /** VideoMessage _fileSha256. */
+            public _fileSha256?: "fileSha256";
+
+            /** VideoMessage _fileLength. */
+            public _fileLength?: "fileLength";
+
+            /** VideoMessage _seconds. */
+            public _seconds?: "seconds";
+
+            /** VideoMessage _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** VideoMessage _caption. */
+            public _caption?: "caption";
+
+            /** VideoMessage _gifPlayback. */
+            public _gifPlayback?: "gifPlayback";
+
+            /** VideoMessage _height. */
+            public _height?: "height";
+
+            /** VideoMessage _width. */
+            public _width?: "width";
+
+            /** VideoMessage _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** VideoMessage _directPath. */
+            public _directPath?: "directPath";
+
+            /** VideoMessage _mediaKeyTimestamp. */
+            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+            /** VideoMessage _jpegThumbnail. */
+            public _jpegThumbnail?: "jpegThumbnail";
+
+            /** VideoMessage _contextInfo. */
+            public _contextInfo?: "contextInfo";
+
+            /** VideoMessage _streamingSidecar. */
+            public _streamingSidecar?: "streamingSidecar";
+
+            /** VideoMessage _gifAttribution. */
+            public _gifAttribution?: "gifAttribution";
+
+            /** VideoMessage _viewOnce. */
+            public _viewOnce?: "viewOnce";
+
+            /** VideoMessage _thumbnailDirectPath. */
+            public _thumbnailDirectPath?: "thumbnailDirectPath";
+
+            /** VideoMessage _thumbnailSha256. */
+            public _thumbnailSha256?: "thumbnailSha256";
+
+            /** VideoMessage _thumbnailEncSha256. */
+            public _thumbnailEncSha256?: "thumbnailEncSha256";
+
+            /** VideoMessage _staticUrl. */
+            public _staticUrl?: "staticUrl";
+
+            /** VideoMessage _accessibilityLabel. */
+            public _accessibilityLabel?: "accessibilityLabel";
+
+            /** VideoMessage _externalShareFullVideoDurationInSeconds. */
+            public _externalShareFullVideoDurationInSeconds?: "externalShareFullVideoDurationInSeconds";
+
+            /** VideoMessage _motionPhotoPresentationOffsetMs. */
+            public _motionPhotoPresentationOffsetMs?: "motionPhotoPresentationOffsetMs";
+
+            /** VideoMessage _metadataUrl. */
+            public _metadataUrl?: "metadataUrl";
+
+            /** VideoMessage _videoSourceType. */
+            public _videoSourceType?: "videoSourceType";
+
+            /** VideoMessage _mediaKeyDomain. */
+            public _mediaKeyDomain?: "mediaKeyDomain";
 
             /**
              * Creates a new VideoMessage instance using the specified properties.
@@ -26911,13 +28741,6 @@ export namespace E2E {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for VideoMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace VideoMessage {
@@ -26975,16 +28798,28 @@ export namespace Protocol {
         constructor(properties?: Protocol.ILimitSharing);
 
         /** LimitSharing sharingLimited. */
-        public sharingLimited: boolean;
+        public sharingLimited?: (boolean|null);
 
         /** LimitSharing trigger. */
-        public trigger: Protocol.LimitSharing.TriggerType;
+        public trigger?: (Protocol.LimitSharing.TriggerType|null);
 
         /** LimitSharing limitSharingSettingTimestamp. */
-        public limitSharingSettingTimestamp: (number|Long);
+        public limitSharingSettingTimestamp?: (number|Long|null);
 
         /** LimitSharing initiatedByMe. */
-        public initiatedByMe: boolean;
+        public initiatedByMe?: (boolean|null);
+
+        /** LimitSharing _sharingLimited. */
+        public _sharingLimited?: "sharingLimited";
+
+        /** LimitSharing _trigger. */
+        public _trigger?: "trigger";
+
+        /** LimitSharing _limitSharingSettingTimestamp. */
+        public _limitSharingSettingTimestamp?: "limitSharingSettingTimestamp";
+
+        /** LimitSharing _initiatedByMe. */
+        public _initiatedByMe?: "initiatedByMe";
 
         /**
          * Creates a new LimitSharing instance using the specified properties.
@@ -27055,13 +28890,6 @@ export namespace Protocol {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for LimitSharing
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace LimitSharing {
@@ -27101,16 +28929,28 @@ export namespace Protocol {
         constructor(properties?: Protocol.IMessageKey);
 
         /** MessageKey remoteJid. */
-        public remoteJid: string;
+        public remoteJid?: (string|null);
 
         /** MessageKey fromMe. */
-        public fromMe: boolean;
+        public fromMe?: (boolean|null);
 
         /** MessageKey id. */
-        public id: string;
+        public id?: (string|null);
 
         /** MessageKey participant. */
-        public participant: string;
+        public participant?: (string|null);
+
+        /** MessageKey _remoteJid. */
+        public _remoteJid?: "remoteJid";
+
+        /** MessageKey _fromMe. */
+        public _fromMe?: "fromMe";
+
+        /** MessageKey _id. */
+        public _id?: "id";
+
+        /** MessageKey _participant. */
+        public _participant?: "participant";
 
         /**
          * Creates a new MessageKey instance using the specified properties.
@@ -27181,13 +29021,6 @@ export namespace Protocol {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MessageKey
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 }
 
@@ -27238,13 +29071,13 @@ export namespace AICommon {
         constructor(properties?: AICommon.IAIRichResponseSubMessage);
 
         /** AIRichResponseSubMessage messageType. */
-        public messageType: AICommon.AIRichResponseSubMessageType;
+        public messageType?: (AICommon.AIRichResponseSubMessageType|null);
 
         /** AIRichResponseSubMessage gridImageMetadata. */
         public gridImageMetadata?: (AICommon.IAIRichResponseGridImageMetadata|null);
 
         /** AIRichResponseSubMessage messageText. */
-        public messageText: string;
+        public messageText?: (string|null);
 
         /** AIRichResponseSubMessage imageMetadata. */
         public imageMetadata?: (AICommon.IAIRichResponseInlineImageMetadata|null);
@@ -27266,6 +29099,36 @@ export namespace AICommon {
 
         /** AIRichResponseSubMessage contentItemsMetadata. */
         public contentItemsMetadata?: (AICommon.IAIRichResponseContentItemsMetadata|null);
+
+        /** AIRichResponseSubMessage _messageType. */
+        public _messageType?: "messageType";
+
+        /** AIRichResponseSubMessage _gridImageMetadata. */
+        public _gridImageMetadata?: "gridImageMetadata";
+
+        /** AIRichResponseSubMessage _messageText. */
+        public _messageText?: "messageText";
+
+        /** AIRichResponseSubMessage _imageMetadata. */
+        public _imageMetadata?: "imageMetadata";
+
+        /** AIRichResponseSubMessage _codeMetadata. */
+        public _codeMetadata?: "codeMetadata";
+
+        /** AIRichResponseSubMessage _tableMetadata. */
+        public _tableMetadata?: "tableMetadata";
+
+        /** AIRichResponseSubMessage _dynamicMetadata. */
+        public _dynamicMetadata?: "dynamicMetadata";
+
+        /** AIRichResponseSubMessage _latexMetadata. */
+        public _latexMetadata?: "latexMetadata";
+
+        /** AIRichResponseSubMessage _mapMetadata. */
+        public _mapMetadata?: "mapMetadata";
+
+        /** AIRichResponseSubMessage _contentItemsMetadata. */
+        public _contentItemsMetadata?: "contentItemsMetadata";
 
         /**
          * Creates a new AIRichResponseSubMessage instance using the specified properties.
@@ -27336,13 +29199,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseSubMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a AIRichResponseContentItemsMetadata. */
@@ -27368,7 +29224,10 @@ export namespace AICommon {
         public itemsMetadata: AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseContentItemMetadata[];
 
         /** AIRichResponseContentItemsMetadata contentType. */
-        public contentType: AICommon.AIRichResponseContentItemsMetadata.ContentType;
+        public contentType?: (AICommon.AIRichResponseContentItemsMetadata.ContentType|null);
+
+        /** AIRichResponseContentItemsMetadata _contentType. */
+        public _contentType?: "contentType";
 
         /**
          * Creates a new AIRichResponseContentItemsMetadata instance using the specified properties.
@@ -27439,13 +29298,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseContentItemsMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace AIRichResponseContentItemsMetadata {
@@ -27541,13 +29393,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIRichResponseContentItemMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a AIRichResponseReelItem. */
@@ -27576,16 +29421,28 @@ export namespace AICommon {
             constructor(properties?: AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseReelItem);
 
             /** AIRichResponseReelItem title. */
-            public title: string;
+            public title?: (string|null);
 
             /** AIRichResponseReelItem profileIconUrl. */
-            public profileIconUrl: string;
+            public profileIconUrl?: (string|null);
 
             /** AIRichResponseReelItem thumbnailUrl. */
-            public thumbnailUrl: string;
+            public thumbnailUrl?: (string|null);
 
             /** AIRichResponseReelItem videoUrl. */
-            public videoUrl: string;
+            public videoUrl?: (string|null);
+
+            /** AIRichResponseReelItem _title. */
+            public _title?: "title";
+
+            /** AIRichResponseReelItem _profileIconUrl. */
+            public _profileIconUrl?: "profileIconUrl";
+
+            /** AIRichResponseReelItem _thumbnailUrl. */
+            public _thumbnailUrl?: "thumbnailUrl";
+
+            /** AIRichResponseReelItem _videoUrl. */
+            public _videoUrl?: "videoUrl";
 
             /**
              * Creates a new AIRichResponseReelItem instance using the specified properties.
@@ -27656,13 +29513,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIRichResponseReelItem
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** ContentType enum. */
@@ -27704,22 +29554,37 @@ export namespace AICommon {
         constructor(properties?: AICommon.IAIRichResponseMapMetadata);
 
         /** AIRichResponseMapMetadata centerLatitude. */
-        public centerLatitude: number;
+        public centerLatitude?: (number|null);
 
         /** AIRichResponseMapMetadata centerLongitude. */
-        public centerLongitude: number;
+        public centerLongitude?: (number|null);
 
         /** AIRichResponseMapMetadata latitudeDelta. */
-        public latitudeDelta: number;
+        public latitudeDelta?: (number|null);
 
         /** AIRichResponseMapMetadata longitudeDelta. */
-        public longitudeDelta: number;
+        public longitudeDelta?: (number|null);
 
         /** AIRichResponseMapMetadata annotations. */
         public annotations: AICommon.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation[];
 
         /** AIRichResponseMapMetadata showInfoList. */
-        public showInfoList: boolean;
+        public showInfoList?: (boolean|null);
+
+        /** AIRichResponseMapMetadata _centerLatitude. */
+        public _centerLatitude?: "centerLatitude";
+
+        /** AIRichResponseMapMetadata _centerLongitude. */
+        public _centerLongitude?: "centerLongitude";
+
+        /** AIRichResponseMapMetadata _latitudeDelta. */
+        public _latitudeDelta?: "latitudeDelta";
+
+        /** AIRichResponseMapMetadata _longitudeDelta. */
+        public _longitudeDelta?: "longitudeDelta";
+
+        /** AIRichResponseMapMetadata _showInfoList. */
+        public _showInfoList?: "showInfoList";
 
         /**
          * Creates a new AIRichResponseMapMetadata instance using the specified properties.
@@ -27790,13 +29655,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseMapMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace AIRichResponseMapMetadata {
@@ -27830,19 +29688,34 @@ export namespace AICommon {
             constructor(properties?: AICommon.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation);
 
             /** AIRichResponseMapAnnotation annotationNumber. */
-            public annotationNumber: number;
+            public annotationNumber?: (number|null);
 
             /** AIRichResponseMapAnnotation latitude. */
-            public latitude: number;
+            public latitude?: (number|null);
 
             /** AIRichResponseMapAnnotation longitude. */
-            public longitude: number;
+            public longitude?: (number|null);
 
             /** AIRichResponseMapAnnotation title. */
-            public title: string;
+            public title?: (string|null);
 
             /** AIRichResponseMapAnnotation body. */
-            public body: string;
+            public body?: (string|null);
+
+            /** AIRichResponseMapAnnotation _annotationNumber. */
+            public _annotationNumber?: "annotationNumber";
+
+            /** AIRichResponseMapAnnotation _latitude. */
+            public _latitude?: "latitude";
+
+            /** AIRichResponseMapAnnotation _longitude. */
+            public _longitude?: "longitude";
+
+            /** AIRichResponseMapAnnotation _title. */
+            public _title?: "title";
+
+            /** AIRichResponseMapAnnotation _body. */
+            public _body?: "body";
 
             /**
              * Creates a new AIRichResponseMapAnnotation instance using the specified properties.
@@ -27913,13 +29786,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIRichResponseMapAnnotation
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -27943,10 +29809,13 @@ export namespace AICommon {
         constructor(properties?: AICommon.IAIRichResponseLatexMetadata);
 
         /** AIRichResponseLatexMetadata text. */
-        public text: string;
+        public text?: (string|null);
 
         /** AIRichResponseLatexMetadata expressions. */
         public expressions: AICommon.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression[];
+
+        /** AIRichResponseLatexMetadata _text. */
+        public _text?: "text";
 
         /**
          * Creates a new AIRichResponseLatexMetadata instance using the specified properties.
@@ -28017,13 +29886,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseLatexMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace AIRichResponseLatexMetadata {
@@ -28069,31 +29931,58 @@ export namespace AICommon {
             constructor(properties?: AICommon.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression);
 
             /** AIRichResponseLatexExpression latexExpression. */
-            public latexExpression: string;
+            public latexExpression?: (string|null);
 
             /** AIRichResponseLatexExpression url. */
-            public url: string;
+            public url?: (string|null);
 
             /** AIRichResponseLatexExpression width. */
-            public width: number;
+            public width?: (number|null);
 
             /** AIRichResponseLatexExpression height. */
-            public height: number;
+            public height?: (number|null);
 
             /** AIRichResponseLatexExpression fontHeight. */
-            public fontHeight: number;
+            public fontHeight?: (number|null);
 
             /** AIRichResponseLatexExpression imageTopPadding. */
-            public imageTopPadding: number;
+            public imageTopPadding?: (number|null);
 
             /** AIRichResponseLatexExpression imageLeadingPadding. */
-            public imageLeadingPadding: number;
+            public imageLeadingPadding?: (number|null);
 
             /** AIRichResponseLatexExpression imageBottomPadding. */
-            public imageBottomPadding: number;
+            public imageBottomPadding?: (number|null);
 
             /** AIRichResponseLatexExpression imageTrailingPadding. */
-            public imageTrailingPadding: number;
+            public imageTrailingPadding?: (number|null);
+
+            /** AIRichResponseLatexExpression _latexExpression. */
+            public _latexExpression?: "latexExpression";
+
+            /** AIRichResponseLatexExpression _url. */
+            public _url?: "url";
+
+            /** AIRichResponseLatexExpression _width. */
+            public _width?: "width";
+
+            /** AIRichResponseLatexExpression _height. */
+            public _height?: "height";
+
+            /** AIRichResponseLatexExpression _fontHeight. */
+            public _fontHeight?: "fontHeight";
+
+            /** AIRichResponseLatexExpression _imageTopPadding. */
+            public _imageTopPadding?: "imageTopPadding";
+
+            /** AIRichResponseLatexExpression _imageLeadingPadding. */
+            public _imageLeadingPadding?: "imageLeadingPadding";
+
+            /** AIRichResponseLatexExpression _imageBottomPadding. */
+            public _imageBottomPadding?: "imageBottomPadding";
+
+            /** AIRichResponseLatexExpression _imageTrailingPadding. */
+            public _imageTrailingPadding?: "imageTrailingPadding";
 
             /**
              * Creates a new AIRichResponseLatexExpression instance using the specified properties.
@@ -28164,13 +30053,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIRichResponseLatexExpression
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -28191,7 +30073,10 @@ export namespace AICommon {
         constructor(properties?: AICommon.IAIRichResponseUnifiedResponse);
 
         /** AIRichResponseUnifiedResponse data. */
-        public data: Uint8Array;
+        public data?: (Uint8Array|null);
+
+        /** AIRichResponseUnifiedResponse _data. */
+        public _data?: "data";
 
         /**
          * Creates a new AIRichResponseUnifiedResponse instance using the specified properties.
@@ -28262,13 +30147,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseUnifiedResponse
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a AIRichResponseDynamicMetadata. */
@@ -28297,16 +30175,28 @@ export namespace AICommon {
         constructor(properties?: AICommon.IAIRichResponseDynamicMetadata);
 
         /** AIRichResponseDynamicMetadata type. */
-        public type: AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType;
+        public type?: (AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType|null);
 
         /** AIRichResponseDynamicMetadata version. */
-        public version: (number|Long);
+        public version?: (number|Long|null);
 
         /** AIRichResponseDynamicMetadata url. */
-        public url: string;
+        public url?: (string|null);
 
         /** AIRichResponseDynamicMetadata loopCount. */
-        public loopCount: number;
+        public loopCount?: (number|null);
+
+        /** AIRichResponseDynamicMetadata _type. */
+        public _type?: "type";
+
+        /** AIRichResponseDynamicMetadata _version. */
+        public _version?: "version";
+
+        /** AIRichResponseDynamicMetadata _url. */
+        public _url?: "url";
+
+        /** AIRichResponseDynamicMetadata _loopCount. */
+        public _loopCount?: "loopCount";
 
         /**
          * Creates a new AIRichResponseDynamicMetadata instance using the specified properties.
@@ -28377,13 +30267,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseDynamicMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace AIRichResponseDynamicMetadata {
@@ -28419,7 +30302,10 @@ export namespace AICommon {
         public rows: AICommon.AIRichResponseTableMetadata.IAIRichResponseTableRow[];
 
         /** AIRichResponseTableMetadata title. */
-        public title: string;
+        public title?: (string|null);
+
+        /** AIRichResponseTableMetadata _title. */
+        public _title?: "title";
 
         /**
          * Creates a new AIRichResponseTableMetadata instance using the specified properties.
@@ -28490,13 +30376,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseTableMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace AIRichResponseTableMetadata {
@@ -28524,7 +30403,10 @@ export namespace AICommon {
             public items: string[];
 
             /** AIRichResponseTableRow isHeading. */
-            public isHeading: boolean;
+            public isHeading?: (boolean|null);
+
+            /** AIRichResponseTableRow _isHeading. */
+            public _isHeading?: "isHeading";
 
             /**
              * Creates a new AIRichResponseTableRow instance using the specified properties.
@@ -28595,13 +30477,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIRichResponseTableRow
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -28625,10 +30500,13 @@ export namespace AICommon {
         constructor(properties?: AICommon.IAIRichResponseCodeMetadata);
 
         /** AIRichResponseCodeMetadata codeLanguage. */
-        public codeLanguage: string;
+        public codeLanguage?: (string|null);
 
         /** AIRichResponseCodeMetadata codeBlocks. */
         public codeBlocks: AICommon.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock[];
+
+        /** AIRichResponseCodeMetadata _codeLanguage. */
+        public _codeLanguage?: "codeLanguage";
 
         /**
          * Creates a new AIRichResponseCodeMetadata instance using the specified properties.
@@ -28699,13 +30577,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseCodeMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace AIRichResponseCodeMetadata {
@@ -28730,10 +30601,16 @@ export namespace AICommon {
             constructor(properties?: AICommon.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock);
 
             /** AIRichResponseCodeBlock highlightType. */
-            public highlightType: AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType;
+            public highlightType?: (AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType|null);
 
             /** AIRichResponseCodeBlock codeContent. */
-            public codeContent: string;
+            public codeContent?: (string|null);
+
+            /** AIRichResponseCodeBlock _highlightType. */
+            public _highlightType?: "highlightType";
+
+            /** AIRichResponseCodeBlock _codeContent. */
+            public _codeContent?: "codeContent";
 
             /**
              * Creates a new AIRichResponseCodeBlock instance using the specified properties.
@@ -28804,13 +30681,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIRichResponseCodeBlock
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** AIRichResponseCodeHighlightType enum. */
@@ -28853,13 +30723,25 @@ export namespace AICommon {
         public imageUrl?: (AICommon.IAIRichResponseImageURL|null);
 
         /** AIRichResponseInlineImageMetadata imageText. */
-        public imageText: string;
+        public imageText?: (string|null);
 
         /** AIRichResponseInlineImageMetadata alignment. */
-        public alignment: AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment;
+        public alignment?: (AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment|null);
 
         /** AIRichResponseInlineImageMetadata tapLinkUrl. */
-        public tapLinkUrl: string;
+        public tapLinkUrl?: (string|null);
+
+        /** AIRichResponseInlineImageMetadata _imageUrl. */
+        public _imageUrl?: "imageUrl";
+
+        /** AIRichResponseInlineImageMetadata _imageText. */
+        public _imageText?: "imageText";
+
+        /** AIRichResponseInlineImageMetadata _alignment. */
+        public _alignment?: "alignment";
+
+        /** AIRichResponseInlineImageMetadata _tapLinkUrl. */
+        public _tapLinkUrl?: "tapLinkUrl";
 
         /**
          * Creates a new AIRichResponseInlineImageMetadata instance using the specified properties.
@@ -28930,13 +30812,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseInlineImageMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace AIRichResponseInlineImageMetadata {
@@ -28973,6 +30848,9 @@ export namespace AICommon {
 
         /** AIRichResponseGridImageMetadata imageUrls. */
         public imageUrls: AICommon.IAIRichResponseImageURL[];
+
+        /** AIRichResponseGridImageMetadata _gridImageUrl. */
+        public _gridImageUrl?: "gridImageUrl";
 
         /**
          * Creates a new AIRichResponseGridImageMetadata instance using the specified properties.
@@ -29043,13 +30921,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseGridImageMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a AIRichResponseImageURL. */
@@ -29075,13 +30946,22 @@ export namespace AICommon {
         constructor(properties?: AICommon.IAIRichResponseImageURL);
 
         /** AIRichResponseImageURL imagePreviewUrl. */
-        public imagePreviewUrl: string;
+        public imagePreviewUrl?: (string|null);
 
         /** AIRichResponseImageURL imageHighResUrl. */
-        public imageHighResUrl: string;
+        public imageHighResUrl?: (string|null);
 
         /** AIRichResponseImageURL sourceUrl. */
-        public sourceUrl: string;
+        public sourceUrl?: (string|null);
+
+        /** AIRichResponseImageURL _imagePreviewUrl. */
+        public _imagePreviewUrl?: "imagePreviewUrl";
+
+        /** AIRichResponseImageURL _imageHighResUrl. */
+        public _imageHighResUrl?: "imageHighResUrl";
+
+        /** AIRichResponseImageURL _sourceUrl. */
+        public _sourceUrl?: "sourceUrl";
 
         /**
          * Creates a new AIRichResponseImageURL instance using the specified properties.
@@ -29152,13 +31032,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIRichResponseImageURL
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a ForwardedAIBotMessageInfo. */
@@ -29184,13 +31057,22 @@ export namespace AICommon {
         constructor(properties?: AICommon.IForwardedAIBotMessageInfo);
 
         /** ForwardedAIBotMessageInfo botName. */
-        public botName: string;
+        public botName?: (string|null);
 
         /** ForwardedAIBotMessageInfo botJid. */
-        public botJid: string;
+        public botJid?: (string|null);
 
         /** ForwardedAIBotMessageInfo creatorName. */
-        public creatorName: string;
+        public creatorName?: (string|null);
+
+        /** ForwardedAIBotMessageInfo _botName. */
+        public _botName?: "botName";
+
+        /** ForwardedAIBotMessageInfo _botJid. */
+        public _botJid?: "botJid";
+
+        /** ForwardedAIBotMessageInfo _creatorName. */
+        public _creatorName?: "creatorName";
 
         /**
          * Creates a new ForwardedAIBotMessageInfo instance using the specified properties.
@@ -29261,13 +31143,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ForwardedAIBotMessageInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotFeedbackMessage. */
@@ -29308,22 +31183,43 @@ export namespace AICommon {
         public messageKey?: (Protocol.IMessageKey|null);
 
         /** BotFeedbackMessage kind. */
-        public kind: AICommon.BotFeedbackMessage.BotFeedbackKind;
+        public kind?: (AICommon.BotFeedbackMessage.BotFeedbackKind|null);
 
         /** BotFeedbackMessage text. */
-        public text: string;
+        public text?: (string|null);
 
         /** BotFeedbackMessage kindNegative. */
-        public kindNegative: (number|Long);
+        public kindNegative?: (number|Long|null);
 
         /** BotFeedbackMessage kindPositive. */
-        public kindPositive: (number|Long);
+        public kindPositive?: (number|Long|null);
 
         /** BotFeedbackMessage kindReport. */
-        public kindReport: AICommon.BotFeedbackMessage.ReportKind;
+        public kindReport?: (AICommon.BotFeedbackMessage.ReportKind|null);
 
         /** BotFeedbackMessage sideBySideSurveyMetadata. */
         public sideBySideSurveyMetadata?: (AICommon.BotFeedbackMessage.ISideBySideSurveyMetadata|null);
+
+        /** BotFeedbackMessage _messageKey. */
+        public _messageKey?: "messageKey";
+
+        /** BotFeedbackMessage _kind. */
+        public _kind?: "kind";
+
+        /** BotFeedbackMessage _text. */
+        public _text?: "text";
+
+        /** BotFeedbackMessage _kindNegative. */
+        public _kindNegative?: "kindNegative";
+
+        /** BotFeedbackMessage _kindPositive. */
+        public _kindPositive?: "kindPositive";
+
+        /** BotFeedbackMessage _kindReport. */
+        public _kindReport?: "kindReport";
+
+        /** BotFeedbackMessage _sideBySideSurveyMetadata. */
+        public _sideBySideSurveyMetadata?: "sideBySideSurveyMetadata";
 
         /**
          * Creates a new BotFeedbackMessage instance using the specified properties.
@@ -29394,13 +31290,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotFeedbackMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotFeedbackMessage {
@@ -29486,28 +31375,52 @@ export namespace AICommon {
             constructor(properties?: AICommon.BotFeedbackMessage.ISideBySideSurveyMetadata);
 
             /** SideBySideSurveyMetadata selectedRequestId. */
-            public selectedRequestId: string;
+            public selectedRequestId?: (string|null);
 
             /** SideBySideSurveyMetadata surveyId. */
-            public surveyId: number;
+            public surveyId?: (number|null);
 
             /** SideBySideSurveyMetadata simonSessionFbid. */
-            public simonSessionFbid: string;
+            public simonSessionFbid?: (string|null);
 
             /** SideBySideSurveyMetadata responseOtid. */
-            public responseOtid: string;
+            public responseOtid?: (string|null);
 
             /** SideBySideSurveyMetadata responseTimestampMsString. */
-            public responseTimestampMsString: string;
+            public responseTimestampMsString?: (string|null);
 
             /** SideBySideSurveyMetadata isSelectedResponsePrimary. */
-            public isSelectedResponsePrimary: boolean;
+            public isSelectedResponsePrimary?: (boolean|null);
 
             /** SideBySideSurveyMetadata messageIdToEdit. */
-            public messageIdToEdit: string;
+            public messageIdToEdit?: (string|null);
 
             /** SideBySideSurveyMetadata analyticsData. */
             public analyticsData?: (AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.ISideBySideSurveyAnalyticsData|null);
+
+            /** SideBySideSurveyMetadata _selectedRequestId. */
+            public _selectedRequestId?: "selectedRequestId";
+
+            /** SideBySideSurveyMetadata _surveyId. */
+            public _surveyId?: "surveyId";
+
+            /** SideBySideSurveyMetadata _simonSessionFbid. */
+            public _simonSessionFbid?: "simonSessionFbid";
+
+            /** SideBySideSurveyMetadata _responseOtid. */
+            public _responseOtid?: "responseOtid";
+
+            /** SideBySideSurveyMetadata _responseTimestampMsString. */
+            public _responseTimestampMsString?: "responseTimestampMsString";
+
+            /** SideBySideSurveyMetadata _isSelectedResponsePrimary. */
+            public _isSelectedResponsePrimary?: "isSelectedResponsePrimary";
+
+            /** SideBySideSurveyMetadata _messageIdToEdit. */
+            public _messageIdToEdit?: "messageIdToEdit";
+
+            /** SideBySideSurveyMetadata _analyticsData. */
+            public _analyticsData?: "analyticsData";
 
             /**
              * Creates a new SideBySideSurveyMetadata instance using the specified properties.
@@ -29578,13 +31491,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SideBySideSurveyMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace SideBySideSurveyMetadata {
@@ -29609,10 +31515,16 @@ export namespace AICommon {
                 constructor(properties?: AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.ISideBySideSurveyAnalyticsData);
 
                 /** SideBySideSurveyAnalyticsData tessaEvent. */
-                public tessaEvent: string;
+                public tessaEvent?: (string|null);
 
                 /** SideBySideSurveyAnalyticsData tessaSessionFbid. */
-                public tessaSessionFbid: string;
+                public tessaSessionFbid?: (string|null);
+
+                /** SideBySideSurveyAnalyticsData _tessaEvent. */
+                public _tessaEvent?: "tessaEvent";
+
+                /** SideBySideSurveyAnalyticsData _tessaSessionFbid. */
+                public _tessaSessionFbid?: "tessaSessionFbid";
 
                 /**
                  * Creates a new SideBySideSurveyAnalyticsData instance using the specified properties.
@@ -29683,13 +31595,6 @@ export namespace AICommon {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for SideBySideSurveyAnalyticsData
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
     }
@@ -29807,7 +31712,7 @@ export namespace AICommon {
         public avatarMetadata?: (AICommon.IBotAvatarMetadata|null);
 
         /** BotMetadata personaId. */
-        public personaId: string;
+        public personaId?: (string|null);
 
         /** BotMetadata pluginMetadata. */
         public pluginMetadata?: (AICommon.IBotPluginMetadata|null);
@@ -29816,7 +31721,7 @@ export namespace AICommon {
         public suggestedPromptMetadata?: (AICommon.IBotSuggestedPromptMetadata|null);
 
         /** BotMetadata invokerJid. */
-        public invokerJid: string;
+        public invokerJid?: (string|null);
 
         /** BotMetadata sessionMetadata. */
         public sessionMetadata?: (AICommon.IBotSessionMetadata|null);
@@ -29825,7 +31730,7 @@ export namespace AICommon {
         public memuMetadata?: (AICommon.IBotMemuMetadata|null);
 
         /** BotMetadata timezone. */
-        public timezone: string;
+        public timezone?: (string|null);
 
         /** BotMetadata reminderMetadata. */
         public reminderMetadata?: (AICommon.IBotReminderMetadata|null);
@@ -29834,7 +31739,7 @@ export namespace AICommon {
         public modelMetadata?: (AICommon.IBotModelMetadata|null);
 
         /** BotMetadata messageDisclaimerText. */
-        public messageDisclaimerText: string;
+        public messageDisclaimerText?: (string|null);
 
         /** BotMetadata progressIndicatorMetadata. */
         public progressIndicatorMetadata?: (AICommon.IBotProgressIndicatorMetadata|null);
@@ -29861,7 +31766,7 @@ export namespace AICommon {
         public richResponseSourcesMetadata?: (AICommon.IBotSourcesMetadata|null);
 
         /** BotMetadata aiConversationContext. */
-        public aiConversationContext: Uint8Array;
+        public aiConversationContext?: (Uint8Array|null);
 
         /** BotMetadata botPromotionMessageMetadata. */
         public botPromotionMessageMetadata?: (AICommon.IBotPromotionMessageMetadata|null);
@@ -29876,10 +31781,10 @@ export namespace AICommon {
         public botAgeCollectionMetadata?: (AICommon.IBotAgeCollectionMetadata|null);
 
         /** BotMetadata conversationStarterPromptId. */
-        public conversationStarterPromptId: string;
+        public conversationStarterPromptId?: (string|null);
 
         /** BotMetadata botResponseId. */
-        public botResponseId: string;
+        public botResponseId?: (string|null);
 
         /** BotMetadata verificationMetadata. */
         public verificationMetadata?: (AICommon.IBotSignatureVerificationMetadata|null);
@@ -29897,7 +31802,103 @@ export namespace AICommon {
         public botThreadInfo?: (AICommon.IAIThreadInfo|null);
 
         /** BotMetadata internalMetadata. */
-        public internalMetadata: Uint8Array;
+        public internalMetadata?: (Uint8Array|null);
+
+        /** BotMetadata _avatarMetadata. */
+        public _avatarMetadata?: "avatarMetadata";
+
+        /** BotMetadata _personaId. */
+        public _personaId?: "personaId";
+
+        /** BotMetadata _pluginMetadata. */
+        public _pluginMetadata?: "pluginMetadata";
+
+        /** BotMetadata _suggestedPromptMetadata. */
+        public _suggestedPromptMetadata?: "suggestedPromptMetadata";
+
+        /** BotMetadata _invokerJid. */
+        public _invokerJid?: "invokerJid";
+
+        /** BotMetadata _sessionMetadata. */
+        public _sessionMetadata?: "sessionMetadata";
+
+        /** BotMetadata _memuMetadata. */
+        public _memuMetadata?: "memuMetadata";
+
+        /** BotMetadata _timezone. */
+        public _timezone?: "timezone";
+
+        /** BotMetadata _reminderMetadata. */
+        public _reminderMetadata?: "reminderMetadata";
+
+        /** BotMetadata _modelMetadata. */
+        public _modelMetadata?: "modelMetadata";
+
+        /** BotMetadata _messageDisclaimerText. */
+        public _messageDisclaimerText?: "messageDisclaimerText";
+
+        /** BotMetadata _progressIndicatorMetadata. */
+        public _progressIndicatorMetadata?: "progressIndicatorMetadata";
+
+        /** BotMetadata _capabilityMetadata. */
+        public _capabilityMetadata?: "capabilityMetadata";
+
+        /** BotMetadata _imagineMetadata. */
+        public _imagineMetadata?: "imagineMetadata";
+
+        /** BotMetadata _memoryMetadata. */
+        public _memoryMetadata?: "memoryMetadata";
+
+        /** BotMetadata _renderingMetadata. */
+        public _renderingMetadata?: "renderingMetadata";
+
+        /** BotMetadata _botMetricsMetadata. */
+        public _botMetricsMetadata?: "botMetricsMetadata";
+
+        /** BotMetadata _botLinkedAccountsMetadata. */
+        public _botLinkedAccountsMetadata?: "botLinkedAccountsMetadata";
+
+        /** BotMetadata _richResponseSourcesMetadata. */
+        public _richResponseSourcesMetadata?: "richResponseSourcesMetadata";
+
+        /** BotMetadata _aiConversationContext. */
+        public _aiConversationContext?: "aiConversationContext";
+
+        /** BotMetadata _botPromotionMessageMetadata. */
+        public _botPromotionMessageMetadata?: "botPromotionMessageMetadata";
+
+        /** BotMetadata _botModeSelectionMetadata. */
+        public _botModeSelectionMetadata?: "botModeSelectionMetadata";
+
+        /** BotMetadata _botQuotaMetadata. */
+        public _botQuotaMetadata?: "botQuotaMetadata";
+
+        /** BotMetadata _botAgeCollectionMetadata. */
+        public _botAgeCollectionMetadata?: "botAgeCollectionMetadata";
+
+        /** BotMetadata _conversationStarterPromptId. */
+        public _conversationStarterPromptId?: "conversationStarterPromptId";
+
+        /** BotMetadata _botResponseId. */
+        public _botResponseId?: "botResponseId";
+
+        /** BotMetadata _verificationMetadata. */
+        public _verificationMetadata?: "verificationMetadata";
+
+        /** BotMetadata _unifiedResponseMutation. */
+        public _unifiedResponseMutation?: "unifiedResponseMutation";
+
+        /** BotMetadata _botMessageOriginMetadata. */
+        public _botMessageOriginMetadata?: "botMessageOriginMetadata";
+
+        /** BotMetadata _inThreadSurveyMetadata. */
+        public _inThreadSurveyMetadata?: "inThreadSurveyMetadata";
+
+        /** BotMetadata _botThreadInfo. */
+        public _botThreadInfo?: "botThreadInfo";
+
+        /** BotMetadata _internalMetadata. */
+        public _internalMetadata?: "internalMetadata";
 
         /**
          * Creates a new BotMetadata instance using the specified properties.
@@ -29968,13 +31969,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a AIThreadInfo. */
@@ -30001,6 +31995,12 @@ export namespace AICommon {
 
         /** AIThreadInfo clientInfo. */
         public clientInfo?: (AICommon.AIThreadInfo.IAIThreadClientInfo|null);
+
+        /** AIThreadInfo _serverInfo. */
+        public _serverInfo?: "serverInfo";
+
+        /** AIThreadInfo _clientInfo. */
+        public _clientInfo?: "clientInfo";
 
         /**
          * Creates a new AIThreadInfo instance using the specified properties.
@@ -30071,13 +32071,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIThreadInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace AIThreadInfo {
@@ -30099,7 +32092,10 @@ export namespace AICommon {
             constructor(properties?: AICommon.AIThreadInfo.IAIThreadClientInfo);
 
             /** AIThreadClientInfo type. */
-            public type: AICommon.AIThreadInfo.AIThreadClientInfo.AIThreadType;
+            public type?: (AICommon.AIThreadInfo.AIThreadClientInfo.AIThreadType|null);
+
+            /** AIThreadClientInfo _type. */
+            public _type?: "type";
 
             /**
              * Creates a new AIThreadClientInfo instance using the specified properties.
@@ -30170,13 +32166,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIThreadClientInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace AIThreadClientInfo {
@@ -30206,7 +32195,10 @@ export namespace AICommon {
             constructor(properties?: AICommon.AIThreadInfo.IAIThreadServerInfo);
 
             /** AIThreadServerInfo title. */
-            public title: string;
+            public title?: (string|null);
+
+            /** AIThreadServerInfo _title. */
+            public _title?: "title";
 
             /**
              * Creates a new AIThreadServerInfo instance using the specified properties.
@@ -30277,13 +32269,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIThreadServerInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -30311,6 +32296,9 @@ export namespace AICommon {
 
         /** BotUnifiedResponseMutation mediaDetailsMetadataList. */
         public mediaDetailsMetadataList: AICommon.BotUnifiedResponseMutation.IMediaDetailsMetadata[];
+
+        /** BotUnifiedResponseMutation _sbsMetadata. */
+        public _sbsMetadata?: "sbsMetadata";
 
         /**
          * Creates a new BotUnifiedResponseMutation instance using the specified properties.
@@ -30381,13 +32369,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotUnifiedResponseMutation
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotUnifiedResponseMutation {
@@ -30415,13 +32396,22 @@ export namespace AICommon {
             constructor(properties?: AICommon.BotUnifiedResponseMutation.IMediaDetailsMetadata);
 
             /** MediaDetailsMetadata id. */
-            public id: string;
+            public id?: (string|null);
 
             /** MediaDetailsMetadata highResMedia. */
             public highResMedia?: (AICommon.IBotMediaMetadata|null);
 
             /** MediaDetailsMetadata previewMedia. */
             public previewMedia?: (AICommon.IBotMediaMetadata|null);
+
+            /** MediaDetailsMetadata _id. */
+            public _id?: "id";
+
+            /** MediaDetailsMetadata _highResMedia. */
+            public _highResMedia?: "highResMedia";
+
+            /** MediaDetailsMetadata _previewMedia. */
+            public _previewMedia?: "previewMedia";
 
             /**
              * Creates a new MediaDetailsMetadata instance using the specified properties.
@@ -30492,13 +32482,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MediaDetailsMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a SideBySideMetadata. */
@@ -30518,7 +32501,10 @@ export namespace AICommon {
             constructor(properties?: AICommon.BotUnifiedResponseMutation.ISideBySideMetadata);
 
             /** SideBySideMetadata primaryResponseId. */
-            public primaryResponseId: string;
+            public primaryResponseId?: (string|null);
+
+            /** SideBySideMetadata _primaryResponseId. */
+            public _primaryResponseId?: "primaryResponseId";
 
             /**
              * Creates a new SideBySideMetadata instance using the specified properties.
@@ -30589,13 +32575,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SideBySideMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -30616,7 +32595,10 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotMessageOrigin);
 
         /** BotMessageOrigin type. */
-        public type: AICommon.BotMessageOrigin.BotMessageOriginType;
+        public type?: (AICommon.BotMessageOrigin.BotMessageOriginType|null);
+
+        /** BotMessageOrigin _type. */
+        public _type?: "type";
 
         /**
          * Creates a new BotMessageOrigin instance using the specified properties.
@@ -30687,13 +32669,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMessageOrigin
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotMessageOrigin {
@@ -30792,13 +32767,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMessageOriginMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an InThreadSurveyMetadata. */
@@ -30866,55 +32834,100 @@ export namespace AICommon {
         constructor(properties?: AICommon.IInThreadSurveyMetadata);
 
         /** InThreadSurveyMetadata tessaSessionId. */
-        public tessaSessionId: string;
+        public tessaSessionId?: (string|null);
 
         /** InThreadSurveyMetadata simonSessionId. */
-        public simonSessionId: string;
+        public simonSessionId?: (string|null);
 
         /** InThreadSurveyMetadata simonSurveyId. */
-        public simonSurveyId: string;
+        public simonSurveyId?: (string|null);
 
         /** InThreadSurveyMetadata tessaRootId. */
-        public tessaRootId: string;
+        public tessaRootId?: (string|null);
 
         /** InThreadSurveyMetadata requestId. */
-        public requestId: string;
+        public requestId?: (string|null);
 
         /** InThreadSurveyMetadata tessaEvent. */
-        public tessaEvent: string;
+        public tessaEvent?: (string|null);
 
         /** InThreadSurveyMetadata invitationHeaderText. */
-        public invitationHeaderText: string;
+        public invitationHeaderText?: (string|null);
 
         /** InThreadSurveyMetadata invitationBodyText. */
-        public invitationBodyText: string;
+        public invitationBodyText?: (string|null);
 
         /** InThreadSurveyMetadata invitationCtaText. */
-        public invitationCtaText: string;
+        public invitationCtaText?: (string|null);
 
         /** InThreadSurveyMetadata invitationCtaUrl. */
-        public invitationCtaUrl: string;
+        public invitationCtaUrl?: (string|null);
 
         /** InThreadSurveyMetadata surveyTitle. */
-        public surveyTitle: string;
+        public surveyTitle?: (string|null);
 
         /** InThreadSurveyMetadata questions. */
         public questions: AICommon.InThreadSurveyMetadata.IInThreadSurveyQuestion[];
 
         /** InThreadSurveyMetadata surveyContinueButtonText. */
-        public surveyContinueButtonText: string;
+        public surveyContinueButtonText?: (string|null);
 
         /** InThreadSurveyMetadata surveySubmitButtonText. */
-        public surveySubmitButtonText: string;
+        public surveySubmitButtonText?: (string|null);
 
         /** InThreadSurveyMetadata privacyStatementFull. */
-        public privacyStatementFull: string;
+        public privacyStatementFull?: (string|null);
 
         /** InThreadSurveyMetadata privacyStatementParts. */
         public privacyStatementParts: AICommon.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart[];
 
         /** InThreadSurveyMetadata feedbackToastText. */
-        public feedbackToastText: string;
+        public feedbackToastText?: (string|null);
+
+        /** InThreadSurveyMetadata _tessaSessionId. */
+        public _tessaSessionId?: "tessaSessionId";
+
+        /** InThreadSurveyMetadata _simonSessionId. */
+        public _simonSessionId?: "simonSessionId";
+
+        /** InThreadSurveyMetadata _simonSurveyId. */
+        public _simonSurveyId?: "simonSurveyId";
+
+        /** InThreadSurveyMetadata _tessaRootId. */
+        public _tessaRootId?: "tessaRootId";
+
+        /** InThreadSurveyMetadata _requestId. */
+        public _requestId?: "requestId";
+
+        /** InThreadSurveyMetadata _tessaEvent. */
+        public _tessaEvent?: "tessaEvent";
+
+        /** InThreadSurveyMetadata _invitationHeaderText. */
+        public _invitationHeaderText?: "invitationHeaderText";
+
+        /** InThreadSurveyMetadata _invitationBodyText. */
+        public _invitationBodyText?: "invitationBodyText";
+
+        /** InThreadSurveyMetadata _invitationCtaText. */
+        public _invitationCtaText?: "invitationCtaText";
+
+        /** InThreadSurveyMetadata _invitationCtaUrl. */
+        public _invitationCtaUrl?: "invitationCtaUrl";
+
+        /** InThreadSurveyMetadata _surveyTitle. */
+        public _surveyTitle?: "surveyTitle";
+
+        /** InThreadSurveyMetadata _surveyContinueButtonText. */
+        public _surveyContinueButtonText?: "surveyContinueButtonText";
+
+        /** InThreadSurveyMetadata _surveySubmitButtonText. */
+        public _surveySubmitButtonText?: "surveySubmitButtonText";
+
+        /** InThreadSurveyMetadata _privacyStatementFull. */
+        public _privacyStatementFull?: "privacyStatementFull";
+
+        /** InThreadSurveyMetadata _feedbackToastText. */
+        public _feedbackToastText?: "feedbackToastText";
 
         /**
          * Creates a new InThreadSurveyMetadata instance using the specified properties.
@@ -30985,13 +32998,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for InThreadSurveyMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace InThreadSurveyMetadata {
@@ -31019,13 +33025,22 @@ export namespace AICommon {
             constructor(properties?: AICommon.InThreadSurveyMetadata.IInThreadSurveyOption);
 
             /** InThreadSurveyOption stringValue. */
-            public stringValue: string;
+            public stringValue?: (string|null);
 
             /** InThreadSurveyOption numericValue. */
-            public numericValue: number;
+            public numericValue?: (number|null);
 
             /** InThreadSurveyOption textTranslated. */
-            public textTranslated: string;
+            public textTranslated?: (string|null);
+
+            /** InThreadSurveyOption _stringValue. */
+            public _stringValue?: "stringValue";
+
+            /** InThreadSurveyOption _numericValue. */
+            public _numericValue?: "numericValue";
+
+            /** InThreadSurveyOption _textTranslated. */
+            public _textTranslated?: "textTranslated";
 
             /**
              * Creates a new InThreadSurveyOption instance using the specified properties.
@@ -31096,13 +33111,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InThreadSurveyOption
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an InThreadSurveyPrivacyStatementPart. */
@@ -31125,10 +33133,16 @@ export namespace AICommon {
             constructor(properties?: AICommon.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart);
 
             /** InThreadSurveyPrivacyStatementPart text. */
-            public text: string;
+            public text?: (string|null);
 
             /** InThreadSurveyPrivacyStatementPart url. */
-            public url: string;
+            public url?: (string|null);
+
+            /** InThreadSurveyPrivacyStatementPart _text. */
+            public _text?: "text";
+
+            /** InThreadSurveyPrivacyStatementPart _url. */
+            public _url?: "url";
 
             /**
              * Creates a new InThreadSurveyPrivacyStatementPart instance using the specified properties.
@@ -31199,13 +33213,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InThreadSurveyPrivacyStatementPart
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an InThreadSurveyQuestion. */
@@ -31231,13 +33238,19 @@ export namespace AICommon {
             constructor(properties?: AICommon.InThreadSurveyMetadata.IInThreadSurveyQuestion);
 
             /** InThreadSurveyQuestion questionText. */
-            public questionText: string;
+            public questionText?: (string|null);
 
             /** InThreadSurveyQuestion questionId. */
-            public questionId: string;
+            public questionId?: (string|null);
 
             /** InThreadSurveyQuestion questionOptions. */
             public questionOptions: AICommon.InThreadSurveyMetadata.IInThreadSurveyOption[];
+
+            /** InThreadSurveyQuestion _questionText. */
+            public _questionText?: "questionText";
+
+            /** InThreadSurveyQuestion _questionId. */
+            public _questionId?: "questionId";
 
             /**
              * Creates a new InThreadSurveyQuestion instance using the specified properties.
@@ -31308,13 +33321,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InThreadSurveyQuestion
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -31406,13 +33412,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSourcesMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotSourcesMetadata {
@@ -31452,25 +33451,46 @@ export namespace AICommon {
             constructor(properties?: AICommon.BotSourcesMetadata.IBotSourceItem);
 
             /** BotSourceItem provider. */
-            public provider: AICommon.BotSourcesMetadata.BotSourceItem.SourceProvider;
+            public provider?: (AICommon.BotSourcesMetadata.BotSourceItem.SourceProvider|null);
 
             /** BotSourceItem thumbnailCdnUrl. */
-            public thumbnailCdnUrl: string;
+            public thumbnailCdnUrl?: (string|null);
 
             /** BotSourceItem sourceProviderUrl. */
-            public sourceProviderUrl: string;
+            public sourceProviderUrl?: (string|null);
 
             /** BotSourceItem sourceQuery. */
-            public sourceQuery: string;
+            public sourceQuery?: (string|null);
 
             /** BotSourceItem faviconCdnUrl. */
-            public faviconCdnUrl: string;
+            public faviconCdnUrl?: (string|null);
 
             /** BotSourceItem citationNumber. */
-            public citationNumber: number;
+            public citationNumber?: (number|null);
 
             /** BotSourceItem sourceTitle. */
-            public sourceTitle: string;
+            public sourceTitle?: (string|null);
+
+            /** BotSourceItem _provider. */
+            public _provider?: "provider";
+
+            /** BotSourceItem _thumbnailCdnUrl. */
+            public _thumbnailCdnUrl?: "thumbnailCdnUrl";
+
+            /** BotSourceItem _sourceProviderUrl. */
+            public _sourceProviderUrl?: "sourceProviderUrl";
+
+            /** BotSourceItem _sourceQuery. */
+            public _sourceQuery?: "sourceQuery";
+
+            /** BotSourceItem _faviconCdnUrl. */
+            public _faviconCdnUrl?: "faviconCdnUrl";
+
+            /** BotSourceItem _citationNumber. */
+            public _citationNumber?: "citationNumber";
+
+            /** BotSourceItem _sourceTitle. */
+            public _sourceTitle?: "sourceTitle";
 
             /**
              * Creates a new BotSourceItem instance using the specified properties.
@@ -31541,13 +33561,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotSourceItem
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace BotSourceItem {
@@ -31583,10 +33596,16 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotAgeCollectionMetadata);
 
         /** BotAgeCollectionMetadata ageCollectionEligible. */
-        public ageCollectionEligible: boolean;
+        public ageCollectionEligible?: (boolean|null);
 
         /** BotAgeCollectionMetadata shouldTriggerAgeCollectionOnClient. */
-        public shouldTriggerAgeCollectionOnClient: boolean;
+        public shouldTriggerAgeCollectionOnClient?: (boolean|null);
+
+        /** BotAgeCollectionMetadata _ageCollectionEligible. */
+        public _ageCollectionEligible?: "ageCollectionEligible";
+
+        /** BotAgeCollectionMetadata _shouldTriggerAgeCollectionOnClient. */
+        public _shouldTriggerAgeCollectionOnClient?: "shouldTriggerAgeCollectionOnClient";
 
         /**
          * Creates a new BotAgeCollectionMetadata instance using the specified properties.
@@ -31657,13 +33676,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotAgeCollectionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotImagineMetadata. */
@@ -31683,7 +33695,10 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotImagineMetadata);
 
         /** BotImagineMetadata imagineType. */
-        public imagineType: AICommon.BotImagineMetadata.ImagineType;
+        public imagineType?: (AICommon.BotImagineMetadata.ImagineType|null);
+
+        /** BotImagineMetadata _imagineType. */
+        public _imagineType?: "imagineType";
 
         /**
          * Creates a new BotImagineMetadata instance using the specified properties.
@@ -31754,13 +33769,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotImagineMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotImagineMetadata {
@@ -31863,13 +33871,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotQuotaMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotQuotaMetadata {
@@ -31897,13 +33898,22 @@ export namespace AICommon {
             constructor(properties?: AICommon.BotQuotaMetadata.IBotFeatureQuotaMetadata);
 
             /** BotFeatureQuotaMetadata featureType. */
-            public featureType: AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType;
+            public featureType?: (AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType|null);
 
             /** BotFeatureQuotaMetadata remainingQuota. */
-            public remainingQuota: number;
+            public remainingQuota?: (number|null);
 
             /** BotFeatureQuotaMetadata expirationTimestamp. */
-            public expirationTimestamp: (number|Long);
+            public expirationTimestamp?: (number|Long|null);
+
+            /** BotFeatureQuotaMetadata _featureType. */
+            public _featureType?: "featureType";
+
+            /** BotFeatureQuotaMetadata _remainingQuota. */
+            public _remainingQuota?: "remainingQuota";
+
+            /** BotFeatureQuotaMetadata _expirationTimestamp. */
+            public _expirationTimestamp?: "expirationTimestamp";
 
             /**
              * Creates a new BotFeatureQuotaMetadata instance using the specified properties.
@@ -31974,13 +33984,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotFeatureQuotaMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace BotFeatureQuotaMetadata {
@@ -32081,13 +34084,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotModeSelectionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotModeSelectionMetadata {
@@ -32187,13 +34183,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotCapabilityMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotCapabilityMetadata {
@@ -32269,10 +34258,13 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotProgressIndicatorMetadata);
 
         /** BotProgressIndicatorMetadata progressDescription. */
-        public progressDescription: string;
+        public progressDescription?: (string|null);
 
         /** BotProgressIndicatorMetadata stepsMetadata. */
         public stepsMetadata: AICommon.BotProgressIndicatorMetadata.IBotPlanningStepMetadata[];
+
+        /** BotProgressIndicatorMetadata _progressDescription. */
+        public _progressDescription?: "progressDescription";
 
         /**
          * Creates a new BotProgressIndicatorMetadata instance using the specified properties.
@@ -32343,13 +34335,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotProgressIndicatorMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotProgressIndicatorMetadata {
@@ -32389,25 +34374,40 @@ export namespace AICommon {
             constructor(properties?: AICommon.BotProgressIndicatorMetadata.IBotPlanningStepMetadata);
 
             /** BotPlanningStepMetadata statusTitle. */
-            public statusTitle: string;
+            public statusTitle?: (string|null);
 
             /** BotPlanningStepMetadata statusBody. */
-            public statusBody: string;
+            public statusBody?: (string|null);
 
             /** BotPlanningStepMetadata sourcesMetadata. */
             public sourcesMetadata: AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata[];
 
             /** BotPlanningStepMetadata status. */
-            public status: AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus;
+            public status?: (AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus|null);
 
             /** BotPlanningStepMetadata isReasoning. */
-            public isReasoning: boolean;
+            public isReasoning?: (boolean|null);
 
             /** BotPlanningStepMetadata isEnhancedSearch. */
-            public isEnhancedSearch: boolean;
+            public isEnhancedSearch?: (boolean|null);
 
             /** BotPlanningStepMetadata sections. */
             public sections: AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata[];
+
+            /** BotPlanningStepMetadata _statusTitle. */
+            public _statusTitle?: "statusTitle";
+
+            /** BotPlanningStepMetadata _statusBody. */
+            public _statusBody?: "statusBody";
+
+            /** BotPlanningStepMetadata _status. */
+            public _status?: "status";
+
+            /** BotPlanningStepMetadata _isReasoning. */
+            public _isReasoning?: "isReasoning";
+
+            /** BotPlanningStepMetadata _isEnhancedSearch. */
+            public _isEnhancedSearch?: "isEnhancedSearch";
 
             /**
              * Creates a new BotPlanningStepMetadata instance using the specified properties.
@@ -32478,13 +34478,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotPlanningStepMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace BotPlanningStepMetadata {
@@ -32515,16 +34508,28 @@ export namespace AICommon {
                 constructor(properties?: AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata);
 
                 /** BotPlanningSearchSourceMetadata title. */
-                public title: string;
+                public title?: (string|null);
 
                 /** BotPlanningSearchSourceMetadata provider. */
-                public provider: AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider;
+                public provider?: (AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider|null);
 
                 /** BotPlanningSearchSourceMetadata sourceUrl. */
-                public sourceUrl: string;
+                public sourceUrl?: (string|null);
 
                 /** BotPlanningSearchSourceMetadata favIconUrl. */
-                public favIconUrl: string;
+                public favIconUrl?: (string|null);
+
+                /** BotPlanningSearchSourceMetadata _title. */
+                public _title?: "title";
+
+                /** BotPlanningSearchSourceMetadata _provider. */
+                public _provider?: "provider";
+
+                /** BotPlanningSearchSourceMetadata _sourceUrl. */
+                public _sourceUrl?: "sourceUrl";
+
+                /** BotPlanningSearchSourceMetadata _favIconUrl. */
+                public _favIconUrl?: "favIconUrl";
 
                 /**
                  * Creates a new BotPlanningSearchSourceMetadata instance using the specified properties.
@@ -32595,13 +34600,6 @@ export namespace AICommon {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for BotPlanningSearchSourceMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a BotPlanningSearchSourcesMetadata. */
@@ -32627,13 +34625,22 @@ export namespace AICommon {
                 constructor(properties?: AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata);
 
                 /** BotPlanningSearchSourcesMetadata sourceTitle. */
-                public sourceTitle: string;
+                public sourceTitle?: (string|null);
 
                 /** BotPlanningSearchSourcesMetadata provider. */
-                public provider: AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider;
+                public provider?: (AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider|null);
 
                 /** BotPlanningSearchSourcesMetadata sourceUrl. */
-                public sourceUrl: string;
+                public sourceUrl?: (string|null);
+
+                /** BotPlanningSearchSourcesMetadata _sourceTitle. */
+                public _sourceTitle?: "sourceTitle";
+
+                /** BotPlanningSearchSourcesMetadata _provider. */
+                public _provider?: "provider";
+
+                /** BotPlanningSearchSourcesMetadata _sourceUrl. */
+                public _sourceUrl?: "sourceUrl";
 
                 /**
                  * Creates a new BotPlanningSearchSourcesMetadata instance using the specified properties.
@@ -32704,13 +34711,6 @@ export namespace AICommon {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for BotPlanningSearchSourcesMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace BotPlanningSearchSourcesMetadata {
@@ -32747,13 +34747,19 @@ export namespace AICommon {
                 constructor(properties?: AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata);
 
                 /** BotPlanningStepSectionMetadata sectionTitle. */
-                public sectionTitle: string;
+                public sectionTitle?: (string|null);
 
                 /** BotPlanningStepSectionMetadata sectionBody. */
-                public sectionBody: string;
+                public sectionBody?: (string|null);
 
                 /** BotPlanningStepSectionMetadata sourcesMetadata. */
                 public sourcesMetadata: AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata[];
+
+                /** BotPlanningStepSectionMetadata _sectionTitle. */
+                public _sectionTitle?: "sectionTitle";
+
+                /** BotPlanningStepSectionMetadata _sectionBody. */
+                public _sectionBody?: "sectionBody";
 
                 /**
                  * Creates a new BotPlanningStepSectionMetadata instance using the specified properties.
@@ -32824,13 +34830,6 @@ export namespace AICommon {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for BotPlanningStepSectionMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** BotSearchSourceProvider enum. */
@@ -32871,10 +34870,16 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotModelMetadata);
 
         /** BotModelMetadata modelType. */
-        public modelType: AICommon.BotModelMetadata.ModelType;
+        public modelType?: (AICommon.BotModelMetadata.ModelType|null);
 
         /** BotModelMetadata premiumModelStatus. */
-        public premiumModelStatus: AICommon.BotModelMetadata.PremiumModelStatus;
+        public premiumModelStatus?: (AICommon.BotModelMetadata.PremiumModelStatus|null);
+
+        /** BotModelMetadata _modelType. */
+        public _modelType?: "modelType";
+
+        /** BotModelMetadata _premiumModelStatus. */
+        public _premiumModelStatus?: "premiumModelStatus";
 
         /**
          * Creates a new BotModelMetadata instance using the specified properties.
@@ -32945,13 +34950,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotModelMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotModelMetadata {
@@ -33003,16 +35001,31 @@ export namespace AICommon {
         public requestMessageKey?: (Protocol.IMessageKey|null);
 
         /** BotReminderMetadata action. */
-        public action: AICommon.BotReminderMetadata.ReminderAction;
+        public action?: (AICommon.BotReminderMetadata.ReminderAction|null);
 
         /** BotReminderMetadata name. */
-        public name: string;
+        public name?: (string|null);
 
         /** BotReminderMetadata nextTriggerTimestamp. */
-        public nextTriggerTimestamp: (number|Long);
+        public nextTriggerTimestamp?: (number|Long|null);
 
         /** BotReminderMetadata frequency. */
-        public frequency: AICommon.BotReminderMetadata.ReminderFrequency;
+        public frequency?: (AICommon.BotReminderMetadata.ReminderFrequency|null);
+
+        /** BotReminderMetadata _requestMessageKey. */
+        public _requestMessageKey?: "requestMessageKey";
+
+        /** BotReminderMetadata _action. */
+        public _action?: "action";
+
+        /** BotReminderMetadata _name. */
+        public _name?: "name";
+
+        /** BotReminderMetadata _nextTriggerTimestamp. */
+        public _nextTriggerTimestamp?: "nextTriggerTimestamp";
+
+        /** BotReminderMetadata _frequency. */
+        public _frequency?: "frequency";
 
         /**
          * Creates a new BotReminderMetadata instance using the specified properties.
@@ -33083,13 +35096,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotReminderMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotReminderMetadata {
@@ -33200,13 +35206,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMemuMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotMediaMetadata. */
@@ -33244,25 +35243,46 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotMediaMetadata);
 
         /** BotMediaMetadata fileSha256. */
-        public fileSha256: string;
+        public fileSha256?: (string|null);
 
         /** BotMediaMetadata mediaKey. */
-        public mediaKey: string;
+        public mediaKey?: (string|null);
 
         /** BotMediaMetadata fileEncSha256. */
-        public fileEncSha256: string;
+        public fileEncSha256?: (string|null);
 
         /** BotMediaMetadata directPath. */
-        public directPath: string;
+        public directPath?: (string|null);
 
         /** BotMediaMetadata mediaKeyTimestamp. */
-        public mediaKeyTimestamp: (number|Long);
+        public mediaKeyTimestamp?: (number|Long|null);
 
         /** BotMediaMetadata mimetype. */
-        public mimetype: string;
+        public mimetype?: (string|null);
 
         /** BotMediaMetadata orientationType. */
-        public orientationType: AICommon.BotMediaMetadata.OrientationType;
+        public orientationType?: (AICommon.BotMediaMetadata.OrientationType|null);
+
+        /** BotMediaMetadata _fileSha256. */
+        public _fileSha256?: "fileSha256";
+
+        /** BotMediaMetadata _mediaKey. */
+        public _mediaKey?: "mediaKey";
+
+        /** BotMediaMetadata _fileEncSha256. */
+        public _fileEncSha256?: "fileEncSha256";
+
+        /** BotMediaMetadata _directPath. */
+        public _directPath?: "directPath";
+
+        /** BotMediaMetadata _mediaKeyTimestamp. */
+        public _mediaKeyTimestamp?: "mediaKeyTimestamp";
+
+        /** BotMediaMetadata _mimetype. */
+        public _mimetype?: "mimetype";
+
+        /** BotMediaMetadata _orientationType. */
+        public _orientationType?: "orientationType";
 
         /**
          * Creates a new BotMediaMetadata instance using the specified properties.
@@ -33333,13 +35353,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMediaMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotMediaMetadata {
@@ -33372,10 +35385,16 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotSessionMetadata);
 
         /** BotSessionMetadata sessionId. */
-        public sessionId: string;
+        public sessionId?: (string|null);
 
         /** BotSessionMetadata sessionSource. */
-        public sessionSource: AICommon.BotSessionSource;
+        public sessionSource?: (AICommon.BotSessionSource|null);
+
+        /** BotSessionMetadata _sessionId. */
+        public _sessionId?: "sessionId";
+
+        /** BotSessionMetadata _sessionSource. */
+        public _sessionSource?: "sessionSource";
 
         /**
          * Creates a new BotSessionMetadata instance using the specified properties.
@@ -33446,13 +35465,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSessionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotMetricsMetadata. */
@@ -33478,13 +35490,22 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotMetricsMetadata);
 
         /** BotMetricsMetadata destinationId. */
-        public destinationId: string;
+        public destinationId?: (string|null);
 
         /** BotMetricsMetadata destinationEntryPoint. */
-        public destinationEntryPoint: AICommon.BotMetricsEntryPoint;
+        public destinationEntryPoint?: (AICommon.BotMetricsEntryPoint|null);
 
         /** BotMetricsMetadata threadOrigin. */
-        public threadOrigin: AICommon.BotMetricsThreadEntryPoint;
+        public threadOrigin?: (AICommon.BotMetricsThreadEntryPoint|null);
+
+        /** BotMetricsMetadata _destinationId. */
+        public _destinationId?: "destinationId";
+
+        /** BotMetricsMetadata _destinationEntryPoint. */
+        public _destinationEntryPoint?: "destinationEntryPoint";
+
+        /** BotMetricsMetadata _threadOrigin. */
+        public _threadOrigin?: "threadOrigin";
 
         /**
          * Creates a new BotMetricsMetadata instance using the specified properties.
@@ -33555,13 +35576,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMetricsMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotRenderingMetadata. */
@@ -33652,13 +35666,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotRenderingMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotRenderingMetadata {
@@ -33683,10 +35690,13 @@ export namespace AICommon {
             constructor(properties?: AICommon.BotRenderingMetadata.IKeyword);
 
             /** Keyword value. */
-            public value: string;
+            public value?: (string|null);
 
             /** Keyword associatedPrompts. */
             public associatedPrompts: string[];
+
+            /** Keyword _value. */
+            public _value?: "value";
 
             /**
              * Creates a new Keyword instance using the specified properties.
@@ -33757,13 +35767,6 @@ export namespace AICommon {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for Keyword
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -33787,10 +35790,16 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotPromotionMessageMetadata);
 
         /** BotPromotionMessageMetadata promotionType. */
-        public promotionType: AICommon.BotPromotionMessageMetadata.BotPromotionType;
+        public promotionType?: (AICommon.BotPromotionMessageMetadata.BotPromotionType|null);
 
         /** BotPromotionMessageMetadata buttonTitle. */
-        public buttonTitle: string;
+        public buttonTitle?: (string|null);
+
+        /** BotPromotionMessageMetadata _promotionType. */
+        public _promotionType?: "promotionType";
+
+        /** BotPromotionMessageMetadata _buttonTitle. */
+        public _buttonTitle?: "buttonTitle";
 
         /**
          * Creates a new BotPromotionMessageMetadata instance using the specified properties.
@@ -33861,13 +35870,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPromotionMessageMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotPromotionMessageMetadata {
@@ -33906,16 +35908,25 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotSignatureVerificationUseCaseProof);
 
         /** BotSignatureVerificationUseCaseProof version. */
-        public version: number;
+        public version?: (number|null);
 
         /** BotSignatureVerificationUseCaseProof useCase. */
-        public useCase: AICommon.BotSignatureVerificationUseCaseProof.BotSignatureUseCase;
+        public useCase?: (AICommon.BotSignatureVerificationUseCaseProof.BotSignatureUseCase|null);
 
         /** BotSignatureVerificationUseCaseProof signature. */
-        public signature: Uint8Array;
+        public signature?: (Uint8Array|null);
 
         /** BotSignatureVerificationUseCaseProof certificateChain. */
         public certificateChain: Uint8Array[];
+
+        /** BotSignatureVerificationUseCaseProof _version. */
+        public _version?: "version";
+
+        /** BotSignatureVerificationUseCaseProof _useCase. */
+        public _useCase?: "useCase";
+
+        /** BotSignatureVerificationUseCaseProof _signature. */
+        public _signature?: "signature";
 
         /**
          * Creates a new BotSignatureVerificationUseCaseProof instance using the specified properties.
@@ -33986,13 +35997,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSignatureVerificationUseCaseProof
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotSignatureVerificationUseCaseProof {
@@ -34092,13 +36096,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSignatureVerificationMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotMemoryFact. */
@@ -34121,10 +36118,16 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotMemoryFact);
 
         /** BotMemoryFact fact. */
-        public fact: string;
+        public fact?: (string|null);
 
         /** BotMemoryFact factId. */
-        public factId: string;
+        public factId?: (string|null);
+
+        /** BotMemoryFact _fact. */
+        public _fact?: "fact";
+
+        /** BotMemoryFact _factId. */
+        public _factId?: "factId";
 
         /**
          * Creates a new BotMemoryFact instance using the specified properties.
@@ -34195,13 +36198,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMemoryFact
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotMemoryMetadata. */
@@ -34233,7 +36229,10 @@ export namespace AICommon {
         public removedFacts: AICommon.IBotMemoryFact[];
 
         /** BotMemoryMetadata disclaimer. */
-        public disclaimer: string;
+        public disclaimer?: (string|null);
+
+        /** BotMemoryMetadata _disclaimer. */
+        public _disclaimer?: "disclaimer";
 
         /**
          * Creates a new BotMemoryMetadata instance using the specified properties.
@@ -34304,13 +36303,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMemoryMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotLinkedAccount. */
@@ -34330,7 +36322,10 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotLinkedAccount);
 
         /** BotLinkedAccount type. */
-        public type: AICommon.BotLinkedAccount.BotLinkedAccountType;
+        public type?: (AICommon.BotLinkedAccount.BotLinkedAccountType|null);
+
+        /** BotLinkedAccount _type. */
+        public _type?: "type";
 
         /**
          * Creates a new BotLinkedAccount instance using the specified properties.
@@ -34401,13 +36396,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotLinkedAccount
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotLinkedAccount {
@@ -34444,10 +36432,16 @@ export namespace AICommon {
         public accounts: AICommon.IBotLinkedAccount[];
 
         /** BotLinkedAccountsMetadata acAuthTokens. */
-        public acAuthTokens: Uint8Array;
+        public acAuthTokens?: (Uint8Array|null);
 
         /** BotLinkedAccountsMetadata acErrorCode. */
-        public acErrorCode: number;
+        public acErrorCode?: (number|null);
+
+        /** BotLinkedAccountsMetadata _acAuthTokens. */
+        public _acAuthTokens?: "acAuthTokens";
+
+        /** BotLinkedAccountsMetadata _acErrorCode. */
+        public _acErrorCode?: "acErrorCode";
 
         /**
          * Creates a new BotLinkedAccountsMetadata instance using the specified properties.
@@ -34518,13 +36512,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotLinkedAccountsMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotPromptSuggestion. */
@@ -34547,10 +36534,16 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotPromptSuggestion);
 
         /** BotPromptSuggestion prompt. */
-        public prompt: string;
+        public prompt?: (string|null);
 
         /** BotPromptSuggestion promptId. */
-        public promptId: string;
+        public promptId?: (string|null);
+
+        /** BotPromptSuggestion _prompt. */
+        public _prompt?: "prompt";
+
+        /** BotPromptSuggestion _promptId. */
+        public _promptId?: "promptId";
 
         /**
          * Creates a new BotPromptSuggestion instance using the specified properties.
@@ -34621,13 +36614,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPromptSuggestion
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotPromptSuggestions. */
@@ -34718,13 +36704,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPromptSuggestions
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotSuggestedPromptMetadata. */
@@ -34756,13 +36735,22 @@ export namespace AICommon {
         public suggestedPrompts: string[];
 
         /** BotSuggestedPromptMetadata selectedPromptIndex. */
-        public selectedPromptIndex: number;
+        public selectedPromptIndex?: (number|null);
 
         /** BotSuggestedPromptMetadata promptSuggestions. */
         public promptSuggestions?: (AICommon.IBotPromptSuggestions|null);
 
         /** BotSuggestedPromptMetadata selectedPromptId. */
-        public selectedPromptId: string;
+        public selectedPromptId?: (string|null);
+
+        /** BotSuggestedPromptMetadata _selectedPromptIndex. */
+        public _selectedPromptIndex?: "selectedPromptIndex";
+
+        /** BotSuggestedPromptMetadata _promptSuggestions. */
+        public _promptSuggestions?: "promptSuggestions";
+
+        /** BotSuggestedPromptMetadata _selectedPromptId. */
+        public _selectedPromptId?: "selectedPromptId";
 
         /**
          * Creates a new BotSuggestedPromptMetadata instance using the specified properties.
@@ -34833,13 +36821,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSuggestedPromptMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotPluginMetadata. */
@@ -34892,40 +36873,76 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotPluginMetadata);
 
         /** BotPluginMetadata provider. */
-        public provider: AICommon.BotPluginMetadata.SearchProvider;
+        public provider?: (AICommon.BotPluginMetadata.SearchProvider|null);
 
         /** BotPluginMetadata pluginType. */
-        public pluginType: AICommon.BotPluginMetadata.PluginType;
+        public pluginType?: (AICommon.BotPluginMetadata.PluginType|null);
 
         /** BotPluginMetadata thumbnailCdnUrl. */
-        public thumbnailCdnUrl: string;
+        public thumbnailCdnUrl?: (string|null);
 
         /** BotPluginMetadata profilePhotoCdnUrl. */
-        public profilePhotoCdnUrl: string;
+        public profilePhotoCdnUrl?: (string|null);
 
         /** BotPluginMetadata searchProviderUrl. */
-        public searchProviderUrl: string;
+        public searchProviderUrl?: (string|null);
 
         /** BotPluginMetadata referenceIndex. */
-        public referenceIndex: number;
+        public referenceIndex?: (number|null);
 
         /** BotPluginMetadata expectedLinksCount. */
-        public expectedLinksCount: number;
+        public expectedLinksCount?: (number|null);
 
         /** BotPluginMetadata searchQuery. */
-        public searchQuery: string;
+        public searchQuery?: (string|null);
 
         /** BotPluginMetadata parentPluginMessageKey. */
         public parentPluginMessageKey?: (Protocol.IMessageKey|null);
 
         /** BotPluginMetadata deprecatedField. */
-        public deprecatedField: AICommon.BotPluginMetadata.PluginType;
+        public deprecatedField?: (AICommon.BotPluginMetadata.PluginType|null);
 
         /** BotPluginMetadata parentPluginType. */
-        public parentPluginType: AICommon.BotPluginMetadata.PluginType;
+        public parentPluginType?: (AICommon.BotPluginMetadata.PluginType|null);
 
         /** BotPluginMetadata faviconCdnUrl. */
-        public faviconCdnUrl: string;
+        public faviconCdnUrl?: (string|null);
+
+        /** BotPluginMetadata _provider. */
+        public _provider?: "provider";
+
+        /** BotPluginMetadata _pluginType. */
+        public _pluginType?: "pluginType";
+
+        /** BotPluginMetadata _thumbnailCdnUrl. */
+        public _thumbnailCdnUrl?: "thumbnailCdnUrl";
+
+        /** BotPluginMetadata _profilePhotoCdnUrl. */
+        public _profilePhotoCdnUrl?: "profilePhotoCdnUrl";
+
+        /** BotPluginMetadata _searchProviderUrl. */
+        public _searchProviderUrl?: "searchProviderUrl";
+
+        /** BotPluginMetadata _referenceIndex. */
+        public _referenceIndex?: "referenceIndex";
+
+        /** BotPluginMetadata _expectedLinksCount. */
+        public _expectedLinksCount?: "expectedLinksCount";
+
+        /** BotPluginMetadata _searchQuery. */
+        public _searchQuery?: "searchQuery";
+
+        /** BotPluginMetadata _parentPluginMessageKey. */
+        public _parentPluginMessageKey?: "parentPluginMessageKey";
+
+        /** BotPluginMetadata _deprecatedField. */
+        public _deprecatedField?: "deprecatedField";
+
+        /** BotPluginMetadata _parentPluginType. */
+        public _parentPluginType?: "parentPluginType";
+
+        /** BotPluginMetadata _faviconCdnUrl. */
+        public _faviconCdnUrl?: "faviconCdnUrl";
 
         /**
          * Creates a new BotPluginMetadata instance using the specified properties.
@@ -34996,13 +37013,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPluginMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotPluginMetadata {
@@ -35052,19 +37062,34 @@ export namespace AICommon {
         constructor(properties?: AICommon.IBotAvatarMetadata);
 
         /** BotAvatarMetadata sentiment. */
-        public sentiment: number;
+        public sentiment?: (number|null);
 
         /** BotAvatarMetadata behaviorGraph. */
-        public behaviorGraph: string;
+        public behaviorGraph?: (string|null);
 
         /** BotAvatarMetadata action. */
-        public action: number;
+        public action?: (number|null);
 
         /** BotAvatarMetadata intensity. */
-        public intensity: number;
+        public intensity?: (number|null);
 
         /** BotAvatarMetadata wordCount. */
-        public wordCount: number;
+        public wordCount?: (number|null);
+
+        /** BotAvatarMetadata _sentiment. */
+        public _sentiment?: "sentiment";
+
+        /** BotAvatarMetadata _behaviorGraph. */
+        public _behaviorGraph?: "behaviorGraph";
+
+        /** BotAvatarMetadata _action. */
+        public _action?: "action";
+
+        /** BotAvatarMetadata _intensity. */
+        public _intensity?: "intensity";
+
+        /** BotAvatarMetadata _wordCount. */
+        public _wordCount?: "wordCount";
 
         /**
          * Creates a new BotAvatarMetadata instance using the specified properties.
@@ -35135,13 +37160,6 @@ export namespace AICommon {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotAvatarMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** AIRichResponseSubMessageType enum. */
@@ -35265,10 +37283,10 @@ export namespace StatusAttributions {
         constructor(properties?: StatusAttributions.IStatusAttribution);
 
         /** StatusAttribution type. */
-        public type: StatusAttributions.StatusAttribution.Type;
+        public type?: (StatusAttributions.StatusAttribution.Type|null);
 
         /** StatusAttribution actionUrl. */
-        public actionUrl: string;
+        public actionUrl?: (string|null);
 
         /** StatusAttribution statusReshare. */
         public statusReshare?: (StatusAttributions.StatusAttribution.IStatusReshare|null);
@@ -35287,6 +37305,12 @@ export namespace StatusAttributions {
 
         /** StatusAttribution aiCreatedAttribution. */
         public aiCreatedAttribution?: (StatusAttributions.StatusAttribution.IAiCreatedAttribution|null);
+
+        /** StatusAttribution _type. */
+        public _type?: "type";
+
+        /** StatusAttribution _actionUrl. */
+        public _actionUrl?: "actionUrl";
 
         /** StatusAttribution attributionData. */
         public attributionData?: ("statusReshare"|"externalShare"|"music"|"groupStatus"|"rlAttribution"|"aiCreatedAttribution");
@@ -35360,13 +37384,6 @@ export namespace StatusAttributions {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for StatusAttribution
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace StatusAttribution {
@@ -35388,7 +37405,10 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IAiCreatedAttribution);
 
             /** AiCreatedAttribution source. */
-            public source: StatusAttributions.StatusAttribution.AiCreatedAttribution.Source;
+            public source?: (StatusAttributions.StatusAttribution.AiCreatedAttribution.Source|null);
+
+            /** AiCreatedAttribution _source. */
+            public _source?: "source";
 
             /**
              * Creates a new AiCreatedAttribution instance using the specified properties.
@@ -35459,13 +37479,6 @@ export namespace StatusAttributions {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AiCreatedAttribution
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace AiCreatedAttribution {
@@ -35503,16 +37516,28 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IExternalShare);
 
             /** ExternalShare actionUrl. */
-            public actionUrl: string;
+            public actionUrl?: (string|null);
 
             /** ExternalShare source. */
-            public source: StatusAttributions.StatusAttribution.ExternalShare.Source;
+            public source?: (StatusAttributions.StatusAttribution.ExternalShare.Source|null);
 
             /** ExternalShare duration. */
-            public duration: number;
+            public duration?: (number|null);
 
             /** ExternalShare actionFallbackUrl. */
-            public actionFallbackUrl: string;
+            public actionFallbackUrl?: (string|null);
+
+            /** ExternalShare _actionUrl. */
+            public _actionUrl?: "actionUrl";
+
+            /** ExternalShare _source. */
+            public _source?: "source";
+
+            /** ExternalShare _duration. */
+            public _duration?: "duration";
+
+            /** ExternalShare _actionFallbackUrl. */
+            public _actionFallbackUrl?: "actionFallbackUrl";
 
             /**
              * Creates a new ExternalShare instance using the specified properties.
@@ -35583,13 +37608,6 @@ export namespace StatusAttributions {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ExternalShare
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace ExternalShare {
@@ -35625,7 +37643,10 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IGroupStatus);
 
             /** GroupStatus authorJid. */
-            public authorJid: string;
+            public authorJid?: (string|null);
+
+            /** GroupStatus _authorJid. */
+            public _authorJid?: "authorJid";
 
             /**
              * Creates a new GroupStatus instance using the specified properties.
@@ -35696,13 +37717,6 @@ export namespace StatusAttributions {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for GroupStatus
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a Music. */
@@ -35737,22 +37751,40 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IMusic);
 
             /** Music authorName. */
-            public authorName: string;
+            public authorName?: (string|null);
 
             /** Music songId. */
-            public songId: string;
+            public songId?: (string|null);
 
             /** Music title. */
-            public title: string;
+            public title?: (string|null);
 
             /** Music author. */
-            public author: string;
+            public author?: (string|null);
 
             /** Music artistAttribution. */
-            public artistAttribution: string;
+            public artistAttribution?: (string|null);
 
             /** Music isExplicit. */
-            public isExplicit: boolean;
+            public isExplicit?: (boolean|null);
+
+            /** Music _authorName. */
+            public _authorName?: "authorName";
+
+            /** Music _songId. */
+            public _songId?: "songId";
+
+            /** Music _title. */
+            public _title?: "title";
+
+            /** Music _author. */
+            public _author?: "author";
+
+            /** Music _artistAttribution. */
+            public _artistAttribution?: "artistAttribution";
+
+            /** Music _isExplicit. */
+            public _isExplicit?: "isExplicit";
 
             /**
              * Creates a new Music instance using the specified properties.
@@ -35823,13 +37855,6 @@ export namespace StatusAttributions {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for Music
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a RLAttribution. */
@@ -35849,7 +37874,10 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IRLAttribution);
 
             /** RLAttribution source. */
-            public source: StatusAttributions.StatusAttribution.RLAttribution.Source;
+            public source?: (StatusAttributions.StatusAttribution.RLAttribution.Source|null);
+
+            /** RLAttribution _source. */
+            public _source?: "source";
 
             /**
              * Creates a new RLAttribution instance using the specified properties.
@@ -35920,13 +37948,6 @@ export namespace StatusAttributions {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for RLAttribution
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace RLAttribution {
@@ -35960,10 +37981,16 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IStatusReshare);
 
             /** StatusReshare source. */
-            public source: StatusAttributions.StatusAttribution.StatusReshare.Source;
+            public source?: (StatusAttributions.StatusAttribution.StatusReshare.Source|null);
 
             /** StatusReshare metadata. */
             public metadata?: (StatusAttributions.StatusAttribution.StatusReshare.IMetadata|null);
+
+            /** StatusReshare _source. */
+            public _source?: "source";
+
+            /** StatusReshare _metadata. */
+            public _metadata?: "metadata";
 
             /**
              * Creates a new StatusReshare instance using the specified properties.
@@ -36034,13 +38061,6 @@ export namespace StatusAttributions {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StatusReshare
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace StatusReshare {
@@ -36071,16 +38091,28 @@ export namespace StatusAttributions {
                 constructor(properties?: StatusAttributions.StatusAttribution.StatusReshare.IMetadata);
 
                 /** Metadata duration. */
-                public duration: number;
+                public duration?: (number|null);
 
                 /** Metadata channelJid. */
-                public channelJid: string;
+                public channelJid?: (string|null);
 
                 /** Metadata channelMessageId. */
-                public channelMessageId: number;
+                public channelMessageId?: (number|null);
 
                 /** Metadata hasMultipleReshares. */
-                public hasMultipleReshares: boolean;
+                public hasMultipleReshares?: (boolean|null);
+
+                /** Metadata _duration. */
+                public _duration?: "duration";
+
+                /** Metadata _channelJid. */
+                public _channelJid?: "channelJid";
+
+                /** Metadata _channelMessageId. */
+                public _channelMessageId?: "channelMessageId";
+
+                /** Metadata _hasMultipleReshares. */
+                public _hasMultipleReshares?: "hasMultipleReshares";
 
                 /**
                  * Creates a new Metadata instance using the specified properties.
@@ -36151,13 +38183,6 @@ export namespace StatusAttributions {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Metadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Source enum. */
@@ -36210,13 +38235,22 @@ export namespace Adv {
         constructor(properties?: Adv.IADVSignedDeviceIdentityHMAC);
 
         /** ADVSignedDeviceIdentityHMAC details. */
-        public details: Uint8Array;
+        public details?: (Uint8Array|null);
 
         /** ADVSignedDeviceIdentityHMAC hmac. */
-        public hmac: Uint8Array;
+        public hmac?: (Uint8Array|null);
 
         /** ADVSignedDeviceIdentityHMAC accountType. */
-        public accountType: Adv.ADVEncryptionType;
+        public accountType?: (Adv.ADVEncryptionType|null);
+
+        /** ADVSignedDeviceIdentityHMAC _details. */
+        public _details?: "details";
+
+        /** ADVSignedDeviceIdentityHMAC _hmac. */
+        public _hmac?: "hmac";
+
+        /** ADVSignedDeviceIdentityHMAC _accountType. */
+        public _accountType?: "accountType";
 
         /**
          * Creates a new ADVSignedDeviceIdentityHMAC instance using the specified properties.
@@ -36287,13 +38321,6 @@ export namespace Adv {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ADVSignedDeviceIdentityHMAC
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a ADVSignedDeviceIdentity. */
@@ -36322,16 +38349,28 @@ export namespace Adv {
         constructor(properties?: Adv.IADVSignedDeviceIdentity);
 
         /** ADVSignedDeviceIdentity details. */
-        public details: Uint8Array;
+        public details?: (Uint8Array|null);
 
         /** ADVSignedDeviceIdentity accountSignatureKey. */
-        public accountSignatureKey: Uint8Array;
+        public accountSignatureKey?: (Uint8Array|null);
 
         /** ADVSignedDeviceIdentity accountSignature. */
-        public accountSignature: Uint8Array;
+        public accountSignature?: (Uint8Array|null);
 
         /** ADVSignedDeviceIdentity deviceSignature. */
-        public deviceSignature: Uint8Array;
+        public deviceSignature?: (Uint8Array|null);
+
+        /** ADVSignedDeviceIdentity _details. */
+        public _details?: "details";
+
+        /** ADVSignedDeviceIdentity _accountSignatureKey. */
+        public _accountSignatureKey?: "accountSignatureKey";
+
+        /** ADVSignedDeviceIdentity _accountSignature. */
+        public _accountSignature?: "accountSignature";
+
+        /** ADVSignedDeviceIdentity _deviceSignature. */
+        public _deviceSignature?: "deviceSignature";
 
         /**
          * Creates a new ADVSignedDeviceIdentity instance using the specified properties.
@@ -36402,13 +38441,6 @@ export namespace Adv {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ADVSignedDeviceIdentity
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a ADVDeviceIdentity. */
@@ -36440,19 +38472,34 @@ export namespace Adv {
         constructor(properties?: Adv.IADVDeviceIdentity);
 
         /** ADVDeviceIdentity rawId. */
-        public rawId: number;
+        public rawId?: (number|null);
 
         /** ADVDeviceIdentity timestamp. */
-        public timestamp: (number|Long);
+        public timestamp?: (number|Long|null);
 
         /** ADVDeviceIdentity keyIndex. */
-        public keyIndex: number;
+        public keyIndex?: (number|null);
 
         /** ADVDeviceIdentity accountType. */
-        public accountType: Adv.ADVEncryptionType;
+        public accountType?: (Adv.ADVEncryptionType|null);
 
         /** ADVDeviceIdentity deviceType. */
-        public deviceType: Adv.ADVEncryptionType;
+        public deviceType?: (Adv.ADVEncryptionType|null);
+
+        /** ADVDeviceIdentity _rawId. */
+        public _rawId?: "rawId";
+
+        /** ADVDeviceIdentity _timestamp. */
+        public _timestamp?: "timestamp";
+
+        /** ADVDeviceIdentity _keyIndex. */
+        public _keyIndex?: "keyIndex";
+
+        /** ADVDeviceIdentity _accountType. */
+        public _accountType?: "accountType";
+
+        /** ADVDeviceIdentity _deviceType. */
+        public _deviceType?: "deviceType";
 
         /**
          * Creates a new ADVDeviceIdentity instance using the specified properties.
@@ -36523,13 +38570,6 @@ export namespace Adv {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ADVDeviceIdentity
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a ADVSignedKeyIndexList. */
@@ -36555,13 +38595,22 @@ export namespace Adv {
         constructor(properties?: Adv.IADVSignedKeyIndexList);
 
         /** ADVSignedKeyIndexList details. */
-        public details: Uint8Array;
+        public details?: (Uint8Array|null);
 
         /** ADVSignedKeyIndexList accountSignature. */
-        public accountSignature: Uint8Array;
+        public accountSignature?: (Uint8Array|null);
 
         /** ADVSignedKeyIndexList accountSignatureKey. */
-        public accountSignatureKey: Uint8Array;
+        public accountSignatureKey?: (Uint8Array|null);
+
+        /** ADVSignedKeyIndexList _details. */
+        public _details?: "details";
+
+        /** ADVSignedKeyIndexList _accountSignature. */
+        public _accountSignature?: "accountSignature";
+
+        /** ADVSignedKeyIndexList _accountSignatureKey. */
+        public _accountSignatureKey?: "accountSignatureKey";
 
         /**
          * Creates a new ADVSignedKeyIndexList instance using the specified properties.
@@ -36632,13 +38681,6 @@ export namespace Adv {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ADVSignedKeyIndexList
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a ADVKeyIndexList. */
@@ -36670,19 +38712,31 @@ export namespace Adv {
         constructor(properties?: Adv.IADVKeyIndexList);
 
         /** ADVKeyIndexList rawId. */
-        public rawId: number;
+        public rawId?: (number|null);
 
         /** ADVKeyIndexList timestamp. */
-        public timestamp: (number|Long);
+        public timestamp?: (number|Long|null);
 
         /** ADVKeyIndexList currentIndex. */
-        public currentIndex: number;
+        public currentIndex?: (number|null);
 
         /** ADVKeyIndexList validIndexes. */
         public validIndexes: number[];
 
         /** ADVKeyIndexList accountType. */
-        public accountType: Adv.ADVEncryptionType;
+        public accountType?: (Adv.ADVEncryptionType|null);
+
+        /** ADVKeyIndexList _rawId. */
+        public _rawId?: "rawId";
+
+        /** ADVKeyIndexList _timestamp. */
+        public _timestamp?: "timestamp";
+
+        /** ADVKeyIndexList _currentIndex. */
+        public _currentIndex?: "currentIndex";
+
+        /** ADVKeyIndexList _accountType. */
+        public _accountType?: "accountType";
 
         /**
          * Creates a new ADVKeyIndexList instance using the specified properties.
@@ -36753,13 +38807,6 @@ export namespace Adv {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ADVKeyIndexList
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** ADVEncryptionType enum. */
@@ -36795,13 +38842,22 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IClientPairingProps);
 
         /** ClientPairingProps isChatDbLidMigrated. */
-        public isChatDbLidMigrated: boolean;
+        public isChatDbLidMigrated?: (boolean|null);
 
         /** ClientPairingProps isSyncdPureLidSession. */
-        public isSyncdPureLidSession: boolean;
+        public isSyncdPureLidSession?: (boolean|null);
 
         /** ClientPairingProps isSyncdSnapshotRecoveryEnabled. */
-        public isSyncdSnapshotRecoveryEnabled: boolean;
+        public isSyncdSnapshotRecoveryEnabled?: (boolean|null);
+
+        /** ClientPairingProps _isChatDbLidMigrated. */
+        public _isChatDbLidMigrated?: "isChatDbLidMigrated";
+
+        /** ClientPairingProps _isSyncdPureLidSession. */
+        public _isSyncdPureLidSession?: "isSyncdPureLidSession";
+
+        /** ClientPairingProps _isSyncdSnapshotRecoveryEnabled. */
+        public _isSyncdSnapshotRecoveryEnabled?: "isSyncdSnapshotRecoveryEnabled";
 
         /**
          * Creates a new ClientPairingProps instance using the specified properties.
@@ -36872,13 +38928,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ClientPairingProps
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an EncryptedPairingRequest. */
@@ -36901,10 +38950,16 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IEncryptedPairingRequest);
 
         /** EncryptedPairingRequest encryptedPayload. */
-        public encryptedPayload: Uint8Array;
+        public encryptedPayload?: (Uint8Array|null);
 
         /** EncryptedPairingRequest iv. */
-        public iv: Uint8Array;
+        public iv?: (Uint8Array|null);
+
+        /** EncryptedPairingRequest _encryptedPayload. */
+        public _encryptedPayload?: "encryptedPayload";
+
+        /** EncryptedPairingRequest _iv. */
+        public _iv?: "iv";
 
         /**
          * Creates a new EncryptedPairingRequest instance using the specified properties.
@@ -36975,13 +39030,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for EncryptedPairingRequest
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PairingRequest. */
@@ -37007,13 +39055,22 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IPairingRequest);
 
         /** PairingRequest companionPublicKey. */
-        public companionPublicKey: Uint8Array;
+        public companionPublicKey?: (Uint8Array|null);
 
         /** PairingRequest companionIdentityKey. */
-        public companionIdentityKey: Uint8Array;
+        public companionIdentityKey?: (Uint8Array|null);
 
         /** PairingRequest advSecret. */
-        public advSecret: Uint8Array;
+        public advSecret?: (Uint8Array|null);
+
+        /** PairingRequest _companionPublicKey. */
+        public _companionPublicKey?: "companionPublicKey";
+
+        /** PairingRequest _companionIdentityKey. */
+        public _companionIdentityKey?: "companionIdentityKey";
+
+        /** PairingRequest _advSecret. */
+        public _advSecret?: "advSecret";
 
         /**
          * Creates a new PairingRequest instance using the specified properties.
@@ -37084,13 +39141,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PairingRequest
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PrimaryEphemeralIdentity. */
@@ -37113,10 +39163,16 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IPrimaryEphemeralIdentity);
 
         /** PrimaryEphemeralIdentity publicKey. */
-        public publicKey: Uint8Array;
+        public publicKey?: (Uint8Array|null);
 
         /** PrimaryEphemeralIdentity nonce. */
-        public nonce: Uint8Array;
+        public nonce?: (Uint8Array|null);
+
+        /** PrimaryEphemeralIdentity _publicKey. */
+        public _publicKey?: "publicKey";
+
+        /** PrimaryEphemeralIdentity _nonce. */
+        public _nonce?: "nonce";
 
         /**
          * Creates a new PrimaryEphemeralIdentity instance using the specified properties.
@@ -37187,13 +39243,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PrimaryEphemeralIdentity
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a ProloguePayload. */
@@ -37216,10 +39265,16 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IProloguePayload);
 
         /** ProloguePayload companionEphemeralIdentity. */
-        public companionEphemeralIdentity: Uint8Array;
+        public companionEphemeralIdentity?: (Uint8Array|null);
 
         /** ProloguePayload commitment. */
         public commitment?: (CompanionReg.ICompanionCommitment|null);
+
+        /** ProloguePayload _companionEphemeralIdentity. */
+        public _companionEphemeralIdentity?: "companionEphemeralIdentity";
+
+        /** ProloguePayload _commitment. */
+        public _commitment?: "commitment";
 
         /**
          * Creates a new ProloguePayload instance using the specified properties.
@@ -37290,13 +39345,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ProloguePayload
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a CompanionCommitment. */
@@ -37316,7 +39364,10 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.ICompanionCommitment);
 
         /** CompanionCommitment hash. */
-        public hash: Uint8Array;
+        public hash?: (Uint8Array|null);
+
+        /** CompanionCommitment _hash. */
+        public _hash?: "hash";
 
         /**
          * Creates a new CompanionCommitment instance using the specified properties.
@@ -37387,13 +39438,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for CompanionCommitment
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a CompanionEphemeralIdentity. */
@@ -37419,13 +39463,22 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.ICompanionEphemeralIdentity);
 
         /** CompanionEphemeralIdentity publicKey. */
-        public publicKey: Uint8Array;
+        public publicKey?: (Uint8Array|null);
 
         /** CompanionEphemeralIdentity deviceType. */
-        public deviceType: CompanionReg.DeviceProps.PlatformType;
+        public deviceType?: (CompanionReg.DeviceProps.PlatformType|null);
 
         /** CompanionEphemeralIdentity ref. */
-        public ref: string;
+        public ref?: (string|null);
+
+        /** CompanionEphemeralIdentity _publicKey. */
+        public _publicKey?: "publicKey";
+
+        /** CompanionEphemeralIdentity _deviceType. */
+        public _deviceType?: "deviceType";
+
+        /** CompanionEphemeralIdentity _ref. */
+        public _ref?: "ref";
 
         /**
          * Creates a new CompanionEphemeralIdentity instance using the specified properties.
@@ -37496,13 +39549,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for CompanionEphemeralIdentity
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a DeviceProps. */
@@ -37534,19 +39580,34 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IDeviceProps);
 
         /** DeviceProps os. */
-        public os: string;
+        public os?: (string|null);
 
         /** DeviceProps version. */
         public version?: (CompanionReg.DeviceProps.IAppVersion|null);
 
         /** DeviceProps platformType. */
-        public platformType: CompanionReg.DeviceProps.PlatformType;
+        public platformType?: (CompanionReg.DeviceProps.PlatformType|null);
 
         /** DeviceProps requireFullSync. */
-        public requireFullSync: boolean;
+        public requireFullSync?: (boolean|null);
 
         /** DeviceProps historySyncConfig. */
         public historySyncConfig?: (CompanionReg.DeviceProps.IHistorySyncConfig|null);
+
+        /** DeviceProps _os. */
+        public _os?: "os";
+
+        /** DeviceProps _version. */
+        public _version?: "version";
+
+        /** DeviceProps _platformType. */
+        public _platformType?: "platformType";
+
+        /** DeviceProps _requireFullSync. */
+        public _requireFullSync?: "requireFullSync";
+
+        /** DeviceProps _historySyncConfig. */
+        public _historySyncConfig?: "historySyncConfig";
 
         /**
          * Creates a new DeviceProps instance using the specified properties.
@@ -37617,13 +39678,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for DeviceProps
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace DeviceProps {
@@ -37657,19 +39711,34 @@ export namespace CompanionReg {
             constructor(properties?: CompanionReg.DeviceProps.IAppVersion);
 
             /** AppVersion primary. */
-            public primary: number;
+            public primary?: (number|null);
 
             /** AppVersion secondary. */
-            public secondary: number;
+            public secondary?: (number|null);
 
             /** AppVersion tertiary. */
-            public tertiary: number;
+            public tertiary?: (number|null);
 
             /** AppVersion quaternary. */
-            public quaternary: number;
+            public quaternary?: (number|null);
 
             /** AppVersion quinary. */
-            public quinary: number;
+            public quinary?: (number|null);
+
+            /** AppVersion _primary. */
+            public _primary?: "primary";
+
+            /** AppVersion _secondary. */
+            public _secondary?: "secondary";
+
+            /** AppVersion _tertiary. */
+            public _tertiary?: "tertiary";
+
+            /** AppVersion _quaternary. */
+            public _quaternary?: "quaternary";
+
+            /** AppVersion _quinary. */
+            public _quinary?: "quinary";
 
             /**
              * Creates a new AppVersion instance using the specified properties.
@@ -37740,13 +39809,6 @@ export namespace CompanionReg {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AppVersion
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a HistorySyncConfig. */
@@ -37814,55 +39876,106 @@ export namespace CompanionReg {
             constructor(properties?: CompanionReg.DeviceProps.IHistorySyncConfig);
 
             /** HistorySyncConfig fullSyncDaysLimit. */
-            public fullSyncDaysLimit: number;
+            public fullSyncDaysLimit?: (number|null);
 
             /** HistorySyncConfig fullSyncSizeMbLimit. */
-            public fullSyncSizeMbLimit: number;
+            public fullSyncSizeMbLimit?: (number|null);
 
             /** HistorySyncConfig storageQuotaMb. */
-            public storageQuotaMb: number;
+            public storageQuotaMb?: (number|null);
 
             /** HistorySyncConfig inlineInitialPayloadInE2EeMsg. */
-            public inlineInitialPayloadInE2EeMsg: boolean;
+            public inlineInitialPayloadInE2EeMsg?: (boolean|null);
 
             /** HistorySyncConfig recentSyncDaysLimit. */
-            public recentSyncDaysLimit: number;
+            public recentSyncDaysLimit?: (number|null);
 
             /** HistorySyncConfig supportCallLogHistory. */
-            public supportCallLogHistory: boolean;
+            public supportCallLogHistory?: (boolean|null);
 
             /** HistorySyncConfig supportBotUserAgentChatHistory. */
-            public supportBotUserAgentChatHistory: boolean;
+            public supportBotUserAgentChatHistory?: (boolean|null);
 
             /** HistorySyncConfig supportCagReactionsAndPolls. */
-            public supportCagReactionsAndPolls: boolean;
+            public supportCagReactionsAndPolls?: (boolean|null);
 
             /** HistorySyncConfig supportBizHostedMsg. */
-            public supportBizHostedMsg: boolean;
+            public supportBizHostedMsg?: (boolean|null);
 
             /** HistorySyncConfig supportRecentSyncChunkMessageCountTuning. */
-            public supportRecentSyncChunkMessageCountTuning: boolean;
+            public supportRecentSyncChunkMessageCountTuning?: (boolean|null);
 
             /** HistorySyncConfig supportHostedGroupMsg. */
-            public supportHostedGroupMsg: boolean;
+            public supportHostedGroupMsg?: (boolean|null);
 
             /** HistorySyncConfig supportFbidBotChatHistory. */
-            public supportFbidBotChatHistory: boolean;
+            public supportFbidBotChatHistory?: (boolean|null);
 
             /** HistorySyncConfig supportAddOnHistorySyncMigration. */
-            public supportAddOnHistorySyncMigration: boolean;
+            public supportAddOnHistorySyncMigration?: (boolean|null);
 
             /** HistorySyncConfig supportMessageAssociation. */
-            public supportMessageAssociation: boolean;
+            public supportMessageAssociation?: (boolean|null);
 
             /** HistorySyncConfig supportGroupHistory. */
-            public supportGroupHistory: boolean;
+            public supportGroupHistory?: (boolean|null);
 
             /** HistorySyncConfig onDemandReady. */
-            public onDemandReady: boolean;
+            public onDemandReady?: (boolean|null);
 
             /** HistorySyncConfig supportGuestChat. */
-            public supportGuestChat: boolean;
+            public supportGuestChat?: (boolean|null);
+
+            /** HistorySyncConfig _fullSyncDaysLimit. */
+            public _fullSyncDaysLimit?: "fullSyncDaysLimit";
+
+            /** HistorySyncConfig _fullSyncSizeMbLimit. */
+            public _fullSyncSizeMbLimit?: "fullSyncSizeMbLimit";
+
+            /** HistorySyncConfig _storageQuotaMb. */
+            public _storageQuotaMb?: "storageQuotaMb";
+
+            /** HistorySyncConfig _inlineInitialPayloadInE2EeMsg. */
+            public _inlineInitialPayloadInE2EeMsg?: "inlineInitialPayloadInE2EeMsg";
+
+            /** HistorySyncConfig _recentSyncDaysLimit. */
+            public _recentSyncDaysLimit?: "recentSyncDaysLimit";
+
+            /** HistorySyncConfig _supportCallLogHistory. */
+            public _supportCallLogHistory?: "supportCallLogHistory";
+
+            /** HistorySyncConfig _supportBotUserAgentChatHistory. */
+            public _supportBotUserAgentChatHistory?: "supportBotUserAgentChatHistory";
+
+            /** HistorySyncConfig _supportCagReactionsAndPolls. */
+            public _supportCagReactionsAndPolls?: "supportCagReactionsAndPolls";
+
+            /** HistorySyncConfig _supportBizHostedMsg. */
+            public _supportBizHostedMsg?: "supportBizHostedMsg";
+
+            /** HistorySyncConfig _supportRecentSyncChunkMessageCountTuning. */
+            public _supportRecentSyncChunkMessageCountTuning?: "supportRecentSyncChunkMessageCountTuning";
+
+            /** HistorySyncConfig _supportHostedGroupMsg. */
+            public _supportHostedGroupMsg?: "supportHostedGroupMsg";
+
+            /** HistorySyncConfig _supportFbidBotChatHistory. */
+            public _supportFbidBotChatHistory?: "supportFbidBotChatHistory";
+
+            /** HistorySyncConfig _supportAddOnHistorySyncMigration. */
+            public _supportAddOnHistorySyncMigration?: "supportAddOnHistorySyncMigration";
+
+            /** HistorySyncConfig _supportMessageAssociation. */
+            public _supportMessageAssociation?: "supportMessageAssociation";
+
+            /** HistorySyncConfig _supportGroupHistory. */
+            public _supportGroupHistory?: "supportGroupHistory";
+
+            /** HistorySyncConfig _onDemandReady. */
+            public _onDemandReady?: "onDemandReady";
+
+            /** HistorySyncConfig _supportGuestChat. */
+            public _supportGuestChat?: "supportGuestChat";
 
             /**
              * Creates a new HistorySyncConfig instance using the specified properties.
@@ -37933,13 +40046,6 @@ export namespace CompanionReg {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for HistorySyncConfig
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** PlatformType enum. */
@@ -37993,7 +40099,10 @@ export namespace MmsRetry {
         constructor(properties?: MmsRetry.IServerErrorReceipt);
 
         /** ServerErrorReceipt stanzaId. */
-        public stanzaId: string;
+        public stanzaId?: (string|null);
+
+        /** ServerErrorReceipt _stanzaId. */
+        public _stanzaId?: "stanzaId";
 
         /**
          * Creates a new ServerErrorReceipt instance using the specified properties.
@@ -38064,13 +40173,6 @@ export namespace MmsRetry {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ServerErrorReceipt
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a MediaRetryNotification. */
@@ -38099,16 +40201,28 @@ export namespace MmsRetry {
         constructor(properties?: MmsRetry.IMediaRetryNotification);
 
         /** MediaRetryNotification stanzaId. */
-        public stanzaId: string;
+        public stanzaId?: (string|null);
 
         /** MediaRetryNotification directPath. */
-        public directPath: string;
+        public directPath?: (string|null);
 
         /** MediaRetryNotification result. */
-        public result: MmsRetry.MediaRetryNotification.ResultType;
+        public result?: (MmsRetry.MediaRetryNotification.ResultType|null);
 
         /** MediaRetryNotification messageSecret. */
-        public messageSecret: Uint8Array;
+        public messageSecret?: (Uint8Array|null);
+
+        /** MediaRetryNotification _stanzaId. */
+        public _stanzaId?: "stanzaId";
+
+        /** MediaRetryNotification _directPath. */
+        public _directPath?: "directPath";
+
+        /** MediaRetryNotification _result. */
+        public _result?: "result";
+
+        /** MediaRetryNotification _messageSecret. */
+        public _messageSecret?: "messageSecret";
 
         /**
          * Creates a new MediaRetryNotification instance using the specified properties.
@@ -38179,13 +40293,6 @@ export namespace MmsRetry {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MediaRetryNotification
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace MediaRetryNotification {
@@ -38226,7 +40333,13 @@ export namespace Web {
         public messageHistoryBundle?: (E2E.Message.IMessageHistoryBundle|null);
 
         /** GroupHistoryBundleMessage processState. */
-        public processState: Web.GroupHistoryBundleMessage.ProcessState;
+        public processState?: (Web.GroupHistoryBundleMessage.ProcessState|null);
+
+        /** GroupHistoryBundleMessage _messageHistoryBundle. */
+        public _messageHistoryBundle?: "messageHistoryBundle";
+
+        /** GroupHistoryBundleMessage _processState. */
+        public _processState?: "processState";
 
         /**
          * Creates a new GroupHistoryBundleMessage instance using the specified properties.
@@ -38297,13 +40410,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for GroupHistoryBundleMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace GroupHistoryBundleMessage {
@@ -38334,6 +40440,9 @@ export namespace Web {
 
         /** GroupHistoryIndividualMessageInfo bundleMessageKey. */
         public bundleMessageKey?: (Protocol.IMessageKey|null);
+
+        /** GroupHistoryIndividualMessageInfo _bundleMessageKey. */
+        public _bundleMessageKey?: "bundleMessageKey";
 
         /**
          * Creates a new GroupHistoryIndividualMessageInfo instance using the specified properties.
@@ -38404,13 +40513,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for GroupHistoryIndividualMessageInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a Citation. */
@@ -38519,13 +40621,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Citation
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a StatusMentionMessage. */
@@ -38546,6 +40641,9 @@ export namespace Web {
 
         /** StatusMentionMessage quotedStatus. */
         public quotedStatus?: (E2E.IMessage|null);
+
+        /** StatusMentionMessage _quotedStatus. */
+        public _quotedStatus?: "quotedStatus";
 
         /**
          * Creates a new StatusMentionMessage instance using the specified properties.
@@ -38616,13 +40714,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for StatusMentionMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a MessageAddOn. */
@@ -38663,19 +40754,19 @@ export namespace Web {
         constructor(properties?: Web.IMessageAddOn);
 
         /** MessageAddOn messageAddOnType. */
-        public messageAddOnType: Web.MessageAddOn.MessageAddOnType;
+        public messageAddOnType?: (Web.MessageAddOn.MessageAddOnType|null);
 
         /** MessageAddOn messageAddOn. */
         public messageAddOn?: (E2E.IMessage|null);
 
         /** MessageAddOn senderTimestampMs. */
-        public senderTimestampMs: (number|Long);
+        public senderTimestampMs?: (number|Long|null);
 
         /** MessageAddOn serverTimestampMs. */
-        public serverTimestampMs: (number|Long);
+        public serverTimestampMs?: (number|Long|null);
 
         /** MessageAddOn status. */
-        public status: Web.WebMessageInfo.Status;
+        public status?: (Web.WebMessageInfo.Status|null);
 
         /** MessageAddOn addOnContextInfo. */
         public addOnContextInfo?: (Web.IMessageAddOnContextInfo|null);
@@ -38685,6 +40776,30 @@ export namespace Web {
 
         /** MessageAddOn legacyMessage. */
         public legacyMessage?: (Web.ILegacyMessage|null);
+
+        /** MessageAddOn _messageAddOnType. */
+        public _messageAddOnType?: "messageAddOnType";
+
+        /** MessageAddOn _messageAddOn. */
+        public _messageAddOn?: "messageAddOn";
+
+        /** MessageAddOn _senderTimestampMs. */
+        public _senderTimestampMs?: "senderTimestampMs";
+
+        /** MessageAddOn _serverTimestampMs. */
+        public _serverTimestampMs?: "serverTimestampMs";
+
+        /** MessageAddOn _status. */
+        public _status?: "status";
+
+        /** MessageAddOn _addOnContextInfo. */
+        public _addOnContextInfo?: "addOnContextInfo";
+
+        /** MessageAddOn _messageAddOnKey. */
+        public _messageAddOnKey?: "messageAddOnKey";
+
+        /** MessageAddOn _legacyMessage. */
+        public _legacyMessage?: "legacyMessage";
 
         /**
          * Creates a new MessageAddOn instance using the specified properties.
@@ -38755,13 +40870,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MessageAddOn
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace MessageAddOn {
@@ -38800,6 +40908,12 @@ export namespace Web {
 
         /** LegacyMessage pollVote. */
         public pollVote?: (E2E.Message.IPollVoteMessage|null);
+
+        /** LegacyMessage _eventResponseMessage. */
+        public _eventResponseMessage?: "eventResponseMessage";
+
+        /** LegacyMessage _pollVote. */
+        public _pollVote?: "pollVote";
 
         /**
          * Creates a new LegacyMessage instance using the specified properties.
@@ -38870,13 +40984,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for LegacyMessage
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an EventResponse. */
@@ -38908,13 +41015,25 @@ export namespace Web {
         public eventResponseMessageKey?: (Protocol.IMessageKey|null);
 
         /** EventResponse timestampMs. */
-        public timestampMs: (number|Long);
+        public timestampMs?: (number|Long|null);
 
         /** EventResponse eventResponseMessage. */
         public eventResponseMessage?: (E2E.Message.IEventResponseMessage|null);
 
         /** EventResponse unread. */
-        public unread: boolean;
+        public unread?: (boolean|null);
+
+        /** EventResponse _eventResponseMessageKey. */
+        public _eventResponseMessageKey?: "eventResponseMessageKey";
+
+        /** EventResponse _timestampMs. */
+        public _timestampMs?: "timestampMs";
+
+        /** EventResponse _eventResponseMessage. */
+        public _eventResponseMessage?: "eventResponseMessage";
+
+        /** EventResponse _unread. */
+        public _unread?: "unread";
 
         /**
          * Creates a new EventResponse instance using the specified properties.
@@ -38985,13 +41104,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for EventResponse
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PremiumMessageInfo. */
@@ -39011,7 +41123,10 @@ export namespace Web {
         constructor(properties?: Web.IPremiumMessageInfo);
 
         /** PremiumMessageInfo serverCampaignId. */
-        public serverCampaignId: string;
+        public serverCampaignId?: (string|null);
+
+        /** PremiumMessageInfo _serverCampaignId. */
+        public _serverCampaignId?: "serverCampaignId";
 
         /**
          * Creates a new PremiumMessageInfo instance using the specified properties.
@@ -39082,13 +41197,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PremiumMessageInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a MessageAddOnContextInfo. */
@@ -39111,10 +41219,16 @@ export namespace Web {
         constructor(properties?: Web.IMessageAddOnContextInfo);
 
         /** MessageAddOnContextInfo messageAddOnDurationInSecs. */
-        public messageAddOnDurationInSecs: number;
+        public messageAddOnDurationInSecs?: (number|null);
 
         /** MessageAddOnContextInfo messageAddOnExpiryType. */
-        public messageAddOnExpiryType: E2E.MessageContextInfo.MessageAddonExpiryType;
+        public messageAddOnExpiryType?: (E2E.MessageContextInfo.MessageAddonExpiryType|null);
+
+        /** MessageAddOnContextInfo _messageAddOnDurationInSecs. */
+        public _messageAddOnDurationInSecs?: "messageAddOnDurationInSecs";
+
+        /** MessageAddOnContextInfo _messageAddOnExpiryType. */
+        public _messageAddOnExpiryType?: "messageAddOnExpiryType";
 
         /**
          * Creates a new MessageAddOnContextInfo instance using the specified properties.
@@ -39185,13 +41299,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MessageAddOnContextInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PinInChat. */
@@ -39223,19 +41330,34 @@ export namespace Web {
         constructor(properties?: Web.IPinInChat);
 
         /** PinInChat type. */
-        public type: Web.PinInChat.Type;
+        public type?: (Web.PinInChat.Type|null);
 
         /** PinInChat key. */
         public key?: (Protocol.IMessageKey|null);
 
         /** PinInChat senderTimestampMs. */
-        public senderTimestampMs: (number|Long);
+        public senderTimestampMs?: (number|Long|null);
 
         /** PinInChat serverTimestampMs. */
-        public serverTimestampMs: (number|Long);
+        public serverTimestampMs?: (number|Long|null);
 
         /** PinInChat messageAddOnContextInfo. */
         public messageAddOnContextInfo?: (Web.IMessageAddOnContextInfo|null);
+
+        /** PinInChat _type. */
+        public _type?: "type";
+
+        /** PinInChat _key. */
+        public _key?: "key";
+
+        /** PinInChat _senderTimestampMs. */
+        public _senderTimestampMs?: "senderTimestampMs";
+
+        /** PinInChat _serverTimestampMs. */
+        public _serverTimestampMs?: "serverTimestampMs";
+
+        /** PinInChat _messageAddOnContextInfo. */
+        public _messageAddOnContextInfo?: "messageAddOnContextInfo";
 
         /**
          * Creates a new PinInChat instance using the specified properties.
@@ -39306,13 +41428,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PinInChat
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace PinInChat {
@@ -39357,22 +41472,40 @@ export namespace Web {
         constructor(properties?: Web.IKeepInChat);
 
         /** KeepInChat keepType. */
-        public keepType: E2E.KeepType;
+        public keepType?: (E2E.KeepType|null);
 
         /** KeepInChat serverTimestamp. */
-        public serverTimestamp: (number|Long);
+        public serverTimestamp?: (number|Long|null);
 
         /** KeepInChat key. */
         public key?: (Protocol.IMessageKey|null);
 
         /** KeepInChat deviceJid. */
-        public deviceJid: string;
+        public deviceJid?: (string|null);
 
         /** KeepInChat clientTimestampMs. */
-        public clientTimestampMs: (number|Long);
+        public clientTimestampMs?: (number|Long|null);
 
         /** KeepInChat serverTimestampMs. */
-        public serverTimestampMs: (number|Long);
+        public serverTimestampMs?: (number|Long|null);
+
+        /** KeepInChat _keepType. */
+        public _keepType?: "keepType";
+
+        /** KeepInChat _serverTimestamp. */
+        public _serverTimestamp?: "serverTimestamp";
+
+        /** KeepInChat _key. */
+        public _key?: "key";
+
+        /** KeepInChat _deviceJid. */
+        public _deviceJid?: "deviceJid";
+
+        /** KeepInChat _clientTimestampMs. */
+        public _clientTimestampMs?: "clientTimestampMs";
+
+        /** KeepInChat _serverTimestampMs. */
+        public _serverTimestampMs?: "serverTimestampMs";
 
         /**
          * Creates a new KeepInChat instance using the specified properties.
@@ -39443,13 +41576,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for KeepInChat
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an EventAdditionalMetadata. */
@@ -39469,7 +41595,10 @@ export namespace Web {
         constructor(properties?: Web.IEventAdditionalMetadata);
 
         /** EventAdditionalMetadata isStale. */
-        public isStale: boolean;
+        public isStale?: (boolean|null);
+
+        /** EventAdditionalMetadata _isStale. */
+        public _isStale?: "isStale";
 
         /**
          * Creates a new EventAdditionalMetadata instance using the specified properties.
@@ -39540,13 +41669,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for EventAdditionalMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PollAdditionalMetadata. */
@@ -39566,7 +41688,10 @@ export namespace Web {
         constructor(properties?: Web.IPollAdditionalMetadata);
 
         /** PollAdditionalMetadata pollInvalidated. */
-        public pollInvalidated: boolean;
+        public pollInvalidated?: (boolean|null);
+
+        /** PollAdditionalMetadata _pollInvalidated. */
+        public _pollInvalidated?: "pollInvalidated";
 
         /**
          * Creates a new PollAdditionalMetadata instance using the specified properties.
@@ -39637,13 +41762,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PollAdditionalMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PollUpdate. */
@@ -39681,13 +41799,28 @@ export namespace Web {
         public vote?: (E2E.Message.IPollVoteMessage|null);
 
         /** PollUpdate senderTimestampMs. */
-        public senderTimestampMs: (number|Long);
+        public senderTimestampMs?: (number|Long|null);
 
         /** PollUpdate serverTimestampMs. */
-        public serverTimestampMs: (number|Long);
+        public serverTimestampMs?: (number|Long|null);
 
         /** PollUpdate unread. */
-        public unread: boolean;
+        public unread?: (boolean|null);
+
+        /** PollUpdate _pollUpdateMessageKey. */
+        public _pollUpdateMessageKey?: "pollUpdateMessageKey";
+
+        /** PollUpdate _vote. */
+        public _vote?: "vote";
+
+        /** PollUpdate _senderTimestampMs. */
+        public _senderTimestampMs?: "senderTimestampMs";
+
+        /** PollUpdate _serverTimestampMs. */
+        public _serverTimestampMs?: "serverTimestampMs";
+
+        /** PollUpdate _unread. */
+        public _unread?: "unread";
 
         /**
          * Creates a new PollUpdate instance using the specified properties.
@@ -39758,13 +41891,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PollUpdate
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a Reaction. */
@@ -39799,16 +41925,31 @@ export namespace Web {
         public key?: (Protocol.IMessageKey|null);
 
         /** Reaction text. */
-        public text: string;
+        public text?: (string|null);
 
         /** Reaction groupingKey. */
-        public groupingKey: string;
+        public groupingKey?: (string|null);
 
         /** Reaction senderTimestampMs. */
-        public senderTimestampMs: (number|Long);
+        public senderTimestampMs?: (number|Long|null);
 
         /** Reaction unread. */
-        public unread: boolean;
+        public unread?: (boolean|null);
+
+        /** Reaction _key. */
+        public _key?: "key";
+
+        /** Reaction _text. */
+        public _text?: "text";
+
+        /** Reaction _groupingKey. */
+        public _groupingKey?: "groupingKey";
+
+        /** Reaction _senderTimestampMs. */
+        public _senderTimestampMs?: "senderTimestampMs";
+
+        /** Reaction _unread. */
+        public _unread?: "unread";
 
         /**
          * Creates a new Reaction instance using the specified properties.
@@ -39879,13 +42020,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Reaction
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a UserReceipt. */
@@ -39923,19 +42057,28 @@ export namespace Web {
         public userJid: string;
 
         /** UserReceipt receiptTimestamp. */
-        public receiptTimestamp: (number|Long);
+        public receiptTimestamp?: (number|Long|null);
 
         /** UserReceipt readTimestamp. */
-        public readTimestamp: (number|Long);
+        public readTimestamp?: (number|Long|null);
 
         /** UserReceipt playedTimestamp. */
-        public playedTimestamp: (number|Long);
+        public playedTimestamp?: (number|Long|null);
 
         /** UserReceipt pendingDeviceJid. */
         public pendingDeviceJid: string[];
 
         /** UserReceipt deliveredDeviceJid. */
         public deliveredDeviceJid: string[];
+
+        /** UserReceipt _receiptTimestamp. */
+        public _receiptTimestamp?: "receiptTimestamp";
+
+        /** UserReceipt _readTimestamp. */
+        public _readTimestamp?: "readTimestamp";
+
+        /** UserReceipt _playedTimestamp. */
+        public _playedTimestamp?: "playedTimestamp";
 
         /**
          * Creates a new UserReceipt instance using the specified properties.
@@ -40006,13 +42149,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for UserReceipt
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a StatusPSA. */
@@ -40038,7 +42174,10 @@ export namespace Web {
         public campaignId: (number|Long);
 
         /** StatusPSA campaignExpirationTimestamp. */
-        public campaignExpirationTimestamp: (number|Long);
+        public campaignExpirationTimestamp?: (number|Long|null);
+
+        /** StatusPSA _campaignExpirationTimestamp. */
+        public _campaignExpirationTimestamp?: "campaignExpirationTimestamp";
 
         /**
          * Creates a new StatusPSA instance using the specified properties.
@@ -40109,13 +42248,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for StatusPSA
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PhotoChange. */
@@ -40141,13 +42273,22 @@ export namespace Web {
         constructor(properties?: Web.IPhotoChange);
 
         /** PhotoChange oldPhoto. */
-        public oldPhoto: Uint8Array;
+        public oldPhoto?: (Uint8Array|null);
 
         /** PhotoChange newPhoto. */
-        public newPhoto: Uint8Array;
+        public newPhoto?: (Uint8Array|null);
 
         /** PhotoChange newPhotoId. */
-        public newPhotoId: number;
+        public newPhotoId?: (number|null);
+
+        /** PhotoChange _oldPhoto. */
+        public _oldPhoto?: "oldPhoto";
+
+        /** PhotoChange _newPhoto. */
+        public _newPhoto?: "newPhoto";
+
+        /** PhotoChange _newPhotoId. */
+        public _newPhotoId?: "newPhotoId";
 
         /**
          * Creates a new PhotoChange instance using the specified properties.
@@ -40218,13 +42359,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PhotoChange
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a MediaData. */
@@ -40244,7 +42378,10 @@ export namespace Web {
         constructor(properties?: Web.IMediaData);
 
         /** MediaData localPath. */
-        public localPath: string;
+        public localPath?: (string|null);
+
+        /** MediaData _localPath. */
+        public _localPath?: "localPath";
 
         /**
          * Creates a new MediaData instance using the specified properties.
@@ -40315,13 +42452,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MediaData
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a ReportingTokenInfo. */
@@ -40341,7 +42471,10 @@ export namespace Web {
         constructor(properties?: Web.IReportingTokenInfo);
 
         /** ReportingTokenInfo reportingTag. */
-        public reportingTag: Uint8Array;
+        public reportingTag?: (Uint8Array|null);
+
+        /** ReportingTokenInfo _reportingTag. */
+        public _reportingTag?: "reportingTag";
 
         /**
          * Creates a new ReportingTokenInfo instance using the specified properties.
@@ -40412,13 +42545,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ReportingTokenInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a WebFeatures. */
@@ -40570,139 +42696,274 @@ export namespace Web {
         constructor(properties?: Web.IWebFeatures);
 
         /** WebFeatures labelsDisplay. */
-        public labelsDisplay: Web.WebFeatures.Flag;
+        public labelsDisplay?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures voipIndividualOutgoing. */
-        public voipIndividualOutgoing: Web.WebFeatures.Flag;
+        public voipIndividualOutgoing?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures groupsV3. */
-        public groupsV3: Web.WebFeatures.Flag;
+        public groupsV3?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures groupsV3Create. */
-        public groupsV3Create: Web.WebFeatures.Flag;
+        public groupsV3Create?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures changeNumberV2. */
-        public changeNumberV2: Web.WebFeatures.Flag;
+        public changeNumberV2?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures queryStatusV3Thumbnail. */
-        public queryStatusV3Thumbnail: Web.WebFeatures.Flag;
+        public queryStatusV3Thumbnail?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures liveLocations. */
-        public liveLocations: Web.WebFeatures.Flag;
+        public liveLocations?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures queryVname. */
-        public queryVname: Web.WebFeatures.Flag;
+        public queryVname?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures voipIndividualIncoming. */
-        public voipIndividualIncoming: Web.WebFeatures.Flag;
+        public voipIndividualIncoming?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures quickRepliesQuery. */
-        public quickRepliesQuery: Web.WebFeatures.Flag;
+        public quickRepliesQuery?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures payments. */
-        public payments: Web.WebFeatures.Flag;
+        public payments?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures stickerPackQuery. */
-        public stickerPackQuery: Web.WebFeatures.Flag;
+        public stickerPackQuery?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures liveLocationsFinal. */
-        public liveLocationsFinal: Web.WebFeatures.Flag;
+        public liveLocationsFinal?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures labelsEdit. */
-        public labelsEdit: Web.WebFeatures.Flag;
+        public labelsEdit?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures mediaUpload. */
-        public mediaUpload: Web.WebFeatures.Flag;
+        public mediaUpload?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures mediaUploadRichQuickReplies. */
-        public mediaUploadRichQuickReplies: Web.WebFeatures.Flag;
+        public mediaUploadRichQuickReplies?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures vnameV2. */
-        public vnameV2: Web.WebFeatures.Flag;
+        public vnameV2?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures videoPlaybackUrl. */
-        public videoPlaybackUrl: Web.WebFeatures.Flag;
+        public videoPlaybackUrl?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures statusRanking. */
-        public statusRanking: Web.WebFeatures.Flag;
+        public statusRanking?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures voipIndividualVideo. */
-        public voipIndividualVideo: Web.WebFeatures.Flag;
+        public voipIndividualVideo?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures thirdPartyStickers. */
-        public thirdPartyStickers: Web.WebFeatures.Flag;
+        public thirdPartyStickers?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures frequentlyForwardedSetting. */
-        public frequentlyForwardedSetting: Web.WebFeatures.Flag;
+        public frequentlyForwardedSetting?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures groupsV4JoinPermission. */
-        public groupsV4JoinPermission: Web.WebFeatures.Flag;
+        public groupsV4JoinPermission?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures recentStickers. */
-        public recentStickers: Web.WebFeatures.Flag;
+        public recentStickers?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures catalog. */
-        public catalog: Web.WebFeatures.Flag;
+        public catalog?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures starredStickers. */
-        public starredStickers: Web.WebFeatures.Flag;
+        public starredStickers?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures voipGroupCall. */
-        public voipGroupCall: Web.WebFeatures.Flag;
+        public voipGroupCall?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures templateMessage. */
-        public templateMessage: Web.WebFeatures.Flag;
+        public templateMessage?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures templateMessageInteractivity. */
-        public templateMessageInteractivity: Web.WebFeatures.Flag;
+        public templateMessageInteractivity?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures ephemeralMessages. */
-        public ephemeralMessages: Web.WebFeatures.Flag;
+        public ephemeralMessages?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures e2ENotificationSync. */
-        public e2ENotificationSync: Web.WebFeatures.Flag;
+        public e2ENotificationSync?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures recentStickersV2. */
-        public recentStickersV2: Web.WebFeatures.Flag;
+        public recentStickersV2?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures recentStickersV3. */
-        public recentStickersV3: Web.WebFeatures.Flag;
+        public recentStickersV3?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures userNotice. */
-        public userNotice: Web.WebFeatures.Flag;
+        public userNotice?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures support. */
-        public support: Web.WebFeatures.Flag;
+        public support?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures groupUiiCleanup. */
-        public groupUiiCleanup: Web.WebFeatures.Flag;
+        public groupUiiCleanup?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures groupDogfoodingInternalOnly. */
-        public groupDogfoodingInternalOnly: Web.WebFeatures.Flag;
+        public groupDogfoodingInternalOnly?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures settingsSync. */
-        public settingsSync: Web.WebFeatures.Flag;
+        public settingsSync?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures archiveV2. */
-        public archiveV2: Web.WebFeatures.Flag;
+        public archiveV2?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures ephemeralAllowGroupMembers. */
-        public ephemeralAllowGroupMembers: Web.WebFeatures.Flag;
+        public ephemeralAllowGroupMembers?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures ephemeral24HDuration. */
-        public ephemeral24HDuration: Web.WebFeatures.Flag;
+        public ephemeral24HDuration?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures mdForceUpgrade. */
-        public mdForceUpgrade: Web.WebFeatures.Flag;
+        public mdForceUpgrade?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures disappearingMode. */
-        public disappearingMode: Web.WebFeatures.Flag;
+        public disappearingMode?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures externalMdOptInAvailable. */
-        public externalMdOptInAvailable: Web.WebFeatures.Flag;
+        public externalMdOptInAvailable?: (Web.WebFeatures.Flag|null);
 
         /** WebFeatures noDeleteMessageTimeLimit. */
-        public noDeleteMessageTimeLimit: Web.WebFeatures.Flag;
+        public noDeleteMessageTimeLimit?: (Web.WebFeatures.Flag|null);
+
+        /** WebFeatures _labelsDisplay. */
+        public _labelsDisplay?: "labelsDisplay";
+
+        /** WebFeatures _voipIndividualOutgoing. */
+        public _voipIndividualOutgoing?: "voipIndividualOutgoing";
+
+        /** WebFeatures _groupsV3. */
+        public _groupsV3?: "groupsV3";
+
+        /** WebFeatures _groupsV3Create. */
+        public _groupsV3Create?: "groupsV3Create";
+
+        /** WebFeatures _changeNumberV2. */
+        public _changeNumberV2?: "changeNumberV2";
+
+        /** WebFeatures _queryStatusV3Thumbnail. */
+        public _queryStatusV3Thumbnail?: "queryStatusV3Thumbnail";
+
+        /** WebFeatures _liveLocations. */
+        public _liveLocations?: "liveLocations";
+
+        /** WebFeatures _queryVname. */
+        public _queryVname?: "queryVname";
+
+        /** WebFeatures _voipIndividualIncoming. */
+        public _voipIndividualIncoming?: "voipIndividualIncoming";
+
+        /** WebFeatures _quickRepliesQuery. */
+        public _quickRepliesQuery?: "quickRepliesQuery";
+
+        /** WebFeatures _payments. */
+        public _payments?: "payments";
+
+        /** WebFeatures _stickerPackQuery. */
+        public _stickerPackQuery?: "stickerPackQuery";
+
+        /** WebFeatures _liveLocationsFinal. */
+        public _liveLocationsFinal?: "liveLocationsFinal";
+
+        /** WebFeatures _labelsEdit. */
+        public _labelsEdit?: "labelsEdit";
+
+        /** WebFeatures _mediaUpload. */
+        public _mediaUpload?: "mediaUpload";
+
+        /** WebFeatures _mediaUploadRichQuickReplies. */
+        public _mediaUploadRichQuickReplies?: "mediaUploadRichQuickReplies";
+
+        /** WebFeatures _vnameV2. */
+        public _vnameV2?: "vnameV2";
+
+        /** WebFeatures _videoPlaybackUrl. */
+        public _videoPlaybackUrl?: "videoPlaybackUrl";
+
+        /** WebFeatures _statusRanking. */
+        public _statusRanking?: "statusRanking";
+
+        /** WebFeatures _voipIndividualVideo. */
+        public _voipIndividualVideo?: "voipIndividualVideo";
+
+        /** WebFeatures _thirdPartyStickers. */
+        public _thirdPartyStickers?: "thirdPartyStickers";
+
+        /** WebFeatures _frequentlyForwardedSetting. */
+        public _frequentlyForwardedSetting?: "frequentlyForwardedSetting";
+
+        /** WebFeatures _groupsV4JoinPermission. */
+        public _groupsV4JoinPermission?: "groupsV4JoinPermission";
+
+        /** WebFeatures _recentStickers. */
+        public _recentStickers?: "recentStickers";
+
+        /** WebFeatures _catalog. */
+        public _catalog?: "catalog";
+
+        /** WebFeatures _starredStickers. */
+        public _starredStickers?: "starredStickers";
+
+        /** WebFeatures _voipGroupCall. */
+        public _voipGroupCall?: "voipGroupCall";
+
+        /** WebFeatures _templateMessage. */
+        public _templateMessage?: "templateMessage";
+
+        /** WebFeatures _templateMessageInteractivity. */
+        public _templateMessageInteractivity?: "templateMessageInteractivity";
+
+        /** WebFeatures _ephemeralMessages. */
+        public _ephemeralMessages?: "ephemeralMessages";
+
+        /** WebFeatures _e2ENotificationSync. */
+        public _e2ENotificationSync?: "e2ENotificationSync";
+
+        /** WebFeatures _recentStickersV2. */
+        public _recentStickersV2?: "recentStickersV2";
+
+        /** WebFeatures _recentStickersV3. */
+        public _recentStickersV3?: "recentStickersV3";
+
+        /** WebFeatures _userNotice. */
+        public _userNotice?: "userNotice";
+
+        /** WebFeatures _support. */
+        public _support?: "support";
+
+        /** WebFeatures _groupUiiCleanup. */
+        public _groupUiiCleanup?: "groupUiiCleanup";
+
+        /** WebFeatures _groupDogfoodingInternalOnly. */
+        public _groupDogfoodingInternalOnly?: "groupDogfoodingInternalOnly";
+
+        /** WebFeatures _settingsSync. */
+        public _settingsSync?: "settingsSync";
+
+        /** WebFeatures _archiveV2. */
+        public _archiveV2?: "archiveV2";
+
+        /** WebFeatures _ephemeralAllowGroupMembers. */
+        public _ephemeralAllowGroupMembers?: "ephemeralAllowGroupMembers";
+
+        /** WebFeatures _ephemeral24HDuration. */
+        public _ephemeral24HDuration?: "ephemeral24HDuration";
+
+        /** WebFeatures _mdForceUpgrade. */
+        public _mdForceUpgrade?: "mdForceUpgrade";
+
+        /** WebFeatures _disappearingMode. */
+        public _disappearingMode?: "disappearingMode";
+
+        /** WebFeatures _externalMdOptInAvailable. */
+        public _externalMdOptInAvailable?: "externalMdOptInAvailable";
+
+        /** WebFeatures _noDeleteMessageTimeLimit. */
+        public _noDeleteMessageTimeLimit?: "noDeleteMessageTimeLimit";
 
         /**
          * Creates a new WebFeatures instance using the specified properties.
@@ -40773,13 +43034,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for WebFeatures
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace WebFeatures {
@@ -40825,10 +43079,22 @@ export namespace Web {
         public message?: (E2E.IMessage|null);
 
         /** NotificationMessageInfo messageTimestamp. */
-        public messageTimestamp: (number|Long);
+        public messageTimestamp?: (number|Long|null);
 
         /** NotificationMessageInfo participant. */
-        public participant: string;
+        public participant?: (string|null);
+
+        /** NotificationMessageInfo _key. */
+        public _key?: "key";
+
+        /** NotificationMessageInfo _message. */
+        public _message?: "message";
+
+        /** NotificationMessageInfo _messageTimestamp. */
+        public _messageTimestamp?: "messageTimestamp";
+
+        /** NotificationMessageInfo _participant. */
+        public _participant?: "participant";
 
         /**
          * Creates a new NotificationMessageInfo instance using the specified properties.
@@ -40899,13 +43165,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for NotificationMessageInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a WebNotificationsInfo. */
@@ -40934,16 +43193,25 @@ export namespace Web {
         constructor(properties?: Web.IWebNotificationsInfo);
 
         /** WebNotificationsInfo timestamp. */
-        public timestamp: (number|Long);
+        public timestamp?: (number|Long|null);
 
         /** WebNotificationsInfo unreadChats. */
-        public unreadChats: number;
+        public unreadChats?: (number|null);
 
         /** WebNotificationsInfo notifyMessageCount. */
-        public notifyMessageCount: number;
+        public notifyMessageCount?: (number|null);
 
         /** WebNotificationsInfo notifyMessages. */
         public notifyMessages: Web.IWebMessageInfo[];
+
+        /** WebNotificationsInfo _timestamp. */
+        public _timestamp?: "timestamp";
+
+        /** WebNotificationsInfo _unreadChats. */
+        public _unreadChats?: "unreadChats";
+
+        /** WebNotificationsInfo _notifyMessageCount. */
+        public _notifyMessageCount?: "notifyMessageCount";
 
         /**
          * Creates a new WebNotificationsInfo instance using the specified properties.
@@ -41014,13 +43282,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for WebNotificationsInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PaymentInfo. */
@@ -41076,43 +43337,82 @@ export namespace Web {
         constructor(properties?: Web.IPaymentInfo);
 
         /** PaymentInfo currencyDeprecated. */
-        public currencyDeprecated: Web.PaymentInfo.Currency;
+        public currencyDeprecated?: (Web.PaymentInfo.Currency|null);
 
         /** PaymentInfo amount1000. */
-        public amount1000: (number|Long);
+        public amount1000?: (number|Long|null);
 
         /** PaymentInfo receiverJid. */
-        public receiverJid: string;
+        public receiverJid?: (string|null);
 
         /** PaymentInfo status. */
-        public status: Web.PaymentInfo.Status;
+        public status?: (Web.PaymentInfo.Status|null);
 
         /** PaymentInfo transactionTimestamp. */
-        public transactionTimestamp: (number|Long);
+        public transactionTimestamp?: (number|Long|null);
 
         /** PaymentInfo requestMessageKey. */
         public requestMessageKey?: (Protocol.IMessageKey|null);
 
         /** PaymentInfo expiryTimestamp. */
-        public expiryTimestamp: (number|Long);
+        public expiryTimestamp?: (number|Long|null);
 
         /** PaymentInfo futureproofed. */
-        public futureproofed: boolean;
+        public futureproofed?: (boolean|null);
 
         /** PaymentInfo currency. */
-        public currency: string;
+        public currency?: (string|null);
 
         /** PaymentInfo txnStatus. */
-        public txnStatus: Web.PaymentInfo.TxnStatus;
+        public txnStatus?: (Web.PaymentInfo.TxnStatus|null);
 
         /** PaymentInfo useNoviFiatFormat. */
-        public useNoviFiatFormat: boolean;
+        public useNoviFiatFormat?: (boolean|null);
 
         /** PaymentInfo primaryAmount. */
         public primaryAmount?: (E2E.IMoney|null);
 
         /** PaymentInfo exchangeAmount. */
         public exchangeAmount?: (E2E.IMoney|null);
+
+        /** PaymentInfo _currencyDeprecated. */
+        public _currencyDeprecated?: "currencyDeprecated";
+
+        /** PaymentInfo _amount1000. */
+        public _amount1000?: "amount1000";
+
+        /** PaymentInfo _receiverJid. */
+        public _receiverJid?: "receiverJid";
+
+        /** PaymentInfo _status. */
+        public _status?: "status";
+
+        /** PaymentInfo _transactionTimestamp. */
+        public _transactionTimestamp?: "transactionTimestamp";
+
+        /** PaymentInfo _requestMessageKey. */
+        public _requestMessageKey?: "requestMessageKey";
+
+        /** PaymentInfo _expiryTimestamp. */
+        public _expiryTimestamp?: "expiryTimestamp";
+
+        /** PaymentInfo _futureproofed. */
+        public _futureproofed?: "futureproofed";
+
+        /** PaymentInfo _currency. */
+        public _currency?: "currency";
+
+        /** PaymentInfo _txnStatus. */
+        public _txnStatus?: "txnStatus";
+
+        /** PaymentInfo _useNoviFiatFormat. */
+        public _useNoviFiatFormat?: "useNoviFiatFormat";
+
+        /** PaymentInfo _primaryAmount. */
+        public _primaryAmount?: "primaryAmount";
+
+        /** PaymentInfo _exchangeAmount. */
+        public _exchangeAmount?: "exchangeAmount";
 
         /**
          * Creates a new PaymentInfo instance using the specified properties.
@@ -41183,13 +43483,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PaymentInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace PaymentInfo {
@@ -41276,7 +43569,13 @@ export namespace Web {
         public commentParentKey?: (Protocol.IMessageKey|null);
 
         /** CommentMetadata replyCount. */
-        public replyCount: number;
+        public replyCount?: (number|null);
+
+        /** CommentMetadata _commentParentKey. */
+        public _commentParentKey?: "commentParentKey";
+
+        /** CommentMetadata _replyCount. */
+        public _replyCount?: "replyCount";
 
         /**
          * Creates a new CommentMetadata instance using the specified properties.
@@ -41347,13 +43646,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for CommentMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a WebMessageInfo. */
@@ -41568,52 +43860,52 @@ export namespace Web {
         public message?: (E2E.IMessage|null);
 
         /** WebMessageInfo messageTimestamp. */
-        public messageTimestamp: (number|Long);
+        public messageTimestamp?: (number|Long|null);
 
         /** WebMessageInfo status. */
-        public status: Web.WebMessageInfo.Status;
+        public status?: (Web.WebMessageInfo.Status|null);
 
         /** WebMessageInfo participant. */
-        public participant: string;
+        public participant?: (string|null);
 
         /** WebMessageInfo messageC2STimestamp. */
-        public messageC2STimestamp: (number|Long);
+        public messageC2STimestamp?: (number|Long|null);
 
         /** WebMessageInfo ignore. */
-        public ignore: boolean;
+        public ignore?: (boolean|null);
 
         /** WebMessageInfo starred. */
-        public starred: boolean;
+        public starred?: (boolean|null);
 
         /** WebMessageInfo broadcast. */
-        public broadcast: boolean;
+        public broadcast?: (boolean|null);
 
         /** WebMessageInfo pushName. */
-        public pushName: string;
+        public pushName?: (string|null);
 
         /** WebMessageInfo mediaCiphertextSha256. */
-        public mediaCiphertextSha256: Uint8Array;
+        public mediaCiphertextSha256?: (Uint8Array|null);
 
         /** WebMessageInfo multicast. */
-        public multicast: boolean;
+        public multicast?: (boolean|null);
 
         /** WebMessageInfo urlText. */
-        public urlText: boolean;
+        public urlText?: (boolean|null);
 
         /** WebMessageInfo urlNumber. */
-        public urlNumber: boolean;
+        public urlNumber?: (boolean|null);
 
         /** WebMessageInfo messageStubType. */
-        public messageStubType: Web.WebMessageInfo.StubType;
+        public messageStubType?: (Web.WebMessageInfo.StubType|null);
 
         /** WebMessageInfo clearMedia. */
-        public clearMedia: boolean;
+        public clearMedia?: (boolean|null);
 
         /** WebMessageInfo messageStubParameters. */
         public messageStubParameters: string[];
 
         /** WebMessageInfo duration. */
-        public duration: number;
+        public duration?: (number|null);
 
         /** WebMessageInfo labels. */
         public labels: string[];
@@ -41628,22 +43920,22 @@ export namespace Web {
         public quotedPaymentInfo?: (Web.IPaymentInfo|null);
 
         /** WebMessageInfo ephemeralStartTimestamp. */
-        public ephemeralStartTimestamp: (number|Long);
+        public ephemeralStartTimestamp?: (number|Long|null);
 
         /** WebMessageInfo ephemeralDuration. */
-        public ephemeralDuration: number;
+        public ephemeralDuration?: (number|null);
 
         /** WebMessageInfo ephemeralOffToOn. */
-        public ephemeralOffToOn: boolean;
+        public ephemeralOffToOn?: (boolean|null);
 
         /** WebMessageInfo ephemeralOutOfSync. */
-        public ephemeralOutOfSync: boolean;
+        public ephemeralOutOfSync?: (boolean|null);
 
         /** WebMessageInfo bizPrivacyStatus. */
-        public bizPrivacyStatus: Web.WebMessageInfo.BizPrivacyStatus;
+        public bizPrivacyStatus?: (Web.WebMessageInfo.BizPrivacyStatus|null);
 
         /** WebMessageInfo verifiedBizName. */
-        public verifiedBizName: string;
+        public verifiedBizName?: (string|null);
 
         /** WebMessageInfo mediaData. */
         public mediaData?: (E2E.PaymentBackground.IMediaData|null);
@@ -41661,7 +43953,7 @@ export namespace Web {
         public quotedStickerData?: (E2E.PaymentBackground.IMediaData|null);
 
         /** WebMessageInfo futureproofData. */
-        public futureproofData: Uint8Array;
+        public futureproofData?: (Uint8Array|null);
 
         /** WebMessageInfo statusPsa. */
         public statusPsa?: (Web.IStatusPSA|null);
@@ -41673,22 +43965,22 @@ export namespace Web {
         public pollAdditionalMetadata?: (Web.IPollAdditionalMetadata|null);
 
         /** WebMessageInfo agentId. */
-        public agentId: string;
+        public agentId?: (string|null);
 
         /** WebMessageInfo statusAlreadyViewed. */
-        public statusAlreadyViewed: boolean;
+        public statusAlreadyViewed?: (boolean|null);
 
         /** WebMessageInfo messageSecret. */
-        public messageSecret: Uint8Array;
+        public messageSecret?: (Uint8Array|null);
 
         /** WebMessageInfo keepInChat. */
         public keepInChat?: (Web.IKeepInChat|null);
 
         /** WebMessageInfo originalSelfAuthorUserJidString. */
-        public originalSelfAuthorUserJidString: string;
+        public originalSelfAuthorUserJidString?: (string|null);
 
         /** WebMessageInfo revokeMessageTimestamp. */
-        public revokeMessageTimestamp: (number|Long);
+        public revokeMessageTimestamp?: (number|Long|null);
 
         /** WebMessageInfo pinInChat. */
         public pinInChat?: (Web.IPinInChat|null);
@@ -41697,13 +43989,13 @@ export namespace Web {
         public premiumMessageInfo?: (Web.IPremiumMessageInfo|null);
 
         /** WebMessageInfo is1PBizBotMessage. */
-        public is1PBizBotMessage: boolean;
+        public is1PBizBotMessage?: (boolean|null);
 
         /** WebMessageInfo isGroupHistoryMessage. */
-        public isGroupHistoryMessage: boolean;
+        public isGroupHistoryMessage?: (boolean|null);
 
         /** WebMessageInfo botMessageInvokerJid. */
-        public botMessageInvokerJid: string;
+        public botMessageInvokerJid?: (string|null);
 
         /** WebMessageInfo commentMetadata. */
         public commentMetadata?: (Web.ICommentMetadata|null);
@@ -41715,13 +44007,13 @@ export namespace Web {
         public reportingTokenInfo?: (Web.IReportingTokenInfo|null);
 
         /** WebMessageInfo newsletterServerId. */
-        public newsletterServerId: (number|Long);
+        public newsletterServerId?: (number|Long|null);
 
         /** WebMessageInfo eventAdditionalMetadata. */
         public eventAdditionalMetadata?: (Web.IEventAdditionalMetadata|null);
 
         /** WebMessageInfo isMentionedInStatus. */
-        public isMentionedInStatus: boolean;
+        public isMentionedInStatus?: (boolean|null);
 
         /** WebMessageInfo statusMentions. */
         public statusMentions: string[];
@@ -41736,7 +44028,7 @@ export namespace Web {
         public statusMentionMessageInfo?: (Web.IStatusMentionMessage|null);
 
         /** WebMessageInfo isSupportAiMessage. */
-        public isSupportAiMessage: boolean;
+        public isSupportAiMessage?: (boolean|null);
 
         /** WebMessageInfo statusMentionSources. */
         public statusMentionSources: string[];
@@ -41745,13 +44037,172 @@ export namespace Web {
         public supportAiCitations: Web.ICitation[];
 
         /** WebMessageInfo botTargetId. */
-        public botTargetId: string;
+        public botTargetId?: (string|null);
 
         /** WebMessageInfo groupHistoryIndividualMessageInfo. */
         public groupHistoryIndividualMessageInfo?: (Web.IGroupHistoryIndividualMessageInfo|null);
 
         /** WebMessageInfo groupHistoryBundleMessage. */
         public groupHistoryBundleMessage?: (Web.IGroupHistoryBundleMessage|null);
+
+        /** WebMessageInfo _message. */
+        public _message?: "message";
+
+        /** WebMessageInfo _messageTimestamp. */
+        public _messageTimestamp?: "messageTimestamp";
+
+        /** WebMessageInfo _status. */
+        public _status?: "status";
+
+        /** WebMessageInfo _participant. */
+        public _participant?: "participant";
+
+        /** WebMessageInfo _messageC2STimestamp. */
+        public _messageC2STimestamp?: "messageC2STimestamp";
+
+        /** WebMessageInfo _ignore. */
+        public _ignore?: "ignore";
+
+        /** WebMessageInfo _starred. */
+        public _starred?: "starred";
+
+        /** WebMessageInfo _broadcast. */
+        public _broadcast?: "broadcast";
+
+        /** WebMessageInfo _pushName. */
+        public _pushName?: "pushName";
+
+        /** WebMessageInfo _mediaCiphertextSha256. */
+        public _mediaCiphertextSha256?: "mediaCiphertextSha256";
+
+        /** WebMessageInfo _multicast. */
+        public _multicast?: "multicast";
+
+        /** WebMessageInfo _urlText. */
+        public _urlText?: "urlText";
+
+        /** WebMessageInfo _urlNumber. */
+        public _urlNumber?: "urlNumber";
+
+        /** WebMessageInfo _messageStubType. */
+        public _messageStubType?: "messageStubType";
+
+        /** WebMessageInfo _clearMedia. */
+        public _clearMedia?: "clearMedia";
+
+        /** WebMessageInfo _duration. */
+        public _duration?: "duration";
+
+        /** WebMessageInfo _paymentInfo. */
+        public _paymentInfo?: "paymentInfo";
+
+        /** WebMessageInfo _finalLiveLocation. */
+        public _finalLiveLocation?: "finalLiveLocation";
+
+        /** WebMessageInfo _quotedPaymentInfo. */
+        public _quotedPaymentInfo?: "quotedPaymentInfo";
+
+        /** WebMessageInfo _ephemeralStartTimestamp. */
+        public _ephemeralStartTimestamp?: "ephemeralStartTimestamp";
+
+        /** WebMessageInfo _ephemeralDuration. */
+        public _ephemeralDuration?: "ephemeralDuration";
+
+        /** WebMessageInfo _ephemeralOffToOn. */
+        public _ephemeralOffToOn?: "ephemeralOffToOn";
+
+        /** WebMessageInfo _ephemeralOutOfSync. */
+        public _ephemeralOutOfSync?: "ephemeralOutOfSync";
+
+        /** WebMessageInfo _bizPrivacyStatus. */
+        public _bizPrivacyStatus?: "bizPrivacyStatus";
+
+        /** WebMessageInfo _verifiedBizName. */
+        public _verifiedBizName?: "verifiedBizName";
+
+        /** WebMessageInfo _mediaData. */
+        public _mediaData?: "mediaData";
+
+        /** WebMessageInfo _photoChange. */
+        public _photoChange?: "photoChange";
+
+        /** WebMessageInfo _quotedStickerData. */
+        public _quotedStickerData?: "quotedStickerData";
+
+        /** WebMessageInfo _futureproofData. */
+        public _futureproofData?: "futureproofData";
+
+        /** WebMessageInfo _statusPsa. */
+        public _statusPsa?: "statusPsa";
+
+        /** WebMessageInfo _pollAdditionalMetadata. */
+        public _pollAdditionalMetadata?: "pollAdditionalMetadata";
+
+        /** WebMessageInfo _agentId. */
+        public _agentId?: "agentId";
+
+        /** WebMessageInfo _statusAlreadyViewed. */
+        public _statusAlreadyViewed?: "statusAlreadyViewed";
+
+        /** WebMessageInfo _messageSecret. */
+        public _messageSecret?: "messageSecret";
+
+        /** WebMessageInfo _keepInChat. */
+        public _keepInChat?: "keepInChat";
+
+        /** WebMessageInfo _originalSelfAuthorUserJidString. */
+        public _originalSelfAuthorUserJidString?: "originalSelfAuthorUserJidString";
+
+        /** WebMessageInfo _revokeMessageTimestamp. */
+        public _revokeMessageTimestamp?: "revokeMessageTimestamp";
+
+        /** WebMessageInfo _pinInChat. */
+        public _pinInChat?: "pinInChat";
+
+        /** WebMessageInfo _premiumMessageInfo. */
+        public _premiumMessageInfo?: "premiumMessageInfo";
+
+        /** WebMessageInfo _is1PBizBotMessage. */
+        public _is1PBizBotMessage?: "is1PBizBotMessage";
+
+        /** WebMessageInfo _isGroupHistoryMessage. */
+        public _isGroupHistoryMessage?: "isGroupHistoryMessage";
+
+        /** WebMessageInfo _botMessageInvokerJid. */
+        public _botMessageInvokerJid?: "botMessageInvokerJid";
+
+        /** WebMessageInfo _commentMetadata. */
+        public _commentMetadata?: "commentMetadata";
+
+        /** WebMessageInfo _reportingTokenInfo. */
+        public _reportingTokenInfo?: "reportingTokenInfo";
+
+        /** WebMessageInfo _newsletterServerId. */
+        public _newsletterServerId?: "newsletterServerId";
+
+        /** WebMessageInfo _eventAdditionalMetadata. */
+        public _eventAdditionalMetadata?: "eventAdditionalMetadata";
+
+        /** WebMessageInfo _isMentionedInStatus. */
+        public _isMentionedInStatus?: "isMentionedInStatus";
+
+        /** WebMessageInfo _targetMessageId. */
+        public _targetMessageId?: "targetMessageId";
+
+        /** WebMessageInfo _statusMentionMessageInfo. */
+        public _statusMentionMessageInfo?: "statusMentionMessageInfo";
+
+        /** WebMessageInfo _isSupportAiMessage. */
+        public _isSupportAiMessage?: "isSupportAiMessage";
+
+        /** WebMessageInfo _botTargetId. */
+        public _botTargetId?: "botTargetId";
+
+        /** WebMessageInfo _groupHistoryIndividualMessageInfo. */
+        public _groupHistoryIndividualMessageInfo?: "groupHistoryIndividualMessageInfo";
+
+        /** WebMessageInfo _groupHistoryBundleMessage. */
+        public _groupHistoryBundleMessage?: "groupHistoryBundleMessage";
 
         /**
          * Creates a new WebMessageInfo instance using the specified properties.
@@ -41822,13 +44273,6 @@ export namespace Web {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for WebMessageInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace WebMessageInfo {
@@ -42127,37 +44571,70 @@ export namespace SyncAction {
         constructor(properties?: SyncAction.IPatchDebugData);
 
         /** PatchDebugData currentLthash. */
-        public currentLthash: Uint8Array;
+        public currentLthash?: (Uint8Array|null);
 
         /** PatchDebugData newLthash. */
-        public newLthash: Uint8Array;
+        public newLthash?: (Uint8Array|null);
 
         /** PatchDebugData patchVersion. */
-        public patchVersion: Uint8Array;
+        public patchVersion?: (Uint8Array|null);
 
         /** PatchDebugData collectionName. */
-        public collectionName: Uint8Array;
+        public collectionName?: (Uint8Array|null);
 
         /** PatchDebugData firstFourBytesFromAHashOfSnapshotMacKey. */
-        public firstFourBytesFromAHashOfSnapshotMacKey: Uint8Array;
+        public firstFourBytesFromAHashOfSnapshotMacKey?: (Uint8Array|null);
 
         /** PatchDebugData newLthashSubtract. */
-        public newLthashSubtract: Uint8Array;
+        public newLthashSubtract?: (Uint8Array|null);
 
         /** PatchDebugData numberAdd. */
-        public numberAdd: number;
+        public numberAdd?: (number|null);
 
         /** PatchDebugData numberRemove. */
-        public numberRemove: number;
+        public numberRemove?: (number|null);
 
         /** PatchDebugData numberOverride. */
-        public numberOverride: number;
+        public numberOverride?: (number|null);
 
         /** PatchDebugData senderPlatform. */
-        public senderPlatform: SyncAction.PatchDebugData.Platform;
+        public senderPlatform?: (SyncAction.PatchDebugData.Platform|null);
 
         /** PatchDebugData isSenderPrimary. */
-        public isSenderPrimary: boolean;
+        public isSenderPrimary?: (boolean|null);
+
+        /** PatchDebugData _currentLthash. */
+        public _currentLthash?: "currentLthash";
+
+        /** PatchDebugData _newLthash. */
+        public _newLthash?: "newLthash";
+
+        /** PatchDebugData _patchVersion. */
+        public _patchVersion?: "patchVersion";
+
+        /** PatchDebugData _collectionName. */
+        public _collectionName?: "collectionName";
+
+        /** PatchDebugData _firstFourBytesFromAHashOfSnapshotMacKey. */
+        public _firstFourBytesFromAHashOfSnapshotMacKey?: "firstFourBytesFromAHashOfSnapshotMacKey";
+
+        /** PatchDebugData _newLthashSubtract. */
+        public _newLthashSubtract?: "newLthashSubtract";
+
+        /** PatchDebugData _numberAdd. */
+        public _numberAdd?: "numberAdd";
+
+        /** PatchDebugData _numberRemove. */
+        public _numberRemove?: "numberRemove";
+
+        /** PatchDebugData _numberOverride. */
+        public _numberOverride?: "numberOverride";
+
+        /** PatchDebugData _senderPlatform. */
+        public _senderPlatform?: "senderPlatform";
+
+        /** PatchDebugData _isSenderPrimary. */
+        public _isSenderPrimary?: "isSenderPrimary";
 
         /**
          * Creates a new PatchDebugData instance using the specified properties.
@@ -42228,13 +44705,6 @@ export namespace SyncAction {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PatchDebugData
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace PatchDebugData {
@@ -42279,16 +44749,28 @@ export namespace SyncAction {
         constructor(properties?: SyncAction.ISyncActionData);
 
         /** SyncActionData index. */
-        public index: Uint8Array;
+        public index?: (Uint8Array|null);
 
         /** SyncActionData value. */
         public value?: (SyncAction.ISyncActionValue|null);
 
         /** SyncActionData padding. */
-        public padding: Uint8Array;
+        public padding?: (Uint8Array|null);
 
         /** SyncActionData version. */
-        public version: number;
+        public version?: (number|null);
+
+        /** SyncActionData _index. */
+        public _index?: "index";
+
+        /** SyncActionData _value. */
+        public _value?: "value";
+
+        /** SyncActionData _padding. */
+        public _padding?: "padding";
+
+        /** SyncActionData _version. */
+        public _version?: "version";
 
         /**
          * Creates a new SyncActionData instance using the specified properties.
@@ -42359,13 +44841,6 @@ export namespace SyncAction {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for SyncActionData
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a SyncActionValue. */
@@ -42574,7 +45049,7 @@ export namespace SyncAction {
         constructor(properties?: SyncAction.ISyncActionValue);
 
         /** SyncActionValue timestamp. */
-        public timestamp: (number|Long);
+        public timestamp?: (number|Long|null);
 
         /** SyncActionValue starAction. */
         public starAction?: (SyncAction.SyncActionValue.IStarAction|null);
@@ -42765,6 +45240,198 @@ export namespace SyncAction {
         /** SyncActionValue statusPostOptInNotificationPreferencesAction. */
         public statusPostOptInNotificationPreferencesAction?: (SyncAction.SyncActionValue.IStatusPostOptInNotificationPreferencesAction|null);
 
+        /** SyncActionValue _timestamp. */
+        public _timestamp?: "timestamp";
+
+        /** SyncActionValue _starAction. */
+        public _starAction?: "starAction";
+
+        /** SyncActionValue _contactAction. */
+        public _contactAction?: "contactAction";
+
+        /** SyncActionValue _muteAction. */
+        public _muteAction?: "muteAction";
+
+        /** SyncActionValue _pinAction. */
+        public _pinAction?: "pinAction";
+
+        /** SyncActionValue _securityNotificationSetting. */
+        public _securityNotificationSetting?: "securityNotificationSetting";
+
+        /** SyncActionValue _pushNameSetting. */
+        public _pushNameSetting?: "pushNameSetting";
+
+        /** SyncActionValue _quickReplyAction. */
+        public _quickReplyAction?: "quickReplyAction";
+
+        /** SyncActionValue _recentEmojiWeightsAction. */
+        public _recentEmojiWeightsAction?: "recentEmojiWeightsAction";
+
+        /** SyncActionValue _labelEditAction. */
+        public _labelEditAction?: "labelEditAction";
+
+        /** SyncActionValue _labelAssociationAction. */
+        public _labelAssociationAction?: "labelAssociationAction";
+
+        /** SyncActionValue _localeSetting. */
+        public _localeSetting?: "localeSetting";
+
+        /** SyncActionValue _archiveChatAction. */
+        public _archiveChatAction?: "archiveChatAction";
+
+        /** SyncActionValue _deleteMessageForMeAction. */
+        public _deleteMessageForMeAction?: "deleteMessageForMeAction";
+
+        /** SyncActionValue _keyExpiration. */
+        public _keyExpiration?: "keyExpiration";
+
+        /** SyncActionValue _markChatAsReadAction. */
+        public _markChatAsReadAction?: "markChatAsReadAction";
+
+        /** SyncActionValue _clearChatAction. */
+        public _clearChatAction?: "clearChatAction";
+
+        /** SyncActionValue _deleteChatAction. */
+        public _deleteChatAction?: "deleteChatAction";
+
+        /** SyncActionValue _unarchiveChatsSetting. */
+        public _unarchiveChatsSetting?: "unarchiveChatsSetting";
+
+        /** SyncActionValue _primaryFeature. */
+        public _primaryFeature?: "primaryFeature";
+
+        /** SyncActionValue _androidUnsupportedActions. */
+        public _androidUnsupportedActions?: "androidUnsupportedActions";
+
+        /** SyncActionValue _agentAction. */
+        public _agentAction?: "agentAction";
+
+        /** SyncActionValue _subscriptionAction. */
+        public _subscriptionAction?: "subscriptionAction";
+
+        /** SyncActionValue _userStatusMuteAction. */
+        public _userStatusMuteAction?: "userStatusMuteAction";
+
+        /** SyncActionValue _timeFormatAction. */
+        public _timeFormatAction?: "timeFormatAction";
+
+        /** SyncActionValue _nuxAction. */
+        public _nuxAction?: "nuxAction";
+
+        /** SyncActionValue _primaryVersionAction. */
+        public _primaryVersionAction?: "primaryVersionAction";
+
+        /** SyncActionValue _stickerAction. */
+        public _stickerAction?: "stickerAction";
+
+        /** SyncActionValue _removeRecentStickerAction. */
+        public _removeRecentStickerAction?: "removeRecentStickerAction";
+
+        /** SyncActionValue _chatAssignment. */
+        public _chatAssignment?: "chatAssignment";
+
+        /** SyncActionValue _chatAssignmentOpenedStatus. */
+        public _chatAssignmentOpenedStatus?: "chatAssignmentOpenedStatus";
+
+        /** SyncActionValue _pnForLidChatAction. */
+        public _pnForLidChatAction?: "pnForLidChatAction";
+
+        /** SyncActionValue _marketingMessageAction. */
+        public _marketingMessageAction?: "marketingMessageAction";
+
+        /** SyncActionValue _marketingMessageBroadcastAction. */
+        public _marketingMessageBroadcastAction?: "marketingMessageBroadcastAction";
+
+        /** SyncActionValue _externalWebBetaAction. */
+        public _externalWebBetaAction?: "externalWebBetaAction";
+
+        /** SyncActionValue _privacySettingRelayAllCalls. */
+        public _privacySettingRelayAllCalls?: "privacySettingRelayAllCalls";
+
+        /** SyncActionValue _callLogAction. */
+        public _callLogAction?: "callLogAction";
+
+        /** SyncActionValue _statusPrivacy. */
+        public _statusPrivacy?: "statusPrivacy";
+
+        /** SyncActionValue _botWelcomeRequestAction. */
+        public _botWelcomeRequestAction?: "botWelcomeRequestAction";
+
+        /** SyncActionValue _deleteIndividualCallLog. */
+        public _deleteIndividualCallLog?: "deleteIndividualCallLog";
+
+        /** SyncActionValue _labelReorderingAction. */
+        public _labelReorderingAction?: "labelReorderingAction";
+
+        /** SyncActionValue _paymentInfoAction. */
+        public _paymentInfoAction?: "paymentInfoAction";
+
+        /** SyncActionValue _customPaymentMethodsAction. */
+        public _customPaymentMethodsAction?: "customPaymentMethodsAction";
+
+        /** SyncActionValue _lockChatAction. */
+        public _lockChatAction?: "lockChatAction";
+
+        /** SyncActionValue _chatLockSettings. */
+        public _chatLockSettings?: "chatLockSettings";
+
+        /** SyncActionValue _wamoUserIdentifierAction. */
+        public _wamoUserIdentifierAction?: "wamoUserIdentifierAction";
+
+        /** SyncActionValue _privacySettingDisableLinkPreviewsAction. */
+        public _privacySettingDisableLinkPreviewsAction?: "privacySettingDisableLinkPreviewsAction";
+
+        /** SyncActionValue _deviceCapabilities. */
+        public _deviceCapabilities?: "deviceCapabilities";
+
+        /** SyncActionValue _noteEditAction. */
+        public _noteEditAction?: "noteEditAction";
+
+        /** SyncActionValue _favoritesAction. */
+        public _favoritesAction?: "favoritesAction";
+
+        /** SyncActionValue _merchantPaymentPartnerAction. */
+        public _merchantPaymentPartnerAction?: "merchantPaymentPartnerAction";
+
+        /** SyncActionValue _waffleAccountLinkStateAction. */
+        public _waffleAccountLinkStateAction?: "waffleAccountLinkStateAction";
+
+        /** SyncActionValue _usernameChatStartMode. */
+        public _usernameChatStartMode?: "usernameChatStartMode";
+
+        /** SyncActionValue _notificationActivitySettingAction. */
+        public _notificationActivitySettingAction?: "notificationActivitySettingAction";
+
+        /** SyncActionValue _lidContactAction. */
+        public _lidContactAction?: "lidContactAction";
+
+        /** SyncActionValue _ctwaPerCustomerDataSharingAction. */
+        public _ctwaPerCustomerDataSharingAction?: "ctwaPerCustomerDataSharingAction";
+
+        /** SyncActionValue _paymentTosAction. */
+        public _paymentTosAction?: "paymentTosAction";
+
+        /** SyncActionValue _privacySettingChannelsPersonalisedRecommendationAction. */
+        public _privacySettingChannelsPersonalisedRecommendationAction?: "privacySettingChannelsPersonalisedRecommendationAction";
+
+        /** SyncActionValue _businessBroadcastAssociationAction. */
+        public _businessBroadcastAssociationAction?: "businessBroadcastAssociationAction";
+
+        /** SyncActionValue _detectedOutcomesStatusAction. */
+        public _detectedOutcomesStatusAction?: "detectedOutcomesStatusAction";
+
+        /** SyncActionValue _maibaAiFeaturesControlAction. */
+        public _maibaAiFeaturesControlAction?: "maibaAiFeaturesControlAction";
+
+        /** SyncActionValue _businessBroadcastListAction. */
+        public _businessBroadcastListAction?: "businessBroadcastListAction";
+
+        /** SyncActionValue _musicUserIdAction. */
+        public _musicUserIdAction?: "musicUserIdAction";
+
+        /** SyncActionValue _statusPostOptInNotificationPreferencesAction. */
+        public _statusPostOptInNotificationPreferencesAction?: "statusPostOptInNotificationPreferencesAction";
+
         /**
          * Creates a new SyncActionValue instance using the specified properties.
          * @param [properties] Properties to set
@@ -42834,13 +45501,6 @@ export namespace SyncAction {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for SyncActionValue
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace SyncActionValue {
@@ -42868,13 +45528,22 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IAgentAction);
 
             /** AgentAction name. */
-            public name: string;
+            public name?: (string|null);
 
             /** AgentAction deviceID. */
-            public deviceID: number;
+            public deviceID?: (number|null);
 
             /** AgentAction isDeleted. */
-            public isDeleted: boolean;
+            public isDeleted?: (boolean|null);
+
+            /** AgentAction _name. */
+            public _name?: "name";
+
+            /** AgentAction _deviceID. */
+            public _deviceID?: "deviceID";
+
+            /** AgentAction _isDeleted. */
+            public _isDeleted?: "isDeleted";
 
             /**
              * Creates a new AgentAction instance using the specified properties.
@@ -42945,13 +45614,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AgentAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an AndroidUnsupportedActions. */
@@ -42971,7 +45633,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IAndroidUnsupportedActions);
 
             /** AndroidUnsupportedActions allowed. */
-            public allowed: boolean;
+            public allowed?: (boolean|null);
+
+            /** AndroidUnsupportedActions _allowed. */
+            public _allowed?: "allowed";
 
             /**
              * Creates a new AndroidUnsupportedActions instance using the specified properties.
@@ -43042,13 +45707,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AndroidUnsupportedActions
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an ArchiveChatAction. */
@@ -43071,10 +45729,16 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IArchiveChatAction);
 
             /** ArchiveChatAction archived. */
-            public archived: boolean;
+            public archived?: (boolean|null);
 
             /** ArchiveChatAction messageRange. */
             public messageRange?: (SyncAction.SyncActionValue.ISyncActionMessageRange|null);
+
+            /** ArchiveChatAction _archived. */
+            public _archived?: "archived";
+
+            /** ArchiveChatAction _messageRange. */
+            public _messageRange?: "messageRange";
 
             /**
              * Creates a new ArchiveChatAction instance using the specified properties.
@@ -43145,13 +45809,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ArchiveChatAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a BotWelcomeRequestAction. */
@@ -43171,7 +45828,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IBotWelcomeRequestAction);
 
             /** BotWelcomeRequestAction isSent. */
-            public isSent: boolean;
+            public isSent?: (boolean|null);
+
+            /** BotWelcomeRequestAction _isSent. */
+            public _isSent?: "isSent";
 
             /**
              * Creates a new BotWelcomeRequestAction instance using the specified properties.
@@ -43242,13 +45902,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotWelcomeRequestAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a BroadcastListParticipant. */
@@ -43274,7 +45927,10 @@ export namespace SyncAction {
             public lidJid: string;
 
             /** BroadcastListParticipant pnJid. */
-            public pnJid: string;
+            public pnJid?: (string|null);
+
+            /** BroadcastListParticipant _pnJid. */
+            public _pnJid?: "pnJid";
 
             /**
              * Creates a new BroadcastListParticipant instance using the specified properties.
@@ -43345,13 +46001,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BroadcastListParticipant
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a BusinessBroadcastAssociationAction. */
@@ -43371,7 +46020,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IBusinessBroadcastAssociationAction);
 
             /** BusinessBroadcastAssociationAction deleted. */
-            public deleted: boolean;
+            public deleted?: (boolean|null);
+
+            /** BusinessBroadcastAssociationAction _deleted. */
+            public _deleted?: "deleted";
 
             /**
              * Creates a new BusinessBroadcastAssociationAction instance using the specified properties.
@@ -43442,13 +46094,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BusinessBroadcastAssociationAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a BusinessBroadcastListAction. */
@@ -43474,13 +46119,19 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IBusinessBroadcastListAction);
 
             /** BusinessBroadcastListAction deleted. */
-            public deleted: boolean;
+            public deleted?: (boolean|null);
 
             /** BusinessBroadcastListAction participants. */
             public participants: SyncAction.SyncActionValue.IBroadcastListParticipant[];
 
             /** BusinessBroadcastListAction listName. */
-            public listName: string;
+            public listName?: (string|null);
+
+            /** BusinessBroadcastListAction _deleted. */
+            public _deleted?: "deleted";
+
+            /** BusinessBroadcastListAction _listName. */
+            public _listName?: "listName";
 
             /**
              * Creates a new BusinessBroadcastListAction instance using the specified properties.
@@ -43551,13 +46202,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BusinessBroadcastListAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a CallLogAction. */
@@ -43578,6 +46222,9 @@ export namespace SyncAction {
 
             /** CallLogAction callLogRecord. */
             public callLogRecord?: (SyncAction.ICallLogRecord|null);
+
+            /** CallLogAction _callLogRecord. */
+            public _callLogRecord?: "callLogRecord";
 
             /**
              * Creates a new CallLogAction instance using the specified properties.
@@ -43648,13 +46295,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CallLogAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a ChatAssignmentAction. */
@@ -43674,7 +46314,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IChatAssignmentAction);
 
             /** ChatAssignmentAction deviceAgentID. */
-            public deviceAgentID: string;
+            public deviceAgentID?: (string|null);
+
+            /** ChatAssignmentAction _deviceAgentID. */
+            public _deviceAgentID?: "deviceAgentID";
 
             /**
              * Creates a new ChatAssignmentAction instance using the specified properties.
@@ -43745,13 +46388,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ChatAssignmentAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a ChatAssignmentOpenedStatusAction. */
@@ -43771,7 +46407,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IChatAssignmentOpenedStatusAction);
 
             /** ChatAssignmentOpenedStatusAction chatOpened. */
-            public chatOpened: boolean;
+            public chatOpened?: (boolean|null);
+
+            /** ChatAssignmentOpenedStatusAction _chatOpened. */
+            public _chatOpened?: "chatOpened";
 
             /**
              * Creates a new ChatAssignmentOpenedStatusAction instance using the specified properties.
@@ -43842,13 +46481,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ChatAssignmentOpenedStatusAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a ClearChatAction. */
@@ -43869,6 +46501,9 @@ export namespace SyncAction {
 
             /** ClearChatAction messageRange. */
             public messageRange?: (SyncAction.SyncActionValue.ISyncActionMessageRange|null);
+
+            /** ClearChatAction _messageRange. */
+            public _messageRange?: "messageRange";
 
             /**
              * Creates a new ClearChatAction instance using the specified properties.
@@ -43939,13 +46574,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ClearChatAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a ContactAction. */
@@ -43980,22 +46608,40 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IContactAction);
 
             /** ContactAction fullName. */
-            public fullName: string;
+            public fullName?: (string|null);
 
             /** ContactAction firstName. */
-            public firstName: string;
+            public firstName?: (string|null);
 
             /** ContactAction lidJid. */
-            public lidJid: string;
+            public lidJid?: (string|null);
 
             /** ContactAction saveOnPrimaryAddressbook. */
-            public saveOnPrimaryAddressbook: boolean;
+            public saveOnPrimaryAddressbook?: (boolean|null);
 
             /** ContactAction pnJid. */
-            public pnJid: string;
+            public pnJid?: (string|null);
 
             /** ContactAction username. */
-            public username: string;
+            public username?: (string|null);
+
+            /** ContactAction _fullName. */
+            public _fullName?: "fullName";
+
+            /** ContactAction _firstName. */
+            public _firstName?: "firstName";
+
+            /** ContactAction _lidJid. */
+            public _lidJid?: "lidJid";
+
+            /** ContactAction _saveOnPrimaryAddressbook. */
+            public _saveOnPrimaryAddressbook?: "saveOnPrimaryAddressbook";
+
+            /** ContactAction _pnJid. */
+            public _pnJid?: "pnJid";
+
+            /** ContactAction _username. */
+            public _username?: "username";
 
             /**
              * Creates a new ContactAction instance using the specified properties.
@@ -44066,13 +46712,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ContactAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a CtwaPerCustomerDataSharingAction. */
@@ -44092,7 +46731,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ICtwaPerCustomerDataSharingAction);
 
             /** CtwaPerCustomerDataSharingAction isCtwaPerCustomerDataSharingEnabled. */
-            public isCtwaPerCustomerDataSharingEnabled: boolean;
+            public isCtwaPerCustomerDataSharingEnabled?: (boolean|null);
+
+            /** CtwaPerCustomerDataSharingAction _isCtwaPerCustomerDataSharingEnabled. */
+            public _isCtwaPerCustomerDataSharingEnabled?: "isCtwaPerCustomerDataSharingEnabled";
 
             /**
              * Creates a new CtwaPerCustomerDataSharingAction instance using the specified properties.
@@ -44163,13 +46805,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CtwaPerCustomerDataSharingAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a CustomPaymentMethod. */
@@ -44278,13 +46913,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CustomPaymentMethod
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a CustomPaymentMethodMetadata. */
@@ -44381,13 +47009,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CustomPaymentMethodMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a CustomPaymentMethodsAction. */
@@ -44478,13 +47099,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for CustomPaymentMethodsAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a DeleteChatAction. */
@@ -44505,6 +47119,9 @@ export namespace SyncAction {
 
             /** DeleteChatAction messageRange. */
             public messageRange?: (SyncAction.SyncActionValue.ISyncActionMessageRange|null);
+
+            /** DeleteChatAction _messageRange. */
+            public _messageRange?: "messageRange";
 
             /**
              * Creates a new DeleteChatAction instance using the specified properties.
@@ -44575,13 +47192,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for DeleteChatAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a DeleteIndividualCallLogAction. */
@@ -44604,10 +47214,16 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IDeleteIndividualCallLogAction);
 
             /** DeleteIndividualCallLogAction peerJid. */
-            public peerJid: string;
+            public peerJid?: (string|null);
 
             /** DeleteIndividualCallLogAction isIncoming. */
-            public isIncoming: boolean;
+            public isIncoming?: (boolean|null);
+
+            /** DeleteIndividualCallLogAction _peerJid. */
+            public _peerJid?: "peerJid";
+
+            /** DeleteIndividualCallLogAction _isIncoming. */
+            public _isIncoming?: "isIncoming";
 
             /**
              * Creates a new DeleteIndividualCallLogAction instance using the specified properties.
@@ -44678,13 +47294,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for DeleteIndividualCallLogAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a DeleteMessageForMeAction. */
@@ -44707,10 +47316,16 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IDeleteMessageForMeAction);
 
             /** DeleteMessageForMeAction deleteMedia. */
-            public deleteMedia: boolean;
+            public deleteMedia?: (boolean|null);
 
             /** DeleteMessageForMeAction messageTimestamp. */
-            public messageTimestamp: (number|Long);
+            public messageTimestamp?: (number|Long|null);
+
+            /** DeleteMessageForMeAction _deleteMedia. */
+            public _deleteMedia?: "deleteMedia";
+
+            /** DeleteMessageForMeAction _messageTimestamp. */
+            public _messageTimestamp?: "messageTimestamp";
 
             /**
              * Creates a new DeleteMessageForMeAction instance using the specified properties.
@@ -44781,13 +47396,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for DeleteMessageForMeAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a DetectedOutcomesStatusAction. */
@@ -44807,7 +47415,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IDetectedOutcomesStatusAction);
 
             /** DetectedOutcomesStatusAction isEnabled. */
-            public isEnabled: boolean;
+            public isEnabled?: (boolean|null);
+
+            /** DetectedOutcomesStatusAction _isEnabled. */
+            public _isEnabled?: "isEnabled";
 
             /**
              * Creates a new DetectedOutcomesStatusAction instance using the specified properties.
@@ -44878,13 +47489,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for DetectedOutcomesStatusAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an ExternalWebBetaAction. */
@@ -44904,7 +47508,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IExternalWebBetaAction);
 
             /** ExternalWebBetaAction isOptIn. */
-            public isOptIn: boolean;
+            public isOptIn?: (boolean|null);
+
+            /** ExternalWebBetaAction _isOptIn. */
+            public _isOptIn?: "isOptIn";
 
             /**
              * Creates a new ExternalWebBetaAction instance using the specified properties.
@@ -44975,13 +47582,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ExternalWebBetaAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a FavoritesAction. */
@@ -45072,13 +47672,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for FavoritesAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace FavoritesAction {
@@ -45100,7 +47693,10 @@ export namespace SyncAction {
                 constructor(properties?: SyncAction.SyncActionValue.FavoritesAction.IFavorite);
 
                 /** Favorite id. */
-                public id: string;
+                public id?: (string|null);
+
+                /** Favorite _id. */
+                public _id?: "id";
 
                 /**
                  * Creates a new Favorite instance using the specified properties.
@@ -45171,13 +47767,6 @@ export namespace SyncAction {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Favorite
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
 
@@ -45198,7 +47787,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IKeyExpiration);
 
             /** KeyExpiration expiredKeyEpoch. */
-            public expiredKeyEpoch: number;
+            public expiredKeyEpoch?: (number|null);
+
+            /** KeyExpiration _expiredKeyEpoch. */
+            public _expiredKeyEpoch?: "expiredKeyEpoch";
 
             /**
              * Creates a new KeyExpiration instance using the specified properties.
@@ -45269,13 +47861,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for KeyExpiration
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a LabelAssociationAction. */
@@ -45295,7 +47880,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ILabelAssociationAction);
 
             /** LabelAssociationAction labeled. */
-            public labeled: boolean;
+            public labeled?: (boolean|null);
+
+            /** LabelAssociationAction _labeled. */
+            public _labeled?: "labeled";
 
             /**
              * Creates a new LabelAssociationAction instance using the specified properties.
@@ -45366,13 +47954,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LabelAssociationAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a LabelEditAction. */
@@ -45413,28 +47994,52 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ILabelEditAction);
 
             /** LabelEditAction name. */
-            public name: string;
+            public name?: (string|null);
 
             /** LabelEditAction color. */
-            public color: number;
+            public color?: (number|null);
 
             /** LabelEditAction predefinedId. */
-            public predefinedId: number;
+            public predefinedId?: (number|null);
 
             /** LabelEditAction deleted. */
-            public deleted: boolean;
+            public deleted?: (boolean|null);
 
             /** LabelEditAction orderIndex. */
-            public orderIndex: number;
+            public orderIndex?: (number|null);
 
             /** LabelEditAction isActive. */
-            public isActive: boolean;
+            public isActive?: (boolean|null);
 
             /** LabelEditAction type. */
-            public type: SyncAction.SyncActionValue.LabelEditAction.ListType;
+            public type?: (SyncAction.SyncActionValue.LabelEditAction.ListType|null);
 
             /** LabelEditAction isImmutable. */
-            public isImmutable: boolean;
+            public isImmutable?: (boolean|null);
+
+            /** LabelEditAction _name. */
+            public _name?: "name";
+
+            /** LabelEditAction _color. */
+            public _color?: "color";
+
+            /** LabelEditAction _predefinedId. */
+            public _predefinedId?: "predefinedId";
+
+            /** LabelEditAction _deleted. */
+            public _deleted?: "deleted";
+
+            /** LabelEditAction _orderIndex. */
+            public _orderIndex?: "orderIndex";
+
+            /** LabelEditAction _isActive. */
+            public _isActive?: "isActive";
+
+            /** LabelEditAction _type. */
+            public _type?: "type";
+
+            /** LabelEditAction _isImmutable. */
+            public _isImmutable?: "isImmutable";
 
             /**
              * Creates a new LabelEditAction instance using the specified properties.
@@ -45505,13 +48110,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LabelEditAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace LabelEditAction {
@@ -45617,13 +48215,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LabelReorderingAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a LidContactAction. */
@@ -45652,16 +48243,28 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ILidContactAction);
 
             /** LidContactAction fullName. */
-            public fullName: string;
+            public fullName?: (string|null);
 
             /** LidContactAction firstName. */
-            public firstName: string;
+            public firstName?: (string|null);
 
             /** LidContactAction username. */
-            public username: string;
+            public username?: (string|null);
 
             /** LidContactAction saveOnPrimaryAddressbook. */
-            public saveOnPrimaryAddressbook: boolean;
+            public saveOnPrimaryAddressbook?: (boolean|null);
+
+            /** LidContactAction _fullName. */
+            public _fullName?: "fullName";
+
+            /** LidContactAction _firstName. */
+            public _firstName?: "firstName";
+
+            /** LidContactAction _username. */
+            public _username?: "username";
+
+            /** LidContactAction _saveOnPrimaryAddressbook. */
+            public _saveOnPrimaryAddressbook?: "saveOnPrimaryAddressbook";
 
             /**
              * Creates a new LidContactAction instance using the specified properties.
@@ -45732,13 +48335,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LidContactAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a LocaleSetting. */
@@ -45758,7 +48354,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ILocaleSetting);
 
             /** LocaleSetting locale. */
-            public locale: string;
+            public locale?: (string|null);
+
+            /** LocaleSetting _locale. */
+            public _locale?: "locale";
 
             /**
              * Creates a new LocaleSetting instance using the specified properties.
@@ -45829,13 +48428,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LocaleSetting
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a LockChatAction. */
@@ -45855,7 +48447,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ILockChatAction);
 
             /** LockChatAction locked. */
-            public locked: boolean;
+            public locked?: (boolean|null);
+
+            /** LockChatAction _locked. */
+            public _locked?: "locked";
 
             /**
              * Creates a new LockChatAction instance using the specified properties.
@@ -45926,13 +48521,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LockChatAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a MaibaAIFeaturesControlAction. */
@@ -45952,7 +48540,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IMaibaAIFeaturesControlAction);
 
             /** MaibaAIFeaturesControlAction aiFeatureStatus. */
-            public aiFeatureStatus: SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.MaibaAIFeatureStatus;
+            public aiFeatureStatus?: (SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.MaibaAIFeatureStatus|null);
+
+            /** MaibaAIFeaturesControlAction _aiFeatureStatus. */
+            public _aiFeatureStatus?: "aiFeatureStatus";
 
             /**
              * Creates a new MaibaAIFeaturesControlAction instance using the specified properties.
@@ -46023,13 +48614,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MaibaAIFeaturesControlAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace MaibaAIFeaturesControlAction {
@@ -46062,10 +48646,16 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IMarkChatAsReadAction);
 
             /** MarkChatAsReadAction read. */
-            public read: boolean;
+            public read?: (boolean|null);
 
             /** MarkChatAsReadAction messageRange. */
             public messageRange?: (SyncAction.SyncActionValue.ISyncActionMessageRange|null);
+
+            /** MarkChatAsReadAction _read. */
+            public _read?: "read";
+
+            /** MarkChatAsReadAction _messageRange. */
+            public _messageRange?: "messageRange";
 
             /**
              * Creates a new MarkChatAsReadAction instance using the specified properties.
@@ -46136,13 +48726,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MarkChatAsReadAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a MarketingMessageAction. */
@@ -46180,25 +48763,46 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IMarketingMessageAction);
 
             /** MarketingMessageAction name. */
-            public name: string;
+            public name?: (string|null);
 
             /** MarketingMessageAction message. */
-            public message: string;
+            public message?: (string|null);
 
             /** MarketingMessageAction type. */
-            public type: SyncAction.SyncActionValue.MarketingMessageAction.MarketingMessagePrototypeType;
+            public type?: (SyncAction.SyncActionValue.MarketingMessageAction.MarketingMessagePrototypeType|null);
 
             /** MarketingMessageAction createdAt. */
-            public createdAt: (number|Long);
+            public createdAt?: (number|Long|null);
 
             /** MarketingMessageAction lastSentAt. */
-            public lastSentAt: (number|Long);
+            public lastSentAt?: (number|Long|null);
 
             /** MarketingMessageAction isDeleted. */
-            public isDeleted: boolean;
+            public isDeleted?: (boolean|null);
 
             /** MarketingMessageAction mediaId. */
-            public mediaId: string;
+            public mediaId?: (string|null);
+
+            /** MarketingMessageAction _name. */
+            public _name?: "name";
+
+            /** MarketingMessageAction _message. */
+            public _message?: "message";
+
+            /** MarketingMessageAction _type. */
+            public _type?: "type";
+
+            /** MarketingMessageAction _createdAt. */
+            public _createdAt?: "createdAt";
+
+            /** MarketingMessageAction _lastSentAt. */
+            public _lastSentAt?: "lastSentAt";
+
+            /** MarketingMessageAction _isDeleted. */
+            public _isDeleted?: "isDeleted";
+
+            /** MarketingMessageAction _mediaId. */
+            public _mediaId?: "mediaId";
 
             /**
              * Creates a new MarketingMessageAction instance using the specified properties.
@@ -46269,13 +48873,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MarketingMessageAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace MarketingMessageAction {
@@ -46303,7 +48900,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IMarketingMessageBroadcastAction);
 
             /** MarketingMessageBroadcastAction repliedCount. */
-            public repliedCount: number;
+            public repliedCount?: (number|null);
+
+            /** MarketingMessageBroadcastAction _repliedCount. */
+            public _repliedCount?: "repliedCount";
 
             /**
              * Creates a new MarketingMessageBroadcastAction instance using the specified properties.
@@ -46374,13 +48974,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MarketingMessageBroadcastAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a MerchantPaymentPartnerAction. */
@@ -46415,10 +49008,16 @@ export namespace SyncAction {
             public country: string;
 
             /** MerchantPaymentPartnerAction gatewayName. */
-            public gatewayName: string;
+            public gatewayName?: (string|null);
 
             /** MerchantPaymentPartnerAction credentialId. */
-            public credentialId: string;
+            public credentialId?: (string|null);
+
+            /** MerchantPaymentPartnerAction _gatewayName. */
+            public _gatewayName?: "gatewayName";
+
+            /** MerchantPaymentPartnerAction _credentialId. */
+            public _credentialId?: "credentialId";
 
             /**
              * Creates a new MerchantPaymentPartnerAction instance using the specified properties.
@@ -46489,13 +49088,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MerchantPaymentPartnerAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace MerchantPaymentPartnerAction {
@@ -46524,7 +49116,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IMusicUserIdAction);
 
             /** MusicUserIdAction musicUserId. */
-            public musicUserId: string;
+            public musicUserId?: (string|null);
+
+            /** MusicUserIdAction _musicUserId. */
+            public _musicUserId?: "musicUserId";
 
             /**
              * Creates a new MusicUserIdAction instance using the specified properties.
@@ -46595,13 +49190,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MusicUserIdAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a MuteAction. */
@@ -46627,13 +49215,22 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IMuteAction);
 
             /** MuteAction muted. */
-            public muted: boolean;
+            public muted?: (boolean|null);
 
             /** MuteAction muteEndTimestamp. */
-            public muteEndTimestamp: (number|Long);
+            public muteEndTimestamp?: (number|Long|null);
 
             /** MuteAction autoMuted. */
-            public autoMuted: boolean;
+            public autoMuted?: (boolean|null);
+
+            /** MuteAction _muted. */
+            public _muted?: "muted";
+
+            /** MuteAction _muteEndTimestamp. */
+            public _muteEndTimestamp?: "muteEndTimestamp";
+
+            /** MuteAction _autoMuted. */
+            public _autoMuted?: "autoMuted";
 
             /**
              * Creates a new MuteAction instance using the specified properties.
@@ -46704,13 +49301,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for MuteAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a NoteEditAction. */
@@ -46742,19 +49332,34 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.INoteEditAction);
 
             /** NoteEditAction type. */
-            public type: SyncAction.SyncActionValue.NoteEditAction.NoteType;
+            public type?: (SyncAction.SyncActionValue.NoteEditAction.NoteType|null);
 
             /** NoteEditAction chatJid. */
-            public chatJid: string;
+            public chatJid?: (string|null);
 
             /** NoteEditAction createdAt. */
-            public createdAt: (number|Long);
+            public createdAt?: (number|Long|null);
 
             /** NoteEditAction deleted. */
-            public deleted: boolean;
+            public deleted?: (boolean|null);
 
             /** NoteEditAction unstructuredContent. */
-            public unstructuredContent: string;
+            public unstructuredContent?: (string|null);
+
+            /** NoteEditAction _type. */
+            public _type?: "type";
+
+            /** NoteEditAction _chatJid. */
+            public _chatJid?: "chatJid";
+
+            /** NoteEditAction _createdAt. */
+            public _createdAt?: "createdAt";
+
+            /** NoteEditAction _deleted. */
+            public _deleted?: "deleted";
+
+            /** NoteEditAction _unstructuredContent. */
+            public _unstructuredContent?: "unstructuredContent";
 
             /**
              * Creates a new NoteEditAction instance using the specified properties.
@@ -46825,13 +49430,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for NoteEditAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace NoteEditAction {
@@ -46860,7 +49458,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.INotificationActivitySettingAction);
 
             /** NotificationActivitySettingAction notificationActivitySetting. */
-            public notificationActivitySetting: SyncAction.SyncActionValue.NotificationActivitySettingAction.NotificationActivitySetting;
+            public notificationActivitySetting?: (SyncAction.SyncActionValue.NotificationActivitySettingAction.NotificationActivitySetting|null);
+
+            /** NotificationActivitySettingAction _notificationActivitySetting. */
+            public _notificationActivitySetting?: "notificationActivitySetting";
 
             /**
              * Creates a new NotificationActivitySettingAction instance using the specified properties.
@@ -46931,13 +49532,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for NotificationActivitySettingAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace NotificationActivitySettingAction {
@@ -46968,7 +49562,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.INuxAction);
 
             /** NuxAction acknowledged. */
-            public acknowledged: boolean;
+            public acknowledged?: (boolean|null);
+
+            /** NuxAction _acknowledged. */
+            public _acknowledged?: "acknowledged";
 
             /**
              * Creates a new NuxAction instance using the specified properties.
@@ -47039,13 +49636,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for NuxAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PaymentInfoAction. */
@@ -47065,7 +49655,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IPaymentInfoAction);
 
             /** PaymentInfoAction cpi. */
-            public cpi: string;
+            public cpi?: (string|null);
+
+            /** PaymentInfoAction _cpi. */
+            public _cpi?: "cpi";
 
             /**
              * Creates a new PaymentInfoAction instance using the specified properties.
@@ -47136,13 +49729,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PaymentInfoAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PaymentTosAction. */
@@ -47239,13 +49825,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PaymentTosAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace PaymentTosAction {
@@ -47273,7 +49852,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IPinAction);
 
             /** PinAction pinned. */
-            public pinned: boolean;
+            public pinned?: (boolean|null);
+
+            /** PinAction _pinned. */
+            public _pinned?: "pinned";
 
             /**
              * Creates a new PinAction instance using the specified properties.
@@ -47344,13 +49926,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PinAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PnForLidChatAction. */
@@ -47370,7 +49945,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IPnForLidChatAction);
 
             /** PnForLidChatAction pnJid. */
-            public pnJid: string;
+            public pnJid?: (string|null);
+
+            /** PnForLidChatAction _pnJid. */
+            public _pnJid?: "pnJid";
 
             /**
              * Creates a new PnForLidChatAction instance using the specified properties.
@@ -47441,13 +50019,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PnForLidChatAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PrimaryFeature. */
@@ -47538,13 +50109,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PrimaryFeature
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PrimaryVersionAction. */
@@ -47564,7 +50128,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IPrimaryVersionAction);
 
             /** PrimaryVersionAction version. */
-            public version: string;
+            public version?: (string|null);
+
+            /** PrimaryVersionAction _version. */
+            public _version?: "version";
 
             /**
              * Creates a new PrimaryVersionAction instance using the specified properties.
@@ -47635,13 +50202,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PrimaryVersionAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PrivacySettingChannelsPersonalisedRecommendationAction. */
@@ -47661,7 +50221,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IPrivacySettingChannelsPersonalisedRecommendationAction);
 
             /** PrivacySettingChannelsPersonalisedRecommendationAction isUserOptedOut. */
-            public isUserOptedOut: boolean;
+            public isUserOptedOut?: (boolean|null);
+
+            /** PrivacySettingChannelsPersonalisedRecommendationAction _isUserOptedOut. */
+            public _isUserOptedOut?: "isUserOptedOut";
 
             /**
              * Creates a new PrivacySettingChannelsPersonalisedRecommendationAction instance using the specified properties.
@@ -47732,13 +50295,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PrivacySettingChannelsPersonalisedRecommendationAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PrivacySettingDisableLinkPreviewsAction. */
@@ -47758,7 +50314,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IPrivacySettingDisableLinkPreviewsAction);
 
             /** PrivacySettingDisableLinkPreviewsAction isPreviewsDisabled. */
-            public isPreviewsDisabled: boolean;
+            public isPreviewsDisabled?: (boolean|null);
+
+            /** PrivacySettingDisableLinkPreviewsAction _isPreviewsDisabled. */
+            public _isPreviewsDisabled?: "isPreviewsDisabled";
 
             /**
              * Creates a new PrivacySettingDisableLinkPreviewsAction instance using the specified properties.
@@ -47829,13 +50388,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PrivacySettingDisableLinkPreviewsAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PrivacySettingRelayAllCalls. */
@@ -47855,7 +50407,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IPrivacySettingRelayAllCalls);
 
             /** PrivacySettingRelayAllCalls isEnabled. */
-            public isEnabled: boolean;
+            public isEnabled?: (boolean|null);
+
+            /** PrivacySettingRelayAllCalls _isEnabled. */
+            public _isEnabled?: "isEnabled";
 
             /**
              * Creates a new PrivacySettingRelayAllCalls instance using the specified properties.
@@ -47926,13 +50481,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PrivacySettingRelayAllCalls
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a PushNameSetting. */
@@ -47952,7 +50500,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IPushNameSetting);
 
             /** PushNameSetting name. */
-            public name: string;
+            public name?: (string|null);
+
+            /** PushNameSetting _name. */
+            public _name?: "name";
 
             /**
              * Creates a new PushNameSetting instance using the specified properties.
@@ -48023,13 +50574,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for PushNameSetting
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a QuickReplyAction. */
@@ -48061,19 +50605,31 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IQuickReplyAction);
 
             /** QuickReplyAction shortcut. */
-            public shortcut: string;
+            public shortcut?: (string|null);
 
             /** QuickReplyAction message. */
-            public message: string;
+            public message?: (string|null);
 
             /** QuickReplyAction keywords. */
             public keywords: string[];
 
             /** QuickReplyAction count. */
-            public count: number;
+            public count?: (number|null);
 
             /** QuickReplyAction deleted. */
-            public deleted: boolean;
+            public deleted?: (boolean|null);
+
+            /** QuickReplyAction _shortcut. */
+            public _shortcut?: "shortcut";
+
+            /** QuickReplyAction _message. */
+            public _message?: "message";
+
+            /** QuickReplyAction _count. */
+            public _count?: "count";
+
+            /** QuickReplyAction _deleted. */
+            public _deleted?: "deleted";
 
             /**
              * Creates a new QuickReplyAction instance using the specified properties.
@@ -48144,13 +50700,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for QuickReplyAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a RecentEmojiWeightsAction. */
@@ -48241,13 +50790,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for RecentEmojiWeightsAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a RemoveRecentStickerAction. */
@@ -48267,7 +50809,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IRemoveRecentStickerAction);
 
             /** RemoveRecentStickerAction lastStickerSentTs. */
-            public lastStickerSentTs: (number|Long);
+            public lastStickerSentTs?: (number|Long|null);
+
+            /** RemoveRecentStickerAction _lastStickerSentTs. */
+            public _lastStickerSentTs?: "lastStickerSentTs";
 
             /**
              * Creates a new RemoveRecentStickerAction instance using the specified properties.
@@ -48338,13 +50883,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for RemoveRecentStickerAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a SecurityNotificationSetting. */
@@ -48364,7 +50902,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ISecurityNotificationSetting);
 
             /** SecurityNotificationSetting showNotification. */
-            public showNotification: boolean;
+            public showNotification?: (boolean|null);
+
+            /** SecurityNotificationSetting _showNotification. */
+            public _showNotification?: "showNotification";
 
             /**
              * Creates a new SecurityNotificationSetting instance using the specified properties.
@@ -48435,13 +50976,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SecurityNotificationSetting
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a StarAction. */
@@ -48461,7 +50995,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IStarAction);
 
             /** StarAction starred. */
-            public starred: boolean;
+            public starred?: (boolean|null);
+
+            /** StarAction _starred. */
+            public _starred?: "starred";
 
             /**
              * Creates a new StarAction instance using the specified properties.
@@ -48532,13 +51069,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StarAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a StatusPostOptInNotificationPreferencesAction. */
@@ -48558,7 +51088,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IStatusPostOptInNotificationPreferencesAction);
 
             /** StatusPostOptInNotificationPreferencesAction enabled. */
-            public enabled: boolean;
+            public enabled?: (boolean|null);
+
+            /** StatusPostOptInNotificationPreferencesAction _enabled. */
+            public _enabled?: "enabled";
 
             /**
              * Creates a new StatusPostOptInNotificationPreferencesAction instance using the specified properties.
@@ -48629,13 +51162,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StatusPostOptInNotificationPreferencesAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a StatusPrivacyAction. */
@@ -48658,10 +51184,13 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IStatusPrivacyAction);
 
             /** StatusPrivacyAction mode. */
-            public mode: SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode;
+            public mode?: (SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode|null);
 
             /** StatusPrivacyAction userJid. */
             public userJid: string[];
+
+            /** StatusPrivacyAction _mode. */
+            public _mode?: "mode";
 
             /**
              * Creates a new StatusPrivacyAction instance using the specified properties.
@@ -48732,13 +51261,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StatusPrivacyAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace StatusPrivacyAction {
@@ -48804,43 +51326,82 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IStickerAction);
 
             /** StickerAction url. */
-            public url: string;
+            public url?: (string|null);
 
             /** StickerAction fileEncSha256. */
-            public fileEncSha256: Uint8Array;
+            public fileEncSha256?: (Uint8Array|null);
 
             /** StickerAction mediaKey. */
-            public mediaKey: Uint8Array;
+            public mediaKey?: (Uint8Array|null);
 
             /** StickerAction mimetype. */
-            public mimetype: string;
+            public mimetype?: (string|null);
 
             /** StickerAction height. */
-            public height: number;
+            public height?: (number|null);
 
             /** StickerAction width. */
-            public width: number;
+            public width?: (number|null);
 
             /** StickerAction directPath. */
-            public directPath: string;
+            public directPath?: (string|null);
 
             /** StickerAction fileLength. */
-            public fileLength: (number|Long);
+            public fileLength?: (number|Long|null);
 
             /** StickerAction isFavorite. */
-            public isFavorite: boolean;
+            public isFavorite?: (boolean|null);
 
             /** StickerAction deviceIdHint. */
-            public deviceIdHint: number;
+            public deviceIdHint?: (number|null);
 
             /** StickerAction isLottie. */
-            public isLottie: boolean;
+            public isLottie?: (boolean|null);
 
             /** StickerAction imageHash. */
-            public imageHash: string;
+            public imageHash?: (string|null);
 
             /** StickerAction isAvatarSticker. */
-            public isAvatarSticker: boolean;
+            public isAvatarSticker?: (boolean|null);
+
+            /** StickerAction _url. */
+            public _url?: "url";
+
+            /** StickerAction _fileEncSha256. */
+            public _fileEncSha256?: "fileEncSha256";
+
+            /** StickerAction _mediaKey. */
+            public _mediaKey?: "mediaKey";
+
+            /** StickerAction _mimetype. */
+            public _mimetype?: "mimetype";
+
+            /** StickerAction _height. */
+            public _height?: "height";
+
+            /** StickerAction _width. */
+            public _width?: "width";
+
+            /** StickerAction _directPath. */
+            public _directPath?: "directPath";
+
+            /** StickerAction _fileLength. */
+            public _fileLength?: "fileLength";
+
+            /** StickerAction _isFavorite. */
+            public _isFavorite?: "isFavorite";
+
+            /** StickerAction _deviceIdHint. */
+            public _deviceIdHint?: "deviceIdHint";
+
+            /** StickerAction _isLottie. */
+            public _isLottie?: "isLottie";
+
+            /** StickerAction _imageHash. */
+            public _imageHash?: "imageHash";
+
+            /** StickerAction _isAvatarSticker. */
+            public _isAvatarSticker?: "isAvatarSticker";
 
             /**
              * Creates a new StickerAction instance using the specified properties.
@@ -48911,13 +51472,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for StickerAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a SubscriptionAction. */
@@ -48943,13 +51497,22 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ISubscriptionAction);
 
             /** SubscriptionAction isDeactivated. */
-            public isDeactivated: boolean;
+            public isDeactivated?: (boolean|null);
 
             /** SubscriptionAction isAutoRenewing. */
-            public isAutoRenewing: boolean;
+            public isAutoRenewing?: (boolean|null);
 
             /** SubscriptionAction expirationDate. */
-            public expirationDate: (number|Long);
+            public expirationDate?: (number|Long|null);
+
+            /** SubscriptionAction _isDeactivated. */
+            public _isDeactivated?: "isDeactivated";
+
+            /** SubscriptionAction _isAutoRenewing. */
+            public _isAutoRenewing?: "isAutoRenewing";
+
+            /** SubscriptionAction _expirationDate. */
+            public _expirationDate?: "expirationDate";
 
             /**
              * Creates a new SubscriptionAction instance using the specified properties.
@@ -49020,13 +51583,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SubscriptionAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a SyncActionMessage. */
@@ -49052,7 +51608,13 @@ export namespace SyncAction {
             public key?: (Protocol.IMessageKey|null);
 
             /** SyncActionMessage timestamp. */
-            public timestamp: (number|Long);
+            public timestamp?: (number|Long|null);
+
+            /** SyncActionMessage _key. */
+            public _key?: "key";
+
+            /** SyncActionMessage _timestamp. */
+            public _timestamp?: "timestamp";
 
             /**
              * Creates a new SyncActionMessage instance using the specified properties.
@@ -49123,13 +51685,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SyncActionMessage
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a SyncActionMessageRange. */
@@ -49155,13 +51710,19 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ISyncActionMessageRange);
 
             /** SyncActionMessageRange lastMessageTimestamp. */
-            public lastMessageTimestamp: (number|Long);
+            public lastMessageTimestamp?: (number|Long|null);
 
             /** SyncActionMessageRange lastSystemMessageTimestamp. */
-            public lastSystemMessageTimestamp: (number|Long);
+            public lastSystemMessageTimestamp?: (number|Long|null);
 
             /** SyncActionMessageRange messages. */
             public messages: SyncAction.SyncActionValue.ISyncActionMessage[];
+
+            /** SyncActionMessageRange _lastMessageTimestamp. */
+            public _lastMessageTimestamp?: "lastMessageTimestamp";
+
+            /** SyncActionMessageRange _lastSystemMessageTimestamp. */
+            public _lastSystemMessageTimestamp?: "lastSystemMessageTimestamp";
 
             /**
              * Creates a new SyncActionMessageRange instance using the specified properties.
@@ -49232,13 +51793,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SyncActionMessageRange
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a TimeFormatAction. */
@@ -49258,7 +51812,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.ITimeFormatAction);
 
             /** TimeFormatAction isTwentyFourHourFormatEnabled. */
-            public isTwentyFourHourFormatEnabled: boolean;
+            public isTwentyFourHourFormatEnabled?: (boolean|null);
+
+            /** TimeFormatAction _isTwentyFourHourFormatEnabled. */
+            public _isTwentyFourHourFormatEnabled?: "isTwentyFourHourFormatEnabled";
 
             /**
              * Creates a new TimeFormatAction instance using the specified properties.
@@ -49329,13 +51886,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for TimeFormatAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an UnarchiveChatsSetting. */
@@ -49355,7 +51905,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IUnarchiveChatsSetting);
 
             /** UnarchiveChatsSetting unarchiveChats. */
-            public unarchiveChats: boolean;
+            public unarchiveChats?: (boolean|null);
+
+            /** UnarchiveChatsSetting _unarchiveChats. */
+            public _unarchiveChats?: "unarchiveChats";
 
             /**
              * Creates a new UnarchiveChatsSetting instance using the specified properties.
@@ -49426,13 +51979,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for UnarchiveChatsSetting
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a UserStatusMuteAction. */
@@ -49452,7 +51998,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IUserStatusMuteAction);
 
             /** UserStatusMuteAction muted. */
-            public muted: boolean;
+            public muted?: (boolean|null);
+
+            /** UserStatusMuteAction _muted. */
+            public _muted?: "muted";
 
             /**
              * Creates a new UserStatusMuteAction instance using the specified properties.
@@ -49523,13 +52072,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for UserStatusMuteAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a UsernameChatStartModeAction. */
@@ -49549,7 +52091,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IUsernameChatStartModeAction);
 
             /** UsernameChatStartModeAction chatStartMode. */
-            public chatStartMode: SyncAction.SyncActionValue.UsernameChatStartModeAction.ChatStartMode;
+            public chatStartMode?: (SyncAction.SyncActionValue.UsernameChatStartModeAction.ChatStartMode|null);
+
+            /** UsernameChatStartModeAction _chatStartMode. */
+            public _chatStartMode?: "chatStartMode";
 
             /**
              * Creates a new UsernameChatStartModeAction instance using the specified properties.
@@ -49620,13 +52165,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for UsernameChatStartModeAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace UsernameChatStartModeAction {
@@ -49655,7 +52193,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IWaffleAccountLinkStateAction);
 
             /** WaffleAccountLinkStateAction linkState. */
-            public linkState: SyncAction.SyncActionValue.WaffleAccountLinkStateAction.AccountLinkState;
+            public linkState?: (SyncAction.SyncActionValue.WaffleAccountLinkStateAction.AccountLinkState|null);
+
+            /** WaffleAccountLinkStateAction _linkState. */
+            public _linkState?: "linkState";
 
             /**
              * Creates a new WaffleAccountLinkStateAction instance using the specified properties.
@@ -49726,13 +52267,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for WaffleAccountLinkStateAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace WaffleAccountLinkStateAction {
@@ -49760,7 +52294,10 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.SyncActionValue.IWamoUserIdentifierAction);
 
             /** WamoUserIdentifierAction identifier. */
-            public identifier: string;
+            public identifier?: (string|null);
+
+            /** WamoUserIdentifierAction _identifier. */
+            public _identifier?: "identifier";
 
             /**
              * Creates a new WamoUserIdentifierAction instance using the specified properties.
@@ -49831,13 +52368,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for WamoUserIdentifierAction
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -49900,49 +52430,91 @@ export namespace SyncAction {
         constructor(properties?: SyncAction.ICallLogRecord);
 
         /** CallLogRecord callResult. */
-        public callResult: SyncAction.CallLogRecord.CallResult;
+        public callResult?: (SyncAction.CallLogRecord.CallResult|null);
 
         /** CallLogRecord isDndMode. */
-        public isDndMode: boolean;
+        public isDndMode?: (boolean|null);
 
         /** CallLogRecord silenceReason. */
-        public silenceReason: SyncAction.CallLogRecord.SilenceReason;
+        public silenceReason?: (SyncAction.CallLogRecord.SilenceReason|null);
 
         /** CallLogRecord duration. */
-        public duration: (number|Long);
+        public duration?: (number|Long|null);
 
         /** CallLogRecord startTime. */
-        public startTime: (number|Long);
+        public startTime?: (number|Long|null);
 
         /** CallLogRecord isIncoming. */
-        public isIncoming: boolean;
+        public isIncoming?: (boolean|null);
 
         /** CallLogRecord isVideo. */
-        public isVideo: boolean;
+        public isVideo?: (boolean|null);
 
         /** CallLogRecord isCallLink. */
-        public isCallLink: boolean;
+        public isCallLink?: (boolean|null);
 
         /** CallLogRecord callLinkToken. */
-        public callLinkToken: string;
+        public callLinkToken?: (string|null);
 
         /** CallLogRecord scheduledCallId. */
-        public scheduledCallId: string;
+        public scheduledCallId?: (string|null);
 
         /** CallLogRecord callId. */
-        public callId: string;
+        public callId?: (string|null);
 
         /** CallLogRecord callCreatorJid. */
-        public callCreatorJid: string;
+        public callCreatorJid?: (string|null);
 
         /** CallLogRecord groupJid. */
-        public groupJid: string;
+        public groupJid?: (string|null);
 
         /** CallLogRecord participants. */
         public participants: SyncAction.CallLogRecord.IParticipantInfo[];
 
         /** CallLogRecord callType. */
-        public callType: SyncAction.CallLogRecord.CallType;
+        public callType?: (SyncAction.CallLogRecord.CallType|null);
+
+        /** CallLogRecord _callResult. */
+        public _callResult?: "callResult";
+
+        /** CallLogRecord _isDndMode. */
+        public _isDndMode?: "isDndMode";
+
+        /** CallLogRecord _silenceReason. */
+        public _silenceReason?: "silenceReason";
+
+        /** CallLogRecord _duration. */
+        public _duration?: "duration";
+
+        /** CallLogRecord _startTime. */
+        public _startTime?: "startTime";
+
+        /** CallLogRecord _isIncoming. */
+        public _isIncoming?: "isIncoming";
+
+        /** CallLogRecord _isVideo. */
+        public _isVideo?: "isVideo";
+
+        /** CallLogRecord _isCallLink. */
+        public _isCallLink?: "isCallLink";
+
+        /** CallLogRecord _callLinkToken. */
+        public _callLinkToken?: "callLinkToken";
+
+        /** CallLogRecord _scheduledCallId. */
+        public _scheduledCallId?: "scheduledCallId";
+
+        /** CallLogRecord _callId. */
+        public _callId?: "callId";
+
+        /** CallLogRecord _callCreatorJid. */
+        public _callCreatorJid?: "callCreatorJid";
+
+        /** CallLogRecord _groupJid. */
+        public _groupJid?: "groupJid";
+
+        /** CallLogRecord _callType. */
+        public _callType?: "callType";
 
         /**
          * Creates a new CallLogRecord instance using the specified properties.
@@ -50013,13 +52585,6 @@ export namespace SyncAction {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for CallLogRecord
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace CallLogRecord {
@@ -50066,10 +52631,16 @@ export namespace SyncAction {
             constructor(properties?: SyncAction.CallLogRecord.IParticipantInfo);
 
             /** ParticipantInfo userJid. */
-            public userJid: string;
+            public userJid?: (string|null);
 
             /** ParticipantInfo callResult. */
-            public callResult: SyncAction.CallLogRecord.CallResult;
+            public callResult?: (SyncAction.CallLogRecord.CallResult|null);
+
+            /** ParticipantInfo _userJid. */
+            public _userJid?: "userJid";
+
+            /** ParticipantInfo _callResult. */
+            public _callResult?: "callResult";
 
             /**
              * Creates a new ParticipantInfo instance using the specified properties.
@@ -50140,13 +52711,6 @@ export namespace SyncAction {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for ParticipantInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** SilenceReason enum. */
@@ -50178,10 +52742,16 @@ export namespace SyncAction {
         constructor(properties?: SyncAction.IRecentEmojiWeight);
 
         /** RecentEmojiWeight emoji. */
-        public emoji: string;
+        public emoji?: (string|null);
 
         /** RecentEmojiWeight weight. */
-        public weight: number;
+        public weight?: (number|null);
+
+        /** RecentEmojiWeight _emoji. */
+        public _emoji?: "emoji";
+
+        /** RecentEmojiWeight _weight. */
+        public _weight?: "weight";
 
         /**
          * Creates a new RecentEmojiWeight instance using the specified properties.
@@ -50252,13 +52822,6 @@ export namespace SyncAction {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for RecentEmojiWeight
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 }
 
@@ -50288,13 +52851,22 @@ export namespace DeviceCapabilities {
         constructor(properties?: DeviceCapabilities.IDeviceCapabilities);
 
         /** DeviceCapabilities chatLockSupportLevel. */
-        public chatLockSupportLevel: DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel;
+        public chatLockSupportLevel?: (DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel|null);
 
         /** DeviceCapabilities lidMigration. */
         public lidMigration?: (DeviceCapabilities.DeviceCapabilities.ILIDMigration|null);
 
         /** DeviceCapabilities businessBroadcast. */
         public businessBroadcast?: (DeviceCapabilities.DeviceCapabilities.IBusinessBroadcast|null);
+
+        /** DeviceCapabilities _chatLockSupportLevel. */
+        public _chatLockSupportLevel?: "chatLockSupportLevel";
+
+        /** DeviceCapabilities _lidMigration. */
+        public _lidMigration?: "lidMigration";
+
+        /** DeviceCapabilities _businessBroadcast. */
+        public _businessBroadcast?: "businessBroadcast";
 
         /**
          * Creates a new DeviceCapabilities instance using the specified properties.
@@ -50365,13 +52937,6 @@ export namespace DeviceCapabilities {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for DeviceCapabilities
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace DeviceCapabilities {
@@ -50393,7 +52958,10 @@ export namespace DeviceCapabilities {
             constructor(properties?: DeviceCapabilities.DeviceCapabilities.IBusinessBroadcast);
 
             /** BusinessBroadcast importListEnabled. */
-            public importListEnabled: boolean;
+            public importListEnabled?: (boolean|null);
+
+            /** BusinessBroadcast _importListEnabled. */
+            public _importListEnabled?: "importListEnabled";
 
             /**
              * Creates a new BusinessBroadcast instance using the specified properties.
@@ -50464,13 +53032,6 @@ export namespace DeviceCapabilities {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BusinessBroadcast
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** ChatLockSupportLevel enum. */
@@ -50497,7 +53058,10 @@ export namespace DeviceCapabilities {
             constructor(properties?: DeviceCapabilities.DeviceCapabilities.ILIDMigration);
 
             /** LIDMigration chatDbMigrationTimestamp. */
-            public chatDbMigrationTimestamp: (number|Long);
+            public chatDbMigrationTimestamp?: (number|Long|null);
+
+            /** LIDMigration _chatDbMigrationTimestamp. */
+            public _chatDbMigrationTimestamp?: "chatDbMigrationTimestamp";
 
             /**
              * Creates a new LIDMigration instance using the specified properties.
@@ -50568,13 +53132,6 @@ export namespace DeviceCapabilities {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for LIDMigration
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 }

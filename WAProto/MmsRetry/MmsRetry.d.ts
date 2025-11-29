@@ -1,5 +1,4 @@
 import * as $protobuf from "protobufjs";
-import Long = require("long");
 /** Namespace MmsRetry. */
 export namespace MmsRetry {
 
@@ -94,13 +93,6 @@ export namespace MmsRetry {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ServerErrorReceipt
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a MediaRetryNotification. */
@@ -221,13 +213,6 @@ export namespace MmsRetry {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MediaRetryNotification
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace MediaRetryNotification {

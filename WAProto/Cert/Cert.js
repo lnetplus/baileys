@@ -139,23 +139,19 @@ $root.Cert = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CertChain.decode = function decode(reader, length, error) {
+        CertChain.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Cert.CertChain();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.leaf = $root.Cert.CertChain.NoiseCertificate.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        message.intermediate = $root.Cert.CertChain.NoiseCertificate.decode(reader, reader.uint32());
-                        break;
-                    }
+                case 1:
+                    message.leaf = $root.Cert.CertChain.NoiseCertificate.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.intermediate = $root.Cert.CertChain.NoiseCertificate.decode(reader, reader.uint32());
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -271,21 +267,6 @@ $root.Cert = (function() {
          */
         CertChain.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for CertChain
-         * @function getTypeUrl
-         * @memberof Cert.CertChain
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        CertChain.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Cert.CertChain";
         };
 
         CertChain.NoiseCertificate = (function() {
@@ -409,23 +390,19 @@ $root.Cert = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            NoiseCertificate.decode = function decode(reader, length, error) {
+            NoiseCertificate.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Cert.CertChain.NoiseCertificate();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.details = reader.bytes();
-                            break;
-                        }
-                    case 2: {
-                            message.signature = reader.bytes();
-                            break;
-                        }
+                    case 1:
+                        message.details = reader.bytes();
+                        break;
+                    case 2:
+                        message.signature = reader.bytes();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -490,12 +467,12 @@ $root.Cert = (function() {
                 if (object.details != null)
                     if (typeof object.details === "string")
                         $util.base64.decode(object.details, message.details = $util.newBuffer($util.base64.length(object.details)), 0);
-                    else if (object.details.length >= 0)
+                    else if (object.details.length)
                         message.details = object.details;
                 if (object.signature != null)
                     if (typeof object.signature === "string")
                         $util.base64.decode(object.signature, message.signature = $util.newBuffer($util.base64.length(object.signature)), 0);
-                    else if (object.signature.length >= 0)
+                    else if (object.signature.length)
                         message.signature = object.signature;
                 return message;
             };
@@ -535,21 +512,6 @@ $root.Cert = (function() {
              */
             NoiseCertificate.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for NoiseCertificate
-             * @function getTypeUrl
-             * @memberof Cert.CertChain.NoiseCertificate
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            NoiseCertificate.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Cert.CertChain.NoiseCertificate";
             };
 
             NoiseCertificate.Details = (function() {
@@ -739,35 +701,28 @@ $root.Cert = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Details.decode = function decode(reader, length, error) {
+                Details.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Cert.CertChain.NoiseCertificate.Details();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
-                        if (tag === error)
-                            break;
                         switch (tag >>> 3) {
-                        case 1: {
-                                message.serial = reader.uint32();
-                                break;
-                            }
-                        case 2: {
-                                message.issuerSerial = reader.uint32();
-                                break;
-                            }
-                        case 3: {
-                                message.key = reader.bytes();
-                                break;
-                            }
-                        case 4: {
-                                message.notBefore = reader.uint64();
-                                break;
-                            }
-                        case 5: {
-                                message.notAfter = reader.uint64();
-                                break;
-                            }
+                        case 1:
+                            message.serial = reader.uint32();
+                            break;
+                        case 2:
+                            message.issuerSerial = reader.uint32();
+                            break;
+                        case 3:
+                            message.key = reader.bytes();
+                            break;
+                        case 4:
+                            message.notBefore = reader.uint64();
+                            break;
+                        case 5:
+                            message.notAfter = reader.uint64();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -851,7 +806,7 @@ $root.Cert = (function() {
                     if (object.key != null)
                         if (typeof object.key === "string")
                             $util.base64.decode(object.key, message.key = $util.newBuffer($util.base64.length(object.key)), 0);
-                        else if (object.key.length >= 0)
+                        else if (object.key.length)
                             message.key = object.key;
                     if (object.notBefore != null)
                         if ($util.Long)
@@ -930,21 +885,6 @@ $root.Cert = (function() {
                  */
                 Details.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                /**
-                 * Gets the default type url for Details
-                 * @function getTypeUrl
-                 * @memberof Cert.CertChain.NoiseCertificate.Details
-                 * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
-                 */
-                Details.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/Cert.CertChain.NoiseCertificate.Details";
                 };
 
                 return Details;
@@ -1077,23 +1017,19 @@ $root.Cert = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        NoiseCertificate.decode = function decode(reader, length, error) {
+        NoiseCertificate.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Cert.NoiseCertificate();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.details = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.signature = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.details = reader.bytes();
+                    break;
+                case 2:
+                    message.signature = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1158,12 +1094,12 @@ $root.Cert = (function() {
             if (object.details != null)
                 if (typeof object.details === "string")
                     $util.base64.decode(object.details, message.details = $util.newBuffer($util.base64.length(object.details)), 0);
-                else if (object.details.length >= 0)
+                else if (object.details.length)
                     message.details = object.details;
             if (object.signature != null)
                 if (typeof object.signature === "string")
                     $util.base64.decode(object.signature, message.signature = $util.newBuffer($util.base64.length(object.signature)), 0);
-                else if (object.signature.length >= 0)
+                else if (object.signature.length)
                     message.signature = object.signature;
             return message;
         };
@@ -1203,21 +1139,6 @@ $root.Cert = (function() {
          */
         NoiseCertificate.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for NoiseCertificate
-         * @function getTypeUrl
-         * @memberof Cert.NoiseCertificate
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        NoiseCertificate.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Cert.NoiseCertificate";
         };
 
         NoiseCertificate.Details = (function() {
@@ -1407,35 +1328,28 @@ $root.Cert = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Details.decode = function decode(reader, length, error) {
+            Details.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Cert.NoiseCertificate.Details();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.serial = reader.uint32();
-                            break;
-                        }
-                    case 2: {
-                            message.issuer = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.expires = reader.uint64();
-                            break;
-                        }
-                    case 4: {
-                            message.subject = reader.string();
-                            break;
-                        }
-                    case 5: {
-                            message.key = reader.bytes();
-                            break;
-                        }
+                    case 1:
+                        message.serial = reader.uint32();
+                        break;
+                    case 2:
+                        message.issuer = reader.string();
+                        break;
+                    case 3:
+                        message.expires = reader.uint64();
+                        break;
+                    case 4:
+                        message.subject = reader.string();
+                        break;
+                    case 5:
+                        message.key = reader.bytes();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1530,7 +1444,7 @@ $root.Cert = (function() {
                 if (object.key != null)
                     if (typeof object.key === "string")
                         $util.base64.decode(object.key, message.key = $util.newBuffer($util.base64.length(object.key)), 0);
-                    else if (object.key.length >= 0)
+                    else if (object.key.length)
                         message.key = object.key;
                 return message;
             };
@@ -1588,21 +1502,6 @@ $root.Cert = (function() {
              */
             Details.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for Details
-             * @function getTypeUrl
-             * @memberof Cert.NoiseCertificate.Details
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            Details.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/Cert.NoiseCertificate.Details";
             };
 
             return Details;

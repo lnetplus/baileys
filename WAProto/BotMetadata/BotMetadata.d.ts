@@ -1,5 +1,4 @@
 import * as $protobuf from "protobufjs";
-import Long = require("long");
 /** Namespace BotMetadata. */
 export namespace BotMetadata {
 
@@ -271,13 +270,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a AIThreadInfo. */
@@ -374,13 +366,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for AIThreadInfo
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace AIThreadInfo {
@@ -473,13 +458,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIThreadClientInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace AIThreadClientInfo {
@@ -580,13 +558,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AIThreadServerInfo
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -678,13 +649,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotUnifiedResponseMutation
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotUnifiedResponseMutation {
@@ -777,13 +741,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for SideBySideMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -875,13 +832,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMessageOrigin
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotMessageOrigin {
@@ -980,13 +930,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMessageOriginMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an InThreadSurveyMetadata. */
@@ -1173,13 +1116,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for InThreadSurveyMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace InThreadSurveyMetadata {
@@ -1284,13 +1220,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InThreadSurveyOption
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an InThreadSurveyPrivacyStatementPart. */
@@ -1387,13 +1316,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InThreadSurveyPrivacyStatementPart
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of an InThreadSurveyQuestion. */
@@ -1496,13 +1418,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for InThreadSurveyQuestion
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -1594,13 +1509,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSourcesMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotSourcesMetadata {
@@ -1729,13 +1637,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotSourceItem
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace BotSourceItem {
@@ -1845,13 +1746,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotAgeCollectionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotImagineMetadata. */
@@ -1942,13 +1836,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotImagineMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotImagineMetadata {
@@ -2051,13 +1938,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotQuotaMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotQuotaMetadata {
@@ -2162,13 +2042,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotFeatureQuotaMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace BotFeatureQuotaMetadata {
@@ -2269,13 +2142,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotModeSelectionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotModeSelectionMetadata {
@@ -2375,13 +2241,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotCapabilityMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotCapabilityMetadata {
@@ -2528,13 +2387,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotProgressIndicatorMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotProgressIndicatorMetadata {
@@ -2663,13 +2515,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotPlanningStepMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace BotPlanningStepMetadata {
@@ -2780,13 +2625,6 @@ export namespace BotMetadata {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for BotPlanningSearchSourceMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** Properties of a BotPlanningSearchSourcesMetadata. */
@@ -2889,13 +2727,6 @@ export namespace BotMetadata {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for BotPlanningSearchSourcesMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             namespace BotPlanningSearchSourcesMetadata {
@@ -3009,13 +2840,6 @@ export namespace BotMetadata {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for BotPlanningStepSectionMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
             /** BotSearchSourceProvider enum. */
@@ -3130,13 +2954,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotModelMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotModelMetadata {
@@ -3268,13 +3085,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotReminderMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotReminderMetadata {
@@ -3385,13 +3195,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMemuMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotMediaMetadata. */
@@ -3518,13 +3321,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMediaMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotMediaMetadata {
@@ -3631,13 +3427,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSessionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotMetricsMetadata. */
@@ -3740,13 +3529,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMetricsMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotRenderingMetadata. */
@@ -3837,13 +3619,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotRenderingMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotRenderingMetadata {
@@ -3942,13 +3717,6 @@ export namespace BotMetadata {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for Keyword
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
 
@@ -4046,13 +3814,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPromotionMessageMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotPromotionMessageMetadata {
@@ -4171,13 +3932,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSignatureVerificationUseCaseProof
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotSignatureVerificationUseCaseProof {
@@ -4276,13 +4030,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSignatureVerificationMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotMemoryFact. */
@@ -4379,13 +4126,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMemoryFact
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotMemoryMetadata. */
@@ -4488,13 +4228,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMemoryMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotLinkedAccount. */
@@ -4585,13 +4318,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotLinkedAccount
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotLinkedAccount {
@@ -4702,13 +4428,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotLinkedAccountsMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotPromptSuggestion. */
@@ -4805,13 +4524,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPromptSuggestion
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotPromptSuggestions. */
@@ -4902,13 +4614,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPromptSuggestions
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotSuggestedPromptMetadata. */
@@ -5017,13 +4722,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSuggestedPromptMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a BotPluginMetadata. */
@@ -5180,13 +4878,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPluginMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace BotPluginMetadata {
@@ -5319,13 +5010,6 @@ export namespace BotMetadata {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotAvatarMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** BotSessionSource enum. */
@@ -5505,13 +5189,6 @@ export namespace Protocol {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for LimitSharing
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace LimitSharing {
@@ -5643,12 +5320,5 @@ export namespace Protocol {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for MessageKey
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 }

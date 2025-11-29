@@ -183,31 +183,25 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        LimitSharing.decode = function decode(reader, length, error) {
+        LimitSharing.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.LimitSharing();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.sharingLimited = reader.bool();
-                        break;
-                    }
-                case 2: {
-                        message.trigger = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        message.limitSharingSettingTimestamp = reader.int64();
-                        break;
-                    }
-                case 4: {
-                        message.initiatedByMe = reader.bool();
-                        break;
-                    }
+                case 1:
+                    message.sharingLimited = reader.bool();
+                    break;
+                case 2:
+                    message.trigger = reader.int32();
+                    break;
+                case 3:
+                    message.limitSharingSettingTimestamp = reader.int64();
+                    break;
+                case 4:
+                    message.initiatedByMe = reader.bool();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -289,12 +283,6 @@ $root.Protocol = (function() {
             if (object.sharingLimited != null)
                 message.sharingLimited = Boolean(object.sharingLimited);
             switch (object.trigger) {
-            default:
-                if (typeof object.trigger === "number") {
-                    message.trigger = object.trigger;
-                    break;
-                }
-                break;
             case "UNKNOWN":
             case 0:
                 message.trigger = 0;
@@ -345,7 +333,7 @@ $root.Protocol = (function() {
                     object._sharingLimited = "sharingLimited";
             }
             if (message.trigger != null && message.hasOwnProperty("trigger")) {
-                object.trigger = options.enums === String ? $root.Protocol.LimitSharing.TriggerType[message.trigger] === undefined ? message.trigger : $root.Protocol.LimitSharing.TriggerType[message.trigger] : message.trigger;
+                object.trigger = options.enums === String ? $root.Protocol.LimitSharing.TriggerType[message.trigger] : message.trigger;
                 if (options.oneofs)
                     object._trigger = "trigger";
             }
@@ -374,21 +362,6 @@ $root.Protocol = (function() {
          */
         LimitSharing.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for LimitSharing
-         * @function getTypeUrl
-         * @memberof Protocol.LimitSharing
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        LimitSharing.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Protocol.LimitSharing";
         };
 
         /**
@@ -577,31 +550,25 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        MessageKey.decode = function decode(reader, length, error) {
+        MessageKey.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.MessageKey();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.remoteJid = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.fromMe = reader.bool();
-                        break;
-                    }
-                case 3: {
-                        message.id = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.participant = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.remoteJid = reader.string();
+                    break;
+                case 2:
+                    message.fromMe = reader.bool();
+                    break;
+                case 3:
+                    message.id = reader.string();
+                    break;
+                case 4:
+                    message.participant = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -729,21 +696,6 @@ $root.Protocol = (function() {
          */
         MessageKey.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for MessageKey
-         * @function getTypeUrl
-         * @memberof Protocol.MessageKey
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        MessageKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Protocol.MessageKey";
         };
 
         return MessageKey;

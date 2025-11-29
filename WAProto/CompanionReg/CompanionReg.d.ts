@@ -1,5 +1,4 @@
 import * as $protobuf from "protobufjs";
-import Long = require("long");
 /** Namespace CompanionReg. */
 export namespace CompanionReg {
 
@@ -112,13 +111,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ClientPairingProps
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of an EncryptedPairingRequest. */
@@ -221,13 +213,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for EncryptedPairingRequest
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PairingRequest. */
@@ -339,13 +324,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PairingRequest
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a PrimaryEphemeralIdentity. */
@@ -448,13 +426,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for PrimaryEphemeralIdentity
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a ProloguePayload. */
@@ -557,13 +528,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for ProloguePayload
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a CompanionCommitment. */
@@ -657,13 +621,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for CompanionCommitment
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a CompanionEphemeralIdentity. */
@@ -775,13 +732,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for CompanionEphemeralIdentity
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a DeviceProps. */
@@ -911,13 +861,6 @@ export namespace CompanionReg {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for DeviceProps
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace DeviceProps {
@@ -1049,13 +992,6 @@ export namespace CompanionReg {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for AppVersion
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a HistorySyncConfig. */
@@ -1293,13 +1229,6 @@ export namespace CompanionReg {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for HistorySyncConfig
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** PlatformType enum. */

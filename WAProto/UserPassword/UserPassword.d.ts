@@ -1,5 +1,4 @@
 import * as $protobuf from "protobufjs";
-import Long = require("long");
 /** Namespace UserPassword. */
 export namespace UserPassword {
 
@@ -118,13 +117,6 @@ export namespace UserPassword {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for UserPassword
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     namespace UserPassword {
@@ -242,13 +234,6 @@ export namespace UserPassword {
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for TransformerArg
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         namespace TransformerArg {
@@ -350,13 +335,6 @@ export namespace UserPassword {
                  * @returns JSON object
                  */
                 public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for Value
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
             }
         }
     }

@@ -117,19 +117,16 @@ $root.MdStorageChatRowOpaqueData = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ChatRowOpaqueData.decode = function decode(reader, length, error) {
+        ChatRowOpaqueData.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.draftMessage = $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.decode(reader, reader.uint32());
-                        break;
-                    }
+                case 1:
+                    message.draftMessage = $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.decode(reader, reader.uint32());
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -227,21 +224,6 @@ $root.MdStorageChatRowOpaqueData = (function() {
          */
         ChatRowOpaqueData.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for ChatRowOpaqueData
-         * @function getTypeUrl
-         * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        ChatRowOpaqueData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/MdStorageChatRowOpaqueData.ChatRowOpaqueData";
         };
 
         ChatRowOpaqueData.DraftMessage = (function() {
@@ -431,35 +413,28 @@ $root.MdStorageChatRowOpaqueData = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DraftMessage.decode = function decode(reader, length, error) {
+            DraftMessage.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.text = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.omittedUrl = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.ctwaContextLinkData = $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.decode(reader, reader.uint32());
-                            break;
-                        }
-                    case 4: {
-                            message.ctwaContext = $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.decode(reader, reader.uint32());
-                            break;
-                        }
-                    case 5: {
-                            message.timestamp = reader.int64();
-                            break;
-                        }
+                    case 1:
+                        message.text = reader.string();
+                        break;
+                    case 2:
+                        message.omittedUrl = reader.string();
+                        break;
+                    case 3:
+                        message.ctwaContextLinkData = $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.ctwaContext = $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.timestamp = reader.int64();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -621,21 +596,6 @@ $root.MdStorageChatRowOpaqueData = (function() {
              */
             DraftMessage.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for DraftMessage
-             * @function getTypeUrl
-             * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            DraftMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage";
             };
 
             DraftMessage.CtwaContextData = (function() {
@@ -979,63 +939,49 @@ $root.MdStorageChatRowOpaqueData = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                CtwaContextData.decode = function decode(reader, length, error) {
+                CtwaContextData.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
-                        if (tag === error)
-                            break;
                         switch (tag >>> 3) {
-                        case 1: {
-                                message.conversionSource = reader.string();
-                                break;
-                            }
-                        case 2: {
-                                message.conversionData = reader.bytes();
-                                break;
-                            }
-                        case 3: {
-                                message.sourceUrl = reader.string();
-                                break;
-                            }
-                        case 4: {
-                                message.sourceId = reader.string();
-                                break;
-                            }
-                        case 5: {
-                                message.sourceType = reader.string();
-                                break;
-                            }
-                        case 6: {
-                                message.title = reader.string();
-                                break;
-                            }
-                        case 7: {
-                                message.description = reader.string();
-                                break;
-                            }
-                        case 8: {
-                                message.thumbnail = reader.string();
-                                break;
-                            }
-                        case 9: {
-                                message.thumbnailUrl = reader.string();
-                                break;
-                            }
-                        case 10: {
-                                message.mediaType = reader.int32();
-                                break;
-                            }
-                        case 11: {
-                                message.mediaUrl = reader.string();
-                                break;
-                            }
-                        case 12: {
-                                message.isSuspiciousLink = reader.bool();
-                                break;
-                            }
+                        case 1:
+                            message.conversionSource = reader.string();
+                            break;
+                        case 2:
+                            message.conversionData = reader.bytes();
+                            break;
+                        case 3:
+                            message.sourceUrl = reader.string();
+                            break;
+                        case 4:
+                            message.sourceId = reader.string();
+                            break;
+                        case 5:
+                            message.sourceType = reader.string();
+                            break;
+                        case 6:
+                            message.title = reader.string();
+                            break;
+                        case 7:
+                            message.description = reader.string();
+                            break;
+                        case 8:
+                            message.thumbnail = reader.string();
+                            break;
+                        case 9:
+                            message.thumbnailUrl = reader.string();
+                            break;
+                        case 10:
+                            message.mediaType = reader.int32();
+                            break;
+                        case 11:
+                            message.mediaUrl = reader.string();
+                            break;
+                        case 12:
+                            message.isSuspiciousLink = reader.bool();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -1158,7 +1104,7 @@ $root.MdStorageChatRowOpaqueData = (function() {
                     if (object.conversionData != null)
                         if (typeof object.conversionData === "string")
                             $util.base64.decode(object.conversionData, message.conversionData = $util.newBuffer($util.base64.length(object.conversionData)), 0);
-                        else if (object.conversionData.length >= 0)
+                        else if (object.conversionData.length)
                             message.conversionData = object.conversionData;
                     if (object.sourceUrl != null)
                         message.sourceUrl = String(object.sourceUrl);
@@ -1175,12 +1121,6 @@ $root.MdStorageChatRowOpaqueData = (function() {
                     if (object.thumbnailUrl != null)
                         message.thumbnailUrl = String(object.thumbnailUrl);
                     switch (object.mediaType) {
-                    default:
-                        if (typeof object.mediaType === "number") {
-                            message.mediaType = object.mediaType;
-                            break;
-                        }
-                        break;
                     case "NONE":
                     case 0:
                         message.mediaType = 0;
@@ -1260,7 +1200,7 @@ $root.MdStorageChatRowOpaqueData = (function() {
                             object._thumbnailUrl = "thumbnailUrl";
                     }
                     if (message.mediaType != null && message.hasOwnProperty("mediaType")) {
-                        object.mediaType = options.enums === String ? $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.ContextInfoExternalAdReplyInfoMediaType[message.mediaType] === undefined ? message.mediaType : $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.ContextInfoExternalAdReplyInfoMediaType[message.mediaType] : message.mediaType;
+                        object.mediaType = options.enums === String ? $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData.ContextInfoExternalAdReplyInfoMediaType[message.mediaType] : message.mediaType;
                         if (options.oneofs)
                             object._mediaType = "mediaType";
                     }
@@ -1286,21 +1226,6 @@ $root.MdStorageChatRowOpaqueData = (function() {
                  */
                 CtwaContextData.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                /**
-                 * Gets the default type url for CtwaContextData
-                 * @function getTypeUrl
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
-                 */
-                CtwaContextData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData";
                 };
 
                 /**
@@ -1487,31 +1412,25 @@ $root.MdStorageChatRowOpaqueData = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                CtwaContextLinkData.decode = function decode(reader, length, error) {
+                CtwaContextLinkData.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
-                        if (tag === error)
-                            break;
                         switch (tag >>> 3) {
-                        case 1: {
-                                message.context = reader.string();
-                                break;
-                            }
-                        case 2: {
-                                message.sourceUrl = reader.string();
-                                break;
-                            }
-                        case 3: {
-                                message.icebreaker = reader.string();
-                                break;
-                            }
-                        case 4: {
-                                message.phone = reader.string();
-                                break;
-                            }
+                        case 1:
+                            message.context = reader.string();
+                            break;
+                        case 2:
+                            message.sourceUrl = reader.string();
+                            break;
+                        case 3:
+                            message.icebreaker = reader.string();
+                            break;
+                        case 4:
+                            message.phone = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -1639,21 +1558,6 @@ $root.MdStorageChatRowOpaqueData = (function() {
                  */
                 CtwaContextLinkData.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                /**
-                 * Gets the default type url for CtwaContextLinkData
-                 * @function getTypeUrl
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData
-                 * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
-                 */
-                CtwaContextLinkData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData";
                 };
 
                 return CtwaContextLinkData;

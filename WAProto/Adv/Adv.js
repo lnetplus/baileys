@@ -161,27 +161,22 @@ $root.Adv = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ADVSignedDeviceIdentityHMAC.decode = function decode(reader, length, error) {
+        ADVSignedDeviceIdentityHMAC.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Adv.ADVSignedDeviceIdentityHMAC();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.details = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.hmac = reader.bytes();
-                        break;
-                    }
-                case 3: {
-                        message.accountType = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.details = reader.bytes();
+                    break;
+                case 2:
+                    message.hmac = reader.bytes();
+                    break;
+                case 3:
+                    message.accountType = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -256,20 +251,14 @@ $root.Adv = (function() {
             if (object.details != null)
                 if (typeof object.details === "string")
                     $util.base64.decode(object.details, message.details = $util.newBuffer($util.base64.length(object.details)), 0);
-                else if (object.details.length >= 0)
+                else if (object.details.length)
                     message.details = object.details;
             if (object.hmac != null)
                 if (typeof object.hmac === "string")
                     $util.base64.decode(object.hmac, message.hmac = $util.newBuffer($util.base64.length(object.hmac)), 0);
-                else if (object.hmac.length >= 0)
+                else if (object.hmac.length)
                     message.hmac = object.hmac;
             switch (object.accountType) {
-            default:
-                if (typeof object.accountType === "number") {
-                    message.accountType = object.accountType;
-                    break;
-                }
-                break;
             case "E2EE":
             case 0:
                 message.accountType = 0;
@@ -306,7 +295,7 @@ $root.Adv = (function() {
                     object._hmac = "hmac";
             }
             if (message.accountType != null && message.hasOwnProperty("accountType")) {
-                object.accountType = options.enums === String ? $root.Adv.ADVEncryptionType[message.accountType] === undefined ? message.accountType : $root.Adv.ADVEncryptionType[message.accountType] : message.accountType;
+                object.accountType = options.enums === String ? $root.Adv.ADVEncryptionType[message.accountType] : message.accountType;
                 if (options.oneofs)
                     object._accountType = "accountType";
             }
@@ -322,21 +311,6 @@ $root.Adv = (function() {
          */
         ADVSignedDeviceIdentityHMAC.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for ADVSignedDeviceIdentityHMAC
-         * @function getTypeUrl
-         * @memberof Adv.ADVSignedDeviceIdentityHMAC
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        ADVSignedDeviceIdentityHMAC.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Adv.ADVSignedDeviceIdentityHMAC";
         };
 
         return ADVSignedDeviceIdentityHMAC;
@@ -507,31 +481,25 @@ $root.Adv = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ADVSignedDeviceIdentity.decode = function decode(reader, length, error) {
+        ADVSignedDeviceIdentity.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Adv.ADVSignedDeviceIdentity();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.details = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.accountSignatureKey = reader.bytes();
-                        break;
-                    }
-                case 3: {
-                        message.accountSignature = reader.bytes();
-                        break;
-                    }
-                case 4: {
-                        message.deviceSignature = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.details = reader.bytes();
+                    break;
+                case 2:
+                    message.accountSignatureKey = reader.bytes();
+                    break;
+                case 3:
+                    message.accountSignature = reader.bytes();
+                    break;
+                case 4:
+                    message.deviceSignature = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -606,22 +574,22 @@ $root.Adv = (function() {
             if (object.details != null)
                 if (typeof object.details === "string")
                     $util.base64.decode(object.details, message.details = $util.newBuffer($util.base64.length(object.details)), 0);
-                else if (object.details.length >= 0)
+                else if (object.details.length)
                     message.details = object.details;
             if (object.accountSignatureKey != null)
                 if (typeof object.accountSignatureKey === "string")
                     $util.base64.decode(object.accountSignatureKey, message.accountSignatureKey = $util.newBuffer($util.base64.length(object.accountSignatureKey)), 0);
-                else if (object.accountSignatureKey.length >= 0)
+                else if (object.accountSignatureKey.length)
                     message.accountSignatureKey = object.accountSignatureKey;
             if (object.accountSignature != null)
                 if (typeof object.accountSignature === "string")
                     $util.base64.decode(object.accountSignature, message.accountSignature = $util.newBuffer($util.base64.length(object.accountSignature)), 0);
-                else if (object.accountSignature.length >= 0)
+                else if (object.accountSignature.length)
                     message.accountSignature = object.accountSignature;
             if (object.deviceSignature != null)
                 if (typeof object.deviceSignature === "string")
                     $util.base64.decode(object.deviceSignature, message.deviceSignature = $util.newBuffer($util.base64.length(object.deviceSignature)), 0);
-                else if (object.deviceSignature.length >= 0)
+                else if (object.deviceSignature.length)
                     message.deviceSignature = object.deviceSignature;
             return message;
         };
@@ -671,21 +639,6 @@ $root.Adv = (function() {
          */
         ADVSignedDeviceIdentity.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for ADVSignedDeviceIdentity
-         * @function getTypeUrl
-         * @memberof Adv.ADVSignedDeviceIdentity
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        ADVSignedDeviceIdentity.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Adv.ADVSignedDeviceIdentity";
         };
 
         return ADVSignedDeviceIdentity;
@@ -878,35 +831,28 @@ $root.Adv = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ADVDeviceIdentity.decode = function decode(reader, length, error) {
+        ADVDeviceIdentity.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Adv.ADVDeviceIdentity();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.rawId = reader.uint32();
-                        break;
-                    }
-                case 2: {
-                        message.timestamp = reader.uint64();
-                        break;
-                    }
-                case 3: {
-                        message.keyIndex = reader.uint32();
-                        break;
-                    }
-                case 4: {
-                        message.accountType = reader.int32();
-                        break;
-                    }
-                case 5: {
-                        message.deviceType = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.rawId = reader.uint32();
+                    break;
+                case 2:
+                    message.timestamp = reader.uint64();
+                    break;
+                case 3:
+                    message.keyIndex = reader.uint32();
+                    break;
+                case 4:
+                    message.accountType = reader.int32();
+                    break;
+                case 5:
+                    message.deviceType = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1007,12 +953,6 @@ $root.Adv = (function() {
             if (object.keyIndex != null)
                 message.keyIndex = object.keyIndex >>> 0;
             switch (object.accountType) {
-            default:
-                if (typeof object.accountType === "number") {
-                    message.accountType = object.accountType;
-                    break;
-                }
-                break;
             case "E2EE":
             case 0:
                 message.accountType = 0;
@@ -1023,12 +963,6 @@ $root.Adv = (function() {
                 break;
             }
             switch (object.deviceType) {
-            default:
-                if (typeof object.deviceType === "number") {
-                    message.deviceType = object.deviceType;
-                    break;
-                }
-                break;
             case "E2EE":
             case 0:
                 message.deviceType = 0;
@@ -1073,12 +1007,12 @@ $root.Adv = (function() {
                     object._keyIndex = "keyIndex";
             }
             if (message.accountType != null && message.hasOwnProperty("accountType")) {
-                object.accountType = options.enums === String ? $root.Adv.ADVEncryptionType[message.accountType] === undefined ? message.accountType : $root.Adv.ADVEncryptionType[message.accountType] : message.accountType;
+                object.accountType = options.enums === String ? $root.Adv.ADVEncryptionType[message.accountType] : message.accountType;
                 if (options.oneofs)
                     object._accountType = "accountType";
             }
             if (message.deviceType != null && message.hasOwnProperty("deviceType")) {
-                object.deviceType = options.enums === String ? $root.Adv.ADVEncryptionType[message.deviceType] === undefined ? message.deviceType : $root.Adv.ADVEncryptionType[message.deviceType] : message.deviceType;
+                object.deviceType = options.enums === String ? $root.Adv.ADVEncryptionType[message.deviceType] : message.deviceType;
                 if (options.oneofs)
                     object._deviceType = "deviceType";
             }
@@ -1094,21 +1028,6 @@ $root.Adv = (function() {
          */
         ADVDeviceIdentity.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for ADVDeviceIdentity
-         * @function getTypeUrl
-         * @memberof Adv.ADVDeviceIdentity
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        ADVDeviceIdentity.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Adv.ADVDeviceIdentity";
         };
 
         return ADVDeviceIdentity;
@@ -1257,27 +1176,22 @@ $root.Adv = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ADVSignedKeyIndexList.decode = function decode(reader, length, error) {
+        ADVSignedKeyIndexList.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Adv.ADVSignedKeyIndexList();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.details = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.accountSignature = reader.bytes();
-                        break;
-                    }
-                case 3: {
-                        message.accountSignatureKey = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.details = reader.bytes();
+                    break;
+                case 2:
+                    message.accountSignature = reader.bytes();
+                    break;
+                case 3:
+                    message.accountSignatureKey = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1347,17 +1261,17 @@ $root.Adv = (function() {
             if (object.details != null)
                 if (typeof object.details === "string")
                     $util.base64.decode(object.details, message.details = $util.newBuffer($util.base64.length(object.details)), 0);
-                else if (object.details.length >= 0)
+                else if (object.details.length)
                     message.details = object.details;
             if (object.accountSignature != null)
                 if (typeof object.accountSignature === "string")
                     $util.base64.decode(object.accountSignature, message.accountSignature = $util.newBuffer($util.base64.length(object.accountSignature)), 0);
-                else if (object.accountSignature.length >= 0)
+                else if (object.accountSignature.length)
                     message.accountSignature = object.accountSignature;
             if (object.accountSignatureKey != null)
                 if (typeof object.accountSignatureKey === "string")
                     $util.base64.decode(object.accountSignatureKey, message.accountSignatureKey = $util.newBuffer($util.base64.length(object.accountSignatureKey)), 0);
-                else if (object.accountSignatureKey.length >= 0)
+                else if (object.accountSignatureKey.length)
                     message.accountSignatureKey = object.accountSignatureKey;
             return message;
         };
@@ -1402,21 +1316,6 @@ $root.Adv = (function() {
          */
         ADVSignedKeyIndexList.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for ADVSignedKeyIndexList
-         * @function getTypeUrl
-         * @memberof Adv.ADVSignedKeyIndexList
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        ADVSignedKeyIndexList.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Adv.ADVSignedKeyIndexList";
         };
 
         return ADVSignedKeyIndexList;
@@ -1603,42 +1502,35 @@ $root.Adv = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ADVKeyIndexList.decode = function decode(reader, length, error) {
+        ADVKeyIndexList.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Adv.ADVKeyIndexList();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.rawId = reader.uint32();
-                        break;
-                    }
-                case 2: {
-                        message.timestamp = reader.uint64();
-                        break;
-                    }
-                case 3: {
-                        message.currentIndex = reader.uint32();
-                        break;
-                    }
-                case 4: {
-                        if (!(message.validIndexes && message.validIndexes.length))
-                            message.validIndexes = [];
-                        if ((tag & 7) === 2) {
-                            var end2 = reader.uint32() + reader.pos;
-                            while (reader.pos < end2)
-                                message.validIndexes.push(reader.uint32());
-                        } else
+                case 1:
+                    message.rawId = reader.uint32();
+                    break;
+                case 2:
+                    message.timestamp = reader.uint64();
+                    break;
+                case 3:
+                    message.currentIndex = reader.uint32();
+                    break;
+                case 4:
+                    if (!(message.validIndexes && message.validIndexes.length))
+                        message.validIndexes = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
                             message.validIndexes.push(reader.uint32());
-                        break;
-                    }
-                case 5: {
-                        message.accountType = reader.int32();
-                        break;
-                    }
+                    } else
+                        message.validIndexes.push(reader.uint32());
+                    break;
+                case 5:
+                    message.accountType = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1743,12 +1635,6 @@ $root.Adv = (function() {
                     message.validIndexes[i] = object.validIndexes[i] >>> 0;
             }
             switch (object.accountType) {
-            default:
-                if (typeof object.accountType === "number") {
-                    message.accountType = object.accountType;
-                    break;
-                }
-                break;
             case "E2EE":
             case 0:
                 message.accountType = 0;
@@ -1800,7 +1686,7 @@ $root.Adv = (function() {
                     object.validIndexes[j] = message.validIndexes[j];
             }
             if (message.accountType != null && message.hasOwnProperty("accountType")) {
-                object.accountType = options.enums === String ? $root.Adv.ADVEncryptionType[message.accountType] === undefined ? message.accountType : $root.Adv.ADVEncryptionType[message.accountType] : message.accountType;
+                object.accountType = options.enums === String ? $root.Adv.ADVEncryptionType[message.accountType] : message.accountType;
                 if (options.oneofs)
                     object._accountType = "accountType";
             }
@@ -1816,21 +1702,6 @@ $root.Adv = (function() {
          */
         ADVKeyIndexList.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for ADVKeyIndexList
-         * @function getTypeUrl
-         * @memberof Adv.ADVKeyIndexList
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        ADVKeyIndexList.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Adv.ADVKeyIndexList";
         };
 
         return ADVKeyIndexList;

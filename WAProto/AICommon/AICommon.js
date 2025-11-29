@@ -315,55 +315,43 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseSubMessage.decode = function decode(reader, length, error) {
+        AIRichResponseSubMessage.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseSubMessage();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.messageType = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.gridImageMetadata = $root.AICommon.AIRichResponseGridImageMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 3: {
-                        message.messageText = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.imageMetadata = $root.AICommon.AIRichResponseInlineImageMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 5: {
-                        message.codeMetadata = $root.AICommon.AIRichResponseCodeMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 6: {
-                        message.tableMetadata = $root.AICommon.AIRichResponseTableMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 7: {
-                        message.dynamicMetadata = $root.AICommon.AIRichResponseDynamicMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 8: {
-                        message.latexMetadata = $root.AICommon.AIRichResponseLatexMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 9: {
-                        message.mapMetadata = $root.AICommon.AIRichResponseMapMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 10: {
-                        message.contentItemsMetadata = $root.AICommon.AIRichResponseContentItemsMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
+                case 1:
+                    message.messageType = reader.int32();
+                    break;
+                case 2:
+                    message.gridImageMetadata = $root.AICommon.AIRichResponseGridImageMetadata.decode(reader, reader.uint32());
+                    break;
+                case 3:
+                    message.messageText = reader.string();
+                    break;
+                case 4:
+                    message.imageMetadata = $root.AICommon.AIRichResponseInlineImageMetadata.decode(reader, reader.uint32());
+                    break;
+                case 5:
+                    message.codeMetadata = $root.AICommon.AIRichResponseCodeMetadata.decode(reader, reader.uint32());
+                    break;
+                case 6:
+                    message.tableMetadata = $root.AICommon.AIRichResponseTableMetadata.decode(reader, reader.uint32());
+                    break;
+                case 7:
+                    message.dynamicMetadata = $root.AICommon.AIRichResponseDynamicMetadata.decode(reader, reader.uint32());
+                    break;
+                case 8:
+                    message.latexMetadata = $root.AICommon.AIRichResponseLatexMetadata.decode(reader, reader.uint32());
+                    break;
+                case 9:
+                    message.mapMetadata = $root.AICommon.AIRichResponseMapMetadata.decode(reader, reader.uint32());
+                    break;
+                case 10:
+                    message.contentItemsMetadata = $root.AICommon.AIRichResponseContentItemsMetadata.decode(reader, reader.uint32());
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -503,12 +491,6 @@ $root.AICommon = (function() {
                 return object;
             var message = new $root.AICommon.AIRichResponseSubMessage();
             switch (object.messageType) {
-            default:
-                if (typeof object.messageType === "number") {
-                    message.messageType = object.messageType;
-                    break;
-                }
-                break;
             case "AI_RICH_RESPONSE_UNKNOWN":
             case 0:
                 message.messageType = 0;
@@ -609,7 +591,7 @@ $root.AICommon = (function() {
                 options = {};
             var object = {};
             if (message.messageType != null && message.hasOwnProperty("messageType")) {
-                object.messageType = options.enums === String ? $root.AICommon.AIRichResponseSubMessageType[message.messageType] === undefined ? message.messageType : $root.AICommon.AIRichResponseSubMessageType[message.messageType] : message.messageType;
+                object.messageType = options.enums === String ? $root.AICommon.AIRichResponseSubMessageType[message.messageType] : message.messageType;
                 if (options.oneofs)
                     object._messageType = "messageType";
             }
@@ -670,21 +652,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseSubMessage.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseSubMessage
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseSubMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseSubMessage";
         };
 
         return AIRichResponseSubMessage;
@@ -802,25 +769,21 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseContentItemsMetadata.decode = function decode(reader, length, error) {
+        AIRichResponseContentItemsMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseContentItemsMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.itemsMetadata && message.itemsMetadata.length))
-                            message.itemsMetadata = [];
-                        message.itemsMetadata.push($root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 2: {
-                        message.contentType = reader.int32();
-                        break;
-                    }
+                case 1:
+                    if (!(message.itemsMetadata && message.itemsMetadata.length))
+                        message.itemsMetadata = [];
+                    message.itemsMetadata.push($root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.decode(reader, reader.uint32()));
+                    break;
+                case 2:
+                    message.contentType = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -902,12 +865,6 @@ $root.AICommon = (function() {
                 }
             }
             switch (object.contentType) {
-            default:
-                if (typeof object.contentType === "number") {
-                    message.contentType = object.contentType;
-                    break;
-                }
-                break;
             case "DEFAULT":
             case 0:
                 message.contentType = 0;
@@ -941,7 +898,7 @@ $root.AICommon = (function() {
                     object.itemsMetadata[j] = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.toObject(message.itemsMetadata[j], options);
             }
             if (message.contentType != null && message.hasOwnProperty("contentType")) {
-                object.contentType = options.enums === String ? $root.AICommon.AIRichResponseContentItemsMetadata.ContentType[message.contentType] === undefined ? message.contentType : $root.AICommon.AIRichResponseContentItemsMetadata.ContentType[message.contentType] : message.contentType;
+                object.contentType = options.enums === String ? $root.AICommon.AIRichResponseContentItemsMetadata.ContentType[message.contentType] : message.contentType;
                 if (options.oneofs)
                     object._contentType = "contentType";
             }
@@ -957,21 +914,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseContentItemsMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseContentItemsMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseContentItemsMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseContentItemsMetadata";
         };
 
         AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata = (function() {
@@ -1073,19 +1015,16 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIRichResponseContentItemMetadata.decode = function decode(reader, length, error) {
+            AIRichResponseContentItemMetadata.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.reelItem = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.decode(reader, reader.uint32());
-                            break;
-                        }
+                    case 1:
+                        message.reelItem = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1183,21 +1122,6 @@ $root.AICommon = (function() {
              */
             AIRichResponseContentItemMetadata.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseContentItemMetadata
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseContentItemMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata";
             };
 
             return AIRichResponseContentItemMetadata;
@@ -1368,31 +1292,25 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIRichResponseReelItem.decode = function decode(reader, length, error) {
+            AIRichResponseReelItem.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.title = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.profileIconUrl = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.thumbnailUrl = reader.string();
-                            break;
-                        }
-                    case 4: {
-                            message.videoUrl = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.title = reader.string();
+                        break;
+                    case 2:
+                        message.profileIconUrl = reader.string();
+                        break;
+                    case 3:
+                        message.thumbnailUrl = reader.string();
+                        break;
+                    case 4:
+                        message.videoUrl = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1520,21 +1438,6 @@ $root.AICommon = (function() {
              */
             AIRichResponseReelItem.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseReelItem
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseReelItem.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem";
             };
 
             return AIRichResponseReelItem;
@@ -1757,41 +1660,33 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseMapMetadata.decode = function decode(reader, length, error) {
+        AIRichResponseMapMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseMapMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.centerLatitude = reader.double();
-                        break;
-                    }
-                case 2: {
-                        message.centerLongitude = reader.double();
-                        break;
-                    }
-                case 3: {
-                        message.latitudeDelta = reader.double();
-                        break;
-                    }
-                case 4: {
-                        message.longitudeDelta = reader.double();
-                        break;
-                    }
-                case 5: {
-                        if (!(message.annotations && message.annotations.length))
-                            message.annotations = [];
-                        message.annotations.push($root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 6: {
-                        message.showInfoList = reader.bool();
-                        break;
-                    }
+                case 1:
+                    message.centerLatitude = reader.double();
+                    break;
+                case 2:
+                    message.centerLongitude = reader.double();
+                    break;
+                case 3:
+                    message.latitudeDelta = reader.double();
+                    break;
+                case 4:
+                    message.longitudeDelta = reader.double();
+                    break;
+                case 5:
+                    if (!(message.annotations && message.annotations.length))
+                        message.annotations = [];
+                    message.annotations.push($root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.decode(reader, reader.uint32()));
+                    break;
+                case 6:
+                    message.showInfoList = reader.bool();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1957,21 +1852,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseMapMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseMapMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseMapMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseMapMetadata";
         };
 
         AIRichResponseMapMetadata.AIRichResponseMapAnnotation = (function() {
@@ -2161,35 +2041,28 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIRichResponseMapAnnotation.decode = function decode(reader, length, error) {
+            AIRichResponseMapAnnotation.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.annotationNumber = reader.uint32();
-                            break;
-                        }
-                    case 2: {
-                            message.latitude = reader.double();
-                            break;
-                        }
-                    case 3: {
-                            message.longitude = reader.double();
-                            break;
-                        }
-                    case 4: {
-                            message.title = reader.string();
-                            break;
-                        }
-                    case 5: {
-                            message.body = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.annotationNumber = reader.uint32();
+                        break;
+                    case 2:
+                        message.latitude = reader.double();
+                        break;
+                    case 3:
+                        message.longitude = reader.double();
+                        break;
+                    case 4:
+                        message.title = reader.string();
+                        break;
+                    case 5:
+                        message.body = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -2331,21 +2204,6 @@ $root.AICommon = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
-            /**
-             * Gets the default type url for AIRichResponseMapAnnotation
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseMapAnnotation.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation";
-            };
-
             return AIRichResponseMapAnnotation;
         })();
 
@@ -2464,25 +2322,21 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseLatexMetadata.decode = function decode(reader, length, error) {
+        AIRichResponseLatexMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseLatexMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.text = reader.string();
-                        break;
-                    }
-                case 2: {
-                        if (!(message.expressions && message.expressions.length))
-                            message.expressions = [];
-                        message.expressions.push($root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    message.text = reader.string();
+                    break;
+                case 2:
+                    if (!(message.expressions && message.expressions.length))
+                        message.expressions = [];
+                    message.expressions.push($root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2600,21 +2454,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseLatexMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseLatexMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseLatexMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseLatexMetadata";
         };
 
         AIRichResponseLatexMetadata.AIRichResponseLatexExpression = (function() {
@@ -2892,51 +2731,40 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIRichResponseLatexExpression.decode = function decode(reader, length, error) {
+            AIRichResponseLatexExpression.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.latexExpression = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.url = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.width = reader.double();
-                            break;
-                        }
-                    case 4: {
-                            message.height = reader.double();
-                            break;
-                        }
-                    case 5: {
-                            message.fontHeight = reader.double();
-                            break;
-                        }
-                    case 6: {
-                            message.imageTopPadding = reader.double();
-                            break;
-                        }
-                    case 7: {
-                            message.imageLeadingPadding = reader.double();
-                            break;
-                        }
-                    case 8: {
-                            message.imageBottomPadding = reader.double();
-                            break;
-                        }
-                    case 9: {
-                            message.imageTrailingPadding = reader.double();
-                            break;
-                        }
+                    case 1:
+                        message.latexExpression = reader.string();
+                        break;
+                    case 2:
+                        message.url = reader.string();
+                        break;
+                    case 3:
+                        message.width = reader.double();
+                        break;
+                    case 4:
+                        message.height = reader.double();
+                        break;
+                    case 5:
+                        message.fontHeight = reader.double();
+                        break;
+                    case 6:
+                        message.imageTopPadding = reader.double();
+                        break;
+                    case 7:
+                        message.imageLeadingPadding = reader.double();
+                        break;
+                    case 8:
+                        message.imageBottomPadding = reader.double();
+                        break;
+                    case 9:
+                        message.imageTrailingPadding = reader.double();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -3126,21 +2954,6 @@ $root.AICommon = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
-            /**
-             * Gets the default type url for AIRichResponseLatexExpression
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseLatexExpression.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression";
-            };
-
             return AIRichResponseLatexExpression;
         })();
 
@@ -3246,19 +3059,16 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseUnifiedResponse.decode = function decode(reader, length, error) {
+        AIRichResponseUnifiedResponse.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseUnifiedResponse();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.data = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.data = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -3318,7 +3128,7 @@ $root.AICommon = (function() {
             if (object.data != null)
                 if (typeof object.data === "string")
                     $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
-                else if (object.data.length >= 0)
+                else if (object.data.length)
                     message.data = object.data;
             return message;
         };
@@ -3353,21 +3163,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseUnifiedResponse.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseUnifiedResponse
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseUnifiedResponse
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseUnifiedResponse.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseUnifiedResponse";
         };
 
         return AIRichResponseUnifiedResponse;
@@ -3538,31 +3333,25 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseDynamicMetadata.decode = function decode(reader, length, error) {
+        AIRichResponseDynamicMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseDynamicMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.type = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.version = reader.uint64();
-                        break;
-                    }
-                case 3: {
-                        message.url = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.loopCount = reader.uint32();
-                        break;
-                    }
+                case 1:
+                    message.type = reader.int32();
+                    break;
+                case 2:
+                    message.version = reader.uint64();
+                    break;
+                case 3:
+                    message.url = reader.string();
+                    break;
+                case 4:
+                    message.loopCount = reader.uint32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -3641,12 +3430,6 @@ $root.AICommon = (function() {
                 return object;
             var message = new $root.AICommon.AIRichResponseDynamicMetadata();
             switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
             case "AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_UNKNOWN":
             case 0:
                 message.type = 0;
@@ -3690,7 +3473,7 @@ $root.AICommon = (function() {
                 options = {};
             var object = {};
             if (message.type != null && message.hasOwnProperty("type")) {
-                object.type = options.enums === String ? $root.AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType[message.type] === undefined ? message.type : $root.AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType[message.type] : message.type;
+                object.type = options.enums === String ? $root.AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType[message.type] : message.type;
                 if (options.oneofs)
                     object._type = "type";
             }
@@ -3724,21 +3507,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseDynamicMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseDynamicMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseDynamicMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseDynamicMetadata";
         };
 
         /**
@@ -3872,25 +3640,21 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseTableMetadata.decode = function decode(reader, length, error) {
+        AIRichResponseTableMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseTableMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.rows && message.rows.length))
-                            message.rows = [];
-                        message.rows.push($root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 2: {
-                        message.title = reader.string();
-                        break;
-                    }
+                case 1:
+                    if (!(message.rows && message.rows.length))
+                        message.rows = [];
+                    message.rows.push($root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.decode(reader, reader.uint32()));
+                    break;
+                case 2:
+                    message.title = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -4010,21 +3774,6 @@ $root.AICommon = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        /**
-         * Gets the default type url for AIRichResponseTableMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseTableMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseTableMetadata";
-        };
-
         AIRichResponseTableMetadata.AIRichResponseTableRow = (function() {
 
             /**
@@ -4137,25 +3886,21 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIRichResponseTableRow.decode = function decode(reader, length, error) {
+            AIRichResponseTableRow.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            if (!(message.items && message.items.length))
-                                message.items = [];
-                            message.items.push(reader.string());
-                            break;
-                        }
-                    case 2: {
-                            message.isHeading = reader.bool();
-                            break;
-                        }
+                    case 1:
+                        if (!(message.items && message.items.length))
+                            message.items = [];
+                        message.items.push(reader.string());
+                        break;
+                    case 2:
+                        message.isHeading = reader.bool();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4268,21 +4013,6 @@ $root.AICommon = (function() {
              */
             AIRichResponseTableRow.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseTableRow
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseTableRow.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow";
             };
 
             return AIRichResponseTableRow;
@@ -4403,25 +4133,21 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseCodeMetadata.decode = function decode(reader, length, error) {
+        AIRichResponseCodeMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseCodeMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.codeLanguage = reader.string();
-                        break;
-                    }
-                case 2: {
-                        if (!(message.codeBlocks && message.codeBlocks.length))
-                            message.codeBlocks = [];
-                        message.codeBlocks.push($root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    message.codeLanguage = reader.string();
+                    break;
+                case 2:
+                    if (!(message.codeBlocks && message.codeBlocks.length))
+                        message.codeBlocks = [];
+                    message.codeBlocks.push($root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -4539,21 +4265,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseCodeMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseCodeMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseCodeMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseCodeMetadata";
         };
 
         AIRichResponseCodeMetadata.AIRichResponseCodeBlock = (function() {
@@ -4677,23 +4388,19 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIRichResponseCodeBlock.decode = function decode(reader, length, error) {
+            AIRichResponseCodeBlock.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.highlightType = reader.int32();
-                            break;
-                        }
-                    case 2: {
-                            message.codeContent = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.highlightType = reader.int32();
+                        break;
+                    case 2:
+                        message.codeContent = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4765,12 +4472,6 @@ $root.AICommon = (function() {
                     return object;
                 var message = new $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock();
                 switch (object.highlightType) {
-                default:
-                    if (typeof object.highlightType === "number") {
-                        message.highlightType = object.highlightType;
-                        break;
-                    }
-                    break;
                 case "AI_RICH_RESPONSE_CODE_HIGHLIGHT_DEFAULT":
                 case 0:
                     message.highlightType = 0;
@@ -4815,7 +4516,7 @@ $root.AICommon = (function() {
                     options = {};
                 var object = {};
                 if (message.highlightType != null && message.hasOwnProperty("highlightType")) {
-                    object.highlightType = options.enums === String ? $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType[message.highlightType] === undefined ? message.highlightType : $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType[message.highlightType] : message.highlightType;
+                    object.highlightType = options.enums === String ? $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType[message.highlightType] : message.highlightType;
                     if (options.oneofs)
                         object._highlightType = "highlightType";
                 }
@@ -4836,21 +4537,6 @@ $root.AICommon = (function() {
              */
             AIRichResponseCodeBlock.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseCodeBlock
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseCodeBlock.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock";
             };
 
             return AIRichResponseCodeBlock;
@@ -5046,31 +4732,25 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseInlineImageMetadata.decode = function decode(reader, length, error) {
+        AIRichResponseInlineImageMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseInlineImageMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.imageUrl = $root.AICommon.AIRichResponseImageURL.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        message.imageText = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.alignment = reader.int32();
-                        break;
-                    }
-                case 4: {
-                        message.tapLinkUrl = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.imageUrl = $root.AICommon.AIRichResponseImageURL.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.imageText = reader.string();
+                    break;
+                case 3:
+                    message.alignment = reader.int32();
+                    break;
+                case 4:
+                    message.tapLinkUrl = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -5159,12 +4839,6 @@ $root.AICommon = (function() {
             if (object.imageText != null)
                 message.imageText = String(object.imageText);
             switch (object.alignment) {
-            default:
-                if (typeof object.alignment === "number") {
-                    message.alignment = object.alignment;
-                    break;
-                }
-                break;
             case "AI_RICH_RESPONSE_IMAGE_LAYOUT_LEADING_ALIGNED":
             case 0:
                 message.alignment = 0;
@@ -5207,7 +4881,7 @@ $root.AICommon = (function() {
                     object._imageText = "imageText";
             }
             if (message.alignment != null && message.hasOwnProperty("alignment")) {
-                object.alignment = options.enums === String ? $root.AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment[message.alignment] === undefined ? message.alignment : $root.AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment[message.alignment] : message.alignment;
+                object.alignment = options.enums === String ? $root.AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment[message.alignment] : message.alignment;
                 if (options.oneofs)
                     object._alignment = "alignment";
             }
@@ -5228,21 +4902,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseInlineImageMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseInlineImageMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseInlineImageMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseInlineImageMetadata";
         };
 
         /**
@@ -5376,25 +5035,21 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseGridImageMetadata.decode = function decode(reader, length, error) {
+        AIRichResponseGridImageMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseGridImageMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.gridImageUrl = $root.AICommon.AIRichResponseImageURL.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        if (!(message.imageUrls && message.imageUrls.length))
-                            message.imageUrls = [];
-                        message.imageUrls.push($root.AICommon.AIRichResponseImageURL.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    message.gridImageUrl = $root.AICommon.AIRichResponseImageURL.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    if (!(message.imageUrls && message.imageUrls.length))
+                        message.imageUrls = [];
+                    message.imageUrls.push($root.AICommon.AIRichResponseImageURL.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -5518,21 +5173,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseGridImageMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseGridImageMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseGridImageMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseGridImageMetadata";
         };
 
         return AIRichResponseGridImageMetadata;
@@ -5681,27 +5321,22 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIRichResponseImageURL.decode = function decode(reader, length, error) {
+        AIRichResponseImageURL.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseImageURL();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.imagePreviewUrl = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.imageHighResUrl = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.sourceUrl = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.imagePreviewUrl = reader.string();
+                    break;
+                case 2:
+                    message.imageHighResUrl = reader.string();
+                    break;
+                case 3:
+                    message.sourceUrl = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -5817,21 +5452,6 @@ $root.AICommon = (function() {
          */
         AIRichResponseImageURL.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseImageURL
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseImageURL.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseImageURL";
         };
 
         return AIRichResponseImageURL;
@@ -5980,27 +5600,22 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ForwardedAIBotMessageInfo.decode = function decode(reader, length, error) {
+        ForwardedAIBotMessageInfo.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.ForwardedAIBotMessageInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.botName = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.botJid = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.creatorName = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.botName = reader.string();
+                    break;
+                case 2:
+                    message.botJid = reader.string();
+                    break;
+                case 3:
+                    message.creatorName = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -6116,21 +5731,6 @@ $root.AICommon = (function() {
          */
         ForwardedAIBotMessageInfo.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for ForwardedAIBotMessageInfo
-         * @function getTypeUrl
-         * @memberof AICommon.ForwardedAIBotMessageInfo
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        ForwardedAIBotMessageInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.ForwardedAIBotMessageInfo";
         };
 
         return ForwardedAIBotMessageInfo;
@@ -6367,43 +5967,34 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotFeedbackMessage.decode = function decode(reader, length, error) {
+        BotFeedbackMessage.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotFeedbackMessage();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.messageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        message.kind = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        message.text = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.kindNegative = reader.uint64();
-                        break;
-                    }
-                case 5: {
-                        message.kindPositive = reader.uint64();
-                        break;
-                    }
-                case 6: {
-                        message.kindReport = reader.int32();
-                        break;
-                    }
-                case 7: {
-                        message.sideBySideSurveyMetadata = $root.AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
+                case 1:
+                    message.messageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.kind = reader.int32();
+                    break;
+                case 3:
+                    message.text = reader.string();
+                    break;
+                case 4:
+                    message.kindNegative = reader.uint64();
+                    break;
+                case 5:
+                    message.kindPositive = reader.uint64();
+                    break;
+                case 6:
+                    message.kindReport = reader.int32();
+                    break;
+                case 7:
+                    message.sideBySideSurveyMetadata = $root.AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.decode(reader, reader.uint32());
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -6525,12 +6116,6 @@ $root.AICommon = (function() {
                 message.messageKey = $root.Protocol.MessageKey.fromObject(object.messageKey);
             }
             switch (object.kind) {
-            default:
-                if (typeof object.kind === "number") {
-                    message.kind = object.kind;
-                    break;
-                }
-                break;
             case "BOT_FEEDBACK_POSITIVE":
             case 0:
                 message.kind = 0;
@@ -6613,12 +6198,6 @@ $root.AICommon = (function() {
                 else if (typeof object.kindPositive === "object")
                     message.kindPositive = new $util.LongBits(object.kindPositive.low >>> 0, object.kindPositive.high >>> 0).toNumber(true);
             switch (object.kindReport) {
-            default:
-                if (typeof object.kindReport === "number") {
-                    message.kindReport = object.kindReport;
-                    break;
-                }
-                break;
             case "NONE":
             case 0:
                 message.kindReport = 0;
@@ -6655,7 +6234,7 @@ $root.AICommon = (function() {
                     object._messageKey = "messageKey";
             }
             if (message.kind != null && message.hasOwnProperty("kind")) {
-                object.kind = options.enums === String ? $root.AICommon.BotFeedbackMessage.BotFeedbackKind[message.kind] === undefined ? message.kind : $root.AICommon.BotFeedbackMessage.BotFeedbackKind[message.kind] : message.kind;
+                object.kind = options.enums === String ? $root.AICommon.BotFeedbackMessage.BotFeedbackKind[message.kind] : message.kind;
                 if (options.oneofs)
                     object._kind = "kind";
             }
@@ -6681,7 +6260,7 @@ $root.AICommon = (function() {
                     object._kindPositive = "kindPositive";
             }
             if (message.kindReport != null && message.hasOwnProperty("kindReport")) {
-                object.kindReport = options.enums === String ? $root.AICommon.BotFeedbackMessage.ReportKind[message.kindReport] === undefined ? message.kindReport : $root.AICommon.BotFeedbackMessage.ReportKind[message.kindReport] : message.kindReport;
+                object.kindReport = options.enums === String ? $root.AICommon.BotFeedbackMessage.ReportKind[message.kindReport] : message.kindReport;
                 if (options.oneofs)
                     object._kindReport = "kindReport";
             }
@@ -6702,21 +6281,6 @@ $root.AICommon = (function() {
          */
         BotFeedbackMessage.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotFeedbackMessage
-         * @function getTypeUrl
-         * @memberof AICommon.BotFeedbackMessage
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotFeedbackMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotFeedbackMessage";
         };
 
         /**
@@ -7066,47 +6630,37 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SideBySideSurveyMetadata.decode = function decode(reader, length, error) {
+            SideBySideSurveyMetadata.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotFeedbackMessage.SideBySideSurveyMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.selectedRequestId = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.surveyId = reader.uint32();
-                            break;
-                        }
-                    case 3: {
-                            message.simonSessionFbid = reader.string();
-                            break;
-                        }
-                    case 4: {
-                            message.responseOtid = reader.string();
-                            break;
-                        }
-                    case 5: {
-                            message.responseTimestampMsString = reader.string();
-                            break;
-                        }
-                    case 6: {
-                            message.isSelectedResponsePrimary = reader.bool();
-                            break;
-                        }
-                    case 7: {
-                            message.messageIdToEdit = reader.string();
-                            break;
-                        }
-                    case 8: {
-                            message.analyticsData = $root.AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.decode(reader, reader.uint32());
-                            break;
-                        }
+                    case 1:
+                        message.selectedRequestId = reader.string();
+                        break;
+                    case 2:
+                        message.surveyId = reader.uint32();
+                        break;
+                    case 3:
+                        message.simonSessionFbid = reader.string();
+                        break;
+                    case 4:
+                        message.responseOtid = reader.string();
+                        break;
+                    case 5:
+                        message.responseTimestampMsString = reader.string();
+                        break;
+                    case 6:
+                        message.isSelectedResponsePrimary = reader.bool();
+                        break;
+                    case 7:
+                        message.messageIdToEdit = reader.string();
+                        break;
+                    case 8:
+                        message.analyticsData = $root.AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -7290,21 +6844,6 @@ $root.AICommon = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
-            /**
-             * Gets the default type url for SideBySideSurveyMetadata
-             * @function getTypeUrl
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            SideBySideSurveyMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.BotFeedbackMessage.SideBySideSurveyMetadata";
-            };
-
             SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData = (function() {
 
                 /**
@@ -7426,23 +6965,19 @@ $root.AICommon = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                SideBySideSurveyAnalyticsData.decode = function decode(reader, length, error) {
+                SideBySideSurveyAnalyticsData.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
-                        if (tag === error)
-                            break;
                         switch (tag >>> 3) {
-                        case 1: {
-                                message.tessaEvent = reader.string();
-                                break;
-                            }
-                        case 2: {
-                                message.tessaSessionFbid = reader.string();
-                                break;
-                            }
+                        case 1:
+                            message.tessaEvent = reader.string();
+                            break;
+                        case 2:
+                            message.tessaSessionFbid = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -7546,21 +7081,6 @@ $root.AICommon = (function() {
                  */
                 SideBySideSurveyAnalyticsData.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                /**
-                 * Gets the default type url for SideBySideSurveyAnalyticsData
-                 * @function getTypeUrl
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData
-                 * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
-                 */
-                SideBySideSurveyAnalyticsData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData";
                 };
 
                 return SideBySideSurveyAnalyticsData;
@@ -8353,143 +7873,109 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMetadata.decode = function decode(reader, length, error) {
+        BotMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.avatarMetadata = $root.AICommon.BotAvatarMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        message.personaId = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.pluginMetadata = $root.AICommon.BotPluginMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 4: {
-                        message.suggestedPromptMetadata = $root.AICommon.BotSuggestedPromptMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 5: {
-                        message.invokerJid = reader.string();
-                        break;
-                    }
-                case 6: {
-                        message.sessionMetadata = $root.AICommon.BotSessionMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 7: {
-                        message.memuMetadata = $root.AICommon.BotMemuMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 8: {
-                        message.timezone = reader.string();
-                        break;
-                    }
-                case 9: {
-                        message.reminderMetadata = $root.AICommon.BotReminderMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 10: {
-                        message.modelMetadata = $root.AICommon.BotModelMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 11: {
-                        message.messageDisclaimerText = reader.string();
-                        break;
-                    }
-                case 12: {
-                        message.progressIndicatorMetadata = $root.AICommon.BotProgressIndicatorMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 13: {
-                        message.capabilityMetadata = $root.AICommon.BotCapabilityMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 14: {
-                        message.imagineMetadata = $root.AICommon.BotImagineMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 15: {
-                        message.memoryMetadata = $root.AICommon.BotMemoryMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 16: {
-                        message.renderingMetadata = $root.AICommon.BotRenderingMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 17: {
-                        message.botMetricsMetadata = $root.AICommon.BotMetricsMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 18: {
-                        message.botLinkedAccountsMetadata = $root.AICommon.BotLinkedAccountsMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 19: {
-                        message.richResponseSourcesMetadata = $root.AICommon.BotSourcesMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 20: {
-                        message.aiConversationContext = reader.bytes();
-                        break;
-                    }
-                case 21: {
-                        message.botPromotionMessageMetadata = $root.AICommon.BotPromotionMessageMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 22: {
-                        message.botModeSelectionMetadata = $root.AICommon.BotModeSelectionMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 23: {
-                        message.botQuotaMetadata = $root.AICommon.BotQuotaMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 24: {
-                        message.botAgeCollectionMetadata = $root.AICommon.BotAgeCollectionMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 25: {
-                        message.conversationStarterPromptId = reader.string();
-                        break;
-                    }
-                case 26: {
-                        message.botResponseId = reader.string();
-                        break;
-                    }
-                case 27: {
-                        message.verificationMetadata = $root.AICommon.BotSignatureVerificationMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 28: {
-                        message.unifiedResponseMutation = $root.AICommon.BotUnifiedResponseMutation.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 29: {
-                        message.botMessageOriginMetadata = $root.AICommon.BotMessageOriginMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 30: {
-                        message.inThreadSurveyMetadata = $root.AICommon.InThreadSurveyMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 31: {
-                        message.botThreadInfo = $root.AICommon.AIThreadInfo.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 999: {
-                        message.internalMetadata = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.avatarMetadata = $root.AICommon.BotAvatarMetadata.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.personaId = reader.string();
+                    break;
+                case 3:
+                    message.pluginMetadata = $root.AICommon.BotPluginMetadata.decode(reader, reader.uint32());
+                    break;
+                case 4:
+                    message.suggestedPromptMetadata = $root.AICommon.BotSuggestedPromptMetadata.decode(reader, reader.uint32());
+                    break;
+                case 5:
+                    message.invokerJid = reader.string();
+                    break;
+                case 6:
+                    message.sessionMetadata = $root.AICommon.BotSessionMetadata.decode(reader, reader.uint32());
+                    break;
+                case 7:
+                    message.memuMetadata = $root.AICommon.BotMemuMetadata.decode(reader, reader.uint32());
+                    break;
+                case 8:
+                    message.timezone = reader.string();
+                    break;
+                case 9:
+                    message.reminderMetadata = $root.AICommon.BotReminderMetadata.decode(reader, reader.uint32());
+                    break;
+                case 10:
+                    message.modelMetadata = $root.AICommon.BotModelMetadata.decode(reader, reader.uint32());
+                    break;
+                case 11:
+                    message.messageDisclaimerText = reader.string();
+                    break;
+                case 12:
+                    message.progressIndicatorMetadata = $root.AICommon.BotProgressIndicatorMetadata.decode(reader, reader.uint32());
+                    break;
+                case 13:
+                    message.capabilityMetadata = $root.AICommon.BotCapabilityMetadata.decode(reader, reader.uint32());
+                    break;
+                case 14:
+                    message.imagineMetadata = $root.AICommon.BotImagineMetadata.decode(reader, reader.uint32());
+                    break;
+                case 15:
+                    message.memoryMetadata = $root.AICommon.BotMemoryMetadata.decode(reader, reader.uint32());
+                    break;
+                case 16:
+                    message.renderingMetadata = $root.AICommon.BotRenderingMetadata.decode(reader, reader.uint32());
+                    break;
+                case 17:
+                    message.botMetricsMetadata = $root.AICommon.BotMetricsMetadata.decode(reader, reader.uint32());
+                    break;
+                case 18:
+                    message.botLinkedAccountsMetadata = $root.AICommon.BotLinkedAccountsMetadata.decode(reader, reader.uint32());
+                    break;
+                case 19:
+                    message.richResponseSourcesMetadata = $root.AICommon.BotSourcesMetadata.decode(reader, reader.uint32());
+                    break;
+                case 20:
+                    message.aiConversationContext = reader.bytes();
+                    break;
+                case 21:
+                    message.botPromotionMessageMetadata = $root.AICommon.BotPromotionMessageMetadata.decode(reader, reader.uint32());
+                    break;
+                case 22:
+                    message.botModeSelectionMetadata = $root.AICommon.BotModeSelectionMetadata.decode(reader, reader.uint32());
+                    break;
+                case 23:
+                    message.botQuotaMetadata = $root.AICommon.BotQuotaMetadata.decode(reader, reader.uint32());
+                    break;
+                case 24:
+                    message.botAgeCollectionMetadata = $root.AICommon.BotAgeCollectionMetadata.decode(reader, reader.uint32());
+                    break;
+                case 25:
+                    message.conversationStarterPromptId = reader.string();
+                    break;
+                case 26:
+                    message.botResponseId = reader.string();
+                    break;
+                case 27:
+                    message.verificationMetadata = $root.AICommon.BotSignatureVerificationMetadata.decode(reader, reader.uint32());
+                    break;
+                case 28:
+                    message.unifiedResponseMutation = $root.AICommon.BotUnifiedResponseMutation.decode(reader, reader.uint32());
+                    break;
+                case 29:
+                    message.botMessageOriginMetadata = $root.AICommon.BotMessageOriginMetadata.decode(reader, reader.uint32());
+                    break;
+                case 30:
+                    message.inThreadSurveyMetadata = $root.AICommon.InThreadSurveyMetadata.decode(reader, reader.uint32());
+                    break;
+                case 31:
+                    message.botThreadInfo = $root.AICommon.AIThreadInfo.decode(reader, reader.uint32());
+                    break;
+                case 999:
+                    message.internalMetadata = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -8859,7 +8345,7 @@ $root.AICommon = (function() {
             if (object.aiConversationContext != null)
                 if (typeof object.aiConversationContext === "string")
                     $util.base64.decode(object.aiConversationContext, message.aiConversationContext = $util.newBuffer($util.base64.length(object.aiConversationContext)), 0);
-                else if (object.aiConversationContext.length >= 0)
+                else if (object.aiConversationContext.length)
                     message.aiConversationContext = object.aiConversationContext;
             if (object.botPromotionMessageMetadata != null) {
                 if (typeof object.botPromotionMessageMetadata !== "object")
@@ -8913,7 +8399,7 @@ $root.AICommon = (function() {
             if (object.internalMetadata != null)
                 if (typeof object.internalMetadata === "string")
                     $util.base64.decode(object.internalMetadata, message.internalMetadata = $util.newBuffer($util.base64.length(object.internalMetadata)), 0);
-                else if (object.internalMetadata.length >= 0)
+                else if (object.internalMetadata.length)
                     message.internalMetadata = object.internalMetadata;
             return message;
         };
@@ -9105,21 +8591,6 @@ $root.AICommon = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        /**
-         * Gets the default type url for BotMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotMetadata";
-        };
-
         return BotMetadata;
     })();
 
@@ -9244,23 +8715,19 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIThreadInfo.decode = function decode(reader, length, error) {
+        AIThreadInfo.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIThreadInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.serverInfo = $root.AICommon.AIThreadInfo.AIThreadServerInfo.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        message.clientInfo = $root.AICommon.AIThreadInfo.AIThreadClientInfo.decode(reader, reader.uint32());
-                        break;
-                    }
+                case 1:
+                    message.serverInfo = $root.AICommon.AIThreadInfo.AIThreadServerInfo.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.clientInfo = $root.AICommon.AIThreadInfo.AIThreadClientInfo.decode(reader, reader.uint32());
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -9378,21 +8845,6 @@ $root.AICommon = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        /**
-         * Gets the default type url for AIThreadInfo
-         * @function getTypeUrl
-         * @memberof AICommon.AIThreadInfo
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIThreadInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIThreadInfo";
-        };
-
         AIThreadInfo.AIThreadClientInfo = (function() {
 
             /**
@@ -9492,19 +8944,16 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIThreadClientInfo.decode = function decode(reader, length, error) {
+            AIThreadClientInfo.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIThreadInfo.AIThreadClientInfo();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.type = reader.int32();
-                            break;
-                        }
+                    case 1:
+                        message.type = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -9568,12 +9017,6 @@ $root.AICommon = (function() {
                     return object;
                 var message = new $root.AICommon.AIThreadInfo.AIThreadClientInfo();
                 switch (object.type) {
-                default:
-                    if (typeof object.type === "number") {
-                        message.type = object.type;
-                        break;
-                    }
-                    break;
                 case "UNKNOWN":
                 case 0:
                     message.type = 0;
@@ -9604,7 +9047,7 @@ $root.AICommon = (function() {
                     options = {};
                 var object = {};
                 if (message.type != null && message.hasOwnProperty("type")) {
-                    object.type = options.enums === String ? $root.AICommon.AIThreadInfo.AIThreadClientInfo.AIThreadType[message.type] === undefined ? message.type : $root.AICommon.AIThreadInfo.AIThreadClientInfo.AIThreadType[message.type] : message.type;
+                    object.type = options.enums === String ? $root.AICommon.AIThreadInfo.AIThreadClientInfo.AIThreadType[message.type] : message.type;
                     if (options.oneofs)
                         object._type = "type";
                 }
@@ -9620,21 +9063,6 @@ $root.AICommon = (function() {
              */
             AIThreadClientInfo.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIThreadClientInfo
-             * @function getTypeUrl
-             * @memberof AICommon.AIThreadInfo.AIThreadClientInfo
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIThreadClientInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIThreadInfo.AIThreadClientInfo";
             };
 
             /**
@@ -9755,19 +9183,16 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIThreadServerInfo.decode = function decode(reader, length, error) {
+            AIThreadServerInfo.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIThreadInfo.AIThreadServerInfo();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.title = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.title = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -9859,21 +9284,6 @@ $root.AICommon = (function() {
              */
             AIThreadServerInfo.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIThreadServerInfo
-             * @function getTypeUrl
-             * @memberof AICommon.AIThreadInfo.AIThreadServerInfo
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIThreadServerInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIThreadInfo.AIThreadServerInfo";
             };
 
             return AIThreadServerInfo;
@@ -9994,25 +9404,21 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotUnifiedResponseMutation.decode = function decode(reader, length, error) {
+        BotUnifiedResponseMutation.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotUnifiedResponseMutation();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.sbsMetadata = $root.AICommon.BotUnifiedResponseMutation.SideBySideMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        if (!(message.mediaDetailsMetadataList && message.mediaDetailsMetadataList.length))
-                            message.mediaDetailsMetadataList = [];
-                        message.mediaDetailsMetadataList.push($root.AICommon.BotUnifiedResponseMutation.MediaDetailsMetadata.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    message.sbsMetadata = $root.AICommon.BotUnifiedResponseMutation.SideBySideMetadata.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    if (!(message.mediaDetailsMetadataList && message.mediaDetailsMetadataList.length))
+                        message.mediaDetailsMetadataList = [];
+                    message.mediaDetailsMetadataList.push($root.AICommon.BotUnifiedResponseMutation.MediaDetailsMetadata.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -10136,21 +9542,6 @@ $root.AICommon = (function() {
          */
         BotUnifiedResponseMutation.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotUnifiedResponseMutation
-         * @function getTypeUrl
-         * @memberof AICommon.BotUnifiedResponseMutation
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotUnifiedResponseMutation.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotUnifiedResponseMutation";
         };
 
         BotUnifiedResponseMutation.MediaDetailsMetadata = (function() {
@@ -10296,27 +9687,22 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MediaDetailsMetadata.decode = function decode(reader, length, error) {
+            MediaDetailsMetadata.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotUnifiedResponseMutation.MediaDetailsMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.id = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.highResMedia = $root.AICommon.BotMediaMetadata.decode(reader, reader.uint32());
-                            break;
-                        }
-                    case 3: {
-                            message.previewMedia = $root.AICommon.BotMediaMetadata.decode(reader, reader.uint32());
-                            break;
-                        }
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.highResMedia = $root.AICommon.BotMediaMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.previewMedia = $root.AICommon.BotMediaMetadata.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -10446,21 +9832,6 @@ $root.AICommon = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
-            /**
-             * Gets the default type url for MediaDetailsMetadata
-             * @function getTypeUrl
-             * @memberof AICommon.BotUnifiedResponseMutation.MediaDetailsMetadata
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            MediaDetailsMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.BotUnifiedResponseMutation.MediaDetailsMetadata";
-            };
-
             return MediaDetailsMetadata;
         })();
 
@@ -10563,19 +9934,16 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SideBySideMetadata.decode = function decode(reader, length, error) {
+            SideBySideMetadata.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotUnifiedResponseMutation.SideBySideMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.primaryResponseId = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.primaryResponseId = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -10667,21 +10035,6 @@ $root.AICommon = (function() {
              */
             SideBySideMetadata.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for SideBySideMetadata
-             * @function getTypeUrl
-             * @memberof AICommon.BotUnifiedResponseMutation.SideBySideMetadata
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            SideBySideMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.BotUnifiedResponseMutation.SideBySideMetadata";
             };
 
             return SideBySideMetadata;
@@ -10789,19 +10142,16 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMessageOrigin.decode = function decode(reader, length, error) {
+        BotMessageOrigin.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotMessageOrigin();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.type = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.type = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -10863,12 +10213,6 @@ $root.AICommon = (function() {
                 return object;
             var message = new $root.AICommon.BotMessageOrigin();
             switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
             case "BOT_MESSAGE_ORIGIN_TYPE_AI_INITIATED":
             case 0:
                 message.type = 0;
@@ -10891,7 +10235,7 @@ $root.AICommon = (function() {
                 options = {};
             var object = {};
             if (message.type != null && message.hasOwnProperty("type")) {
-                object.type = options.enums === String ? $root.AICommon.BotMessageOrigin.BotMessageOriginType[message.type] === undefined ? message.type : $root.AICommon.BotMessageOrigin.BotMessageOriginType[message.type] : message.type;
+                object.type = options.enums === String ? $root.AICommon.BotMessageOrigin.BotMessageOriginType[message.type] : message.type;
                 if (options.oneofs)
                     object._type = "type";
             }
@@ -10907,21 +10251,6 @@ $root.AICommon = (function() {
          */
         BotMessageOrigin.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotMessageOrigin
-         * @function getTypeUrl
-         * @memberof AICommon.BotMessageOrigin
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotMessageOrigin.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotMessageOrigin";
         };
 
         /**
@@ -11026,21 +10355,18 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMessageOriginMetadata.decode = function decode(reader, length, error) {
+        BotMessageOriginMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotMessageOriginMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.origins && message.origins.length))
-                            message.origins = [];
-                        message.origins.push($root.AICommon.BotMessageOrigin.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    if (!(message.origins && message.origins.length))
+                        message.origins = [];
+                    message.origins.push($root.AICommon.BotMessageOrigin.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -11145,21 +10471,6 @@ $root.AICommon = (function() {
          */
         BotMessageOriginMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotMessageOriginMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotMessageOriginMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotMessageOriginMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotMessageOriginMetadata";
         };
 
         return BotMessageOriginMetadata;
@@ -11598,87 +10909,68 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        InThreadSurveyMetadata.decode = function decode(reader, length, error) {
+        InThreadSurveyMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.InThreadSurveyMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.tessaSessionId = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.simonSessionId = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.simonSurveyId = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.tessaRootId = reader.string();
-                        break;
-                    }
-                case 5: {
-                        message.requestId = reader.string();
-                        break;
-                    }
-                case 6: {
-                        message.tessaEvent = reader.string();
-                        break;
-                    }
-                case 7: {
-                        message.invitationHeaderText = reader.string();
-                        break;
-                    }
-                case 8: {
-                        message.invitationBodyText = reader.string();
-                        break;
-                    }
-                case 9: {
-                        message.invitationCtaText = reader.string();
-                        break;
-                    }
-                case 10: {
-                        message.invitationCtaUrl = reader.string();
-                        break;
-                    }
-                case 11: {
-                        message.surveyTitle = reader.string();
-                        break;
-                    }
-                case 12: {
-                        if (!(message.questions && message.questions.length))
-                            message.questions = [];
-                        message.questions.push($root.AICommon.InThreadSurveyMetadata.InThreadSurveyQuestion.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 13: {
-                        message.surveyContinueButtonText = reader.string();
-                        break;
-                    }
-                case 14: {
-                        message.surveySubmitButtonText = reader.string();
-                        break;
-                    }
-                case 15: {
-                        message.privacyStatementFull = reader.string();
-                        break;
-                    }
-                case 16: {
-                        if (!(message.privacyStatementParts && message.privacyStatementParts.length))
-                            message.privacyStatementParts = [];
-                        message.privacyStatementParts.push($root.AICommon.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 17: {
-                        message.feedbackToastText = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.tessaSessionId = reader.string();
+                    break;
+                case 2:
+                    message.simonSessionId = reader.string();
+                    break;
+                case 3:
+                    message.simonSurveyId = reader.string();
+                    break;
+                case 4:
+                    message.tessaRootId = reader.string();
+                    break;
+                case 5:
+                    message.requestId = reader.string();
+                    break;
+                case 6:
+                    message.tessaEvent = reader.string();
+                    break;
+                case 7:
+                    message.invitationHeaderText = reader.string();
+                    break;
+                case 8:
+                    message.invitationBodyText = reader.string();
+                    break;
+                case 9:
+                    message.invitationCtaText = reader.string();
+                    break;
+                case 10:
+                    message.invitationCtaUrl = reader.string();
+                    break;
+                case 11:
+                    message.surveyTitle = reader.string();
+                    break;
+                case 12:
+                    if (!(message.questions && message.questions.length))
+                        message.questions = [];
+                    message.questions.push($root.AICommon.InThreadSurveyMetadata.InThreadSurveyQuestion.decode(reader, reader.uint32()));
+                    break;
+                case 13:
+                    message.surveyContinueButtonText = reader.string();
+                    break;
+                case 14:
+                    message.surveySubmitButtonText = reader.string();
+                    break;
+                case 15:
+                    message.privacyStatementFull = reader.string();
+                    break;
+                case 16:
+                    if (!(message.privacyStatementParts && message.privacyStatementParts.length))
+                        message.privacyStatementParts = [];
+                    message.privacyStatementParts.push($root.AICommon.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.decode(reader, reader.uint32()));
+                    break;
+                case 17:
+                    message.feedbackToastText = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -11992,21 +11284,6 @@ $root.AICommon = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        /**
-         * Gets the default type url for InThreadSurveyMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        InThreadSurveyMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.InThreadSurveyMetadata";
-        };
-
         InThreadSurveyMetadata.InThreadSurveyOption = (function() {
 
             /**
@@ -12150,27 +11427,22 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InThreadSurveyOption.decode = function decode(reader, length, error) {
+            InThreadSurveyOption.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.InThreadSurveyMetadata.InThreadSurveyOption();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.stringValue = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.numericValue = reader.uint32();
-                            break;
-                        }
-                    case 3: {
-                            message.textTranslated = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.stringValue = reader.string();
+                        break;
+                    case 2:
+                        message.numericValue = reader.uint32();
+                        break;
+                    case 3:
+                        message.textTranslated = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -12286,21 +11558,6 @@ $root.AICommon = (function() {
              */
             InThreadSurveyOption.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for InThreadSurveyOption
-             * @function getTypeUrl
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyOption
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            InThreadSurveyOption.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.InThreadSurveyMetadata.InThreadSurveyOption";
             };
 
             return InThreadSurveyOption;
@@ -12427,23 +11684,19 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InThreadSurveyPrivacyStatementPart.decode = function decode(reader, length, error) {
+            InThreadSurveyPrivacyStatementPart.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.text = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.url = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.text = reader.string();
+                        break;
+                    case 2:
+                        message.url = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -12547,21 +11800,6 @@ $root.AICommon = (function() {
              */
             InThreadSurveyPrivacyStatementPart.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for InThreadSurveyPrivacyStatementPart
-             * @function getTypeUrl
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            InThreadSurveyPrivacyStatementPart.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart";
             };
 
             return InThreadSurveyPrivacyStatementPart;
@@ -12701,29 +11939,24 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InThreadSurveyQuestion.decode = function decode(reader, length, error) {
+            InThreadSurveyQuestion.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.InThreadSurveyMetadata.InThreadSurveyQuestion();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.questionText = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.questionId = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            if (!(message.questionOptions && message.questionOptions.length))
-                                message.questionOptions = [];
-                            message.questionOptions.push($root.AICommon.InThreadSurveyMetadata.InThreadSurveyOption.decode(reader, reader.uint32()));
-                            break;
-                        }
+                    case 1:
+                        message.questionText = reader.string();
+                        break;
+                    case 2:
+                        message.questionId = reader.string();
+                        break;
+                    case 3:
+                        if (!(message.questionOptions && message.questionOptions.length))
+                            message.questionOptions = [];
+                        message.questionOptions.push($root.AICommon.InThreadSurveyMetadata.InThreadSurveyOption.decode(reader, reader.uint32()));
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -12855,21 +12088,6 @@ $root.AICommon = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
-            /**
-             * Gets the default type url for InThreadSurveyQuestion
-             * @function getTypeUrl
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyQuestion
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            InThreadSurveyQuestion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.InThreadSurveyMetadata.InThreadSurveyQuestion";
-            };
-
             return InThreadSurveyQuestion;
         })();
 
@@ -12963,21 +12181,18 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSourcesMetadata.decode = function decode(reader, length, error) {
+        BotSourcesMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotSourcesMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.sources && message.sources.length))
-                            message.sources = [];
-                        message.sources.push($root.AICommon.BotSourcesMetadata.BotSourceItem.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    if (!(message.sources && message.sources.length))
+                        message.sources = [];
+                    message.sources.push($root.AICommon.BotSourcesMetadata.BotSourceItem.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -13082,21 +12297,6 @@ $root.AICommon = (function() {
          */
         BotSourcesMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotSourcesMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotSourcesMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotSourcesMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotSourcesMetadata";
         };
 
         BotSourcesMetadata.BotSourceItem = (function() {
@@ -13330,43 +12530,34 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BotSourceItem.decode = function decode(reader, length, error) {
+            BotSourceItem.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotSourcesMetadata.BotSourceItem();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.provider = reader.int32();
-                            break;
-                        }
-                    case 2: {
-                            message.thumbnailCdnUrl = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.sourceProviderUrl = reader.string();
-                            break;
-                        }
-                    case 4: {
-                            message.sourceQuery = reader.string();
-                            break;
-                        }
-                    case 5: {
-                            message.faviconCdnUrl = reader.string();
-                            break;
-                        }
-                    case 6: {
-                            message.citationNumber = reader.uint32();
-                            break;
-                        }
-                    case 7: {
-                            message.sourceTitle = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.provider = reader.int32();
+                        break;
+                    case 2:
+                        message.thumbnailCdnUrl = reader.string();
+                        break;
+                    case 3:
+                        message.sourceProviderUrl = reader.string();
+                        break;
+                    case 4:
+                        message.sourceQuery = reader.string();
+                        break;
+                    case 5:
+                        message.faviconCdnUrl = reader.string();
+                        break;
+                    case 6:
+                        message.citationNumber = reader.uint32();
+                        break;
+                    case 7:
+                        message.sourceTitle = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -13462,12 +12653,6 @@ $root.AICommon = (function() {
                     return object;
                 var message = new $root.AICommon.BotSourcesMetadata.BotSourceItem();
                 switch (object.provider) {
-                default:
-                    if (typeof object.provider === "number") {
-                        message.provider = object.provider;
-                        break;
-                    }
-                    break;
                 case "UNKNOWN":
                 case 0:
                     message.provider = 0;
@@ -13518,7 +12703,7 @@ $root.AICommon = (function() {
                     options = {};
                 var object = {};
                 if (message.provider != null && message.hasOwnProperty("provider")) {
-                    object.provider = options.enums === String ? $root.AICommon.BotSourcesMetadata.BotSourceItem.SourceProvider[message.provider] === undefined ? message.provider : $root.AICommon.BotSourcesMetadata.BotSourceItem.SourceProvider[message.provider] : message.provider;
+                    object.provider = options.enums === String ? $root.AICommon.BotSourcesMetadata.BotSourceItem.SourceProvider[message.provider] : message.provider;
                     if (options.oneofs)
                         object._provider = "provider";
                 }
@@ -13564,21 +12749,6 @@ $root.AICommon = (function() {
              */
             BotSourceItem.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for BotSourceItem
-             * @function getTypeUrl
-             * @memberof AICommon.BotSourcesMetadata.BotSourceItem
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            BotSourceItem.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.BotSourcesMetadata.BotSourceItem";
             };
 
             /**
@@ -13728,23 +12898,19 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotAgeCollectionMetadata.decode = function decode(reader, length, error) {
+        BotAgeCollectionMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotAgeCollectionMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.ageCollectionEligible = reader.bool();
-                        break;
-                    }
-                case 2: {
-                        message.shouldTriggerAgeCollectionOnClient = reader.bool();
-                        break;
-                    }
+                case 1:
+                    message.ageCollectionEligible = reader.bool();
+                    break;
+                case 2:
+                    message.shouldTriggerAgeCollectionOnClient = reader.bool();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -13850,21 +13016,6 @@ $root.AICommon = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        /**
-         * Gets the default type url for BotAgeCollectionMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotAgeCollectionMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotAgeCollectionMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotAgeCollectionMetadata";
-        };
-
         return BotAgeCollectionMetadata;
     })();
 
@@ -13967,19 +13118,16 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotImagineMetadata.decode = function decode(reader, length, error) {
+        BotImagineMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotImagineMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.imagineType = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.imagineType = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -14045,12 +13193,6 @@ $root.AICommon = (function() {
                 return object;
             var message = new $root.AICommon.BotImagineMetadata();
             switch (object.imagineType) {
-            default:
-                if (typeof object.imagineType === "number") {
-                    message.imagineType = object.imagineType;
-                    break;
-                }
-                break;
             case "UNKNOWN":
             case 0:
                 message.imagineType = 0;
@@ -14089,7 +13231,7 @@ $root.AICommon = (function() {
                 options = {};
             var object = {};
             if (message.imagineType != null && message.hasOwnProperty("imagineType")) {
-                object.imagineType = options.enums === String ? $root.AICommon.BotImagineMetadata.ImagineType[message.imagineType] === undefined ? message.imagineType : $root.AICommon.BotImagineMetadata.ImagineType[message.imagineType] : message.imagineType;
+                object.imagineType = options.enums === String ? $root.AICommon.BotImagineMetadata.ImagineType[message.imagineType] : message.imagineType;
                 if (options.oneofs)
                     object._imagineType = "imagineType";
             }
@@ -14105,21 +13247,6 @@ $root.AICommon = (function() {
          */
         BotImagineMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotImagineMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotImagineMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotImagineMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotImagineMetadata";
         };
 
         /**
@@ -14232,21 +13359,18 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotQuotaMetadata.decode = function decode(reader, length, error) {
+        BotQuotaMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotQuotaMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.botFeatureQuotaMetadata && message.botFeatureQuotaMetadata.length))
-                            message.botFeatureQuotaMetadata = [];
-                        message.botFeatureQuotaMetadata.push($root.AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    if (!(message.botFeatureQuotaMetadata && message.botFeatureQuotaMetadata.length))
+                        message.botFeatureQuotaMetadata = [];
+                    message.botFeatureQuotaMetadata.push($root.AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -14351,21 +13475,6 @@ $root.AICommon = (function() {
          */
         BotQuotaMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotQuotaMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotQuotaMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotQuotaMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotQuotaMetadata";
         };
 
         BotQuotaMetadata.BotFeatureQuotaMetadata = (function() {
@@ -14511,27 +13620,22 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BotFeatureQuotaMetadata.decode = function decode(reader, length, error) {
+            BotFeatureQuotaMetadata.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.featureType = reader.int32();
-                            break;
-                        }
-                    case 2: {
-                            message.remainingQuota = reader.uint32();
-                            break;
-                        }
-                    case 3: {
-                            message.expirationTimestamp = reader.uint64();
-                            break;
-                        }
+                    case 1:
+                        message.featureType = reader.int32();
+                        break;
+                    case 2:
+                        message.remainingQuota = reader.uint32();
+                        break;
+                    case 3:
+                        message.expirationTimestamp = reader.uint64();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -14604,12 +13708,6 @@ $root.AICommon = (function() {
                     return object;
                 var message = new $root.AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata();
                 switch (object.featureType) {
-                default:
-                    if (typeof object.featureType === "number") {
-                        message.featureType = object.featureType;
-                        break;
-                    }
-                    break;
                 case "UNKNOWN_FEATURE":
                 case 0:
                     message.featureType = 0;
@@ -14647,7 +13745,7 @@ $root.AICommon = (function() {
                     options = {};
                 var object = {};
                 if (message.featureType != null && message.hasOwnProperty("featureType")) {
-                    object.featureType = options.enums === String ? $root.AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType[message.featureType] === undefined ? message.featureType : $root.AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType[message.featureType] : message.featureType;
+                    object.featureType = options.enums === String ? $root.AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType[message.featureType] : message.featureType;
                     if (options.oneofs)
                         object._featureType = "featureType";
                 }
@@ -14676,21 +13774,6 @@ $root.AICommon = (function() {
              */
             BotFeatureQuotaMetadata.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for BotFeatureQuotaMetadata
-             * @function getTypeUrl
-             * @memberof AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            BotFeatureQuotaMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata";
             };
 
             /**
@@ -14803,26 +13886,23 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotModeSelectionMetadata.decode = function decode(reader, length, error) {
+        BotModeSelectionMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotModeSelectionMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.mode && message.mode.length))
-                            message.mode = [];
-                        if ((tag & 7) === 2) {
-                            var end2 = reader.uint32() + reader.pos;
-                            while (reader.pos < end2)
-                                message.mode.push(reader.int32());
-                        } else
+                case 1:
+                    if (!(message.mode && message.mode.length))
+                        message.mode = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
                             message.mode.push(reader.int32());
-                        break;
-                    }
+                    } else
+                        message.mode.push(reader.int32());
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -14892,10 +13972,6 @@ $root.AICommon = (function() {
                 for (var i = 0; i < object.mode.length; ++i)
                     switch (object.mode[i]) {
                     default:
-                        if (typeof object.mode[i] === "number") {
-                            message.mode[i] = object.mode[i];
-                            break;
-                        }
                     case "UNKNOWN_MODE":
                     case 0:
                         message.mode[i] = 0;
@@ -14927,7 +14003,7 @@ $root.AICommon = (function() {
             if (message.mode && message.mode.length) {
                 object.mode = [];
                 for (var j = 0; j < message.mode.length; ++j)
-                    object.mode[j] = options.enums === String ? $root.AICommon.BotModeSelectionMetadata.BotUserSelectionMode[message.mode[j]] === undefined ? message.mode[j] : $root.AICommon.BotModeSelectionMetadata.BotUserSelectionMode[message.mode[j]] : message.mode[j];
+                    object.mode[j] = options.enums === String ? $root.AICommon.BotModeSelectionMetadata.BotUserSelectionMode[message.mode[j]] : message.mode[j];
             }
             return object;
         };
@@ -14941,21 +14017,6 @@ $root.AICommon = (function() {
          */
         BotModeSelectionMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotModeSelectionMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotModeSelectionMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotModeSelectionMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotModeSelectionMetadata";
         };
 
         /**
@@ -15065,26 +14126,23 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotCapabilityMetadata.decode = function decode(reader, length, error) {
+        BotCapabilityMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotCapabilityMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.capabilities && message.capabilities.length))
-                            message.capabilities = [];
-                        if ((tag & 7) === 2) {
-                            var end2 = reader.uint32() + reader.pos;
-                            while (reader.pos < end2)
-                                message.capabilities.push(reader.int32());
-                        } else
+                case 1:
+                    if (!(message.capabilities && message.capabilities.length))
+                        message.capabilities = [];
+                    if ((tag & 7) === 2) {
+                        var end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
                             message.capabilities.push(reader.int32());
-                        break;
-                    }
+                    } else
+                        message.capabilities.push(reader.int32());
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -15198,10 +14256,6 @@ $root.AICommon = (function() {
                 for (var i = 0; i < object.capabilities.length; ++i)
                     switch (object.capabilities[i]) {
                     default:
-                        if (typeof object.capabilities[i] === "number") {
-                            message.capabilities[i] = object.capabilities[i];
-                            break;
-                        }
                     case "UNKNOWN":
                     case 0:
                         message.capabilities[i] = 0;
@@ -15409,7 +14463,7 @@ $root.AICommon = (function() {
             if (message.capabilities && message.capabilities.length) {
                 object.capabilities = [];
                 for (var j = 0; j < message.capabilities.length; ++j)
-                    object.capabilities[j] = options.enums === String ? $root.AICommon.BotCapabilityMetadata.BotCapabilityType[message.capabilities[j]] === undefined ? message.capabilities[j] : $root.AICommon.BotCapabilityMetadata.BotCapabilityType[message.capabilities[j]] : message.capabilities[j];
+                    object.capabilities[j] = options.enums === String ? $root.AICommon.BotCapabilityMetadata.BotCapabilityType[message.capabilities[j]] : message.capabilities[j];
             }
             return object;
         };
@@ -15423,21 +14477,6 @@ $root.AICommon = (function() {
          */
         BotCapabilityMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotCapabilityMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotCapabilityMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotCapabilityMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotCapabilityMetadata";
         };
 
         /**
@@ -15657,25 +14696,21 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotProgressIndicatorMetadata.decode = function decode(reader, length, error) {
+        BotProgressIndicatorMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotProgressIndicatorMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.progressDescription = reader.string();
-                        break;
-                    }
-                case 2: {
-                        if (!(message.stepsMetadata && message.stepsMetadata.length))
-                            message.stepsMetadata = [];
-                        message.stepsMetadata.push($root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    message.progressDescription = reader.string();
+                    break;
+                case 2:
+                    if (!(message.stepsMetadata && message.stepsMetadata.length))
+                        message.stepsMetadata = [];
+                    message.stepsMetadata.push($root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -15793,21 +14828,6 @@ $root.AICommon = (function() {
          */
         BotProgressIndicatorMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotProgressIndicatorMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotProgressIndicatorMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotProgressIndicatorMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotProgressIndicatorMetadata";
         };
 
         BotProgressIndicatorMetadata.BotPlanningStepMetadata = (function() {
@@ -16023,47 +15043,38 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BotPlanningStepMetadata.decode = function decode(reader, length, error) {
+            BotPlanningStepMetadata.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.statusTitle = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.statusBody = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            if (!(message.sourcesMetadata && message.sourcesMetadata.length))
-                                message.sourcesMetadata = [];
-                            message.sourcesMetadata.push($root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.decode(reader, reader.uint32()));
-                            break;
-                        }
-                    case 4: {
-                            message.status = reader.int32();
-                            break;
-                        }
-                    case 5: {
-                            message.isReasoning = reader.bool();
-                            break;
-                        }
-                    case 6: {
-                            message.isEnhancedSearch = reader.bool();
-                            break;
-                        }
-                    case 7: {
-                            if (!(message.sections && message.sections.length))
-                                message.sections = [];
-                            message.sections.push($root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.decode(reader, reader.uint32()));
-                            break;
-                        }
+                    case 1:
+                        message.statusTitle = reader.string();
+                        break;
+                    case 2:
+                        message.statusBody = reader.string();
+                        break;
+                    case 3:
+                        if (!(message.sourcesMetadata && message.sourcesMetadata.length))
+                            message.sourcesMetadata = [];
+                        message.sourcesMetadata.push($root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.decode(reader, reader.uint32()));
+                        break;
+                    case 4:
+                        message.status = reader.int32();
+                        break;
+                    case 5:
+                        message.isReasoning = reader.bool();
+                        break;
+                    case 6:
+                        message.isEnhancedSearch = reader.bool();
+                        break;
+                    case 7:
+                        if (!(message.sections && message.sections.length))
+                            message.sections = [];
+                        message.sections.push($root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.decode(reader, reader.uint32()));
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -16180,12 +15191,6 @@ $root.AICommon = (function() {
                     }
                 }
                 switch (object.status) {
-                default:
-                    if (typeof object.status === "number") {
-                        message.status = object.status;
-                        break;
-                    }
-                    break;
                 case "UNKNOWN":
                 case 0:
                     message.status = 0;
@@ -16253,7 +15258,7 @@ $root.AICommon = (function() {
                         object.sourcesMetadata[j] = $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.toObject(message.sourcesMetadata[j], options);
                 }
                 if (message.status != null && message.hasOwnProperty("status")) {
-                    object.status = options.enums === String ? $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus[message.status] === undefined ? message.status : $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus[message.status] : message.status;
+                    object.status = options.enums === String ? $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus[message.status] : message.status;
                     if (options.oneofs)
                         object._status = "status";
                 }
@@ -16284,21 +15289,6 @@ $root.AICommon = (function() {
              */
             BotPlanningStepMetadata.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for BotPlanningStepMetadata
-             * @function getTypeUrl
-             * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            BotPlanningStepMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata";
             };
 
             BotPlanningStepMetadata.BotPlanningSearchSourceMetadata = (function() {
@@ -16466,31 +15456,25 @@ $root.AICommon = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                BotPlanningSearchSourceMetadata.decode = function decode(reader, length, error) {
+                BotPlanningSearchSourceMetadata.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
-                        if (tag === error)
-                            break;
                         switch (tag >>> 3) {
-                        case 1: {
-                                message.title = reader.string();
-                                break;
-                            }
-                        case 2: {
-                                message.provider = reader.int32();
-                                break;
-                            }
-                        case 3: {
-                                message.sourceUrl = reader.string();
-                                break;
-                            }
-                        case 4: {
-                                message.favIconUrl = reader.string();
-                                break;
-                            }
+                        case 1:
+                            message.title = reader.string();
+                            break;
+                        case 2:
+                            message.provider = reader.int32();
+                            break;
+                        case 3:
+                            message.sourceUrl = reader.string();
+                            break;
+                        case 4:
+                            message.favIconUrl = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -16572,12 +15556,6 @@ $root.AICommon = (function() {
                     if (object.title != null)
                         message.title = String(object.title);
                     switch (object.provider) {
-                    default:
-                        if (typeof object.provider === "number") {
-                            message.provider = object.provider;
-                            break;
-                        }
-                        break;
                     case "UNKNOWN_PROVIDER":
                     case 0:
                         message.provider = 0;
@@ -16621,7 +15599,7 @@ $root.AICommon = (function() {
                             object._title = "title";
                     }
                     if (message.provider != null && message.hasOwnProperty("provider")) {
-                        object.provider = options.enums === String ? $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider[message.provider] === undefined ? message.provider : $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider[message.provider] : message.provider;
+                        object.provider = options.enums === String ? $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider[message.provider] : message.provider;
                         if (options.oneofs)
                             object._provider = "provider";
                     }
@@ -16647,21 +15625,6 @@ $root.AICommon = (function() {
                  */
                 BotPlanningSearchSourceMetadata.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                /**
-                 * Gets the default type url for BotPlanningSearchSourceMetadata
-                 * @function getTypeUrl
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata
-                 * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
-                 */
-                BotPlanningSearchSourceMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata";
                 };
 
                 return BotPlanningSearchSourceMetadata;
@@ -16810,27 +15773,22 @@ $root.AICommon = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                BotPlanningSearchSourcesMetadata.decode = function decode(reader, length, error) {
+                BotPlanningSearchSourcesMetadata.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
-                        if (tag === error)
-                            break;
                         switch (tag >>> 3) {
-                        case 1: {
-                                message.sourceTitle = reader.string();
-                                break;
-                            }
-                        case 2: {
-                                message.provider = reader.int32();
-                                break;
-                            }
-                        case 3: {
-                                message.sourceUrl = reader.string();
-                                break;
-                            }
+                        case 1:
+                            message.sourceTitle = reader.string();
+                            break;
+                        case 2:
+                            message.provider = reader.int32();
+                            break;
+                        case 3:
+                            message.sourceUrl = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -16907,12 +15865,6 @@ $root.AICommon = (function() {
                     if (object.sourceTitle != null)
                         message.sourceTitle = String(object.sourceTitle);
                     switch (object.provider) {
-                    default:
-                        if (typeof object.provider === "number") {
-                            message.provider = object.provider;
-                            break;
-                        }
-                        break;
                     case "UNKNOWN":
                     case 0:
                         message.provider = 0;
@@ -16954,7 +15906,7 @@ $root.AICommon = (function() {
                             object._sourceTitle = "sourceTitle";
                     }
                     if (message.provider != null && message.hasOwnProperty("provider")) {
-                        object.provider = options.enums === String ? $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider[message.provider] === undefined ? message.provider : $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider[message.provider] : message.provider;
+                        object.provider = options.enums === String ? $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider[message.provider] : message.provider;
                         if (options.oneofs)
                             object._provider = "provider";
                     }
@@ -16975,21 +15927,6 @@ $root.AICommon = (function() {
                  */
                 BotPlanningSearchSourcesMetadata.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                /**
-                 * Gets the default type url for BotPlanningSearchSourcesMetadata
-                 * @function getTypeUrl
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata
-                 * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
-                 */
-                BotPlanningSearchSourcesMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata";
                 };
 
                 /**
@@ -17147,29 +16084,24 @@ $root.AICommon = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                BotPlanningStepSectionMetadata.decode = function decode(reader, length, error) {
+                BotPlanningStepSectionMetadata.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
-                        if (tag === error)
-                            break;
                         switch (tag >>> 3) {
-                        case 1: {
-                                message.sectionTitle = reader.string();
-                                break;
-                            }
-                        case 2: {
-                                message.sectionBody = reader.string();
-                                break;
-                            }
-                        case 3: {
-                                if (!(message.sourcesMetadata && message.sourcesMetadata.length))
-                                    message.sourcesMetadata = [];
-                                message.sourcesMetadata.push($root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.decode(reader, reader.uint32()));
-                                break;
-                            }
+                        case 1:
+                            message.sectionTitle = reader.string();
+                            break;
+                        case 2:
+                            message.sectionBody = reader.string();
+                            break;
+                        case 3:
+                            if (!(message.sourcesMetadata && message.sourcesMetadata.length))
+                                message.sourcesMetadata = [];
+                            message.sourcesMetadata.push($root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.decode(reader, reader.uint32()));
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -17299,21 +16231,6 @@ $root.AICommon = (function() {
                  */
                 BotPlanningStepSectionMetadata.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                /**
-                 * Gets the default type url for BotPlanningStepSectionMetadata
-                 * @function getTypeUrl
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata
-                 * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
-                 */
-                BotPlanningStepSectionMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata";
                 };
 
                 return BotPlanningStepSectionMetadata;
@@ -17482,23 +16399,19 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotModelMetadata.decode = function decode(reader, length, error) {
+        BotModelMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotModelMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.modelType = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.premiumModelStatus = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.modelType = reader.int32();
+                    break;
+                case 2:
+                    message.premiumModelStatus = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -17573,12 +16486,6 @@ $root.AICommon = (function() {
                 return object;
             var message = new $root.AICommon.BotModelMetadata();
             switch (object.modelType) {
-            default:
-                if (typeof object.modelType === "number") {
-                    message.modelType = object.modelType;
-                    break;
-                }
-                break;
             case "UNKNOWN_TYPE":
             case 0:
                 message.modelType = 0;
@@ -17593,12 +16500,6 @@ $root.AICommon = (function() {
                 break;
             }
             switch (object.premiumModelStatus) {
-            default:
-                if (typeof object.premiumModelStatus === "number") {
-                    message.premiumModelStatus = object.premiumModelStatus;
-                    break;
-                }
-                break;
             case "UNKNOWN_STATUS":
             case 0:
                 message.premiumModelStatus = 0;
@@ -17629,12 +16530,12 @@ $root.AICommon = (function() {
                 options = {};
             var object = {};
             if (message.modelType != null && message.hasOwnProperty("modelType")) {
-                object.modelType = options.enums === String ? $root.AICommon.BotModelMetadata.ModelType[message.modelType] === undefined ? message.modelType : $root.AICommon.BotModelMetadata.ModelType[message.modelType] : message.modelType;
+                object.modelType = options.enums === String ? $root.AICommon.BotModelMetadata.ModelType[message.modelType] : message.modelType;
                 if (options.oneofs)
                     object._modelType = "modelType";
             }
             if (message.premiumModelStatus != null && message.hasOwnProperty("premiumModelStatus")) {
-                object.premiumModelStatus = options.enums === String ? $root.AICommon.BotModelMetadata.PremiumModelStatus[message.premiumModelStatus] === undefined ? message.premiumModelStatus : $root.AICommon.BotModelMetadata.PremiumModelStatus[message.premiumModelStatus] : message.premiumModelStatus;
+                object.premiumModelStatus = options.enums === String ? $root.AICommon.BotModelMetadata.PremiumModelStatus[message.premiumModelStatus] : message.premiumModelStatus;
                 if (options.oneofs)
                     object._premiumModelStatus = "premiumModelStatus";
             }
@@ -17650,21 +16551,6 @@ $root.AICommon = (function() {
          */
         BotModelMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotModelMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotModelMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotModelMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotModelMetadata";
         };
 
         /**
@@ -17889,35 +16775,28 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotReminderMetadata.decode = function decode(reader, length, error) {
+        BotReminderMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotReminderMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.requestMessageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        message.action = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        message.name = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.nextTriggerTimestamp = reader.uint64();
-                        break;
-                    }
-                case 5: {
-                        message.frequency = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.requestMessageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
+                    break;
+                case 2:
+                    message.action = reader.int32();
+                    break;
+                case 3:
+                    message.name = reader.string();
+                    break;
+                case 4:
+                    message.nextTriggerTimestamp = reader.uint64();
+                    break;
+                case 5:
+                    message.frequency = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -18018,12 +16897,6 @@ $root.AICommon = (function() {
                 message.requestMessageKey = $root.Protocol.MessageKey.fromObject(object.requestMessageKey);
             }
             switch (object.action) {
-            default:
-                if (typeof object.action === "number") {
-                    message.action = object.action;
-                    break;
-                }
-                break;
             case "NOTIFY":
             case 1:
                 message.action = 1;
@@ -18053,12 +16926,6 @@ $root.AICommon = (function() {
                 else if (typeof object.nextTriggerTimestamp === "object")
                     message.nextTriggerTimestamp = new $util.LongBits(object.nextTriggerTimestamp.low >>> 0, object.nextTriggerTimestamp.high >>> 0).toNumber(true);
             switch (object.frequency) {
-            default:
-                if (typeof object.frequency === "number") {
-                    message.frequency = object.frequency;
-                    break;
-                }
-                break;
             case "ONCE":
             case 1:
                 message.frequency = 1;
@@ -18102,7 +16969,7 @@ $root.AICommon = (function() {
                     object._requestMessageKey = "requestMessageKey";
             }
             if (message.action != null && message.hasOwnProperty("action")) {
-                object.action = options.enums === String ? $root.AICommon.BotReminderMetadata.ReminderAction[message.action] === undefined ? message.action : $root.AICommon.BotReminderMetadata.ReminderAction[message.action] : message.action;
+                object.action = options.enums === String ? $root.AICommon.BotReminderMetadata.ReminderAction[message.action] : message.action;
                 if (options.oneofs)
                     object._action = "action";
             }
@@ -18120,7 +16987,7 @@ $root.AICommon = (function() {
                     object._nextTriggerTimestamp = "nextTriggerTimestamp";
             }
             if (message.frequency != null && message.hasOwnProperty("frequency")) {
-                object.frequency = options.enums === String ? $root.AICommon.BotReminderMetadata.ReminderFrequency[message.frequency] === undefined ? message.frequency : $root.AICommon.BotReminderMetadata.ReminderFrequency[message.frequency] : message.frequency;
+                object.frequency = options.enums === String ? $root.AICommon.BotReminderMetadata.ReminderFrequency[message.frequency] : message.frequency;
                 if (options.oneofs)
                     object._frequency = "frequency";
             }
@@ -18136,21 +17003,6 @@ $root.AICommon = (function() {
          */
         BotReminderMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotReminderMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotReminderMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotReminderMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotReminderMetadata";
         };
 
         /**
@@ -18281,21 +17133,18 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMemuMetadata.decode = function decode(reader, length, error) {
+        BotMemuMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotMemuMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.faceImages && message.faceImages.length))
-                            message.faceImages = [];
-                        message.faceImages.push($root.AICommon.BotMediaMetadata.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    if (!(message.faceImages && message.faceImages.length))
+                        message.faceImages = [];
+                    message.faceImages.push($root.AICommon.BotMediaMetadata.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -18400,21 +17249,6 @@ $root.AICommon = (function() {
          */
         BotMemuMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotMemuMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotMemuMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotMemuMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotMemuMetadata";
         };
 
         return BotMemuMetadata;
@@ -18651,43 +17485,34 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMediaMetadata.decode = function decode(reader, length, error) {
+        BotMediaMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotMediaMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.fileSha256 = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.mediaKey = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.fileEncSha256 = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.directPath = reader.string();
-                        break;
-                    }
-                case 5: {
-                        message.mediaKeyTimestamp = reader.int64();
-                        break;
-                    }
-                case 6: {
-                        message.mimetype = reader.string();
-                        break;
-                    }
-                case 7: {
-                        message.orientationType = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.fileSha256 = reader.string();
+                    break;
+                case 2:
+                    message.mediaKey = reader.string();
+                    break;
+                case 3:
+                    message.fileEncSha256 = reader.string();
+                    break;
+                case 4:
+                    message.directPath = reader.string();
+                    break;
+                case 5:
+                    message.mediaKeyTimestamp = reader.int64();
+                    break;
+                case 6:
+                    message.mimetype = reader.string();
+                    break;
+                case 7:
+                    message.orientationType = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -18800,12 +17625,6 @@ $root.AICommon = (function() {
             if (object.mimetype != null)
                 message.mimetype = String(object.mimetype);
             switch (object.orientationType) {
-            default:
-                if (typeof object.orientationType === "number") {
-                    message.orientationType = object.orientationType;
-                    break;
-                }
-                break;
             case "CENTER":
             case 1:
                 message.orientationType = 1;
@@ -18869,7 +17688,7 @@ $root.AICommon = (function() {
                     object._mimetype = "mimetype";
             }
             if (message.orientationType != null && message.hasOwnProperty("orientationType")) {
-                object.orientationType = options.enums === String ? $root.AICommon.BotMediaMetadata.OrientationType[message.orientationType] === undefined ? message.orientationType : $root.AICommon.BotMediaMetadata.OrientationType[message.orientationType] : message.orientationType;
+                object.orientationType = options.enums === String ? $root.AICommon.BotMediaMetadata.OrientationType[message.orientationType] : message.orientationType;
                 if (options.oneofs)
                     object._orientationType = "orientationType";
             }
@@ -18885,21 +17704,6 @@ $root.AICommon = (function() {
          */
         BotMediaMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotMediaMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotMediaMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotMediaMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotMediaMetadata";
         };
 
         /**
@@ -19042,23 +17846,19 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSessionMetadata.decode = function decode(reader, length, error) {
+        BotSessionMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotSessionMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.sessionId = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.sessionSource = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.sessionId = reader.string();
+                    break;
+                case 2:
+                    message.sessionSource = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -19133,12 +17933,6 @@ $root.AICommon = (function() {
             if (object.sessionId != null)
                 message.sessionId = String(object.sessionId);
             switch (object.sessionSource) {
-            default:
-                if (typeof object.sessionSource === "number") {
-                    message.sessionSource = object.sessionSource;
-                    break;
-                }
-                break;
             case "NONE":
             case 0:
                 message.sessionSource = 0;
@@ -19190,7 +17984,7 @@ $root.AICommon = (function() {
                     object._sessionId = "sessionId";
             }
             if (message.sessionSource != null && message.hasOwnProperty("sessionSource")) {
-                object.sessionSource = options.enums === String ? $root.AICommon.BotSessionSource[message.sessionSource] === undefined ? message.sessionSource : $root.AICommon.BotSessionSource[message.sessionSource] : message.sessionSource;
+                object.sessionSource = options.enums === String ? $root.AICommon.BotSessionSource[message.sessionSource] : message.sessionSource;
                 if (options.oneofs)
                     object._sessionSource = "sessionSource";
             }
@@ -19206,21 +18000,6 @@ $root.AICommon = (function() {
          */
         BotSessionMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotSessionMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotSessionMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotSessionMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotSessionMetadata";
         };
 
         return BotSessionMetadata;
@@ -19369,27 +18148,22 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMetricsMetadata.decode = function decode(reader, length, error) {
+        BotMetricsMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotMetricsMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.destinationId = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.destinationEntryPoint = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        message.threadOrigin = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.destinationId = reader.string();
+                    break;
+                case 2:
+                    message.destinationEntryPoint = reader.int32();
+                    break;
+                case 3:
+                    message.threadOrigin = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -19505,12 +18279,6 @@ $root.AICommon = (function() {
             if (object.destinationId != null)
                 message.destinationId = String(object.destinationId);
             switch (object.destinationEntryPoint) {
-            default:
-                if (typeof object.destinationEntryPoint === "number") {
-                    message.destinationEntryPoint = object.destinationEntryPoint;
-                    break;
-                }
-                break;
             case "UNDEFINED_ENTRY_POINT":
             case 0:
                 message.destinationEntryPoint = 0;
@@ -19653,12 +18421,6 @@ $root.AICommon = (function() {
                 break;
             }
             switch (object.threadOrigin) {
-            default:
-                if (typeof object.threadOrigin === "number") {
-                    message.threadOrigin = object.threadOrigin;
-                    break;
-                }
-                break;
             case "AI_TAB_THREAD":
             case 1:
                 message.threadOrigin = 1;
@@ -19702,12 +18464,12 @@ $root.AICommon = (function() {
                     object._destinationId = "destinationId";
             }
             if (message.destinationEntryPoint != null && message.hasOwnProperty("destinationEntryPoint")) {
-                object.destinationEntryPoint = options.enums === String ? $root.AICommon.BotMetricsEntryPoint[message.destinationEntryPoint] === undefined ? message.destinationEntryPoint : $root.AICommon.BotMetricsEntryPoint[message.destinationEntryPoint] : message.destinationEntryPoint;
+                object.destinationEntryPoint = options.enums === String ? $root.AICommon.BotMetricsEntryPoint[message.destinationEntryPoint] : message.destinationEntryPoint;
                 if (options.oneofs)
                     object._destinationEntryPoint = "destinationEntryPoint";
             }
             if (message.threadOrigin != null && message.hasOwnProperty("threadOrigin")) {
-                object.threadOrigin = options.enums === String ? $root.AICommon.BotMetricsThreadEntryPoint[message.threadOrigin] === undefined ? message.threadOrigin : $root.AICommon.BotMetricsThreadEntryPoint[message.threadOrigin] : message.threadOrigin;
+                object.threadOrigin = options.enums === String ? $root.AICommon.BotMetricsThreadEntryPoint[message.threadOrigin] : message.threadOrigin;
                 if (options.oneofs)
                     object._threadOrigin = "threadOrigin";
             }
@@ -19723,21 +18485,6 @@ $root.AICommon = (function() {
          */
         BotMetricsMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotMetricsMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotMetricsMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotMetricsMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotMetricsMetadata";
         };
 
         return BotMetricsMetadata;
@@ -19830,21 +18577,18 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotRenderingMetadata.decode = function decode(reader, length, error) {
+        BotRenderingMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotRenderingMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.keywords && message.keywords.length))
-                            message.keywords = [];
-                        message.keywords.push($root.AICommon.BotRenderingMetadata.Keyword.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    if (!(message.keywords && message.keywords.length))
+                        message.keywords = [];
+                    message.keywords.push($root.AICommon.BotRenderingMetadata.Keyword.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -19949,21 +18693,6 @@ $root.AICommon = (function() {
          */
         BotRenderingMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotRenderingMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotRenderingMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotRenderingMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotRenderingMetadata";
         };
 
         BotRenderingMetadata.Keyword = (function() {
@@ -20078,25 +18807,21 @@ $root.AICommon = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Keyword.decode = function decode(reader, length, error) {
+            Keyword.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotRenderingMetadata.Keyword();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.value = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            if (!(message.associatedPrompts && message.associatedPrompts.length))
-                                message.associatedPrompts = [];
-                            message.associatedPrompts.push(reader.string());
-                            break;
-                        }
+                    case 1:
+                        message.value = reader.string();
+                        break;
+                    case 2:
+                        if (!(message.associatedPrompts && message.associatedPrompts.length))
+                            message.associatedPrompts = [];
+                        message.associatedPrompts.push(reader.string());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -20209,21 +18934,6 @@ $root.AICommon = (function() {
              */
             Keyword.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for Keyword
-             * @function getTypeUrl
-             * @memberof AICommon.BotRenderingMetadata.Keyword
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            Keyword.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.BotRenderingMetadata.Keyword";
             };
 
             return Keyword;
@@ -20353,23 +19063,19 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotPromotionMessageMetadata.decode = function decode(reader, length, error) {
+        BotPromotionMessageMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotPromotionMessageMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.promotionType = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.buttonTitle = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.promotionType = reader.int32();
+                    break;
+                case 2:
+                    message.buttonTitle = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -20438,12 +19144,6 @@ $root.AICommon = (function() {
                 return object;
             var message = new $root.AICommon.BotPromotionMessageMetadata();
             switch (object.promotionType) {
-            default:
-                if (typeof object.promotionType === "number") {
-                    message.promotionType = object.promotionType;
-                    break;
-                }
-                break;
             case "UNKNOWN_TYPE":
             case 0:
                 message.promotionType = 0;
@@ -20476,7 +19176,7 @@ $root.AICommon = (function() {
                 options = {};
             var object = {};
             if (message.promotionType != null && message.hasOwnProperty("promotionType")) {
-                object.promotionType = options.enums === String ? $root.AICommon.BotPromotionMessageMetadata.BotPromotionType[message.promotionType] === undefined ? message.promotionType : $root.AICommon.BotPromotionMessageMetadata.BotPromotionType[message.promotionType] : message.promotionType;
+                object.promotionType = options.enums === String ? $root.AICommon.BotPromotionMessageMetadata.BotPromotionType[message.promotionType] : message.promotionType;
                 if (options.oneofs)
                     object._promotionType = "promotionType";
             }
@@ -20497,21 +19197,6 @@ $root.AICommon = (function() {
          */
         BotPromotionMessageMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotPromotionMessageMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotPromotionMessageMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotPromotionMessageMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotPromotionMessageMetadata";
         };
 
         /**
@@ -20689,33 +19374,27 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSignatureVerificationUseCaseProof.decode = function decode(reader, length, error) {
+        BotSignatureVerificationUseCaseProof.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotSignatureVerificationUseCaseProof();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.version = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.useCase = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        message.signature = reader.bytes();
-                        break;
-                    }
-                case 4: {
-                        if (!(message.certificateChain && message.certificateChain.length))
-                            message.certificateChain = [];
-                        message.certificateChain.push(reader.bytes());
-                        break;
-                    }
+                case 1:
+                    message.version = reader.int32();
+                    break;
+                case 2:
+                    message.useCase = reader.int32();
+                    break;
+                case 3:
+                    message.signature = reader.bytes();
+                    break;
+                case 4:
+                    if (!(message.certificateChain && message.certificateChain.length))
+                        message.certificateChain = [];
+                    message.certificateChain.push(reader.bytes());
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -20797,12 +19476,6 @@ $root.AICommon = (function() {
             if (object.version != null)
                 message.version = object.version | 0;
             switch (object.useCase) {
-            default:
-                if (typeof object.useCase === "number") {
-                    message.useCase = object.useCase;
-                    break;
-                }
-                break;
             case "UNSPECIFIED":
             case 0:
                 message.useCase = 0;
@@ -20815,7 +19488,7 @@ $root.AICommon = (function() {
             if (object.signature != null)
                 if (typeof object.signature === "string")
                     $util.base64.decode(object.signature, message.signature = $util.newBuffer($util.base64.length(object.signature)), 0);
-                else if (object.signature.length >= 0)
+                else if (object.signature.length)
                     message.signature = object.signature;
             if (object.certificateChain) {
                 if (!Array.isArray(object.certificateChain))
@@ -20824,7 +19497,7 @@ $root.AICommon = (function() {
                 for (var i = 0; i < object.certificateChain.length; ++i)
                     if (typeof object.certificateChain[i] === "string")
                         $util.base64.decode(object.certificateChain[i], message.certificateChain[i] = $util.newBuffer($util.base64.length(object.certificateChain[i])), 0);
-                    else if (object.certificateChain[i].length >= 0)
+                    else if (object.certificateChain[i].length)
                         message.certificateChain[i] = object.certificateChain[i];
             }
             return message;
@@ -20851,7 +19524,7 @@ $root.AICommon = (function() {
                     object._version = "version";
             }
             if (message.useCase != null && message.hasOwnProperty("useCase")) {
-                object.useCase = options.enums === String ? $root.AICommon.BotSignatureVerificationUseCaseProof.BotSignatureUseCase[message.useCase] === undefined ? message.useCase : $root.AICommon.BotSignatureVerificationUseCaseProof.BotSignatureUseCase[message.useCase] : message.useCase;
+                object.useCase = options.enums === String ? $root.AICommon.BotSignatureVerificationUseCaseProof.BotSignatureUseCase[message.useCase] : message.useCase;
                 if (options.oneofs)
                     object._useCase = "useCase";
             }
@@ -20877,21 +19550,6 @@ $root.AICommon = (function() {
          */
         BotSignatureVerificationUseCaseProof.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotSignatureVerificationUseCaseProof
-         * @function getTypeUrl
-         * @memberof AICommon.BotSignatureVerificationUseCaseProof
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotSignatureVerificationUseCaseProof.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotSignatureVerificationUseCaseProof";
         };
 
         /**
@@ -20998,21 +19656,18 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSignatureVerificationMetadata.decode = function decode(reader, length, error) {
+        BotSignatureVerificationMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotSignatureVerificationMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.proofs && message.proofs.length))
-                            message.proofs = [];
-                        message.proofs.push($root.AICommon.BotSignatureVerificationUseCaseProof.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    if (!(message.proofs && message.proofs.length))
+                        message.proofs = [];
+                    message.proofs.push($root.AICommon.BotSignatureVerificationUseCaseProof.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -21117,21 +19772,6 @@ $root.AICommon = (function() {
          */
         BotSignatureVerificationMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotSignatureVerificationMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotSignatureVerificationMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotSignatureVerificationMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotSignatureVerificationMetadata";
         };
 
         return BotSignatureVerificationMetadata;
@@ -21258,23 +19898,19 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMemoryFact.decode = function decode(reader, length, error) {
+        BotMemoryFact.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotMemoryFact();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.fact = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.factId = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.fact = reader.string();
+                    break;
+                case 2:
+                    message.factId = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -21378,21 +20014,6 @@ $root.AICommon = (function() {
          */
         BotMemoryFact.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotMemoryFact
-         * @function getTypeUrl
-         * @memberof AICommon.BotMemoryFact
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotMemoryFact.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotMemoryFact";
         };
 
         return BotMemoryFact;
@@ -21523,31 +20144,26 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMemoryMetadata.decode = function decode(reader, length, error) {
+        BotMemoryMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotMemoryMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.addedFacts && message.addedFacts.length))
-                            message.addedFacts = [];
-                        message.addedFacts.push($root.AICommon.BotMemoryFact.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 2: {
-                        if (!(message.removedFacts && message.removedFacts.length))
-                            message.removedFacts = [];
-                        message.removedFacts.push($root.AICommon.BotMemoryFact.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 3: {
-                        message.disclaimer = reader.string();
-                        break;
-                    }
+                case 1:
+                    if (!(message.addedFacts && message.addedFacts.length))
+                        message.addedFacts = [];
+                    message.addedFacts.push($root.AICommon.BotMemoryFact.decode(reader, reader.uint32()));
+                    break;
+                case 2:
+                    if (!(message.removedFacts && message.removedFacts.length))
+                        message.removedFacts = [];
+                    message.removedFacts.push($root.AICommon.BotMemoryFact.decode(reader, reader.uint32()));
+                    break;
+                case 3:
+                    message.disclaimer = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -21693,21 +20309,6 @@ $root.AICommon = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        /**
-         * Gets the default type url for BotMemoryMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotMemoryMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotMemoryMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotMemoryMetadata";
-        };
-
         return BotMemoryMetadata;
     })();
 
@@ -21810,19 +20411,16 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotLinkedAccount.decode = function decode(reader, length, error) {
+        BotLinkedAccount.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotLinkedAccount();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.type = reader.int32();
-                        break;
-                    }
+                case 1:
+                    message.type = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -21884,12 +20482,6 @@ $root.AICommon = (function() {
                 return object;
             var message = new $root.AICommon.BotLinkedAccount();
             switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
             case "BOT_LINKED_ACCOUNT_TYPE_1P":
             case 0:
                 message.type = 0;
@@ -21912,7 +20504,7 @@ $root.AICommon = (function() {
                 options = {};
             var object = {};
             if (message.type != null && message.hasOwnProperty("type")) {
-                object.type = options.enums === String ? $root.AICommon.BotLinkedAccount.BotLinkedAccountType[message.type] === undefined ? message.type : $root.AICommon.BotLinkedAccount.BotLinkedAccountType[message.type] : message.type;
+                object.type = options.enums === String ? $root.AICommon.BotLinkedAccount.BotLinkedAccountType[message.type] : message.type;
                 if (options.oneofs)
                     object._type = "type";
             }
@@ -21928,21 +20520,6 @@ $root.AICommon = (function() {
          */
         BotLinkedAccount.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotLinkedAccount
-         * @function getTypeUrl
-         * @memberof AICommon.BotLinkedAccount
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotLinkedAccount.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotLinkedAccount";
         };
 
         /**
@@ -22094,29 +20671,24 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotLinkedAccountsMetadata.decode = function decode(reader, length, error) {
+        BotLinkedAccountsMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotLinkedAccountsMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.accounts && message.accounts.length))
-                            message.accounts = [];
-                        message.accounts.push($root.AICommon.BotLinkedAccount.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 2: {
-                        message.acAuthTokens = reader.bytes();
-                        break;
-                    }
-                case 3: {
-                        message.acErrorCode = reader.int32();
-                        break;
-                    }
+                case 1:
+                    if (!(message.accounts && message.accounts.length))
+                        message.accounts = [];
+                    message.accounts.push($root.AICommon.BotLinkedAccount.decode(reader, reader.uint32()));
+                    break;
+                case 2:
+                    message.acAuthTokens = reader.bytes();
+                    break;
+                case 3:
+                    message.acErrorCode = reader.int32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -22200,7 +20772,7 @@ $root.AICommon = (function() {
             if (object.acAuthTokens != null)
                 if (typeof object.acAuthTokens === "string")
                     $util.base64.decode(object.acAuthTokens, message.acAuthTokens = $util.newBuffer($util.base64.length(object.acAuthTokens)), 0);
-                else if (object.acAuthTokens.length >= 0)
+                else if (object.acAuthTokens.length)
                     message.acAuthTokens = object.acAuthTokens;
             if (object.acErrorCode != null)
                 message.acErrorCode = object.acErrorCode | 0;
@@ -22249,21 +20821,6 @@ $root.AICommon = (function() {
          */
         BotLinkedAccountsMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotLinkedAccountsMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotLinkedAccountsMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotLinkedAccountsMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotLinkedAccountsMetadata";
         };
 
         return BotLinkedAccountsMetadata;
@@ -22390,23 +20947,19 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotPromptSuggestion.decode = function decode(reader, length, error) {
+        BotPromptSuggestion.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotPromptSuggestion();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.prompt = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.promptId = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.prompt = reader.string();
+                    break;
+                case 2:
+                    message.promptId = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -22512,21 +21065,6 @@ $root.AICommon = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        /**
-         * Gets the default type url for BotPromptSuggestion
-         * @function getTypeUrl
-         * @memberof AICommon.BotPromptSuggestion
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotPromptSuggestion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotPromptSuggestion";
-        };
-
         return BotPromptSuggestion;
     })();
 
@@ -22617,21 +21155,18 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotPromptSuggestions.decode = function decode(reader, length, error) {
+        BotPromptSuggestions.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotPromptSuggestions();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.suggestions && message.suggestions.length))
-                            message.suggestions = [];
-                        message.suggestions.push($root.AICommon.BotPromptSuggestion.decode(reader, reader.uint32()));
-                        break;
-                    }
+                case 1:
+                    if (!(message.suggestions && message.suggestions.length))
+                        message.suggestions = [];
+                    message.suggestions.push($root.AICommon.BotPromptSuggestion.decode(reader, reader.uint32()));
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -22736,21 +21271,6 @@ $root.AICommon = (function() {
          */
         BotPromptSuggestions.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotPromptSuggestions
-         * @function getTypeUrl
-         * @memberof AICommon.BotPromptSuggestions
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotPromptSuggestions.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotPromptSuggestions";
         };
 
         return BotPromptSuggestions;
@@ -22912,33 +21432,27 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSuggestedPromptMetadata.decode = function decode(reader, length, error) {
+        BotSuggestedPromptMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotSuggestedPromptMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.suggestedPrompts && message.suggestedPrompts.length))
-                            message.suggestedPrompts = [];
-                        message.suggestedPrompts.push(reader.string());
-                        break;
-                    }
-                case 2: {
-                        message.selectedPromptIndex = reader.uint32();
-                        break;
-                    }
-                case 3: {
-                        message.promptSuggestions = $root.AICommon.BotPromptSuggestions.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 4: {
-                        message.selectedPromptId = reader.string();
-                        break;
-                    }
+                case 1:
+                    if (!(message.suggestedPrompts && message.suggestedPrompts.length))
+                        message.suggestedPrompts = [];
+                    message.suggestedPrompts.push(reader.string());
+                    break;
+                case 2:
+                    message.selectedPromptIndex = reader.uint32();
+                    break;
+                case 3:
+                    message.promptSuggestions = $root.AICommon.BotPromptSuggestions.decode(reader, reader.uint32());
+                    break;
+                case 4:
+                    message.selectedPromptId = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -23081,21 +21595,6 @@ $root.AICommon = (function() {
          */
         BotSuggestedPromptMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotSuggestedPromptMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotSuggestedPromptMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotSuggestedPromptMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotSuggestedPromptMetadata";
         };
 
         return BotSuggestedPromptMetadata;
@@ -23442,63 +21941,49 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotPluginMetadata.decode = function decode(reader, length, error) {
+        BotPluginMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotPluginMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.provider = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.pluginType = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        message.thumbnailCdnUrl = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.profilePhotoCdnUrl = reader.string();
-                        break;
-                    }
-                case 5: {
-                        message.searchProviderUrl = reader.string();
-                        break;
-                    }
-                case 6: {
-                        message.referenceIndex = reader.uint32();
-                        break;
-                    }
-                case 7: {
-                        message.expectedLinksCount = reader.uint32();
-                        break;
-                    }
-                case 9: {
-                        message.searchQuery = reader.string();
-                        break;
-                    }
-                case 10: {
-                        message.parentPluginMessageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 11: {
-                        message.deprecatedField = reader.int32();
-                        break;
-                    }
-                case 12: {
-                        message.parentPluginType = reader.int32();
-                        break;
-                    }
-                case 13: {
-                        message.faviconCdnUrl = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.provider = reader.int32();
+                    break;
+                case 2:
+                    message.pluginType = reader.int32();
+                    break;
+                case 3:
+                    message.thumbnailCdnUrl = reader.string();
+                    break;
+                case 4:
+                    message.profilePhotoCdnUrl = reader.string();
+                    break;
+                case 5:
+                    message.searchProviderUrl = reader.string();
+                    break;
+                case 6:
+                    message.referenceIndex = reader.uint32();
+                    break;
+                case 7:
+                    message.expectedLinksCount = reader.uint32();
+                    break;
+                case 9:
+                    message.searchQuery = reader.string();
+                    break;
+                case 10:
+                    message.parentPluginMessageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
+                    break;
+                case 11:
+                    message.deprecatedField = reader.int32();
+                    break;
+                case 12:
+                    message.parentPluginType = reader.int32();
+                    break;
+                case 13:
+                    message.faviconCdnUrl = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -23639,12 +22124,6 @@ $root.AICommon = (function() {
                 return object;
             var message = new $root.AICommon.BotPluginMetadata();
             switch (object.provider) {
-            default:
-                if (typeof object.provider === "number") {
-                    message.provider = object.provider;
-                    break;
-                }
-                break;
             case "UNKNOWN":
             case 0:
                 message.provider = 0;
@@ -23663,12 +22142,6 @@ $root.AICommon = (function() {
                 break;
             }
             switch (object.pluginType) {
-            default:
-                if (typeof object.pluginType === "number") {
-                    message.pluginType = object.pluginType;
-                    break;
-                }
-                break;
             case "UNKNOWN_PLUGIN":
             case 0:
                 message.pluginType = 0;
@@ -23700,12 +22173,6 @@ $root.AICommon = (function() {
                 message.parentPluginMessageKey = $root.Protocol.MessageKey.fromObject(object.parentPluginMessageKey);
             }
             switch (object.deprecatedField) {
-            default:
-                if (typeof object.deprecatedField === "number") {
-                    message.deprecatedField = object.deprecatedField;
-                    break;
-                }
-                break;
             case "UNKNOWN_PLUGIN":
             case 0:
                 message.deprecatedField = 0;
@@ -23720,12 +22187,6 @@ $root.AICommon = (function() {
                 break;
             }
             switch (object.parentPluginType) {
-            default:
-                if (typeof object.parentPluginType === "number") {
-                    message.parentPluginType = object.parentPluginType;
-                    break;
-                }
-                break;
             case "UNKNOWN_PLUGIN":
             case 0:
                 message.parentPluginType = 0;
@@ -23758,12 +22219,12 @@ $root.AICommon = (function() {
                 options = {};
             var object = {};
             if (message.provider != null && message.hasOwnProperty("provider")) {
-                object.provider = options.enums === String ? $root.AICommon.BotPluginMetadata.SearchProvider[message.provider] === undefined ? message.provider : $root.AICommon.BotPluginMetadata.SearchProvider[message.provider] : message.provider;
+                object.provider = options.enums === String ? $root.AICommon.BotPluginMetadata.SearchProvider[message.provider] : message.provider;
                 if (options.oneofs)
                     object._provider = "provider";
             }
             if (message.pluginType != null && message.hasOwnProperty("pluginType")) {
-                object.pluginType = options.enums === String ? $root.AICommon.BotPluginMetadata.PluginType[message.pluginType] === undefined ? message.pluginType : $root.AICommon.BotPluginMetadata.PluginType[message.pluginType] : message.pluginType;
+                object.pluginType = options.enums === String ? $root.AICommon.BotPluginMetadata.PluginType[message.pluginType] : message.pluginType;
                 if (options.oneofs)
                     object._pluginType = "pluginType";
             }
@@ -23803,12 +22264,12 @@ $root.AICommon = (function() {
                     object._parentPluginMessageKey = "parentPluginMessageKey";
             }
             if (message.deprecatedField != null && message.hasOwnProperty("deprecatedField")) {
-                object.deprecatedField = options.enums === String ? $root.AICommon.BotPluginMetadata.PluginType[message.deprecatedField] === undefined ? message.deprecatedField : $root.AICommon.BotPluginMetadata.PluginType[message.deprecatedField] : message.deprecatedField;
+                object.deprecatedField = options.enums === String ? $root.AICommon.BotPluginMetadata.PluginType[message.deprecatedField] : message.deprecatedField;
                 if (options.oneofs)
                     object._deprecatedField = "deprecatedField";
             }
             if (message.parentPluginType != null && message.hasOwnProperty("parentPluginType")) {
-                object.parentPluginType = options.enums === String ? $root.AICommon.BotPluginMetadata.PluginType[message.parentPluginType] === undefined ? message.parentPluginType : $root.AICommon.BotPluginMetadata.PluginType[message.parentPluginType] : message.parentPluginType;
+                object.parentPluginType = options.enums === String ? $root.AICommon.BotPluginMetadata.PluginType[message.parentPluginType] : message.parentPluginType;
                 if (options.oneofs)
                     object._parentPluginType = "parentPluginType";
             }
@@ -23829,21 +22290,6 @@ $root.AICommon = (function() {
          */
         BotPluginMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotPluginMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotPluginMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotPluginMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotPluginMetadata";
         };
 
         /**
@@ -24070,35 +22516,28 @@ $root.AICommon = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotAvatarMetadata.decode = function decode(reader, length, error) {
+        BotAvatarMetadata.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotAvatarMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.sentiment = reader.uint32();
-                        break;
-                    }
-                case 2: {
-                        message.behaviorGraph = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.action = reader.uint32();
-                        break;
-                    }
-                case 4: {
-                        message.intensity = reader.uint32();
-                        break;
-                    }
-                case 5: {
-                        message.wordCount = reader.uint32();
-                        break;
-                    }
+                case 1:
+                    message.sentiment = reader.uint32();
+                    break;
+                case 2:
+                    message.behaviorGraph = reader.string();
+                    break;
+                case 3:
+                    message.action = reader.uint32();
+                    break;
+                case 4:
+                    message.intensity = reader.uint32();
+                    break;
+                case 5:
+                    message.wordCount = reader.uint32();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -24238,21 +22677,6 @@ $root.AICommon = (function() {
          */
         BotAvatarMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotAvatarMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotAvatarMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotAvatarMetadata";
         };
 
         return BotAvatarMetadata;
@@ -24636,47 +23060,37 @@ $root.StatusAttributions = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        StatusAttribution.decode = function decode(reader, length, error) {
+        StatusAttribution.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.type = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.actionUrl = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.statusReshare = $root.StatusAttributions.StatusAttribution.StatusReshare.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 4: {
-                        message.externalShare = $root.StatusAttributions.StatusAttribution.ExternalShare.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 5: {
-                        message.music = $root.StatusAttributions.StatusAttribution.Music.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 6: {
-                        message.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 7: {
-                        message.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 8: {
-                        message.aiCreatedAttribution = $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.decode(reader, reader.uint32());
-                        break;
-                    }
+                case 1:
+                    message.type = reader.int32();
+                    break;
+                case 2:
+                    message.actionUrl = reader.string();
+                    break;
+                case 3:
+                    message.statusReshare = $root.StatusAttributions.StatusAttribution.StatusReshare.decode(reader, reader.uint32());
+                    break;
+                case 4:
+                    message.externalShare = $root.StatusAttributions.StatusAttribution.ExternalShare.decode(reader, reader.uint32());
+                    break;
+                case 5:
+                    message.music = $root.StatusAttributions.StatusAttribution.Music.decode(reader, reader.uint32());
+                    break;
+                case 6:
+                    message.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.decode(reader, reader.uint32());
+                    break;
+                case 7:
+                    message.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.decode(reader, reader.uint32());
+                    break;
+                case 8:
+                    message.aiCreatedAttribution = $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.decode(reader, reader.uint32());
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -24808,12 +23222,6 @@ $root.StatusAttributions = (function() {
                 return object;
             var message = new $root.StatusAttributions.StatusAttribution();
             switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
             case "UNKNOWN":
             case 0:
                 message.type = 0;
@@ -24896,7 +23304,7 @@ $root.StatusAttributions = (function() {
                 options = {};
             var object = {};
             if (message.type != null && message.hasOwnProperty("type")) {
-                object.type = options.enums === String ? $root.StatusAttributions.StatusAttribution.Type[message.type] === undefined ? message.type : $root.StatusAttributions.StatusAttribution.Type[message.type] : message.type;
+                object.type = options.enums === String ? $root.StatusAttributions.StatusAttribution.Type[message.type] : message.type;
                 if (options.oneofs)
                     object._type = "type";
             }
@@ -24947,21 +23355,6 @@ $root.StatusAttributions = (function() {
          */
         StatusAttribution.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for StatusAttribution
-         * @function getTypeUrl
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        StatusAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/StatusAttributions.StatusAttribution";
         };
 
         StatusAttribution.AiCreatedAttribution = (function() {
@@ -25063,19 +23456,16 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AiCreatedAttribution.decode = function decode(reader, length, error) {
+            AiCreatedAttribution.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.AiCreatedAttribution();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.source = reader.int32();
-                            break;
-                        }
+                    case 1:
+                        message.source = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -25138,12 +23528,6 @@ $root.StatusAttributions = (function() {
                     return object;
                 var message = new $root.StatusAttributions.StatusAttribution.AiCreatedAttribution();
                 switch (object.source) {
-                default:
-                    if (typeof object.source === "number") {
-                        message.source = object.source;
-                        break;
-                    }
-                    break;
                 case "UNKNOWN":
                 case 0:
                     message.source = 0;
@@ -25170,7 +23554,7 @@ $root.StatusAttributions = (function() {
                     options = {};
                 var object = {};
                 if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.Source[message.source] : message.source;
+                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.Source[message.source] : message.source;
                     if (options.oneofs)
                         object._source = "source";
                 }
@@ -25186,21 +23570,6 @@ $root.StatusAttributions = (function() {
              */
             AiCreatedAttribution.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AiCreatedAttribution
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AiCreatedAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.AiCreatedAttribution";
             };
 
             /**
@@ -25385,31 +23754,25 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ExternalShare.decode = function decode(reader, length, error) {
+            ExternalShare.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.ExternalShare();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.actionUrl = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.source = reader.int32();
-                            break;
-                        }
-                    case 3: {
-                            message.duration = reader.int32();
-                            break;
-                        }
-                    case 4: {
-                            message.actionFallbackUrl = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.actionUrl = reader.string();
+                        break;
+                    case 2:
+                        message.source = reader.int32();
+                        break;
+                    case 3:
+                        message.duration = reader.int32();
+                        break;
+                    case 4:
+                        message.actionFallbackUrl = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -25496,12 +23859,6 @@ $root.StatusAttributions = (function() {
                 if (object.actionUrl != null)
                     message.actionUrl = String(object.actionUrl);
                 switch (object.source) {
-                default:
-                    if (typeof object.source === "number") {
-                        message.source = object.source;
-                        break;
-                    }
-                    break;
                 case "UNKNOWN":
                 case 0:
                     message.source = 0;
@@ -25565,7 +23922,7 @@ $root.StatusAttributions = (function() {
                         object._actionUrl = "actionUrl";
                 }
                 if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.ExternalShare.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.ExternalShare.Source[message.source] : message.source;
+                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.ExternalShare.Source[message.source] : message.source;
                     if (options.oneofs)
                         object._source = "source";
                 }
@@ -25591,21 +23948,6 @@ $root.StatusAttributions = (function() {
              */
             ExternalShare.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for ExternalShare
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            ExternalShare.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.ExternalShare";
             };
 
             /**
@@ -25738,19 +24080,16 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            GroupStatus.decode = function decode(reader, length, error) {
+            GroupStatus.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.GroupStatus();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.authorJid = reader.string();
-                            break;
-                        }
+                    case 1:
+                        message.authorJid = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -25842,21 +24181,6 @@ $root.StatusAttributions = (function() {
              */
             GroupStatus.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for GroupStatus
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            GroupStatus.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.GroupStatus";
             };
 
             return GroupStatus;
@@ -26071,39 +24395,31 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Music.decode = function decode(reader, length, error) {
+            Music.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.Music();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.authorName = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.songId = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.title = reader.string();
-                            break;
-                        }
-                    case 4: {
-                            message.author = reader.string();
-                            break;
-                        }
-                    case 5: {
-                            message.artistAttribution = reader.string();
-                            break;
-                        }
-                    case 6: {
-                            message.isExplicit = reader.bool();
-                            break;
-                        }
+                    case 1:
+                        message.authorName = reader.string();
+                        break;
+                    case 2:
+                        message.songId = reader.string();
+                        break;
+                    case 3:
+                        message.title = reader.string();
+                        break;
+                    case 4:
+                        message.author = reader.string();
+                        break;
+                    case 5:
+                        message.artistAttribution = reader.string();
+                        break;
+                    case 6:
+                        message.isExplicit = reader.bool();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -26257,21 +24573,6 @@ $root.StatusAttributions = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
-            /**
-             * Gets the default type url for Music
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            Music.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.Music";
-            };
-
             return Music;
         })();
 
@@ -26374,19 +24675,16 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RLAttribution.decode = function decode(reader, length, error) {
+            RLAttribution.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.RLAttribution();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.source = reader.int32();
-                            break;
-                        }
+                    case 1:
+                        message.source = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -26451,12 +24749,6 @@ $root.StatusAttributions = (function() {
                     return object;
                 var message = new $root.StatusAttributions.StatusAttribution.RLAttribution();
                 switch (object.source) {
-                default:
-                    if (typeof object.source === "number") {
-                        message.source = object.source;
-                        break;
-                    }
-                    break;
                 case "UNKNOWN":
                 case 0:
                     message.source = 0;
@@ -26491,7 +24783,7 @@ $root.StatusAttributions = (function() {
                     options = {};
                 var object = {};
                 if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] : message.source;
+                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] : message.source;
                     if (options.oneofs)
                         object._source = "source";
                 }
@@ -26507,21 +24799,6 @@ $root.StatusAttributions = (function() {
              */
             RLAttribution.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for RLAttribution
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            RLAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.RLAttribution";
             };
 
             /**
@@ -26666,23 +24943,19 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            StatusReshare.decode = function decode(reader, length, error) {
+            StatusReshare.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.StatusReshare();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    if (tag === error)
-                        break;
                     switch (tag >>> 3) {
-                    case 1: {
-                            message.source = reader.int32();
-                            break;
-                        }
-                    case 2: {
-                            message.metadata = $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata.decode(reader, reader.uint32());
-                            break;
-                        }
+                    case 1:
+                        message.source = reader.int32();
+                        break;
+                    case 2:
+                        message.metadata = $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -26756,12 +25029,6 @@ $root.StatusAttributions = (function() {
                     return object;
                 var message = new $root.StatusAttributions.StatusAttribution.StatusReshare();
                 switch (object.source) {
-                default:
-                    if (typeof object.source === "number") {
-                        message.source = object.source;
-                        break;
-                    }
-                    break;
                 case "UNKNOWN":
                 case 0:
                     message.source = 0;
@@ -26805,7 +25072,7 @@ $root.StatusAttributions = (function() {
                     options = {};
                 var object = {};
                 if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.StatusReshare.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.StatusReshare.Source[message.source] : message.source;
+                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.StatusReshare.Source[message.source] : message.source;
                     if (options.oneofs)
                         object._source = "source";
                 }
@@ -26826,21 +25093,6 @@ $root.StatusAttributions = (function() {
              */
             StatusReshare.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for StatusReshare
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            StatusReshare.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.StatusReshare";
             };
 
             StatusReshare.Metadata = (function() {
@@ -27008,31 +25260,25 @@ $root.StatusAttributions = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Metadata.decode = function decode(reader, length, error) {
+                Metadata.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
-                        if (tag === error)
-                            break;
                         switch (tag >>> 3) {
-                        case 1: {
-                                message.duration = reader.int32();
-                                break;
-                            }
-                        case 2: {
-                                message.channelJid = reader.string();
-                                break;
-                            }
-                        case 3: {
-                                message.channelMessageId = reader.int32();
-                                break;
-                            }
-                        case 4: {
-                                message.hasMultipleReshares = reader.bool();
-                                break;
-                            }
+                        case 1:
+                            message.duration = reader.int32();
+                            break;
+                        case 2:
+                            message.channelJid = reader.string();
+                            break;
+                        case 3:
+                            message.channelMessageId = reader.int32();
+                            break;
+                        case 4:
+                            message.hasMultipleReshares = reader.bool();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -27160,21 +25406,6 @@ $root.StatusAttributions = (function() {
                  */
                 Metadata.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                /**
-                 * Gets the default type url for Metadata
-                 * @function getTypeUrl
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
-                 */
-                Metadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/StatusAttributions.StatusAttribution.StatusReshare.Metadata";
                 };
 
                 return Metadata;
@@ -27409,31 +25640,25 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        LimitSharing.decode = function decode(reader, length, error) {
+        LimitSharing.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.LimitSharing();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.sharingLimited = reader.bool();
-                        break;
-                    }
-                case 2: {
-                        message.trigger = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        message.limitSharingSettingTimestamp = reader.int64();
-                        break;
-                    }
-                case 4: {
-                        message.initiatedByMe = reader.bool();
-                        break;
-                    }
+                case 1:
+                    message.sharingLimited = reader.bool();
+                    break;
+                case 2:
+                    message.trigger = reader.int32();
+                    break;
+                case 3:
+                    message.limitSharingSettingTimestamp = reader.int64();
+                    break;
+                case 4:
+                    message.initiatedByMe = reader.bool();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -27515,12 +25740,6 @@ $root.Protocol = (function() {
             if (object.sharingLimited != null)
                 message.sharingLimited = Boolean(object.sharingLimited);
             switch (object.trigger) {
-            default:
-                if (typeof object.trigger === "number") {
-                    message.trigger = object.trigger;
-                    break;
-                }
-                break;
             case "UNKNOWN":
             case 0:
                 message.trigger = 0;
@@ -27571,7 +25790,7 @@ $root.Protocol = (function() {
                     object._sharingLimited = "sharingLimited";
             }
             if (message.trigger != null && message.hasOwnProperty("trigger")) {
-                object.trigger = options.enums === String ? $root.Protocol.LimitSharing.TriggerType[message.trigger] === undefined ? message.trigger : $root.Protocol.LimitSharing.TriggerType[message.trigger] : message.trigger;
+                object.trigger = options.enums === String ? $root.Protocol.LimitSharing.TriggerType[message.trigger] : message.trigger;
                 if (options.oneofs)
                     object._trigger = "trigger";
             }
@@ -27600,21 +25819,6 @@ $root.Protocol = (function() {
          */
         LimitSharing.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for LimitSharing
-         * @function getTypeUrl
-         * @memberof Protocol.LimitSharing
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        LimitSharing.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Protocol.LimitSharing";
         };
 
         /**
@@ -27803,31 +26007,25 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        MessageKey.decode = function decode(reader, length, error) {
+        MessageKey.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.MessageKey();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.remoteJid = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.fromMe = reader.bool();
-                        break;
-                    }
-                case 3: {
-                        message.id = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.participant = reader.string();
-                        break;
-                    }
+                case 1:
+                    message.remoteJid = reader.string();
+                    break;
+                case 2:
+                    message.fromMe = reader.bool();
+                    break;
+                case 3:
+                    message.id = reader.string();
+                    break;
+                case 4:
+                    message.participant = reader.string();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -27955,21 +26153,6 @@ $root.Protocol = (function() {
          */
         MessageKey.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for MessageKey
-         * @function getTypeUrl
-         * @memberof Protocol.MessageKey
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        MessageKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/Protocol.MessageKey";
         };
 
         return MessageKey;

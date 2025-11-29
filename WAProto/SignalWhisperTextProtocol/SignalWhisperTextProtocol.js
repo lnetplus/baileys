@@ -139,23 +139,19 @@ $root.SignalWhisperTextProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        DeviceConsistencyCodeMessage.decode = function decode(reader, length, error) {
+        DeviceConsistencyCodeMessage.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalWhisperTextProtocol.DeviceConsistencyCodeMessage();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.generation = reader.uint32();
-                        break;
-                    }
-                case 2: {
-                        message.signature = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.generation = reader.uint32();
+                    break;
+                case 2:
+                    message.signature = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -222,7 +218,7 @@ $root.SignalWhisperTextProtocol = (function() {
             if (object.signature != null)
                 if (typeof object.signature === "string")
                     $util.base64.decode(object.signature, message.signature = $util.newBuffer($util.base64.length(object.signature)), 0);
-                else if (object.signature.length >= 0)
+                else if (object.signature.length)
                     message.signature = object.signature;
             return message;
         };
@@ -262,21 +258,6 @@ $root.SignalWhisperTextProtocol = (function() {
          */
         DeviceConsistencyCodeMessage.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for DeviceConsistencyCodeMessage
-         * @function getTypeUrl
-         * @memberof SignalWhisperTextProtocol.DeviceConsistencyCodeMessage
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        DeviceConsistencyCodeMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/SignalWhisperTextProtocol.DeviceConsistencyCodeMessage";
         };
 
         return DeviceConsistencyCodeMessage;
@@ -447,31 +428,25 @@ $root.SignalWhisperTextProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SenderKeyDistributionMessage.decode = function decode(reader, length, error) {
+        SenderKeyDistributionMessage.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalWhisperTextProtocol.SenderKeyDistributionMessage();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.id = reader.uint32();
-                        break;
-                    }
-                case 2: {
-                        message.iteration = reader.uint32();
-                        break;
-                    }
-                case 3: {
-                        message.chainKey = reader.bytes();
-                        break;
-                    }
-                case 4: {
-                        message.signingKey = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.id = reader.uint32();
+                    break;
+                case 2:
+                    message.iteration = reader.uint32();
+                    break;
+                case 3:
+                    message.chainKey = reader.bytes();
+                    break;
+                case 4:
+                    message.signingKey = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -550,12 +525,12 @@ $root.SignalWhisperTextProtocol = (function() {
             if (object.chainKey != null)
                 if (typeof object.chainKey === "string")
                     $util.base64.decode(object.chainKey, message.chainKey = $util.newBuffer($util.base64.length(object.chainKey)), 0);
-                else if (object.chainKey.length >= 0)
+                else if (object.chainKey.length)
                     message.chainKey = object.chainKey;
             if (object.signingKey != null)
                 if (typeof object.signingKey === "string")
                     $util.base64.decode(object.signingKey, message.signingKey = $util.newBuffer($util.base64.length(object.signingKey)), 0);
-                else if (object.signingKey.length >= 0)
+                else if (object.signingKey.length)
                     message.signingKey = object.signingKey;
             return message;
         };
@@ -605,21 +580,6 @@ $root.SignalWhisperTextProtocol = (function() {
          */
         SenderKeyDistributionMessage.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for SenderKeyDistributionMessage
-         * @function getTypeUrl
-         * @memberof SignalWhisperTextProtocol.SenderKeyDistributionMessage
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        SenderKeyDistributionMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/SignalWhisperTextProtocol.SenderKeyDistributionMessage";
         };
 
         return SenderKeyDistributionMessage;
@@ -768,27 +728,22 @@ $root.SignalWhisperTextProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SenderKeyMessage.decode = function decode(reader, length, error) {
+        SenderKeyMessage.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalWhisperTextProtocol.SenderKeyMessage();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.id = reader.uint32();
-                        break;
-                    }
-                case 2: {
-                        message.iteration = reader.uint32();
-                        break;
-                    }
-                case 3: {
-                        message.ciphertext = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.id = reader.uint32();
+                    break;
+                case 2:
+                    message.iteration = reader.uint32();
+                    break;
+                case 3:
+                    message.ciphertext = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -862,7 +817,7 @@ $root.SignalWhisperTextProtocol = (function() {
             if (object.ciphertext != null)
                 if (typeof object.ciphertext === "string")
                     $util.base64.decode(object.ciphertext, message.ciphertext = $util.newBuffer($util.base64.length(object.ciphertext)), 0);
-                else if (object.ciphertext.length >= 0)
+                else if (object.ciphertext.length)
                     message.ciphertext = object.ciphertext;
             return message;
         };
@@ -907,21 +862,6 @@ $root.SignalWhisperTextProtocol = (function() {
          */
         SenderKeyMessage.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for SenderKeyMessage
-         * @function getTypeUrl
-         * @memberof SignalWhisperTextProtocol.SenderKeyMessage
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        SenderKeyMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/SignalWhisperTextProtocol.SenderKeyMessage";
         };
 
         return SenderKeyMessage;
@@ -1114,35 +1054,28 @@ $root.SignalWhisperTextProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        KeyExchangeMessage.decode = function decode(reader, length, error) {
+        KeyExchangeMessage.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalWhisperTextProtocol.KeyExchangeMessage();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.id = reader.uint32();
-                        break;
-                    }
-                case 2: {
-                        message.baseKey = reader.bytes();
-                        break;
-                    }
-                case 3: {
-                        message.ratchetKey = reader.bytes();
-                        break;
-                    }
-                case 4: {
-                        message.identityKey = reader.bytes();
-                        break;
-                    }
-                case 5: {
-                        message.baseKeySignature = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.id = reader.uint32();
+                    break;
+                case 2:
+                    message.baseKey = reader.bytes();
+                    break;
+                case 3:
+                    message.ratchetKey = reader.bytes();
+                    break;
+                case 4:
+                    message.identityKey = reader.bytes();
+                    break;
+                case 5:
+                    message.baseKeySignature = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1224,22 +1157,22 @@ $root.SignalWhisperTextProtocol = (function() {
             if (object.baseKey != null)
                 if (typeof object.baseKey === "string")
                     $util.base64.decode(object.baseKey, message.baseKey = $util.newBuffer($util.base64.length(object.baseKey)), 0);
-                else if (object.baseKey.length >= 0)
+                else if (object.baseKey.length)
                     message.baseKey = object.baseKey;
             if (object.ratchetKey != null)
                 if (typeof object.ratchetKey === "string")
                     $util.base64.decode(object.ratchetKey, message.ratchetKey = $util.newBuffer($util.base64.length(object.ratchetKey)), 0);
-                else if (object.ratchetKey.length >= 0)
+                else if (object.ratchetKey.length)
                     message.ratchetKey = object.ratchetKey;
             if (object.identityKey != null)
                 if (typeof object.identityKey === "string")
                     $util.base64.decode(object.identityKey, message.identityKey = $util.newBuffer($util.base64.length(object.identityKey)), 0);
-                else if (object.identityKey.length >= 0)
+                else if (object.identityKey.length)
                     message.identityKey = object.identityKey;
             if (object.baseKeySignature != null)
                 if (typeof object.baseKeySignature === "string")
                     $util.base64.decode(object.baseKeySignature, message.baseKeySignature = $util.newBuffer($util.base64.length(object.baseKeySignature)), 0);
-                else if (object.baseKeySignature.length >= 0)
+                else if (object.baseKeySignature.length)
                     message.baseKeySignature = object.baseKeySignature;
             return message;
         };
@@ -1294,21 +1227,6 @@ $root.SignalWhisperTextProtocol = (function() {
          */
         KeyExchangeMessage.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for KeyExchangeMessage
-         * @function getTypeUrl
-         * @memberof SignalWhisperTextProtocol.KeyExchangeMessage
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        KeyExchangeMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/SignalWhisperTextProtocol.KeyExchangeMessage";
         };
 
         return KeyExchangeMessage;
@@ -1523,39 +1441,31 @@ $root.SignalWhisperTextProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PreKeySignalMessage.decode = function decode(reader, length, error) {
+        PreKeySignalMessage.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalWhisperTextProtocol.PreKeySignalMessage();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 5: {
-                        message.registrationId = reader.uint32();
-                        break;
-                    }
-                case 1: {
-                        message.preKeyId = reader.uint32();
-                        break;
-                    }
-                case 6: {
-                        message.signedPreKeyId = reader.uint32();
-                        break;
-                    }
-                case 2: {
-                        message.baseKey = reader.bytes();
-                        break;
-                    }
-                case 3: {
-                        message.identityKey = reader.bytes();
-                        break;
-                    }
-                case 4: {
-                        message.message = reader.bytes();
-                        break;
-                    }
+                case 5:
+                    message.registrationId = reader.uint32();
+                    break;
+                case 1:
+                    message.preKeyId = reader.uint32();
+                    break;
+                case 6:
+                    message.signedPreKeyId = reader.uint32();
+                    break;
+                case 2:
+                    message.baseKey = reader.bytes();
+                    break;
+                case 3:
+                    message.identityKey = reader.bytes();
+                    break;
+                case 4:
+                    message.message = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1646,17 +1556,17 @@ $root.SignalWhisperTextProtocol = (function() {
             if (object.baseKey != null)
                 if (typeof object.baseKey === "string")
                     $util.base64.decode(object.baseKey, message.baseKey = $util.newBuffer($util.base64.length(object.baseKey)), 0);
-                else if (object.baseKey.length >= 0)
+                else if (object.baseKey.length)
                     message.baseKey = object.baseKey;
             if (object.identityKey != null)
                 if (typeof object.identityKey === "string")
                     $util.base64.decode(object.identityKey, message.identityKey = $util.newBuffer($util.base64.length(object.identityKey)), 0);
-                else if (object.identityKey.length >= 0)
+                else if (object.identityKey.length)
                     message.identityKey = object.identityKey;
             if (object.message != null)
                 if (typeof object.message === "string")
                     $util.base64.decode(object.message, message.message = $util.newBuffer($util.base64.length(object.message)), 0);
-                else if (object.message.length >= 0)
+                else if (object.message.length)
                     message.message = object.message;
             return message;
         };
@@ -1716,21 +1626,6 @@ $root.SignalWhisperTextProtocol = (function() {
          */
         PreKeySignalMessage.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for PreKeySignalMessage
-         * @function getTypeUrl
-         * @memberof SignalWhisperTextProtocol.PreKeySignalMessage
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        PreKeySignalMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/SignalWhisperTextProtocol.PreKeySignalMessage";
         };
 
         return PreKeySignalMessage;
@@ -1901,31 +1796,25 @@ $root.SignalWhisperTextProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SignalMessage.decode = function decode(reader, length, error) {
+        SignalMessage.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalWhisperTextProtocol.SignalMessage();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                if (tag === error)
-                    break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.ratchetKey = reader.bytes();
-                        break;
-                    }
-                case 2: {
-                        message.counter = reader.uint32();
-                        break;
-                    }
-                case 3: {
-                        message.previousCounter = reader.uint32();
-                        break;
-                    }
-                case 4: {
-                        message.ciphertext = reader.bytes();
-                        break;
-                    }
+                case 1:
+                    message.ratchetKey = reader.bytes();
+                    break;
+                case 2:
+                    message.counter = reader.uint32();
+                    break;
+                case 3:
+                    message.previousCounter = reader.uint32();
+                    break;
+                case 4:
+                    message.ciphertext = reader.bytes();
+                    break;
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2000,7 +1889,7 @@ $root.SignalWhisperTextProtocol = (function() {
             if (object.ratchetKey != null)
                 if (typeof object.ratchetKey === "string")
                     $util.base64.decode(object.ratchetKey, message.ratchetKey = $util.newBuffer($util.base64.length(object.ratchetKey)), 0);
-                else if (object.ratchetKey.length >= 0)
+                else if (object.ratchetKey.length)
                     message.ratchetKey = object.ratchetKey;
             if (object.counter != null)
                 message.counter = object.counter >>> 0;
@@ -2009,7 +1898,7 @@ $root.SignalWhisperTextProtocol = (function() {
             if (object.ciphertext != null)
                 if (typeof object.ciphertext === "string")
                     $util.base64.decode(object.ciphertext, message.ciphertext = $util.newBuffer($util.base64.length(object.ciphertext)), 0);
-                else if (object.ciphertext.length >= 0)
+                else if (object.ciphertext.length)
                     message.ciphertext = object.ciphertext;
             return message;
         };
@@ -2059,21 +1948,6 @@ $root.SignalWhisperTextProtocol = (function() {
          */
         SignalMessage.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for SignalMessage
-         * @function getTypeUrl
-         * @memberof SignalWhisperTextProtocol.SignalMessage
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        SignalMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/SignalWhisperTextProtocol.SignalMessage";
         };
 
         return SignalMessage;
