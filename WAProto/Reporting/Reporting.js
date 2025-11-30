@@ -198,47 +198,54 @@ $root.Reporting = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Field.decode = function decode(reader, length) {
+        Field.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Reporting.Field(), key, value;
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.minVersion = reader.uint32();
-                    break;
-                case 2:
-                    message.maxVersion = reader.uint32();
-                    break;
-                case 3:
-                    message.notReportableMinVersion = reader.uint32();
-                    break;
-                case 4:
-                    message.isMessage = reader.bool();
-                    break;
-                case 5:
-                    if (message.subfield === $util.emptyObject)
-                        message.subfield = {};
-                    var end2 = reader.uint32() + reader.pos;
-                    key = 0;
-                    value = null;
-                    while (reader.pos < end2) {
-                        var tag2 = reader.uint32();
-                        switch (tag2 >>> 3) {
-                        case 1:
-                            key = reader.uint32();
-                            break;
-                        case 2:
-                            value = $root.Reporting.Field.decode(reader, reader.uint32());
-                            break;
-                        default:
-                            reader.skipType(tag2 & 7);
-                            break;
-                        }
+                case 1: {
+                        message.minVersion = reader.uint32();
+                        break;
                     }
-                    message.subfield[key] = value;
-                    break;
+                case 2: {
+                        message.maxVersion = reader.uint32();
+                        break;
+                    }
+                case 3: {
+                        message.notReportableMinVersion = reader.uint32();
+                        break;
+                    }
+                case 4: {
+                        message.isMessage = reader.bool();
+                        break;
+                    }
+                case 5: {
+                        if (message.subfield === $util.emptyObject)
+                            message.subfield = {};
+                        var end2 = reader.uint32() + reader.pos;
+                        key = 0;
+                        value = null;
+                        while (reader.pos < end2) {
+                            var tag2 = reader.uint32();
+                            switch (tag2 >>> 3) {
+                            case 1:
+                                key = reader.uint32();
+                                break;
+                            case 2:
+                                value = $root.Reporting.Field.decode(reader, reader.uint32());
+                                break;
+                            default:
+                                reader.skipType(tag2 & 7);
+                                break;
+                            }
+                        }
+                        message.subfield[key] = value;
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -400,6 +407,21 @@ $root.Reporting = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for Field
+         * @function getTypeUrl
+         * @memberof Reporting.Field
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Field.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Reporting.Field";
+        };
+
         return Field;
     })();
 
@@ -517,38 +539,42 @@ $root.Reporting = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Config.decode = function decode(reader, length) {
+        Config.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Reporting.Config(), key, value;
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    if (message.field === $util.emptyObject)
-                        message.field = {};
-                    var end2 = reader.uint32() + reader.pos;
-                    key = 0;
-                    value = null;
-                    while (reader.pos < end2) {
-                        var tag2 = reader.uint32();
-                        switch (tag2 >>> 3) {
-                        case 1:
-                            key = reader.uint32();
-                            break;
-                        case 2:
-                            value = $root.Reporting.Field.decode(reader, reader.uint32());
-                            break;
-                        default:
-                            reader.skipType(tag2 & 7);
-                            break;
+                case 1: {
+                        if (message.field === $util.emptyObject)
+                            message.field = {};
+                        var end2 = reader.uint32() + reader.pos;
+                        key = 0;
+                        value = null;
+                        while (reader.pos < end2) {
+                            var tag2 = reader.uint32();
+                            switch (tag2 >>> 3) {
+                            case 1:
+                                key = reader.uint32();
+                                break;
+                            case 2:
+                                value = $root.Reporting.Field.decode(reader, reader.uint32());
+                                break;
+                            default:
+                                reader.skipType(tag2 & 7);
+                                break;
+                            }
                         }
+                        message.field[key] = value;
+                        break;
                     }
-                    message.field[key] = value;
-                    break;
-                case 2:
-                    message.version = reader.uint32();
-                    break;
+                case 2: {
+                        message.version = reader.uint32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -672,6 +698,21 @@ $root.Reporting = (function() {
          */
         Config.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for Config
+         * @function getTypeUrl
+         * @memberof Reporting.Config
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Config.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Reporting.Config";
         };
 
         return Config;
@@ -842,25 +883,31 @@ $root.Reporting = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Reportable.decode = function decode(reader, length) {
+        Reportable.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Reporting.Reportable();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.minVersion = reader.uint32();
-                    break;
-                case 2:
-                    message.maxVersion = reader.uint32();
-                    break;
-                case 3:
-                    message.notReportableMinVersion = reader.uint32();
-                    break;
-                case 4:
-                    message.never = reader.bool();
-                    break;
+                case 1: {
+                        message.minVersion = reader.uint32();
+                        break;
+                    }
+                case 2: {
+                        message.maxVersion = reader.uint32();
+                        break;
+                    }
+                case 3: {
+                        message.notReportableMinVersion = reader.uint32();
+                        break;
+                    }
+                case 4: {
+                        message.never = reader.bool();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -988,6 +1035,21 @@ $root.Reporting = (function() {
          */
         Reportable.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for Reportable
+         * @function getTypeUrl
+         * @memberof Reporting.Reportable
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Reportable.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Reporting.Reportable";
         };
 
         return Reportable;

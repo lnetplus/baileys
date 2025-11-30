@@ -793,116 +793,150 @@ $root.Wa6 = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ClientPayload.decode = function decode(reader, length) {
+        ClientPayload.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.username = reader.uint64();
-                    break;
-                case 3:
-                    message.passive = reader.bool();
-                    break;
-                case 5:
-                    message.userAgent = $root.Wa6.ClientPayload.UserAgent.decode(reader, reader.uint32());
-                    break;
-                case 6:
-                    message.webInfo = $root.Wa6.ClientPayload.WebInfo.decode(reader, reader.uint32());
-                    break;
-                case 7:
-                    message.pushName = reader.string();
-                    break;
-                case 9:
-                    message.sessionId = reader.sfixed32();
-                    break;
-                case 10:
-                    message.shortConnect = reader.bool();
-                    break;
-                case 12:
-                    message.connectType = reader.int32();
-                    break;
-                case 13:
-                    message.connectReason = reader.int32();
-                    break;
-                case 14:
-                    if (!(message.shards && message.shards.length))
-                        message.shards = [];
-                    if ((tag & 7) === 2) {
-                        var end2 = reader.uint32() + reader.pos;
-                        while (reader.pos < end2)
+                case 1: {
+                        message.username = reader.uint64();
+                        break;
+                    }
+                case 3: {
+                        message.passive = reader.bool();
+                        break;
+                    }
+                case 5: {
+                        message.userAgent = $root.Wa6.ClientPayload.UserAgent.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 6: {
+                        message.webInfo = $root.Wa6.ClientPayload.WebInfo.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 7: {
+                        message.pushName = reader.string();
+                        break;
+                    }
+                case 9: {
+                        message.sessionId = reader.sfixed32();
+                        break;
+                    }
+                case 10: {
+                        message.shortConnect = reader.bool();
+                        break;
+                    }
+                case 12: {
+                        message.connectType = reader.int32();
+                        break;
+                    }
+                case 13: {
+                        message.connectReason = reader.int32();
+                        break;
+                    }
+                case 14: {
+                        if (!(message.shards && message.shards.length))
+                            message.shards = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.shards.push(reader.int32());
+                        } else
                             message.shards.push(reader.int32());
-                    } else
-                        message.shards.push(reader.int32());
-                    break;
-                case 15:
-                    message.dnsSource = $root.Wa6.ClientPayload.DNSSource.decode(reader, reader.uint32());
-                    break;
-                case 16:
-                    message.connectAttemptCount = reader.uint32();
-                    break;
-                case 18:
-                    message.device = reader.uint32();
-                    break;
-                case 19:
-                    message.devicePairingData = $root.Wa6.ClientPayload.DevicePairingRegistrationData.decode(reader, reader.uint32());
-                    break;
-                case 20:
-                    message.product = reader.int32();
-                    break;
-                case 21:
-                    message.fbCat = reader.bytes();
-                    break;
-                case 22:
-                    message.fbUserAgent = reader.bytes();
-                    break;
-                case 23:
-                    message.oc = reader.bool();
-                    break;
-                case 24:
-                    message.lc = reader.int32();
-                    break;
-                case 30:
-                    message.iosAppExtension = reader.int32();
-                    break;
-                case 31:
-                    message.fbAppId = reader.uint64();
-                    break;
-                case 32:
-                    message.fbDeviceId = reader.bytes();
-                    break;
-                case 33:
-                    message.pull = reader.bool();
-                    break;
-                case 34:
-                    message.paddingBytes = reader.bytes();
-                    break;
-                case 36:
-                    message.yearClass = reader.int32();
-                    break;
-                case 37:
-                    message.memClass = reader.int32();
-                    break;
-                case 38:
-                    message.interopData = $root.Wa6.ClientPayload.InteropData.decode(reader, reader.uint32());
-                    break;
-                case 40:
-                    message.trafficAnonymization = reader.int32();
-                    break;
-                case 41:
-                    message.lidDbMigrated = reader.bool();
-                    break;
-                case 42:
-                    message.accountType = reader.int32();
-                    break;
-                case 43:
-                    message.connectionSequenceInfo = reader.sfixed32();
-                    break;
-                case 44:
-                    message.paaLink = reader.bool();
-                    break;
+                        break;
+                    }
+                case 15: {
+                        message.dnsSource = $root.Wa6.ClientPayload.DNSSource.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 16: {
+                        message.connectAttemptCount = reader.uint32();
+                        break;
+                    }
+                case 18: {
+                        message.device = reader.uint32();
+                        break;
+                    }
+                case 19: {
+                        message.devicePairingData = $root.Wa6.ClientPayload.DevicePairingRegistrationData.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 20: {
+                        message.product = reader.int32();
+                        break;
+                    }
+                case 21: {
+                        message.fbCat = reader.bytes();
+                        break;
+                    }
+                case 22: {
+                        message.fbUserAgent = reader.bytes();
+                        break;
+                    }
+                case 23: {
+                        message.oc = reader.bool();
+                        break;
+                    }
+                case 24: {
+                        message.lc = reader.int32();
+                        break;
+                    }
+                case 30: {
+                        message.iosAppExtension = reader.int32();
+                        break;
+                    }
+                case 31: {
+                        message.fbAppId = reader.uint64();
+                        break;
+                    }
+                case 32: {
+                        message.fbDeviceId = reader.bytes();
+                        break;
+                    }
+                case 33: {
+                        message.pull = reader.bool();
+                        break;
+                    }
+                case 34: {
+                        message.paddingBytes = reader.bytes();
+                        break;
+                    }
+                case 36: {
+                        message.yearClass = reader.int32();
+                        break;
+                    }
+                case 37: {
+                        message.memClass = reader.int32();
+                        break;
+                    }
+                case 38: {
+                        message.interopData = $root.Wa6.ClientPayload.InteropData.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 40: {
+                        message.trafficAnonymization = reader.int32();
+                        break;
+                    }
+                case 41: {
+                        message.lidDbMigrated = reader.bool();
+                        break;
+                    }
+                case 42: {
+                        message.accountType = reader.int32();
+                        break;
+                    }
+                case 43: {
+                        message.connectionSequenceInfo = reader.sfixed32();
+                        break;
+                    }
+                case 44: {
+                        message.paaLink = reader.bool();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1211,6 +1245,12 @@ $root.Wa6 = (function() {
             if (object.shortConnect != null)
                 message.shortConnect = Boolean(object.shortConnect);
             switch (object.connectType) {
+            default:
+                if (typeof object.connectType === "number") {
+                    message.connectType = object.connectType;
+                    break;
+                }
+                break;
             case "CELLULAR_UNKNOWN":
             case 0:
                 message.connectType = 0;
@@ -1273,6 +1313,12 @@ $root.Wa6 = (function() {
                 break;
             }
             switch (object.connectReason) {
+            default:
+                if (typeof object.connectReason === "number") {
+                    message.connectReason = object.connectReason;
+                    break;
+                }
+                break;
             case "PUSH":
             case 0:
                 message.connectReason = 0;
@@ -1324,6 +1370,12 @@ $root.Wa6 = (function() {
                 message.devicePairingData = $root.Wa6.ClientPayload.DevicePairingRegistrationData.fromObject(object.devicePairingData);
             }
             switch (object.product) {
+            default:
+                if (typeof object.product === "number") {
+                    message.product = object.product;
+                    break;
+                }
+                break;
             case "WHATSAPP":
             case 0:
                 message.product = 0;
@@ -1348,18 +1400,24 @@ $root.Wa6 = (function() {
             if (object.fbCat != null)
                 if (typeof object.fbCat === "string")
                     $util.base64.decode(object.fbCat, message.fbCat = $util.newBuffer($util.base64.length(object.fbCat)), 0);
-                else if (object.fbCat.length)
+                else if (object.fbCat.length >= 0)
                     message.fbCat = object.fbCat;
             if (object.fbUserAgent != null)
                 if (typeof object.fbUserAgent === "string")
                     $util.base64.decode(object.fbUserAgent, message.fbUserAgent = $util.newBuffer($util.base64.length(object.fbUserAgent)), 0);
-                else if (object.fbUserAgent.length)
+                else if (object.fbUserAgent.length >= 0)
                     message.fbUserAgent = object.fbUserAgent;
             if (object.oc != null)
                 message.oc = Boolean(object.oc);
             if (object.lc != null)
                 message.lc = object.lc | 0;
             switch (object.iosAppExtension) {
+            default:
+                if (typeof object.iosAppExtension === "number") {
+                    message.iosAppExtension = object.iosAppExtension;
+                    break;
+                }
+                break;
             case "SHARE_EXTENSION":
             case 0:
                 message.iosAppExtension = 0;
@@ -1385,14 +1443,14 @@ $root.Wa6 = (function() {
             if (object.fbDeviceId != null)
                 if (typeof object.fbDeviceId === "string")
                     $util.base64.decode(object.fbDeviceId, message.fbDeviceId = $util.newBuffer($util.base64.length(object.fbDeviceId)), 0);
-                else if (object.fbDeviceId.length)
+                else if (object.fbDeviceId.length >= 0)
                     message.fbDeviceId = object.fbDeviceId;
             if (object.pull != null)
                 message.pull = Boolean(object.pull);
             if (object.paddingBytes != null)
                 if (typeof object.paddingBytes === "string")
                     $util.base64.decode(object.paddingBytes, message.paddingBytes = $util.newBuffer($util.base64.length(object.paddingBytes)), 0);
-                else if (object.paddingBytes.length)
+                else if (object.paddingBytes.length >= 0)
                     message.paddingBytes = object.paddingBytes;
             if (object.yearClass != null)
                 message.yearClass = object.yearClass | 0;
@@ -1404,6 +1462,12 @@ $root.Wa6 = (function() {
                 message.interopData = $root.Wa6.ClientPayload.InteropData.fromObject(object.interopData);
             }
             switch (object.trafficAnonymization) {
+            default:
+                if (typeof object.trafficAnonymization === "number") {
+                    message.trafficAnonymization = object.trafficAnonymization;
+                    break;
+                }
+                break;
             case "OFF":
             case 0:
                 message.trafficAnonymization = 0;
@@ -1416,6 +1480,12 @@ $root.Wa6 = (function() {
             if (object.lidDbMigrated != null)
                 message.lidDbMigrated = Boolean(object.lidDbMigrated);
             switch (object.accountType) {
+            default:
+                if (typeof object.accountType === "number") {
+                    message.accountType = object.accountType;
+                    break;
+                }
+                break;
             case "DEFAULT":
             case 0:
                 message.accountType = 0;
@@ -1486,12 +1556,12 @@ $root.Wa6 = (function() {
                     object._shortConnect = "shortConnect";
             }
             if (message.connectType != null && message.hasOwnProperty("connectType")) {
-                object.connectType = options.enums === String ? $root.Wa6.ClientPayload.ConnectType[message.connectType] : message.connectType;
+                object.connectType = options.enums === String ? $root.Wa6.ClientPayload.ConnectType[message.connectType] === undefined ? message.connectType : $root.Wa6.ClientPayload.ConnectType[message.connectType] : message.connectType;
                 if (options.oneofs)
                     object._connectType = "connectType";
             }
             if (message.connectReason != null && message.hasOwnProperty("connectReason")) {
-                object.connectReason = options.enums === String ? $root.Wa6.ClientPayload.ConnectReason[message.connectReason] : message.connectReason;
+                object.connectReason = options.enums === String ? $root.Wa6.ClientPayload.ConnectReason[message.connectReason] === undefined ? message.connectReason : $root.Wa6.ClientPayload.ConnectReason[message.connectReason] : message.connectReason;
                 if (options.oneofs)
                     object._connectReason = "connectReason";
             }
@@ -1521,7 +1591,7 @@ $root.Wa6 = (function() {
                     object._devicePairingData = "devicePairingData";
             }
             if (message.product != null && message.hasOwnProperty("product")) {
-                object.product = options.enums === String ? $root.Wa6.ClientPayload.Product[message.product] : message.product;
+                object.product = options.enums === String ? $root.Wa6.ClientPayload.Product[message.product] === undefined ? message.product : $root.Wa6.ClientPayload.Product[message.product] : message.product;
                 if (options.oneofs)
                     object._product = "product";
             }
@@ -1546,7 +1616,7 @@ $root.Wa6 = (function() {
                     object._lc = "lc";
             }
             if (message.iosAppExtension != null && message.hasOwnProperty("iosAppExtension")) {
-                object.iosAppExtension = options.enums === String ? $root.Wa6.ClientPayload.IOSAppExtension[message.iosAppExtension] : message.iosAppExtension;
+                object.iosAppExtension = options.enums === String ? $root.Wa6.ClientPayload.IOSAppExtension[message.iosAppExtension] === undefined ? message.iosAppExtension : $root.Wa6.ClientPayload.IOSAppExtension[message.iosAppExtension] : message.iosAppExtension;
                 if (options.oneofs)
                     object._iosAppExtension = "iosAppExtension";
             }
@@ -1589,7 +1659,7 @@ $root.Wa6 = (function() {
                     object._interopData = "interopData";
             }
             if (message.trafficAnonymization != null && message.hasOwnProperty("trafficAnonymization")) {
-                object.trafficAnonymization = options.enums === String ? $root.Wa6.ClientPayload.TrafficAnonymization[message.trafficAnonymization] : message.trafficAnonymization;
+                object.trafficAnonymization = options.enums === String ? $root.Wa6.ClientPayload.TrafficAnonymization[message.trafficAnonymization] === undefined ? message.trafficAnonymization : $root.Wa6.ClientPayload.TrafficAnonymization[message.trafficAnonymization] : message.trafficAnonymization;
                 if (options.oneofs)
                     object._trafficAnonymization = "trafficAnonymization";
             }
@@ -1599,7 +1669,7 @@ $root.Wa6 = (function() {
                     object._lidDbMigrated = "lidDbMigrated";
             }
             if (message.accountType != null && message.hasOwnProperty("accountType")) {
-                object.accountType = options.enums === String ? $root.Wa6.ClientPayload.AccountType[message.accountType] : message.accountType;
+                object.accountType = options.enums === String ? $root.Wa6.ClientPayload.AccountType[message.accountType] === undefined ? message.accountType : $root.Wa6.ClientPayload.AccountType[message.accountType] : message.accountType;
                 if (options.oneofs)
                     object._accountType = "accountType";
             }
@@ -1625,6 +1695,21 @@ $root.Wa6 = (function() {
          */
         ClientPayload.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for ClientPayload
+         * @function getTypeUrl
+         * @memberof Wa6.ClientPayload
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        ClientPayload.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Wa6.ClientPayload";
         };
 
         /**
@@ -1826,19 +1911,23 @@ $root.Wa6 = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DNSSource.decode = function decode(reader, length) {
+            DNSSource.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.DNSSource();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 15:
-                        message.dnsMethod = reader.int32();
-                        break;
-                    case 16:
-                        message.appCached = reader.bool();
-                        break;
+                    case 15: {
+                            message.dnsMethod = reader.int32();
+                            break;
+                        }
+                    case 16: {
+                            message.appCached = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1910,6 +1999,12 @@ $root.Wa6 = (function() {
                     return object;
                 var message = new $root.Wa6.ClientPayload.DNSSource();
                 switch (object.dnsMethod) {
+                default:
+                    if (typeof object.dnsMethod === "number") {
+                        message.dnsMethod = object.dnsMethod;
+                        break;
+                    }
+                    break;
                 case "SYSTEM":
                 case 0:
                     message.dnsMethod = 0;
@@ -1954,7 +2049,7 @@ $root.Wa6 = (function() {
                     options = {};
                 var object = {};
                 if (message.dnsMethod != null && message.hasOwnProperty("dnsMethod")) {
-                    object.dnsMethod = options.enums === String ? $root.Wa6.ClientPayload.DNSSource.DNSResolutionMethod[message.dnsMethod] : message.dnsMethod;
+                    object.dnsMethod = options.enums === String ? $root.Wa6.ClientPayload.DNSSource.DNSResolutionMethod[message.dnsMethod] === undefined ? message.dnsMethod : $root.Wa6.ClientPayload.DNSSource.DNSResolutionMethod[message.dnsMethod] : message.dnsMethod;
                     if (options.oneofs)
                         object._dnsMethod = "dnsMethod";
                 }
@@ -1975,6 +2070,21 @@ $root.Wa6 = (function() {
              */
             DNSSource.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for DNSSource
+             * @function getTypeUrl
+             * @memberof Wa6.ClientPayload.DNSSource
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            DNSSource.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/Wa6.ClientPayload.DNSSource";
             };
 
             /**
@@ -2255,37 +2365,47 @@ $root.Wa6 = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DevicePairingRegistrationData.decode = function decode(reader, length) {
+            DevicePairingRegistrationData.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.DevicePairingRegistrationData();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.eRegid = reader.bytes();
-                        break;
-                    case 2:
-                        message.eKeytype = reader.bytes();
-                        break;
-                    case 3:
-                        message.eIdent = reader.bytes();
-                        break;
-                    case 4:
-                        message.eSkeyId = reader.bytes();
-                        break;
-                    case 5:
-                        message.eSkeyVal = reader.bytes();
-                        break;
-                    case 6:
-                        message.eSkeySig = reader.bytes();
-                        break;
-                    case 7:
-                        message.buildHash = reader.bytes();
-                        break;
-                    case 8:
-                        message.deviceProps = reader.bytes();
-                        break;
+                    case 1: {
+                            message.eRegid = reader.bytes();
+                            break;
+                        }
+                    case 2: {
+                            message.eKeytype = reader.bytes();
+                            break;
+                        }
+                    case 3: {
+                            message.eIdent = reader.bytes();
+                            break;
+                        }
+                    case 4: {
+                            message.eSkeyId = reader.bytes();
+                            break;
+                        }
+                    case 5: {
+                            message.eSkeyVal = reader.bytes();
+                            break;
+                        }
+                    case 6: {
+                            message.eSkeySig = reader.bytes();
+                            break;
+                        }
+                    case 7: {
+                            message.buildHash = reader.bytes();
+                            break;
+                        }
+                    case 8: {
+                            message.deviceProps = reader.bytes();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -2380,42 +2500,42 @@ $root.Wa6 = (function() {
                 if (object.eRegid != null)
                     if (typeof object.eRegid === "string")
                         $util.base64.decode(object.eRegid, message.eRegid = $util.newBuffer($util.base64.length(object.eRegid)), 0);
-                    else if (object.eRegid.length)
+                    else if (object.eRegid.length >= 0)
                         message.eRegid = object.eRegid;
                 if (object.eKeytype != null)
                     if (typeof object.eKeytype === "string")
                         $util.base64.decode(object.eKeytype, message.eKeytype = $util.newBuffer($util.base64.length(object.eKeytype)), 0);
-                    else if (object.eKeytype.length)
+                    else if (object.eKeytype.length >= 0)
                         message.eKeytype = object.eKeytype;
                 if (object.eIdent != null)
                     if (typeof object.eIdent === "string")
                         $util.base64.decode(object.eIdent, message.eIdent = $util.newBuffer($util.base64.length(object.eIdent)), 0);
-                    else if (object.eIdent.length)
+                    else if (object.eIdent.length >= 0)
                         message.eIdent = object.eIdent;
                 if (object.eSkeyId != null)
                     if (typeof object.eSkeyId === "string")
                         $util.base64.decode(object.eSkeyId, message.eSkeyId = $util.newBuffer($util.base64.length(object.eSkeyId)), 0);
-                    else if (object.eSkeyId.length)
+                    else if (object.eSkeyId.length >= 0)
                         message.eSkeyId = object.eSkeyId;
                 if (object.eSkeyVal != null)
                     if (typeof object.eSkeyVal === "string")
                         $util.base64.decode(object.eSkeyVal, message.eSkeyVal = $util.newBuffer($util.base64.length(object.eSkeyVal)), 0);
-                    else if (object.eSkeyVal.length)
+                    else if (object.eSkeyVal.length >= 0)
                         message.eSkeyVal = object.eSkeyVal;
                 if (object.eSkeySig != null)
                     if (typeof object.eSkeySig === "string")
                         $util.base64.decode(object.eSkeySig, message.eSkeySig = $util.newBuffer($util.base64.length(object.eSkeySig)), 0);
-                    else if (object.eSkeySig.length)
+                    else if (object.eSkeySig.length >= 0)
                         message.eSkeySig = object.eSkeySig;
                 if (object.buildHash != null)
                     if (typeof object.buildHash === "string")
                         $util.base64.decode(object.buildHash, message.buildHash = $util.newBuffer($util.base64.length(object.buildHash)), 0);
-                    else if (object.buildHash.length)
+                    else if (object.buildHash.length >= 0)
                         message.buildHash = object.buildHash;
                 if (object.deviceProps != null)
                     if (typeof object.deviceProps === "string")
                         $util.base64.decode(object.deviceProps, message.deviceProps = $util.newBuffer($util.base64.length(object.deviceProps)), 0);
-                    else if (object.deviceProps.length)
+                    else if (object.deviceProps.length >= 0)
                         message.deviceProps = object.deviceProps;
                 return message;
             };
@@ -2485,6 +2605,21 @@ $root.Wa6 = (function() {
              */
             DevicePairingRegistrationData.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for DevicePairingRegistrationData
+             * @function getTypeUrl
+             * @memberof Wa6.ClientPayload.DevicePairingRegistrationData
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            DevicePairingRegistrationData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/Wa6.ClientPayload.DevicePairingRegistrationData";
             };
 
             return DevicePairingRegistrationData;
@@ -2649,22 +2784,27 @@ $root.Wa6 = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InteropData.decode = function decode(reader, length) {
+            InteropData.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.InteropData();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.accountId = reader.uint64();
-                        break;
-                    case 2:
-                        message.token = reader.bytes();
-                        break;
-                    case 3:
-                        message.enableReadReceipts = reader.bool();
-                        break;
+                    case 1: {
+                            message.accountId = reader.uint64();
+                            break;
+                        }
+                    case 2: {
+                            message.token = reader.bytes();
+                            break;
+                        }
+                    case 3: {
+                            message.enableReadReceipts = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -2743,7 +2883,7 @@ $root.Wa6 = (function() {
                 if (object.token != null)
                     if (typeof object.token === "string")
                         $util.base64.decode(object.token, message.token = $util.newBuffer($util.base64.length(object.token)), 0);
-                    else if (object.token.length)
+                    else if (object.token.length >= 0)
                         message.token = object.token;
                 if (object.enableReadReceipts != null)
                     message.enableReadReceipts = Boolean(object.enableReadReceipts);
@@ -2793,6 +2933,21 @@ $root.Wa6 = (function() {
              */
             InteropData.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for InteropData
+             * @function getTypeUrl
+             * @memberof Wa6.ClientPayload.InteropData
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            InteropData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/Wa6.ClientPayload.InteropData";
             };
 
             return InteropData;
@@ -3261,61 +3416,79 @@ $root.Wa6 = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            UserAgent.decode = function decode(reader, length) {
+            UserAgent.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.UserAgent();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.platform = reader.int32();
-                        break;
-                    case 2:
-                        message.appVersion = $root.Wa6.ClientPayload.UserAgent.AppVersion.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.mcc = reader.string();
-                        break;
-                    case 4:
-                        message.mnc = reader.string();
-                        break;
-                    case 5:
-                        message.osVersion = reader.string();
-                        break;
-                    case 6:
-                        message.manufacturer = reader.string();
-                        break;
-                    case 7:
-                        message.device = reader.string();
-                        break;
-                    case 8:
-                        message.osBuildNumber = reader.string();
-                        break;
-                    case 9:
-                        message.phoneId = reader.string();
-                        break;
-                    case 10:
-                        message.releaseChannel = reader.int32();
-                        break;
-                    case 11:
-                        message.localeLanguageIso6391 = reader.string();
-                        break;
-                    case 12:
-                        message.localeCountryIso31661Alpha2 = reader.string();
-                        break;
-                    case 13:
-                        message.deviceBoard = reader.string();
-                        break;
-                    case 14:
-                        message.deviceExpId = reader.string();
-                        break;
-                    case 15:
-                        message.deviceType = reader.int32();
-                        break;
-                    case 16:
-                        message.deviceModelType = reader.string();
-                        break;
+                    case 1: {
+                            message.platform = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.appVersion = $root.Wa6.ClientPayload.UserAgent.AppVersion.decode(reader, reader.uint32());
+                            break;
+                        }
+                    case 3: {
+                            message.mcc = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            message.mnc = reader.string();
+                            break;
+                        }
+                    case 5: {
+                            message.osVersion = reader.string();
+                            break;
+                        }
+                    case 6: {
+                            message.manufacturer = reader.string();
+                            break;
+                        }
+                    case 7: {
+                            message.device = reader.string();
+                            break;
+                        }
+                    case 8: {
+                            message.osBuildNumber = reader.string();
+                            break;
+                        }
+                    case 9: {
+                            message.phoneId = reader.string();
+                            break;
+                        }
+                    case 10: {
+                            message.releaseChannel = reader.int32();
+                            break;
+                        }
+                    case 11: {
+                            message.localeLanguageIso6391 = reader.string();
+                            break;
+                        }
+                    case 12: {
+                            message.localeCountryIso31661Alpha2 = reader.string();
+                            break;
+                        }
+                    case 13: {
+                            message.deviceBoard = reader.string();
+                            break;
+                        }
+                    case 14: {
+                            message.deviceExpId = reader.string();
+                            break;
+                        }
+                    case 15: {
+                            message.deviceType = reader.int32();
+                            break;
+                        }
+                    case 16: {
+                            message.deviceModelType = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -3506,6 +3679,12 @@ $root.Wa6 = (function() {
                     return object;
                 var message = new $root.Wa6.ClientPayload.UserAgent();
                 switch (object.platform) {
+                default:
+                    if (typeof object.platform === "number") {
+                        message.platform = object.platform;
+                        break;
+                    }
+                    break;
                 case "ANDROID":
                 case 0:
                     message.platform = 0;
@@ -3675,6 +3854,12 @@ $root.Wa6 = (function() {
                 if (object.phoneId != null)
                     message.phoneId = String(object.phoneId);
                 switch (object.releaseChannel) {
+                default:
+                    if (typeof object.releaseChannel === "number") {
+                        message.releaseChannel = object.releaseChannel;
+                        break;
+                    }
+                    break;
                 case "RELEASE":
                 case 0:
                     message.releaseChannel = 0;
@@ -3701,6 +3886,12 @@ $root.Wa6 = (function() {
                 if (object.deviceExpId != null)
                     message.deviceExpId = String(object.deviceExpId);
                 switch (object.deviceType) {
+                default:
+                    if (typeof object.deviceType === "number") {
+                        message.deviceType = object.deviceType;
+                        break;
+                    }
+                    break;
                 case "PHONE":
                 case 0:
                     message.deviceType = 0;
@@ -3741,7 +3932,7 @@ $root.Wa6 = (function() {
                     options = {};
                 var object = {};
                 if (message.platform != null && message.hasOwnProperty("platform")) {
-                    object.platform = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.Platform[message.platform] : message.platform;
+                    object.platform = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.Platform[message.platform] === undefined ? message.platform : $root.Wa6.ClientPayload.UserAgent.Platform[message.platform] : message.platform;
                     if (options.oneofs)
                         object._platform = "platform";
                 }
@@ -3786,7 +3977,7 @@ $root.Wa6 = (function() {
                         object._phoneId = "phoneId";
                 }
                 if (message.releaseChannel != null && message.hasOwnProperty("releaseChannel")) {
-                    object.releaseChannel = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.ReleaseChannel[message.releaseChannel] : message.releaseChannel;
+                    object.releaseChannel = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.ReleaseChannel[message.releaseChannel] === undefined ? message.releaseChannel : $root.Wa6.ClientPayload.UserAgent.ReleaseChannel[message.releaseChannel] : message.releaseChannel;
                     if (options.oneofs)
                         object._releaseChannel = "releaseChannel";
                 }
@@ -3811,7 +4002,7 @@ $root.Wa6 = (function() {
                         object._deviceExpId = "deviceExpId";
                 }
                 if (message.deviceType != null && message.hasOwnProperty("deviceType")) {
-                    object.deviceType = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.DeviceType[message.deviceType] : message.deviceType;
+                    object.deviceType = options.enums === String ? $root.Wa6.ClientPayload.UserAgent.DeviceType[message.deviceType] === undefined ? message.deviceType : $root.Wa6.ClientPayload.UserAgent.DeviceType[message.deviceType] : message.deviceType;
                     if (options.oneofs)
                         object._deviceType = "deviceType";
                 }
@@ -3832,6 +4023,21 @@ $root.Wa6 = (function() {
              */
             UserAgent.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for UserAgent
+             * @function getTypeUrl
+             * @memberof Wa6.ClientPayload.UserAgent
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            UserAgent.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/Wa6.ClientPayload.UserAgent";
             };
 
             UserAgent.AppVersion = (function() {
@@ -4021,28 +4227,35 @@ $root.Wa6 = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                AppVersion.decode = function decode(reader, length) {
+                AppVersion.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.UserAgent.AppVersion();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.primary = reader.uint32();
-                            break;
-                        case 2:
-                            message.secondary = reader.uint32();
-                            break;
-                        case 3:
-                            message.tertiary = reader.uint32();
-                            break;
-                        case 4:
-                            message.quaternary = reader.uint32();
-                            break;
-                        case 5:
-                            message.quinary = reader.uint32();
-                            break;
+                        case 1: {
+                                message.primary = reader.uint32();
+                                break;
+                            }
+                        case 2: {
+                                message.secondary = reader.uint32();
+                                break;
+                            }
+                        case 3: {
+                                message.tertiary = reader.uint32();
+                                break;
+                            }
+                        case 4: {
+                                message.quaternary = reader.uint32();
+                                break;
+                            }
+                        case 5: {
+                                message.quinary = reader.uint32();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -4182,6 +4395,21 @@ $root.Wa6 = (function() {
                  */
                 AppVersion.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for AppVersion
+                 * @function getTypeUrl
+                 * @memberof Wa6.ClientPayload.UserAgent.AppVersion
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                AppVersion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/Wa6.ClientPayload.UserAgent.AppVersion";
                 };
 
                 return AppVersion;
@@ -4477,25 +4705,31 @@ $root.Wa6 = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            WebInfo.decode = function decode(reader, length) {
+            WebInfo.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.WebInfo();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.refToken = reader.string();
-                        break;
-                    case 2:
-                        message.version = reader.string();
-                        break;
-                    case 3:
-                        message.webdPayload = $root.Wa6.ClientPayload.WebInfo.WebdPayload.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.webSubPlatform = reader.int32();
-                        break;
+                    case 1: {
+                            message.refToken = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.version = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.webdPayload = $root.Wa6.ClientPayload.WebInfo.WebdPayload.decode(reader, reader.uint32());
+                            break;
+                        }
+                    case 4: {
+                            message.webSubPlatform = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4589,6 +4823,12 @@ $root.Wa6 = (function() {
                     message.webdPayload = $root.Wa6.ClientPayload.WebInfo.WebdPayload.fromObject(object.webdPayload);
                 }
                 switch (object.webSubPlatform) {
+                default:
+                    if (typeof object.webSubPlatform === "number") {
+                        message.webSubPlatform = object.webSubPlatform;
+                        break;
+                    }
+                    break;
                 case "WEB_BROWSER":
                 case 0:
                     message.webSubPlatform = 0;
@@ -4646,7 +4886,7 @@ $root.Wa6 = (function() {
                         object._webdPayload = "webdPayload";
                 }
                 if (message.webSubPlatform != null && message.hasOwnProperty("webSubPlatform")) {
-                    object.webSubPlatform = options.enums === String ? $root.Wa6.ClientPayload.WebInfo.WebSubPlatform[message.webSubPlatform] : message.webSubPlatform;
+                    object.webSubPlatform = options.enums === String ? $root.Wa6.ClientPayload.WebInfo.WebSubPlatform[message.webSubPlatform] === undefined ? message.webSubPlatform : $root.Wa6.ClientPayload.WebInfo.WebSubPlatform[message.webSubPlatform] : message.webSubPlatform;
                     if (options.oneofs)
                         object._webSubPlatform = "webSubPlatform";
                 }
@@ -4662,6 +4902,21 @@ $root.Wa6 = (function() {
              */
             WebInfo.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for WebInfo
+             * @function getTypeUrl
+             * @memberof Wa6.ClientPayload.WebInfo
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            WebInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/Wa6.ClientPayload.WebInfo";
             };
 
             /**
@@ -5005,46 +5260,59 @@ $root.Wa6 = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                WebdPayload.decode = function decode(reader, length) {
+                WebdPayload.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.ClientPayload.WebInfo.WebdPayload();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.usesParticipantInKey = reader.bool();
-                            break;
-                        case 2:
-                            message.supportsStarredMessages = reader.bool();
-                            break;
-                        case 3:
-                            message.supportsDocumentMessages = reader.bool();
-                            break;
-                        case 4:
-                            message.supportsUrlMessages = reader.bool();
-                            break;
-                        case 5:
-                            message.supportsMediaRetry = reader.bool();
-                            break;
-                        case 6:
-                            message.supportsE2EImage = reader.bool();
-                            break;
-                        case 7:
-                            message.supportsE2EVideo = reader.bool();
-                            break;
-                        case 8:
-                            message.supportsE2EAudio = reader.bool();
-                            break;
-                        case 9:
-                            message.supportsE2EDocument = reader.bool();
-                            break;
-                        case 10:
-                            message.documentTypes = reader.string();
-                            break;
-                        case 11:
-                            message.features = reader.bytes();
-                            break;
+                        case 1: {
+                                message.usesParticipantInKey = reader.bool();
+                                break;
+                            }
+                        case 2: {
+                                message.supportsStarredMessages = reader.bool();
+                                break;
+                            }
+                        case 3: {
+                                message.supportsDocumentMessages = reader.bool();
+                                break;
+                            }
+                        case 4: {
+                                message.supportsUrlMessages = reader.bool();
+                                break;
+                            }
+                        case 5: {
+                                message.supportsMediaRetry = reader.bool();
+                                break;
+                            }
+                        case 6: {
+                                message.supportsE2EImage = reader.bool();
+                                break;
+                            }
+                        case 7: {
+                                message.supportsE2EVideo = reader.bool();
+                                break;
+                            }
+                        case 8: {
+                                message.supportsE2EAudio = reader.bool();
+                                break;
+                            }
+                        case 9: {
+                                message.supportsE2EDocument = reader.bool();
+                                break;
+                            }
+                        case 10: {
+                                message.documentTypes = reader.string();
+                                break;
+                            }
+                        case 11: {
+                                message.features = reader.bytes();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -5174,7 +5442,7 @@ $root.Wa6 = (function() {
                     if (object.features != null)
                         if (typeof object.features === "string")
                             $util.base64.decode(object.features, message.features = $util.newBuffer($util.base64.length(object.features)), 0);
-                        else if (object.features.length)
+                        else if (object.features.length >= 0)
                             message.features = object.features;
                     return message;
                 };
@@ -5259,6 +5527,21 @@ $root.Wa6 = (function() {
                  */
                 WebdPayload.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for WebdPayload
+                 * @function getTypeUrl
+                 * @memberof Wa6.ClientPayload.WebInfo.WebdPayload
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                WebdPayload.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/Wa6.ClientPayload.WebInfo.WebdPayload";
                 };
 
                 return WebdPayload;
@@ -5413,22 +5696,27 @@ $root.Wa6 = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        HandshakeMessage.decode = function decode(reader, length) {
+        HandshakeMessage.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.HandshakeMessage();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 2:
-                    message.clientHello = $root.Wa6.HandshakeMessage.ClientHello.decode(reader, reader.uint32());
-                    break;
-                case 3:
-                    message.serverHello = $root.Wa6.HandshakeMessage.ServerHello.decode(reader, reader.uint32());
-                    break;
-                case 4:
-                    message.clientFinish = $root.Wa6.HandshakeMessage.ClientFinish.decode(reader, reader.uint32());
-                    break;
+                case 2: {
+                        message.clientHello = $root.Wa6.HandshakeMessage.ClientHello.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 3: {
+                        message.serverHello = $root.Wa6.HandshakeMessage.ServerHello.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 4: {
+                        message.clientFinish = $root.Wa6.HandshakeMessage.ClientFinish.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -5562,6 +5850,21 @@ $root.Wa6 = (function() {
          */
         HandshakeMessage.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for HandshakeMessage
+         * @function getTypeUrl
+         * @memberof Wa6.HandshakeMessage
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        HandshakeMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Wa6.HandshakeMessage";
         };
 
         HandshakeMessage.ClientFinish = (function() {
@@ -5707,22 +6010,27 @@ $root.Wa6 = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ClientFinish.decode = function decode(reader, length) {
+            ClientFinish.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.HandshakeMessage.ClientFinish();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message["static"] = reader.bytes();
-                        break;
-                    case 2:
-                        message.payload = reader.bytes();
-                        break;
-                    case 3:
-                        message.extendedCiphertext = reader.bytes();
-                        break;
+                    case 1: {
+                            message["static"] = reader.bytes();
+                            break;
+                        }
+                    case 2: {
+                            message.payload = reader.bytes();
+                            break;
+                        }
+                    case 3: {
+                            message.extendedCiphertext = reader.bytes();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5792,17 +6100,17 @@ $root.Wa6 = (function() {
                 if (object["static"] != null)
                     if (typeof object["static"] === "string")
                         $util.base64.decode(object["static"], message["static"] = $util.newBuffer($util.base64.length(object["static"])), 0);
-                    else if (object["static"].length)
+                    else if (object["static"].length >= 0)
                         message["static"] = object["static"];
                 if (object.payload != null)
                     if (typeof object.payload === "string")
                         $util.base64.decode(object.payload, message.payload = $util.newBuffer($util.base64.length(object.payload)), 0);
-                    else if (object.payload.length)
+                    else if (object.payload.length >= 0)
                         message.payload = object.payload;
                 if (object.extendedCiphertext != null)
                     if (typeof object.extendedCiphertext === "string")
                         $util.base64.decode(object.extendedCiphertext, message.extendedCiphertext = $util.newBuffer($util.base64.length(object.extendedCiphertext)), 0);
-                    else if (object.extendedCiphertext.length)
+                    else if (object.extendedCiphertext.length >= 0)
                         message.extendedCiphertext = object.extendedCiphertext;
                 return message;
             };
@@ -5847,6 +6155,21 @@ $root.Wa6 = (function() {
              */
             ClientFinish.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ClientFinish
+             * @function getTypeUrl
+             * @memberof Wa6.HandshakeMessage.ClientFinish
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ClientFinish.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/Wa6.HandshakeMessage.ClientFinish";
             };
 
             return ClientFinish;
@@ -6039,28 +6362,35 @@ $root.Wa6 = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ClientHello.decode = function decode(reader, length) {
+            ClientHello.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.HandshakeMessage.ClientHello();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.ephemeral = reader.bytes();
-                        break;
-                    case 2:
-                        message["static"] = reader.bytes();
-                        break;
-                    case 3:
-                        message.payload = reader.bytes();
-                        break;
-                    case 4:
-                        message.useExtended = reader.bool();
-                        break;
-                    case 5:
-                        message.extendedCiphertext = reader.bytes();
-                        break;
+                    case 1: {
+                            message.ephemeral = reader.bytes();
+                            break;
+                        }
+                    case 2: {
+                            message["static"] = reader.bytes();
+                            break;
+                        }
+                    case 3: {
+                            message.payload = reader.bytes();
+                            break;
+                        }
+                    case 4: {
+                            message.useExtended = reader.bool();
+                            break;
+                        }
+                    case 5: {
+                            message.extendedCiphertext = reader.bytes();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -6140,24 +6470,24 @@ $root.Wa6 = (function() {
                 if (object.ephemeral != null)
                     if (typeof object.ephemeral === "string")
                         $util.base64.decode(object.ephemeral, message.ephemeral = $util.newBuffer($util.base64.length(object.ephemeral)), 0);
-                    else if (object.ephemeral.length)
+                    else if (object.ephemeral.length >= 0)
                         message.ephemeral = object.ephemeral;
                 if (object["static"] != null)
                     if (typeof object["static"] === "string")
                         $util.base64.decode(object["static"], message["static"] = $util.newBuffer($util.base64.length(object["static"])), 0);
-                    else if (object["static"].length)
+                    else if (object["static"].length >= 0)
                         message["static"] = object["static"];
                 if (object.payload != null)
                     if (typeof object.payload === "string")
                         $util.base64.decode(object.payload, message.payload = $util.newBuffer($util.base64.length(object.payload)), 0);
-                    else if (object.payload.length)
+                    else if (object.payload.length >= 0)
                         message.payload = object.payload;
                 if (object.useExtended != null)
                     message.useExtended = Boolean(object.useExtended);
                 if (object.extendedCiphertext != null)
                     if (typeof object.extendedCiphertext === "string")
                         $util.base64.decode(object.extendedCiphertext, message.extendedCiphertext = $util.newBuffer($util.base64.length(object.extendedCiphertext)), 0);
-                    else if (object.extendedCiphertext.length)
+                    else if (object.extendedCiphertext.length >= 0)
                         message.extendedCiphertext = object.extendedCiphertext;
                 return message;
             };
@@ -6212,6 +6542,21 @@ $root.Wa6 = (function() {
              */
             ClientHello.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ClientHello
+             * @function getTypeUrl
+             * @memberof Wa6.HandshakeMessage.ClientHello
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ClientHello.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/Wa6.HandshakeMessage.ClientHello";
             };
 
             return ClientHello;
@@ -6382,25 +6727,31 @@ $root.Wa6 = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ServerHello.decode = function decode(reader, length) {
+            ServerHello.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Wa6.HandshakeMessage.ServerHello();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.ephemeral = reader.bytes();
-                        break;
-                    case 2:
-                        message["static"] = reader.bytes();
-                        break;
-                    case 3:
-                        message.payload = reader.bytes();
-                        break;
-                    case 4:
-                        message.extendedStatic = reader.bytes();
-                        break;
+                    case 1: {
+                            message.ephemeral = reader.bytes();
+                            break;
+                        }
+                    case 2: {
+                            message["static"] = reader.bytes();
+                            break;
+                        }
+                    case 3: {
+                            message.payload = reader.bytes();
+                            break;
+                        }
+                    case 4: {
+                            message.extendedStatic = reader.bytes();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -6475,22 +6826,22 @@ $root.Wa6 = (function() {
                 if (object.ephemeral != null)
                     if (typeof object.ephemeral === "string")
                         $util.base64.decode(object.ephemeral, message.ephemeral = $util.newBuffer($util.base64.length(object.ephemeral)), 0);
-                    else if (object.ephemeral.length)
+                    else if (object.ephemeral.length >= 0)
                         message.ephemeral = object.ephemeral;
                 if (object["static"] != null)
                     if (typeof object["static"] === "string")
                         $util.base64.decode(object["static"], message["static"] = $util.newBuffer($util.base64.length(object["static"])), 0);
-                    else if (object["static"].length)
+                    else if (object["static"].length >= 0)
                         message["static"] = object["static"];
                 if (object.payload != null)
                     if (typeof object.payload === "string")
                         $util.base64.decode(object.payload, message.payload = $util.newBuffer($util.base64.length(object.payload)), 0);
-                    else if (object.payload.length)
+                    else if (object.payload.length >= 0)
                         message.payload = object.payload;
                 if (object.extendedStatic != null)
                     if (typeof object.extendedStatic === "string")
                         $util.base64.decode(object.extendedStatic, message.extendedStatic = $util.newBuffer($util.base64.length(object.extendedStatic)), 0);
-                    else if (object.extendedStatic.length)
+                    else if (object.extendedStatic.length >= 0)
                         message.extendedStatic = object.extendedStatic;
                 return message;
             };
@@ -6540,6 +6891,21 @@ $root.Wa6 = (function() {
              */
             ServerHello.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ServerHello
+             * @function getTypeUrl
+             * @memberof Wa6.HandshakeMessage.ServerHello
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ServerHello.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/Wa6.HandshakeMessage.ServerHello";
             };
 
             return ServerHello;

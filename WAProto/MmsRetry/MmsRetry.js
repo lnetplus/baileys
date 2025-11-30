@@ -117,16 +117,19 @@ $root.MmsRetry = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ServerErrorReceipt.decode = function decode(reader, length) {
+        ServerErrorReceipt.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.MmsRetry.ServerErrorReceipt();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.stanzaId = reader.string();
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.stanzaId = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -218,6 +221,21 @@ $root.MmsRetry = (function() {
          */
         ServerErrorReceipt.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for ServerErrorReceipt
+         * @function getTypeUrl
+         * @memberof MmsRetry.ServerErrorReceipt
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        ServerErrorReceipt.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/MmsRetry.ServerErrorReceipt";
         };
 
         return ServerErrorReceipt;
@@ -388,25 +406,31 @@ $root.MmsRetry = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        MediaRetryNotification.decode = function decode(reader, length) {
+        MediaRetryNotification.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.MmsRetry.MediaRetryNotification();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.stanzaId = reader.string();
-                    break;
-                case 2:
-                    message.directPath = reader.string();
-                    break;
-                case 3:
-                    message.result = reader.int32();
-                    break;
-                case 4:
-                    message.messageSecret = reader.bytes();
-                    break;
+                case 1: {
+                        message.stanzaId = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.directPath = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.result = reader.int32();
+                        break;
+                    }
+                case 4: {
+                        message.messageSecret = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -490,6 +514,12 @@ $root.MmsRetry = (function() {
             if (object.directPath != null)
                 message.directPath = String(object.directPath);
             switch (object.result) {
+            default:
+                if (typeof object.result === "number") {
+                    message.result = object.result;
+                    break;
+                }
+                break;
             case "GENERAL_ERROR":
             case 0:
                 message.result = 0;
@@ -510,7 +540,7 @@ $root.MmsRetry = (function() {
             if (object.messageSecret != null)
                 if (typeof object.messageSecret === "string")
                     $util.base64.decode(object.messageSecret, message.messageSecret = $util.newBuffer($util.base64.length(object.messageSecret)), 0);
-                else if (object.messageSecret.length)
+                else if (object.messageSecret.length >= 0)
                     message.messageSecret = object.messageSecret;
             return message;
         };
@@ -539,7 +569,7 @@ $root.MmsRetry = (function() {
                     object._directPath = "directPath";
             }
             if (message.result != null && message.hasOwnProperty("result")) {
-                object.result = options.enums === String ? $root.MmsRetry.MediaRetryNotification.ResultType[message.result] : message.result;
+                object.result = options.enums === String ? $root.MmsRetry.MediaRetryNotification.ResultType[message.result] === undefined ? message.result : $root.MmsRetry.MediaRetryNotification.ResultType[message.result] : message.result;
                 if (options.oneofs)
                     object._result = "result";
             }
@@ -560,6 +590,21 @@ $root.MmsRetry = (function() {
          */
         MediaRetryNotification.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for MediaRetryNotification
+         * @function getTypeUrl
+         * @memberof MmsRetry.MediaRetryNotification
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        MediaRetryNotification.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/MmsRetry.MediaRetryNotification";
         };
 
         /**

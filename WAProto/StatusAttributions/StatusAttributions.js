@@ -216,37 +216,47 @@ $root.StatusAttributions = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        StatusAttribution.decode = function decode(reader, length) {
+        StatusAttribution.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.type = reader.int32();
-                    break;
-                case 2:
-                    message.actionUrl = reader.string();
-                    break;
-                case 3:
-                    message.statusReshare = $root.StatusAttributions.StatusAttribution.StatusReshare.decode(reader, reader.uint32());
-                    break;
-                case 4:
-                    message.externalShare = $root.StatusAttributions.StatusAttribution.ExternalShare.decode(reader, reader.uint32());
-                    break;
-                case 5:
-                    message.music = $root.StatusAttributions.StatusAttribution.Music.decode(reader, reader.uint32());
-                    break;
-                case 6:
-                    message.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.decode(reader, reader.uint32());
-                    break;
-                case 7:
-                    message.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.decode(reader, reader.uint32());
-                    break;
-                case 8:
-                    message.aiCreatedAttribution = $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.type = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.actionUrl = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.statusReshare = $root.StatusAttributions.StatusAttribution.StatusReshare.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 4: {
+                        message.externalShare = $root.StatusAttributions.StatusAttribution.ExternalShare.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 5: {
+                        message.music = $root.StatusAttributions.StatusAttribution.Music.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 6: {
+                        message.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 7: {
+                        message.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 8: {
+                        message.aiCreatedAttribution = $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -378,6 +388,12 @@ $root.StatusAttributions = (function() {
                 return object;
             var message = new $root.StatusAttributions.StatusAttribution();
             switch (object.type) {
+            default:
+                if (typeof object.type === "number") {
+                    message.type = object.type;
+                    break;
+                }
+                break;
             case "UNKNOWN":
             case 0:
                 message.type = 0;
@@ -460,7 +476,7 @@ $root.StatusAttributions = (function() {
                 options = {};
             var object = {};
             if (message.type != null && message.hasOwnProperty("type")) {
-                object.type = options.enums === String ? $root.StatusAttributions.StatusAttribution.Type[message.type] : message.type;
+                object.type = options.enums === String ? $root.StatusAttributions.StatusAttribution.Type[message.type] === undefined ? message.type : $root.StatusAttributions.StatusAttribution.Type[message.type] : message.type;
                 if (options.oneofs)
                     object._type = "type";
             }
@@ -511,6 +527,21 @@ $root.StatusAttributions = (function() {
          */
         StatusAttribution.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for StatusAttribution
+         * @function getTypeUrl
+         * @memberof StatusAttributions.StatusAttribution
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        StatusAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/StatusAttributions.StatusAttribution";
         };
 
         StatusAttribution.AiCreatedAttribution = (function() {
@@ -612,16 +643,19 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AiCreatedAttribution.decode = function decode(reader, length) {
+            AiCreatedAttribution.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.AiCreatedAttribution();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.source = reader.int32();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.source = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -684,6 +718,12 @@ $root.StatusAttributions = (function() {
                     return object;
                 var message = new $root.StatusAttributions.StatusAttribution.AiCreatedAttribution();
                 switch (object.source) {
+                default:
+                    if (typeof object.source === "number") {
+                        message.source = object.source;
+                        break;
+                    }
+                    break;
                 case "UNKNOWN":
                 case 0:
                     message.source = 0;
@@ -710,7 +750,7 @@ $root.StatusAttributions = (function() {
                     options = {};
                 var object = {};
                 if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.Source[message.source] : message.source;
+                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.Source[message.source] : message.source;
                     if (options.oneofs)
                         object._source = "source";
                 }
@@ -726,6 +766,21 @@ $root.StatusAttributions = (function() {
              */
             AiCreatedAttribution.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for AiCreatedAttribution
+             * @function getTypeUrl
+             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            AiCreatedAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.AiCreatedAttribution";
             };
 
             /**
@@ -910,25 +965,31 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ExternalShare.decode = function decode(reader, length) {
+            ExternalShare.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.ExternalShare();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.actionUrl = reader.string();
-                        break;
-                    case 2:
-                        message.source = reader.int32();
-                        break;
-                    case 3:
-                        message.duration = reader.int32();
-                        break;
-                    case 4:
-                        message.actionFallbackUrl = reader.string();
-                        break;
+                    case 1: {
+                            message.actionUrl = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.source = reader.int32();
+                            break;
+                        }
+                    case 3: {
+                            message.duration = reader.int32();
+                            break;
+                        }
+                    case 4: {
+                            message.actionFallbackUrl = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1015,6 +1076,12 @@ $root.StatusAttributions = (function() {
                 if (object.actionUrl != null)
                     message.actionUrl = String(object.actionUrl);
                 switch (object.source) {
+                default:
+                    if (typeof object.source === "number") {
+                        message.source = object.source;
+                        break;
+                    }
+                    break;
                 case "UNKNOWN":
                 case 0:
                     message.source = 0;
@@ -1078,7 +1145,7 @@ $root.StatusAttributions = (function() {
                         object._actionUrl = "actionUrl";
                 }
                 if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.ExternalShare.Source[message.source] : message.source;
+                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.ExternalShare.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.ExternalShare.Source[message.source] : message.source;
                     if (options.oneofs)
                         object._source = "source";
                 }
@@ -1104,6 +1171,21 @@ $root.StatusAttributions = (function() {
              */
             ExternalShare.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ExternalShare
+             * @function getTypeUrl
+             * @memberof StatusAttributions.StatusAttribution.ExternalShare
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ExternalShare.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.ExternalShare";
             };
 
             /**
@@ -1236,16 +1318,19 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            GroupStatus.decode = function decode(reader, length) {
+            GroupStatus.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.GroupStatus();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.authorJid = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.authorJid = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1337,6 +1422,21 @@ $root.StatusAttributions = (function() {
              */
             GroupStatus.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for GroupStatus
+             * @function getTypeUrl
+             * @memberof StatusAttributions.StatusAttribution.GroupStatus
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            GroupStatus.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.GroupStatus";
             };
 
             return GroupStatus;
@@ -1551,31 +1651,39 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Music.decode = function decode(reader, length) {
+            Music.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.Music();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.authorName = reader.string();
-                        break;
-                    case 2:
-                        message.songId = reader.string();
-                        break;
-                    case 3:
-                        message.title = reader.string();
-                        break;
-                    case 4:
-                        message.author = reader.string();
-                        break;
-                    case 5:
-                        message.artistAttribution = reader.string();
-                        break;
-                    case 6:
-                        message.isExplicit = reader.bool();
-                        break;
+                    case 1: {
+                            message.authorName = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.songId = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.title = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            message.author = reader.string();
+                            break;
+                        }
+                    case 5: {
+                            message.artistAttribution = reader.string();
+                            break;
+                        }
+                    case 6: {
+                            message.isExplicit = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1729,6 +1837,21 @@ $root.StatusAttributions = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for Music
+             * @function getTypeUrl
+             * @memberof StatusAttributions.StatusAttribution.Music
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            Music.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.Music";
+            };
+
             return Music;
         })();
 
@@ -1831,16 +1954,19 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RLAttribution.decode = function decode(reader, length) {
+            RLAttribution.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.RLAttribution();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.source = reader.int32();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.source = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1905,6 +2031,12 @@ $root.StatusAttributions = (function() {
                     return object;
                 var message = new $root.StatusAttributions.StatusAttribution.RLAttribution();
                 switch (object.source) {
+                default:
+                    if (typeof object.source === "number") {
+                        message.source = object.source;
+                        break;
+                    }
+                    break;
                 case "UNKNOWN":
                 case 0:
                     message.source = 0;
@@ -1939,7 +2071,7 @@ $root.StatusAttributions = (function() {
                     options = {};
                 var object = {};
                 if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] : message.source;
+                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] : message.source;
                     if (options.oneofs)
                         object._source = "source";
                 }
@@ -1955,6 +2087,21 @@ $root.StatusAttributions = (function() {
              */
             RLAttribution.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for RLAttribution
+             * @function getTypeUrl
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            RLAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.RLAttribution";
             };
 
             /**
@@ -2099,19 +2246,23 @@ $root.StatusAttributions = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            StatusReshare.decode = function decode(reader, length) {
+            StatusReshare.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.StatusReshare();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.source = reader.int32();
-                        break;
-                    case 2:
-                        message.metadata = $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata.decode(reader, reader.uint32());
-                        break;
+                    case 1: {
+                            message.source = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.metadata = $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata.decode(reader, reader.uint32());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -2185,6 +2336,12 @@ $root.StatusAttributions = (function() {
                     return object;
                 var message = new $root.StatusAttributions.StatusAttribution.StatusReshare();
                 switch (object.source) {
+                default:
+                    if (typeof object.source === "number") {
+                        message.source = object.source;
+                        break;
+                    }
+                    break;
                 case "UNKNOWN":
                 case 0:
                     message.source = 0;
@@ -2228,7 +2385,7 @@ $root.StatusAttributions = (function() {
                     options = {};
                 var object = {};
                 if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.StatusReshare.Source[message.source] : message.source;
+                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.StatusReshare.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.StatusReshare.Source[message.source] : message.source;
                     if (options.oneofs)
                         object._source = "source";
                 }
@@ -2249,6 +2406,21 @@ $root.StatusAttributions = (function() {
              */
             StatusReshare.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for StatusReshare
+             * @function getTypeUrl
+             * @memberof StatusAttributions.StatusAttribution.StatusReshare
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            StatusReshare.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.StatusReshare";
             };
 
             StatusReshare.Metadata = (function() {
@@ -2416,25 +2588,31 @@ $root.StatusAttributions = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Metadata.decode = function decode(reader, length) {
+                Metadata.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.duration = reader.int32();
-                            break;
-                        case 2:
-                            message.channelJid = reader.string();
-                            break;
-                        case 3:
-                            message.channelMessageId = reader.int32();
-                            break;
-                        case 4:
-                            message.hasMultipleReshares = reader.bool();
-                            break;
+                        case 1: {
+                                message.duration = reader.int32();
+                                break;
+                            }
+                        case 2: {
+                                message.channelJid = reader.string();
+                                break;
+                            }
+                        case 3: {
+                                message.channelMessageId = reader.int32();
+                                break;
+                            }
+                        case 4: {
+                                message.hasMultipleReshares = reader.bool();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -2562,6 +2740,21 @@ $root.StatusAttributions = (function() {
                  */
                 Metadata.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for Metadata
+                 * @function getTypeUrl
+                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                Metadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/StatusAttributions.StatusAttribution.StatusReshare.Metadata";
                 };
 
                 return Metadata;

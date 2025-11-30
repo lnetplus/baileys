@@ -433,106 +433,139 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMetadata.decode = function decode(reader, length) {
+        BotMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.avatarMetadata = $root.BotMetadata.BotAvatarMetadata.decode(reader, reader.uint32());
-                    break;
-                case 2:
-                    message.personaId = reader.string();
-                    break;
-                case 3:
-                    message.pluginMetadata = $root.BotMetadata.BotPluginMetadata.decode(reader, reader.uint32());
-                    break;
-                case 4:
-                    message.suggestedPromptMetadata = $root.BotMetadata.BotSuggestedPromptMetadata.decode(reader, reader.uint32());
-                    break;
-                case 5:
-                    message.invokerJid = reader.string();
-                    break;
-                case 6:
-                    message.sessionMetadata = $root.BotMetadata.BotSessionMetadata.decode(reader, reader.uint32());
-                    break;
-                case 7:
-                    message.memuMetadata = $root.BotMetadata.BotMemuMetadata.decode(reader, reader.uint32());
-                    break;
-                case 8:
-                    message.timezone = reader.string();
-                    break;
-                case 9:
-                    message.reminderMetadata = $root.BotMetadata.BotReminderMetadata.decode(reader, reader.uint32());
-                    break;
-                case 10:
-                    message.modelMetadata = $root.BotMetadata.BotModelMetadata.decode(reader, reader.uint32());
-                    break;
-                case 11:
-                    message.messageDisclaimerText = reader.string();
-                    break;
-                case 12:
-                    message.progressIndicatorMetadata = $root.BotMetadata.BotProgressIndicatorMetadata.decode(reader, reader.uint32());
-                    break;
-                case 13:
-                    message.capabilityMetadata = $root.BotMetadata.BotCapabilityMetadata.decode(reader, reader.uint32());
-                    break;
-                case 14:
-                    message.imagineMetadata = $root.BotMetadata.BotImagineMetadata.decode(reader, reader.uint32());
-                    break;
-                case 15:
-                    message.memoryMetadata = $root.BotMetadata.BotMemoryMetadata.decode(reader, reader.uint32());
-                    break;
-                case 16:
-                    message.renderingMetadata = $root.BotMetadata.BotRenderingMetadata.decode(reader, reader.uint32());
-                    break;
-                case 17:
-                    message.botMetricsMetadata = $root.BotMetadata.BotMetricsMetadata.decode(reader, reader.uint32());
-                    break;
-                case 18:
-                    message.botLinkedAccountsMetadata = $root.BotMetadata.BotLinkedAccountsMetadata.decode(reader, reader.uint32());
-                    break;
-                case 19:
-                    message.richResponseSourcesMetadata = $root.BotMetadata.BotSourcesMetadata.decode(reader, reader.uint32());
-                    break;
-                case 20:
-                    message.aiConversationContext = reader.bytes();
-                    break;
-                case 21:
-                    message.botPromotionMessageMetadata = $root.BotMetadata.BotPromotionMessageMetadata.decode(reader, reader.uint32());
-                    break;
-                case 22:
-                    message.botModeSelectionMetadata = $root.BotMetadata.BotModeSelectionMetadata.decode(reader, reader.uint32());
-                    break;
-                case 23:
-                    message.botQuotaMetadata = $root.BotMetadata.BotQuotaMetadata.decode(reader, reader.uint32());
-                    break;
-                case 24:
-                    message.botAgeCollectionMetadata = $root.BotMetadata.BotAgeCollectionMetadata.decode(reader, reader.uint32());
-                    break;
-                case 25:
-                    message.conversationStarterPromptId = reader.string();
-                    break;
-                case 26:
-                    message.botResponseId = reader.string();
-                    break;
-                case 27:
-                    message.verificationMetadata = $root.BotMetadata.BotSignatureVerificationMetadata.decode(reader, reader.uint32());
-                    break;
-                case 28:
-                    message.unifiedResponseMutation = $root.BotMetadata.BotUnifiedResponseMutation.decode(reader, reader.uint32());
-                    break;
-                case 29:
-                    message.botMessageOriginMetadata = $root.BotMetadata.BotMessageOriginMetadata.decode(reader, reader.uint32());
-                    break;
-                case 30:
-                    message.inThreadSurveyMetadata = $root.BotMetadata.InThreadSurveyMetadata.decode(reader, reader.uint32());
-                    break;
-                case 31:
-                    message.botThreadInfo = $root.BotMetadata.AIThreadInfo.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.avatarMetadata = $root.BotMetadata.BotAvatarMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 2: {
+                        message.personaId = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.pluginMetadata = $root.BotMetadata.BotPluginMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 4: {
+                        message.suggestedPromptMetadata = $root.BotMetadata.BotSuggestedPromptMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 5: {
+                        message.invokerJid = reader.string();
+                        break;
+                    }
+                case 6: {
+                        message.sessionMetadata = $root.BotMetadata.BotSessionMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 7: {
+                        message.memuMetadata = $root.BotMetadata.BotMemuMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 8: {
+                        message.timezone = reader.string();
+                        break;
+                    }
+                case 9: {
+                        message.reminderMetadata = $root.BotMetadata.BotReminderMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 10: {
+                        message.modelMetadata = $root.BotMetadata.BotModelMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 11: {
+                        message.messageDisclaimerText = reader.string();
+                        break;
+                    }
+                case 12: {
+                        message.progressIndicatorMetadata = $root.BotMetadata.BotProgressIndicatorMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 13: {
+                        message.capabilityMetadata = $root.BotMetadata.BotCapabilityMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 14: {
+                        message.imagineMetadata = $root.BotMetadata.BotImagineMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 15: {
+                        message.memoryMetadata = $root.BotMetadata.BotMemoryMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 16: {
+                        message.renderingMetadata = $root.BotMetadata.BotRenderingMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 17: {
+                        message.botMetricsMetadata = $root.BotMetadata.BotMetricsMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 18: {
+                        message.botLinkedAccountsMetadata = $root.BotMetadata.BotLinkedAccountsMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 19: {
+                        message.richResponseSourcesMetadata = $root.BotMetadata.BotSourcesMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 20: {
+                        message.aiConversationContext = reader.bytes();
+                        break;
+                    }
+                case 21: {
+                        message.botPromotionMessageMetadata = $root.BotMetadata.BotPromotionMessageMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 22: {
+                        message.botModeSelectionMetadata = $root.BotMetadata.BotModeSelectionMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 23: {
+                        message.botQuotaMetadata = $root.BotMetadata.BotQuotaMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 24: {
+                        message.botAgeCollectionMetadata = $root.BotMetadata.BotAgeCollectionMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 25: {
+                        message.conversationStarterPromptId = reader.string();
+                        break;
+                    }
+                case 26: {
+                        message.botResponseId = reader.string();
+                        break;
+                    }
+                case 27: {
+                        message.verificationMetadata = $root.BotMetadata.BotSignatureVerificationMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 28: {
+                        message.unifiedResponseMutation = $root.BotMetadata.BotUnifiedResponseMutation.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 29: {
+                        message.botMessageOriginMetadata = $root.BotMetadata.BotMessageOriginMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 30: {
+                        message.inThreadSurveyMetadata = $root.BotMetadata.InThreadSurveyMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 31: {
+                        message.botThreadInfo = $root.BotMetadata.AIThreadInfo.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -810,7 +843,7 @@ $root.BotMetadata = (function() {
             if (object.aiConversationContext != null)
                 if (typeof object.aiConversationContext === "string")
                     $util.base64.decode(object.aiConversationContext, message.aiConversationContext = $util.newBuffer($util.base64.length(object.aiConversationContext)), 0);
-                else if (object.aiConversationContext.length)
+                else if (object.aiConversationContext.length >= 0)
                     message.aiConversationContext = object.aiConversationContext;
             if (object.botPromotionMessageMetadata != null) {
                 if (typeof object.botPromotionMessageMetadata !== "object")
@@ -992,6 +1025,21 @@ $root.BotMetadata = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for BotMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotMetadata";
+        };
+
         return BotMetadata;
     })();
 
@@ -1091,19 +1139,23 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        AIThreadInfo.decode = function decode(reader, length) {
+        AIThreadInfo.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.AIThreadInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.serverInfo = $root.BotMetadata.AIThreadInfo.AIThreadServerInfo.decode(reader, reader.uint32());
-                    break;
-                case 2:
-                    message.clientInfo = $root.BotMetadata.AIThreadInfo.AIThreadClientInfo.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.serverInfo = $root.BotMetadata.AIThreadInfo.AIThreadServerInfo.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 2: {
+                        message.clientInfo = $root.BotMetadata.AIThreadInfo.AIThreadClientInfo.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1212,6 +1264,21 @@ $root.BotMetadata = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for AIThreadInfo
+         * @function getTypeUrl
+         * @memberof BotMetadata.AIThreadInfo
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        AIThreadInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.AIThreadInfo";
+        };
+
         AIThreadInfo.AIThreadClientInfo = (function() {
 
             /**
@@ -1297,16 +1364,19 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIThreadClientInfo.decode = function decode(reader, length) {
+            AIThreadClientInfo.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.AIThreadInfo.AIThreadClientInfo();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.type = reader.int32();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.type = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1367,6 +1437,12 @@ $root.BotMetadata = (function() {
                     return object;
                 var message = new $root.BotMetadata.AIThreadInfo.AIThreadClientInfo();
                 switch (object.type) {
+                default:
+                    if (typeof object.type === "number") {
+                        message.type = object.type;
+                        break;
+                    }
+                    break;
                 case "UNKNOWN":
                 case 0:
                     message.type = 0;
@@ -1399,7 +1475,7 @@ $root.BotMetadata = (function() {
                 if (options.defaults)
                     object.type = options.enums === String ? "UNKNOWN" : 0;
                 if (message.type != null && message.hasOwnProperty("type"))
-                    object.type = options.enums === String ? $root.BotMetadata.AIThreadInfo.AIThreadClientInfo.AIThreadType[message.type] : message.type;
+                    object.type = options.enums === String ? $root.BotMetadata.AIThreadInfo.AIThreadClientInfo.AIThreadType[message.type] === undefined ? message.type : $root.BotMetadata.AIThreadInfo.AIThreadClientInfo.AIThreadType[message.type] : message.type;
                 return object;
             };
 
@@ -1412,6 +1488,21 @@ $root.BotMetadata = (function() {
              */
             AIThreadClientInfo.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for AIThreadClientInfo
+             * @function getTypeUrl
+             * @memberof BotMetadata.AIThreadInfo.AIThreadClientInfo
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            AIThreadClientInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.AIThreadInfo.AIThreadClientInfo";
             };
 
             /**
@@ -1518,16 +1609,19 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AIThreadServerInfo.decode = function decode(reader, length) {
+            AIThreadServerInfo.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.AIThreadInfo.AIThreadServerInfo();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.title = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.title = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1615,6 +1709,21 @@ $root.BotMetadata = (function() {
              */
             AIThreadServerInfo.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for AIThreadServerInfo
+             * @function getTypeUrl
+             * @memberof BotMetadata.AIThreadInfo.AIThreadServerInfo
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            AIThreadServerInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.AIThreadInfo.AIThreadServerInfo";
             };
 
             return AIThreadServerInfo;
@@ -1708,16 +1817,19 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotUnifiedResponseMutation.decode = function decode(reader, length) {
+        BotUnifiedResponseMutation.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotUnifiedResponseMutation();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.sbsMetadata = $root.BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.decode(reader, reader.uint32());
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.sbsMetadata = $root.BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1812,6 +1924,21 @@ $root.BotMetadata = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for BotUnifiedResponseMutation
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotUnifiedResponseMutation
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotUnifiedResponseMutation.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotUnifiedResponseMutation";
+        };
+
         BotUnifiedResponseMutation.SideBySideMetadata = (function() {
 
             /**
@@ -1897,16 +2024,19 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SideBySideMetadata.decode = function decode(reader, length) {
+            SideBySideMetadata.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.primaryResponseId = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.primaryResponseId = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1994,6 +2124,21 @@ $root.BotMetadata = (function() {
              */
             SideBySideMetadata.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for SideBySideMetadata
+             * @function getTypeUrl
+             * @memberof BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            SideBySideMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata";
             };
 
             return SideBySideMetadata;
@@ -2087,16 +2232,19 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMessageOrigin.decode = function decode(reader, length) {
+        BotMessageOrigin.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotMessageOrigin();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.type = reader.int32();
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.type = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2155,6 +2303,12 @@ $root.BotMetadata = (function() {
                 return object;
             var message = new $root.BotMetadata.BotMessageOrigin();
             switch (object.type) {
+            default:
+                if (typeof object.type === "number") {
+                    message.type = object.type;
+                    break;
+                }
+                break;
             case "BOT_MESSAGE_ORIGIN_TYPE_AI_INITIATED":
             case 0:
                 message.type = 0;
@@ -2179,7 +2333,7 @@ $root.BotMetadata = (function() {
             if (options.defaults)
                 object.type = options.enums === String ? "BOT_MESSAGE_ORIGIN_TYPE_AI_INITIATED" : 0;
             if (message.type != null && message.hasOwnProperty("type"))
-                object.type = options.enums === String ? $root.BotMetadata.BotMessageOrigin.BotMessageOriginType[message.type] : message.type;
+                object.type = options.enums === String ? $root.BotMetadata.BotMessageOrigin.BotMessageOriginType[message.type] === undefined ? message.type : $root.BotMetadata.BotMessageOrigin.BotMessageOriginType[message.type] : message.type;
             return object;
         };
 
@@ -2192,6 +2346,21 @@ $root.BotMetadata = (function() {
          */
         BotMessageOrigin.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotMessageOrigin
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotMessageOrigin
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotMessageOrigin.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotMessageOrigin";
         };
 
         /**
@@ -2296,18 +2465,21 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMessageOriginMetadata.decode = function decode(reader, length) {
+        BotMessageOriginMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotMessageOriginMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.origins && message.origins.length))
-                        message.origins = [];
-                    message.origins.push($root.BotMetadata.BotMessageOrigin.decode(reader, reader.uint32()));
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.origins && message.origins.length))
+                            message.origins = [];
+                        message.origins.push($root.BotMetadata.BotMessageOrigin.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2412,6 +2584,21 @@ $root.BotMetadata = (function() {
          */
         BotMessageOriginMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotMessageOriginMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotMessageOriginMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotMessageOriginMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotMessageOriginMetadata";
         };
 
         return BotMessageOriginMetadata;
@@ -2682,68 +2869,87 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        InThreadSurveyMetadata.decode = function decode(reader, length) {
+        InThreadSurveyMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.InThreadSurveyMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.tessaSessionId = reader.string();
-                    break;
-                case 2:
-                    message.simonSessionId = reader.string();
-                    break;
-                case 3:
-                    message.simonSurveyId = reader.string();
-                    break;
-                case 4:
-                    message.tessaRootId = reader.string();
-                    break;
-                case 5:
-                    message.requestId = reader.string();
-                    break;
-                case 6:
-                    message.tessaEvent = reader.string();
-                    break;
-                case 7:
-                    message.invitationHeaderText = reader.string();
-                    break;
-                case 8:
-                    message.invitationBodyText = reader.string();
-                    break;
-                case 9:
-                    message.invitationCtaText = reader.string();
-                    break;
-                case 10:
-                    message.invitationCtaUrl = reader.string();
-                    break;
-                case 11:
-                    message.surveyTitle = reader.string();
-                    break;
-                case 12:
-                    if (!(message.questions && message.questions.length))
-                        message.questions = [];
-                    message.questions.push($root.BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.decode(reader, reader.uint32()));
-                    break;
-                case 13:
-                    message.surveyContinueButtonText = reader.string();
-                    break;
-                case 14:
-                    message.surveySubmitButtonText = reader.string();
-                    break;
-                case 15:
-                    message.privacyStatementFull = reader.string();
-                    break;
-                case 16:
-                    if (!(message.privacyStatementParts && message.privacyStatementParts.length))
-                        message.privacyStatementParts = [];
-                    message.privacyStatementParts.push($root.BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.decode(reader, reader.uint32()));
-                    break;
-                case 17:
-                    message.feedbackToastText = reader.string();
-                    break;
+                case 1: {
+                        message.tessaSessionId = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.simonSessionId = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.simonSurveyId = reader.string();
+                        break;
+                    }
+                case 4: {
+                        message.tessaRootId = reader.string();
+                        break;
+                    }
+                case 5: {
+                        message.requestId = reader.string();
+                        break;
+                    }
+                case 6: {
+                        message.tessaEvent = reader.string();
+                        break;
+                    }
+                case 7: {
+                        message.invitationHeaderText = reader.string();
+                        break;
+                    }
+                case 8: {
+                        message.invitationBodyText = reader.string();
+                        break;
+                    }
+                case 9: {
+                        message.invitationCtaText = reader.string();
+                        break;
+                    }
+                case 10: {
+                        message.invitationCtaUrl = reader.string();
+                        break;
+                    }
+                case 11: {
+                        message.surveyTitle = reader.string();
+                        break;
+                    }
+                case 12: {
+                        if (!(message.questions && message.questions.length))
+                            message.questions = [];
+                        message.questions.push($root.BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 13: {
+                        message.surveyContinueButtonText = reader.string();
+                        break;
+                    }
+                case 14: {
+                        message.surveySubmitButtonText = reader.string();
+                        break;
+                    }
+                case 15: {
+                        message.privacyStatementFull = reader.string();
+                        break;
+                    }
+                case 16: {
+                        if (!(message.privacyStatementParts && message.privacyStatementParts.length))
+                            message.privacyStatementParts = [];
+                        message.privacyStatementParts.push($root.BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 17: {
+                        message.feedbackToastText = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2998,6 +3204,21 @@ $root.BotMetadata = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for InThreadSurveyMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.InThreadSurveyMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        InThreadSurveyMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.InThreadSurveyMetadata";
+        };
+
         InThreadSurveyMetadata.InThreadSurveyOption = (function() {
 
             /**
@@ -3105,22 +3326,27 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InThreadSurveyOption.decode = function decode(reader, length) {
+            InThreadSurveyOption.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.stringValue = reader.string();
-                        break;
-                    case 2:
-                        message.numericValue = reader.uint32();
-                        break;
-                    case 3:
-                        message.textTranslated = reader.string();
-                        break;
+                    case 1: {
+                            message.stringValue = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.numericValue = reader.uint32();
+                            break;
+                        }
+                    case 3: {
+                            message.textTranslated = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -3227,6 +3453,21 @@ $root.BotMetadata = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for InThreadSurveyOption
+             * @function getTypeUrl
+             * @memberof BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            InThreadSurveyOption.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption";
+            };
+
             return InThreadSurveyOption;
         })();
 
@@ -3326,19 +3567,23 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InThreadSurveyPrivacyStatementPart.decode = function decode(reader, length) {
+            InThreadSurveyPrivacyStatementPart.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.text = reader.string();
-                        break;
-                    case 2:
-                        message.url = reader.string();
-                        break;
+                    case 1: {
+                            message.text = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.url = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -3435,6 +3680,21 @@ $root.BotMetadata = (function() {
              */
             InThreadSurveyPrivacyStatementPart.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for InThreadSurveyPrivacyStatementPart
+             * @function getTypeUrl
+             * @memberof BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            InThreadSurveyPrivacyStatementPart.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart";
             };
 
             return InThreadSurveyPrivacyStatementPart;
@@ -3549,24 +3809,29 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InThreadSurveyQuestion.decode = function decode(reader, length) {
+            InThreadSurveyQuestion.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.questionText = reader.string();
-                        break;
-                    case 2:
-                        message.questionId = reader.string();
-                        break;
-                    case 3:
-                        if (!(message.questionOptions && message.questionOptions.length))
-                            message.questionOptions = [];
-                        message.questionOptions.push($root.BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.decode(reader, reader.uint32()));
-                        break;
+                    case 1: {
+                            message.questionText = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.questionId = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            if (!(message.questionOptions && message.questionOptions.length))
+                                message.questionOptions = [];
+                            message.questionOptions.push($root.BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.decode(reader, reader.uint32()));
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -3691,6 +3956,21 @@ $root.BotMetadata = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for InThreadSurveyQuestion
+             * @function getTypeUrl
+             * @memberof BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            InThreadSurveyQuestion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion";
+            };
+
             return InThreadSurveyQuestion;
         })();
 
@@ -3784,18 +4064,21 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSourcesMetadata.decode = function decode(reader, length) {
+        BotSourcesMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotSourcesMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.sources && message.sources.length))
-                        message.sources = [];
-                    message.sources.push($root.BotMetadata.BotSourcesMetadata.BotSourceItem.decode(reader, reader.uint32()));
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.sources && message.sources.length))
+                            message.sources = [];
+                        message.sources.push($root.BotMetadata.BotSourcesMetadata.BotSourceItem.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -3900,6 +4183,21 @@ $root.BotMetadata = (function() {
          */
         BotSourcesMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotSourcesMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotSourcesMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotSourcesMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotSourcesMetadata";
         };
 
         BotSourcesMetadata.BotSourceItem = (function() {
@@ -4053,34 +4351,43 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BotSourceItem.decode = function decode(reader, length) {
+            BotSourceItem.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotSourcesMetadata.BotSourceItem();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.provider = reader.int32();
-                        break;
-                    case 2:
-                        message.thumbnailCdnUrl = reader.string();
-                        break;
-                    case 3:
-                        message.sourceProviderUrl = reader.string();
-                        break;
-                    case 4:
-                        message.sourceQuery = reader.string();
-                        break;
-                    case 5:
-                        message.faviconCdnUrl = reader.string();
-                        break;
-                    case 6:
-                        message.citationNumber = reader.uint32();
-                        break;
-                    case 7:
-                        message.sourceTitle = reader.string();
-                        break;
+                    case 1: {
+                            message.provider = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.thumbnailCdnUrl = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.sourceProviderUrl = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            message.sourceQuery = reader.string();
+                            break;
+                        }
+                    case 5: {
+                            message.faviconCdnUrl = reader.string();
+                            break;
+                        }
+                    case 6: {
+                            message.citationNumber = reader.uint32();
+                            break;
+                        }
+                    case 7: {
+                            message.sourceTitle = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4161,6 +4468,12 @@ $root.BotMetadata = (function() {
                     return object;
                 var message = new $root.BotMetadata.BotSourcesMetadata.BotSourceItem();
                 switch (object.provider) {
+                default:
+                    if (typeof object.provider === "number") {
+                        message.provider = object.provider;
+                        break;
+                    }
+                    break;
                 case "UNKNOWN":
                 case 0:
                     message.provider = 0;
@@ -4220,7 +4533,7 @@ $root.BotMetadata = (function() {
                     object.sourceTitle = "";
                 }
                 if (message.provider != null && message.hasOwnProperty("provider"))
-                    object.provider = options.enums === String ? $root.BotMetadata.BotSourcesMetadata.BotSourceItem.SourceProvider[message.provider] : message.provider;
+                    object.provider = options.enums === String ? $root.BotMetadata.BotSourcesMetadata.BotSourceItem.SourceProvider[message.provider] === undefined ? message.provider : $root.BotMetadata.BotSourcesMetadata.BotSourceItem.SourceProvider[message.provider] : message.provider;
                 if (message.thumbnailCdnUrl != null && message.hasOwnProperty("thumbnailCdnUrl"))
                     object.thumbnailCdnUrl = message.thumbnailCdnUrl;
                 if (message.sourceProviderUrl != null && message.hasOwnProperty("sourceProviderUrl"))
@@ -4245,6 +4558,21 @@ $root.BotMetadata = (function() {
              */
             BotSourceItem.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BotSourceItem
+             * @function getTypeUrl
+             * @memberof BotMetadata.BotSourcesMetadata.BotSourceItem
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BotSourceItem.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.BotSourcesMetadata.BotSourceItem";
             };
 
             /**
@@ -4369,19 +4697,23 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotAgeCollectionMetadata.decode = function decode(reader, length) {
+        BotAgeCollectionMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotAgeCollectionMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.ageCollectionEligible = reader.bool();
-                    break;
-                case 2:
-                    message.shouldTriggerAgeCollectionOnClient = reader.bool();
-                    break;
+                case 1: {
+                        message.ageCollectionEligible = reader.bool();
+                        break;
+                    }
+                case 2: {
+                        message.shouldTriggerAgeCollectionOnClient = reader.bool();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -4480,6 +4812,21 @@ $root.BotMetadata = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for BotAgeCollectionMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotAgeCollectionMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotAgeCollectionMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotAgeCollectionMetadata";
+        };
+
         return BotAgeCollectionMetadata;
     })();
 
@@ -4568,16 +4915,19 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotImagineMetadata.decode = function decode(reader, length) {
+        BotImagineMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotImagineMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.imagineType = reader.int32();
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.imagineType = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -4640,6 +4990,12 @@ $root.BotMetadata = (function() {
                 return object;
             var message = new $root.BotMetadata.BotImagineMetadata();
             switch (object.imagineType) {
+            default:
+                if (typeof object.imagineType === "number") {
+                    message.imagineType = object.imagineType;
+                    break;
+                }
+                break;
             case "UNKNOWN":
             case 0:
                 message.imagineType = 0;
@@ -4680,7 +5036,7 @@ $root.BotMetadata = (function() {
             if (options.defaults)
                 object.imagineType = options.enums === String ? "UNKNOWN" : 0;
             if (message.imagineType != null && message.hasOwnProperty("imagineType"))
-                object.imagineType = options.enums === String ? $root.BotMetadata.BotImagineMetadata.ImagineType[message.imagineType] : message.imagineType;
+                object.imagineType = options.enums === String ? $root.BotMetadata.BotImagineMetadata.ImagineType[message.imagineType] === undefined ? message.imagineType : $root.BotMetadata.BotImagineMetadata.ImagineType[message.imagineType] : message.imagineType;
             return object;
         };
 
@@ -4693,6 +5049,21 @@ $root.BotMetadata = (function() {
          */
         BotImagineMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotImagineMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotImagineMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotImagineMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotImagineMetadata";
         };
 
         /**
@@ -4805,18 +5176,21 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotQuotaMetadata.decode = function decode(reader, length) {
+        BotQuotaMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotQuotaMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.botFeatureQuotaMetadata && message.botFeatureQuotaMetadata.length))
-                        message.botFeatureQuotaMetadata = [];
-                    message.botFeatureQuotaMetadata.push($root.BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.decode(reader, reader.uint32()));
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.botFeatureQuotaMetadata && message.botFeatureQuotaMetadata.length))
+                            message.botFeatureQuotaMetadata = [];
+                        message.botFeatureQuotaMetadata.push($root.BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -4921,6 +5295,21 @@ $root.BotMetadata = (function() {
          */
         BotQuotaMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotQuotaMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotQuotaMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotQuotaMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotQuotaMetadata";
         };
 
         BotQuotaMetadata.BotFeatureQuotaMetadata = (function() {
@@ -5030,22 +5419,27 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BotFeatureQuotaMetadata.decode = function decode(reader, length) {
+            BotFeatureQuotaMetadata.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.featureType = reader.int32();
-                        break;
-                    case 2:
-                        message.remainingQuota = reader.uint32();
-                        break;
-                    case 3:
-                        message.expirationTimestamp = reader.uint64();
-                        break;
+                    case 1: {
+                            message.featureType = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.remainingQuota = reader.uint32();
+                            break;
+                        }
+                    case 3: {
+                            message.expirationTimestamp = reader.uint64();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5111,6 +5505,12 @@ $root.BotMetadata = (function() {
                     return object;
                 var message = new $root.BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata();
                 switch (object.featureType) {
+                default:
+                    if (typeof object.featureType === "number") {
+                        message.featureType = object.featureType;
+                        break;
+                    }
+                    break;
                 case "UNKNOWN_FEATURE":
                 case 0:
                     message.featureType = 0;
@@ -5157,7 +5557,7 @@ $root.BotMetadata = (function() {
                         object.expirationTimestamp = options.longs === String ? "0" : 0;
                 }
                 if (message.featureType != null && message.hasOwnProperty("featureType"))
-                    object.featureType = options.enums === String ? $root.BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType[message.featureType] : message.featureType;
+                    object.featureType = options.enums === String ? $root.BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType[message.featureType] === undefined ? message.featureType : $root.BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType[message.featureType] : message.featureType;
                 if (message.remainingQuota != null && message.hasOwnProperty("remainingQuota"))
                     object.remainingQuota = message.remainingQuota;
                 if (message.expirationTimestamp != null && message.hasOwnProperty("expirationTimestamp"))
@@ -5177,6 +5577,21 @@ $root.BotMetadata = (function() {
              */
             BotFeatureQuotaMetadata.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BotFeatureQuotaMetadata
+             * @function getTypeUrl
+             * @memberof BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BotFeatureQuotaMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata";
             };
 
             /**
@@ -5286,23 +5701,26 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotModeSelectionMetadata.decode = function decode(reader, length) {
+        BotModeSelectionMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotModeSelectionMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.mode && message.mode.length))
-                        message.mode = [];
-                    if ((tag & 7) === 2) {
-                        var end2 = reader.uint32() + reader.pos;
-                        while (reader.pos < end2)
-                            message.mode.push(reader.int32());
-                    } else
-                        message.mode.push(reader.int32());
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.mode && message.mode.length))
+                            message.mode = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.mode.push(reader.int32());
+                        } else
+                            message.mode.push(reader.int32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -5372,6 +5790,10 @@ $root.BotMetadata = (function() {
                 for (var i = 0; i < object.mode.length; ++i)
                     switch (object.mode[i]) {
                     default:
+                        if (typeof object.mode[i] === "number") {
+                            message.mode[i] = object.mode[i];
+                            break;
+                        }
                     case "UNKNOWN_MODE":
                     case 0:
                         message.mode[i] = 0;
@@ -5403,7 +5825,7 @@ $root.BotMetadata = (function() {
             if (message.mode && message.mode.length) {
                 object.mode = [];
                 for (var j = 0; j < message.mode.length; ++j)
-                    object.mode[j] = options.enums === String ? $root.BotMetadata.BotModeSelectionMetadata.BotUserSelectionMode[message.mode[j]] : message.mode[j];
+                    object.mode[j] = options.enums === String ? $root.BotMetadata.BotModeSelectionMetadata.BotUserSelectionMode[message.mode[j]] === undefined ? message.mode[j] : $root.BotMetadata.BotModeSelectionMetadata.BotUserSelectionMode[message.mode[j]] : message.mode[j];
             }
             return object;
         };
@@ -5417,6 +5839,21 @@ $root.BotMetadata = (function() {
          */
         BotModeSelectionMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotModeSelectionMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotModeSelectionMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotModeSelectionMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotModeSelectionMetadata";
         };
 
         /**
@@ -5523,23 +5960,26 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotCapabilityMetadata.decode = function decode(reader, length) {
+        BotCapabilityMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotCapabilityMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.capabilities && message.capabilities.length))
-                        message.capabilities = [];
-                    if ((tag & 7) === 2) {
-                        var end2 = reader.uint32() + reader.pos;
-                        while (reader.pos < end2)
-                            message.capabilities.push(reader.int32());
-                    } else
-                        message.capabilities.push(reader.int32());
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.capabilities && message.capabilities.length))
+                            message.capabilities = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.capabilities.push(reader.int32());
+                        } else
+                            message.capabilities.push(reader.int32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -5650,6 +6090,10 @@ $root.BotMetadata = (function() {
                 for (var i = 0; i < object.capabilities.length; ++i)
                     switch (object.capabilities[i]) {
                     default:
+                        if (typeof object.capabilities[i] === "number") {
+                            message.capabilities[i] = object.capabilities[i];
+                            break;
+                        }
                     case "UNKNOWN":
                     case 0:
                         message.capabilities[i] = 0;
@@ -5845,7 +6289,7 @@ $root.BotMetadata = (function() {
             if (message.capabilities && message.capabilities.length) {
                 object.capabilities = [];
                 for (var j = 0; j < message.capabilities.length; ++j)
-                    object.capabilities[j] = options.enums === String ? $root.BotMetadata.BotCapabilityMetadata.BotCapabilityType[message.capabilities[j]] : message.capabilities[j];
+                    object.capabilities[j] = options.enums === String ? $root.BotMetadata.BotCapabilityMetadata.BotCapabilityType[message.capabilities[j]] === undefined ? message.capabilities[j] : $root.BotMetadata.BotCapabilityMetadata.BotCapabilityType[message.capabilities[j]] : message.capabilities[j];
             }
             return object;
         };
@@ -5859,6 +6303,21 @@ $root.BotMetadata = (function() {
          */
         BotCapabilityMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotCapabilityMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotCapabilityMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotCapabilityMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotCapabilityMetadata";
         };
 
         /**
@@ -6058,21 +6517,25 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotProgressIndicatorMetadata.decode = function decode(reader, length) {
+        BotProgressIndicatorMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotProgressIndicatorMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.progressDescription = reader.string();
-                    break;
-                case 2:
-                    if (!(message.stepsMetadata && message.stepsMetadata.length))
-                        message.stepsMetadata = [];
-                    message.stepsMetadata.push($root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.decode(reader, reader.uint32()));
-                    break;
+                case 1: {
+                        message.progressDescription = reader.string();
+                        break;
+                    }
+                case 2: {
+                        if (!(message.stepsMetadata && message.stepsMetadata.length))
+                            message.stepsMetadata = [];
+                        message.stepsMetadata.push($root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -6186,6 +6649,21 @@ $root.BotMetadata = (function() {
          */
         BotProgressIndicatorMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotProgressIndicatorMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotProgressIndicatorMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotProgressIndicatorMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotProgressIndicatorMetadata";
         };
 
         BotProgressIndicatorMetadata.BotPlanningStepMetadata = (function() {
@@ -6343,38 +6821,47 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BotPlanningStepMetadata.decode = function decode(reader, length) {
+            BotPlanningStepMetadata.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.statusTitle = reader.string();
-                        break;
-                    case 2:
-                        message.statusBody = reader.string();
-                        break;
-                    case 3:
-                        if (!(message.sourcesMetadata && message.sourcesMetadata.length))
-                            message.sourcesMetadata = [];
-                        message.sourcesMetadata.push($root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.decode(reader, reader.uint32()));
-                        break;
-                    case 4:
-                        message.status = reader.int32();
-                        break;
-                    case 5:
-                        message.isReasoning = reader.bool();
-                        break;
-                    case 6:
-                        message.isEnhancedSearch = reader.bool();
-                        break;
-                    case 7:
-                        if (!(message.sections && message.sections.length))
-                            message.sections = [];
-                        message.sections.push($root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.decode(reader, reader.uint32()));
-                        break;
+                    case 1: {
+                            message.statusTitle = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.statusBody = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            if (!(message.sourcesMetadata && message.sourcesMetadata.length))
+                                message.sourcesMetadata = [];
+                            message.sourcesMetadata.push($root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.decode(reader, reader.uint32()));
+                            break;
+                        }
+                    case 4: {
+                            message.status = reader.int32();
+                            break;
+                        }
+                    case 5: {
+                            message.isReasoning = reader.bool();
+                            break;
+                        }
+                    case 6: {
+                            message.isEnhancedSearch = reader.bool();
+                            break;
+                        }
+                    case 7: {
+                            if (!(message.sections && message.sections.length))
+                                message.sections = [];
+                            message.sections.push($root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.decode(reader, reader.uint32()));
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -6480,6 +6967,12 @@ $root.BotMetadata = (function() {
                     }
                 }
                 switch (object.status) {
+                default:
+                    if (typeof object.status === "number") {
+                        message.status = object.status;
+                        break;
+                    }
+                    break;
                 case "UNKNOWN":
                 case 0:
                     message.status = 0;
@@ -6548,7 +7041,7 @@ $root.BotMetadata = (function() {
                         object.sourcesMetadata[j] = $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.toObject(message.sourcesMetadata[j], options);
                 }
                 if (message.status != null && message.hasOwnProperty("status"))
-                    object.status = options.enums === String ? $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus[message.status] : message.status;
+                    object.status = options.enums === String ? $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus[message.status] === undefined ? message.status : $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus[message.status] : message.status;
                 if (message.isReasoning != null && message.hasOwnProperty("isReasoning"))
                     object.isReasoning = message.isReasoning;
                 if (message.isEnhancedSearch != null && message.hasOwnProperty("isEnhancedSearch"))
@@ -6570,6 +7063,21 @@ $root.BotMetadata = (function() {
              */
             BotPlanningStepMetadata.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BotPlanningStepMetadata
+             * @function getTypeUrl
+             * @memberof BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BotPlanningStepMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata";
             };
 
             BotPlanningStepMetadata.BotPlanningSearchSourceMetadata = (function() {
@@ -6690,25 +7198,31 @@ $root.BotMetadata = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                BotPlanningSearchSourceMetadata.decode = function decode(reader, length) {
+                BotPlanningSearchSourceMetadata.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.title = reader.string();
-                            break;
-                        case 2:
-                            message.provider = reader.int32();
-                            break;
-                        case 3:
-                            message.sourceUrl = reader.string();
-                            break;
-                        case 4:
-                            message.favIconUrl = reader.string();
-                            break;
+                        case 1: {
+                                message.title = reader.string();
+                                break;
+                            }
+                        case 2: {
+                                message.provider = reader.int32();
+                                break;
+                            }
+                        case 3: {
+                                message.sourceUrl = reader.string();
+                                break;
+                            }
+                        case 4: {
+                                message.favIconUrl = reader.string();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -6781,6 +7295,12 @@ $root.BotMetadata = (function() {
                     if (object.title != null)
                         message.title = String(object.title);
                     switch (object.provider) {
+                    default:
+                        if (typeof object.provider === "number") {
+                            message.provider = object.provider;
+                            break;
+                        }
+                        break;
                     case "UNKNOWN_PROVIDER":
                     case 0:
                         message.provider = 0;
@@ -6827,7 +7347,7 @@ $root.BotMetadata = (function() {
                     if (message.title != null && message.hasOwnProperty("title"))
                         object.title = message.title;
                     if (message.provider != null && message.hasOwnProperty("provider"))
-                        object.provider = options.enums === String ? $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider[message.provider] : message.provider;
+                        object.provider = options.enums === String ? $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider[message.provider] === undefined ? message.provider : $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider[message.provider] : message.provider;
                     if (message.sourceUrl != null && message.hasOwnProperty("sourceUrl"))
                         object.sourceUrl = message.sourceUrl;
                     if (message.favIconUrl != null && message.hasOwnProperty("favIconUrl"))
@@ -6844,6 +7364,21 @@ $root.BotMetadata = (function() {
                  */
                 BotPlanningSearchSourceMetadata.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for BotPlanningSearchSourceMetadata
+                 * @function getTypeUrl
+                 * @memberof BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                BotPlanningSearchSourceMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata";
                 };
 
                 return BotPlanningSearchSourceMetadata;
@@ -6956,22 +7491,27 @@ $root.BotMetadata = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                BotPlanningSearchSourcesMetadata.decode = function decode(reader, length) {
+                BotPlanningSearchSourcesMetadata.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.sourceTitle = reader.string();
-                            break;
-                        case 2:
-                            message.provider = reader.int32();
-                            break;
-                        case 3:
-                            message.sourceUrl = reader.string();
-                            break;
+                        case 1: {
+                                message.sourceTitle = reader.string();
+                                break;
+                            }
+                        case 2: {
+                                message.provider = reader.int32();
+                                break;
+                            }
+                        case 3: {
+                                message.sourceUrl = reader.string();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -7041,6 +7581,12 @@ $root.BotMetadata = (function() {
                     if (object.sourceTitle != null)
                         message.sourceTitle = String(object.sourceTitle);
                     switch (object.provider) {
+                    default:
+                        if (typeof object.provider === "number") {
+                            message.provider = object.provider;
+                            break;
+                        }
+                        break;
                     case "UNKNOWN":
                     case 0:
                         message.provider = 0;
@@ -7084,7 +7630,7 @@ $root.BotMetadata = (function() {
                     if (message.sourceTitle != null && message.hasOwnProperty("sourceTitle"))
                         object.sourceTitle = message.sourceTitle;
                     if (message.provider != null && message.hasOwnProperty("provider"))
-                        object.provider = options.enums === String ? $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider[message.provider] : message.provider;
+                        object.provider = options.enums === String ? $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider[message.provider] === undefined ? message.provider : $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider[message.provider] : message.provider;
                     if (message.sourceUrl != null && message.hasOwnProperty("sourceUrl"))
                         object.sourceUrl = message.sourceUrl;
                     return object;
@@ -7099,6 +7645,21 @@ $root.BotMetadata = (function() {
                  */
                 BotPlanningSearchSourcesMetadata.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for BotPlanningSearchSourcesMetadata
+                 * @function getTypeUrl
+                 * @memberof BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                BotPlanningSearchSourcesMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata";
                 };
 
                 /**
@@ -7231,24 +7792,29 @@ $root.BotMetadata = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                BotPlanningStepSectionMetadata.decode = function decode(reader, length) {
+                BotPlanningStepSectionMetadata.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.sectionTitle = reader.string();
-                            break;
-                        case 2:
-                            message.sectionBody = reader.string();
-                            break;
-                        case 3:
-                            if (!(message.sourcesMetadata && message.sourcesMetadata.length))
-                                message.sourcesMetadata = [];
-                            message.sourcesMetadata.push($root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.decode(reader, reader.uint32()));
-                            break;
+                        case 1: {
+                                message.sectionTitle = reader.string();
+                                break;
+                            }
+                        case 2: {
+                                message.sectionBody = reader.string();
+                                break;
+                            }
+                        case 3: {
+                                if (!(message.sourcesMetadata && message.sourcesMetadata.length))
+                                    message.sourcesMetadata = [];
+                                message.sourcesMetadata.push($root.BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.decode(reader, reader.uint32()));
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -7371,6 +7937,21 @@ $root.BotMetadata = (function() {
                  */
                 BotPlanningStepSectionMetadata.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for BotPlanningStepSectionMetadata
+                 * @function getTypeUrl
+                 * @memberof BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                BotPlanningStepSectionMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata";
                 };
 
                 return BotPlanningStepSectionMetadata;
@@ -7514,19 +8095,23 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotModelMetadata.decode = function decode(reader, length) {
+        BotModelMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotModelMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.modelType = reader.int32();
-                    break;
-                case 2:
-                    message.premiumModelStatus = reader.int32();
-                    break;
+                case 1: {
+                        message.modelType = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.premiumModelStatus = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -7596,6 +8181,12 @@ $root.BotMetadata = (function() {
                 return object;
             var message = new $root.BotMetadata.BotModelMetadata();
             switch (object.modelType) {
+            default:
+                if (typeof object.modelType === "number") {
+                    message.modelType = object.modelType;
+                    break;
+                }
+                break;
             case "UNKNOWN_TYPE":
             case 0:
                 message.modelType = 0;
@@ -7610,6 +8201,12 @@ $root.BotMetadata = (function() {
                 break;
             }
             switch (object.premiumModelStatus) {
+            default:
+                if (typeof object.premiumModelStatus === "number") {
+                    message.premiumModelStatus = object.premiumModelStatus;
+                    break;
+                }
+                break;
             case "UNKNOWN_STATUS":
             case 0:
                 message.premiumModelStatus = 0;
@@ -7644,9 +8241,9 @@ $root.BotMetadata = (function() {
                 object.premiumModelStatus = options.enums === String ? "UNKNOWN_STATUS" : 0;
             }
             if (message.modelType != null && message.hasOwnProperty("modelType"))
-                object.modelType = options.enums === String ? $root.BotMetadata.BotModelMetadata.ModelType[message.modelType] : message.modelType;
+                object.modelType = options.enums === String ? $root.BotMetadata.BotModelMetadata.ModelType[message.modelType] === undefined ? message.modelType : $root.BotMetadata.BotModelMetadata.ModelType[message.modelType] : message.modelType;
             if (message.premiumModelStatus != null && message.hasOwnProperty("premiumModelStatus"))
-                object.premiumModelStatus = options.enums === String ? $root.BotMetadata.BotModelMetadata.PremiumModelStatus[message.premiumModelStatus] : message.premiumModelStatus;
+                object.premiumModelStatus = options.enums === String ? $root.BotMetadata.BotModelMetadata.PremiumModelStatus[message.premiumModelStatus] === undefined ? message.premiumModelStatus : $root.BotMetadata.BotModelMetadata.PremiumModelStatus[message.premiumModelStatus] : message.premiumModelStatus;
             return object;
         };
 
@@ -7659,6 +8256,21 @@ $root.BotMetadata = (function() {
          */
         BotModelMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotModelMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotModelMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotModelMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotModelMetadata";
         };
 
         /**
@@ -7825,28 +8437,35 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotReminderMetadata.decode = function decode(reader, length) {
+        BotReminderMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotReminderMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.requestMessageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
-                    break;
-                case 2:
-                    message.action = reader.int32();
-                    break;
-                case 3:
-                    message.name = reader.string();
-                    break;
-                case 4:
-                    message.nextTriggerTimestamp = reader.uint64();
-                    break;
-                case 5:
-                    message.frequency = reader.int32();
-                    break;
+                case 1: {
+                        message.requestMessageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 2: {
+                        message.action = reader.int32();
+                        break;
+                    }
+                case 3: {
+                        message.name = reader.string();
+                        break;
+                    }
+                case 4: {
+                        message.nextTriggerTimestamp = reader.uint64();
+                        break;
+                    }
+                case 5: {
+                        message.frequency = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -7935,6 +8554,12 @@ $root.BotMetadata = (function() {
                 message.requestMessageKey = $root.Protocol.MessageKey.fromObject(object.requestMessageKey);
             }
             switch (object.action) {
+            default:
+                if (typeof object.action === "number") {
+                    message.action = object.action;
+                    break;
+                }
+                break;
             case "NOTIFY":
             case 1:
                 message.action = 1;
@@ -7964,6 +8589,12 @@ $root.BotMetadata = (function() {
                 else if (typeof object.nextTriggerTimestamp === "object")
                     message.nextTriggerTimestamp = new $util.LongBits(object.nextTriggerTimestamp.low >>> 0, object.nextTriggerTimestamp.high >>> 0).toNumber(true);
             switch (object.frequency) {
+            default:
+                if (typeof object.frequency === "number") {
+                    message.frequency = object.frequency;
+                    break;
+                }
+                break;
             case "ONCE":
             case 1:
                 message.frequency = 1;
@@ -8015,7 +8646,7 @@ $root.BotMetadata = (function() {
             if (message.requestMessageKey != null && message.hasOwnProperty("requestMessageKey"))
                 object.requestMessageKey = $root.Protocol.MessageKey.toObject(message.requestMessageKey, options);
             if (message.action != null && message.hasOwnProperty("action"))
-                object.action = options.enums === String ? $root.BotMetadata.BotReminderMetadata.ReminderAction[message.action] : message.action;
+                object.action = options.enums === String ? $root.BotMetadata.BotReminderMetadata.ReminderAction[message.action] === undefined ? message.action : $root.BotMetadata.BotReminderMetadata.ReminderAction[message.action] : message.action;
             if (message.name != null && message.hasOwnProperty("name"))
                 object.name = message.name;
             if (message.nextTriggerTimestamp != null && message.hasOwnProperty("nextTriggerTimestamp"))
@@ -8024,7 +8655,7 @@ $root.BotMetadata = (function() {
                 else
                     object.nextTriggerTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.nextTriggerTimestamp) : options.longs === Number ? new $util.LongBits(message.nextTriggerTimestamp.low >>> 0, message.nextTriggerTimestamp.high >>> 0).toNumber(true) : message.nextTriggerTimestamp;
             if (message.frequency != null && message.hasOwnProperty("frequency"))
-                object.frequency = options.enums === String ? $root.BotMetadata.BotReminderMetadata.ReminderFrequency[message.frequency] : message.frequency;
+                object.frequency = options.enums === String ? $root.BotMetadata.BotReminderMetadata.ReminderFrequency[message.frequency] === undefined ? message.frequency : $root.BotMetadata.BotReminderMetadata.ReminderFrequency[message.frequency] : message.frequency;
             return object;
         };
 
@@ -8037,6 +8668,21 @@ $root.BotMetadata = (function() {
          */
         BotReminderMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotReminderMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotReminderMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotReminderMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotReminderMetadata";
         };
 
         /**
@@ -8167,18 +8813,21 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMemuMetadata.decode = function decode(reader, length) {
+        BotMemuMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotMemuMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.faceImages && message.faceImages.length))
-                        message.faceImages = [];
-                    message.faceImages.push($root.BotMetadata.BotMediaMetadata.decode(reader, reader.uint32()));
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.faceImages && message.faceImages.length))
+                            message.faceImages = [];
+                        message.faceImages.push($root.BotMetadata.BotMediaMetadata.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -8283,6 +8932,21 @@ $root.BotMetadata = (function() {
          */
         BotMemuMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotMemuMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotMemuMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotMemuMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotMemuMetadata";
         };
 
         return BotMemuMetadata;
@@ -8439,34 +9103,43 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMediaMetadata.decode = function decode(reader, length) {
+        BotMediaMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotMediaMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.fileSha256 = reader.string();
-                    break;
-                case 2:
-                    message.mediaKey = reader.string();
-                    break;
-                case 3:
-                    message.fileEncSha256 = reader.string();
-                    break;
-                case 4:
-                    message.directPath = reader.string();
-                    break;
-                case 5:
-                    message.mediaKeyTimestamp = reader.int64();
-                    break;
-                case 6:
-                    message.mimetype = reader.string();
-                    break;
-                case 7:
-                    message.orientationType = reader.int32();
-                    break;
+                case 1: {
+                        message.fileSha256 = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.mediaKey = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.fileEncSha256 = reader.string();
+                        break;
+                    }
+                case 4: {
+                        message.directPath = reader.string();
+                        break;
+                    }
+                case 5: {
+                        message.mediaKeyTimestamp = reader.int64();
+                        break;
+                    }
+                case 6: {
+                        message.mimetype = reader.string();
+                        break;
+                    }
+                case 7: {
+                        message.orientationType = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -8564,6 +9237,12 @@ $root.BotMetadata = (function() {
             if (object.mimetype != null)
                 message.mimetype = String(object.mimetype);
             switch (object.orientationType) {
+            default:
+                if (typeof object.orientationType === "number") {
+                    message.orientationType = object.orientationType;
+                    break;
+                }
+                break;
             case "CENTER":
             case 1:
                 message.orientationType = 1;
@@ -8622,7 +9301,7 @@ $root.BotMetadata = (function() {
             if (message.mimetype != null && message.hasOwnProperty("mimetype"))
                 object.mimetype = message.mimetype;
             if (message.orientationType != null && message.hasOwnProperty("orientationType"))
-                object.orientationType = options.enums === String ? $root.BotMetadata.BotMediaMetadata.OrientationType[message.orientationType] : message.orientationType;
+                object.orientationType = options.enums === String ? $root.BotMetadata.BotMediaMetadata.OrientationType[message.orientationType] === undefined ? message.orientationType : $root.BotMetadata.BotMediaMetadata.OrientationType[message.orientationType] : message.orientationType;
             return object;
         };
 
@@ -8635,6 +9314,21 @@ $root.BotMetadata = (function() {
          */
         BotMediaMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotMediaMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotMediaMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotMediaMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotMediaMetadata";
         };
 
         /**
@@ -8752,19 +9446,23 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSessionMetadata.decode = function decode(reader, length) {
+        BotSessionMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotSessionMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.sessionId = reader.string();
-                    break;
-                case 2:
-                    message.sessionSource = reader.int32();
-                    break;
+                case 1: {
+                        message.sessionId = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.sessionSource = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -8834,6 +9532,12 @@ $root.BotMetadata = (function() {
             if (object.sessionId != null)
                 message.sessionId = String(object.sessionId);
             switch (object.sessionSource) {
+            default:
+                if (typeof object.sessionSource === "number") {
+                    message.sessionSource = object.sessionSource;
+                    break;
+                }
+                break;
             case "NONE":
             case 0:
                 message.sessionSource = 0;
@@ -8886,7 +9590,7 @@ $root.BotMetadata = (function() {
             if (message.sessionId != null && message.hasOwnProperty("sessionId"))
                 object.sessionId = message.sessionId;
             if (message.sessionSource != null && message.hasOwnProperty("sessionSource"))
-                object.sessionSource = options.enums === String ? $root.BotMetadata.BotSessionSource[message.sessionSource] : message.sessionSource;
+                object.sessionSource = options.enums === String ? $root.BotMetadata.BotSessionSource[message.sessionSource] === undefined ? message.sessionSource : $root.BotMetadata.BotSessionSource[message.sessionSource] : message.sessionSource;
             return object;
         };
 
@@ -8899,6 +9603,21 @@ $root.BotMetadata = (function() {
          */
         BotSessionMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotSessionMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotSessionMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotSessionMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotSessionMetadata";
         };
 
         return BotSessionMetadata;
@@ -9011,22 +9730,27 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMetricsMetadata.decode = function decode(reader, length) {
+        BotMetricsMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotMetricsMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.destinationId = reader.string();
-                    break;
-                case 2:
-                    message.destinationEntryPoint = reader.int32();
-                    break;
-                case 3:
-                    message.threadOrigin = reader.int32();
-                    break;
+                case 1: {
+                        message.destinationId = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.destinationEntryPoint = reader.int32();
+                        break;
+                    }
+                case 3: {
+                        message.threadOrigin = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -9131,6 +9855,12 @@ $root.BotMetadata = (function() {
             if (object.destinationId != null)
                 message.destinationId = String(object.destinationId);
             switch (object.destinationEntryPoint) {
+            default:
+                if (typeof object.destinationEntryPoint === "number") {
+                    message.destinationEntryPoint = object.destinationEntryPoint;
+                    break;
+                }
+                break;
             case "FAVICON":
             case 1:
                 message.destinationEntryPoint = 1;
@@ -9257,6 +9987,12 @@ $root.BotMetadata = (function() {
                 break;
             }
             switch (object.threadOrigin) {
+            default:
+                if (typeof object.threadOrigin === "number") {
+                    message.threadOrigin = object.threadOrigin;
+                    break;
+                }
+                break;
             case "AI_TAB_THREAD":
             case 1:
                 message.threadOrigin = 1;
@@ -9302,9 +10038,9 @@ $root.BotMetadata = (function() {
             if (message.destinationId != null && message.hasOwnProperty("destinationId"))
                 object.destinationId = message.destinationId;
             if (message.destinationEntryPoint != null && message.hasOwnProperty("destinationEntryPoint"))
-                object.destinationEntryPoint = options.enums === String ? $root.BotMetadata.BotMetricsEntryPoint[message.destinationEntryPoint] : message.destinationEntryPoint;
+                object.destinationEntryPoint = options.enums === String ? $root.BotMetadata.BotMetricsEntryPoint[message.destinationEntryPoint] === undefined ? message.destinationEntryPoint : $root.BotMetadata.BotMetricsEntryPoint[message.destinationEntryPoint] : message.destinationEntryPoint;
             if (message.threadOrigin != null && message.hasOwnProperty("threadOrigin"))
-                object.threadOrigin = options.enums === String ? $root.BotMetadata.BotMetricsThreadEntryPoint[message.threadOrigin] : message.threadOrigin;
+                object.threadOrigin = options.enums === String ? $root.BotMetadata.BotMetricsThreadEntryPoint[message.threadOrigin] === undefined ? message.threadOrigin : $root.BotMetadata.BotMetricsThreadEntryPoint[message.threadOrigin] : message.threadOrigin;
             return object;
         };
 
@@ -9317,6 +10053,21 @@ $root.BotMetadata = (function() {
          */
         BotMetricsMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotMetricsMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotMetricsMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotMetricsMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotMetricsMetadata";
         };
 
         return BotMetricsMetadata;
@@ -9409,18 +10160,21 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotRenderingMetadata.decode = function decode(reader, length) {
+        BotRenderingMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotRenderingMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.keywords && message.keywords.length))
-                        message.keywords = [];
-                    message.keywords.push($root.BotMetadata.BotRenderingMetadata.Keyword.decode(reader, reader.uint32()));
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.keywords && message.keywords.length))
+                            message.keywords = [];
+                        message.keywords.push($root.BotMetadata.BotRenderingMetadata.Keyword.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -9527,6 +10281,21 @@ $root.BotMetadata = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for BotRenderingMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotRenderingMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotRenderingMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotRenderingMetadata";
+        };
+
         BotRenderingMetadata.Keyword = (function() {
 
             /**
@@ -9625,21 +10394,25 @@ $root.BotMetadata = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Keyword.decode = function decode(reader, length) {
+            Keyword.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotRenderingMetadata.Keyword();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.value = reader.string();
-                        break;
-                    case 2:
-                        if (!(message.associatedPrompts && message.associatedPrompts.length))
-                            message.associatedPrompts = [];
-                        message.associatedPrompts.push(reader.string());
-                        break;
+                    case 1: {
+                            message.value = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            if (!(message.associatedPrompts && message.associatedPrompts.length))
+                                message.associatedPrompts = [];
+                            message.associatedPrompts.push(reader.string());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -9750,6 +10523,21 @@ $root.BotMetadata = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for Keyword
+             * @function getTypeUrl
+             * @memberof BotMetadata.BotRenderingMetadata.Keyword
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            Keyword.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/BotMetadata.BotRenderingMetadata.Keyword";
+            };
+
             return Keyword;
         })();
 
@@ -9852,19 +10640,23 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotPromotionMessageMetadata.decode = function decode(reader, length) {
+        BotPromotionMessageMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotPromotionMessageMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.promotionType = reader.int32();
-                    break;
-                case 2:
-                    message.buttonTitle = reader.string();
-                    break;
+                case 1: {
+                        message.promotionType = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.buttonTitle = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -9928,6 +10720,12 @@ $root.BotMetadata = (function() {
                 return object;
             var message = new $root.BotMetadata.BotPromotionMessageMetadata();
             switch (object.promotionType) {
+            default:
+                if (typeof object.promotionType === "number") {
+                    message.promotionType = object.promotionType;
+                    break;
+                }
+                break;
             case "UNKNOWN_TYPE":
             case 0:
                 message.promotionType = 0;
@@ -9964,7 +10762,7 @@ $root.BotMetadata = (function() {
                 object.buttonTitle = "";
             }
             if (message.promotionType != null && message.hasOwnProperty("promotionType"))
-                object.promotionType = options.enums === String ? $root.BotMetadata.BotPromotionMessageMetadata.BotPromotionType[message.promotionType] : message.promotionType;
+                object.promotionType = options.enums === String ? $root.BotMetadata.BotPromotionMessageMetadata.BotPromotionType[message.promotionType] === undefined ? message.promotionType : $root.BotMetadata.BotPromotionMessageMetadata.BotPromotionType[message.promotionType] : message.promotionType;
             if (message.buttonTitle != null && message.hasOwnProperty("buttonTitle"))
                 object.buttonTitle = message.buttonTitle;
             return object;
@@ -9979,6 +10777,21 @@ $root.BotMetadata = (function() {
          */
         BotPromotionMessageMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotPromotionMessageMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotPromotionMessageMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotPromotionMessageMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotPromotionMessageMetadata";
         };
 
         /**
@@ -10118,25 +10931,31 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSignatureVerificationUseCaseProof.decode = function decode(reader, length) {
+        BotSignatureVerificationUseCaseProof.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotSignatureVerificationUseCaseProof();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.version = reader.int32();
-                    break;
-                case 2:
-                    message.useCase = reader.int32();
-                    break;
-                case 3:
-                    message.signature = reader.bytes();
-                    break;
-                case 4:
-                    message.certificateChain = reader.bytes();
-                    break;
+                case 1: {
+                        message.version = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.useCase = reader.int32();
+                        break;
+                    }
+                case 3: {
+                        message.signature = reader.bytes();
+                        break;
+                    }
+                case 4: {
+                        message.certificateChain = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -10206,6 +11025,12 @@ $root.BotMetadata = (function() {
             if (object.version != null)
                 message.version = object.version | 0;
             switch (object.useCase) {
+            default:
+                if (typeof object.useCase === "number") {
+                    message.useCase = object.useCase;
+                    break;
+                }
+                break;
             case "WA_BOT_MSG":
             case 0:
                 message.useCase = 0;
@@ -10214,12 +11039,12 @@ $root.BotMetadata = (function() {
             if (object.signature != null)
                 if (typeof object.signature === "string")
                     $util.base64.decode(object.signature, message.signature = $util.newBuffer($util.base64.length(object.signature)), 0);
-                else if (object.signature.length)
+                else if (object.signature.length >= 0)
                     message.signature = object.signature;
             if (object.certificateChain != null)
                 if (typeof object.certificateChain === "string")
                     $util.base64.decode(object.certificateChain, message.certificateChain = $util.newBuffer($util.base64.length(object.certificateChain)), 0);
-                else if (object.certificateChain.length)
+                else if (object.certificateChain.length >= 0)
                     message.certificateChain = object.certificateChain;
             return message;
         };
@@ -10258,7 +11083,7 @@ $root.BotMetadata = (function() {
             if (message.version != null && message.hasOwnProperty("version"))
                 object.version = message.version;
             if (message.useCase != null && message.hasOwnProperty("useCase"))
-                object.useCase = options.enums === String ? $root.BotMetadata.BotSignatureVerificationUseCaseProof.BotSignatureUseCase[message.useCase] : message.useCase;
+                object.useCase = options.enums === String ? $root.BotMetadata.BotSignatureVerificationUseCaseProof.BotSignatureUseCase[message.useCase] === undefined ? message.useCase : $root.BotMetadata.BotSignatureVerificationUseCaseProof.BotSignatureUseCase[message.useCase] : message.useCase;
             if (message.signature != null && message.hasOwnProperty("signature"))
                 object.signature = options.bytes === String ? $util.base64.encode(message.signature, 0, message.signature.length) : options.bytes === Array ? Array.prototype.slice.call(message.signature) : message.signature;
             if (message.certificateChain != null && message.hasOwnProperty("certificateChain"))
@@ -10275,6 +11100,21 @@ $root.BotMetadata = (function() {
          */
         BotSignatureVerificationUseCaseProof.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotSignatureVerificationUseCaseProof
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotSignatureVerificationUseCaseProof
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotSignatureVerificationUseCaseProof.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotSignatureVerificationUseCaseProof";
         };
 
         /**
@@ -10379,18 +11219,21 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSignatureVerificationMetadata.decode = function decode(reader, length) {
+        BotSignatureVerificationMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotSignatureVerificationMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.proofs && message.proofs.length))
-                        message.proofs = [];
-                    message.proofs.push($root.BotMetadata.BotSignatureVerificationUseCaseProof.decode(reader, reader.uint32()));
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.proofs && message.proofs.length))
+                            message.proofs = [];
+                        message.proofs.push($root.BotMetadata.BotSignatureVerificationUseCaseProof.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -10497,6 +11340,21 @@ $root.BotMetadata = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for BotSignatureVerificationMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotSignatureVerificationMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotSignatureVerificationMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotSignatureVerificationMetadata";
+        };
+
         return BotSignatureVerificationMetadata;
     })();
 
@@ -10596,19 +11454,23 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMemoryFact.decode = function decode(reader, length) {
+        BotMemoryFact.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotMemoryFact();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.fact = reader.string();
-                    break;
-                case 2:
-                    message.factId = reader.string();
-                    break;
+                case 1: {
+                        message.fact = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.factId = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -10705,6 +11567,21 @@ $root.BotMetadata = (function() {
          */
         BotMemoryFact.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotMemoryFact
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotMemoryFact
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotMemoryFact.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotMemoryFact";
         };
 
         return BotMemoryFact;
@@ -10821,26 +11698,31 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotMemoryMetadata.decode = function decode(reader, length) {
+        BotMemoryMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotMemoryMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    if (!(message.addedFacts && message.addedFacts.length))
-                        message.addedFacts = [];
-                    message.addedFacts.push($root.BotMetadata.BotMemoryFact.decode(reader, reader.uint32()));
-                    break;
-                case 2:
-                    if (!(message.removedFacts && message.removedFacts.length))
-                        message.removedFacts = [];
-                    message.removedFacts.push($root.BotMetadata.BotMemoryFact.decode(reader, reader.uint32()));
-                    break;
-                case 3:
-                    message.disclaimer = reader.string();
-                    break;
+                case 1: {
+                        if (!(message.addedFacts && message.addedFacts.length))
+                            message.addedFacts = [];
+                        message.addedFacts.push($root.BotMetadata.BotMemoryFact.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 2: {
+                        if (!(message.removedFacts && message.removedFacts.length))
+                            message.removedFacts = [];
+                        message.removedFacts.push($root.BotMetadata.BotMemoryFact.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 3: {
+                        message.disclaimer = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -10982,6 +11864,21 @@ $root.BotMetadata = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for BotMemoryMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotMemoryMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotMemoryMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotMemoryMetadata";
+        };
+
         return BotMemoryMetadata;
     })();
 
@@ -11070,16 +11967,19 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotLinkedAccount.decode = function decode(reader, length) {
+        BotLinkedAccount.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotLinkedAccount();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.type = reader.int32();
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.type = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -11138,6 +12038,12 @@ $root.BotMetadata = (function() {
                 return object;
             var message = new $root.BotMetadata.BotLinkedAccount();
             switch (object.type) {
+            default:
+                if (typeof object.type === "number") {
+                    message.type = object.type;
+                    break;
+                }
+                break;
             case "BOT_LINKED_ACCOUNT_TYPE_1P":
             case 0:
                 message.type = 0;
@@ -11162,7 +12068,7 @@ $root.BotMetadata = (function() {
             if (options.defaults)
                 object.type = options.enums === String ? "BOT_LINKED_ACCOUNT_TYPE_1P" : 0;
             if (message.type != null && message.hasOwnProperty("type"))
-                object.type = options.enums === String ? $root.BotMetadata.BotLinkedAccount.BotLinkedAccountType[message.type] : message.type;
+                object.type = options.enums === String ? $root.BotMetadata.BotLinkedAccount.BotLinkedAccountType[message.type] === undefined ? message.type : $root.BotMetadata.BotLinkedAccount.BotLinkedAccountType[message.type] : message.type;
             return object;
         };
 
@@ -11175,6 +12081,21 @@ $root.BotMetadata = (function() {
          */
         BotLinkedAccount.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotLinkedAccount
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotLinkedAccount
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotLinkedAccount.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotLinkedAccount";
         };
 
         /**
@@ -11301,24 +12222,29 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotLinkedAccountsMetadata.decode = function decode(reader, length) {
+        BotLinkedAccountsMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotLinkedAccountsMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    if (!(message.accounts && message.accounts.length))
-                        message.accounts = [];
-                    message.accounts.push($root.BotMetadata.BotLinkedAccount.decode(reader, reader.uint32()));
-                    break;
-                case 2:
-                    message.acAuthTokens = reader.bytes();
-                    break;
-                case 3:
-                    message.acErrorCode = reader.int32();
-                    break;
+                case 1: {
+                        if (!(message.accounts && message.accounts.length))
+                            message.accounts = [];
+                        message.accounts.push($root.BotMetadata.BotLinkedAccount.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 2: {
+                        message.acAuthTokens = reader.bytes();
+                        break;
+                    }
+                case 3: {
+                        message.acErrorCode = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -11397,7 +12323,7 @@ $root.BotMetadata = (function() {
             if (object.acAuthTokens != null)
                 if (typeof object.acAuthTokens === "string")
                     $util.base64.decode(object.acAuthTokens, message.acAuthTokens = $util.newBuffer($util.base64.length(object.acAuthTokens)), 0);
-                else if (object.acAuthTokens.length)
+                else if (object.acAuthTokens.length >= 0)
                     message.acAuthTokens = object.acAuthTokens;
             if (object.acErrorCode != null)
                 message.acErrorCode = object.acErrorCode | 0;
@@ -11450,6 +12376,21 @@ $root.BotMetadata = (function() {
          */
         BotLinkedAccountsMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotLinkedAccountsMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotLinkedAccountsMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotLinkedAccountsMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotLinkedAccountsMetadata";
         };
 
         return BotLinkedAccountsMetadata;
@@ -11551,19 +12492,23 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotPromptSuggestion.decode = function decode(reader, length) {
+        BotPromptSuggestion.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotPromptSuggestion();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.prompt = reader.string();
-                    break;
-                case 2:
-                    message.promptId = reader.string();
-                    break;
+                case 1: {
+                        message.prompt = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.promptId = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -11662,6 +12607,21 @@ $root.BotMetadata = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for BotPromptSuggestion
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotPromptSuggestion
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotPromptSuggestion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotPromptSuggestion";
+        };
+
         return BotPromptSuggestion;
     })();
 
@@ -11752,18 +12712,21 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotPromptSuggestions.decode = function decode(reader, length) {
+        BotPromptSuggestions.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotPromptSuggestions();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.suggestions && message.suggestions.length))
-                        message.suggestions = [];
-                    message.suggestions.push($root.BotMetadata.BotPromptSuggestion.decode(reader, reader.uint32()));
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.suggestions && message.suggestions.length))
+                            message.suggestions = [];
+                        message.suggestions.push($root.BotMetadata.BotPromptSuggestion.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -11868,6 +12831,21 @@ $root.BotMetadata = (function() {
          */
         BotPromptSuggestions.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotPromptSuggestions
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotPromptSuggestions
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotPromptSuggestions.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotPromptSuggestions";
         };
 
         return BotPromptSuggestions;
@@ -11993,27 +12971,33 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotSuggestedPromptMetadata.decode = function decode(reader, length) {
+        BotSuggestedPromptMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotSuggestedPromptMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    if (!(message.suggestedPrompts && message.suggestedPrompts.length))
-                        message.suggestedPrompts = [];
-                    message.suggestedPrompts.push(reader.string());
-                    break;
-                case 2:
-                    message.selectedPromptIndex = reader.uint32();
-                    break;
-                case 3:
-                    message.promptSuggestions = $root.BotMetadata.BotPromptSuggestions.decode(reader, reader.uint32());
-                    break;
-                case 4:
-                    message.selectedPromptId = reader.string();
-                    break;
+                case 1: {
+                        if (!(message.suggestedPrompts && message.suggestedPrompts.length))
+                            message.suggestedPrompts = [];
+                        message.suggestedPrompts.push(reader.string());
+                        break;
+                    }
+                case 2: {
+                        message.selectedPromptIndex = reader.uint32();
+                        break;
+                    }
+                case 3: {
+                        message.promptSuggestions = $root.BotMetadata.BotPromptSuggestions.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 4: {
+                        message.selectedPromptId = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -12144,6 +13128,21 @@ $root.BotMetadata = (function() {
          */
         BotSuggestedPromptMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotSuggestedPromptMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotSuggestedPromptMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotSuggestedPromptMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotSuggestedPromptMetadata";
         };
 
         return BotSuggestedPromptMetadata;
@@ -12355,49 +13354,63 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotPluginMetadata.decode = function decode(reader, length) {
+        BotPluginMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotPluginMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.provider = reader.int32();
-                    break;
-                case 2:
-                    message.pluginType = reader.int32();
-                    break;
-                case 3:
-                    message.thumbnailCdnUrl = reader.string();
-                    break;
-                case 4:
-                    message.profilePhotoCdnUrl = reader.string();
-                    break;
-                case 5:
-                    message.searchProviderUrl = reader.string();
-                    break;
-                case 6:
-                    message.referenceIndex = reader.uint32();
-                    break;
-                case 7:
-                    message.expectedLinksCount = reader.uint32();
-                    break;
-                case 9:
-                    message.searchQuery = reader.string();
-                    break;
-                case 10:
-                    message.parentPluginMessageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
-                    break;
-                case 11:
-                    message.deprecatedField = reader.int32();
-                    break;
-                case 12:
-                    message.parentPluginType = reader.int32();
-                    break;
-                case 13:
-                    message.faviconCdnUrl = reader.string();
-                    break;
+                case 1: {
+                        message.provider = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.pluginType = reader.int32();
+                        break;
+                    }
+                case 3: {
+                        message.thumbnailCdnUrl = reader.string();
+                        break;
+                    }
+                case 4: {
+                        message.profilePhotoCdnUrl = reader.string();
+                        break;
+                    }
+                case 5: {
+                        message.searchProviderUrl = reader.string();
+                        break;
+                    }
+                case 6: {
+                        message.referenceIndex = reader.uint32();
+                        break;
+                    }
+                case 7: {
+                        message.expectedLinksCount = reader.uint32();
+                        break;
+                    }
+                case 9: {
+                        message.searchQuery = reader.string();
+                        break;
+                    }
+                case 10: {
+                        message.parentPluginMessageKey = $root.Protocol.MessageKey.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 11: {
+                        message.deprecatedField = reader.int32();
+                        break;
+                    }
+                case 12: {
+                        message.parentPluginType = reader.int32();
+                        break;
+                    }
+                case 13: {
+                        message.faviconCdnUrl = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -12512,6 +13525,12 @@ $root.BotMetadata = (function() {
                 return object;
             var message = new $root.BotMetadata.BotPluginMetadata();
             switch (object.provider) {
+            default:
+                if (typeof object.provider === "number") {
+                    message.provider = object.provider;
+                    break;
+                }
+                break;
             case "UNKNOWN":
             case 0:
                 message.provider = 0;
@@ -12530,6 +13549,12 @@ $root.BotMetadata = (function() {
                 break;
             }
             switch (object.pluginType) {
+            default:
+                if (typeof object.pluginType === "number") {
+                    message.pluginType = object.pluginType;
+                    break;
+                }
+                break;
             case "UNKNOWN_PLUGIN":
             case 0:
                 message.pluginType = 0;
@@ -12561,6 +13586,12 @@ $root.BotMetadata = (function() {
                 message.parentPluginMessageKey = $root.Protocol.MessageKey.fromObject(object.parentPluginMessageKey);
             }
             switch (object.deprecatedField) {
+            default:
+                if (typeof object.deprecatedField === "number") {
+                    message.deprecatedField = object.deprecatedField;
+                    break;
+                }
+                break;
             case "UNKNOWN_PLUGIN":
             case 0:
                 message.deprecatedField = 0;
@@ -12575,6 +13606,12 @@ $root.BotMetadata = (function() {
                 break;
             }
             switch (object.parentPluginType) {
+            default:
+                if (typeof object.parentPluginType === "number") {
+                    message.parentPluginType = object.parentPluginType;
+                    break;
+                }
+                break;
             case "UNKNOWN_PLUGIN":
             case 0:
                 message.parentPluginType = 0;
@@ -12621,9 +13658,9 @@ $root.BotMetadata = (function() {
                 object.faviconCdnUrl = "";
             }
             if (message.provider != null && message.hasOwnProperty("provider"))
-                object.provider = options.enums === String ? $root.BotMetadata.BotPluginMetadata.SearchProvider[message.provider] : message.provider;
+                object.provider = options.enums === String ? $root.BotMetadata.BotPluginMetadata.SearchProvider[message.provider] === undefined ? message.provider : $root.BotMetadata.BotPluginMetadata.SearchProvider[message.provider] : message.provider;
             if (message.pluginType != null && message.hasOwnProperty("pluginType"))
-                object.pluginType = options.enums === String ? $root.BotMetadata.BotPluginMetadata.PluginType[message.pluginType] : message.pluginType;
+                object.pluginType = options.enums === String ? $root.BotMetadata.BotPluginMetadata.PluginType[message.pluginType] === undefined ? message.pluginType : $root.BotMetadata.BotPluginMetadata.PluginType[message.pluginType] : message.pluginType;
             if (message.thumbnailCdnUrl != null && message.hasOwnProperty("thumbnailCdnUrl"))
                 object.thumbnailCdnUrl = message.thumbnailCdnUrl;
             if (message.profilePhotoCdnUrl != null && message.hasOwnProperty("profilePhotoCdnUrl"))
@@ -12639,9 +13676,9 @@ $root.BotMetadata = (function() {
             if (message.parentPluginMessageKey != null && message.hasOwnProperty("parentPluginMessageKey"))
                 object.parentPluginMessageKey = $root.Protocol.MessageKey.toObject(message.parentPluginMessageKey, options);
             if (message.deprecatedField != null && message.hasOwnProperty("deprecatedField"))
-                object.deprecatedField = options.enums === String ? $root.BotMetadata.BotPluginMetadata.PluginType[message.deprecatedField] : message.deprecatedField;
+                object.deprecatedField = options.enums === String ? $root.BotMetadata.BotPluginMetadata.PluginType[message.deprecatedField] === undefined ? message.deprecatedField : $root.BotMetadata.BotPluginMetadata.PluginType[message.deprecatedField] : message.deprecatedField;
             if (message.parentPluginType != null && message.hasOwnProperty("parentPluginType"))
-                object.parentPluginType = options.enums === String ? $root.BotMetadata.BotPluginMetadata.PluginType[message.parentPluginType] : message.parentPluginType;
+                object.parentPluginType = options.enums === String ? $root.BotMetadata.BotPluginMetadata.PluginType[message.parentPluginType] === undefined ? message.parentPluginType : $root.BotMetadata.BotPluginMetadata.PluginType[message.parentPluginType] : message.parentPluginType;
             if (message.faviconCdnUrl != null && message.hasOwnProperty("faviconCdnUrl"))
                 object.faviconCdnUrl = message.faviconCdnUrl;
             return object;
@@ -12656,6 +13693,21 @@ $root.BotMetadata = (function() {
          */
         BotPluginMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotPluginMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotPluginMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotPluginMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotPluginMetadata";
         };
 
         /**
@@ -12824,28 +13876,35 @@ $root.BotMetadata = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BotAvatarMetadata.decode = function decode(reader, length) {
+        BotAvatarMetadata.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.BotMetadata.BotAvatarMetadata();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.sentiment = reader.uint32();
-                    break;
-                case 2:
-                    message.behaviorGraph = reader.string();
-                    break;
-                case 3:
-                    message.action = reader.uint32();
-                    break;
-                case 4:
-                    message.intensity = reader.uint32();
-                    break;
-                case 5:
-                    message.wordCount = reader.uint32();
-                    break;
+                case 1: {
+                        message.sentiment = reader.uint32();
+                        break;
+                    }
+                case 2: {
+                        message.behaviorGraph = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.action = reader.uint32();
+                        break;
+                    }
+                case 4: {
+                        message.intensity = reader.uint32();
+                        break;
+                    }
+                case 5: {
+                        message.wordCount = reader.uint32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -12966,6 +14025,21 @@ $root.BotMetadata = (function() {
          */
         BotAvatarMetadata.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotAvatarMetadata
+         * @function getTypeUrl
+         * @memberof BotMetadata.BotAvatarMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotAvatarMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/BotMetadata.BotAvatarMetadata";
         };
 
         return BotAvatarMetadata;
@@ -13264,25 +14338,31 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        LimitSharing.decode = function decode(reader, length) {
+        LimitSharing.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.LimitSharing();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.sharingLimited = reader.bool();
-                    break;
-                case 2:
-                    message.trigger = reader.int32();
-                    break;
-                case 3:
-                    message.limitSharingSettingTimestamp = reader.int64();
-                    break;
-                case 4:
-                    message.initiatedByMe = reader.bool();
-                    break;
+                case 1: {
+                        message.sharingLimited = reader.bool();
+                        break;
+                    }
+                case 2: {
+                        message.trigger = reader.int32();
+                        break;
+                    }
+                case 3: {
+                        message.limitSharingSettingTimestamp = reader.int64();
+                        break;
+                    }
+                case 4: {
+                        message.initiatedByMe = reader.bool();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -13364,6 +14444,12 @@ $root.Protocol = (function() {
             if (object.sharingLimited != null)
                 message.sharingLimited = Boolean(object.sharingLimited);
             switch (object.trigger) {
+            default:
+                if (typeof object.trigger === "number") {
+                    message.trigger = object.trigger;
+                    break;
+                }
+                break;
             case "UNKNOWN":
             case 0:
                 message.trigger = 0;
@@ -13414,7 +14500,7 @@ $root.Protocol = (function() {
                     object._sharingLimited = "sharingLimited";
             }
             if (message.trigger != null && message.hasOwnProperty("trigger")) {
-                object.trigger = options.enums === String ? $root.Protocol.LimitSharing.TriggerType[message.trigger] : message.trigger;
+                object.trigger = options.enums === String ? $root.Protocol.LimitSharing.TriggerType[message.trigger] === undefined ? message.trigger : $root.Protocol.LimitSharing.TriggerType[message.trigger] : message.trigger;
                 if (options.oneofs)
                     object._trigger = "trigger";
             }
@@ -13443,6 +14529,21 @@ $root.Protocol = (function() {
          */
         LimitSharing.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for LimitSharing
+         * @function getTypeUrl
+         * @memberof Protocol.LimitSharing
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        LimitSharing.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Protocol.LimitSharing";
         };
 
         /**
@@ -13631,25 +14732,31 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        MessageKey.decode = function decode(reader, length) {
+        MessageKey.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.MessageKey();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.remoteJid = reader.string();
-                    break;
-                case 2:
-                    message.fromMe = reader.bool();
-                    break;
-                case 3:
-                    message.id = reader.string();
-                    break;
-                case 4:
-                    message.participant = reader.string();
-                    break;
+                case 1: {
+                        message.remoteJid = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.fromMe = reader.bool();
+                        break;
+                    }
+                case 3: {
+                        message.id = reader.string();
+                        break;
+                    }
+                case 4: {
+                        message.participant = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -13777,6 +14884,21 @@ $root.Protocol = (function() {
          */
         MessageKey.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for MessageKey
+         * @function getTypeUrl
+         * @memberof Protocol.MessageKey
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        MessageKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Protocol.MessageKey";
         };
 
         return MessageKey;

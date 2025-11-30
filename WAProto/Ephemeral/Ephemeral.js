@@ -139,19 +139,23 @@ $root.Ephemeral = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        EphemeralSetting.decode = function decode(reader, length) {
+        EphemeralSetting.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Ephemeral.EphemeralSetting();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.duration = reader.sfixed32();
-                    break;
-                case 2:
-                    message.timestamp = reader.sfixed64();
-                    break;
+                case 1: {
+                        message.duration = reader.sfixed32();
+                        break;
+                    }
+                case 2: {
+                        message.timestamp = reader.sfixed64();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -265,6 +269,21 @@ $root.Ephemeral = (function() {
          */
         EphemeralSetting.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for EphemeralSetting
+         * @function getTypeUrl
+         * @memberof Ephemeral.EphemeralSetting
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        EphemeralSetting.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Ephemeral.EphemeralSetting";
         };
 
         return EphemeralSetting;

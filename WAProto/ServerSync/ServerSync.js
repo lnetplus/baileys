@@ -284,42 +284,53 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdPatch.decode = function decode(reader, length) {
+        SyncdPatch.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdPatch();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.version = $root.ServerSync.SyncdVersion.decode(reader, reader.uint32());
-                    break;
-                case 2:
-                    if (!(message.mutations && message.mutations.length))
-                        message.mutations = [];
-                    message.mutations.push($root.ServerSync.SyncdMutation.decode(reader, reader.uint32()));
-                    break;
-                case 3:
-                    message.externalMutations = $root.ServerSync.ExternalBlobReference.decode(reader, reader.uint32());
-                    break;
-                case 4:
-                    message.snapshotMac = reader.bytes();
-                    break;
-                case 5:
-                    message.patchMac = reader.bytes();
-                    break;
-                case 6:
-                    message.keyId = $root.ServerSync.KeyId.decode(reader, reader.uint32());
-                    break;
-                case 7:
-                    message.exitCode = $root.ServerSync.ExitCode.decode(reader, reader.uint32());
-                    break;
-                case 8:
-                    message.deviceIndex = reader.uint32();
-                    break;
-                case 9:
-                    message.clientDebugData = reader.bytes();
-                    break;
+                case 1: {
+                        message.version = $root.ServerSync.SyncdVersion.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 2: {
+                        if (!(message.mutations && message.mutations.length))
+                            message.mutations = [];
+                        message.mutations.push($root.ServerSync.SyncdMutation.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 3: {
+                        message.externalMutations = $root.ServerSync.ExternalBlobReference.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 4: {
+                        message.snapshotMac = reader.bytes();
+                        break;
+                    }
+                case 5: {
+                        message.patchMac = reader.bytes();
+                        break;
+                    }
+                case 6: {
+                        message.keyId = $root.ServerSync.KeyId.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 7: {
+                        message.exitCode = $root.ServerSync.ExitCode.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 8: {
+                        message.deviceIndex = reader.uint32();
+                        break;
+                    }
+                case 9: {
+                        message.clientDebugData = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -455,12 +466,12 @@ $root.ServerSync = (function() {
             if (object.snapshotMac != null)
                 if (typeof object.snapshotMac === "string")
                     $util.base64.decode(object.snapshotMac, message.snapshotMac = $util.newBuffer($util.base64.length(object.snapshotMac)), 0);
-                else if (object.snapshotMac.length)
+                else if (object.snapshotMac.length >= 0)
                     message.snapshotMac = object.snapshotMac;
             if (object.patchMac != null)
                 if (typeof object.patchMac === "string")
                     $util.base64.decode(object.patchMac, message.patchMac = $util.newBuffer($util.base64.length(object.patchMac)), 0);
-                else if (object.patchMac.length)
+                else if (object.patchMac.length >= 0)
                     message.patchMac = object.patchMac;
             if (object.keyId != null) {
                 if (typeof object.keyId !== "object")
@@ -477,7 +488,7 @@ $root.ServerSync = (function() {
             if (object.clientDebugData != null)
                 if (typeof object.clientDebugData === "string")
                     $util.base64.decode(object.clientDebugData, message.clientDebugData = $util.newBuffer($util.base64.length(object.clientDebugData)), 0);
-                else if (object.clientDebugData.length)
+                else if (object.clientDebugData.length >= 0)
                     message.clientDebugData = object.clientDebugData;
             return message;
         };
@@ -554,6 +565,21 @@ $root.ServerSync = (function() {
          */
         SyncdPatch.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SyncdPatch
+         * @function getTypeUrl
+         * @memberof ServerSync.SyncdPatch
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncdPatch.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.SyncdPatch";
         };
 
         return SyncdPatch;
@@ -680,19 +706,23 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdMutation.decode = function decode(reader, length) {
+        SyncdMutation.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdMutation();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.operation = reader.int32();
-                    break;
-                case 2:
-                    message.record = $root.ServerSync.SyncdRecord.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.operation = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.record = $root.ServerSync.SyncdRecord.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -763,6 +793,12 @@ $root.ServerSync = (function() {
                 return object;
             var message = new $root.ServerSync.SyncdMutation();
             switch (object.operation) {
+            default:
+                if (typeof object.operation === "number") {
+                    message.operation = object.operation;
+                    break;
+                }
+                break;
             case "SET":
             case 0:
                 message.operation = 0;
@@ -794,7 +830,7 @@ $root.ServerSync = (function() {
                 options = {};
             var object = {};
             if (message.operation != null && message.hasOwnProperty("operation")) {
-                object.operation = options.enums === String ? $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] : message.operation;
+                object.operation = options.enums === String ? $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] === undefined ? message.operation : $root.ServerSync.SyncdMutation.SyncdOperation[message.operation] : message.operation;
                 if (options.oneofs)
                     object._operation = "operation";
             }
@@ -815,6 +851,21 @@ $root.ServerSync = (function() {
          */
         SyncdMutation.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SyncdMutation
+         * @function getTypeUrl
+         * @memberof ServerSync.SyncdMutation
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncdMutation.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.SyncdMutation";
         };
 
         /**
@@ -921,18 +972,21 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdMutations.decode = function decode(reader, length) {
+        SyncdMutations.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdMutations();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.mutations && message.mutations.length))
-                        message.mutations = [];
-                    message.mutations.push($root.ServerSync.SyncdMutation.decode(reader, reader.uint32()));
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.mutations && message.mutations.length))
+                            message.mutations = [];
+                        message.mutations.push($root.ServerSync.SyncdMutation.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1037,6 +1091,21 @@ $root.ServerSync = (function() {
          */
         SyncdMutations.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SyncdMutations
+         * @function getTypeUrl
+         * @memberof ServerSync.SyncdMutations
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncdMutations.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.SyncdMutations";
         };
 
         return SyncdMutations;
@@ -1198,27 +1267,33 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdSnapshot.decode = function decode(reader, length) {
+        SyncdSnapshot.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdSnapshot();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.version = $root.ServerSync.SyncdVersion.decode(reader, reader.uint32());
-                    break;
-                case 2:
-                    if (!(message.records && message.records.length))
-                        message.records = [];
-                    message.records.push($root.ServerSync.SyncdRecord.decode(reader, reader.uint32()));
-                    break;
-                case 3:
-                    message.mac = reader.bytes();
-                    break;
-                case 4:
-                    message.keyId = $root.ServerSync.KeyId.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.version = $root.ServerSync.SyncdVersion.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 2: {
+                        if (!(message.records && message.records.length))
+                            message.records = [];
+                        message.records.push($root.ServerSync.SyncdRecord.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 3: {
+                        message.mac = reader.bytes();
+                        break;
+                    }
+                case 4: {
+                        message.keyId = $root.ServerSync.KeyId.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1318,7 +1393,7 @@ $root.ServerSync = (function() {
             if (object.mac != null)
                 if (typeof object.mac === "string")
                     $util.base64.decode(object.mac, message.mac = $util.newBuffer($util.base64.length(object.mac)), 0);
-                else if (object.mac.length)
+                else if (object.mac.length >= 0)
                     message.mac = object.mac;
             if (object.keyId != null) {
                 if (typeof object.keyId !== "object")
@@ -1375,6 +1450,21 @@ $root.ServerSync = (function() {
          */
         SyncdSnapshot.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SyncdSnapshot
+         * @function getTypeUrl
+         * @memberof ServerSync.SyncdSnapshot
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncdSnapshot.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.SyncdSnapshot";
         };
 
         return SyncdSnapshot;
@@ -1589,31 +1679,39 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ExternalBlobReference.decode = function decode(reader, length) {
+        ExternalBlobReference.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.ExternalBlobReference();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.mediaKey = reader.bytes();
-                    break;
-                case 2:
-                    message.directPath = reader.string();
-                    break;
-                case 3:
-                    message.handle = reader.string();
-                    break;
-                case 4:
-                    message.fileSizeBytes = reader.uint64();
-                    break;
-                case 5:
-                    message.fileSha256 = reader.bytes();
-                    break;
-                case 6:
-                    message.fileEncSha256 = reader.bytes();
-                    break;
+                case 1: {
+                        message.mediaKey = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.directPath = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.handle = reader.string();
+                        break;
+                    }
+                case 4: {
+                        message.fileSizeBytes = reader.uint64();
+                        break;
+                    }
+                case 5: {
+                        message.fileSha256 = reader.bytes();
+                        break;
+                    }
+                case 6: {
+                        message.fileEncSha256 = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1698,7 +1796,7 @@ $root.ServerSync = (function() {
             if (object.mediaKey != null)
                 if (typeof object.mediaKey === "string")
                     $util.base64.decode(object.mediaKey, message.mediaKey = $util.newBuffer($util.base64.length(object.mediaKey)), 0);
-                else if (object.mediaKey.length)
+                else if (object.mediaKey.length >= 0)
                     message.mediaKey = object.mediaKey;
             if (object.directPath != null)
                 message.directPath = String(object.directPath);
@@ -1716,12 +1814,12 @@ $root.ServerSync = (function() {
             if (object.fileSha256 != null)
                 if (typeof object.fileSha256 === "string")
                     $util.base64.decode(object.fileSha256, message.fileSha256 = $util.newBuffer($util.base64.length(object.fileSha256)), 0);
-                else if (object.fileSha256.length)
+                else if (object.fileSha256.length >= 0)
                     message.fileSha256 = object.fileSha256;
             if (object.fileEncSha256 != null)
                 if (typeof object.fileEncSha256 === "string")
                     $util.base64.decode(object.fileEncSha256, message.fileEncSha256 = $util.newBuffer($util.base64.length(object.fileEncSha256)), 0);
-                else if (object.fileEncSha256.length)
+                else if (object.fileEncSha256.length >= 0)
                     message.fileEncSha256 = object.fileEncSha256;
             return message;
         };
@@ -1784,6 +1882,21 @@ $root.ServerSync = (function() {
          */
         ExternalBlobReference.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for ExternalBlobReference
+         * @function getTypeUrl
+         * @memberof ServerSync.ExternalBlobReference
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        ExternalBlobReference.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.ExternalBlobReference";
         };
 
         return ExternalBlobReference;
@@ -1932,22 +2045,27 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdRecord.decode = function decode(reader, length) {
+        SyncdRecord.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdRecord();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.index = $root.ServerSync.SyncdIndex.decode(reader, reader.uint32());
-                    break;
-                case 2:
-                    message.value = $root.ServerSync.SyncdValue.decode(reader, reader.uint32());
-                    break;
-                case 3:
-                    message.keyId = $root.ServerSync.KeyId.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.index = $root.ServerSync.SyncdIndex.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 2: {
+                        message.value = $root.ServerSync.SyncdValue.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 3: {
+                        message.keyId = $root.ServerSync.KeyId.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2083,6 +2201,21 @@ $root.ServerSync = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for SyncdRecord
+         * @function getTypeUrl
+         * @memberof ServerSync.SyncdRecord
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncdRecord.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.SyncdRecord";
+        };
+
         return SyncdRecord;
     })();
 
@@ -2185,16 +2318,19 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        KeyId.decode = function decode(reader, length) {
+        KeyId.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.KeyId();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.id = reader.bytes();
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.id = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2254,7 +2390,7 @@ $root.ServerSync = (function() {
             if (object.id != null)
                 if (typeof object.id === "string")
                     $util.base64.decode(object.id, message.id = $util.newBuffer($util.base64.length(object.id)), 0);
-                else if (object.id.length)
+                else if (object.id.length >= 0)
                     message.id = object.id;
             return message;
         };
@@ -2289,6 +2425,21 @@ $root.ServerSync = (function() {
          */
         KeyId.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for KeyId
+         * @function getTypeUrl
+         * @memberof ServerSync.KeyId
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        KeyId.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.KeyId";
         };
 
         return KeyId;
@@ -2393,16 +2544,19 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdValue.decode = function decode(reader, length) {
+        SyncdValue.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdValue();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.blob = reader.bytes();
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.blob = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2462,7 +2616,7 @@ $root.ServerSync = (function() {
             if (object.blob != null)
                 if (typeof object.blob === "string")
                     $util.base64.decode(object.blob, message.blob = $util.newBuffer($util.base64.length(object.blob)), 0);
-                else if (object.blob.length)
+                else if (object.blob.length >= 0)
                     message.blob = object.blob;
             return message;
         };
@@ -2497,6 +2651,21 @@ $root.ServerSync = (function() {
          */
         SyncdValue.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SyncdValue
+         * @function getTypeUrl
+         * @memberof ServerSync.SyncdValue
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncdValue.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.SyncdValue";
         };
 
         return SyncdValue;
@@ -2601,16 +2770,19 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdIndex.decode = function decode(reader, length) {
+        SyncdIndex.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdIndex();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.blob = reader.bytes();
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.blob = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2670,7 +2842,7 @@ $root.ServerSync = (function() {
             if (object.blob != null)
                 if (typeof object.blob === "string")
                     $util.base64.decode(object.blob, message.blob = $util.newBuffer($util.base64.length(object.blob)), 0);
-                else if (object.blob.length)
+                else if (object.blob.length >= 0)
                     message.blob = object.blob;
             return message;
         };
@@ -2705,6 +2877,21 @@ $root.ServerSync = (function() {
          */
         SyncdIndex.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SyncdIndex
+         * @function getTypeUrl
+         * @memberof ServerSync.SyncdIndex
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncdIndex.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.SyncdIndex";
         };
 
         return SyncdIndex;
@@ -2831,19 +3018,23 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ExitCode.decode = function decode(reader, length) {
+        ExitCode.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.ExitCode();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.code = reader.uint64();
-                    break;
-                case 2:
-                    message.text = reader.string();
-                    break;
+                case 1: {
+                        message.code = reader.uint64();
+                        break;
+                    }
+                case 2: {
+                        message.text = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2959,6 +3150,21 @@ $root.ServerSync = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for ExitCode
+         * @function getTypeUrl
+         * @memberof ServerSync.ExitCode
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        ExitCode.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.ExitCode";
+        };
+
         return ExitCode;
     })();
 
@@ -3061,16 +3267,19 @@ $root.ServerSync = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncdVersion.decode = function decode(reader, length) {
+        SyncdVersion.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ServerSync.SyncdVersion();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.version = reader.uint64();
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.version = reader.uint64();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -3172,6 +3381,21 @@ $root.ServerSync = (function() {
          */
         SyncdVersion.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SyncdVersion
+         * @function getTypeUrl
+         * @memberof ServerSync.SyncdVersion
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncdVersion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ServerSync.SyncdVersion";
         };
 
         return SyncdVersion;

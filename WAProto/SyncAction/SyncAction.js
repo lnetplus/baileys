@@ -54,215 +54,91 @@ $root.SyncAction = (function() {
 
         /**
          * PatchDebugData currentLthash.
-         * @member {Uint8Array|null|undefined} currentLthash
+         * @member {Uint8Array} currentLthash
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.currentLthash = null;
+        PatchDebugData.prototype.currentLthash = $util.newBuffer([]);
 
         /**
          * PatchDebugData newLthash.
-         * @member {Uint8Array|null|undefined} newLthash
+         * @member {Uint8Array} newLthash
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.newLthash = null;
+        PatchDebugData.prototype.newLthash = $util.newBuffer([]);
 
         /**
          * PatchDebugData patchVersion.
-         * @member {Uint8Array|null|undefined} patchVersion
+         * @member {Uint8Array} patchVersion
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.patchVersion = null;
+        PatchDebugData.prototype.patchVersion = $util.newBuffer([]);
 
         /**
          * PatchDebugData collectionName.
-         * @member {Uint8Array|null|undefined} collectionName
+         * @member {Uint8Array} collectionName
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.collectionName = null;
+        PatchDebugData.prototype.collectionName = $util.newBuffer([]);
 
         /**
          * PatchDebugData firstFourBytesFromAHashOfSnapshotMacKey.
-         * @member {Uint8Array|null|undefined} firstFourBytesFromAHashOfSnapshotMacKey
+         * @member {Uint8Array} firstFourBytesFromAHashOfSnapshotMacKey
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.firstFourBytesFromAHashOfSnapshotMacKey = null;
+        PatchDebugData.prototype.firstFourBytesFromAHashOfSnapshotMacKey = $util.newBuffer([]);
 
         /**
          * PatchDebugData newLthashSubtract.
-         * @member {Uint8Array|null|undefined} newLthashSubtract
+         * @member {Uint8Array} newLthashSubtract
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.newLthashSubtract = null;
+        PatchDebugData.prototype.newLthashSubtract = $util.newBuffer([]);
 
         /**
          * PatchDebugData numberAdd.
-         * @member {number|null|undefined} numberAdd
+         * @member {number} numberAdd
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.numberAdd = null;
+        PatchDebugData.prototype.numberAdd = 0;
 
         /**
          * PatchDebugData numberRemove.
-         * @member {number|null|undefined} numberRemove
+         * @member {number} numberRemove
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.numberRemove = null;
+        PatchDebugData.prototype.numberRemove = 0;
 
         /**
          * PatchDebugData numberOverride.
-         * @member {number|null|undefined} numberOverride
+         * @member {number} numberOverride
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.numberOverride = null;
+        PatchDebugData.prototype.numberOverride = 0;
 
         /**
          * PatchDebugData senderPlatform.
-         * @member {SyncAction.PatchDebugData.Platform|null|undefined} senderPlatform
+         * @member {SyncAction.PatchDebugData.Platform} senderPlatform
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.senderPlatform = null;
+        PatchDebugData.prototype.senderPlatform = 0;
 
         /**
          * PatchDebugData isSenderPrimary.
-         * @member {boolean|null|undefined} isSenderPrimary
+         * @member {boolean} isSenderPrimary
          * @memberof SyncAction.PatchDebugData
          * @instance
          */
-        PatchDebugData.prototype.isSenderPrimary = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * PatchDebugData _currentLthash.
-         * @member {"currentLthash"|undefined} _currentLthash
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_currentLthash", {
-            get: $util.oneOfGetter($oneOfFields = ["currentLthash"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _newLthash.
-         * @member {"newLthash"|undefined} _newLthash
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_newLthash", {
-            get: $util.oneOfGetter($oneOfFields = ["newLthash"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _patchVersion.
-         * @member {"patchVersion"|undefined} _patchVersion
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_patchVersion", {
-            get: $util.oneOfGetter($oneOfFields = ["patchVersion"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _collectionName.
-         * @member {"collectionName"|undefined} _collectionName
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_collectionName", {
-            get: $util.oneOfGetter($oneOfFields = ["collectionName"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _firstFourBytesFromAHashOfSnapshotMacKey.
-         * @member {"firstFourBytesFromAHashOfSnapshotMacKey"|undefined} _firstFourBytesFromAHashOfSnapshotMacKey
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_firstFourBytesFromAHashOfSnapshotMacKey", {
-            get: $util.oneOfGetter($oneOfFields = ["firstFourBytesFromAHashOfSnapshotMacKey"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _newLthashSubtract.
-         * @member {"newLthashSubtract"|undefined} _newLthashSubtract
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_newLthashSubtract", {
-            get: $util.oneOfGetter($oneOfFields = ["newLthashSubtract"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _numberAdd.
-         * @member {"numberAdd"|undefined} _numberAdd
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_numberAdd", {
-            get: $util.oneOfGetter($oneOfFields = ["numberAdd"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _numberRemove.
-         * @member {"numberRemove"|undefined} _numberRemove
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_numberRemove", {
-            get: $util.oneOfGetter($oneOfFields = ["numberRemove"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _numberOverride.
-         * @member {"numberOverride"|undefined} _numberOverride
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_numberOverride", {
-            get: $util.oneOfGetter($oneOfFields = ["numberOverride"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _senderPlatform.
-         * @member {"senderPlatform"|undefined} _senderPlatform
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_senderPlatform", {
-            get: $util.oneOfGetter($oneOfFields = ["senderPlatform"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * PatchDebugData _isSenderPrimary.
-         * @member {"isSenderPrimary"|undefined} _isSenderPrimary
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
-        Object.defineProperty(PatchDebugData.prototype, "_isSenderPrimary", {
-            get: $util.oneOfGetter($oneOfFields = ["isSenderPrimary"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        PatchDebugData.prototype.isSenderPrimary = false;
 
         /**
          * Creates a new PatchDebugData instance using the specified properties.
@@ -337,46 +213,59 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PatchDebugData.decode = function decode(reader, length) {
+        PatchDebugData.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.PatchDebugData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.currentLthash = reader.bytes();
-                    break;
-                case 2:
-                    message.newLthash = reader.bytes();
-                    break;
-                case 3:
-                    message.patchVersion = reader.bytes();
-                    break;
-                case 4:
-                    message.collectionName = reader.bytes();
-                    break;
-                case 5:
-                    message.firstFourBytesFromAHashOfSnapshotMacKey = reader.bytes();
-                    break;
-                case 6:
-                    message.newLthashSubtract = reader.bytes();
-                    break;
-                case 7:
-                    message.numberAdd = reader.int32();
-                    break;
-                case 8:
-                    message.numberRemove = reader.int32();
-                    break;
-                case 9:
-                    message.numberOverride = reader.int32();
-                    break;
-                case 10:
-                    message.senderPlatform = reader.int32();
-                    break;
-                case 11:
-                    message.isSenderPrimary = reader.bool();
-                    break;
+                case 1: {
+                        message.currentLthash = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.newLthash = reader.bytes();
+                        break;
+                    }
+                case 3: {
+                        message.patchVersion = reader.bytes();
+                        break;
+                    }
+                case 4: {
+                        message.collectionName = reader.bytes();
+                        break;
+                    }
+                case 5: {
+                        message.firstFourBytesFromAHashOfSnapshotMacKey = reader.bytes();
+                        break;
+                    }
+                case 6: {
+                        message.newLthashSubtract = reader.bytes();
+                        break;
+                    }
+                case 7: {
+                        message.numberAdd = reader.int32();
+                        break;
+                    }
+                case 8: {
+                        message.numberRemove = reader.int32();
+                        break;
+                    }
+                case 9: {
+                        message.numberOverride = reader.int32();
+                        break;
+                    }
+                case 10: {
+                        message.senderPlatform = reader.int32();
+                        break;
+                    }
+                case 11: {
+                        message.isSenderPrimary = reader.bool();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -412,54 +301,34 @@ $root.SyncAction = (function() {
         PatchDebugData.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.currentLthash != null && message.hasOwnProperty("currentLthash")) {
-                properties._currentLthash = 1;
+            if (message.currentLthash != null && message.hasOwnProperty("currentLthash"))
                 if (!(message.currentLthash && typeof message.currentLthash.length === "number" || $util.isString(message.currentLthash)))
                     return "currentLthash: buffer expected";
-            }
-            if (message.newLthash != null && message.hasOwnProperty("newLthash")) {
-                properties._newLthash = 1;
+            if (message.newLthash != null && message.hasOwnProperty("newLthash"))
                 if (!(message.newLthash && typeof message.newLthash.length === "number" || $util.isString(message.newLthash)))
                     return "newLthash: buffer expected";
-            }
-            if (message.patchVersion != null && message.hasOwnProperty("patchVersion")) {
-                properties._patchVersion = 1;
+            if (message.patchVersion != null && message.hasOwnProperty("patchVersion"))
                 if (!(message.patchVersion && typeof message.patchVersion.length === "number" || $util.isString(message.patchVersion)))
                     return "patchVersion: buffer expected";
-            }
-            if (message.collectionName != null && message.hasOwnProperty("collectionName")) {
-                properties._collectionName = 1;
+            if (message.collectionName != null && message.hasOwnProperty("collectionName"))
                 if (!(message.collectionName && typeof message.collectionName.length === "number" || $util.isString(message.collectionName)))
                     return "collectionName: buffer expected";
-            }
-            if (message.firstFourBytesFromAHashOfSnapshotMacKey != null && message.hasOwnProperty("firstFourBytesFromAHashOfSnapshotMacKey")) {
-                properties._firstFourBytesFromAHashOfSnapshotMacKey = 1;
+            if (message.firstFourBytesFromAHashOfSnapshotMacKey != null && message.hasOwnProperty("firstFourBytesFromAHashOfSnapshotMacKey"))
                 if (!(message.firstFourBytesFromAHashOfSnapshotMacKey && typeof message.firstFourBytesFromAHashOfSnapshotMacKey.length === "number" || $util.isString(message.firstFourBytesFromAHashOfSnapshotMacKey)))
                     return "firstFourBytesFromAHashOfSnapshotMacKey: buffer expected";
-            }
-            if (message.newLthashSubtract != null && message.hasOwnProperty("newLthashSubtract")) {
-                properties._newLthashSubtract = 1;
+            if (message.newLthashSubtract != null && message.hasOwnProperty("newLthashSubtract"))
                 if (!(message.newLthashSubtract && typeof message.newLthashSubtract.length === "number" || $util.isString(message.newLthashSubtract)))
                     return "newLthashSubtract: buffer expected";
-            }
-            if (message.numberAdd != null && message.hasOwnProperty("numberAdd")) {
-                properties._numberAdd = 1;
+            if (message.numberAdd != null && message.hasOwnProperty("numberAdd"))
                 if (!$util.isInteger(message.numberAdd))
                     return "numberAdd: integer expected";
-            }
-            if (message.numberRemove != null && message.hasOwnProperty("numberRemove")) {
-                properties._numberRemove = 1;
+            if (message.numberRemove != null && message.hasOwnProperty("numberRemove"))
                 if (!$util.isInteger(message.numberRemove))
                     return "numberRemove: integer expected";
-            }
-            if (message.numberOverride != null && message.hasOwnProperty("numberOverride")) {
-                properties._numberOverride = 1;
+            if (message.numberOverride != null && message.hasOwnProperty("numberOverride"))
                 if (!$util.isInteger(message.numberOverride))
                     return "numberOverride: integer expected";
-            }
-            if (message.senderPlatform != null && message.hasOwnProperty("senderPlatform")) {
-                properties._senderPlatform = 1;
+            if (message.senderPlatform != null && message.hasOwnProperty("senderPlatform"))
                 switch (message.senderPlatform) {
                 default:
                     return "senderPlatform: enum value expected";
@@ -474,12 +343,9 @@ $root.SyncAction = (function() {
                 case 8:
                     break;
                 }
-            }
-            if (message.isSenderPrimary != null && message.hasOwnProperty("isSenderPrimary")) {
-                properties._isSenderPrimary = 1;
+            if (message.isSenderPrimary != null && message.hasOwnProperty("isSenderPrimary"))
                 if (typeof message.isSenderPrimary !== "boolean")
                     return "isSenderPrimary: boolean expected";
-            }
             return null;
         };
 
@@ -498,32 +364,32 @@ $root.SyncAction = (function() {
             if (object.currentLthash != null)
                 if (typeof object.currentLthash === "string")
                     $util.base64.decode(object.currentLthash, message.currentLthash = $util.newBuffer($util.base64.length(object.currentLthash)), 0);
-                else if (object.currentLthash.length)
+                else if (object.currentLthash.length >= 0)
                     message.currentLthash = object.currentLthash;
             if (object.newLthash != null)
                 if (typeof object.newLthash === "string")
                     $util.base64.decode(object.newLthash, message.newLthash = $util.newBuffer($util.base64.length(object.newLthash)), 0);
-                else if (object.newLthash.length)
+                else if (object.newLthash.length >= 0)
                     message.newLthash = object.newLthash;
             if (object.patchVersion != null)
                 if (typeof object.patchVersion === "string")
                     $util.base64.decode(object.patchVersion, message.patchVersion = $util.newBuffer($util.base64.length(object.patchVersion)), 0);
-                else if (object.patchVersion.length)
+                else if (object.patchVersion.length >= 0)
                     message.patchVersion = object.patchVersion;
             if (object.collectionName != null)
                 if (typeof object.collectionName === "string")
                     $util.base64.decode(object.collectionName, message.collectionName = $util.newBuffer($util.base64.length(object.collectionName)), 0);
-                else if (object.collectionName.length)
+                else if (object.collectionName.length >= 0)
                     message.collectionName = object.collectionName;
             if (object.firstFourBytesFromAHashOfSnapshotMacKey != null)
                 if (typeof object.firstFourBytesFromAHashOfSnapshotMacKey === "string")
                     $util.base64.decode(object.firstFourBytesFromAHashOfSnapshotMacKey, message.firstFourBytesFromAHashOfSnapshotMacKey = $util.newBuffer($util.base64.length(object.firstFourBytesFromAHashOfSnapshotMacKey)), 0);
-                else if (object.firstFourBytesFromAHashOfSnapshotMacKey.length)
+                else if (object.firstFourBytesFromAHashOfSnapshotMacKey.length >= 0)
                     message.firstFourBytesFromAHashOfSnapshotMacKey = object.firstFourBytesFromAHashOfSnapshotMacKey;
             if (object.newLthashSubtract != null)
                 if (typeof object.newLthashSubtract === "string")
                     $util.base64.decode(object.newLthashSubtract, message.newLthashSubtract = $util.newBuffer($util.base64.length(object.newLthashSubtract)), 0);
-                else if (object.newLthashSubtract.length)
+                else if (object.newLthashSubtract.length >= 0)
                     message.newLthashSubtract = object.newLthashSubtract;
             if (object.numberAdd != null)
                 message.numberAdd = object.numberAdd | 0;
@@ -532,6 +398,12 @@ $root.SyncAction = (function() {
             if (object.numberOverride != null)
                 message.numberOverride = object.numberOverride | 0;
             switch (object.senderPlatform) {
+            default:
+                if (typeof object.senderPlatform === "number") {
+                    message.senderPlatform = object.senderPlatform;
+                    break;
+                }
+                break;
             case "ANDROID":
             case 0:
                 message.senderPlatform = 0;
@@ -587,61 +459,77 @@ $root.SyncAction = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.currentLthash != null && message.hasOwnProperty("currentLthash")) {
+            if (options.defaults) {
+                if (options.bytes === String)
+                    object.currentLthash = "";
+                else {
+                    object.currentLthash = [];
+                    if (options.bytes !== Array)
+                        object.currentLthash = $util.newBuffer(object.currentLthash);
+                }
+                if (options.bytes === String)
+                    object.newLthash = "";
+                else {
+                    object.newLthash = [];
+                    if (options.bytes !== Array)
+                        object.newLthash = $util.newBuffer(object.newLthash);
+                }
+                if (options.bytes === String)
+                    object.patchVersion = "";
+                else {
+                    object.patchVersion = [];
+                    if (options.bytes !== Array)
+                        object.patchVersion = $util.newBuffer(object.patchVersion);
+                }
+                if (options.bytes === String)
+                    object.collectionName = "";
+                else {
+                    object.collectionName = [];
+                    if (options.bytes !== Array)
+                        object.collectionName = $util.newBuffer(object.collectionName);
+                }
+                if (options.bytes === String)
+                    object.firstFourBytesFromAHashOfSnapshotMacKey = "";
+                else {
+                    object.firstFourBytesFromAHashOfSnapshotMacKey = [];
+                    if (options.bytes !== Array)
+                        object.firstFourBytesFromAHashOfSnapshotMacKey = $util.newBuffer(object.firstFourBytesFromAHashOfSnapshotMacKey);
+                }
+                if (options.bytes === String)
+                    object.newLthashSubtract = "";
+                else {
+                    object.newLthashSubtract = [];
+                    if (options.bytes !== Array)
+                        object.newLthashSubtract = $util.newBuffer(object.newLthashSubtract);
+                }
+                object.numberAdd = 0;
+                object.numberRemove = 0;
+                object.numberOverride = 0;
+                object.senderPlatform = options.enums === String ? "ANDROID" : 0;
+                object.isSenderPrimary = false;
+            }
+            if (message.currentLthash != null && message.hasOwnProperty("currentLthash"))
                 object.currentLthash = options.bytes === String ? $util.base64.encode(message.currentLthash, 0, message.currentLthash.length) : options.bytes === Array ? Array.prototype.slice.call(message.currentLthash) : message.currentLthash;
-                if (options.oneofs)
-                    object._currentLthash = "currentLthash";
-            }
-            if (message.newLthash != null && message.hasOwnProperty("newLthash")) {
+            if (message.newLthash != null && message.hasOwnProperty("newLthash"))
                 object.newLthash = options.bytes === String ? $util.base64.encode(message.newLthash, 0, message.newLthash.length) : options.bytes === Array ? Array.prototype.slice.call(message.newLthash) : message.newLthash;
-                if (options.oneofs)
-                    object._newLthash = "newLthash";
-            }
-            if (message.patchVersion != null && message.hasOwnProperty("patchVersion")) {
+            if (message.patchVersion != null && message.hasOwnProperty("patchVersion"))
                 object.patchVersion = options.bytes === String ? $util.base64.encode(message.patchVersion, 0, message.patchVersion.length) : options.bytes === Array ? Array.prototype.slice.call(message.patchVersion) : message.patchVersion;
-                if (options.oneofs)
-                    object._patchVersion = "patchVersion";
-            }
-            if (message.collectionName != null && message.hasOwnProperty("collectionName")) {
+            if (message.collectionName != null && message.hasOwnProperty("collectionName"))
                 object.collectionName = options.bytes === String ? $util.base64.encode(message.collectionName, 0, message.collectionName.length) : options.bytes === Array ? Array.prototype.slice.call(message.collectionName) : message.collectionName;
-                if (options.oneofs)
-                    object._collectionName = "collectionName";
-            }
-            if (message.firstFourBytesFromAHashOfSnapshotMacKey != null && message.hasOwnProperty("firstFourBytesFromAHashOfSnapshotMacKey")) {
+            if (message.firstFourBytesFromAHashOfSnapshotMacKey != null && message.hasOwnProperty("firstFourBytesFromAHashOfSnapshotMacKey"))
                 object.firstFourBytesFromAHashOfSnapshotMacKey = options.bytes === String ? $util.base64.encode(message.firstFourBytesFromAHashOfSnapshotMacKey, 0, message.firstFourBytesFromAHashOfSnapshotMacKey.length) : options.bytes === Array ? Array.prototype.slice.call(message.firstFourBytesFromAHashOfSnapshotMacKey) : message.firstFourBytesFromAHashOfSnapshotMacKey;
-                if (options.oneofs)
-                    object._firstFourBytesFromAHashOfSnapshotMacKey = "firstFourBytesFromAHashOfSnapshotMacKey";
-            }
-            if (message.newLthashSubtract != null && message.hasOwnProperty("newLthashSubtract")) {
+            if (message.newLthashSubtract != null && message.hasOwnProperty("newLthashSubtract"))
                 object.newLthashSubtract = options.bytes === String ? $util.base64.encode(message.newLthashSubtract, 0, message.newLthashSubtract.length) : options.bytes === Array ? Array.prototype.slice.call(message.newLthashSubtract) : message.newLthashSubtract;
-                if (options.oneofs)
-                    object._newLthashSubtract = "newLthashSubtract";
-            }
-            if (message.numberAdd != null && message.hasOwnProperty("numberAdd")) {
+            if (message.numberAdd != null && message.hasOwnProperty("numberAdd"))
                 object.numberAdd = message.numberAdd;
-                if (options.oneofs)
-                    object._numberAdd = "numberAdd";
-            }
-            if (message.numberRemove != null && message.hasOwnProperty("numberRemove")) {
+            if (message.numberRemove != null && message.hasOwnProperty("numberRemove"))
                 object.numberRemove = message.numberRemove;
-                if (options.oneofs)
-                    object._numberRemove = "numberRemove";
-            }
-            if (message.numberOverride != null && message.hasOwnProperty("numberOverride")) {
+            if (message.numberOverride != null && message.hasOwnProperty("numberOverride"))
                 object.numberOverride = message.numberOverride;
-                if (options.oneofs)
-                    object._numberOverride = "numberOverride";
-            }
-            if (message.senderPlatform != null && message.hasOwnProperty("senderPlatform")) {
-                object.senderPlatform = options.enums === String ? $root.SyncAction.PatchDebugData.Platform[message.senderPlatform] : message.senderPlatform;
-                if (options.oneofs)
-                    object._senderPlatform = "senderPlatform";
-            }
-            if (message.isSenderPrimary != null && message.hasOwnProperty("isSenderPrimary")) {
+            if (message.senderPlatform != null && message.hasOwnProperty("senderPlatform"))
+                object.senderPlatform = options.enums === String ? $root.SyncAction.PatchDebugData.Platform[message.senderPlatform] === undefined ? message.senderPlatform : $root.SyncAction.PatchDebugData.Platform[message.senderPlatform] : message.senderPlatform;
+            if (message.isSenderPrimary != null && message.hasOwnProperty("isSenderPrimary"))
                 object.isSenderPrimary = message.isSenderPrimary;
-                if (options.oneofs)
-                    object._isSenderPrimary = "isSenderPrimary";
-            }
             return object;
         };
 
@@ -654,6 +542,21 @@ $root.SyncAction = (function() {
          */
         PatchDebugData.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for PatchDebugData
+         * @function getTypeUrl
+         * @memberof SyncAction.PatchDebugData
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        PatchDebugData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SyncAction.PatchDebugData";
         };
 
         /**
@@ -716,11 +619,11 @@ $root.SyncAction = (function() {
 
         /**
          * SyncActionData index.
-         * @member {Uint8Array|null|undefined} index
+         * @member {Uint8Array} index
          * @memberof SyncAction.SyncActionData
          * @instance
          */
-        SyncActionData.prototype.index = null;
+        SyncActionData.prototype.index = $util.newBuffer([]);
 
         /**
          * SyncActionData value.
@@ -732,66 +635,19 @@ $root.SyncAction = (function() {
 
         /**
          * SyncActionData padding.
-         * @member {Uint8Array|null|undefined} padding
+         * @member {Uint8Array} padding
          * @memberof SyncAction.SyncActionData
          * @instance
          */
-        SyncActionData.prototype.padding = null;
+        SyncActionData.prototype.padding = $util.newBuffer([]);
 
         /**
          * SyncActionData version.
-         * @member {number|null|undefined} version
+         * @member {number} version
          * @memberof SyncAction.SyncActionData
          * @instance
          */
-        SyncActionData.prototype.version = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * SyncActionData _index.
-         * @member {"index"|undefined} _index
-         * @memberof SyncAction.SyncActionData
-         * @instance
-         */
-        Object.defineProperty(SyncActionData.prototype, "_index", {
-            get: $util.oneOfGetter($oneOfFields = ["index"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionData _value.
-         * @member {"value"|undefined} _value
-         * @memberof SyncAction.SyncActionData
-         * @instance
-         */
-        Object.defineProperty(SyncActionData.prototype, "_value", {
-            get: $util.oneOfGetter($oneOfFields = ["value"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionData _padding.
-         * @member {"padding"|undefined} _padding
-         * @memberof SyncAction.SyncActionData
-         * @instance
-         */
-        Object.defineProperty(SyncActionData.prototype, "_padding", {
-            get: $util.oneOfGetter($oneOfFields = ["padding"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionData _version.
-         * @member {"version"|undefined} _version
-         * @memberof SyncAction.SyncActionData
-         * @instance
-         */
-        Object.defineProperty(SyncActionData.prototype, "_version", {
-            get: $util.oneOfGetter($oneOfFields = ["version"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        SyncActionData.prototype.version = 0;
 
         /**
          * Creates a new SyncActionData instance using the specified properties.
@@ -852,25 +708,31 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncActionData.decode = function decode(reader, length) {
+        SyncActionData.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.index = reader.bytes();
-                    break;
-                case 2:
-                    message.value = $root.SyncAction.SyncActionValue.decode(reader, reader.uint32());
-                    break;
-                case 3:
-                    message.padding = reader.bytes();
-                    break;
-                case 4:
-                    message.version = reader.int32();
-                    break;
+                case 1: {
+                        message.index = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.value = $root.SyncAction.SyncActionValue.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 3: {
+                        message.padding = reader.bytes();
+                        break;
+                    }
+                case 4: {
+                        message.version = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -906,30 +768,20 @@ $root.SyncAction = (function() {
         SyncActionData.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.index != null && message.hasOwnProperty("index")) {
-                properties._index = 1;
+            if (message.index != null && message.hasOwnProperty("index"))
                 if (!(message.index && typeof message.index.length === "number" || $util.isString(message.index)))
                     return "index: buffer expected";
-            }
             if (message.value != null && message.hasOwnProperty("value")) {
-                properties._value = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.verify(message.value);
-                    if (error)
-                        return "value." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.verify(message.value);
+                if (error)
+                    return "value." + error;
             }
-            if (message.padding != null && message.hasOwnProperty("padding")) {
-                properties._padding = 1;
+            if (message.padding != null && message.hasOwnProperty("padding"))
                 if (!(message.padding && typeof message.padding.length === "number" || $util.isString(message.padding)))
                     return "padding: buffer expected";
-            }
-            if (message.version != null && message.hasOwnProperty("version")) {
-                properties._version = 1;
+            if (message.version != null && message.hasOwnProperty("version"))
                 if (!$util.isInteger(message.version))
                     return "version: integer expected";
-            }
             return null;
         };
 
@@ -948,7 +800,7 @@ $root.SyncAction = (function() {
             if (object.index != null)
                 if (typeof object.index === "string")
                     $util.base64.decode(object.index, message.index = $util.newBuffer($util.base64.length(object.index)), 0);
-                else if (object.index.length)
+                else if (object.index.length >= 0)
                     message.index = object.index;
             if (object.value != null) {
                 if (typeof object.value !== "object")
@@ -958,7 +810,7 @@ $root.SyncAction = (function() {
             if (object.padding != null)
                 if (typeof object.padding === "string")
                     $util.base64.decode(object.padding, message.padding = $util.newBuffer($util.base64.length(object.padding)), 0);
-                else if (object.padding.length)
+                else if (object.padding.length >= 0)
                     message.padding = object.padding;
             if (object.version != null)
                 message.version = object.version | 0;
@@ -978,26 +830,32 @@ $root.SyncAction = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.index != null && message.hasOwnProperty("index")) {
+            if (options.defaults) {
+                if (options.bytes === String)
+                    object.index = "";
+                else {
+                    object.index = [];
+                    if (options.bytes !== Array)
+                        object.index = $util.newBuffer(object.index);
+                }
+                object.value = null;
+                if (options.bytes === String)
+                    object.padding = "";
+                else {
+                    object.padding = [];
+                    if (options.bytes !== Array)
+                        object.padding = $util.newBuffer(object.padding);
+                }
+                object.version = 0;
+            }
+            if (message.index != null && message.hasOwnProperty("index"))
                 object.index = options.bytes === String ? $util.base64.encode(message.index, 0, message.index.length) : options.bytes === Array ? Array.prototype.slice.call(message.index) : message.index;
-                if (options.oneofs)
-                    object._index = "index";
-            }
-            if (message.value != null && message.hasOwnProperty("value")) {
+            if (message.value != null && message.hasOwnProperty("value"))
                 object.value = $root.SyncAction.SyncActionValue.toObject(message.value, options);
-                if (options.oneofs)
-                    object._value = "value";
-            }
-            if (message.padding != null && message.hasOwnProperty("padding")) {
+            if (message.padding != null && message.hasOwnProperty("padding"))
                 object.padding = options.bytes === String ? $util.base64.encode(message.padding, 0, message.padding.length) : options.bytes === Array ? Array.prototype.slice.call(message.padding) : message.padding;
-                if (options.oneofs)
-                    object._padding = "padding";
-            }
-            if (message.version != null && message.hasOwnProperty("version")) {
+            if (message.version != null && message.hasOwnProperty("version"))
                 object.version = message.version;
-                if (options.oneofs)
-                    object._version = "version";
-            }
             return object;
         };
 
@@ -1010,6 +868,21 @@ $root.SyncAction = (function() {
          */
         SyncActionData.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SyncActionData
+         * @function getTypeUrl
+         * @memberof SyncAction.SyncActionData
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncActionData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SyncAction.SyncActionData";
         };
 
         return SyncActionData;
@@ -1104,11 +977,11 @@ $root.SyncAction = (function() {
 
         /**
          * SyncActionValue timestamp.
-         * @member {number|Long|null|undefined} timestamp
+         * @member {number|Long} timestamp
          * @memberof SyncAction.SyncActionValue
          * @instance
          */
-        SyncActionValue.prototype.timestamp = null;
+        SyncActionValue.prototype.timestamp = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
         /**
          * SyncActionValue starAction.
@@ -1614,713 +1487,6 @@ $root.SyncAction = (function() {
          */
         SyncActionValue.prototype.statusPostOptInNotificationPreferencesAction = null;
 
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * SyncActionValue _timestamp.
-         * @member {"timestamp"|undefined} _timestamp
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_timestamp", {
-            get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _starAction.
-         * @member {"starAction"|undefined} _starAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_starAction", {
-            get: $util.oneOfGetter($oneOfFields = ["starAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _contactAction.
-         * @member {"contactAction"|undefined} _contactAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_contactAction", {
-            get: $util.oneOfGetter($oneOfFields = ["contactAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _muteAction.
-         * @member {"muteAction"|undefined} _muteAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_muteAction", {
-            get: $util.oneOfGetter($oneOfFields = ["muteAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _pinAction.
-         * @member {"pinAction"|undefined} _pinAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_pinAction", {
-            get: $util.oneOfGetter($oneOfFields = ["pinAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _securityNotificationSetting.
-         * @member {"securityNotificationSetting"|undefined} _securityNotificationSetting
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_securityNotificationSetting", {
-            get: $util.oneOfGetter($oneOfFields = ["securityNotificationSetting"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _pushNameSetting.
-         * @member {"pushNameSetting"|undefined} _pushNameSetting
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_pushNameSetting", {
-            get: $util.oneOfGetter($oneOfFields = ["pushNameSetting"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _quickReplyAction.
-         * @member {"quickReplyAction"|undefined} _quickReplyAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_quickReplyAction", {
-            get: $util.oneOfGetter($oneOfFields = ["quickReplyAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _recentEmojiWeightsAction.
-         * @member {"recentEmojiWeightsAction"|undefined} _recentEmojiWeightsAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_recentEmojiWeightsAction", {
-            get: $util.oneOfGetter($oneOfFields = ["recentEmojiWeightsAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _labelEditAction.
-         * @member {"labelEditAction"|undefined} _labelEditAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_labelEditAction", {
-            get: $util.oneOfGetter($oneOfFields = ["labelEditAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _labelAssociationAction.
-         * @member {"labelAssociationAction"|undefined} _labelAssociationAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_labelAssociationAction", {
-            get: $util.oneOfGetter($oneOfFields = ["labelAssociationAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _localeSetting.
-         * @member {"localeSetting"|undefined} _localeSetting
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_localeSetting", {
-            get: $util.oneOfGetter($oneOfFields = ["localeSetting"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _archiveChatAction.
-         * @member {"archiveChatAction"|undefined} _archiveChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_archiveChatAction", {
-            get: $util.oneOfGetter($oneOfFields = ["archiveChatAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _deleteMessageForMeAction.
-         * @member {"deleteMessageForMeAction"|undefined} _deleteMessageForMeAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_deleteMessageForMeAction", {
-            get: $util.oneOfGetter($oneOfFields = ["deleteMessageForMeAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _keyExpiration.
-         * @member {"keyExpiration"|undefined} _keyExpiration
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_keyExpiration", {
-            get: $util.oneOfGetter($oneOfFields = ["keyExpiration"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _markChatAsReadAction.
-         * @member {"markChatAsReadAction"|undefined} _markChatAsReadAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_markChatAsReadAction", {
-            get: $util.oneOfGetter($oneOfFields = ["markChatAsReadAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _clearChatAction.
-         * @member {"clearChatAction"|undefined} _clearChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_clearChatAction", {
-            get: $util.oneOfGetter($oneOfFields = ["clearChatAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _deleteChatAction.
-         * @member {"deleteChatAction"|undefined} _deleteChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_deleteChatAction", {
-            get: $util.oneOfGetter($oneOfFields = ["deleteChatAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _unarchiveChatsSetting.
-         * @member {"unarchiveChatsSetting"|undefined} _unarchiveChatsSetting
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_unarchiveChatsSetting", {
-            get: $util.oneOfGetter($oneOfFields = ["unarchiveChatsSetting"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _primaryFeature.
-         * @member {"primaryFeature"|undefined} _primaryFeature
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_primaryFeature", {
-            get: $util.oneOfGetter($oneOfFields = ["primaryFeature"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _androidUnsupportedActions.
-         * @member {"androidUnsupportedActions"|undefined} _androidUnsupportedActions
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_androidUnsupportedActions", {
-            get: $util.oneOfGetter($oneOfFields = ["androidUnsupportedActions"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _agentAction.
-         * @member {"agentAction"|undefined} _agentAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_agentAction", {
-            get: $util.oneOfGetter($oneOfFields = ["agentAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _subscriptionAction.
-         * @member {"subscriptionAction"|undefined} _subscriptionAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_subscriptionAction", {
-            get: $util.oneOfGetter($oneOfFields = ["subscriptionAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _userStatusMuteAction.
-         * @member {"userStatusMuteAction"|undefined} _userStatusMuteAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_userStatusMuteAction", {
-            get: $util.oneOfGetter($oneOfFields = ["userStatusMuteAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _timeFormatAction.
-         * @member {"timeFormatAction"|undefined} _timeFormatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_timeFormatAction", {
-            get: $util.oneOfGetter($oneOfFields = ["timeFormatAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _nuxAction.
-         * @member {"nuxAction"|undefined} _nuxAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_nuxAction", {
-            get: $util.oneOfGetter($oneOfFields = ["nuxAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _primaryVersionAction.
-         * @member {"primaryVersionAction"|undefined} _primaryVersionAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_primaryVersionAction", {
-            get: $util.oneOfGetter($oneOfFields = ["primaryVersionAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _stickerAction.
-         * @member {"stickerAction"|undefined} _stickerAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_stickerAction", {
-            get: $util.oneOfGetter($oneOfFields = ["stickerAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _removeRecentStickerAction.
-         * @member {"removeRecentStickerAction"|undefined} _removeRecentStickerAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_removeRecentStickerAction", {
-            get: $util.oneOfGetter($oneOfFields = ["removeRecentStickerAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _chatAssignment.
-         * @member {"chatAssignment"|undefined} _chatAssignment
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_chatAssignment", {
-            get: $util.oneOfGetter($oneOfFields = ["chatAssignment"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _chatAssignmentOpenedStatus.
-         * @member {"chatAssignmentOpenedStatus"|undefined} _chatAssignmentOpenedStatus
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_chatAssignmentOpenedStatus", {
-            get: $util.oneOfGetter($oneOfFields = ["chatAssignmentOpenedStatus"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _pnForLidChatAction.
-         * @member {"pnForLidChatAction"|undefined} _pnForLidChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_pnForLidChatAction", {
-            get: $util.oneOfGetter($oneOfFields = ["pnForLidChatAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _marketingMessageAction.
-         * @member {"marketingMessageAction"|undefined} _marketingMessageAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_marketingMessageAction", {
-            get: $util.oneOfGetter($oneOfFields = ["marketingMessageAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _marketingMessageBroadcastAction.
-         * @member {"marketingMessageBroadcastAction"|undefined} _marketingMessageBroadcastAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_marketingMessageBroadcastAction", {
-            get: $util.oneOfGetter($oneOfFields = ["marketingMessageBroadcastAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _externalWebBetaAction.
-         * @member {"externalWebBetaAction"|undefined} _externalWebBetaAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_externalWebBetaAction", {
-            get: $util.oneOfGetter($oneOfFields = ["externalWebBetaAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _privacySettingRelayAllCalls.
-         * @member {"privacySettingRelayAllCalls"|undefined} _privacySettingRelayAllCalls
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_privacySettingRelayAllCalls", {
-            get: $util.oneOfGetter($oneOfFields = ["privacySettingRelayAllCalls"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _callLogAction.
-         * @member {"callLogAction"|undefined} _callLogAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_callLogAction", {
-            get: $util.oneOfGetter($oneOfFields = ["callLogAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _statusPrivacy.
-         * @member {"statusPrivacy"|undefined} _statusPrivacy
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_statusPrivacy", {
-            get: $util.oneOfGetter($oneOfFields = ["statusPrivacy"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _botWelcomeRequestAction.
-         * @member {"botWelcomeRequestAction"|undefined} _botWelcomeRequestAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_botWelcomeRequestAction", {
-            get: $util.oneOfGetter($oneOfFields = ["botWelcomeRequestAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _deleteIndividualCallLog.
-         * @member {"deleteIndividualCallLog"|undefined} _deleteIndividualCallLog
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_deleteIndividualCallLog", {
-            get: $util.oneOfGetter($oneOfFields = ["deleteIndividualCallLog"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _labelReorderingAction.
-         * @member {"labelReorderingAction"|undefined} _labelReorderingAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_labelReorderingAction", {
-            get: $util.oneOfGetter($oneOfFields = ["labelReorderingAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _paymentInfoAction.
-         * @member {"paymentInfoAction"|undefined} _paymentInfoAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_paymentInfoAction", {
-            get: $util.oneOfGetter($oneOfFields = ["paymentInfoAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _customPaymentMethodsAction.
-         * @member {"customPaymentMethodsAction"|undefined} _customPaymentMethodsAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_customPaymentMethodsAction", {
-            get: $util.oneOfGetter($oneOfFields = ["customPaymentMethodsAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _lockChatAction.
-         * @member {"lockChatAction"|undefined} _lockChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_lockChatAction", {
-            get: $util.oneOfGetter($oneOfFields = ["lockChatAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _chatLockSettings.
-         * @member {"chatLockSettings"|undefined} _chatLockSettings
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_chatLockSettings", {
-            get: $util.oneOfGetter($oneOfFields = ["chatLockSettings"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _wamoUserIdentifierAction.
-         * @member {"wamoUserIdentifierAction"|undefined} _wamoUserIdentifierAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_wamoUserIdentifierAction", {
-            get: $util.oneOfGetter($oneOfFields = ["wamoUserIdentifierAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _privacySettingDisableLinkPreviewsAction.
-         * @member {"privacySettingDisableLinkPreviewsAction"|undefined} _privacySettingDisableLinkPreviewsAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_privacySettingDisableLinkPreviewsAction", {
-            get: $util.oneOfGetter($oneOfFields = ["privacySettingDisableLinkPreviewsAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _deviceCapabilities.
-         * @member {"deviceCapabilities"|undefined} _deviceCapabilities
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_deviceCapabilities", {
-            get: $util.oneOfGetter($oneOfFields = ["deviceCapabilities"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _noteEditAction.
-         * @member {"noteEditAction"|undefined} _noteEditAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_noteEditAction", {
-            get: $util.oneOfGetter($oneOfFields = ["noteEditAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _favoritesAction.
-         * @member {"favoritesAction"|undefined} _favoritesAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_favoritesAction", {
-            get: $util.oneOfGetter($oneOfFields = ["favoritesAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _merchantPaymentPartnerAction.
-         * @member {"merchantPaymentPartnerAction"|undefined} _merchantPaymentPartnerAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_merchantPaymentPartnerAction", {
-            get: $util.oneOfGetter($oneOfFields = ["merchantPaymentPartnerAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _waffleAccountLinkStateAction.
-         * @member {"waffleAccountLinkStateAction"|undefined} _waffleAccountLinkStateAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_waffleAccountLinkStateAction", {
-            get: $util.oneOfGetter($oneOfFields = ["waffleAccountLinkStateAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _usernameChatStartMode.
-         * @member {"usernameChatStartMode"|undefined} _usernameChatStartMode
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_usernameChatStartMode", {
-            get: $util.oneOfGetter($oneOfFields = ["usernameChatStartMode"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _notificationActivitySettingAction.
-         * @member {"notificationActivitySettingAction"|undefined} _notificationActivitySettingAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_notificationActivitySettingAction", {
-            get: $util.oneOfGetter($oneOfFields = ["notificationActivitySettingAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _lidContactAction.
-         * @member {"lidContactAction"|undefined} _lidContactAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_lidContactAction", {
-            get: $util.oneOfGetter($oneOfFields = ["lidContactAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _ctwaPerCustomerDataSharingAction.
-         * @member {"ctwaPerCustomerDataSharingAction"|undefined} _ctwaPerCustomerDataSharingAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_ctwaPerCustomerDataSharingAction", {
-            get: $util.oneOfGetter($oneOfFields = ["ctwaPerCustomerDataSharingAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _paymentTosAction.
-         * @member {"paymentTosAction"|undefined} _paymentTosAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_paymentTosAction", {
-            get: $util.oneOfGetter($oneOfFields = ["paymentTosAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _privacySettingChannelsPersonalisedRecommendationAction.
-         * @member {"privacySettingChannelsPersonalisedRecommendationAction"|undefined} _privacySettingChannelsPersonalisedRecommendationAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_privacySettingChannelsPersonalisedRecommendationAction", {
-            get: $util.oneOfGetter($oneOfFields = ["privacySettingChannelsPersonalisedRecommendationAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _businessBroadcastAssociationAction.
-         * @member {"businessBroadcastAssociationAction"|undefined} _businessBroadcastAssociationAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_businessBroadcastAssociationAction", {
-            get: $util.oneOfGetter($oneOfFields = ["businessBroadcastAssociationAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _detectedOutcomesStatusAction.
-         * @member {"detectedOutcomesStatusAction"|undefined} _detectedOutcomesStatusAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_detectedOutcomesStatusAction", {
-            get: $util.oneOfGetter($oneOfFields = ["detectedOutcomesStatusAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _maibaAiFeaturesControlAction.
-         * @member {"maibaAiFeaturesControlAction"|undefined} _maibaAiFeaturesControlAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_maibaAiFeaturesControlAction", {
-            get: $util.oneOfGetter($oneOfFields = ["maibaAiFeaturesControlAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _businessBroadcastListAction.
-         * @member {"businessBroadcastListAction"|undefined} _businessBroadcastListAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_businessBroadcastListAction", {
-            get: $util.oneOfGetter($oneOfFields = ["businessBroadcastListAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _musicUserIdAction.
-         * @member {"musicUserIdAction"|undefined} _musicUserIdAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_musicUserIdAction", {
-            get: $util.oneOfGetter($oneOfFields = ["musicUserIdAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * SyncActionValue _statusPostOptInNotificationPreferencesAction.
-         * @member {"statusPostOptInNotificationPreferencesAction"|undefined} _statusPostOptInNotificationPreferencesAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
-        Object.defineProperty(SyncActionValue.prototype, "_statusPostOptInNotificationPreferencesAction", {
-            get: $util.oneOfGetter($oneOfFields = ["statusPostOptInNotificationPreferencesAction"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
         /**
          * Creates a new SyncActionValue instance using the specified properties.
          * @function create
@@ -2500,205 +1666,271 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncActionValue.decode = function decode(reader, length) {
+        SyncActionValue.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.timestamp = reader.int64();
-                    break;
-                case 2:
-                    message.starAction = $root.SyncAction.SyncActionValue.StarAction.decode(reader, reader.uint32());
-                    break;
-                case 3:
-                    message.contactAction = $root.SyncAction.SyncActionValue.ContactAction.decode(reader, reader.uint32());
-                    break;
-                case 4:
-                    message.muteAction = $root.SyncAction.SyncActionValue.MuteAction.decode(reader, reader.uint32());
-                    break;
-                case 5:
-                    message.pinAction = $root.SyncAction.SyncActionValue.PinAction.decode(reader, reader.uint32());
-                    break;
-                case 6:
-                    message.securityNotificationSetting = $root.SyncAction.SyncActionValue.SecurityNotificationSetting.decode(reader, reader.uint32());
-                    break;
-                case 7:
-                    message.pushNameSetting = $root.SyncAction.SyncActionValue.PushNameSetting.decode(reader, reader.uint32());
-                    break;
-                case 8:
-                    message.quickReplyAction = $root.SyncAction.SyncActionValue.QuickReplyAction.decode(reader, reader.uint32());
-                    break;
-                case 11:
-                    message.recentEmojiWeightsAction = $root.SyncAction.SyncActionValue.RecentEmojiWeightsAction.decode(reader, reader.uint32());
-                    break;
-                case 14:
-                    message.labelEditAction = $root.SyncAction.SyncActionValue.LabelEditAction.decode(reader, reader.uint32());
-                    break;
-                case 15:
-                    message.labelAssociationAction = $root.SyncAction.SyncActionValue.LabelAssociationAction.decode(reader, reader.uint32());
-                    break;
-                case 16:
-                    message.localeSetting = $root.SyncAction.SyncActionValue.LocaleSetting.decode(reader, reader.uint32());
-                    break;
-                case 17:
-                    message.archiveChatAction = $root.SyncAction.SyncActionValue.ArchiveChatAction.decode(reader, reader.uint32());
-                    break;
-                case 18:
-                    message.deleteMessageForMeAction = $root.SyncAction.SyncActionValue.DeleteMessageForMeAction.decode(reader, reader.uint32());
-                    break;
-                case 19:
-                    message.keyExpiration = $root.SyncAction.SyncActionValue.KeyExpiration.decode(reader, reader.uint32());
-                    break;
-                case 20:
-                    message.markChatAsReadAction = $root.SyncAction.SyncActionValue.MarkChatAsReadAction.decode(reader, reader.uint32());
-                    break;
-                case 21:
-                    message.clearChatAction = $root.SyncAction.SyncActionValue.ClearChatAction.decode(reader, reader.uint32());
-                    break;
-                case 22:
-                    message.deleteChatAction = $root.SyncAction.SyncActionValue.DeleteChatAction.decode(reader, reader.uint32());
-                    break;
-                case 23:
-                    message.unarchiveChatsSetting = $root.SyncAction.SyncActionValue.UnarchiveChatsSetting.decode(reader, reader.uint32());
-                    break;
-                case 24:
-                    message.primaryFeature = $root.SyncAction.SyncActionValue.PrimaryFeature.decode(reader, reader.uint32());
-                    break;
-                case 26:
-                    message.androidUnsupportedActions = $root.SyncAction.SyncActionValue.AndroidUnsupportedActions.decode(reader, reader.uint32());
-                    break;
-                case 27:
-                    message.agentAction = $root.SyncAction.SyncActionValue.AgentAction.decode(reader, reader.uint32());
-                    break;
-                case 28:
-                    message.subscriptionAction = $root.SyncAction.SyncActionValue.SubscriptionAction.decode(reader, reader.uint32());
-                    break;
-                case 29:
-                    message.userStatusMuteAction = $root.SyncAction.SyncActionValue.UserStatusMuteAction.decode(reader, reader.uint32());
-                    break;
-                case 30:
-                    message.timeFormatAction = $root.SyncAction.SyncActionValue.TimeFormatAction.decode(reader, reader.uint32());
-                    break;
-                case 31:
-                    message.nuxAction = $root.SyncAction.SyncActionValue.NuxAction.decode(reader, reader.uint32());
-                    break;
-                case 32:
-                    message.primaryVersionAction = $root.SyncAction.SyncActionValue.PrimaryVersionAction.decode(reader, reader.uint32());
-                    break;
-                case 33:
-                    message.stickerAction = $root.SyncAction.SyncActionValue.StickerAction.decode(reader, reader.uint32());
-                    break;
-                case 34:
-                    message.removeRecentStickerAction = $root.SyncAction.SyncActionValue.RemoveRecentStickerAction.decode(reader, reader.uint32());
-                    break;
-                case 35:
-                    message.chatAssignment = $root.SyncAction.SyncActionValue.ChatAssignmentAction.decode(reader, reader.uint32());
-                    break;
-                case 36:
-                    message.chatAssignmentOpenedStatus = $root.SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction.decode(reader, reader.uint32());
-                    break;
-                case 37:
-                    message.pnForLidChatAction = $root.SyncAction.SyncActionValue.PnForLidChatAction.decode(reader, reader.uint32());
-                    break;
-                case 38:
-                    message.marketingMessageAction = $root.SyncAction.SyncActionValue.MarketingMessageAction.decode(reader, reader.uint32());
-                    break;
-                case 39:
-                    message.marketingMessageBroadcastAction = $root.SyncAction.SyncActionValue.MarketingMessageBroadcastAction.decode(reader, reader.uint32());
-                    break;
-                case 40:
-                    message.externalWebBetaAction = $root.SyncAction.SyncActionValue.ExternalWebBetaAction.decode(reader, reader.uint32());
-                    break;
-                case 41:
-                    message.privacySettingRelayAllCalls = $root.SyncAction.SyncActionValue.PrivacySettingRelayAllCalls.decode(reader, reader.uint32());
-                    break;
-                case 42:
-                    message.callLogAction = $root.SyncAction.SyncActionValue.CallLogAction.decode(reader, reader.uint32());
-                    break;
-                case 44:
-                    message.statusPrivacy = $root.SyncAction.SyncActionValue.StatusPrivacyAction.decode(reader, reader.uint32());
-                    break;
-                case 45:
-                    message.botWelcomeRequestAction = $root.SyncAction.SyncActionValue.BotWelcomeRequestAction.decode(reader, reader.uint32());
-                    break;
-                case 46:
-                    message.deleteIndividualCallLog = $root.SyncAction.SyncActionValue.DeleteIndividualCallLogAction.decode(reader, reader.uint32());
-                    break;
-                case 47:
-                    message.labelReorderingAction = $root.SyncAction.SyncActionValue.LabelReorderingAction.decode(reader, reader.uint32());
-                    break;
-                case 48:
-                    message.paymentInfoAction = $root.SyncAction.SyncActionValue.PaymentInfoAction.decode(reader, reader.uint32());
-                    break;
-                case 49:
-                    message.customPaymentMethodsAction = $root.SyncAction.SyncActionValue.CustomPaymentMethodsAction.decode(reader, reader.uint32());
-                    break;
-                case 50:
-                    message.lockChatAction = $root.SyncAction.SyncActionValue.LockChatAction.decode(reader, reader.uint32());
-                    break;
-                case 51:
-                    message.chatLockSettings = $root.ChatLockSettings.ChatLockSettings.decode(reader, reader.uint32());
-                    break;
-                case 52:
-                    message.wamoUserIdentifierAction = $root.SyncAction.SyncActionValue.WamoUserIdentifierAction.decode(reader, reader.uint32());
-                    break;
-                case 53:
-                    message.privacySettingDisableLinkPreviewsAction = $root.SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.decode(reader, reader.uint32());
-                    break;
-                case 54:
-                    message.deviceCapabilities = $root.DeviceCapabilities.DeviceCapabilities.decode(reader, reader.uint32());
-                    break;
-                case 55:
-                    message.noteEditAction = $root.SyncAction.SyncActionValue.NoteEditAction.decode(reader, reader.uint32());
-                    break;
-                case 56:
-                    message.favoritesAction = $root.SyncAction.SyncActionValue.FavoritesAction.decode(reader, reader.uint32());
-                    break;
-                case 57:
-                    message.merchantPaymentPartnerAction = $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.decode(reader, reader.uint32());
-                    break;
-                case 58:
-                    message.waffleAccountLinkStateAction = $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction.decode(reader, reader.uint32());
-                    break;
-                case 59:
-                    message.usernameChatStartMode = $root.SyncAction.SyncActionValue.UsernameChatStartModeAction.decode(reader, reader.uint32());
-                    break;
-                case 60:
-                    message.notificationActivitySettingAction = $root.SyncAction.SyncActionValue.NotificationActivitySettingAction.decode(reader, reader.uint32());
-                    break;
-                case 61:
-                    message.lidContactAction = $root.SyncAction.SyncActionValue.LidContactAction.decode(reader, reader.uint32());
-                    break;
-                case 62:
-                    message.ctwaPerCustomerDataSharingAction = $root.SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction.decode(reader, reader.uint32());
-                    break;
-                case 63:
-                    message.paymentTosAction = $root.SyncAction.SyncActionValue.PaymentTosAction.decode(reader, reader.uint32());
-                    break;
-                case 64:
-                    message.privacySettingChannelsPersonalisedRecommendationAction = $root.SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.decode(reader, reader.uint32());
-                    break;
-                case 65:
-                    message.businessBroadcastAssociationAction = $root.SyncAction.SyncActionValue.BusinessBroadcastAssociationAction.decode(reader, reader.uint32());
-                    break;
-                case 66:
-                    message.detectedOutcomesStatusAction = $root.SyncAction.SyncActionValue.DetectedOutcomesStatusAction.decode(reader, reader.uint32());
-                    break;
-                case 68:
-                    message.maibaAiFeaturesControlAction = $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.decode(reader, reader.uint32());
-                    break;
-                case 69:
-                    message.businessBroadcastListAction = $root.SyncAction.SyncActionValue.BusinessBroadcastListAction.decode(reader, reader.uint32());
-                    break;
-                case 70:
-                    message.musicUserIdAction = $root.SyncAction.SyncActionValue.MusicUserIdAction.decode(reader, reader.uint32());
-                    break;
-                case 71:
-                    message.statusPostOptInNotificationPreferencesAction = $root.SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.timestamp = reader.int64();
+                        break;
+                    }
+                case 2: {
+                        message.starAction = $root.SyncAction.SyncActionValue.StarAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 3: {
+                        message.contactAction = $root.SyncAction.SyncActionValue.ContactAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 4: {
+                        message.muteAction = $root.SyncAction.SyncActionValue.MuteAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 5: {
+                        message.pinAction = $root.SyncAction.SyncActionValue.PinAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 6: {
+                        message.securityNotificationSetting = $root.SyncAction.SyncActionValue.SecurityNotificationSetting.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 7: {
+                        message.pushNameSetting = $root.SyncAction.SyncActionValue.PushNameSetting.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 8: {
+                        message.quickReplyAction = $root.SyncAction.SyncActionValue.QuickReplyAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 11: {
+                        message.recentEmojiWeightsAction = $root.SyncAction.SyncActionValue.RecentEmojiWeightsAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 14: {
+                        message.labelEditAction = $root.SyncAction.SyncActionValue.LabelEditAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 15: {
+                        message.labelAssociationAction = $root.SyncAction.SyncActionValue.LabelAssociationAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 16: {
+                        message.localeSetting = $root.SyncAction.SyncActionValue.LocaleSetting.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 17: {
+                        message.archiveChatAction = $root.SyncAction.SyncActionValue.ArchiveChatAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 18: {
+                        message.deleteMessageForMeAction = $root.SyncAction.SyncActionValue.DeleteMessageForMeAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 19: {
+                        message.keyExpiration = $root.SyncAction.SyncActionValue.KeyExpiration.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 20: {
+                        message.markChatAsReadAction = $root.SyncAction.SyncActionValue.MarkChatAsReadAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 21: {
+                        message.clearChatAction = $root.SyncAction.SyncActionValue.ClearChatAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 22: {
+                        message.deleteChatAction = $root.SyncAction.SyncActionValue.DeleteChatAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 23: {
+                        message.unarchiveChatsSetting = $root.SyncAction.SyncActionValue.UnarchiveChatsSetting.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 24: {
+                        message.primaryFeature = $root.SyncAction.SyncActionValue.PrimaryFeature.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 26: {
+                        message.androidUnsupportedActions = $root.SyncAction.SyncActionValue.AndroidUnsupportedActions.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 27: {
+                        message.agentAction = $root.SyncAction.SyncActionValue.AgentAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 28: {
+                        message.subscriptionAction = $root.SyncAction.SyncActionValue.SubscriptionAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 29: {
+                        message.userStatusMuteAction = $root.SyncAction.SyncActionValue.UserStatusMuteAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 30: {
+                        message.timeFormatAction = $root.SyncAction.SyncActionValue.TimeFormatAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 31: {
+                        message.nuxAction = $root.SyncAction.SyncActionValue.NuxAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 32: {
+                        message.primaryVersionAction = $root.SyncAction.SyncActionValue.PrimaryVersionAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 33: {
+                        message.stickerAction = $root.SyncAction.SyncActionValue.StickerAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 34: {
+                        message.removeRecentStickerAction = $root.SyncAction.SyncActionValue.RemoveRecentStickerAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 35: {
+                        message.chatAssignment = $root.SyncAction.SyncActionValue.ChatAssignmentAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 36: {
+                        message.chatAssignmentOpenedStatus = $root.SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 37: {
+                        message.pnForLidChatAction = $root.SyncAction.SyncActionValue.PnForLidChatAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 38: {
+                        message.marketingMessageAction = $root.SyncAction.SyncActionValue.MarketingMessageAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 39: {
+                        message.marketingMessageBroadcastAction = $root.SyncAction.SyncActionValue.MarketingMessageBroadcastAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 40: {
+                        message.externalWebBetaAction = $root.SyncAction.SyncActionValue.ExternalWebBetaAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 41: {
+                        message.privacySettingRelayAllCalls = $root.SyncAction.SyncActionValue.PrivacySettingRelayAllCalls.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 42: {
+                        message.callLogAction = $root.SyncAction.SyncActionValue.CallLogAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 44: {
+                        message.statusPrivacy = $root.SyncAction.SyncActionValue.StatusPrivacyAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 45: {
+                        message.botWelcomeRequestAction = $root.SyncAction.SyncActionValue.BotWelcomeRequestAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 46: {
+                        message.deleteIndividualCallLog = $root.SyncAction.SyncActionValue.DeleteIndividualCallLogAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 47: {
+                        message.labelReorderingAction = $root.SyncAction.SyncActionValue.LabelReorderingAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 48: {
+                        message.paymentInfoAction = $root.SyncAction.SyncActionValue.PaymentInfoAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 49: {
+                        message.customPaymentMethodsAction = $root.SyncAction.SyncActionValue.CustomPaymentMethodsAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 50: {
+                        message.lockChatAction = $root.SyncAction.SyncActionValue.LockChatAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 51: {
+                        message.chatLockSettings = $root.ChatLockSettings.ChatLockSettings.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 52: {
+                        message.wamoUserIdentifierAction = $root.SyncAction.SyncActionValue.WamoUserIdentifierAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 53: {
+                        message.privacySettingDisableLinkPreviewsAction = $root.SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 54: {
+                        message.deviceCapabilities = $root.DeviceCapabilities.DeviceCapabilities.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 55: {
+                        message.noteEditAction = $root.SyncAction.SyncActionValue.NoteEditAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 56: {
+                        message.favoritesAction = $root.SyncAction.SyncActionValue.FavoritesAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 57: {
+                        message.merchantPaymentPartnerAction = $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 58: {
+                        message.waffleAccountLinkStateAction = $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 59: {
+                        message.usernameChatStartMode = $root.SyncAction.SyncActionValue.UsernameChatStartModeAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 60: {
+                        message.notificationActivitySettingAction = $root.SyncAction.SyncActionValue.NotificationActivitySettingAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 61: {
+                        message.lidContactAction = $root.SyncAction.SyncActionValue.LidContactAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 62: {
+                        message.ctwaPerCustomerDataSharingAction = $root.SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 63: {
+                        message.paymentTosAction = $root.SyncAction.SyncActionValue.PaymentTosAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 64: {
+                        message.privacySettingChannelsPersonalisedRecommendationAction = $root.SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 65: {
+                        message.businessBroadcastAssociationAction = $root.SyncAction.SyncActionValue.BusinessBroadcastAssociationAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 66: {
+                        message.detectedOutcomesStatusAction = $root.SyncAction.SyncActionValue.DetectedOutcomesStatusAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 68: {
+                        message.maibaAiFeaturesControlAction = $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 69: {
+                        message.businessBroadcastListAction = $root.SyncAction.SyncActionValue.BusinessBroadcastListAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 70: {
+                        message.musicUserIdAction = $root.SyncAction.SyncActionValue.MusicUserIdAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 71: {
+                        message.statusPostOptInNotificationPreferencesAction = $root.SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2734,515 +1966,323 @@ $root.SyncAction = (function() {
         SyncActionValue.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.timestamp != null && message.hasOwnProperty("timestamp")) {
-                properties._timestamp = 1;
+            if (message.timestamp != null && message.hasOwnProperty("timestamp"))
                 if (!$util.isInteger(message.timestamp) && !(message.timestamp && $util.isInteger(message.timestamp.low) && $util.isInteger(message.timestamp.high)))
                     return "timestamp: integer|Long expected";
-            }
             if (message.starAction != null && message.hasOwnProperty("starAction")) {
-                properties._starAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.StarAction.verify(message.starAction);
-                    if (error)
-                        return "starAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.StarAction.verify(message.starAction);
+                if (error)
+                    return "starAction." + error;
             }
             if (message.contactAction != null && message.hasOwnProperty("contactAction")) {
-                properties._contactAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.ContactAction.verify(message.contactAction);
-                    if (error)
-                        return "contactAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.ContactAction.verify(message.contactAction);
+                if (error)
+                    return "contactAction." + error;
             }
             if (message.muteAction != null && message.hasOwnProperty("muteAction")) {
-                properties._muteAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.MuteAction.verify(message.muteAction);
-                    if (error)
-                        return "muteAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.MuteAction.verify(message.muteAction);
+                if (error)
+                    return "muteAction." + error;
             }
             if (message.pinAction != null && message.hasOwnProperty("pinAction")) {
-                properties._pinAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PinAction.verify(message.pinAction);
-                    if (error)
-                        return "pinAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PinAction.verify(message.pinAction);
+                if (error)
+                    return "pinAction." + error;
             }
             if (message.securityNotificationSetting != null && message.hasOwnProperty("securityNotificationSetting")) {
-                properties._securityNotificationSetting = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.SecurityNotificationSetting.verify(message.securityNotificationSetting);
-                    if (error)
-                        return "securityNotificationSetting." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.SecurityNotificationSetting.verify(message.securityNotificationSetting);
+                if (error)
+                    return "securityNotificationSetting." + error;
             }
             if (message.pushNameSetting != null && message.hasOwnProperty("pushNameSetting")) {
-                properties._pushNameSetting = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PushNameSetting.verify(message.pushNameSetting);
-                    if (error)
-                        return "pushNameSetting." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PushNameSetting.verify(message.pushNameSetting);
+                if (error)
+                    return "pushNameSetting." + error;
             }
             if (message.quickReplyAction != null && message.hasOwnProperty("quickReplyAction")) {
-                properties._quickReplyAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.QuickReplyAction.verify(message.quickReplyAction);
-                    if (error)
-                        return "quickReplyAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.QuickReplyAction.verify(message.quickReplyAction);
+                if (error)
+                    return "quickReplyAction." + error;
             }
             if (message.recentEmojiWeightsAction != null && message.hasOwnProperty("recentEmojiWeightsAction")) {
-                properties._recentEmojiWeightsAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.RecentEmojiWeightsAction.verify(message.recentEmojiWeightsAction);
-                    if (error)
-                        return "recentEmojiWeightsAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.RecentEmojiWeightsAction.verify(message.recentEmojiWeightsAction);
+                if (error)
+                    return "recentEmojiWeightsAction." + error;
             }
             if (message.labelEditAction != null && message.hasOwnProperty("labelEditAction")) {
-                properties._labelEditAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.LabelEditAction.verify(message.labelEditAction);
-                    if (error)
-                        return "labelEditAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.LabelEditAction.verify(message.labelEditAction);
+                if (error)
+                    return "labelEditAction." + error;
             }
             if (message.labelAssociationAction != null && message.hasOwnProperty("labelAssociationAction")) {
-                properties._labelAssociationAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.LabelAssociationAction.verify(message.labelAssociationAction);
-                    if (error)
-                        return "labelAssociationAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.LabelAssociationAction.verify(message.labelAssociationAction);
+                if (error)
+                    return "labelAssociationAction." + error;
             }
             if (message.localeSetting != null && message.hasOwnProperty("localeSetting")) {
-                properties._localeSetting = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.LocaleSetting.verify(message.localeSetting);
-                    if (error)
-                        return "localeSetting." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.LocaleSetting.verify(message.localeSetting);
+                if (error)
+                    return "localeSetting." + error;
             }
             if (message.archiveChatAction != null && message.hasOwnProperty("archiveChatAction")) {
-                properties._archiveChatAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.ArchiveChatAction.verify(message.archiveChatAction);
-                    if (error)
-                        return "archiveChatAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.ArchiveChatAction.verify(message.archiveChatAction);
+                if (error)
+                    return "archiveChatAction." + error;
             }
             if (message.deleteMessageForMeAction != null && message.hasOwnProperty("deleteMessageForMeAction")) {
-                properties._deleteMessageForMeAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.DeleteMessageForMeAction.verify(message.deleteMessageForMeAction);
-                    if (error)
-                        return "deleteMessageForMeAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.DeleteMessageForMeAction.verify(message.deleteMessageForMeAction);
+                if (error)
+                    return "deleteMessageForMeAction." + error;
             }
             if (message.keyExpiration != null && message.hasOwnProperty("keyExpiration")) {
-                properties._keyExpiration = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.KeyExpiration.verify(message.keyExpiration);
-                    if (error)
-                        return "keyExpiration." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.KeyExpiration.verify(message.keyExpiration);
+                if (error)
+                    return "keyExpiration." + error;
             }
             if (message.markChatAsReadAction != null && message.hasOwnProperty("markChatAsReadAction")) {
-                properties._markChatAsReadAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.MarkChatAsReadAction.verify(message.markChatAsReadAction);
-                    if (error)
-                        return "markChatAsReadAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.MarkChatAsReadAction.verify(message.markChatAsReadAction);
+                if (error)
+                    return "markChatAsReadAction." + error;
             }
             if (message.clearChatAction != null && message.hasOwnProperty("clearChatAction")) {
-                properties._clearChatAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.ClearChatAction.verify(message.clearChatAction);
-                    if (error)
-                        return "clearChatAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.ClearChatAction.verify(message.clearChatAction);
+                if (error)
+                    return "clearChatAction." + error;
             }
             if (message.deleteChatAction != null && message.hasOwnProperty("deleteChatAction")) {
-                properties._deleteChatAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.DeleteChatAction.verify(message.deleteChatAction);
-                    if (error)
-                        return "deleteChatAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.DeleteChatAction.verify(message.deleteChatAction);
+                if (error)
+                    return "deleteChatAction." + error;
             }
             if (message.unarchiveChatsSetting != null && message.hasOwnProperty("unarchiveChatsSetting")) {
-                properties._unarchiveChatsSetting = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.UnarchiveChatsSetting.verify(message.unarchiveChatsSetting);
-                    if (error)
-                        return "unarchiveChatsSetting." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.UnarchiveChatsSetting.verify(message.unarchiveChatsSetting);
+                if (error)
+                    return "unarchiveChatsSetting." + error;
             }
             if (message.primaryFeature != null && message.hasOwnProperty("primaryFeature")) {
-                properties._primaryFeature = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PrimaryFeature.verify(message.primaryFeature);
-                    if (error)
-                        return "primaryFeature." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PrimaryFeature.verify(message.primaryFeature);
+                if (error)
+                    return "primaryFeature." + error;
             }
             if (message.androidUnsupportedActions != null && message.hasOwnProperty("androidUnsupportedActions")) {
-                properties._androidUnsupportedActions = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.AndroidUnsupportedActions.verify(message.androidUnsupportedActions);
-                    if (error)
-                        return "androidUnsupportedActions." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.AndroidUnsupportedActions.verify(message.androidUnsupportedActions);
+                if (error)
+                    return "androidUnsupportedActions." + error;
             }
             if (message.agentAction != null && message.hasOwnProperty("agentAction")) {
-                properties._agentAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.AgentAction.verify(message.agentAction);
-                    if (error)
-                        return "agentAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.AgentAction.verify(message.agentAction);
+                if (error)
+                    return "agentAction." + error;
             }
             if (message.subscriptionAction != null && message.hasOwnProperty("subscriptionAction")) {
-                properties._subscriptionAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.SubscriptionAction.verify(message.subscriptionAction);
-                    if (error)
-                        return "subscriptionAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.SubscriptionAction.verify(message.subscriptionAction);
+                if (error)
+                    return "subscriptionAction." + error;
             }
             if (message.userStatusMuteAction != null && message.hasOwnProperty("userStatusMuteAction")) {
-                properties._userStatusMuteAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.UserStatusMuteAction.verify(message.userStatusMuteAction);
-                    if (error)
-                        return "userStatusMuteAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.UserStatusMuteAction.verify(message.userStatusMuteAction);
+                if (error)
+                    return "userStatusMuteAction." + error;
             }
             if (message.timeFormatAction != null && message.hasOwnProperty("timeFormatAction")) {
-                properties._timeFormatAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.TimeFormatAction.verify(message.timeFormatAction);
-                    if (error)
-                        return "timeFormatAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.TimeFormatAction.verify(message.timeFormatAction);
+                if (error)
+                    return "timeFormatAction." + error;
             }
             if (message.nuxAction != null && message.hasOwnProperty("nuxAction")) {
-                properties._nuxAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.NuxAction.verify(message.nuxAction);
-                    if (error)
-                        return "nuxAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.NuxAction.verify(message.nuxAction);
+                if (error)
+                    return "nuxAction." + error;
             }
             if (message.primaryVersionAction != null && message.hasOwnProperty("primaryVersionAction")) {
-                properties._primaryVersionAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PrimaryVersionAction.verify(message.primaryVersionAction);
-                    if (error)
-                        return "primaryVersionAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PrimaryVersionAction.verify(message.primaryVersionAction);
+                if (error)
+                    return "primaryVersionAction." + error;
             }
             if (message.stickerAction != null && message.hasOwnProperty("stickerAction")) {
-                properties._stickerAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.StickerAction.verify(message.stickerAction);
-                    if (error)
-                        return "stickerAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.StickerAction.verify(message.stickerAction);
+                if (error)
+                    return "stickerAction." + error;
             }
             if (message.removeRecentStickerAction != null && message.hasOwnProperty("removeRecentStickerAction")) {
-                properties._removeRecentStickerAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.RemoveRecentStickerAction.verify(message.removeRecentStickerAction);
-                    if (error)
-                        return "removeRecentStickerAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.RemoveRecentStickerAction.verify(message.removeRecentStickerAction);
+                if (error)
+                    return "removeRecentStickerAction." + error;
             }
             if (message.chatAssignment != null && message.hasOwnProperty("chatAssignment")) {
-                properties._chatAssignment = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.ChatAssignmentAction.verify(message.chatAssignment);
-                    if (error)
-                        return "chatAssignment." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.ChatAssignmentAction.verify(message.chatAssignment);
+                if (error)
+                    return "chatAssignment." + error;
             }
             if (message.chatAssignmentOpenedStatus != null && message.hasOwnProperty("chatAssignmentOpenedStatus")) {
-                properties._chatAssignmentOpenedStatus = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction.verify(message.chatAssignmentOpenedStatus);
-                    if (error)
-                        return "chatAssignmentOpenedStatus." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction.verify(message.chatAssignmentOpenedStatus);
+                if (error)
+                    return "chatAssignmentOpenedStatus." + error;
             }
             if (message.pnForLidChatAction != null && message.hasOwnProperty("pnForLidChatAction")) {
-                properties._pnForLidChatAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PnForLidChatAction.verify(message.pnForLidChatAction);
-                    if (error)
-                        return "pnForLidChatAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PnForLidChatAction.verify(message.pnForLidChatAction);
+                if (error)
+                    return "pnForLidChatAction." + error;
             }
             if (message.marketingMessageAction != null && message.hasOwnProperty("marketingMessageAction")) {
-                properties._marketingMessageAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.MarketingMessageAction.verify(message.marketingMessageAction);
-                    if (error)
-                        return "marketingMessageAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.MarketingMessageAction.verify(message.marketingMessageAction);
+                if (error)
+                    return "marketingMessageAction." + error;
             }
             if (message.marketingMessageBroadcastAction != null && message.hasOwnProperty("marketingMessageBroadcastAction")) {
-                properties._marketingMessageBroadcastAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.MarketingMessageBroadcastAction.verify(message.marketingMessageBroadcastAction);
-                    if (error)
-                        return "marketingMessageBroadcastAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.MarketingMessageBroadcastAction.verify(message.marketingMessageBroadcastAction);
+                if (error)
+                    return "marketingMessageBroadcastAction." + error;
             }
             if (message.externalWebBetaAction != null && message.hasOwnProperty("externalWebBetaAction")) {
-                properties._externalWebBetaAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.ExternalWebBetaAction.verify(message.externalWebBetaAction);
-                    if (error)
-                        return "externalWebBetaAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.ExternalWebBetaAction.verify(message.externalWebBetaAction);
+                if (error)
+                    return "externalWebBetaAction." + error;
             }
             if (message.privacySettingRelayAllCalls != null && message.hasOwnProperty("privacySettingRelayAllCalls")) {
-                properties._privacySettingRelayAllCalls = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PrivacySettingRelayAllCalls.verify(message.privacySettingRelayAllCalls);
-                    if (error)
-                        return "privacySettingRelayAllCalls." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PrivacySettingRelayAllCalls.verify(message.privacySettingRelayAllCalls);
+                if (error)
+                    return "privacySettingRelayAllCalls." + error;
             }
             if (message.callLogAction != null && message.hasOwnProperty("callLogAction")) {
-                properties._callLogAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.CallLogAction.verify(message.callLogAction);
-                    if (error)
-                        return "callLogAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.CallLogAction.verify(message.callLogAction);
+                if (error)
+                    return "callLogAction." + error;
             }
             if (message.statusPrivacy != null && message.hasOwnProperty("statusPrivacy")) {
-                properties._statusPrivacy = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.StatusPrivacyAction.verify(message.statusPrivacy);
-                    if (error)
-                        return "statusPrivacy." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.StatusPrivacyAction.verify(message.statusPrivacy);
+                if (error)
+                    return "statusPrivacy." + error;
             }
             if (message.botWelcomeRequestAction != null && message.hasOwnProperty("botWelcomeRequestAction")) {
-                properties._botWelcomeRequestAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.BotWelcomeRequestAction.verify(message.botWelcomeRequestAction);
-                    if (error)
-                        return "botWelcomeRequestAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.BotWelcomeRequestAction.verify(message.botWelcomeRequestAction);
+                if (error)
+                    return "botWelcomeRequestAction." + error;
             }
             if (message.deleteIndividualCallLog != null && message.hasOwnProperty("deleteIndividualCallLog")) {
-                properties._deleteIndividualCallLog = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.DeleteIndividualCallLogAction.verify(message.deleteIndividualCallLog);
-                    if (error)
-                        return "deleteIndividualCallLog." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.DeleteIndividualCallLogAction.verify(message.deleteIndividualCallLog);
+                if (error)
+                    return "deleteIndividualCallLog." + error;
             }
             if (message.labelReorderingAction != null && message.hasOwnProperty("labelReorderingAction")) {
-                properties._labelReorderingAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.LabelReorderingAction.verify(message.labelReorderingAction);
-                    if (error)
-                        return "labelReorderingAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.LabelReorderingAction.verify(message.labelReorderingAction);
+                if (error)
+                    return "labelReorderingAction." + error;
             }
             if (message.paymentInfoAction != null && message.hasOwnProperty("paymentInfoAction")) {
-                properties._paymentInfoAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PaymentInfoAction.verify(message.paymentInfoAction);
-                    if (error)
-                        return "paymentInfoAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PaymentInfoAction.verify(message.paymentInfoAction);
+                if (error)
+                    return "paymentInfoAction." + error;
             }
             if (message.customPaymentMethodsAction != null && message.hasOwnProperty("customPaymentMethodsAction")) {
-                properties._customPaymentMethodsAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.CustomPaymentMethodsAction.verify(message.customPaymentMethodsAction);
-                    if (error)
-                        return "customPaymentMethodsAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.CustomPaymentMethodsAction.verify(message.customPaymentMethodsAction);
+                if (error)
+                    return "customPaymentMethodsAction." + error;
             }
             if (message.lockChatAction != null && message.hasOwnProperty("lockChatAction")) {
-                properties._lockChatAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.LockChatAction.verify(message.lockChatAction);
-                    if (error)
-                        return "lockChatAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.LockChatAction.verify(message.lockChatAction);
+                if (error)
+                    return "lockChatAction." + error;
             }
             if (message.chatLockSettings != null && message.hasOwnProperty("chatLockSettings")) {
-                properties._chatLockSettings = 1;
-                {
-                    var error = $root.ChatLockSettings.ChatLockSettings.verify(message.chatLockSettings);
-                    if (error)
-                        return "chatLockSettings." + error;
-                }
+                var error = $root.ChatLockSettings.ChatLockSettings.verify(message.chatLockSettings);
+                if (error)
+                    return "chatLockSettings." + error;
             }
             if (message.wamoUserIdentifierAction != null && message.hasOwnProperty("wamoUserIdentifierAction")) {
-                properties._wamoUserIdentifierAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.WamoUserIdentifierAction.verify(message.wamoUserIdentifierAction);
-                    if (error)
-                        return "wamoUserIdentifierAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.WamoUserIdentifierAction.verify(message.wamoUserIdentifierAction);
+                if (error)
+                    return "wamoUserIdentifierAction." + error;
             }
             if (message.privacySettingDisableLinkPreviewsAction != null && message.hasOwnProperty("privacySettingDisableLinkPreviewsAction")) {
-                properties._privacySettingDisableLinkPreviewsAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.verify(message.privacySettingDisableLinkPreviewsAction);
-                    if (error)
-                        return "privacySettingDisableLinkPreviewsAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.verify(message.privacySettingDisableLinkPreviewsAction);
+                if (error)
+                    return "privacySettingDisableLinkPreviewsAction." + error;
             }
             if (message.deviceCapabilities != null && message.hasOwnProperty("deviceCapabilities")) {
-                properties._deviceCapabilities = 1;
-                {
-                    var error = $root.DeviceCapabilities.DeviceCapabilities.verify(message.deviceCapabilities);
-                    if (error)
-                        return "deviceCapabilities." + error;
-                }
+                var error = $root.DeviceCapabilities.DeviceCapabilities.verify(message.deviceCapabilities);
+                if (error)
+                    return "deviceCapabilities." + error;
             }
             if (message.noteEditAction != null && message.hasOwnProperty("noteEditAction")) {
-                properties._noteEditAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.NoteEditAction.verify(message.noteEditAction);
-                    if (error)
-                        return "noteEditAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.NoteEditAction.verify(message.noteEditAction);
+                if (error)
+                    return "noteEditAction." + error;
             }
             if (message.favoritesAction != null && message.hasOwnProperty("favoritesAction")) {
-                properties._favoritesAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.FavoritesAction.verify(message.favoritesAction);
-                    if (error)
-                        return "favoritesAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.FavoritesAction.verify(message.favoritesAction);
+                if (error)
+                    return "favoritesAction." + error;
             }
             if (message.merchantPaymentPartnerAction != null && message.hasOwnProperty("merchantPaymentPartnerAction")) {
-                properties._merchantPaymentPartnerAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.verify(message.merchantPaymentPartnerAction);
-                    if (error)
-                        return "merchantPaymentPartnerAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.verify(message.merchantPaymentPartnerAction);
+                if (error)
+                    return "merchantPaymentPartnerAction." + error;
             }
             if (message.waffleAccountLinkStateAction != null && message.hasOwnProperty("waffleAccountLinkStateAction")) {
-                properties._waffleAccountLinkStateAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction.verify(message.waffleAccountLinkStateAction);
-                    if (error)
-                        return "waffleAccountLinkStateAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction.verify(message.waffleAccountLinkStateAction);
+                if (error)
+                    return "waffleAccountLinkStateAction." + error;
             }
             if (message.usernameChatStartMode != null && message.hasOwnProperty("usernameChatStartMode")) {
-                properties._usernameChatStartMode = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.UsernameChatStartModeAction.verify(message.usernameChatStartMode);
-                    if (error)
-                        return "usernameChatStartMode." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.UsernameChatStartModeAction.verify(message.usernameChatStartMode);
+                if (error)
+                    return "usernameChatStartMode." + error;
             }
             if (message.notificationActivitySettingAction != null && message.hasOwnProperty("notificationActivitySettingAction")) {
-                properties._notificationActivitySettingAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.NotificationActivitySettingAction.verify(message.notificationActivitySettingAction);
-                    if (error)
-                        return "notificationActivitySettingAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.NotificationActivitySettingAction.verify(message.notificationActivitySettingAction);
+                if (error)
+                    return "notificationActivitySettingAction." + error;
             }
             if (message.lidContactAction != null && message.hasOwnProperty("lidContactAction")) {
-                properties._lidContactAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.LidContactAction.verify(message.lidContactAction);
-                    if (error)
-                        return "lidContactAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.LidContactAction.verify(message.lidContactAction);
+                if (error)
+                    return "lidContactAction." + error;
             }
             if (message.ctwaPerCustomerDataSharingAction != null && message.hasOwnProperty("ctwaPerCustomerDataSharingAction")) {
-                properties._ctwaPerCustomerDataSharingAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction.verify(message.ctwaPerCustomerDataSharingAction);
-                    if (error)
-                        return "ctwaPerCustomerDataSharingAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction.verify(message.ctwaPerCustomerDataSharingAction);
+                if (error)
+                    return "ctwaPerCustomerDataSharingAction." + error;
             }
             if (message.paymentTosAction != null && message.hasOwnProperty("paymentTosAction")) {
-                properties._paymentTosAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PaymentTosAction.verify(message.paymentTosAction);
-                    if (error)
-                        return "paymentTosAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PaymentTosAction.verify(message.paymentTosAction);
+                if (error)
+                    return "paymentTosAction." + error;
             }
             if (message.privacySettingChannelsPersonalisedRecommendationAction != null && message.hasOwnProperty("privacySettingChannelsPersonalisedRecommendationAction")) {
-                properties._privacySettingChannelsPersonalisedRecommendationAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.verify(message.privacySettingChannelsPersonalisedRecommendationAction);
-                    if (error)
-                        return "privacySettingChannelsPersonalisedRecommendationAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.verify(message.privacySettingChannelsPersonalisedRecommendationAction);
+                if (error)
+                    return "privacySettingChannelsPersonalisedRecommendationAction." + error;
             }
             if (message.businessBroadcastAssociationAction != null && message.hasOwnProperty("businessBroadcastAssociationAction")) {
-                properties._businessBroadcastAssociationAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.BusinessBroadcastAssociationAction.verify(message.businessBroadcastAssociationAction);
-                    if (error)
-                        return "businessBroadcastAssociationAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.BusinessBroadcastAssociationAction.verify(message.businessBroadcastAssociationAction);
+                if (error)
+                    return "businessBroadcastAssociationAction." + error;
             }
             if (message.detectedOutcomesStatusAction != null && message.hasOwnProperty("detectedOutcomesStatusAction")) {
-                properties._detectedOutcomesStatusAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.DetectedOutcomesStatusAction.verify(message.detectedOutcomesStatusAction);
-                    if (error)
-                        return "detectedOutcomesStatusAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.DetectedOutcomesStatusAction.verify(message.detectedOutcomesStatusAction);
+                if (error)
+                    return "detectedOutcomesStatusAction." + error;
             }
             if (message.maibaAiFeaturesControlAction != null && message.hasOwnProperty("maibaAiFeaturesControlAction")) {
-                properties._maibaAiFeaturesControlAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.verify(message.maibaAiFeaturesControlAction);
-                    if (error)
-                        return "maibaAiFeaturesControlAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.verify(message.maibaAiFeaturesControlAction);
+                if (error)
+                    return "maibaAiFeaturesControlAction." + error;
             }
             if (message.businessBroadcastListAction != null && message.hasOwnProperty("businessBroadcastListAction")) {
-                properties._businessBroadcastListAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.BusinessBroadcastListAction.verify(message.businessBroadcastListAction);
-                    if (error)
-                        return "businessBroadcastListAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.BusinessBroadcastListAction.verify(message.businessBroadcastListAction);
+                if (error)
+                    return "businessBroadcastListAction." + error;
             }
             if (message.musicUserIdAction != null && message.hasOwnProperty("musicUserIdAction")) {
-                properties._musicUserIdAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.MusicUserIdAction.verify(message.musicUserIdAction);
-                    if (error)
-                        return "musicUserIdAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.MusicUserIdAction.verify(message.musicUserIdAction);
+                if (error)
+                    return "musicUserIdAction." + error;
             }
             if (message.statusPostOptInNotificationPreferencesAction != null && message.hasOwnProperty("statusPostOptInNotificationPreferencesAction")) {
-                properties._statusPostOptInNotificationPreferencesAction = 1;
-                {
-                    var error = $root.SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction.verify(message.statusPostOptInNotificationPreferencesAction);
-                    if (error)
-                        return "statusPostOptInNotificationPreferencesAction." + error;
-                }
+                var error = $root.SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction.verify(message.statusPostOptInNotificationPreferencesAction);
+                if (error)
+                    return "statusPostOptInNotificationPreferencesAction." + error;
             }
             return null;
         };
@@ -3599,329 +2639,207 @@ $root.SyncAction = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.timestamp != null && message.hasOwnProperty("timestamp")) {
+            if (options.defaults) {
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.timestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.timestamp = options.longs === String ? "0" : 0;
+                object.starAction = null;
+                object.contactAction = null;
+                object.muteAction = null;
+                object.pinAction = null;
+                object.securityNotificationSetting = null;
+                object.pushNameSetting = null;
+                object.quickReplyAction = null;
+                object.recentEmojiWeightsAction = null;
+                object.labelEditAction = null;
+                object.labelAssociationAction = null;
+                object.localeSetting = null;
+                object.archiveChatAction = null;
+                object.deleteMessageForMeAction = null;
+                object.keyExpiration = null;
+                object.markChatAsReadAction = null;
+                object.clearChatAction = null;
+                object.deleteChatAction = null;
+                object.unarchiveChatsSetting = null;
+                object.primaryFeature = null;
+                object.androidUnsupportedActions = null;
+                object.agentAction = null;
+                object.subscriptionAction = null;
+                object.userStatusMuteAction = null;
+                object.timeFormatAction = null;
+                object.nuxAction = null;
+                object.primaryVersionAction = null;
+                object.stickerAction = null;
+                object.removeRecentStickerAction = null;
+                object.chatAssignment = null;
+                object.chatAssignmentOpenedStatus = null;
+                object.pnForLidChatAction = null;
+                object.marketingMessageAction = null;
+                object.marketingMessageBroadcastAction = null;
+                object.externalWebBetaAction = null;
+                object.privacySettingRelayAllCalls = null;
+                object.callLogAction = null;
+                object.statusPrivacy = null;
+                object.botWelcomeRequestAction = null;
+                object.deleteIndividualCallLog = null;
+                object.labelReorderingAction = null;
+                object.paymentInfoAction = null;
+                object.customPaymentMethodsAction = null;
+                object.lockChatAction = null;
+                object.chatLockSettings = null;
+                object.wamoUserIdentifierAction = null;
+                object.privacySettingDisableLinkPreviewsAction = null;
+                object.deviceCapabilities = null;
+                object.noteEditAction = null;
+                object.favoritesAction = null;
+                object.merchantPaymentPartnerAction = null;
+                object.waffleAccountLinkStateAction = null;
+                object.usernameChatStartMode = null;
+                object.notificationActivitySettingAction = null;
+                object.lidContactAction = null;
+                object.ctwaPerCustomerDataSharingAction = null;
+                object.paymentTosAction = null;
+                object.privacySettingChannelsPersonalisedRecommendationAction = null;
+                object.businessBroadcastAssociationAction = null;
+                object.detectedOutcomesStatusAction = null;
+                object.maibaAiFeaturesControlAction = null;
+                object.businessBroadcastListAction = null;
+                object.musicUserIdAction = null;
+                object.statusPostOptInNotificationPreferencesAction = null;
+            }
+            if (message.timestamp != null && message.hasOwnProperty("timestamp"))
                 if (typeof message.timestamp === "number")
                     object.timestamp = options.longs === String ? String(message.timestamp) : message.timestamp;
                 else
                     object.timestamp = options.longs === String ? $util.Long.prototype.toString.call(message.timestamp) : options.longs === Number ? new $util.LongBits(message.timestamp.low >>> 0, message.timestamp.high >>> 0).toNumber() : message.timestamp;
-                if (options.oneofs)
-                    object._timestamp = "timestamp";
-            }
-            if (message.starAction != null && message.hasOwnProperty("starAction")) {
+            if (message.starAction != null && message.hasOwnProperty("starAction"))
                 object.starAction = $root.SyncAction.SyncActionValue.StarAction.toObject(message.starAction, options);
-                if (options.oneofs)
-                    object._starAction = "starAction";
-            }
-            if (message.contactAction != null && message.hasOwnProperty("contactAction")) {
+            if (message.contactAction != null && message.hasOwnProperty("contactAction"))
                 object.contactAction = $root.SyncAction.SyncActionValue.ContactAction.toObject(message.contactAction, options);
-                if (options.oneofs)
-                    object._contactAction = "contactAction";
-            }
-            if (message.muteAction != null && message.hasOwnProperty("muteAction")) {
+            if (message.muteAction != null && message.hasOwnProperty("muteAction"))
                 object.muteAction = $root.SyncAction.SyncActionValue.MuteAction.toObject(message.muteAction, options);
-                if (options.oneofs)
-                    object._muteAction = "muteAction";
-            }
-            if (message.pinAction != null && message.hasOwnProperty("pinAction")) {
+            if (message.pinAction != null && message.hasOwnProperty("pinAction"))
                 object.pinAction = $root.SyncAction.SyncActionValue.PinAction.toObject(message.pinAction, options);
-                if (options.oneofs)
-                    object._pinAction = "pinAction";
-            }
-            if (message.securityNotificationSetting != null && message.hasOwnProperty("securityNotificationSetting")) {
+            if (message.securityNotificationSetting != null && message.hasOwnProperty("securityNotificationSetting"))
                 object.securityNotificationSetting = $root.SyncAction.SyncActionValue.SecurityNotificationSetting.toObject(message.securityNotificationSetting, options);
-                if (options.oneofs)
-                    object._securityNotificationSetting = "securityNotificationSetting";
-            }
-            if (message.pushNameSetting != null && message.hasOwnProperty("pushNameSetting")) {
+            if (message.pushNameSetting != null && message.hasOwnProperty("pushNameSetting"))
                 object.pushNameSetting = $root.SyncAction.SyncActionValue.PushNameSetting.toObject(message.pushNameSetting, options);
-                if (options.oneofs)
-                    object._pushNameSetting = "pushNameSetting";
-            }
-            if (message.quickReplyAction != null && message.hasOwnProperty("quickReplyAction")) {
+            if (message.quickReplyAction != null && message.hasOwnProperty("quickReplyAction"))
                 object.quickReplyAction = $root.SyncAction.SyncActionValue.QuickReplyAction.toObject(message.quickReplyAction, options);
-                if (options.oneofs)
-                    object._quickReplyAction = "quickReplyAction";
-            }
-            if (message.recentEmojiWeightsAction != null && message.hasOwnProperty("recentEmojiWeightsAction")) {
+            if (message.recentEmojiWeightsAction != null && message.hasOwnProperty("recentEmojiWeightsAction"))
                 object.recentEmojiWeightsAction = $root.SyncAction.SyncActionValue.RecentEmojiWeightsAction.toObject(message.recentEmojiWeightsAction, options);
-                if (options.oneofs)
-                    object._recentEmojiWeightsAction = "recentEmojiWeightsAction";
-            }
-            if (message.labelEditAction != null && message.hasOwnProperty("labelEditAction")) {
+            if (message.labelEditAction != null && message.hasOwnProperty("labelEditAction"))
                 object.labelEditAction = $root.SyncAction.SyncActionValue.LabelEditAction.toObject(message.labelEditAction, options);
-                if (options.oneofs)
-                    object._labelEditAction = "labelEditAction";
-            }
-            if (message.labelAssociationAction != null && message.hasOwnProperty("labelAssociationAction")) {
+            if (message.labelAssociationAction != null && message.hasOwnProperty("labelAssociationAction"))
                 object.labelAssociationAction = $root.SyncAction.SyncActionValue.LabelAssociationAction.toObject(message.labelAssociationAction, options);
-                if (options.oneofs)
-                    object._labelAssociationAction = "labelAssociationAction";
-            }
-            if (message.localeSetting != null && message.hasOwnProperty("localeSetting")) {
+            if (message.localeSetting != null && message.hasOwnProperty("localeSetting"))
                 object.localeSetting = $root.SyncAction.SyncActionValue.LocaleSetting.toObject(message.localeSetting, options);
-                if (options.oneofs)
-                    object._localeSetting = "localeSetting";
-            }
-            if (message.archiveChatAction != null && message.hasOwnProperty("archiveChatAction")) {
+            if (message.archiveChatAction != null && message.hasOwnProperty("archiveChatAction"))
                 object.archiveChatAction = $root.SyncAction.SyncActionValue.ArchiveChatAction.toObject(message.archiveChatAction, options);
-                if (options.oneofs)
-                    object._archiveChatAction = "archiveChatAction";
-            }
-            if (message.deleteMessageForMeAction != null && message.hasOwnProperty("deleteMessageForMeAction")) {
+            if (message.deleteMessageForMeAction != null && message.hasOwnProperty("deleteMessageForMeAction"))
                 object.deleteMessageForMeAction = $root.SyncAction.SyncActionValue.DeleteMessageForMeAction.toObject(message.deleteMessageForMeAction, options);
-                if (options.oneofs)
-                    object._deleteMessageForMeAction = "deleteMessageForMeAction";
-            }
-            if (message.keyExpiration != null && message.hasOwnProperty("keyExpiration")) {
+            if (message.keyExpiration != null && message.hasOwnProperty("keyExpiration"))
                 object.keyExpiration = $root.SyncAction.SyncActionValue.KeyExpiration.toObject(message.keyExpiration, options);
-                if (options.oneofs)
-                    object._keyExpiration = "keyExpiration";
-            }
-            if (message.markChatAsReadAction != null && message.hasOwnProperty("markChatAsReadAction")) {
+            if (message.markChatAsReadAction != null && message.hasOwnProperty("markChatAsReadAction"))
                 object.markChatAsReadAction = $root.SyncAction.SyncActionValue.MarkChatAsReadAction.toObject(message.markChatAsReadAction, options);
-                if (options.oneofs)
-                    object._markChatAsReadAction = "markChatAsReadAction";
-            }
-            if (message.clearChatAction != null && message.hasOwnProperty("clearChatAction")) {
+            if (message.clearChatAction != null && message.hasOwnProperty("clearChatAction"))
                 object.clearChatAction = $root.SyncAction.SyncActionValue.ClearChatAction.toObject(message.clearChatAction, options);
-                if (options.oneofs)
-                    object._clearChatAction = "clearChatAction";
-            }
-            if (message.deleteChatAction != null && message.hasOwnProperty("deleteChatAction")) {
+            if (message.deleteChatAction != null && message.hasOwnProperty("deleteChatAction"))
                 object.deleteChatAction = $root.SyncAction.SyncActionValue.DeleteChatAction.toObject(message.deleteChatAction, options);
-                if (options.oneofs)
-                    object._deleteChatAction = "deleteChatAction";
-            }
-            if (message.unarchiveChatsSetting != null && message.hasOwnProperty("unarchiveChatsSetting")) {
+            if (message.unarchiveChatsSetting != null && message.hasOwnProperty("unarchiveChatsSetting"))
                 object.unarchiveChatsSetting = $root.SyncAction.SyncActionValue.UnarchiveChatsSetting.toObject(message.unarchiveChatsSetting, options);
-                if (options.oneofs)
-                    object._unarchiveChatsSetting = "unarchiveChatsSetting";
-            }
-            if (message.primaryFeature != null && message.hasOwnProperty("primaryFeature")) {
+            if (message.primaryFeature != null && message.hasOwnProperty("primaryFeature"))
                 object.primaryFeature = $root.SyncAction.SyncActionValue.PrimaryFeature.toObject(message.primaryFeature, options);
-                if (options.oneofs)
-                    object._primaryFeature = "primaryFeature";
-            }
-            if (message.androidUnsupportedActions != null && message.hasOwnProperty("androidUnsupportedActions")) {
+            if (message.androidUnsupportedActions != null && message.hasOwnProperty("androidUnsupportedActions"))
                 object.androidUnsupportedActions = $root.SyncAction.SyncActionValue.AndroidUnsupportedActions.toObject(message.androidUnsupportedActions, options);
-                if (options.oneofs)
-                    object._androidUnsupportedActions = "androidUnsupportedActions";
-            }
-            if (message.agentAction != null && message.hasOwnProperty("agentAction")) {
+            if (message.agentAction != null && message.hasOwnProperty("agentAction"))
                 object.agentAction = $root.SyncAction.SyncActionValue.AgentAction.toObject(message.agentAction, options);
-                if (options.oneofs)
-                    object._agentAction = "agentAction";
-            }
-            if (message.subscriptionAction != null && message.hasOwnProperty("subscriptionAction")) {
+            if (message.subscriptionAction != null && message.hasOwnProperty("subscriptionAction"))
                 object.subscriptionAction = $root.SyncAction.SyncActionValue.SubscriptionAction.toObject(message.subscriptionAction, options);
-                if (options.oneofs)
-                    object._subscriptionAction = "subscriptionAction";
-            }
-            if (message.userStatusMuteAction != null && message.hasOwnProperty("userStatusMuteAction")) {
+            if (message.userStatusMuteAction != null && message.hasOwnProperty("userStatusMuteAction"))
                 object.userStatusMuteAction = $root.SyncAction.SyncActionValue.UserStatusMuteAction.toObject(message.userStatusMuteAction, options);
-                if (options.oneofs)
-                    object._userStatusMuteAction = "userStatusMuteAction";
-            }
-            if (message.timeFormatAction != null && message.hasOwnProperty("timeFormatAction")) {
+            if (message.timeFormatAction != null && message.hasOwnProperty("timeFormatAction"))
                 object.timeFormatAction = $root.SyncAction.SyncActionValue.TimeFormatAction.toObject(message.timeFormatAction, options);
-                if (options.oneofs)
-                    object._timeFormatAction = "timeFormatAction";
-            }
-            if (message.nuxAction != null && message.hasOwnProperty("nuxAction")) {
+            if (message.nuxAction != null && message.hasOwnProperty("nuxAction"))
                 object.nuxAction = $root.SyncAction.SyncActionValue.NuxAction.toObject(message.nuxAction, options);
-                if (options.oneofs)
-                    object._nuxAction = "nuxAction";
-            }
-            if (message.primaryVersionAction != null && message.hasOwnProperty("primaryVersionAction")) {
+            if (message.primaryVersionAction != null && message.hasOwnProperty("primaryVersionAction"))
                 object.primaryVersionAction = $root.SyncAction.SyncActionValue.PrimaryVersionAction.toObject(message.primaryVersionAction, options);
-                if (options.oneofs)
-                    object._primaryVersionAction = "primaryVersionAction";
-            }
-            if (message.stickerAction != null && message.hasOwnProperty("stickerAction")) {
+            if (message.stickerAction != null && message.hasOwnProperty("stickerAction"))
                 object.stickerAction = $root.SyncAction.SyncActionValue.StickerAction.toObject(message.stickerAction, options);
-                if (options.oneofs)
-                    object._stickerAction = "stickerAction";
-            }
-            if (message.removeRecentStickerAction != null && message.hasOwnProperty("removeRecentStickerAction")) {
+            if (message.removeRecentStickerAction != null && message.hasOwnProperty("removeRecentStickerAction"))
                 object.removeRecentStickerAction = $root.SyncAction.SyncActionValue.RemoveRecentStickerAction.toObject(message.removeRecentStickerAction, options);
-                if (options.oneofs)
-                    object._removeRecentStickerAction = "removeRecentStickerAction";
-            }
-            if (message.chatAssignment != null && message.hasOwnProperty("chatAssignment")) {
+            if (message.chatAssignment != null && message.hasOwnProperty("chatAssignment"))
                 object.chatAssignment = $root.SyncAction.SyncActionValue.ChatAssignmentAction.toObject(message.chatAssignment, options);
-                if (options.oneofs)
-                    object._chatAssignment = "chatAssignment";
-            }
-            if (message.chatAssignmentOpenedStatus != null && message.hasOwnProperty("chatAssignmentOpenedStatus")) {
+            if (message.chatAssignmentOpenedStatus != null && message.hasOwnProperty("chatAssignmentOpenedStatus"))
                 object.chatAssignmentOpenedStatus = $root.SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction.toObject(message.chatAssignmentOpenedStatus, options);
-                if (options.oneofs)
-                    object._chatAssignmentOpenedStatus = "chatAssignmentOpenedStatus";
-            }
-            if (message.pnForLidChatAction != null && message.hasOwnProperty("pnForLidChatAction")) {
+            if (message.pnForLidChatAction != null && message.hasOwnProperty("pnForLidChatAction"))
                 object.pnForLidChatAction = $root.SyncAction.SyncActionValue.PnForLidChatAction.toObject(message.pnForLidChatAction, options);
-                if (options.oneofs)
-                    object._pnForLidChatAction = "pnForLidChatAction";
-            }
-            if (message.marketingMessageAction != null && message.hasOwnProperty("marketingMessageAction")) {
+            if (message.marketingMessageAction != null && message.hasOwnProperty("marketingMessageAction"))
                 object.marketingMessageAction = $root.SyncAction.SyncActionValue.MarketingMessageAction.toObject(message.marketingMessageAction, options);
-                if (options.oneofs)
-                    object._marketingMessageAction = "marketingMessageAction";
-            }
-            if (message.marketingMessageBroadcastAction != null && message.hasOwnProperty("marketingMessageBroadcastAction")) {
+            if (message.marketingMessageBroadcastAction != null && message.hasOwnProperty("marketingMessageBroadcastAction"))
                 object.marketingMessageBroadcastAction = $root.SyncAction.SyncActionValue.MarketingMessageBroadcastAction.toObject(message.marketingMessageBroadcastAction, options);
-                if (options.oneofs)
-                    object._marketingMessageBroadcastAction = "marketingMessageBroadcastAction";
-            }
-            if (message.externalWebBetaAction != null && message.hasOwnProperty("externalWebBetaAction")) {
+            if (message.externalWebBetaAction != null && message.hasOwnProperty("externalWebBetaAction"))
                 object.externalWebBetaAction = $root.SyncAction.SyncActionValue.ExternalWebBetaAction.toObject(message.externalWebBetaAction, options);
-                if (options.oneofs)
-                    object._externalWebBetaAction = "externalWebBetaAction";
-            }
-            if (message.privacySettingRelayAllCalls != null && message.hasOwnProperty("privacySettingRelayAllCalls")) {
+            if (message.privacySettingRelayAllCalls != null && message.hasOwnProperty("privacySettingRelayAllCalls"))
                 object.privacySettingRelayAllCalls = $root.SyncAction.SyncActionValue.PrivacySettingRelayAllCalls.toObject(message.privacySettingRelayAllCalls, options);
-                if (options.oneofs)
-                    object._privacySettingRelayAllCalls = "privacySettingRelayAllCalls";
-            }
-            if (message.callLogAction != null && message.hasOwnProperty("callLogAction")) {
+            if (message.callLogAction != null && message.hasOwnProperty("callLogAction"))
                 object.callLogAction = $root.SyncAction.SyncActionValue.CallLogAction.toObject(message.callLogAction, options);
-                if (options.oneofs)
-                    object._callLogAction = "callLogAction";
-            }
-            if (message.statusPrivacy != null && message.hasOwnProperty("statusPrivacy")) {
+            if (message.statusPrivacy != null && message.hasOwnProperty("statusPrivacy"))
                 object.statusPrivacy = $root.SyncAction.SyncActionValue.StatusPrivacyAction.toObject(message.statusPrivacy, options);
-                if (options.oneofs)
-                    object._statusPrivacy = "statusPrivacy";
-            }
-            if (message.botWelcomeRequestAction != null && message.hasOwnProperty("botWelcomeRequestAction")) {
+            if (message.botWelcomeRequestAction != null && message.hasOwnProperty("botWelcomeRequestAction"))
                 object.botWelcomeRequestAction = $root.SyncAction.SyncActionValue.BotWelcomeRequestAction.toObject(message.botWelcomeRequestAction, options);
-                if (options.oneofs)
-                    object._botWelcomeRequestAction = "botWelcomeRequestAction";
-            }
-            if (message.deleteIndividualCallLog != null && message.hasOwnProperty("deleteIndividualCallLog")) {
+            if (message.deleteIndividualCallLog != null && message.hasOwnProperty("deleteIndividualCallLog"))
                 object.deleteIndividualCallLog = $root.SyncAction.SyncActionValue.DeleteIndividualCallLogAction.toObject(message.deleteIndividualCallLog, options);
-                if (options.oneofs)
-                    object._deleteIndividualCallLog = "deleteIndividualCallLog";
-            }
-            if (message.labelReorderingAction != null && message.hasOwnProperty("labelReorderingAction")) {
+            if (message.labelReorderingAction != null && message.hasOwnProperty("labelReorderingAction"))
                 object.labelReorderingAction = $root.SyncAction.SyncActionValue.LabelReorderingAction.toObject(message.labelReorderingAction, options);
-                if (options.oneofs)
-                    object._labelReorderingAction = "labelReorderingAction";
-            }
-            if (message.paymentInfoAction != null && message.hasOwnProperty("paymentInfoAction")) {
+            if (message.paymentInfoAction != null && message.hasOwnProperty("paymentInfoAction"))
                 object.paymentInfoAction = $root.SyncAction.SyncActionValue.PaymentInfoAction.toObject(message.paymentInfoAction, options);
-                if (options.oneofs)
-                    object._paymentInfoAction = "paymentInfoAction";
-            }
-            if (message.customPaymentMethodsAction != null && message.hasOwnProperty("customPaymentMethodsAction")) {
+            if (message.customPaymentMethodsAction != null && message.hasOwnProperty("customPaymentMethodsAction"))
                 object.customPaymentMethodsAction = $root.SyncAction.SyncActionValue.CustomPaymentMethodsAction.toObject(message.customPaymentMethodsAction, options);
-                if (options.oneofs)
-                    object._customPaymentMethodsAction = "customPaymentMethodsAction";
-            }
-            if (message.lockChatAction != null && message.hasOwnProperty("lockChatAction")) {
+            if (message.lockChatAction != null && message.hasOwnProperty("lockChatAction"))
                 object.lockChatAction = $root.SyncAction.SyncActionValue.LockChatAction.toObject(message.lockChatAction, options);
-                if (options.oneofs)
-                    object._lockChatAction = "lockChatAction";
-            }
-            if (message.chatLockSettings != null && message.hasOwnProperty("chatLockSettings")) {
+            if (message.chatLockSettings != null && message.hasOwnProperty("chatLockSettings"))
                 object.chatLockSettings = $root.ChatLockSettings.ChatLockSettings.toObject(message.chatLockSettings, options);
-                if (options.oneofs)
-                    object._chatLockSettings = "chatLockSettings";
-            }
-            if (message.wamoUserIdentifierAction != null && message.hasOwnProperty("wamoUserIdentifierAction")) {
+            if (message.wamoUserIdentifierAction != null && message.hasOwnProperty("wamoUserIdentifierAction"))
                 object.wamoUserIdentifierAction = $root.SyncAction.SyncActionValue.WamoUserIdentifierAction.toObject(message.wamoUserIdentifierAction, options);
-                if (options.oneofs)
-                    object._wamoUserIdentifierAction = "wamoUserIdentifierAction";
-            }
-            if (message.privacySettingDisableLinkPreviewsAction != null && message.hasOwnProperty("privacySettingDisableLinkPreviewsAction")) {
+            if (message.privacySettingDisableLinkPreviewsAction != null && message.hasOwnProperty("privacySettingDisableLinkPreviewsAction"))
                 object.privacySettingDisableLinkPreviewsAction = $root.SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.toObject(message.privacySettingDisableLinkPreviewsAction, options);
-                if (options.oneofs)
-                    object._privacySettingDisableLinkPreviewsAction = "privacySettingDisableLinkPreviewsAction";
-            }
-            if (message.deviceCapabilities != null && message.hasOwnProperty("deviceCapabilities")) {
+            if (message.deviceCapabilities != null && message.hasOwnProperty("deviceCapabilities"))
                 object.deviceCapabilities = $root.DeviceCapabilities.DeviceCapabilities.toObject(message.deviceCapabilities, options);
-                if (options.oneofs)
-                    object._deviceCapabilities = "deviceCapabilities";
-            }
-            if (message.noteEditAction != null && message.hasOwnProperty("noteEditAction")) {
+            if (message.noteEditAction != null && message.hasOwnProperty("noteEditAction"))
                 object.noteEditAction = $root.SyncAction.SyncActionValue.NoteEditAction.toObject(message.noteEditAction, options);
-                if (options.oneofs)
-                    object._noteEditAction = "noteEditAction";
-            }
-            if (message.favoritesAction != null && message.hasOwnProperty("favoritesAction")) {
+            if (message.favoritesAction != null && message.hasOwnProperty("favoritesAction"))
                 object.favoritesAction = $root.SyncAction.SyncActionValue.FavoritesAction.toObject(message.favoritesAction, options);
-                if (options.oneofs)
-                    object._favoritesAction = "favoritesAction";
-            }
-            if (message.merchantPaymentPartnerAction != null && message.hasOwnProperty("merchantPaymentPartnerAction")) {
+            if (message.merchantPaymentPartnerAction != null && message.hasOwnProperty("merchantPaymentPartnerAction"))
                 object.merchantPaymentPartnerAction = $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.toObject(message.merchantPaymentPartnerAction, options);
-                if (options.oneofs)
-                    object._merchantPaymentPartnerAction = "merchantPaymentPartnerAction";
-            }
-            if (message.waffleAccountLinkStateAction != null && message.hasOwnProperty("waffleAccountLinkStateAction")) {
+            if (message.waffleAccountLinkStateAction != null && message.hasOwnProperty("waffleAccountLinkStateAction"))
                 object.waffleAccountLinkStateAction = $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction.toObject(message.waffleAccountLinkStateAction, options);
-                if (options.oneofs)
-                    object._waffleAccountLinkStateAction = "waffleAccountLinkStateAction";
-            }
-            if (message.usernameChatStartMode != null && message.hasOwnProperty("usernameChatStartMode")) {
+            if (message.usernameChatStartMode != null && message.hasOwnProperty("usernameChatStartMode"))
                 object.usernameChatStartMode = $root.SyncAction.SyncActionValue.UsernameChatStartModeAction.toObject(message.usernameChatStartMode, options);
-                if (options.oneofs)
-                    object._usernameChatStartMode = "usernameChatStartMode";
-            }
-            if (message.notificationActivitySettingAction != null && message.hasOwnProperty("notificationActivitySettingAction")) {
+            if (message.notificationActivitySettingAction != null && message.hasOwnProperty("notificationActivitySettingAction"))
                 object.notificationActivitySettingAction = $root.SyncAction.SyncActionValue.NotificationActivitySettingAction.toObject(message.notificationActivitySettingAction, options);
-                if (options.oneofs)
-                    object._notificationActivitySettingAction = "notificationActivitySettingAction";
-            }
-            if (message.lidContactAction != null && message.hasOwnProperty("lidContactAction")) {
+            if (message.lidContactAction != null && message.hasOwnProperty("lidContactAction"))
                 object.lidContactAction = $root.SyncAction.SyncActionValue.LidContactAction.toObject(message.lidContactAction, options);
-                if (options.oneofs)
-                    object._lidContactAction = "lidContactAction";
-            }
-            if (message.ctwaPerCustomerDataSharingAction != null && message.hasOwnProperty("ctwaPerCustomerDataSharingAction")) {
+            if (message.ctwaPerCustomerDataSharingAction != null && message.hasOwnProperty("ctwaPerCustomerDataSharingAction"))
                 object.ctwaPerCustomerDataSharingAction = $root.SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction.toObject(message.ctwaPerCustomerDataSharingAction, options);
-                if (options.oneofs)
-                    object._ctwaPerCustomerDataSharingAction = "ctwaPerCustomerDataSharingAction";
-            }
-            if (message.paymentTosAction != null && message.hasOwnProperty("paymentTosAction")) {
+            if (message.paymentTosAction != null && message.hasOwnProperty("paymentTosAction"))
                 object.paymentTosAction = $root.SyncAction.SyncActionValue.PaymentTosAction.toObject(message.paymentTosAction, options);
-                if (options.oneofs)
-                    object._paymentTosAction = "paymentTosAction";
-            }
-            if (message.privacySettingChannelsPersonalisedRecommendationAction != null && message.hasOwnProperty("privacySettingChannelsPersonalisedRecommendationAction")) {
+            if (message.privacySettingChannelsPersonalisedRecommendationAction != null && message.hasOwnProperty("privacySettingChannelsPersonalisedRecommendationAction"))
                 object.privacySettingChannelsPersonalisedRecommendationAction = $root.SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.toObject(message.privacySettingChannelsPersonalisedRecommendationAction, options);
-                if (options.oneofs)
-                    object._privacySettingChannelsPersonalisedRecommendationAction = "privacySettingChannelsPersonalisedRecommendationAction";
-            }
-            if (message.businessBroadcastAssociationAction != null && message.hasOwnProperty("businessBroadcastAssociationAction")) {
+            if (message.businessBroadcastAssociationAction != null && message.hasOwnProperty("businessBroadcastAssociationAction"))
                 object.businessBroadcastAssociationAction = $root.SyncAction.SyncActionValue.BusinessBroadcastAssociationAction.toObject(message.businessBroadcastAssociationAction, options);
-                if (options.oneofs)
-                    object._businessBroadcastAssociationAction = "businessBroadcastAssociationAction";
-            }
-            if (message.detectedOutcomesStatusAction != null && message.hasOwnProperty("detectedOutcomesStatusAction")) {
+            if (message.detectedOutcomesStatusAction != null && message.hasOwnProperty("detectedOutcomesStatusAction"))
                 object.detectedOutcomesStatusAction = $root.SyncAction.SyncActionValue.DetectedOutcomesStatusAction.toObject(message.detectedOutcomesStatusAction, options);
-                if (options.oneofs)
-                    object._detectedOutcomesStatusAction = "detectedOutcomesStatusAction";
-            }
-            if (message.maibaAiFeaturesControlAction != null && message.hasOwnProperty("maibaAiFeaturesControlAction")) {
+            if (message.maibaAiFeaturesControlAction != null && message.hasOwnProperty("maibaAiFeaturesControlAction"))
                 object.maibaAiFeaturesControlAction = $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.toObject(message.maibaAiFeaturesControlAction, options);
-                if (options.oneofs)
-                    object._maibaAiFeaturesControlAction = "maibaAiFeaturesControlAction";
-            }
-            if (message.businessBroadcastListAction != null && message.hasOwnProperty("businessBroadcastListAction")) {
+            if (message.businessBroadcastListAction != null && message.hasOwnProperty("businessBroadcastListAction"))
                 object.businessBroadcastListAction = $root.SyncAction.SyncActionValue.BusinessBroadcastListAction.toObject(message.businessBroadcastListAction, options);
-                if (options.oneofs)
-                    object._businessBroadcastListAction = "businessBroadcastListAction";
-            }
-            if (message.musicUserIdAction != null && message.hasOwnProperty("musicUserIdAction")) {
+            if (message.musicUserIdAction != null && message.hasOwnProperty("musicUserIdAction"))
                 object.musicUserIdAction = $root.SyncAction.SyncActionValue.MusicUserIdAction.toObject(message.musicUserIdAction, options);
-                if (options.oneofs)
-                    object._musicUserIdAction = "musicUserIdAction";
-            }
-            if (message.statusPostOptInNotificationPreferencesAction != null && message.hasOwnProperty("statusPostOptInNotificationPreferencesAction")) {
+            if (message.statusPostOptInNotificationPreferencesAction != null && message.hasOwnProperty("statusPostOptInNotificationPreferencesAction"))
                 object.statusPostOptInNotificationPreferencesAction = $root.SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction.toObject(message.statusPostOptInNotificationPreferencesAction, options);
-                if (options.oneofs)
-                    object._statusPostOptInNotificationPreferencesAction = "statusPostOptInNotificationPreferencesAction";
-            }
             return object;
         };
 
@@ -3934,6 +2852,21 @@ $root.SyncAction = (function() {
          */
         SyncActionValue.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SyncActionValue
+         * @function getTypeUrl
+         * @memberof SyncAction.SyncActionValue
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SyncActionValue.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SyncAction.SyncActionValue";
         };
 
         SyncActionValue.AgentAction = (function() {
@@ -3964,63 +2897,27 @@ $root.SyncAction = (function() {
 
             /**
              * AgentAction name.
-             * @member {string|null|undefined} name
+             * @member {string} name
              * @memberof SyncAction.SyncActionValue.AgentAction
              * @instance
              */
-            AgentAction.prototype.name = null;
+            AgentAction.prototype.name = "";
 
             /**
              * AgentAction deviceID.
-             * @member {number|null|undefined} deviceID
+             * @member {number} deviceID
              * @memberof SyncAction.SyncActionValue.AgentAction
              * @instance
              */
-            AgentAction.prototype.deviceID = null;
+            AgentAction.prototype.deviceID = 0;
 
             /**
              * AgentAction isDeleted.
-             * @member {boolean|null|undefined} isDeleted
+             * @member {boolean} isDeleted
              * @memberof SyncAction.SyncActionValue.AgentAction
              * @instance
              */
-            AgentAction.prototype.isDeleted = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * AgentAction _name.
-             * @member {"name"|undefined} _name
-             * @memberof SyncAction.SyncActionValue.AgentAction
-             * @instance
-             */
-            Object.defineProperty(AgentAction.prototype, "_name", {
-                get: $util.oneOfGetter($oneOfFields = ["name"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AgentAction _deviceID.
-             * @member {"deviceID"|undefined} _deviceID
-             * @memberof SyncAction.SyncActionValue.AgentAction
-             * @instance
-             */
-            Object.defineProperty(AgentAction.prototype, "_deviceID", {
-                get: $util.oneOfGetter($oneOfFields = ["deviceID"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AgentAction _isDeleted.
-             * @member {"isDeleted"|undefined} _isDeleted
-             * @memberof SyncAction.SyncActionValue.AgentAction
-             * @instance
-             */
-            Object.defineProperty(AgentAction.prototype, "_isDeleted", {
-                get: $util.oneOfGetter($oneOfFields = ["isDeleted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            AgentAction.prototype.isDeleted = false;
 
             /**
              * Creates a new AgentAction instance using the specified properties.
@@ -4079,22 +2976,27 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AgentAction.decode = function decode(reader, length) {
+            AgentAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.AgentAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.name = reader.string();
-                        break;
-                    case 2:
-                        message.deviceID = reader.int32();
-                        break;
-                    case 3:
-                        message.isDeleted = reader.bool();
-                        break;
+                    case 1: {
+                            message.name = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.deviceID = reader.int32();
+                            break;
+                        }
+                    case 3: {
+                            message.isDeleted = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4130,22 +3032,15 @@ $root.SyncAction = (function() {
             AgentAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.name != null && message.hasOwnProperty("name")) {
-                    properties._name = 1;
+                if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                }
-                if (message.deviceID != null && message.hasOwnProperty("deviceID")) {
-                    properties._deviceID = 1;
+                if (message.deviceID != null && message.hasOwnProperty("deviceID"))
                     if (!$util.isInteger(message.deviceID))
                         return "deviceID: integer expected";
-                }
-                if (message.isDeleted != null && message.hasOwnProperty("isDeleted")) {
-                    properties._isDeleted = 1;
+                if (message.isDeleted != null && message.hasOwnProperty("isDeleted"))
                     if (typeof message.isDeleted !== "boolean")
                         return "isDeleted: boolean expected";
-                }
                 return null;
             };
 
@@ -4183,21 +3078,17 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.name != null && message.hasOwnProperty("name")) {
+                if (options.defaults) {
+                    object.name = "";
+                    object.deviceID = 0;
+                    object.isDeleted = false;
+                }
+                if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
-                    if (options.oneofs)
-                        object._name = "name";
-                }
-                if (message.deviceID != null && message.hasOwnProperty("deviceID")) {
+                if (message.deviceID != null && message.hasOwnProperty("deviceID"))
                     object.deviceID = message.deviceID;
-                    if (options.oneofs)
-                        object._deviceID = "deviceID";
-                }
-                if (message.isDeleted != null && message.hasOwnProperty("isDeleted")) {
+                if (message.isDeleted != null && message.hasOwnProperty("isDeleted"))
                     object.isDeleted = message.isDeleted;
-                    if (options.oneofs)
-                        object._isDeleted = "isDeleted";
-                }
                 return object;
             };
 
@@ -4210,6 +3101,21 @@ $root.SyncAction = (function() {
              */
             AgentAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for AgentAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.AgentAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            AgentAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.AgentAction";
             };
 
             return AgentAction;
@@ -4241,25 +3147,11 @@ $root.SyncAction = (function() {
 
             /**
              * AndroidUnsupportedActions allowed.
-             * @member {boolean|null|undefined} allowed
+             * @member {boolean} allowed
              * @memberof SyncAction.SyncActionValue.AndroidUnsupportedActions
              * @instance
              */
-            AndroidUnsupportedActions.prototype.allowed = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * AndroidUnsupportedActions _allowed.
-             * @member {"allowed"|undefined} _allowed
-             * @memberof SyncAction.SyncActionValue.AndroidUnsupportedActions
-             * @instance
-             */
-            Object.defineProperty(AndroidUnsupportedActions.prototype, "_allowed", {
-                get: $util.oneOfGetter($oneOfFields = ["allowed"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            AndroidUnsupportedActions.prototype.allowed = false;
 
             /**
              * Creates a new AndroidUnsupportedActions instance using the specified properties.
@@ -4314,16 +3206,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AndroidUnsupportedActions.decode = function decode(reader, length) {
+            AndroidUnsupportedActions.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.AndroidUnsupportedActions();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.allowed = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.allowed = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4359,12 +3254,9 @@ $root.SyncAction = (function() {
             AndroidUnsupportedActions.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.allowed != null && message.hasOwnProperty("allowed")) {
-                    properties._allowed = 1;
+                if (message.allowed != null && message.hasOwnProperty("allowed"))
                     if (typeof message.allowed !== "boolean")
                         return "allowed: boolean expected";
-                }
                 return null;
             };
 
@@ -4398,11 +3290,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.allowed != null && message.hasOwnProperty("allowed")) {
+                if (options.defaults)
+                    object.allowed = false;
+                if (message.allowed != null && message.hasOwnProperty("allowed"))
                     object.allowed = message.allowed;
-                    if (options.oneofs)
-                        object._allowed = "allowed";
-                }
                 return object;
             };
 
@@ -4415,6 +3306,21 @@ $root.SyncAction = (function() {
              */
             AndroidUnsupportedActions.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for AndroidUnsupportedActions
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.AndroidUnsupportedActions
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            AndroidUnsupportedActions.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.AndroidUnsupportedActions";
             };
 
             return AndroidUnsupportedActions;
@@ -4447,11 +3353,11 @@ $root.SyncAction = (function() {
 
             /**
              * ArchiveChatAction archived.
-             * @member {boolean|null|undefined} archived
+             * @member {boolean} archived
              * @memberof SyncAction.SyncActionValue.ArchiveChatAction
              * @instance
              */
-            ArchiveChatAction.prototype.archived = null;
+            ArchiveChatAction.prototype.archived = false;
 
             /**
              * ArchiveChatAction messageRange.
@@ -4460,31 +3366,6 @@ $root.SyncAction = (function() {
              * @instance
              */
             ArchiveChatAction.prototype.messageRange = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * ArchiveChatAction _archived.
-             * @member {"archived"|undefined} _archived
-             * @memberof SyncAction.SyncActionValue.ArchiveChatAction
-             * @instance
-             */
-            Object.defineProperty(ArchiveChatAction.prototype, "_archived", {
-                get: $util.oneOfGetter($oneOfFields = ["archived"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ArchiveChatAction _messageRange.
-             * @member {"messageRange"|undefined} _messageRange
-             * @memberof SyncAction.SyncActionValue.ArchiveChatAction
-             * @instance
-             */
-            Object.defineProperty(ArchiveChatAction.prototype, "_messageRange", {
-                get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * Creates a new ArchiveChatAction instance using the specified properties.
@@ -4541,19 +3422,23 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ArchiveChatAction.decode = function decode(reader, length) {
+            ArchiveChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ArchiveChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.archived = reader.bool();
-                        break;
-                    case 2:
-                        message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
-                        break;
+                    case 1: {
+                            message.archived = reader.bool();
+                            break;
+                        }
+                    case 2: {
+                            message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4589,19 +3474,13 @@ $root.SyncAction = (function() {
             ArchiveChatAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.archived != null && message.hasOwnProperty("archived")) {
-                    properties._archived = 1;
+                if (message.archived != null && message.hasOwnProperty("archived"))
                     if (typeof message.archived !== "boolean")
                         return "archived: boolean expected";
-                }
                 if (message.messageRange != null && message.hasOwnProperty("messageRange")) {
-                    properties._messageRange = 1;
-                    {
-                        var error = $root.SyncAction.SyncActionValue.SyncActionMessageRange.verify(message.messageRange);
-                        if (error)
-                            return "messageRange." + error;
-                    }
+                    var error = $root.SyncAction.SyncActionValue.SyncActionMessageRange.verify(message.messageRange);
+                    if (error)
+                        return "messageRange." + error;
                 }
                 return null;
             };
@@ -4641,16 +3520,14 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.archived != null && message.hasOwnProperty("archived")) {
+                if (options.defaults) {
+                    object.archived = false;
+                    object.messageRange = null;
+                }
+                if (message.archived != null && message.hasOwnProperty("archived"))
                     object.archived = message.archived;
-                    if (options.oneofs)
-                        object._archived = "archived";
-                }
-                if (message.messageRange != null && message.hasOwnProperty("messageRange")) {
+                if (message.messageRange != null && message.hasOwnProperty("messageRange"))
                     object.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.toObject(message.messageRange, options);
-                    if (options.oneofs)
-                        object._messageRange = "messageRange";
-                }
                 return object;
             };
 
@@ -4663,6 +3540,21 @@ $root.SyncAction = (function() {
              */
             ArchiveChatAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ArchiveChatAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.ArchiveChatAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ArchiveChatAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.ArchiveChatAction";
             };
 
             return ArchiveChatAction;
@@ -4694,25 +3586,11 @@ $root.SyncAction = (function() {
 
             /**
              * BotWelcomeRequestAction isSent.
-             * @member {boolean|null|undefined} isSent
+             * @member {boolean} isSent
              * @memberof SyncAction.SyncActionValue.BotWelcomeRequestAction
              * @instance
              */
-            BotWelcomeRequestAction.prototype.isSent = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * BotWelcomeRequestAction _isSent.
-             * @member {"isSent"|undefined} _isSent
-             * @memberof SyncAction.SyncActionValue.BotWelcomeRequestAction
-             * @instance
-             */
-            Object.defineProperty(BotWelcomeRequestAction.prototype, "_isSent", {
-                get: $util.oneOfGetter($oneOfFields = ["isSent"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            BotWelcomeRequestAction.prototype.isSent = false;
 
             /**
              * Creates a new BotWelcomeRequestAction instance using the specified properties.
@@ -4767,16 +3645,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BotWelcomeRequestAction.decode = function decode(reader, length) {
+            BotWelcomeRequestAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.BotWelcomeRequestAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.isSent = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.isSent = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4812,12 +3693,9 @@ $root.SyncAction = (function() {
             BotWelcomeRequestAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.isSent != null && message.hasOwnProperty("isSent")) {
-                    properties._isSent = 1;
+                if (message.isSent != null && message.hasOwnProperty("isSent"))
                     if (typeof message.isSent !== "boolean")
                         return "isSent: boolean expected";
-                }
                 return null;
             };
 
@@ -4851,11 +3729,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.isSent != null && message.hasOwnProperty("isSent")) {
+                if (options.defaults)
+                    object.isSent = false;
+                if (message.isSent != null && message.hasOwnProperty("isSent"))
                     object.isSent = message.isSent;
-                    if (options.oneofs)
-                        object._isSent = "isSent";
-                }
                 return object;
             };
 
@@ -4868,6 +3745,21 @@ $root.SyncAction = (function() {
              */
             BotWelcomeRequestAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BotWelcomeRequestAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.BotWelcomeRequestAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BotWelcomeRequestAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.BotWelcomeRequestAction";
             };
 
             return BotWelcomeRequestAction;
@@ -4908,25 +3800,11 @@ $root.SyncAction = (function() {
 
             /**
              * BroadcastListParticipant pnJid.
-             * @member {string|null|undefined} pnJid
+             * @member {string} pnJid
              * @memberof SyncAction.SyncActionValue.BroadcastListParticipant
              * @instance
              */
-            BroadcastListParticipant.prototype.pnJid = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * BroadcastListParticipant _pnJid.
-             * @member {"pnJid"|undefined} _pnJid
-             * @memberof SyncAction.SyncActionValue.BroadcastListParticipant
-             * @instance
-             */
-            Object.defineProperty(BroadcastListParticipant.prototype, "_pnJid", {
-                get: $util.oneOfGetter($oneOfFields = ["pnJid"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            BroadcastListParticipant.prototype.pnJid = "";
 
             /**
              * Creates a new BroadcastListParticipant instance using the specified properties.
@@ -4982,19 +3860,23 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BroadcastListParticipant.decode = function decode(reader, length) {
+            BroadcastListParticipant.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.BroadcastListParticipant();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.lidJid = reader.string();
-                        break;
-                    case 2:
-                        message.pnJid = reader.string();
-                        break;
+                    case 1: {
+                            message.lidJid = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.pnJid = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5032,14 +3914,11 @@ $root.SyncAction = (function() {
             BroadcastListParticipant.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
                 if (!$util.isString(message.lidJid))
                     return "lidJid: string expected";
-                if (message.pnJid != null && message.hasOwnProperty("pnJid")) {
-                    properties._pnJid = 1;
+                if (message.pnJid != null && message.hasOwnProperty("pnJid"))
                     if (!$util.isString(message.pnJid))
                         return "pnJid: string expected";
-                }
                 return null;
             };
 
@@ -5075,15 +3954,14 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults)
+                if (options.defaults) {
                     object.lidJid = "";
+                    object.pnJid = "";
+                }
                 if (message.lidJid != null && message.hasOwnProperty("lidJid"))
                     object.lidJid = message.lidJid;
-                if (message.pnJid != null && message.hasOwnProperty("pnJid")) {
+                if (message.pnJid != null && message.hasOwnProperty("pnJid"))
                     object.pnJid = message.pnJid;
-                    if (options.oneofs)
-                        object._pnJid = "pnJid";
-                }
                 return object;
             };
 
@@ -5096,6 +3974,21 @@ $root.SyncAction = (function() {
              */
             BroadcastListParticipant.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BroadcastListParticipant
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.BroadcastListParticipant
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BroadcastListParticipant.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.BroadcastListParticipant";
             };
 
             return BroadcastListParticipant;
@@ -5127,25 +4020,11 @@ $root.SyncAction = (function() {
 
             /**
              * BusinessBroadcastAssociationAction deleted.
-             * @member {boolean|null|undefined} deleted
+             * @member {boolean} deleted
              * @memberof SyncAction.SyncActionValue.BusinessBroadcastAssociationAction
              * @instance
              */
-            BusinessBroadcastAssociationAction.prototype.deleted = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * BusinessBroadcastAssociationAction _deleted.
-             * @member {"deleted"|undefined} _deleted
-             * @memberof SyncAction.SyncActionValue.BusinessBroadcastAssociationAction
-             * @instance
-             */
-            Object.defineProperty(BusinessBroadcastAssociationAction.prototype, "_deleted", {
-                get: $util.oneOfGetter($oneOfFields = ["deleted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            BusinessBroadcastAssociationAction.prototype.deleted = false;
 
             /**
              * Creates a new BusinessBroadcastAssociationAction instance using the specified properties.
@@ -5200,16 +4079,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BusinessBroadcastAssociationAction.decode = function decode(reader, length) {
+            BusinessBroadcastAssociationAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.BusinessBroadcastAssociationAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.deleted = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.deleted = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5245,12 +4127,9 @@ $root.SyncAction = (function() {
             BusinessBroadcastAssociationAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
-                    properties._deleted = 1;
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
                     if (typeof message.deleted !== "boolean")
                         return "deleted: boolean expected";
-                }
                 return null;
             };
 
@@ -5284,11 +4163,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
+                if (options.defaults)
+                    object.deleted = false;
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
                     object.deleted = message.deleted;
-                    if (options.oneofs)
-                        object._deleted = "deleted";
-                }
                 return object;
             };
 
@@ -5301,6 +4179,21 @@ $root.SyncAction = (function() {
              */
             BusinessBroadcastAssociationAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BusinessBroadcastAssociationAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastAssociationAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BusinessBroadcastAssociationAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.BusinessBroadcastAssociationAction";
             };
 
             return BusinessBroadcastAssociationAction;
@@ -5335,11 +4228,11 @@ $root.SyncAction = (function() {
 
             /**
              * BusinessBroadcastListAction deleted.
-             * @member {boolean|null|undefined} deleted
+             * @member {boolean} deleted
              * @memberof SyncAction.SyncActionValue.BusinessBroadcastListAction
              * @instance
              */
-            BusinessBroadcastListAction.prototype.deleted = null;
+            BusinessBroadcastListAction.prototype.deleted = false;
 
             /**
              * BusinessBroadcastListAction participants.
@@ -5351,36 +4244,11 @@ $root.SyncAction = (function() {
 
             /**
              * BusinessBroadcastListAction listName.
-             * @member {string|null|undefined} listName
+             * @member {string} listName
              * @memberof SyncAction.SyncActionValue.BusinessBroadcastListAction
              * @instance
              */
-            BusinessBroadcastListAction.prototype.listName = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * BusinessBroadcastListAction _deleted.
-             * @member {"deleted"|undefined} _deleted
-             * @memberof SyncAction.SyncActionValue.BusinessBroadcastListAction
-             * @instance
-             */
-            Object.defineProperty(BusinessBroadcastListAction.prototype, "_deleted", {
-                get: $util.oneOfGetter($oneOfFields = ["deleted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * BusinessBroadcastListAction _listName.
-             * @member {"listName"|undefined} _listName
-             * @memberof SyncAction.SyncActionValue.BusinessBroadcastListAction
-             * @instance
-             */
-            Object.defineProperty(BusinessBroadcastListAction.prototype, "_listName", {
-                get: $util.oneOfGetter($oneOfFields = ["listName"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            BusinessBroadcastListAction.prototype.listName = "";
 
             /**
              * Creates a new BusinessBroadcastListAction instance using the specified properties.
@@ -5440,24 +4308,29 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BusinessBroadcastListAction.decode = function decode(reader, length) {
+            BusinessBroadcastListAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.BusinessBroadcastListAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.deleted = reader.bool();
-                        break;
-                    case 2:
-                        if (!(message.participants && message.participants.length))
-                            message.participants = [];
-                        message.participants.push($root.SyncAction.SyncActionValue.BroadcastListParticipant.decode(reader, reader.uint32()));
-                        break;
-                    case 3:
-                        message.listName = reader.string();
-                        break;
+                    case 1: {
+                            message.deleted = reader.bool();
+                            break;
+                        }
+                    case 2: {
+                            if (!(message.participants && message.participants.length))
+                                message.participants = [];
+                            message.participants.push($root.SyncAction.SyncActionValue.BroadcastListParticipant.decode(reader, reader.uint32()));
+                            break;
+                        }
+                    case 3: {
+                            message.listName = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5493,12 +4366,9 @@ $root.SyncAction = (function() {
             BusinessBroadcastListAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
-                    properties._deleted = 1;
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
                     if (typeof message.deleted !== "boolean")
                         return "deleted: boolean expected";
-                }
                 if (message.participants != null && message.hasOwnProperty("participants")) {
                     if (!Array.isArray(message.participants))
                         return "participants: array expected";
@@ -5508,11 +4378,9 @@ $root.SyncAction = (function() {
                             return "participants." + error;
                     }
                 }
-                if (message.listName != null && message.hasOwnProperty("listName")) {
-                    properties._listName = 1;
+                if (message.listName != null && message.hasOwnProperty("listName"))
                     if (!$util.isString(message.listName))
                         return "listName: string expected";
-                }
                 return null;
             };
 
@@ -5560,21 +4428,19 @@ $root.SyncAction = (function() {
                 var object = {};
                 if (options.arrays || options.defaults)
                     object.participants = [];
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
-                    object.deleted = message.deleted;
-                    if (options.oneofs)
-                        object._deleted = "deleted";
+                if (options.defaults) {
+                    object.deleted = false;
+                    object.listName = "";
                 }
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
+                    object.deleted = message.deleted;
                 if (message.participants && message.participants.length) {
                     object.participants = [];
                     for (var j = 0; j < message.participants.length; ++j)
                         object.participants[j] = $root.SyncAction.SyncActionValue.BroadcastListParticipant.toObject(message.participants[j], options);
                 }
-                if (message.listName != null && message.hasOwnProperty("listName")) {
+                if (message.listName != null && message.hasOwnProperty("listName"))
                     object.listName = message.listName;
-                    if (options.oneofs)
-                        object._listName = "listName";
-                }
                 return object;
             };
 
@@ -5587,6 +4453,21 @@ $root.SyncAction = (function() {
              */
             BusinessBroadcastListAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BusinessBroadcastListAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastListAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BusinessBroadcastListAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.BusinessBroadcastListAction";
             };
 
             return BusinessBroadcastListAction;
@@ -5623,20 +4504,6 @@ $root.SyncAction = (function() {
              * @instance
              */
             CallLogAction.prototype.callLogRecord = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * CallLogAction _callLogRecord.
-             * @member {"callLogRecord"|undefined} _callLogRecord
-             * @memberof SyncAction.SyncActionValue.CallLogAction
-             * @instance
-             */
-            Object.defineProperty(CallLogAction.prototype, "_callLogRecord", {
-                get: $util.oneOfGetter($oneOfFields = ["callLogRecord"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * Creates a new CallLogAction instance using the specified properties.
@@ -5691,16 +4558,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CallLogAction.decode = function decode(reader, length) {
+            CallLogAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CallLogAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.callLogRecord = $root.SyncAction.CallLogRecord.decode(reader, reader.uint32());
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.callLogRecord = $root.SyncAction.CallLogRecord.decode(reader, reader.uint32());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5736,14 +4606,10 @@ $root.SyncAction = (function() {
             CallLogAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
                 if (message.callLogRecord != null && message.hasOwnProperty("callLogRecord")) {
-                    properties._callLogRecord = 1;
-                    {
-                        var error = $root.SyncAction.CallLogRecord.verify(message.callLogRecord);
-                        if (error)
-                            return "callLogRecord." + error;
-                    }
+                    var error = $root.SyncAction.CallLogRecord.verify(message.callLogRecord);
+                    if (error)
+                        return "callLogRecord." + error;
                 }
                 return null;
             };
@@ -5781,11 +4647,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.callLogRecord != null && message.hasOwnProperty("callLogRecord")) {
+                if (options.defaults)
+                    object.callLogRecord = null;
+                if (message.callLogRecord != null && message.hasOwnProperty("callLogRecord"))
                     object.callLogRecord = $root.SyncAction.CallLogRecord.toObject(message.callLogRecord, options);
-                    if (options.oneofs)
-                        object._callLogRecord = "callLogRecord";
-                }
                 return object;
             };
 
@@ -5798,6 +4663,21 @@ $root.SyncAction = (function() {
              */
             CallLogAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for CallLogAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.CallLogAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            CallLogAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.CallLogAction";
             };
 
             return CallLogAction;
@@ -5829,25 +4709,11 @@ $root.SyncAction = (function() {
 
             /**
              * ChatAssignmentAction deviceAgentID.
-             * @member {string|null|undefined} deviceAgentID
+             * @member {string} deviceAgentID
              * @memberof SyncAction.SyncActionValue.ChatAssignmentAction
              * @instance
              */
-            ChatAssignmentAction.prototype.deviceAgentID = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * ChatAssignmentAction _deviceAgentID.
-             * @member {"deviceAgentID"|undefined} _deviceAgentID
-             * @memberof SyncAction.SyncActionValue.ChatAssignmentAction
-             * @instance
-             */
-            Object.defineProperty(ChatAssignmentAction.prototype, "_deviceAgentID", {
-                get: $util.oneOfGetter($oneOfFields = ["deviceAgentID"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            ChatAssignmentAction.prototype.deviceAgentID = "";
 
             /**
              * Creates a new ChatAssignmentAction instance using the specified properties.
@@ -5902,16 +4768,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ChatAssignmentAction.decode = function decode(reader, length) {
+            ChatAssignmentAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ChatAssignmentAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.deviceAgentID = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.deviceAgentID = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5947,12 +4816,9 @@ $root.SyncAction = (function() {
             ChatAssignmentAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.deviceAgentID != null && message.hasOwnProperty("deviceAgentID")) {
-                    properties._deviceAgentID = 1;
+                if (message.deviceAgentID != null && message.hasOwnProperty("deviceAgentID"))
                     if (!$util.isString(message.deviceAgentID))
                         return "deviceAgentID: string expected";
-                }
                 return null;
             };
 
@@ -5986,11 +4852,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.deviceAgentID != null && message.hasOwnProperty("deviceAgentID")) {
+                if (options.defaults)
+                    object.deviceAgentID = "";
+                if (message.deviceAgentID != null && message.hasOwnProperty("deviceAgentID"))
                     object.deviceAgentID = message.deviceAgentID;
-                    if (options.oneofs)
-                        object._deviceAgentID = "deviceAgentID";
-                }
                 return object;
             };
 
@@ -6003,6 +4868,21 @@ $root.SyncAction = (function() {
              */
             ChatAssignmentAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ChatAssignmentAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.ChatAssignmentAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ChatAssignmentAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.ChatAssignmentAction";
             };
 
             return ChatAssignmentAction;
@@ -6034,25 +4914,11 @@ $root.SyncAction = (function() {
 
             /**
              * ChatAssignmentOpenedStatusAction chatOpened.
-             * @member {boolean|null|undefined} chatOpened
+             * @member {boolean} chatOpened
              * @memberof SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction
              * @instance
              */
-            ChatAssignmentOpenedStatusAction.prototype.chatOpened = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * ChatAssignmentOpenedStatusAction _chatOpened.
-             * @member {"chatOpened"|undefined} _chatOpened
-             * @memberof SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction
-             * @instance
-             */
-            Object.defineProperty(ChatAssignmentOpenedStatusAction.prototype, "_chatOpened", {
-                get: $util.oneOfGetter($oneOfFields = ["chatOpened"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            ChatAssignmentOpenedStatusAction.prototype.chatOpened = false;
 
             /**
              * Creates a new ChatAssignmentOpenedStatusAction instance using the specified properties.
@@ -6107,16 +4973,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ChatAssignmentOpenedStatusAction.decode = function decode(reader, length) {
+            ChatAssignmentOpenedStatusAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.chatOpened = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.chatOpened = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -6152,12 +5021,9 @@ $root.SyncAction = (function() {
             ChatAssignmentOpenedStatusAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.chatOpened != null && message.hasOwnProperty("chatOpened")) {
-                    properties._chatOpened = 1;
+                if (message.chatOpened != null && message.hasOwnProperty("chatOpened"))
                     if (typeof message.chatOpened !== "boolean")
                         return "chatOpened: boolean expected";
-                }
                 return null;
             };
 
@@ -6191,11 +5057,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.chatOpened != null && message.hasOwnProperty("chatOpened")) {
+                if (options.defaults)
+                    object.chatOpened = false;
+                if (message.chatOpened != null && message.hasOwnProperty("chatOpened"))
                     object.chatOpened = message.chatOpened;
-                    if (options.oneofs)
-                        object._chatOpened = "chatOpened";
-                }
                 return object;
             };
 
@@ -6208,6 +5073,21 @@ $root.SyncAction = (function() {
              */
             ChatAssignmentOpenedStatusAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ChatAssignmentOpenedStatusAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ChatAssignmentOpenedStatusAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction";
             };
 
             return ChatAssignmentOpenedStatusAction;
@@ -6244,20 +5124,6 @@ $root.SyncAction = (function() {
              * @instance
              */
             ClearChatAction.prototype.messageRange = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * ClearChatAction _messageRange.
-             * @member {"messageRange"|undefined} _messageRange
-             * @memberof SyncAction.SyncActionValue.ClearChatAction
-             * @instance
-             */
-            Object.defineProperty(ClearChatAction.prototype, "_messageRange", {
-                get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * Creates a new ClearChatAction instance using the specified properties.
@@ -6312,16 +5178,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ClearChatAction.decode = function decode(reader, length) {
+            ClearChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ClearChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -6357,14 +5226,10 @@ $root.SyncAction = (function() {
             ClearChatAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
                 if (message.messageRange != null && message.hasOwnProperty("messageRange")) {
-                    properties._messageRange = 1;
-                    {
-                        var error = $root.SyncAction.SyncActionValue.SyncActionMessageRange.verify(message.messageRange);
-                        if (error)
-                            return "messageRange." + error;
-                    }
+                    var error = $root.SyncAction.SyncActionValue.SyncActionMessageRange.verify(message.messageRange);
+                    if (error)
+                        return "messageRange." + error;
                 }
                 return null;
             };
@@ -6402,11 +5267,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.messageRange != null && message.hasOwnProperty("messageRange")) {
+                if (options.defaults)
+                    object.messageRange = null;
+                if (message.messageRange != null && message.hasOwnProperty("messageRange"))
                     object.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.toObject(message.messageRange, options);
-                    if (options.oneofs)
-                        object._messageRange = "messageRange";
-                }
                 return object;
             };
 
@@ -6419,6 +5283,21 @@ $root.SyncAction = (function() {
              */
             ClearChatAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ClearChatAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.ClearChatAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ClearChatAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.ClearChatAction";
             };
 
             return ClearChatAction;
@@ -6455,120 +5334,51 @@ $root.SyncAction = (function() {
 
             /**
              * ContactAction fullName.
-             * @member {string|null|undefined} fullName
+             * @member {string} fullName
              * @memberof SyncAction.SyncActionValue.ContactAction
              * @instance
              */
-            ContactAction.prototype.fullName = null;
+            ContactAction.prototype.fullName = "";
 
             /**
              * ContactAction firstName.
-             * @member {string|null|undefined} firstName
+             * @member {string} firstName
              * @memberof SyncAction.SyncActionValue.ContactAction
              * @instance
              */
-            ContactAction.prototype.firstName = null;
+            ContactAction.prototype.firstName = "";
 
             /**
              * ContactAction lidJid.
-             * @member {string|null|undefined} lidJid
+             * @member {string} lidJid
              * @memberof SyncAction.SyncActionValue.ContactAction
              * @instance
              */
-            ContactAction.prototype.lidJid = null;
+            ContactAction.prototype.lidJid = "";
 
             /**
              * ContactAction saveOnPrimaryAddressbook.
-             * @member {boolean|null|undefined} saveOnPrimaryAddressbook
+             * @member {boolean} saveOnPrimaryAddressbook
              * @memberof SyncAction.SyncActionValue.ContactAction
              * @instance
              */
-            ContactAction.prototype.saveOnPrimaryAddressbook = null;
+            ContactAction.prototype.saveOnPrimaryAddressbook = false;
 
             /**
              * ContactAction pnJid.
-             * @member {string|null|undefined} pnJid
+             * @member {string} pnJid
              * @memberof SyncAction.SyncActionValue.ContactAction
              * @instance
              */
-            ContactAction.prototype.pnJid = null;
+            ContactAction.prototype.pnJid = "";
 
             /**
              * ContactAction username.
-             * @member {string|null|undefined} username
+             * @member {string} username
              * @memberof SyncAction.SyncActionValue.ContactAction
              * @instance
              */
-            ContactAction.prototype.username = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * ContactAction _fullName.
-             * @member {"fullName"|undefined} _fullName
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
-            Object.defineProperty(ContactAction.prototype, "_fullName", {
-                get: $util.oneOfGetter($oneOfFields = ["fullName"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ContactAction _firstName.
-             * @member {"firstName"|undefined} _firstName
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
-            Object.defineProperty(ContactAction.prototype, "_firstName", {
-                get: $util.oneOfGetter($oneOfFields = ["firstName"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ContactAction _lidJid.
-             * @member {"lidJid"|undefined} _lidJid
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
-            Object.defineProperty(ContactAction.prototype, "_lidJid", {
-                get: $util.oneOfGetter($oneOfFields = ["lidJid"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ContactAction _saveOnPrimaryAddressbook.
-             * @member {"saveOnPrimaryAddressbook"|undefined} _saveOnPrimaryAddressbook
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
-            Object.defineProperty(ContactAction.prototype, "_saveOnPrimaryAddressbook", {
-                get: $util.oneOfGetter($oneOfFields = ["saveOnPrimaryAddressbook"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ContactAction _pnJid.
-             * @member {"pnJid"|undefined} _pnJid
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
-            Object.defineProperty(ContactAction.prototype, "_pnJid", {
-                get: $util.oneOfGetter($oneOfFields = ["pnJid"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ContactAction _username.
-             * @member {"username"|undefined} _username
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
-            Object.defineProperty(ContactAction.prototype, "_username", {
-                get: $util.oneOfGetter($oneOfFields = ["username"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            ContactAction.prototype.username = "";
 
             /**
              * Creates a new ContactAction instance using the specified properties.
@@ -6633,31 +5443,39 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ContactAction.decode = function decode(reader, length) {
+            ContactAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ContactAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.fullName = reader.string();
-                        break;
-                    case 2:
-                        message.firstName = reader.string();
-                        break;
-                    case 3:
-                        message.lidJid = reader.string();
-                        break;
-                    case 4:
-                        message.saveOnPrimaryAddressbook = reader.bool();
-                        break;
-                    case 5:
-                        message.pnJid = reader.string();
-                        break;
-                    case 6:
-                        message.username = reader.string();
-                        break;
+                    case 1: {
+                            message.fullName = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.firstName = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.lidJid = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            message.saveOnPrimaryAddressbook = reader.bool();
+                            break;
+                        }
+                    case 5: {
+                            message.pnJid = reader.string();
+                            break;
+                        }
+                    case 6: {
+                            message.username = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -6693,37 +5511,24 @@ $root.SyncAction = (function() {
             ContactAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.fullName != null && message.hasOwnProperty("fullName")) {
-                    properties._fullName = 1;
+                if (message.fullName != null && message.hasOwnProperty("fullName"))
                     if (!$util.isString(message.fullName))
                         return "fullName: string expected";
-                }
-                if (message.firstName != null && message.hasOwnProperty("firstName")) {
-                    properties._firstName = 1;
+                if (message.firstName != null && message.hasOwnProperty("firstName"))
                     if (!$util.isString(message.firstName))
                         return "firstName: string expected";
-                }
-                if (message.lidJid != null && message.hasOwnProperty("lidJid")) {
-                    properties._lidJid = 1;
+                if (message.lidJid != null && message.hasOwnProperty("lidJid"))
                     if (!$util.isString(message.lidJid))
                         return "lidJid: string expected";
-                }
-                if (message.saveOnPrimaryAddressbook != null && message.hasOwnProperty("saveOnPrimaryAddressbook")) {
-                    properties._saveOnPrimaryAddressbook = 1;
+                if (message.saveOnPrimaryAddressbook != null && message.hasOwnProperty("saveOnPrimaryAddressbook"))
                     if (typeof message.saveOnPrimaryAddressbook !== "boolean")
                         return "saveOnPrimaryAddressbook: boolean expected";
-                }
-                if (message.pnJid != null && message.hasOwnProperty("pnJid")) {
-                    properties._pnJid = 1;
+                if (message.pnJid != null && message.hasOwnProperty("pnJid"))
                     if (!$util.isString(message.pnJid))
                         return "pnJid: string expected";
-                }
-                if (message.username != null && message.hasOwnProperty("username")) {
-                    properties._username = 1;
+                if (message.username != null && message.hasOwnProperty("username"))
                     if (!$util.isString(message.username))
                         return "username: string expected";
-                }
                 return null;
             };
 
@@ -6767,36 +5572,26 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.fullName != null && message.hasOwnProperty("fullName")) {
+                if (options.defaults) {
+                    object.fullName = "";
+                    object.firstName = "";
+                    object.lidJid = "";
+                    object.saveOnPrimaryAddressbook = false;
+                    object.pnJid = "";
+                    object.username = "";
+                }
+                if (message.fullName != null && message.hasOwnProperty("fullName"))
                     object.fullName = message.fullName;
-                    if (options.oneofs)
-                        object._fullName = "fullName";
-                }
-                if (message.firstName != null && message.hasOwnProperty("firstName")) {
+                if (message.firstName != null && message.hasOwnProperty("firstName"))
                     object.firstName = message.firstName;
-                    if (options.oneofs)
-                        object._firstName = "firstName";
-                }
-                if (message.lidJid != null && message.hasOwnProperty("lidJid")) {
+                if (message.lidJid != null && message.hasOwnProperty("lidJid"))
                     object.lidJid = message.lidJid;
-                    if (options.oneofs)
-                        object._lidJid = "lidJid";
-                }
-                if (message.saveOnPrimaryAddressbook != null && message.hasOwnProperty("saveOnPrimaryAddressbook")) {
+                if (message.saveOnPrimaryAddressbook != null && message.hasOwnProperty("saveOnPrimaryAddressbook"))
                     object.saveOnPrimaryAddressbook = message.saveOnPrimaryAddressbook;
-                    if (options.oneofs)
-                        object._saveOnPrimaryAddressbook = "saveOnPrimaryAddressbook";
-                }
-                if (message.pnJid != null && message.hasOwnProperty("pnJid")) {
+                if (message.pnJid != null && message.hasOwnProperty("pnJid"))
                     object.pnJid = message.pnJid;
-                    if (options.oneofs)
-                        object._pnJid = "pnJid";
-                }
-                if (message.username != null && message.hasOwnProperty("username")) {
+                if (message.username != null && message.hasOwnProperty("username"))
                     object.username = message.username;
-                    if (options.oneofs)
-                        object._username = "username";
-                }
                 return object;
             };
 
@@ -6809,6 +5604,21 @@ $root.SyncAction = (function() {
              */
             ContactAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ContactAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.ContactAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ContactAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.ContactAction";
             };
 
             return ContactAction;
@@ -6840,25 +5650,11 @@ $root.SyncAction = (function() {
 
             /**
              * CtwaPerCustomerDataSharingAction isCtwaPerCustomerDataSharingEnabled.
-             * @member {boolean|null|undefined} isCtwaPerCustomerDataSharingEnabled
+             * @member {boolean} isCtwaPerCustomerDataSharingEnabled
              * @memberof SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction
              * @instance
              */
-            CtwaPerCustomerDataSharingAction.prototype.isCtwaPerCustomerDataSharingEnabled = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * CtwaPerCustomerDataSharingAction _isCtwaPerCustomerDataSharingEnabled.
-             * @member {"isCtwaPerCustomerDataSharingEnabled"|undefined} _isCtwaPerCustomerDataSharingEnabled
-             * @memberof SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction
-             * @instance
-             */
-            Object.defineProperty(CtwaPerCustomerDataSharingAction.prototype, "_isCtwaPerCustomerDataSharingEnabled", {
-                get: $util.oneOfGetter($oneOfFields = ["isCtwaPerCustomerDataSharingEnabled"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            CtwaPerCustomerDataSharingAction.prototype.isCtwaPerCustomerDataSharingEnabled = false;
 
             /**
              * Creates a new CtwaPerCustomerDataSharingAction instance using the specified properties.
@@ -6913,16 +5709,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CtwaPerCustomerDataSharingAction.decode = function decode(reader, length) {
+            CtwaPerCustomerDataSharingAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.isCtwaPerCustomerDataSharingEnabled = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.isCtwaPerCustomerDataSharingEnabled = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -6958,12 +5757,9 @@ $root.SyncAction = (function() {
             CtwaPerCustomerDataSharingAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.isCtwaPerCustomerDataSharingEnabled != null && message.hasOwnProperty("isCtwaPerCustomerDataSharingEnabled")) {
-                    properties._isCtwaPerCustomerDataSharingEnabled = 1;
+                if (message.isCtwaPerCustomerDataSharingEnabled != null && message.hasOwnProperty("isCtwaPerCustomerDataSharingEnabled"))
                     if (typeof message.isCtwaPerCustomerDataSharingEnabled !== "boolean")
                         return "isCtwaPerCustomerDataSharingEnabled: boolean expected";
-                }
                 return null;
             };
 
@@ -6997,11 +5793,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.isCtwaPerCustomerDataSharingEnabled != null && message.hasOwnProperty("isCtwaPerCustomerDataSharingEnabled")) {
+                if (options.defaults)
+                    object.isCtwaPerCustomerDataSharingEnabled = false;
+                if (message.isCtwaPerCustomerDataSharingEnabled != null && message.hasOwnProperty("isCtwaPerCustomerDataSharingEnabled"))
                     object.isCtwaPerCustomerDataSharingEnabled = message.isCtwaPerCustomerDataSharingEnabled;
-                    if (options.oneofs)
-                        object._isCtwaPerCustomerDataSharingEnabled = "isCtwaPerCustomerDataSharingEnabled";
-                }
                 return object;
             };
 
@@ -7014,6 +5809,21 @@ $root.SyncAction = (function() {
              */
             CtwaPerCustomerDataSharingAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for CtwaPerCustomerDataSharingAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            CtwaPerCustomerDataSharingAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction";
             };
 
             return CtwaPerCustomerDataSharingAction;
@@ -7136,27 +5946,33 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CustomPaymentMethod.decode = function decode(reader, length) {
+            CustomPaymentMethod.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CustomPaymentMethod();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.credentialId = reader.string();
-                        break;
-                    case 2:
-                        message.country = reader.string();
-                        break;
-                    case 3:
-                        message.type = reader.string();
-                        break;
-                    case 4:
-                        if (!(message.metadata && message.metadata.length))
-                            message.metadata = [];
-                        message.metadata.push($root.SyncAction.SyncActionValue.CustomPaymentMethodMetadata.decode(reader, reader.uint32()));
-                        break;
+                    case 1: {
+                            message.credentialId = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.country = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.type = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            if (!(message.metadata && message.metadata.length))
+                                message.metadata = [];
+                            message.metadata.push($root.SyncAction.SyncActionValue.CustomPaymentMethodMetadata.decode(reader, reader.uint32()));
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -7292,6 +6108,21 @@ $root.SyncAction = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for CustomPaymentMethod
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            CustomPaymentMethod.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.CustomPaymentMethod";
+            };
+
             return CustomPaymentMethod;
         })();
 
@@ -7389,19 +6220,23 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CustomPaymentMethodMetadata.decode = function decode(reader, length) {
+            CustomPaymentMethodMetadata.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CustomPaymentMethodMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.key = reader.string();
-                        break;
-                    case 2:
-                        message.value = reader.string();
-                        break;
+                    case 1: {
+                            message.key = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.value = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -7502,6 +6337,21 @@ $root.SyncAction = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for CustomPaymentMethodMetadata
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.CustomPaymentMethodMetadata
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            CustomPaymentMethodMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.CustomPaymentMethodMetadata";
+            };
+
             return CustomPaymentMethodMetadata;
         })();
 
@@ -7592,18 +6442,21 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CustomPaymentMethodsAction.decode = function decode(reader, length) {
+            CustomPaymentMethodsAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CustomPaymentMethodsAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.customPaymentMethods && message.customPaymentMethods.length))
-                            message.customPaymentMethods = [];
-                        message.customPaymentMethods.push($root.SyncAction.SyncActionValue.CustomPaymentMethod.decode(reader, reader.uint32()));
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            if (!(message.customPaymentMethods && message.customPaymentMethods.length))
+                                message.customPaymentMethods = [];
+                            message.customPaymentMethods.push($root.SyncAction.SyncActionValue.CustomPaymentMethod.decode(reader, reader.uint32()));
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -7710,6 +6563,21 @@ $root.SyncAction = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for CustomPaymentMethodsAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.CustomPaymentMethodsAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            CustomPaymentMethodsAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.CustomPaymentMethodsAction";
+            };
+
             return CustomPaymentMethodsAction;
         })();
 
@@ -7744,20 +6612,6 @@ $root.SyncAction = (function() {
              * @instance
              */
             DeleteChatAction.prototype.messageRange = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * DeleteChatAction _messageRange.
-             * @member {"messageRange"|undefined} _messageRange
-             * @memberof SyncAction.SyncActionValue.DeleteChatAction
-             * @instance
-             */
-            Object.defineProperty(DeleteChatAction.prototype, "_messageRange", {
-                get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * Creates a new DeleteChatAction instance using the specified properties.
@@ -7812,16 +6666,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DeleteChatAction.decode = function decode(reader, length) {
+            DeleteChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.DeleteChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -7857,14 +6714,10 @@ $root.SyncAction = (function() {
             DeleteChatAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
                 if (message.messageRange != null && message.hasOwnProperty("messageRange")) {
-                    properties._messageRange = 1;
-                    {
-                        var error = $root.SyncAction.SyncActionValue.SyncActionMessageRange.verify(message.messageRange);
-                        if (error)
-                            return "messageRange." + error;
-                    }
+                    var error = $root.SyncAction.SyncActionValue.SyncActionMessageRange.verify(message.messageRange);
+                    if (error)
+                        return "messageRange." + error;
                 }
                 return null;
             };
@@ -7902,11 +6755,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.messageRange != null && message.hasOwnProperty("messageRange")) {
+                if (options.defaults)
+                    object.messageRange = null;
+                if (message.messageRange != null && message.hasOwnProperty("messageRange"))
                     object.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.toObject(message.messageRange, options);
-                    if (options.oneofs)
-                        object._messageRange = "messageRange";
-                }
                 return object;
             };
 
@@ -7919,6 +6771,21 @@ $root.SyncAction = (function() {
              */
             DeleteChatAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for DeleteChatAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.DeleteChatAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            DeleteChatAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.DeleteChatAction";
             };
 
             return DeleteChatAction;
@@ -7951,44 +6818,19 @@ $root.SyncAction = (function() {
 
             /**
              * DeleteIndividualCallLogAction peerJid.
-             * @member {string|null|undefined} peerJid
+             * @member {string} peerJid
              * @memberof SyncAction.SyncActionValue.DeleteIndividualCallLogAction
              * @instance
              */
-            DeleteIndividualCallLogAction.prototype.peerJid = null;
+            DeleteIndividualCallLogAction.prototype.peerJid = "";
 
             /**
              * DeleteIndividualCallLogAction isIncoming.
-             * @member {boolean|null|undefined} isIncoming
+             * @member {boolean} isIncoming
              * @memberof SyncAction.SyncActionValue.DeleteIndividualCallLogAction
              * @instance
              */
-            DeleteIndividualCallLogAction.prototype.isIncoming = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * DeleteIndividualCallLogAction _peerJid.
-             * @member {"peerJid"|undefined} _peerJid
-             * @memberof SyncAction.SyncActionValue.DeleteIndividualCallLogAction
-             * @instance
-             */
-            Object.defineProperty(DeleteIndividualCallLogAction.prototype, "_peerJid", {
-                get: $util.oneOfGetter($oneOfFields = ["peerJid"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * DeleteIndividualCallLogAction _isIncoming.
-             * @member {"isIncoming"|undefined} _isIncoming
-             * @memberof SyncAction.SyncActionValue.DeleteIndividualCallLogAction
-             * @instance
-             */
-            Object.defineProperty(DeleteIndividualCallLogAction.prototype, "_isIncoming", {
-                get: $util.oneOfGetter($oneOfFields = ["isIncoming"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            DeleteIndividualCallLogAction.prototype.isIncoming = false;
 
             /**
              * Creates a new DeleteIndividualCallLogAction instance using the specified properties.
@@ -8045,19 +6887,23 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DeleteIndividualCallLogAction.decode = function decode(reader, length) {
+            DeleteIndividualCallLogAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.DeleteIndividualCallLogAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.peerJid = reader.string();
-                        break;
-                    case 2:
-                        message.isIncoming = reader.bool();
-                        break;
+                    case 1: {
+                            message.peerJid = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.isIncoming = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -8093,17 +6939,12 @@ $root.SyncAction = (function() {
             DeleteIndividualCallLogAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.peerJid != null && message.hasOwnProperty("peerJid")) {
-                    properties._peerJid = 1;
+                if (message.peerJid != null && message.hasOwnProperty("peerJid"))
                     if (!$util.isString(message.peerJid))
                         return "peerJid: string expected";
-                }
-                if (message.isIncoming != null && message.hasOwnProperty("isIncoming")) {
-                    properties._isIncoming = 1;
+                if (message.isIncoming != null && message.hasOwnProperty("isIncoming"))
                     if (typeof message.isIncoming !== "boolean")
                         return "isIncoming: boolean expected";
-                }
                 return null;
             };
 
@@ -8139,16 +6980,14 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.peerJid != null && message.hasOwnProperty("peerJid")) {
+                if (options.defaults) {
+                    object.peerJid = "";
+                    object.isIncoming = false;
+                }
+                if (message.peerJid != null && message.hasOwnProperty("peerJid"))
                     object.peerJid = message.peerJid;
-                    if (options.oneofs)
-                        object._peerJid = "peerJid";
-                }
-                if (message.isIncoming != null && message.hasOwnProperty("isIncoming")) {
+                if (message.isIncoming != null && message.hasOwnProperty("isIncoming"))
                     object.isIncoming = message.isIncoming;
-                    if (options.oneofs)
-                        object._isIncoming = "isIncoming";
-                }
                 return object;
             };
 
@@ -8161,6 +7000,21 @@ $root.SyncAction = (function() {
              */
             DeleteIndividualCallLogAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for DeleteIndividualCallLogAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.DeleteIndividualCallLogAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            DeleteIndividualCallLogAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.DeleteIndividualCallLogAction";
             };
 
             return DeleteIndividualCallLogAction;
@@ -8193,44 +7047,19 @@ $root.SyncAction = (function() {
 
             /**
              * DeleteMessageForMeAction deleteMedia.
-             * @member {boolean|null|undefined} deleteMedia
+             * @member {boolean} deleteMedia
              * @memberof SyncAction.SyncActionValue.DeleteMessageForMeAction
              * @instance
              */
-            DeleteMessageForMeAction.prototype.deleteMedia = null;
+            DeleteMessageForMeAction.prototype.deleteMedia = false;
 
             /**
              * DeleteMessageForMeAction messageTimestamp.
-             * @member {number|Long|null|undefined} messageTimestamp
+             * @member {number|Long} messageTimestamp
              * @memberof SyncAction.SyncActionValue.DeleteMessageForMeAction
              * @instance
              */
-            DeleteMessageForMeAction.prototype.messageTimestamp = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * DeleteMessageForMeAction _deleteMedia.
-             * @member {"deleteMedia"|undefined} _deleteMedia
-             * @memberof SyncAction.SyncActionValue.DeleteMessageForMeAction
-             * @instance
-             */
-            Object.defineProperty(DeleteMessageForMeAction.prototype, "_deleteMedia", {
-                get: $util.oneOfGetter($oneOfFields = ["deleteMedia"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * DeleteMessageForMeAction _messageTimestamp.
-             * @member {"messageTimestamp"|undefined} _messageTimestamp
-             * @memberof SyncAction.SyncActionValue.DeleteMessageForMeAction
-             * @instance
-             */
-            Object.defineProperty(DeleteMessageForMeAction.prototype, "_messageTimestamp", {
-                get: $util.oneOfGetter($oneOfFields = ["messageTimestamp"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            DeleteMessageForMeAction.prototype.messageTimestamp = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * Creates a new DeleteMessageForMeAction instance using the specified properties.
@@ -8287,19 +7116,23 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DeleteMessageForMeAction.decode = function decode(reader, length) {
+            DeleteMessageForMeAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.DeleteMessageForMeAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.deleteMedia = reader.bool();
-                        break;
-                    case 2:
-                        message.messageTimestamp = reader.int64();
-                        break;
+                    case 1: {
+                            message.deleteMedia = reader.bool();
+                            break;
+                        }
+                    case 2: {
+                            message.messageTimestamp = reader.int64();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -8335,17 +7168,12 @@ $root.SyncAction = (function() {
             DeleteMessageForMeAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.deleteMedia != null && message.hasOwnProperty("deleteMedia")) {
-                    properties._deleteMedia = 1;
+                if (message.deleteMedia != null && message.hasOwnProperty("deleteMedia"))
                     if (typeof message.deleteMedia !== "boolean")
                         return "deleteMedia: boolean expected";
-                }
-                if (message.messageTimestamp != null && message.hasOwnProperty("messageTimestamp")) {
-                    properties._messageTimestamp = 1;
+                if (message.messageTimestamp != null && message.hasOwnProperty("messageTimestamp"))
                     if (!$util.isInteger(message.messageTimestamp) && !(message.messageTimestamp && $util.isInteger(message.messageTimestamp.low) && $util.isInteger(message.messageTimestamp.high)))
                         return "messageTimestamp: integer|Long expected";
-                }
                 return null;
             };
 
@@ -8388,19 +7216,21 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.deleteMedia != null && message.hasOwnProperty("deleteMedia")) {
-                    object.deleteMedia = message.deleteMedia;
-                    if (options.oneofs)
-                        object._deleteMedia = "deleteMedia";
+                if (options.defaults) {
+                    object.deleteMedia = false;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.messageTimestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.messageTimestamp = options.longs === String ? "0" : 0;
                 }
-                if (message.messageTimestamp != null && message.hasOwnProperty("messageTimestamp")) {
+                if (message.deleteMedia != null && message.hasOwnProperty("deleteMedia"))
+                    object.deleteMedia = message.deleteMedia;
+                if (message.messageTimestamp != null && message.hasOwnProperty("messageTimestamp"))
                     if (typeof message.messageTimestamp === "number")
                         object.messageTimestamp = options.longs === String ? String(message.messageTimestamp) : message.messageTimestamp;
                     else
                         object.messageTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.messageTimestamp) : options.longs === Number ? new $util.LongBits(message.messageTimestamp.low >>> 0, message.messageTimestamp.high >>> 0).toNumber() : message.messageTimestamp;
-                    if (options.oneofs)
-                        object._messageTimestamp = "messageTimestamp";
-                }
                 return object;
             };
 
@@ -8413,6 +7243,21 @@ $root.SyncAction = (function() {
              */
             DeleteMessageForMeAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for DeleteMessageForMeAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.DeleteMessageForMeAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            DeleteMessageForMeAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.DeleteMessageForMeAction";
             };
 
             return DeleteMessageForMeAction;
@@ -8444,25 +7289,11 @@ $root.SyncAction = (function() {
 
             /**
              * DetectedOutcomesStatusAction isEnabled.
-             * @member {boolean|null|undefined} isEnabled
+             * @member {boolean} isEnabled
              * @memberof SyncAction.SyncActionValue.DetectedOutcomesStatusAction
              * @instance
              */
-            DetectedOutcomesStatusAction.prototype.isEnabled = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * DetectedOutcomesStatusAction _isEnabled.
-             * @member {"isEnabled"|undefined} _isEnabled
-             * @memberof SyncAction.SyncActionValue.DetectedOutcomesStatusAction
-             * @instance
-             */
-            Object.defineProperty(DetectedOutcomesStatusAction.prototype, "_isEnabled", {
-                get: $util.oneOfGetter($oneOfFields = ["isEnabled"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            DetectedOutcomesStatusAction.prototype.isEnabled = false;
 
             /**
              * Creates a new DetectedOutcomesStatusAction instance using the specified properties.
@@ -8517,16 +7348,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DetectedOutcomesStatusAction.decode = function decode(reader, length) {
+            DetectedOutcomesStatusAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.DetectedOutcomesStatusAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.isEnabled = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.isEnabled = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -8562,12 +7396,9 @@ $root.SyncAction = (function() {
             DetectedOutcomesStatusAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.isEnabled != null && message.hasOwnProperty("isEnabled")) {
-                    properties._isEnabled = 1;
+                if (message.isEnabled != null && message.hasOwnProperty("isEnabled"))
                     if (typeof message.isEnabled !== "boolean")
                         return "isEnabled: boolean expected";
-                }
                 return null;
             };
 
@@ -8601,11 +7432,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.isEnabled != null && message.hasOwnProperty("isEnabled")) {
+                if (options.defaults)
+                    object.isEnabled = false;
+                if (message.isEnabled != null && message.hasOwnProperty("isEnabled"))
                     object.isEnabled = message.isEnabled;
-                    if (options.oneofs)
-                        object._isEnabled = "isEnabled";
-                }
                 return object;
             };
 
@@ -8618,6 +7448,21 @@ $root.SyncAction = (function() {
              */
             DetectedOutcomesStatusAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for DetectedOutcomesStatusAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.DetectedOutcomesStatusAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            DetectedOutcomesStatusAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.DetectedOutcomesStatusAction";
             };
 
             return DetectedOutcomesStatusAction;
@@ -8649,25 +7494,11 @@ $root.SyncAction = (function() {
 
             /**
              * ExternalWebBetaAction isOptIn.
-             * @member {boolean|null|undefined} isOptIn
+             * @member {boolean} isOptIn
              * @memberof SyncAction.SyncActionValue.ExternalWebBetaAction
              * @instance
              */
-            ExternalWebBetaAction.prototype.isOptIn = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * ExternalWebBetaAction _isOptIn.
-             * @member {"isOptIn"|undefined} _isOptIn
-             * @memberof SyncAction.SyncActionValue.ExternalWebBetaAction
-             * @instance
-             */
-            Object.defineProperty(ExternalWebBetaAction.prototype, "_isOptIn", {
-                get: $util.oneOfGetter($oneOfFields = ["isOptIn"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            ExternalWebBetaAction.prototype.isOptIn = false;
 
             /**
              * Creates a new ExternalWebBetaAction instance using the specified properties.
@@ -8722,16 +7553,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ExternalWebBetaAction.decode = function decode(reader, length) {
+            ExternalWebBetaAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ExternalWebBetaAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.isOptIn = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.isOptIn = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -8767,12 +7601,9 @@ $root.SyncAction = (function() {
             ExternalWebBetaAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.isOptIn != null && message.hasOwnProperty("isOptIn")) {
-                    properties._isOptIn = 1;
+                if (message.isOptIn != null && message.hasOwnProperty("isOptIn"))
                     if (typeof message.isOptIn !== "boolean")
                         return "isOptIn: boolean expected";
-                }
                 return null;
             };
 
@@ -8806,11 +7637,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.isOptIn != null && message.hasOwnProperty("isOptIn")) {
+                if (options.defaults)
+                    object.isOptIn = false;
+                if (message.isOptIn != null && message.hasOwnProperty("isOptIn"))
                     object.isOptIn = message.isOptIn;
-                    if (options.oneofs)
-                        object._isOptIn = "isOptIn";
-                }
                 return object;
             };
 
@@ -8823,6 +7653,21 @@ $root.SyncAction = (function() {
              */
             ExternalWebBetaAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ExternalWebBetaAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.ExternalWebBetaAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ExternalWebBetaAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.ExternalWebBetaAction";
             };
 
             return ExternalWebBetaAction;
@@ -8915,18 +7760,21 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            FavoritesAction.decode = function decode(reader, length) {
+            FavoritesAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.FavoritesAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.favorites && message.favorites.length))
-                            message.favorites = [];
-                        message.favorites.push($root.SyncAction.SyncActionValue.FavoritesAction.Favorite.decode(reader, reader.uint32()));
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            if (!(message.favorites && message.favorites.length))
+                                message.favorites = [];
+                            message.favorites.push($root.SyncAction.SyncActionValue.FavoritesAction.Favorite.decode(reader, reader.uint32()));
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -9033,6 +7881,21 @@ $root.SyncAction = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for FavoritesAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.FavoritesAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            FavoritesAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.FavoritesAction";
+            };
+
             FavoritesAction.Favorite = (function() {
 
                 /**
@@ -9059,25 +7922,11 @@ $root.SyncAction = (function() {
 
                 /**
                  * Favorite id.
-                 * @member {string|null|undefined} id
+                 * @member {string} id
                  * @memberof SyncAction.SyncActionValue.FavoritesAction.Favorite
                  * @instance
                  */
-                Favorite.prototype.id = null;
-
-                // OneOf field names bound to virtual getters and setters
-                var $oneOfFields;
-
-                /**
-                 * Favorite _id.
-                 * @member {"id"|undefined} _id
-                 * @memberof SyncAction.SyncActionValue.FavoritesAction.Favorite
-                 * @instance
-                 */
-                Object.defineProperty(Favorite.prototype, "_id", {
-                    get: $util.oneOfGetter($oneOfFields = ["id"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
+                Favorite.prototype.id = "";
 
                 /**
                  * Creates a new Favorite instance using the specified properties.
@@ -9132,16 +7981,19 @@ $root.SyncAction = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Favorite.decode = function decode(reader, length) {
+                Favorite.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.FavoritesAction.Favorite();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.id = reader.string();
+                        if (tag === error)
                             break;
+                        switch (tag >>> 3) {
+                        case 1: {
+                                message.id = reader.string();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -9177,12 +8029,9 @@ $root.SyncAction = (function() {
                 Favorite.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    var properties = {};
-                    if (message.id != null && message.hasOwnProperty("id")) {
-                        properties._id = 1;
+                    if (message.id != null && message.hasOwnProperty("id"))
                         if (!$util.isString(message.id))
                             return "id: string expected";
-                    }
                     return null;
                 };
 
@@ -9216,11 +8065,10 @@ $root.SyncAction = (function() {
                     if (!options)
                         options = {};
                     var object = {};
-                    if (message.id != null && message.hasOwnProperty("id")) {
+                    if (options.defaults)
+                        object.id = "";
+                    if (message.id != null && message.hasOwnProperty("id"))
                         object.id = message.id;
-                        if (options.oneofs)
-                            object._id = "id";
-                    }
                     return object;
                 };
 
@@ -9233,6 +8081,21 @@ $root.SyncAction = (function() {
                  */
                 Favorite.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for Favorite
+                 * @function getTypeUrl
+                 * @memberof SyncAction.SyncActionValue.FavoritesAction.Favorite
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                Favorite.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/SyncAction.SyncActionValue.FavoritesAction.Favorite";
                 };
 
                 return Favorite;
@@ -9267,25 +8130,11 @@ $root.SyncAction = (function() {
 
             /**
              * KeyExpiration expiredKeyEpoch.
-             * @member {number|null|undefined} expiredKeyEpoch
+             * @member {number} expiredKeyEpoch
              * @memberof SyncAction.SyncActionValue.KeyExpiration
              * @instance
              */
-            KeyExpiration.prototype.expiredKeyEpoch = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * KeyExpiration _expiredKeyEpoch.
-             * @member {"expiredKeyEpoch"|undefined} _expiredKeyEpoch
-             * @memberof SyncAction.SyncActionValue.KeyExpiration
-             * @instance
-             */
-            Object.defineProperty(KeyExpiration.prototype, "_expiredKeyEpoch", {
-                get: $util.oneOfGetter($oneOfFields = ["expiredKeyEpoch"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            KeyExpiration.prototype.expiredKeyEpoch = 0;
 
             /**
              * Creates a new KeyExpiration instance using the specified properties.
@@ -9340,16 +8189,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            KeyExpiration.decode = function decode(reader, length) {
+            KeyExpiration.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.KeyExpiration();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.expiredKeyEpoch = reader.int32();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.expiredKeyEpoch = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -9385,12 +8237,9 @@ $root.SyncAction = (function() {
             KeyExpiration.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.expiredKeyEpoch != null && message.hasOwnProperty("expiredKeyEpoch")) {
-                    properties._expiredKeyEpoch = 1;
+                if (message.expiredKeyEpoch != null && message.hasOwnProperty("expiredKeyEpoch"))
                     if (!$util.isInteger(message.expiredKeyEpoch))
                         return "expiredKeyEpoch: integer expected";
-                }
                 return null;
             };
 
@@ -9424,11 +8273,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.expiredKeyEpoch != null && message.hasOwnProperty("expiredKeyEpoch")) {
+                if (options.defaults)
+                    object.expiredKeyEpoch = 0;
+                if (message.expiredKeyEpoch != null && message.hasOwnProperty("expiredKeyEpoch"))
                     object.expiredKeyEpoch = message.expiredKeyEpoch;
-                    if (options.oneofs)
-                        object._expiredKeyEpoch = "expiredKeyEpoch";
-                }
                 return object;
             };
 
@@ -9441,6 +8289,21 @@ $root.SyncAction = (function() {
              */
             KeyExpiration.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for KeyExpiration
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.KeyExpiration
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            KeyExpiration.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.KeyExpiration";
             };
 
             return KeyExpiration;
@@ -9472,25 +8335,11 @@ $root.SyncAction = (function() {
 
             /**
              * LabelAssociationAction labeled.
-             * @member {boolean|null|undefined} labeled
+             * @member {boolean} labeled
              * @memberof SyncAction.SyncActionValue.LabelAssociationAction
              * @instance
              */
-            LabelAssociationAction.prototype.labeled = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * LabelAssociationAction _labeled.
-             * @member {"labeled"|undefined} _labeled
-             * @memberof SyncAction.SyncActionValue.LabelAssociationAction
-             * @instance
-             */
-            Object.defineProperty(LabelAssociationAction.prototype, "_labeled", {
-                get: $util.oneOfGetter($oneOfFields = ["labeled"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            LabelAssociationAction.prototype.labeled = false;
 
             /**
              * Creates a new LabelAssociationAction instance using the specified properties.
@@ -9545,16 +8394,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LabelAssociationAction.decode = function decode(reader, length) {
+            LabelAssociationAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LabelAssociationAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.labeled = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.labeled = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -9590,12 +8442,9 @@ $root.SyncAction = (function() {
             LabelAssociationAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.labeled != null && message.hasOwnProperty("labeled")) {
-                    properties._labeled = 1;
+                if (message.labeled != null && message.hasOwnProperty("labeled"))
                     if (typeof message.labeled !== "boolean")
                         return "labeled: boolean expected";
-                }
                 return null;
             };
 
@@ -9629,11 +8478,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.labeled != null && message.hasOwnProperty("labeled")) {
+                if (options.defaults)
+                    object.labeled = false;
+                if (message.labeled != null && message.hasOwnProperty("labeled"))
                     object.labeled = message.labeled;
-                    if (options.oneofs)
-                        object._labeled = "labeled";
-                }
                 return object;
             };
 
@@ -9646,6 +8494,21 @@ $root.SyncAction = (function() {
              */
             LabelAssociationAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for LabelAssociationAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.LabelAssociationAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            LabelAssociationAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.LabelAssociationAction";
             };
 
             return LabelAssociationAction;
@@ -9684,158 +8547,67 @@ $root.SyncAction = (function() {
 
             /**
              * LabelEditAction name.
-             * @member {string|null|undefined} name
+             * @member {string} name
              * @memberof SyncAction.SyncActionValue.LabelEditAction
              * @instance
              */
-            LabelEditAction.prototype.name = null;
+            LabelEditAction.prototype.name = "";
 
             /**
              * LabelEditAction color.
-             * @member {number|null|undefined} color
+             * @member {number} color
              * @memberof SyncAction.SyncActionValue.LabelEditAction
              * @instance
              */
-            LabelEditAction.prototype.color = null;
+            LabelEditAction.prototype.color = 0;
 
             /**
              * LabelEditAction predefinedId.
-             * @member {number|null|undefined} predefinedId
+             * @member {number} predefinedId
              * @memberof SyncAction.SyncActionValue.LabelEditAction
              * @instance
              */
-            LabelEditAction.prototype.predefinedId = null;
+            LabelEditAction.prototype.predefinedId = 0;
 
             /**
              * LabelEditAction deleted.
-             * @member {boolean|null|undefined} deleted
+             * @member {boolean} deleted
              * @memberof SyncAction.SyncActionValue.LabelEditAction
              * @instance
              */
-            LabelEditAction.prototype.deleted = null;
+            LabelEditAction.prototype.deleted = false;
 
             /**
              * LabelEditAction orderIndex.
-             * @member {number|null|undefined} orderIndex
+             * @member {number} orderIndex
              * @memberof SyncAction.SyncActionValue.LabelEditAction
              * @instance
              */
-            LabelEditAction.prototype.orderIndex = null;
+            LabelEditAction.prototype.orderIndex = 0;
 
             /**
              * LabelEditAction isActive.
-             * @member {boolean|null|undefined} isActive
+             * @member {boolean} isActive
              * @memberof SyncAction.SyncActionValue.LabelEditAction
              * @instance
              */
-            LabelEditAction.prototype.isActive = null;
+            LabelEditAction.prototype.isActive = false;
 
             /**
              * LabelEditAction type.
-             * @member {SyncAction.SyncActionValue.LabelEditAction.ListType|null|undefined} type
+             * @member {SyncAction.SyncActionValue.LabelEditAction.ListType} type
              * @memberof SyncAction.SyncActionValue.LabelEditAction
              * @instance
              */
-            LabelEditAction.prototype.type = null;
+            LabelEditAction.prototype.type = 0;
 
             /**
              * LabelEditAction isImmutable.
-             * @member {boolean|null|undefined} isImmutable
+             * @member {boolean} isImmutable
              * @memberof SyncAction.SyncActionValue.LabelEditAction
              * @instance
              */
-            LabelEditAction.prototype.isImmutable = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * LabelEditAction _name.
-             * @member {"name"|undefined} _name
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
-            Object.defineProperty(LabelEditAction.prototype, "_name", {
-                get: $util.oneOfGetter($oneOfFields = ["name"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LabelEditAction _color.
-             * @member {"color"|undefined} _color
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
-            Object.defineProperty(LabelEditAction.prototype, "_color", {
-                get: $util.oneOfGetter($oneOfFields = ["color"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LabelEditAction _predefinedId.
-             * @member {"predefinedId"|undefined} _predefinedId
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
-            Object.defineProperty(LabelEditAction.prototype, "_predefinedId", {
-                get: $util.oneOfGetter($oneOfFields = ["predefinedId"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LabelEditAction _deleted.
-             * @member {"deleted"|undefined} _deleted
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
-            Object.defineProperty(LabelEditAction.prototype, "_deleted", {
-                get: $util.oneOfGetter($oneOfFields = ["deleted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LabelEditAction _orderIndex.
-             * @member {"orderIndex"|undefined} _orderIndex
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
-            Object.defineProperty(LabelEditAction.prototype, "_orderIndex", {
-                get: $util.oneOfGetter($oneOfFields = ["orderIndex"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LabelEditAction _isActive.
-             * @member {"isActive"|undefined} _isActive
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
-            Object.defineProperty(LabelEditAction.prototype, "_isActive", {
-                get: $util.oneOfGetter($oneOfFields = ["isActive"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LabelEditAction _type.
-             * @member {"type"|undefined} _type
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
-            Object.defineProperty(LabelEditAction.prototype, "_type", {
-                get: $util.oneOfGetter($oneOfFields = ["type"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LabelEditAction _isImmutable.
-             * @member {"isImmutable"|undefined} _isImmutable
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
-            Object.defineProperty(LabelEditAction.prototype, "_isImmutable", {
-                get: $util.oneOfGetter($oneOfFields = ["isImmutable"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            LabelEditAction.prototype.isImmutable = false;
 
             /**
              * Creates a new LabelEditAction instance using the specified properties.
@@ -9904,37 +8676,47 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LabelEditAction.decode = function decode(reader, length) {
+            LabelEditAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LabelEditAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.name = reader.string();
-                        break;
-                    case 2:
-                        message.color = reader.int32();
-                        break;
-                    case 3:
-                        message.predefinedId = reader.int32();
-                        break;
-                    case 4:
-                        message.deleted = reader.bool();
-                        break;
-                    case 5:
-                        message.orderIndex = reader.int32();
-                        break;
-                    case 6:
-                        message.isActive = reader.bool();
-                        break;
-                    case 7:
-                        message.type = reader.int32();
-                        break;
-                    case 8:
-                        message.isImmutable = reader.bool();
-                        break;
+                    case 1: {
+                            message.name = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.color = reader.int32();
+                            break;
+                        }
+                    case 3: {
+                            message.predefinedId = reader.int32();
+                            break;
+                        }
+                    case 4: {
+                            message.deleted = reader.bool();
+                            break;
+                        }
+                    case 5: {
+                            message.orderIndex = reader.int32();
+                            break;
+                        }
+                    case 6: {
+                            message.isActive = reader.bool();
+                            break;
+                        }
+                    case 7: {
+                            message.type = reader.int32();
+                            break;
+                        }
+                    case 8: {
+                            message.isImmutable = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -9970,39 +8752,25 @@ $root.SyncAction = (function() {
             LabelEditAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.name != null && message.hasOwnProperty("name")) {
-                    properties._name = 1;
+                if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                }
-                if (message.color != null && message.hasOwnProperty("color")) {
-                    properties._color = 1;
+                if (message.color != null && message.hasOwnProperty("color"))
                     if (!$util.isInteger(message.color))
                         return "color: integer expected";
-                }
-                if (message.predefinedId != null && message.hasOwnProperty("predefinedId")) {
-                    properties._predefinedId = 1;
+                if (message.predefinedId != null && message.hasOwnProperty("predefinedId"))
                     if (!$util.isInteger(message.predefinedId))
                         return "predefinedId: integer expected";
-                }
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
-                    properties._deleted = 1;
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
                     if (typeof message.deleted !== "boolean")
                         return "deleted: boolean expected";
-                }
-                if (message.orderIndex != null && message.hasOwnProperty("orderIndex")) {
-                    properties._orderIndex = 1;
+                if (message.orderIndex != null && message.hasOwnProperty("orderIndex"))
                     if (!$util.isInteger(message.orderIndex))
                         return "orderIndex: integer expected";
-                }
-                if (message.isActive != null && message.hasOwnProperty("isActive")) {
-                    properties._isActive = 1;
+                if (message.isActive != null && message.hasOwnProperty("isActive"))
                     if (typeof message.isActive !== "boolean")
                         return "isActive: boolean expected";
-                }
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    properties._type = 1;
+                if (message.type != null && message.hasOwnProperty("type"))
                     switch (message.type) {
                     default:
                         return "type: enum value expected";
@@ -10016,12 +8784,9 @@ $root.SyncAction = (function() {
                     case 7:
                         break;
                     }
-                }
-                if (message.isImmutable != null && message.hasOwnProperty("isImmutable")) {
-                    properties._isImmutable = 1;
+                if (message.isImmutable != null && message.hasOwnProperty("isImmutable"))
                     if (typeof message.isImmutable !== "boolean")
                         return "isImmutable: boolean expected";
-                }
                 return null;
             };
 
@@ -10050,6 +8815,12 @@ $root.SyncAction = (function() {
                 if (object.isActive != null)
                     message.isActive = Boolean(object.isActive);
                 switch (object.type) {
+                default:
+                    if (typeof object.type === "number") {
+                        message.type = object.type;
+                        break;
+                    }
+                    break;
                 case "NONE":
                 case 0:
                     message.type = 0;
@@ -10101,46 +8872,32 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.name != null && message.hasOwnProperty("name")) {
+                if (options.defaults) {
+                    object.name = "";
+                    object.color = 0;
+                    object.predefinedId = 0;
+                    object.deleted = false;
+                    object.orderIndex = 0;
+                    object.isActive = false;
+                    object.type = options.enums === String ? "NONE" : 0;
+                    object.isImmutable = false;
+                }
+                if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
-                    if (options.oneofs)
-                        object._name = "name";
-                }
-                if (message.color != null && message.hasOwnProperty("color")) {
+                if (message.color != null && message.hasOwnProperty("color"))
                     object.color = message.color;
-                    if (options.oneofs)
-                        object._color = "color";
-                }
-                if (message.predefinedId != null && message.hasOwnProperty("predefinedId")) {
+                if (message.predefinedId != null && message.hasOwnProperty("predefinedId"))
                     object.predefinedId = message.predefinedId;
-                    if (options.oneofs)
-                        object._predefinedId = "predefinedId";
-                }
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
                     object.deleted = message.deleted;
-                    if (options.oneofs)
-                        object._deleted = "deleted";
-                }
-                if (message.orderIndex != null && message.hasOwnProperty("orderIndex")) {
+                if (message.orderIndex != null && message.hasOwnProperty("orderIndex"))
                     object.orderIndex = message.orderIndex;
-                    if (options.oneofs)
-                        object._orderIndex = "orderIndex";
-                }
-                if (message.isActive != null && message.hasOwnProperty("isActive")) {
+                if (message.isActive != null && message.hasOwnProperty("isActive"))
                     object.isActive = message.isActive;
-                    if (options.oneofs)
-                        object._isActive = "isActive";
-                }
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    object.type = options.enums === String ? $root.SyncAction.SyncActionValue.LabelEditAction.ListType[message.type] : message.type;
-                    if (options.oneofs)
-                        object._type = "type";
-                }
-                if (message.isImmutable != null && message.hasOwnProperty("isImmutable")) {
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = options.enums === String ? $root.SyncAction.SyncActionValue.LabelEditAction.ListType[message.type] === undefined ? message.type : $root.SyncAction.SyncActionValue.LabelEditAction.ListType[message.type] : message.type;
+                if (message.isImmutable != null && message.hasOwnProperty("isImmutable"))
                     object.isImmutable = message.isImmutable;
-                    if (options.oneofs)
-                        object._isImmutable = "isImmutable";
-                }
                 return object;
             };
 
@@ -10153,6 +8910,21 @@ $root.SyncAction = (function() {
              */
             LabelEditAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for LabelEditAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.LabelEditAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            LabelEditAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.LabelEditAction";
             };
 
             /**
@@ -10241,12 +9013,9 @@ $root.SyncAction = (function() {
             LabelReorderingAction.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.sortedLabelIds != null && message.sortedLabelIds.length) {
-                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                if (message.sortedLabelIds != null && message.sortedLabelIds.length)
                     for (var i = 0; i < message.sortedLabelIds.length; ++i)
-                        writer.int32(message.sortedLabelIds[i]);
-                    writer.ldelim();
-                }
+                        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.sortedLabelIds[i]);
                 return writer;
             };
 
@@ -10274,23 +9043,26 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LabelReorderingAction.decode = function decode(reader, length) {
+            LabelReorderingAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LabelReorderingAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.sortedLabelIds && message.sortedLabelIds.length))
-                            message.sortedLabelIds = [];
-                        if ((tag & 7) === 2) {
-                            var end2 = reader.uint32() + reader.pos;
-                            while (reader.pos < end2)
-                                message.sortedLabelIds.push(reader.int32());
-                        } else
-                            message.sortedLabelIds.push(reader.int32());
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            if (!(message.sortedLabelIds && message.sortedLabelIds.length))
+                                message.sortedLabelIds = [];
+                            if ((tag & 7) === 2) {
+                                var end2 = reader.uint32() + reader.pos;
+                                while (reader.pos < end2)
+                                    message.sortedLabelIds.push(reader.int32());
+                            } else
+                                message.sortedLabelIds.push(reader.int32());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -10392,6 +9164,21 @@ $root.SyncAction = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for LabelReorderingAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.LabelReorderingAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            LabelReorderingAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.LabelReorderingAction";
+            };
+
             return LabelReorderingAction;
         })();
 
@@ -10424,82 +9211,35 @@ $root.SyncAction = (function() {
 
             /**
              * LidContactAction fullName.
-             * @member {string|null|undefined} fullName
+             * @member {string} fullName
              * @memberof SyncAction.SyncActionValue.LidContactAction
              * @instance
              */
-            LidContactAction.prototype.fullName = null;
+            LidContactAction.prototype.fullName = "";
 
             /**
              * LidContactAction firstName.
-             * @member {string|null|undefined} firstName
+             * @member {string} firstName
              * @memberof SyncAction.SyncActionValue.LidContactAction
              * @instance
              */
-            LidContactAction.prototype.firstName = null;
+            LidContactAction.prototype.firstName = "";
 
             /**
              * LidContactAction username.
-             * @member {string|null|undefined} username
+             * @member {string} username
              * @memberof SyncAction.SyncActionValue.LidContactAction
              * @instance
              */
-            LidContactAction.prototype.username = null;
+            LidContactAction.prototype.username = "";
 
             /**
              * LidContactAction saveOnPrimaryAddressbook.
-             * @member {boolean|null|undefined} saveOnPrimaryAddressbook
+             * @member {boolean} saveOnPrimaryAddressbook
              * @memberof SyncAction.SyncActionValue.LidContactAction
              * @instance
              */
-            LidContactAction.prototype.saveOnPrimaryAddressbook = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * LidContactAction _fullName.
-             * @member {"fullName"|undefined} _fullName
-             * @memberof SyncAction.SyncActionValue.LidContactAction
-             * @instance
-             */
-            Object.defineProperty(LidContactAction.prototype, "_fullName", {
-                get: $util.oneOfGetter($oneOfFields = ["fullName"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LidContactAction _firstName.
-             * @member {"firstName"|undefined} _firstName
-             * @memberof SyncAction.SyncActionValue.LidContactAction
-             * @instance
-             */
-            Object.defineProperty(LidContactAction.prototype, "_firstName", {
-                get: $util.oneOfGetter($oneOfFields = ["firstName"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LidContactAction _username.
-             * @member {"username"|undefined} _username
-             * @memberof SyncAction.SyncActionValue.LidContactAction
-             * @instance
-             */
-            Object.defineProperty(LidContactAction.prototype, "_username", {
-                get: $util.oneOfGetter($oneOfFields = ["username"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * LidContactAction _saveOnPrimaryAddressbook.
-             * @member {"saveOnPrimaryAddressbook"|undefined} _saveOnPrimaryAddressbook
-             * @memberof SyncAction.SyncActionValue.LidContactAction
-             * @instance
-             */
-            Object.defineProperty(LidContactAction.prototype, "_saveOnPrimaryAddressbook", {
-                get: $util.oneOfGetter($oneOfFields = ["saveOnPrimaryAddressbook"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            LidContactAction.prototype.saveOnPrimaryAddressbook = false;
 
             /**
              * Creates a new LidContactAction instance using the specified properties.
@@ -10560,25 +9300,31 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LidContactAction.decode = function decode(reader, length) {
+            LidContactAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LidContactAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.fullName = reader.string();
-                        break;
-                    case 2:
-                        message.firstName = reader.string();
-                        break;
-                    case 3:
-                        message.username = reader.string();
-                        break;
-                    case 4:
-                        message.saveOnPrimaryAddressbook = reader.bool();
-                        break;
+                    case 1: {
+                            message.fullName = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.firstName = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.username = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            message.saveOnPrimaryAddressbook = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -10614,27 +9360,18 @@ $root.SyncAction = (function() {
             LidContactAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.fullName != null && message.hasOwnProperty("fullName")) {
-                    properties._fullName = 1;
+                if (message.fullName != null && message.hasOwnProperty("fullName"))
                     if (!$util.isString(message.fullName))
                         return "fullName: string expected";
-                }
-                if (message.firstName != null && message.hasOwnProperty("firstName")) {
-                    properties._firstName = 1;
+                if (message.firstName != null && message.hasOwnProperty("firstName"))
                     if (!$util.isString(message.firstName))
                         return "firstName: string expected";
-                }
-                if (message.username != null && message.hasOwnProperty("username")) {
-                    properties._username = 1;
+                if (message.username != null && message.hasOwnProperty("username"))
                     if (!$util.isString(message.username))
                         return "username: string expected";
-                }
-                if (message.saveOnPrimaryAddressbook != null && message.hasOwnProperty("saveOnPrimaryAddressbook")) {
-                    properties._saveOnPrimaryAddressbook = 1;
+                if (message.saveOnPrimaryAddressbook != null && message.hasOwnProperty("saveOnPrimaryAddressbook"))
                     if (typeof message.saveOnPrimaryAddressbook !== "boolean")
                         return "saveOnPrimaryAddressbook: boolean expected";
-                }
                 return null;
             };
 
@@ -10674,26 +9411,20 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.fullName != null && message.hasOwnProperty("fullName")) {
+                if (options.defaults) {
+                    object.fullName = "";
+                    object.firstName = "";
+                    object.username = "";
+                    object.saveOnPrimaryAddressbook = false;
+                }
+                if (message.fullName != null && message.hasOwnProperty("fullName"))
                     object.fullName = message.fullName;
-                    if (options.oneofs)
-                        object._fullName = "fullName";
-                }
-                if (message.firstName != null && message.hasOwnProperty("firstName")) {
+                if (message.firstName != null && message.hasOwnProperty("firstName"))
                     object.firstName = message.firstName;
-                    if (options.oneofs)
-                        object._firstName = "firstName";
-                }
-                if (message.username != null && message.hasOwnProperty("username")) {
+                if (message.username != null && message.hasOwnProperty("username"))
                     object.username = message.username;
-                    if (options.oneofs)
-                        object._username = "username";
-                }
-                if (message.saveOnPrimaryAddressbook != null && message.hasOwnProperty("saveOnPrimaryAddressbook")) {
+                if (message.saveOnPrimaryAddressbook != null && message.hasOwnProperty("saveOnPrimaryAddressbook"))
                     object.saveOnPrimaryAddressbook = message.saveOnPrimaryAddressbook;
-                    if (options.oneofs)
-                        object._saveOnPrimaryAddressbook = "saveOnPrimaryAddressbook";
-                }
                 return object;
             };
 
@@ -10706,6 +9437,21 @@ $root.SyncAction = (function() {
              */
             LidContactAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for LidContactAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.LidContactAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            LidContactAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.LidContactAction";
             };
 
             return LidContactAction;
@@ -10737,25 +9483,11 @@ $root.SyncAction = (function() {
 
             /**
              * LocaleSetting locale.
-             * @member {string|null|undefined} locale
+             * @member {string} locale
              * @memberof SyncAction.SyncActionValue.LocaleSetting
              * @instance
              */
-            LocaleSetting.prototype.locale = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * LocaleSetting _locale.
-             * @member {"locale"|undefined} _locale
-             * @memberof SyncAction.SyncActionValue.LocaleSetting
-             * @instance
-             */
-            Object.defineProperty(LocaleSetting.prototype, "_locale", {
-                get: $util.oneOfGetter($oneOfFields = ["locale"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            LocaleSetting.prototype.locale = "";
 
             /**
              * Creates a new LocaleSetting instance using the specified properties.
@@ -10810,16 +9542,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LocaleSetting.decode = function decode(reader, length) {
+            LocaleSetting.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LocaleSetting();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.locale = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.locale = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -10855,12 +9590,9 @@ $root.SyncAction = (function() {
             LocaleSetting.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.locale != null && message.hasOwnProperty("locale")) {
-                    properties._locale = 1;
+                if (message.locale != null && message.hasOwnProperty("locale"))
                     if (!$util.isString(message.locale))
                         return "locale: string expected";
-                }
                 return null;
             };
 
@@ -10894,11 +9626,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.locale != null && message.hasOwnProperty("locale")) {
+                if (options.defaults)
+                    object.locale = "";
+                if (message.locale != null && message.hasOwnProperty("locale"))
                     object.locale = message.locale;
-                    if (options.oneofs)
-                        object._locale = "locale";
-                }
                 return object;
             };
 
@@ -10911,6 +9642,21 @@ $root.SyncAction = (function() {
              */
             LocaleSetting.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for LocaleSetting
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.LocaleSetting
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            LocaleSetting.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.LocaleSetting";
             };
 
             return LocaleSetting;
@@ -10942,25 +9688,11 @@ $root.SyncAction = (function() {
 
             /**
              * LockChatAction locked.
-             * @member {boolean|null|undefined} locked
+             * @member {boolean} locked
              * @memberof SyncAction.SyncActionValue.LockChatAction
              * @instance
              */
-            LockChatAction.prototype.locked = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * LockChatAction _locked.
-             * @member {"locked"|undefined} _locked
-             * @memberof SyncAction.SyncActionValue.LockChatAction
-             * @instance
-             */
-            Object.defineProperty(LockChatAction.prototype, "_locked", {
-                get: $util.oneOfGetter($oneOfFields = ["locked"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            LockChatAction.prototype.locked = false;
 
             /**
              * Creates a new LockChatAction instance using the specified properties.
@@ -11015,16 +9747,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LockChatAction.decode = function decode(reader, length) {
+            LockChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LockChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.locked = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.locked = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -11060,12 +9795,9 @@ $root.SyncAction = (function() {
             LockChatAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.locked != null && message.hasOwnProperty("locked")) {
-                    properties._locked = 1;
+                if (message.locked != null && message.hasOwnProperty("locked"))
                     if (typeof message.locked !== "boolean")
                         return "locked: boolean expected";
-                }
                 return null;
             };
 
@@ -11099,11 +9831,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.locked != null && message.hasOwnProperty("locked")) {
+                if (options.defaults)
+                    object.locked = false;
+                if (message.locked != null && message.hasOwnProperty("locked"))
                     object.locked = message.locked;
-                    if (options.oneofs)
-                        object._locked = "locked";
-                }
                 return object;
             };
 
@@ -11116,6 +9847,21 @@ $root.SyncAction = (function() {
              */
             LockChatAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for LockChatAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.LockChatAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            LockChatAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.LockChatAction";
             };
 
             return LockChatAction;
@@ -11147,25 +9893,11 @@ $root.SyncAction = (function() {
 
             /**
              * MaibaAIFeaturesControlAction aiFeatureStatus.
-             * @member {SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.MaibaAIFeatureStatus|null|undefined} aiFeatureStatus
+             * @member {SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.MaibaAIFeatureStatus} aiFeatureStatus
              * @memberof SyncAction.SyncActionValue.MaibaAIFeaturesControlAction
              * @instance
              */
-            MaibaAIFeaturesControlAction.prototype.aiFeatureStatus = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * MaibaAIFeaturesControlAction _aiFeatureStatus.
-             * @member {"aiFeatureStatus"|undefined} _aiFeatureStatus
-             * @memberof SyncAction.SyncActionValue.MaibaAIFeaturesControlAction
-             * @instance
-             */
-            Object.defineProperty(MaibaAIFeaturesControlAction.prototype, "_aiFeatureStatus", {
-                get: $util.oneOfGetter($oneOfFields = ["aiFeatureStatus"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            MaibaAIFeaturesControlAction.prototype.aiFeatureStatus = 0;
 
             /**
              * Creates a new MaibaAIFeaturesControlAction instance using the specified properties.
@@ -11220,16 +9952,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MaibaAIFeaturesControlAction.decode = function decode(reader, length) {
+            MaibaAIFeaturesControlAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.aiFeatureStatus = reader.int32();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.aiFeatureStatus = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -11265,9 +10000,7 @@ $root.SyncAction = (function() {
             MaibaAIFeaturesControlAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.aiFeatureStatus != null && message.hasOwnProperty("aiFeatureStatus")) {
-                    properties._aiFeatureStatus = 1;
+                if (message.aiFeatureStatus != null && message.hasOwnProperty("aiFeatureStatus"))
                     switch (message.aiFeatureStatus) {
                     default:
                         return "aiFeatureStatus: enum value expected";
@@ -11276,7 +10009,6 @@ $root.SyncAction = (function() {
                     case 2:
                         break;
                     }
-                }
                 return null;
             };
 
@@ -11293,6 +10025,12 @@ $root.SyncAction = (function() {
                     return object;
                 var message = new $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction();
                 switch (object.aiFeatureStatus) {
+                default:
+                    if (typeof object.aiFeatureStatus === "number") {
+                        message.aiFeatureStatus = object.aiFeatureStatus;
+                        break;
+                    }
+                    break;
                 case "ENABLED":
                 case 0:
                     message.aiFeatureStatus = 0;
@@ -11322,11 +10060,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.aiFeatureStatus != null && message.hasOwnProperty("aiFeatureStatus")) {
-                    object.aiFeatureStatus = options.enums === String ? $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.MaibaAIFeatureStatus[message.aiFeatureStatus] : message.aiFeatureStatus;
-                    if (options.oneofs)
-                        object._aiFeatureStatus = "aiFeatureStatus";
-                }
+                if (options.defaults)
+                    object.aiFeatureStatus = options.enums === String ? "ENABLED" : 0;
+                if (message.aiFeatureStatus != null && message.hasOwnProperty("aiFeatureStatus"))
+                    object.aiFeatureStatus = options.enums === String ? $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.MaibaAIFeatureStatus[message.aiFeatureStatus] === undefined ? message.aiFeatureStatus : $root.SyncAction.SyncActionValue.MaibaAIFeaturesControlAction.MaibaAIFeatureStatus[message.aiFeatureStatus] : message.aiFeatureStatus;
                 return object;
             };
 
@@ -11339,6 +10076,21 @@ $root.SyncAction = (function() {
              */
             MaibaAIFeaturesControlAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for MaibaAIFeaturesControlAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.MaibaAIFeaturesControlAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            MaibaAIFeaturesControlAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.MaibaAIFeaturesControlAction";
             };
 
             /**
@@ -11387,11 +10139,11 @@ $root.SyncAction = (function() {
 
             /**
              * MarkChatAsReadAction read.
-             * @member {boolean|null|undefined} read
+             * @member {boolean} read
              * @memberof SyncAction.SyncActionValue.MarkChatAsReadAction
              * @instance
              */
-            MarkChatAsReadAction.prototype.read = null;
+            MarkChatAsReadAction.prototype.read = false;
 
             /**
              * MarkChatAsReadAction messageRange.
@@ -11400,31 +10152,6 @@ $root.SyncAction = (function() {
              * @instance
              */
             MarkChatAsReadAction.prototype.messageRange = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * MarkChatAsReadAction _read.
-             * @member {"read"|undefined} _read
-             * @memberof SyncAction.SyncActionValue.MarkChatAsReadAction
-             * @instance
-             */
-            Object.defineProperty(MarkChatAsReadAction.prototype, "_read", {
-                get: $util.oneOfGetter($oneOfFields = ["read"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MarkChatAsReadAction _messageRange.
-             * @member {"messageRange"|undefined} _messageRange
-             * @memberof SyncAction.SyncActionValue.MarkChatAsReadAction
-             * @instance
-             */
-            Object.defineProperty(MarkChatAsReadAction.prototype, "_messageRange", {
-                get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * Creates a new MarkChatAsReadAction instance using the specified properties.
@@ -11481,19 +10208,23 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MarkChatAsReadAction.decode = function decode(reader, length) {
+            MarkChatAsReadAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MarkChatAsReadAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.read = reader.bool();
-                        break;
-                    case 2:
-                        message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
-                        break;
+                    case 1: {
+                            message.read = reader.bool();
+                            break;
+                        }
+                    case 2: {
+                            message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -11529,19 +10260,13 @@ $root.SyncAction = (function() {
             MarkChatAsReadAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.read != null && message.hasOwnProperty("read")) {
-                    properties._read = 1;
+                if (message.read != null && message.hasOwnProperty("read"))
                     if (typeof message.read !== "boolean")
                         return "read: boolean expected";
-                }
                 if (message.messageRange != null && message.hasOwnProperty("messageRange")) {
-                    properties._messageRange = 1;
-                    {
-                        var error = $root.SyncAction.SyncActionValue.SyncActionMessageRange.verify(message.messageRange);
-                        if (error)
-                            return "messageRange." + error;
-                    }
+                    var error = $root.SyncAction.SyncActionValue.SyncActionMessageRange.verify(message.messageRange);
+                    if (error)
+                        return "messageRange." + error;
                 }
                 return null;
             };
@@ -11581,16 +10306,14 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.read != null && message.hasOwnProperty("read")) {
+                if (options.defaults) {
+                    object.read = false;
+                    object.messageRange = null;
+                }
+                if (message.read != null && message.hasOwnProperty("read"))
                     object.read = message.read;
-                    if (options.oneofs)
-                        object._read = "read";
-                }
-                if (message.messageRange != null && message.hasOwnProperty("messageRange")) {
+                if (message.messageRange != null && message.hasOwnProperty("messageRange"))
                     object.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.toObject(message.messageRange, options);
-                    if (options.oneofs)
-                        object._messageRange = "messageRange";
-                }
                 return object;
             };
 
@@ -11603,6 +10326,21 @@ $root.SyncAction = (function() {
              */
             MarkChatAsReadAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for MarkChatAsReadAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.MarkChatAsReadAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            MarkChatAsReadAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.MarkChatAsReadAction";
             };
 
             return MarkChatAsReadAction;
@@ -11640,139 +10378,59 @@ $root.SyncAction = (function() {
 
             /**
              * MarketingMessageAction name.
-             * @member {string|null|undefined} name
+             * @member {string} name
              * @memberof SyncAction.SyncActionValue.MarketingMessageAction
              * @instance
              */
-            MarketingMessageAction.prototype.name = null;
+            MarketingMessageAction.prototype.name = "";
 
             /**
              * MarketingMessageAction message.
-             * @member {string|null|undefined} message
+             * @member {string} message
              * @memberof SyncAction.SyncActionValue.MarketingMessageAction
              * @instance
              */
-            MarketingMessageAction.prototype.message = null;
+            MarketingMessageAction.prototype.message = "";
 
             /**
              * MarketingMessageAction type.
-             * @member {SyncAction.SyncActionValue.MarketingMessageAction.MarketingMessagePrototypeType|null|undefined} type
+             * @member {SyncAction.SyncActionValue.MarketingMessageAction.MarketingMessagePrototypeType} type
              * @memberof SyncAction.SyncActionValue.MarketingMessageAction
              * @instance
              */
-            MarketingMessageAction.prototype.type = null;
+            MarketingMessageAction.prototype.type = 0;
 
             /**
              * MarketingMessageAction createdAt.
-             * @member {number|Long|null|undefined} createdAt
+             * @member {number|Long} createdAt
              * @memberof SyncAction.SyncActionValue.MarketingMessageAction
              * @instance
              */
-            MarketingMessageAction.prototype.createdAt = null;
+            MarketingMessageAction.prototype.createdAt = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * MarketingMessageAction lastSentAt.
-             * @member {number|Long|null|undefined} lastSentAt
+             * @member {number|Long} lastSentAt
              * @memberof SyncAction.SyncActionValue.MarketingMessageAction
              * @instance
              */
-            MarketingMessageAction.prototype.lastSentAt = null;
+            MarketingMessageAction.prototype.lastSentAt = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * MarketingMessageAction isDeleted.
-             * @member {boolean|null|undefined} isDeleted
+             * @member {boolean} isDeleted
              * @memberof SyncAction.SyncActionValue.MarketingMessageAction
              * @instance
              */
-            MarketingMessageAction.prototype.isDeleted = null;
+            MarketingMessageAction.prototype.isDeleted = false;
 
             /**
              * MarketingMessageAction mediaId.
-             * @member {string|null|undefined} mediaId
+             * @member {string} mediaId
              * @memberof SyncAction.SyncActionValue.MarketingMessageAction
              * @instance
              */
-            MarketingMessageAction.prototype.mediaId = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * MarketingMessageAction _name.
-             * @member {"name"|undefined} _name
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
-            Object.defineProperty(MarketingMessageAction.prototype, "_name", {
-                get: $util.oneOfGetter($oneOfFields = ["name"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MarketingMessageAction _message.
-             * @member {"message"|undefined} _message
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
-            Object.defineProperty(MarketingMessageAction.prototype, "_message", {
-                get: $util.oneOfGetter($oneOfFields = ["message"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MarketingMessageAction _type.
-             * @member {"type"|undefined} _type
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
-            Object.defineProperty(MarketingMessageAction.prototype, "_type", {
-                get: $util.oneOfGetter($oneOfFields = ["type"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MarketingMessageAction _createdAt.
-             * @member {"createdAt"|undefined} _createdAt
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
-            Object.defineProperty(MarketingMessageAction.prototype, "_createdAt", {
-                get: $util.oneOfGetter($oneOfFields = ["createdAt"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MarketingMessageAction _lastSentAt.
-             * @member {"lastSentAt"|undefined} _lastSentAt
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
-            Object.defineProperty(MarketingMessageAction.prototype, "_lastSentAt", {
-                get: $util.oneOfGetter($oneOfFields = ["lastSentAt"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MarketingMessageAction _isDeleted.
-             * @member {"isDeleted"|undefined} _isDeleted
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
-            Object.defineProperty(MarketingMessageAction.prototype, "_isDeleted", {
-                get: $util.oneOfGetter($oneOfFields = ["isDeleted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MarketingMessageAction _mediaId.
-             * @member {"mediaId"|undefined} _mediaId
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
-            Object.defineProperty(MarketingMessageAction.prototype, "_mediaId", {
-                get: $util.oneOfGetter($oneOfFields = ["mediaId"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            MarketingMessageAction.prototype.mediaId = "";
 
             /**
              * Creates a new MarketingMessageAction instance using the specified properties.
@@ -11839,34 +10497,43 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MarketingMessageAction.decode = function decode(reader, length) {
+            MarketingMessageAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MarketingMessageAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.name = reader.string();
-                        break;
-                    case 2:
-                        message.message = reader.string();
-                        break;
-                    case 3:
-                        message.type = reader.int32();
-                        break;
-                    case 4:
-                        message.createdAt = reader.int64();
-                        break;
-                    case 5:
-                        message.lastSentAt = reader.int64();
-                        break;
-                    case 6:
-                        message.isDeleted = reader.bool();
-                        break;
-                    case 7:
-                        message.mediaId = reader.string();
-                        break;
+                    case 1: {
+                            message.name = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.message = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.type = reader.int32();
+                            break;
+                        }
+                    case 4: {
+                            message.createdAt = reader.int64();
+                            break;
+                        }
+                    case 5: {
+                            message.lastSentAt = reader.int64();
+                            break;
+                        }
+                    case 6: {
+                            message.isDeleted = reader.bool();
+                            break;
+                        }
+                    case 7: {
+                            message.mediaId = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -11902,46 +10569,31 @@ $root.SyncAction = (function() {
             MarketingMessageAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.name != null && message.hasOwnProperty("name")) {
-                    properties._name = 1;
+                if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                }
-                if (message.message != null && message.hasOwnProperty("message")) {
-                    properties._message = 1;
+                if (message.message != null && message.hasOwnProperty("message"))
                     if (!$util.isString(message.message))
                         return "message: string expected";
-                }
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    properties._type = 1;
+                if (message.type != null && message.hasOwnProperty("type"))
                     switch (message.type) {
                     default:
                         return "type: enum value expected";
                     case 0:
                         break;
                     }
-                }
-                if (message.createdAt != null && message.hasOwnProperty("createdAt")) {
-                    properties._createdAt = 1;
+                if (message.createdAt != null && message.hasOwnProperty("createdAt"))
                     if (!$util.isInteger(message.createdAt) && !(message.createdAt && $util.isInteger(message.createdAt.low) && $util.isInteger(message.createdAt.high)))
                         return "createdAt: integer|Long expected";
-                }
-                if (message.lastSentAt != null && message.hasOwnProperty("lastSentAt")) {
-                    properties._lastSentAt = 1;
+                if (message.lastSentAt != null && message.hasOwnProperty("lastSentAt"))
                     if (!$util.isInteger(message.lastSentAt) && !(message.lastSentAt && $util.isInteger(message.lastSentAt.low) && $util.isInteger(message.lastSentAt.high)))
                         return "lastSentAt: integer|Long expected";
-                }
-                if (message.isDeleted != null && message.hasOwnProperty("isDeleted")) {
-                    properties._isDeleted = 1;
+                if (message.isDeleted != null && message.hasOwnProperty("isDeleted"))
                     if (typeof message.isDeleted !== "boolean")
                         return "isDeleted: boolean expected";
-                }
-                if (message.mediaId != null && message.hasOwnProperty("mediaId")) {
-                    properties._mediaId = 1;
+                if (message.mediaId != null && message.hasOwnProperty("mediaId"))
                     if (!$util.isString(message.mediaId))
                         return "mediaId: string expected";
-                }
                 return null;
             };
 
@@ -11962,6 +10614,12 @@ $root.SyncAction = (function() {
                 if (object.message != null)
                     message.message = String(object.message);
                 switch (object.type) {
+                default:
+                    if (typeof object.type === "number") {
+                        message.type = object.type;
+                        break;
+                    }
+                    break;
                 case "PERSONALIZED":
                 case 0:
                     message.type = 0;
@@ -12005,47 +10663,43 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.name != null && message.hasOwnProperty("name")) {
+                if (options.defaults) {
+                    object.name = "";
+                    object.message = "";
+                    object.type = options.enums === String ? "PERSONALIZED" : 0;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.createdAt = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.createdAt = options.longs === String ? "0" : 0;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.lastSentAt = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.lastSentAt = options.longs === String ? "0" : 0;
+                    object.isDeleted = false;
+                    object.mediaId = "";
+                }
+                if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
-                    if (options.oneofs)
-                        object._name = "name";
-                }
-                if (message.message != null && message.hasOwnProperty("message")) {
+                if (message.message != null && message.hasOwnProperty("message"))
                     object.message = message.message;
-                    if (options.oneofs)
-                        object._message = "message";
-                }
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    object.type = options.enums === String ? $root.SyncAction.SyncActionValue.MarketingMessageAction.MarketingMessagePrototypeType[message.type] : message.type;
-                    if (options.oneofs)
-                        object._type = "type";
-                }
-                if (message.createdAt != null && message.hasOwnProperty("createdAt")) {
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = options.enums === String ? $root.SyncAction.SyncActionValue.MarketingMessageAction.MarketingMessagePrototypeType[message.type] === undefined ? message.type : $root.SyncAction.SyncActionValue.MarketingMessageAction.MarketingMessagePrototypeType[message.type] : message.type;
+                if (message.createdAt != null && message.hasOwnProperty("createdAt"))
                     if (typeof message.createdAt === "number")
                         object.createdAt = options.longs === String ? String(message.createdAt) : message.createdAt;
                     else
                         object.createdAt = options.longs === String ? $util.Long.prototype.toString.call(message.createdAt) : options.longs === Number ? new $util.LongBits(message.createdAt.low >>> 0, message.createdAt.high >>> 0).toNumber() : message.createdAt;
-                    if (options.oneofs)
-                        object._createdAt = "createdAt";
-                }
-                if (message.lastSentAt != null && message.hasOwnProperty("lastSentAt")) {
+                if (message.lastSentAt != null && message.hasOwnProperty("lastSentAt"))
                     if (typeof message.lastSentAt === "number")
                         object.lastSentAt = options.longs === String ? String(message.lastSentAt) : message.lastSentAt;
                     else
                         object.lastSentAt = options.longs === String ? $util.Long.prototype.toString.call(message.lastSentAt) : options.longs === Number ? new $util.LongBits(message.lastSentAt.low >>> 0, message.lastSentAt.high >>> 0).toNumber() : message.lastSentAt;
-                    if (options.oneofs)
-                        object._lastSentAt = "lastSentAt";
-                }
-                if (message.isDeleted != null && message.hasOwnProperty("isDeleted")) {
+                if (message.isDeleted != null && message.hasOwnProperty("isDeleted"))
                     object.isDeleted = message.isDeleted;
-                    if (options.oneofs)
-                        object._isDeleted = "isDeleted";
-                }
-                if (message.mediaId != null && message.hasOwnProperty("mediaId")) {
+                if (message.mediaId != null && message.hasOwnProperty("mediaId"))
                     object.mediaId = message.mediaId;
-                    if (options.oneofs)
-                        object._mediaId = "mediaId";
-                }
                 return object;
             };
 
@@ -12058,6 +10712,21 @@ $root.SyncAction = (function() {
              */
             MarketingMessageAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for MarketingMessageAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            MarketingMessageAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.MarketingMessageAction";
             };
 
             /**
@@ -12101,25 +10770,11 @@ $root.SyncAction = (function() {
 
             /**
              * MarketingMessageBroadcastAction repliedCount.
-             * @member {number|null|undefined} repliedCount
+             * @member {number} repliedCount
              * @memberof SyncAction.SyncActionValue.MarketingMessageBroadcastAction
              * @instance
              */
-            MarketingMessageBroadcastAction.prototype.repliedCount = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * MarketingMessageBroadcastAction _repliedCount.
-             * @member {"repliedCount"|undefined} _repliedCount
-             * @memberof SyncAction.SyncActionValue.MarketingMessageBroadcastAction
-             * @instance
-             */
-            Object.defineProperty(MarketingMessageBroadcastAction.prototype, "_repliedCount", {
-                get: $util.oneOfGetter($oneOfFields = ["repliedCount"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            MarketingMessageBroadcastAction.prototype.repliedCount = 0;
 
             /**
              * Creates a new MarketingMessageBroadcastAction instance using the specified properties.
@@ -12174,16 +10829,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MarketingMessageBroadcastAction.decode = function decode(reader, length) {
+            MarketingMessageBroadcastAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MarketingMessageBroadcastAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.repliedCount = reader.int32();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.repliedCount = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -12219,12 +10877,9 @@ $root.SyncAction = (function() {
             MarketingMessageBroadcastAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.repliedCount != null && message.hasOwnProperty("repliedCount")) {
-                    properties._repliedCount = 1;
+                if (message.repliedCount != null && message.hasOwnProperty("repliedCount"))
                     if (!$util.isInteger(message.repliedCount))
                         return "repliedCount: integer expected";
-                }
                 return null;
             };
 
@@ -12258,11 +10913,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.repliedCount != null && message.hasOwnProperty("repliedCount")) {
+                if (options.defaults)
+                    object.repliedCount = 0;
+                if (message.repliedCount != null && message.hasOwnProperty("repliedCount"))
                     object.repliedCount = message.repliedCount;
-                    if (options.oneofs)
-                        object._repliedCount = "repliedCount";
-                }
                 return object;
             };
 
@@ -12275,6 +10929,21 @@ $root.SyncAction = (function() {
              */
             MarketingMessageBroadcastAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for MarketingMessageBroadcastAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.MarketingMessageBroadcastAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            MarketingMessageBroadcastAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.MarketingMessageBroadcastAction";
             };
 
             return MarketingMessageBroadcastAction;
@@ -12325,44 +10994,19 @@ $root.SyncAction = (function() {
 
             /**
              * MerchantPaymentPartnerAction gatewayName.
-             * @member {string|null|undefined} gatewayName
+             * @member {string} gatewayName
              * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
              * @instance
              */
-            MerchantPaymentPartnerAction.prototype.gatewayName = null;
+            MerchantPaymentPartnerAction.prototype.gatewayName = "";
 
             /**
              * MerchantPaymentPartnerAction credentialId.
-             * @member {string|null|undefined} credentialId
+             * @member {string} credentialId
              * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
              * @instance
              */
-            MerchantPaymentPartnerAction.prototype.credentialId = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * MerchantPaymentPartnerAction _gatewayName.
-             * @member {"gatewayName"|undefined} _gatewayName
-             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
-             * @instance
-             */
-            Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_gatewayName", {
-                get: $util.oneOfGetter($oneOfFields = ["gatewayName"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MerchantPaymentPartnerAction _credentialId.
-             * @member {"credentialId"|undefined} _credentialId
-             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
-             * @instance
-             */
-            Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_credentialId", {
-                get: $util.oneOfGetter($oneOfFields = ["credentialId"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            MerchantPaymentPartnerAction.prototype.credentialId = "";
 
             /**
              * Creates a new MerchantPaymentPartnerAction instance using the specified properties.
@@ -12421,25 +11065,31 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MerchantPaymentPartnerAction.decode = function decode(reader, length) {
+            MerchantPaymentPartnerAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.status = reader.int32();
-                        break;
-                    case 2:
-                        message.country = reader.string();
-                        break;
-                    case 3:
-                        message.gatewayName = reader.string();
-                        break;
-                    case 4:
-                        message.credentialId = reader.string();
-                        break;
+                    case 1: {
+                            message.status = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.country = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.gatewayName = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            message.credentialId = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -12479,7 +11129,6 @@ $root.SyncAction = (function() {
             MerchantPaymentPartnerAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
                 switch (message.status) {
                 default:
                     return "status: enum value expected";
@@ -12489,16 +11138,12 @@ $root.SyncAction = (function() {
                 }
                 if (!$util.isString(message.country))
                     return "country: string expected";
-                if (message.gatewayName != null && message.hasOwnProperty("gatewayName")) {
-                    properties._gatewayName = 1;
+                if (message.gatewayName != null && message.hasOwnProperty("gatewayName"))
                     if (!$util.isString(message.gatewayName))
                         return "gatewayName: string expected";
-                }
-                if (message.credentialId != null && message.hasOwnProperty("credentialId")) {
-                    properties._credentialId = 1;
+                if (message.credentialId != null && message.hasOwnProperty("credentialId"))
                     if (!$util.isString(message.credentialId))
                         return "credentialId: string expected";
-                }
                 return null;
             };
 
@@ -12515,6 +11160,12 @@ $root.SyncAction = (function() {
                     return object;
                 var message = new $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction();
                 switch (object.status) {
+                default:
+                    if (typeof object.status === "number") {
+                        message.status = object.status;
+                        break;
+                    }
+                    break;
                 case "ACTIVE":
                 case 0:
                     message.status = 0;
@@ -12549,21 +11200,17 @@ $root.SyncAction = (function() {
                 if (options.defaults) {
                     object.status = options.enums === String ? "ACTIVE" : 0;
                     object.country = "";
+                    object.gatewayName = "";
+                    object.credentialId = "";
                 }
                 if (message.status != null && message.hasOwnProperty("status"))
-                    object.status = options.enums === String ? $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.Status[message.status] : message.status;
+                    object.status = options.enums === String ? $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.Status[message.status] === undefined ? message.status : $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.Status[message.status] : message.status;
                 if (message.country != null && message.hasOwnProperty("country"))
                     object.country = message.country;
-                if (message.gatewayName != null && message.hasOwnProperty("gatewayName")) {
+                if (message.gatewayName != null && message.hasOwnProperty("gatewayName"))
                     object.gatewayName = message.gatewayName;
-                    if (options.oneofs)
-                        object._gatewayName = "gatewayName";
-                }
-                if (message.credentialId != null && message.hasOwnProperty("credentialId")) {
+                if (message.credentialId != null && message.hasOwnProperty("credentialId"))
                     object.credentialId = message.credentialId;
-                    if (options.oneofs)
-                        object._credentialId = "credentialId";
-                }
                 return object;
             };
 
@@ -12576,6 +11223,21 @@ $root.SyncAction = (function() {
              */
             MerchantPaymentPartnerAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for MerchantPaymentPartnerAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            MerchantPaymentPartnerAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.MerchantPaymentPartnerAction";
             };
 
             /**
@@ -12621,25 +11283,11 @@ $root.SyncAction = (function() {
 
             /**
              * MusicUserIdAction musicUserId.
-             * @member {string|null|undefined} musicUserId
+             * @member {string} musicUserId
              * @memberof SyncAction.SyncActionValue.MusicUserIdAction
              * @instance
              */
-            MusicUserIdAction.prototype.musicUserId = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * MusicUserIdAction _musicUserId.
-             * @member {"musicUserId"|undefined} _musicUserId
-             * @memberof SyncAction.SyncActionValue.MusicUserIdAction
-             * @instance
-             */
-            Object.defineProperty(MusicUserIdAction.prototype, "_musicUserId", {
-                get: $util.oneOfGetter($oneOfFields = ["musicUserId"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            MusicUserIdAction.prototype.musicUserId = "";
 
             /**
              * Creates a new MusicUserIdAction instance using the specified properties.
@@ -12694,16 +11342,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MusicUserIdAction.decode = function decode(reader, length) {
+            MusicUserIdAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MusicUserIdAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.musicUserId = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.musicUserId = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -12739,12 +11390,9 @@ $root.SyncAction = (function() {
             MusicUserIdAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.musicUserId != null && message.hasOwnProperty("musicUserId")) {
-                    properties._musicUserId = 1;
+                if (message.musicUserId != null && message.hasOwnProperty("musicUserId"))
                     if (!$util.isString(message.musicUserId))
                         return "musicUserId: string expected";
-                }
                 return null;
             };
 
@@ -12778,11 +11426,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.musicUserId != null && message.hasOwnProperty("musicUserId")) {
+                if (options.defaults)
+                    object.musicUserId = "";
+                if (message.musicUserId != null && message.hasOwnProperty("musicUserId"))
                     object.musicUserId = message.musicUserId;
-                    if (options.oneofs)
-                        object._musicUserId = "musicUserId";
-                }
                 return object;
             };
 
@@ -12795,6 +11442,21 @@ $root.SyncAction = (function() {
              */
             MusicUserIdAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for MusicUserIdAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.MusicUserIdAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            MusicUserIdAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.MusicUserIdAction";
             };
 
             return MusicUserIdAction;
@@ -12828,63 +11490,27 @@ $root.SyncAction = (function() {
 
             /**
              * MuteAction muted.
-             * @member {boolean|null|undefined} muted
+             * @member {boolean} muted
              * @memberof SyncAction.SyncActionValue.MuteAction
              * @instance
              */
-            MuteAction.prototype.muted = null;
+            MuteAction.prototype.muted = false;
 
             /**
              * MuteAction muteEndTimestamp.
-             * @member {number|Long|null|undefined} muteEndTimestamp
+             * @member {number|Long} muteEndTimestamp
              * @memberof SyncAction.SyncActionValue.MuteAction
              * @instance
              */
-            MuteAction.prototype.muteEndTimestamp = null;
+            MuteAction.prototype.muteEndTimestamp = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * MuteAction autoMuted.
-             * @member {boolean|null|undefined} autoMuted
+             * @member {boolean} autoMuted
              * @memberof SyncAction.SyncActionValue.MuteAction
              * @instance
              */
-            MuteAction.prototype.autoMuted = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * MuteAction _muted.
-             * @member {"muted"|undefined} _muted
-             * @memberof SyncAction.SyncActionValue.MuteAction
-             * @instance
-             */
-            Object.defineProperty(MuteAction.prototype, "_muted", {
-                get: $util.oneOfGetter($oneOfFields = ["muted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MuteAction _muteEndTimestamp.
-             * @member {"muteEndTimestamp"|undefined} _muteEndTimestamp
-             * @memberof SyncAction.SyncActionValue.MuteAction
-             * @instance
-             */
-            Object.defineProperty(MuteAction.prototype, "_muteEndTimestamp", {
-                get: $util.oneOfGetter($oneOfFields = ["muteEndTimestamp"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * MuteAction _autoMuted.
-             * @member {"autoMuted"|undefined} _autoMuted
-             * @memberof SyncAction.SyncActionValue.MuteAction
-             * @instance
-             */
-            Object.defineProperty(MuteAction.prototype, "_autoMuted", {
-                get: $util.oneOfGetter($oneOfFields = ["autoMuted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            MuteAction.prototype.autoMuted = false;
 
             /**
              * Creates a new MuteAction instance using the specified properties.
@@ -12943,22 +11569,27 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MuteAction.decode = function decode(reader, length) {
+            MuteAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MuteAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.muted = reader.bool();
-                        break;
-                    case 2:
-                        message.muteEndTimestamp = reader.int64();
-                        break;
-                    case 3:
-                        message.autoMuted = reader.bool();
-                        break;
+                    case 1: {
+                            message.muted = reader.bool();
+                            break;
+                        }
+                    case 2: {
+                            message.muteEndTimestamp = reader.int64();
+                            break;
+                        }
+                    case 3: {
+                            message.autoMuted = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -12994,22 +11625,15 @@ $root.SyncAction = (function() {
             MuteAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.muted != null && message.hasOwnProperty("muted")) {
-                    properties._muted = 1;
+                if (message.muted != null && message.hasOwnProperty("muted"))
                     if (typeof message.muted !== "boolean")
                         return "muted: boolean expected";
-                }
-                if (message.muteEndTimestamp != null && message.hasOwnProperty("muteEndTimestamp")) {
-                    properties._muteEndTimestamp = 1;
+                if (message.muteEndTimestamp != null && message.hasOwnProperty("muteEndTimestamp"))
                     if (!$util.isInteger(message.muteEndTimestamp) && !(message.muteEndTimestamp && $util.isInteger(message.muteEndTimestamp.low) && $util.isInteger(message.muteEndTimestamp.high)))
                         return "muteEndTimestamp: integer|Long expected";
-                }
-                if (message.autoMuted != null && message.hasOwnProperty("autoMuted")) {
-                    properties._autoMuted = 1;
+                if (message.autoMuted != null && message.hasOwnProperty("autoMuted"))
                     if (typeof message.autoMuted !== "boolean")
                         return "autoMuted: boolean expected";
-                }
                 return null;
             };
 
@@ -13054,24 +11678,24 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.muted != null && message.hasOwnProperty("muted")) {
-                    object.muted = message.muted;
-                    if (options.oneofs)
-                        object._muted = "muted";
+                if (options.defaults) {
+                    object.muted = false;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.muteEndTimestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.muteEndTimestamp = options.longs === String ? "0" : 0;
+                    object.autoMuted = false;
                 }
-                if (message.muteEndTimestamp != null && message.hasOwnProperty("muteEndTimestamp")) {
+                if (message.muted != null && message.hasOwnProperty("muted"))
+                    object.muted = message.muted;
+                if (message.muteEndTimestamp != null && message.hasOwnProperty("muteEndTimestamp"))
                     if (typeof message.muteEndTimestamp === "number")
                         object.muteEndTimestamp = options.longs === String ? String(message.muteEndTimestamp) : message.muteEndTimestamp;
                     else
                         object.muteEndTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.muteEndTimestamp) : options.longs === Number ? new $util.LongBits(message.muteEndTimestamp.low >>> 0, message.muteEndTimestamp.high >>> 0).toNumber() : message.muteEndTimestamp;
-                    if (options.oneofs)
-                        object._muteEndTimestamp = "muteEndTimestamp";
-                }
-                if (message.autoMuted != null && message.hasOwnProperty("autoMuted")) {
+                if (message.autoMuted != null && message.hasOwnProperty("autoMuted"))
                     object.autoMuted = message.autoMuted;
-                    if (options.oneofs)
-                        object._autoMuted = "autoMuted";
-                }
                 return object;
             };
 
@@ -13084,6 +11708,21 @@ $root.SyncAction = (function() {
              */
             MuteAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for MuteAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.MuteAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            MuteAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.MuteAction";
             };
 
             return MuteAction;
@@ -13119,101 +11758,43 @@ $root.SyncAction = (function() {
 
             /**
              * NoteEditAction type.
-             * @member {SyncAction.SyncActionValue.NoteEditAction.NoteType|null|undefined} type
+             * @member {SyncAction.SyncActionValue.NoteEditAction.NoteType} type
              * @memberof SyncAction.SyncActionValue.NoteEditAction
              * @instance
              */
-            NoteEditAction.prototype.type = null;
+            NoteEditAction.prototype.type = 1;
 
             /**
              * NoteEditAction chatJid.
-             * @member {string|null|undefined} chatJid
+             * @member {string} chatJid
              * @memberof SyncAction.SyncActionValue.NoteEditAction
              * @instance
              */
-            NoteEditAction.prototype.chatJid = null;
+            NoteEditAction.prototype.chatJid = "";
 
             /**
              * NoteEditAction createdAt.
-             * @member {number|Long|null|undefined} createdAt
+             * @member {number|Long} createdAt
              * @memberof SyncAction.SyncActionValue.NoteEditAction
              * @instance
              */
-            NoteEditAction.prototype.createdAt = null;
+            NoteEditAction.prototype.createdAt = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * NoteEditAction deleted.
-             * @member {boolean|null|undefined} deleted
+             * @member {boolean} deleted
              * @memberof SyncAction.SyncActionValue.NoteEditAction
              * @instance
              */
-            NoteEditAction.prototype.deleted = null;
+            NoteEditAction.prototype.deleted = false;
 
             /**
              * NoteEditAction unstructuredContent.
-             * @member {string|null|undefined} unstructuredContent
+             * @member {string} unstructuredContent
              * @memberof SyncAction.SyncActionValue.NoteEditAction
              * @instance
              */
-            NoteEditAction.prototype.unstructuredContent = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * NoteEditAction _type.
-             * @member {"type"|undefined} _type
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
-            Object.defineProperty(NoteEditAction.prototype, "_type", {
-                get: $util.oneOfGetter($oneOfFields = ["type"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * NoteEditAction _chatJid.
-             * @member {"chatJid"|undefined} _chatJid
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
-            Object.defineProperty(NoteEditAction.prototype, "_chatJid", {
-                get: $util.oneOfGetter($oneOfFields = ["chatJid"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * NoteEditAction _createdAt.
-             * @member {"createdAt"|undefined} _createdAt
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
-            Object.defineProperty(NoteEditAction.prototype, "_createdAt", {
-                get: $util.oneOfGetter($oneOfFields = ["createdAt"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * NoteEditAction _deleted.
-             * @member {"deleted"|undefined} _deleted
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
-            Object.defineProperty(NoteEditAction.prototype, "_deleted", {
-                get: $util.oneOfGetter($oneOfFields = ["deleted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * NoteEditAction _unstructuredContent.
-             * @member {"unstructuredContent"|undefined} _unstructuredContent
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
-            Object.defineProperty(NoteEditAction.prototype, "_unstructuredContent", {
-                get: $util.oneOfGetter($oneOfFields = ["unstructuredContent"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            NoteEditAction.prototype.unstructuredContent = "";
 
             /**
              * Creates a new NoteEditAction instance using the specified properties.
@@ -13276,28 +11857,35 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            NoteEditAction.decode = function decode(reader, length) {
+            NoteEditAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.NoteEditAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.type = reader.int32();
-                        break;
-                    case 2:
-                        message.chatJid = reader.string();
-                        break;
-                    case 3:
-                        message.createdAt = reader.int64();
-                        break;
-                    case 4:
-                        message.deleted = reader.bool();
-                        break;
-                    case 5:
-                        message.unstructuredContent = reader.string();
-                        break;
+                    case 1: {
+                            message.type = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.chatJid = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.createdAt = reader.int64();
+                            break;
+                        }
+                    case 4: {
+                            message.deleted = reader.bool();
+                            break;
+                        }
+                    case 5: {
+                            message.unstructuredContent = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -13333,9 +11921,7 @@ $root.SyncAction = (function() {
             NoteEditAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    properties._type = 1;
+                if (message.type != null && message.hasOwnProperty("type"))
                     switch (message.type) {
                     default:
                         return "type: enum value expected";
@@ -13343,27 +11929,18 @@ $root.SyncAction = (function() {
                     case 2:
                         break;
                     }
-                }
-                if (message.chatJid != null && message.hasOwnProperty("chatJid")) {
-                    properties._chatJid = 1;
+                if (message.chatJid != null && message.hasOwnProperty("chatJid"))
                     if (!$util.isString(message.chatJid))
                         return "chatJid: string expected";
-                }
-                if (message.createdAt != null && message.hasOwnProperty("createdAt")) {
-                    properties._createdAt = 1;
+                if (message.createdAt != null && message.hasOwnProperty("createdAt"))
                     if (!$util.isInteger(message.createdAt) && !(message.createdAt && $util.isInteger(message.createdAt.low) && $util.isInteger(message.createdAt.high)))
                         return "createdAt: integer|Long expected";
-                }
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
-                    properties._deleted = 1;
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
                     if (typeof message.deleted !== "boolean")
                         return "deleted: boolean expected";
-                }
-                if (message.unstructuredContent != null && message.hasOwnProperty("unstructuredContent")) {
-                    properties._unstructuredContent = 1;
+                if (message.unstructuredContent != null && message.hasOwnProperty("unstructuredContent"))
                     if (!$util.isString(message.unstructuredContent))
                         return "unstructuredContent: string expected";
-                }
                 return null;
             };
 
@@ -13380,6 +11957,12 @@ $root.SyncAction = (function() {
                     return object;
                 var message = new $root.SyncAction.SyncActionValue.NoteEditAction();
                 switch (object.type) {
+                default:
+                    if (typeof object.type === "number") {
+                        message.type = object.type;
+                        break;
+                    }
+                    break;
                 case "UNSTRUCTURED":
                 case 1:
                     message.type = 1;
@@ -13420,34 +12003,30 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    object.type = options.enums === String ? $root.SyncAction.SyncActionValue.NoteEditAction.NoteType[message.type] : message.type;
-                    if (options.oneofs)
-                        object._type = "type";
+                if (options.defaults) {
+                    object.type = options.enums === String ? "UNSTRUCTURED" : 1;
+                    object.chatJid = "";
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.createdAt = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.createdAt = options.longs === String ? "0" : 0;
+                    object.deleted = false;
+                    object.unstructuredContent = "";
                 }
-                if (message.chatJid != null && message.hasOwnProperty("chatJid")) {
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = options.enums === String ? $root.SyncAction.SyncActionValue.NoteEditAction.NoteType[message.type] === undefined ? message.type : $root.SyncAction.SyncActionValue.NoteEditAction.NoteType[message.type] : message.type;
+                if (message.chatJid != null && message.hasOwnProperty("chatJid"))
                     object.chatJid = message.chatJid;
-                    if (options.oneofs)
-                        object._chatJid = "chatJid";
-                }
-                if (message.createdAt != null && message.hasOwnProperty("createdAt")) {
+                if (message.createdAt != null && message.hasOwnProperty("createdAt"))
                     if (typeof message.createdAt === "number")
                         object.createdAt = options.longs === String ? String(message.createdAt) : message.createdAt;
                     else
                         object.createdAt = options.longs === String ? $util.Long.prototype.toString.call(message.createdAt) : options.longs === Number ? new $util.LongBits(message.createdAt.low >>> 0, message.createdAt.high >>> 0).toNumber() : message.createdAt;
-                    if (options.oneofs)
-                        object._createdAt = "createdAt";
-                }
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
                     object.deleted = message.deleted;
-                    if (options.oneofs)
-                        object._deleted = "deleted";
-                }
-                if (message.unstructuredContent != null && message.hasOwnProperty("unstructuredContent")) {
+                if (message.unstructuredContent != null && message.hasOwnProperty("unstructuredContent"))
                     object.unstructuredContent = message.unstructuredContent;
-                    if (options.oneofs)
-                        object._unstructuredContent = "unstructuredContent";
-                }
                 return object;
             };
 
@@ -13460,6 +12039,21 @@ $root.SyncAction = (function() {
              */
             NoteEditAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for NoteEditAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.NoteEditAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            NoteEditAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.NoteEditAction";
             };
 
             /**
@@ -13505,25 +12099,11 @@ $root.SyncAction = (function() {
 
             /**
              * NotificationActivitySettingAction notificationActivitySetting.
-             * @member {SyncAction.SyncActionValue.NotificationActivitySettingAction.NotificationActivitySetting|null|undefined} notificationActivitySetting
+             * @member {SyncAction.SyncActionValue.NotificationActivitySettingAction.NotificationActivitySetting} notificationActivitySetting
              * @memberof SyncAction.SyncActionValue.NotificationActivitySettingAction
              * @instance
              */
-            NotificationActivitySettingAction.prototype.notificationActivitySetting = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * NotificationActivitySettingAction _notificationActivitySetting.
-             * @member {"notificationActivitySetting"|undefined} _notificationActivitySetting
-             * @memberof SyncAction.SyncActionValue.NotificationActivitySettingAction
-             * @instance
-             */
-            Object.defineProperty(NotificationActivitySettingAction.prototype, "_notificationActivitySetting", {
-                get: $util.oneOfGetter($oneOfFields = ["notificationActivitySetting"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            NotificationActivitySettingAction.prototype.notificationActivitySetting = 0;
 
             /**
              * Creates a new NotificationActivitySettingAction instance using the specified properties.
@@ -13578,16 +12158,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            NotificationActivitySettingAction.decode = function decode(reader, length) {
+            NotificationActivitySettingAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.NotificationActivitySettingAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.notificationActivitySetting = reader.int32();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.notificationActivitySetting = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -13623,9 +12206,7 @@ $root.SyncAction = (function() {
             NotificationActivitySettingAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.notificationActivitySetting != null && message.hasOwnProperty("notificationActivitySetting")) {
-                    properties._notificationActivitySetting = 1;
+                if (message.notificationActivitySetting != null && message.hasOwnProperty("notificationActivitySetting"))
                     switch (message.notificationActivitySetting) {
                     default:
                         return "notificationActivitySetting: enum value expected";
@@ -13635,7 +12216,6 @@ $root.SyncAction = (function() {
                     case 3:
                         break;
                     }
-                }
                 return null;
             };
 
@@ -13652,6 +12232,12 @@ $root.SyncAction = (function() {
                     return object;
                 var message = new $root.SyncAction.SyncActionValue.NotificationActivitySettingAction();
                 switch (object.notificationActivitySetting) {
+                default:
+                    if (typeof object.notificationActivitySetting === "number") {
+                        message.notificationActivitySetting = object.notificationActivitySetting;
+                        break;
+                    }
+                    break;
                 case "DEFAULT_ALL_MESSAGES":
                 case 0:
                     message.notificationActivitySetting = 0;
@@ -13685,11 +12271,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.notificationActivitySetting != null && message.hasOwnProperty("notificationActivitySetting")) {
-                    object.notificationActivitySetting = options.enums === String ? $root.SyncAction.SyncActionValue.NotificationActivitySettingAction.NotificationActivitySetting[message.notificationActivitySetting] : message.notificationActivitySetting;
-                    if (options.oneofs)
-                        object._notificationActivitySetting = "notificationActivitySetting";
-                }
+                if (options.defaults)
+                    object.notificationActivitySetting = options.enums === String ? "DEFAULT_ALL_MESSAGES" : 0;
+                if (message.notificationActivitySetting != null && message.hasOwnProperty("notificationActivitySetting"))
+                    object.notificationActivitySetting = options.enums === String ? $root.SyncAction.SyncActionValue.NotificationActivitySettingAction.NotificationActivitySetting[message.notificationActivitySetting] === undefined ? message.notificationActivitySetting : $root.SyncAction.SyncActionValue.NotificationActivitySettingAction.NotificationActivitySetting[message.notificationActivitySetting] : message.notificationActivitySetting;
                 return object;
             };
 
@@ -13702,6 +12287,21 @@ $root.SyncAction = (function() {
              */
             NotificationActivitySettingAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for NotificationActivitySettingAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.NotificationActivitySettingAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            NotificationActivitySettingAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.NotificationActivitySettingAction";
             };
 
             /**
@@ -13751,25 +12351,11 @@ $root.SyncAction = (function() {
 
             /**
              * NuxAction acknowledged.
-             * @member {boolean|null|undefined} acknowledged
+             * @member {boolean} acknowledged
              * @memberof SyncAction.SyncActionValue.NuxAction
              * @instance
              */
-            NuxAction.prototype.acknowledged = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * NuxAction _acknowledged.
-             * @member {"acknowledged"|undefined} _acknowledged
-             * @memberof SyncAction.SyncActionValue.NuxAction
-             * @instance
-             */
-            Object.defineProperty(NuxAction.prototype, "_acknowledged", {
-                get: $util.oneOfGetter($oneOfFields = ["acknowledged"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            NuxAction.prototype.acknowledged = false;
 
             /**
              * Creates a new NuxAction instance using the specified properties.
@@ -13824,16 +12410,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            NuxAction.decode = function decode(reader, length) {
+            NuxAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.NuxAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.acknowledged = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.acknowledged = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -13869,12 +12458,9 @@ $root.SyncAction = (function() {
             NuxAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.acknowledged != null && message.hasOwnProperty("acknowledged")) {
-                    properties._acknowledged = 1;
+                if (message.acknowledged != null && message.hasOwnProperty("acknowledged"))
                     if (typeof message.acknowledged !== "boolean")
                         return "acknowledged: boolean expected";
-                }
                 return null;
             };
 
@@ -13908,11 +12494,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.acknowledged != null && message.hasOwnProperty("acknowledged")) {
+                if (options.defaults)
+                    object.acknowledged = false;
+                if (message.acknowledged != null && message.hasOwnProperty("acknowledged"))
                     object.acknowledged = message.acknowledged;
-                    if (options.oneofs)
-                        object._acknowledged = "acknowledged";
-                }
                 return object;
             };
 
@@ -13925,6 +12510,21 @@ $root.SyncAction = (function() {
              */
             NuxAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for NuxAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.NuxAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            NuxAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.NuxAction";
             };
 
             return NuxAction;
@@ -13956,25 +12556,11 @@ $root.SyncAction = (function() {
 
             /**
              * PaymentInfoAction cpi.
-             * @member {string|null|undefined} cpi
+             * @member {string} cpi
              * @memberof SyncAction.SyncActionValue.PaymentInfoAction
              * @instance
              */
-            PaymentInfoAction.prototype.cpi = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * PaymentInfoAction _cpi.
-             * @member {"cpi"|undefined} _cpi
-             * @memberof SyncAction.SyncActionValue.PaymentInfoAction
-             * @instance
-             */
-            Object.defineProperty(PaymentInfoAction.prototype, "_cpi", {
-                get: $util.oneOfGetter($oneOfFields = ["cpi"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            PaymentInfoAction.prototype.cpi = "";
 
             /**
              * Creates a new PaymentInfoAction instance using the specified properties.
@@ -14029,16 +12615,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PaymentInfoAction.decode = function decode(reader, length) {
+            PaymentInfoAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PaymentInfoAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.cpi = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.cpi = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -14074,12 +12663,9 @@ $root.SyncAction = (function() {
             PaymentInfoAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.cpi != null && message.hasOwnProperty("cpi")) {
-                    properties._cpi = 1;
+                if (message.cpi != null && message.hasOwnProperty("cpi"))
                     if (!$util.isString(message.cpi))
                         return "cpi: string expected";
-                }
                 return null;
             };
 
@@ -14113,11 +12699,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.cpi != null && message.hasOwnProperty("cpi")) {
+                if (options.defaults)
+                    object.cpi = "";
+                if (message.cpi != null && message.hasOwnProperty("cpi"))
                     object.cpi = message.cpi;
-                    if (options.oneofs)
-                        object._cpi = "cpi";
-                }
                 return object;
             };
 
@@ -14130,6 +12715,21 @@ $root.SyncAction = (function() {
              */
             PaymentInfoAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PaymentInfoAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PaymentInfoAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PaymentInfoAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PaymentInfoAction";
             };
 
             return PaymentInfoAction;
@@ -14229,19 +12829,23 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PaymentTosAction.decode = function decode(reader, length) {
+            PaymentTosAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PaymentTosAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.paymentNotice = reader.int32();
-                        break;
-                    case 2:
-                        message.accepted = reader.bool();
-                        break;
+                    case 1: {
+                            message.paymentNotice = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.accepted = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -14305,6 +12909,12 @@ $root.SyncAction = (function() {
                     return object;
                 var message = new $root.SyncAction.SyncActionValue.PaymentTosAction();
                 switch (object.paymentNotice) {
+                default:
+                    if (typeof object.paymentNotice === "number") {
+                        message.paymentNotice = object.paymentNotice;
+                        break;
+                    }
+                    break;
                 case "BR_PAY_PRIVACY_POLICY":
                 case 0:
                     message.paymentNotice = 0;
@@ -14333,7 +12943,7 @@ $root.SyncAction = (function() {
                     object.accepted = false;
                 }
                 if (message.paymentNotice != null && message.hasOwnProperty("paymentNotice"))
-                    object.paymentNotice = options.enums === String ? $root.SyncAction.SyncActionValue.PaymentTosAction.PaymentNotice[message.paymentNotice] : message.paymentNotice;
+                    object.paymentNotice = options.enums === String ? $root.SyncAction.SyncActionValue.PaymentTosAction.PaymentNotice[message.paymentNotice] === undefined ? message.paymentNotice : $root.SyncAction.SyncActionValue.PaymentTosAction.PaymentNotice[message.paymentNotice] : message.paymentNotice;
                 if (message.accepted != null && message.hasOwnProperty("accepted"))
                     object.accepted = message.accepted;
                 return object;
@@ -14348,6 +12958,21 @@ $root.SyncAction = (function() {
              */
             PaymentTosAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PaymentTosAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PaymentTosAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PaymentTosAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PaymentTosAction";
             };
 
             /**
@@ -14391,25 +13016,11 @@ $root.SyncAction = (function() {
 
             /**
              * PinAction pinned.
-             * @member {boolean|null|undefined} pinned
+             * @member {boolean} pinned
              * @memberof SyncAction.SyncActionValue.PinAction
              * @instance
              */
-            PinAction.prototype.pinned = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * PinAction _pinned.
-             * @member {"pinned"|undefined} _pinned
-             * @memberof SyncAction.SyncActionValue.PinAction
-             * @instance
-             */
-            Object.defineProperty(PinAction.prototype, "_pinned", {
-                get: $util.oneOfGetter($oneOfFields = ["pinned"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            PinAction.prototype.pinned = false;
 
             /**
              * Creates a new PinAction instance using the specified properties.
@@ -14464,16 +13075,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PinAction.decode = function decode(reader, length) {
+            PinAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PinAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.pinned = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.pinned = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -14509,12 +13123,9 @@ $root.SyncAction = (function() {
             PinAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.pinned != null && message.hasOwnProperty("pinned")) {
-                    properties._pinned = 1;
+                if (message.pinned != null && message.hasOwnProperty("pinned"))
                     if (typeof message.pinned !== "boolean")
                         return "pinned: boolean expected";
-                }
                 return null;
             };
 
@@ -14548,11 +13159,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.pinned != null && message.hasOwnProperty("pinned")) {
+                if (options.defaults)
+                    object.pinned = false;
+                if (message.pinned != null && message.hasOwnProperty("pinned"))
                     object.pinned = message.pinned;
-                    if (options.oneofs)
-                        object._pinned = "pinned";
-                }
                 return object;
             };
 
@@ -14565,6 +13175,21 @@ $root.SyncAction = (function() {
              */
             PinAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PinAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PinAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PinAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PinAction";
             };
 
             return PinAction;
@@ -14596,25 +13221,11 @@ $root.SyncAction = (function() {
 
             /**
              * PnForLidChatAction pnJid.
-             * @member {string|null|undefined} pnJid
+             * @member {string} pnJid
              * @memberof SyncAction.SyncActionValue.PnForLidChatAction
              * @instance
              */
-            PnForLidChatAction.prototype.pnJid = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * PnForLidChatAction _pnJid.
-             * @member {"pnJid"|undefined} _pnJid
-             * @memberof SyncAction.SyncActionValue.PnForLidChatAction
-             * @instance
-             */
-            Object.defineProperty(PnForLidChatAction.prototype, "_pnJid", {
-                get: $util.oneOfGetter($oneOfFields = ["pnJid"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            PnForLidChatAction.prototype.pnJid = "";
 
             /**
              * Creates a new PnForLidChatAction instance using the specified properties.
@@ -14669,16 +13280,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PnForLidChatAction.decode = function decode(reader, length) {
+            PnForLidChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PnForLidChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.pnJid = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.pnJid = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -14714,12 +13328,9 @@ $root.SyncAction = (function() {
             PnForLidChatAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.pnJid != null && message.hasOwnProperty("pnJid")) {
-                    properties._pnJid = 1;
+                if (message.pnJid != null && message.hasOwnProperty("pnJid"))
                     if (!$util.isString(message.pnJid))
                         return "pnJid: string expected";
-                }
                 return null;
             };
 
@@ -14753,11 +13364,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.pnJid != null && message.hasOwnProperty("pnJid")) {
+                if (options.defaults)
+                    object.pnJid = "";
+                if (message.pnJid != null && message.hasOwnProperty("pnJid"))
                     object.pnJid = message.pnJid;
-                    if (options.oneofs)
-                        object._pnJid = "pnJid";
-                }
                 return object;
             };
 
@@ -14770,6 +13380,21 @@ $root.SyncAction = (function() {
              */
             PnForLidChatAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PnForLidChatAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PnForLidChatAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PnForLidChatAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PnForLidChatAction";
             };
 
             return PnForLidChatAction;
@@ -14862,18 +13487,21 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PrimaryFeature.decode = function decode(reader, length) {
+            PrimaryFeature.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PrimaryFeature();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.flags && message.flags.length))
-                            message.flags = [];
-                        message.flags.push(reader.string());
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            if (!(message.flags && message.flags.length))
+                                message.flags = [];
+                            message.flags.push(reader.string());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -14975,6 +13603,21 @@ $root.SyncAction = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for PrimaryFeature
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PrimaryFeature
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PrimaryFeature.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PrimaryFeature";
+            };
+
             return PrimaryFeature;
         })();
 
@@ -15004,25 +13647,11 @@ $root.SyncAction = (function() {
 
             /**
              * PrimaryVersionAction version.
-             * @member {string|null|undefined} version
+             * @member {string} version
              * @memberof SyncAction.SyncActionValue.PrimaryVersionAction
              * @instance
              */
-            PrimaryVersionAction.prototype.version = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * PrimaryVersionAction _version.
-             * @member {"version"|undefined} _version
-             * @memberof SyncAction.SyncActionValue.PrimaryVersionAction
-             * @instance
-             */
-            Object.defineProperty(PrimaryVersionAction.prototype, "_version", {
-                get: $util.oneOfGetter($oneOfFields = ["version"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            PrimaryVersionAction.prototype.version = "";
 
             /**
              * Creates a new PrimaryVersionAction instance using the specified properties.
@@ -15077,16 +13706,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PrimaryVersionAction.decode = function decode(reader, length) {
+            PrimaryVersionAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PrimaryVersionAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.version = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.version = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -15122,12 +13754,9 @@ $root.SyncAction = (function() {
             PrimaryVersionAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.version != null && message.hasOwnProperty("version")) {
-                    properties._version = 1;
+                if (message.version != null && message.hasOwnProperty("version"))
                     if (!$util.isString(message.version))
                         return "version: string expected";
-                }
                 return null;
             };
 
@@ -15161,11 +13790,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.version != null && message.hasOwnProperty("version")) {
+                if (options.defaults)
+                    object.version = "";
+                if (message.version != null && message.hasOwnProperty("version"))
                     object.version = message.version;
-                    if (options.oneofs)
-                        object._version = "version";
-                }
                 return object;
             };
 
@@ -15178,6 +13806,21 @@ $root.SyncAction = (function() {
              */
             PrimaryVersionAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PrimaryVersionAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PrimaryVersionAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PrimaryVersionAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PrimaryVersionAction";
             };
 
             return PrimaryVersionAction;
@@ -15209,25 +13852,11 @@ $root.SyncAction = (function() {
 
             /**
              * PrivacySettingChannelsPersonalisedRecommendationAction isUserOptedOut.
-             * @member {boolean|null|undefined} isUserOptedOut
+             * @member {boolean} isUserOptedOut
              * @memberof SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction
              * @instance
              */
-            PrivacySettingChannelsPersonalisedRecommendationAction.prototype.isUserOptedOut = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * PrivacySettingChannelsPersonalisedRecommendationAction _isUserOptedOut.
-             * @member {"isUserOptedOut"|undefined} _isUserOptedOut
-             * @memberof SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction
-             * @instance
-             */
-            Object.defineProperty(PrivacySettingChannelsPersonalisedRecommendationAction.prototype, "_isUserOptedOut", {
-                get: $util.oneOfGetter($oneOfFields = ["isUserOptedOut"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            PrivacySettingChannelsPersonalisedRecommendationAction.prototype.isUserOptedOut = false;
 
             /**
              * Creates a new PrivacySettingChannelsPersonalisedRecommendationAction instance using the specified properties.
@@ -15282,16 +13911,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PrivacySettingChannelsPersonalisedRecommendationAction.decode = function decode(reader, length) {
+            PrivacySettingChannelsPersonalisedRecommendationAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.isUserOptedOut = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.isUserOptedOut = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -15327,12 +13959,9 @@ $root.SyncAction = (function() {
             PrivacySettingChannelsPersonalisedRecommendationAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.isUserOptedOut != null && message.hasOwnProperty("isUserOptedOut")) {
-                    properties._isUserOptedOut = 1;
+                if (message.isUserOptedOut != null && message.hasOwnProperty("isUserOptedOut"))
                     if (typeof message.isUserOptedOut !== "boolean")
                         return "isUserOptedOut: boolean expected";
-                }
                 return null;
             };
 
@@ -15366,11 +13995,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.isUserOptedOut != null && message.hasOwnProperty("isUserOptedOut")) {
+                if (options.defaults)
+                    object.isUserOptedOut = false;
+                if (message.isUserOptedOut != null && message.hasOwnProperty("isUserOptedOut"))
                     object.isUserOptedOut = message.isUserOptedOut;
-                    if (options.oneofs)
-                        object._isUserOptedOut = "isUserOptedOut";
-                }
                 return object;
             };
 
@@ -15383,6 +14011,21 @@ $root.SyncAction = (function() {
              */
             PrivacySettingChannelsPersonalisedRecommendationAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PrivacySettingChannelsPersonalisedRecommendationAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PrivacySettingChannelsPersonalisedRecommendationAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction";
             };
 
             return PrivacySettingChannelsPersonalisedRecommendationAction;
@@ -15414,25 +14057,11 @@ $root.SyncAction = (function() {
 
             /**
              * PrivacySettingDisableLinkPreviewsAction isPreviewsDisabled.
-             * @member {boolean|null|undefined} isPreviewsDisabled
+             * @member {boolean} isPreviewsDisabled
              * @memberof SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction
              * @instance
              */
-            PrivacySettingDisableLinkPreviewsAction.prototype.isPreviewsDisabled = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * PrivacySettingDisableLinkPreviewsAction _isPreviewsDisabled.
-             * @member {"isPreviewsDisabled"|undefined} _isPreviewsDisabled
-             * @memberof SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction
-             * @instance
-             */
-            Object.defineProperty(PrivacySettingDisableLinkPreviewsAction.prototype, "_isPreviewsDisabled", {
-                get: $util.oneOfGetter($oneOfFields = ["isPreviewsDisabled"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            PrivacySettingDisableLinkPreviewsAction.prototype.isPreviewsDisabled = false;
 
             /**
              * Creates a new PrivacySettingDisableLinkPreviewsAction instance using the specified properties.
@@ -15487,16 +14116,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PrivacySettingDisableLinkPreviewsAction.decode = function decode(reader, length) {
+            PrivacySettingDisableLinkPreviewsAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.isPreviewsDisabled = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.isPreviewsDisabled = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -15532,12 +14164,9 @@ $root.SyncAction = (function() {
             PrivacySettingDisableLinkPreviewsAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.isPreviewsDisabled != null && message.hasOwnProperty("isPreviewsDisabled")) {
-                    properties._isPreviewsDisabled = 1;
+                if (message.isPreviewsDisabled != null && message.hasOwnProperty("isPreviewsDisabled"))
                     if (typeof message.isPreviewsDisabled !== "boolean")
                         return "isPreviewsDisabled: boolean expected";
-                }
                 return null;
             };
 
@@ -15571,11 +14200,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.isPreviewsDisabled != null && message.hasOwnProperty("isPreviewsDisabled")) {
+                if (options.defaults)
+                    object.isPreviewsDisabled = false;
+                if (message.isPreviewsDisabled != null && message.hasOwnProperty("isPreviewsDisabled"))
                     object.isPreviewsDisabled = message.isPreviewsDisabled;
-                    if (options.oneofs)
-                        object._isPreviewsDisabled = "isPreviewsDisabled";
-                }
                 return object;
             };
 
@@ -15588,6 +14216,21 @@ $root.SyncAction = (function() {
              */
             PrivacySettingDisableLinkPreviewsAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PrivacySettingDisableLinkPreviewsAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PrivacySettingDisableLinkPreviewsAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction";
             };
 
             return PrivacySettingDisableLinkPreviewsAction;
@@ -15619,25 +14262,11 @@ $root.SyncAction = (function() {
 
             /**
              * PrivacySettingRelayAllCalls isEnabled.
-             * @member {boolean|null|undefined} isEnabled
+             * @member {boolean} isEnabled
              * @memberof SyncAction.SyncActionValue.PrivacySettingRelayAllCalls
              * @instance
              */
-            PrivacySettingRelayAllCalls.prototype.isEnabled = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * PrivacySettingRelayAllCalls _isEnabled.
-             * @member {"isEnabled"|undefined} _isEnabled
-             * @memberof SyncAction.SyncActionValue.PrivacySettingRelayAllCalls
-             * @instance
-             */
-            Object.defineProperty(PrivacySettingRelayAllCalls.prototype, "_isEnabled", {
-                get: $util.oneOfGetter($oneOfFields = ["isEnabled"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            PrivacySettingRelayAllCalls.prototype.isEnabled = false;
 
             /**
              * Creates a new PrivacySettingRelayAllCalls instance using the specified properties.
@@ -15692,16 +14321,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PrivacySettingRelayAllCalls.decode = function decode(reader, length) {
+            PrivacySettingRelayAllCalls.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PrivacySettingRelayAllCalls();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.isEnabled = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.isEnabled = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -15737,12 +14369,9 @@ $root.SyncAction = (function() {
             PrivacySettingRelayAllCalls.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.isEnabled != null && message.hasOwnProperty("isEnabled")) {
-                    properties._isEnabled = 1;
+                if (message.isEnabled != null && message.hasOwnProperty("isEnabled"))
                     if (typeof message.isEnabled !== "boolean")
                         return "isEnabled: boolean expected";
-                }
                 return null;
             };
 
@@ -15776,11 +14405,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.isEnabled != null && message.hasOwnProperty("isEnabled")) {
+                if (options.defaults)
+                    object.isEnabled = false;
+                if (message.isEnabled != null && message.hasOwnProperty("isEnabled"))
                     object.isEnabled = message.isEnabled;
-                    if (options.oneofs)
-                        object._isEnabled = "isEnabled";
-                }
                 return object;
             };
 
@@ -15793,6 +14421,21 @@ $root.SyncAction = (function() {
              */
             PrivacySettingRelayAllCalls.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PrivacySettingRelayAllCalls
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PrivacySettingRelayAllCalls
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PrivacySettingRelayAllCalls.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PrivacySettingRelayAllCalls";
             };
 
             return PrivacySettingRelayAllCalls;
@@ -15824,25 +14467,11 @@ $root.SyncAction = (function() {
 
             /**
              * PushNameSetting name.
-             * @member {string|null|undefined} name
+             * @member {string} name
              * @memberof SyncAction.SyncActionValue.PushNameSetting
              * @instance
              */
-            PushNameSetting.prototype.name = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * PushNameSetting _name.
-             * @member {"name"|undefined} _name
-             * @memberof SyncAction.SyncActionValue.PushNameSetting
-             * @instance
-             */
-            Object.defineProperty(PushNameSetting.prototype, "_name", {
-                get: $util.oneOfGetter($oneOfFields = ["name"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            PushNameSetting.prototype.name = "";
 
             /**
              * Creates a new PushNameSetting instance using the specified properties.
@@ -15897,16 +14526,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PushNameSetting.decode = function decode(reader, length) {
+            PushNameSetting.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PushNameSetting();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.name = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.name = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -15942,12 +14574,9 @@ $root.SyncAction = (function() {
             PushNameSetting.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.name != null && message.hasOwnProperty("name")) {
-                    properties._name = 1;
+                if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                }
                 return null;
             };
 
@@ -15981,11 +14610,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.name != null && message.hasOwnProperty("name")) {
+                if (options.defaults)
+                    object.name = "";
+                if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
-                    if (options.oneofs)
-                        object._name = "name";
-                }
                 return object;
             };
 
@@ -15998,6 +14626,21 @@ $root.SyncAction = (function() {
              */
             PushNameSetting.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PushNameSetting
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.PushNameSetting
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PushNameSetting.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.PushNameSetting";
             };
 
             return PushNameSetting;
@@ -16034,19 +14677,19 @@ $root.SyncAction = (function() {
 
             /**
              * QuickReplyAction shortcut.
-             * @member {string|null|undefined} shortcut
+             * @member {string} shortcut
              * @memberof SyncAction.SyncActionValue.QuickReplyAction
              * @instance
              */
-            QuickReplyAction.prototype.shortcut = null;
+            QuickReplyAction.prototype.shortcut = "";
 
             /**
              * QuickReplyAction message.
-             * @member {string|null|undefined} message
+             * @member {string} message
              * @memberof SyncAction.SyncActionValue.QuickReplyAction
              * @instance
              */
-            QuickReplyAction.prototype.message = null;
+            QuickReplyAction.prototype.message = "";
 
             /**
              * QuickReplyAction keywords.
@@ -16058,66 +14701,19 @@ $root.SyncAction = (function() {
 
             /**
              * QuickReplyAction count.
-             * @member {number|null|undefined} count
+             * @member {number} count
              * @memberof SyncAction.SyncActionValue.QuickReplyAction
              * @instance
              */
-            QuickReplyAction.prototype.count = null;
+            QuickReplyAction.prototype.count = 0;
 
             /**
              * QuickReplyAction deleted.
-             * @member {boolean|null|undefined} deleted
+             * @member {boolean} deleted
              * @memberof SyncAction.SyncActionValue.QuickReplyAction
              * @instance
              */
-            QuickReplyAction.prototype.deleted = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * QuickReplyAction _shortcut.
-             * @member {"shortcut"|undefined} _shortcut
-             * @memberof SyncAction.SyncActionValue.QuickReplyAction
-             * @instance
-             */
-            Object.defineProperty(QuickReplyAction.prototype, "_shortcut", {
-                get: $util.oneOfGetter($oneOfFields = ["shortcut"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * QuickReplyAction _message.
-             * @member {"message"|undefined} _message
-             * @memberof SyncAction.SyncActionValue.QuickReplyAction
-             * @instance
-             */
-            Object.defineProperty(QuickReplyAction.prototype, "_message", {
-                get: $util.oneOfGetter($oneOfFields = ["message"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * QuickReplyAction _count.
-             * @member {"count"|undefined} _count
-             * @memberof SyncAction.SyncActionValue.QuickReplyAction
-             * @instance
-             */
-            Object.defineProperty(QuickReplyAction.prototype, "_count", {
-                get: $util.oneOfGetter($oneOfFields = ["count"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * QuickReplyAction _deleted.
-             * @member {"deleted"|undefined} _deleted
-             * @memberof SyncAction.SyncActionValue.QuickReplyAction
-             * @instance
-             */
-            Object.defineProperty(QuickReplyAction.prototype, "_deleted", {
-                get: $util.oneOfGetter($oneOfFields = ["deleted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            QuickReplyAction.prototype.deleted = false;
 
             /**
              * Creates a new QuickReplyAction instance using the specified properties.
@@ -16181,30 +14777,37 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            QuickReplyAction.decode = function decode(reader, length) {
+            QuickReplyAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.QuickReplyAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.shortcut = reader.string();
-                        break;
-                    case 2:
-                        message.message = reader.string();
-                        break;
-                    case 3:
-                        if (!(message.keywords && message.keywords.length))
-                            message.keywords = [];
-                        message.keywords.push(reader.string());
-                        break;
-                    case 4:
-                        message.count = reader.int32();
-                        break;
-                    case 5:
-                        message.deleted = reader.bool();
-                        break;
+                    case 1: {
+                            message.shortcut = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.message = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            if (!(message.keywords && message.keywords.length))
+                                message.keywords = [];
+                            message.keywords.push(reader.string());
+                            break;
+                        }
+                    case 4: {
+                            message.count = reader.int32();
+                            break;
+                        }
+                    case 5: {
+                            message.deleted = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -16240,17 +14843,12 @@ $root.SyncAction = (function() {
             QuickReplyAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.shortcut != null && message.hasOwnProperty("shortcut")) {
-                    properties._shortcut = 1;
+                if (message.shortcut != null && message.hasOwnProperty("shortcut"))
                     if (!$util.isString(message.shortcut))
                         return "shortcut: string expected";
-                }
-                if (message.message != null && message.hasOwnProperty("message")) {
-                    properties._message = 1;
+                if (message.message != null && message.hasOwnProperty("message"))
                     if (!$util.isString(message.message))
                         return "message: string expected";
-                }
                 if (message.keywords != null && message.hasOwnProperty("keywords")) {
                     if (!Array.isArray(message.keywords))
                         return "keywords: array expected";
@@ -16258,16 +14856,12 @@ $root.SyncAction = (function() {
                         if (!$util.isString(message.keywords[i]))
                             return "keywords: string[] expected";
                 }
-                if (message.count != null && message.hasOwnProperty("count")) {
-                    properties._count = 1;
+                if (message.count != null && message.hasOwnProperty("count"))
                     if (!$util.isInteger(message.count))
                         return "count: integer expected";
-                }
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
-                    properties._deleted = 1;
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
                     if (typeof message.deleted !== "boolean")
                         return "deleted: boolean expected";
-                }
                 return null;
             };
 
@@ -16316,31 +14910,25 @@ $root.SyncAction = (function() {
                 var object = {};
                 if (options.arrays || options.defaults)
                     object.keywords = [];
-                if (message.shortcut != null && message.hasOwnProperty("shortcut")) {
+                if (options.defaults) {
+                    object.shortcut = "";
+                    object.message = "";
+                    object.count = 0;
+                    object.deleted = false;
+                }
+                if (message.shortcut != null && message.hasOwnProperty("shortcut"))
                     object.shortcut = message.shortcut;
-                    if (options.oneofs)
-                        object._shortcut = "shortcut";
-                }
-                if (message.message != null && message.hasOwnProperty("message")) {
+                if (message.message != null && message.hasOwnProperty("message"))
                     object.message = message.message;
-                    if (options.oneofs)
-                        object._message = "message";
-                }
                 if (message.keywords && message.keywords.length) {
                     object.keywords = [];
                     for (var j = 0; j < message.keywords.length; ++j)
                         object.keywords[j] = message.keywords[j];
                 }
-                if (message.count != null && message.hasOwnProperty("count")) {
+                if (message.count != null && message.hasOwnProperty("count"))
                     object.count = message.count;
-                    if (options.oneofs)
-                        object._count = "count";
-                }
-                if (message.deleted != null && message.hasOwnProperty("deleted")) {
+                if (message.deleted != null && message.hasOwnProperty("deleted"))
                     object.deleted = message.deleted;
-                    if (options.oneofs)
-                        object._deleted = "deleted";
-                }
                 return object;
             };
 
@@ -16353,6 +14941,21 @@ $root.SyncAction = (function() {
              */
             QuickReplyAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for QuickReplyAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.QuickReplyAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            QuickReplyAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.QuickReplyAction";
             };
 
             return QuickReplyAction;
@@ -16445,18 +15048,21 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RecentEmojiWeightsAction.decode = function decode(reader, length) {
+            RecentEmojiWeightsAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.RecentEmojiWeightsAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.weights && message.weights.length))
-                            message.weights = [];
-                        message.weights.push($root.SyncAction.RecentEmojiWeight.decode(reader, reader.uint32()));
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            if (!(message.weights && message.weights.length))
+                                message.weights = [];
+                            message.weights.push($root.SyncAction.RecentEmojiWeight.decode(reader, reader.uint32()));
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -16563,6 +15169,21 @@ $root.SyncAction = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for RecentEmojiWeightsAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.RecentEmojiWeightsAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            RecentEmojiWeightsAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.RecentEmojiWeightsAction";
+            };
+
             return RecentEmojiWeightsAction;
         })();
 
@@ -16592,25 +15213,11 @@ $root.SyncAction = (function() {
 
             /**
              * RemoveRecentStickerAction lastStickerSentTs.
-             * @member {number|Long|null|undefined} lastStickerSentTs
+             * @member {number|Long} lastStickerSentTs
              * @memberof SyncAction.SyncActionValue.RemoveRecentStickerAction
              * @instance
              */
-            RemoveRecentStickerAction.prototype.lastStickerSentTs = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * RemoveRecentStickerAction _lastStickerSentTs.
-             * @member {"lastStickerSentTs"|undefined} _lastStickerSentTs
-             * @memberof SyncAction.SyncActionValue.RemoveRecentStickerAction
-             * @instance
-             */
-            Object.defineProperty(RemoveRecentStickerAction.prototype, "_lastStickerSentTs", {
-                get: $util.oneOfGetter($oneOfFields = ["lastStickerSentTs"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            RemoveRecentStickerAction.prototype.lastStickerSentTs = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * Creates a new RemoveRecentStickerAction instance using the specified properties.
@@ -16665,16 +15272,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RemoveRecentStickerAction.decode = function decode(reader, length) {
+            RemoveRecentStickerAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.RemoveRecentStickerAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.lastStickerSentTs = reader.int64();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.lastStickerSentTs = reader.int64();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -16710,12 +15320,9 @@ $root.SyncAction = (function() {
             RemoveRecentStickerAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.lastStickerSentTs != null && message.hasOwnProperty("lastStickerSentTs")) {
-                    properties._lastStickerSentTs = 1;
+                if (message.lastStickerSentTs != null && message.hasOwnProperty("lastStickerSentTs"))
                     if (!$util.isInteger(message.lastStickerSentTs) && !(message.lastStickerSentTs && $util.isInteger(message.lastStickerSentTs.low) && $util.isInteger(message.lastStickerSentTs.high)))
                         return "lastStickerSentTs: integer|Long expected";
-                }
                 return null;
             };
 
@@ -16756,14 +15363,17 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.lastStickerSentTs != null && message.hasOwnProperty("lastStickerSentTs")) {
+                if (options.defaults)
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.lastStickerSentTs = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.lastStickerSentTs = options.longs === String ? "0" : 0;
+                if (message.lastStickerSentTs != null && message.hasOwnProperty("lastStickerSentTs"))
                     if (typeof message.lastStickerSentTs === "number")
                         object.lastStickerSentTs = options.longs === String ? String(message.lastStickerSentTs) : message.lastStickerSentTs;
                     else
                         object.lastStickerSentTs = options.longs === String ? $util.Long.prototype.toString.call(message.lastStickerSentTs) : options.longs === Number ? new $util.LongBits(message.lastStickerSentTs.low >>> 0, message.lastStickerSentTs.high >>> 0).toNumber() : message.lastStickerSentTs;
-                    if (options.oneofs)
-                        object._lastStickerSentTs = "lastStickerSentTs";
-                }
                 return object;
             };
 
@@ -16776,6 +15386,21 @@ $root.SyncAction = (function() {
              */
             RemoveRecentStickerAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for RemoveRecentStickerAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.RemoveRecentStickerAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            RemoveRecentStickerAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.RemoveRecentStickerAction";
             };
 
             return RemoveRecentStickerAction;
@@ -16807,25 +15432,11 @@ $root.SyncAction = (function() {
 
             /**
              * SecurityNotificationSetting showNotification.
-             * @member {boolean|null|undefined} showNotification
+             * @member {boolean} showNotification
              * @memberof SyncAction.SyncActionValue.SecurityNotificationSetting
              * @instance
              */
-            SecurityNotificationSetting.prototype.showNotification = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * SecurityNotificationSetting _showNotification.
-             * @member {"showNotification"|undefined} _showNotification
-             * @memberof SyncAction.SyncActionValue.SecurityNotificationSetting
-             * @instance
-             */
-            Object.defineProperty(SecurityNotificationSetting.prototype, "_showNotification", {
-                get: $util.oneOfGetter($oneOfFields = ["showNotification"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            SecurityNotificationSetting.prototype.showNotification = false;
 
             /**
              * Creates a new SecurityNotificationSetting instance using the specified properties.
@@ -16880,16 +15491,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SecurityNotificationSetting.decode = function decode(reader, length) {
+            SecurityNotificationSetting.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SecurityNotificationSetting();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.showNotification = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.showNotification = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -16925,12 +15539,9 @@ $root.SyncAction = (function() {
             SecurityNotificationSetting.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.showNotification != null && message.hasOwnProperty("showNotification")) {
-                    properties._showNotification = 1;
+                if (message.showNotification != null && message.hasOwnProperty("showNotification"))
                     if (typeof message.showNotification !== "boolean")
                         return "showNotification: boolean expected";
-                }
                 return null;
             };
 
@@ -16964,11 +15575,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.showNotification != null && message.hasOwnProperty("showNotification")) {
+                if (options.defaults)
+                    object.showNotification = false;
+                if (message.showNotification != null && message.hasOwnProperty("showNotification"))
                     object.showNotification = message.showNotification;
-                    if (options.oneofs)
-                        object._showNotification = "showNotification";
-                }
                 return object;
             };
 
@@ -16981,6 +15591,21 @@ $root.SyncAction = (function() {
              */
             SecurityNotificationSetting.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for SecurityNotificationSetting
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.SecurityNotificationSetting
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            SecurityNotificationSetting.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.SecurityNotificationSetting";
             };
 
             return SecurityNotificationSetting;
@@ -17012,25 +15637,11 @@ $root.SyncAction = (function() {
 
             /**
              * StarAction starred.
-             * @member {boolean|null|undefined} starred
+             * @member {boolean} starred
              * @memberof SyncAction.SyncActionValue.StarAction
              * @instance
              */
-            StarAction.prototype.starred = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * StarAction _starred.
-             * @member {"starred"|undefined} _starred
-             * @memberof SyncAction.SyncActionValue.StarAction
-             * @instance
-             */
-            Object.defineProperty(StarAction.prototype, "_starred", {
-                get: $util.oneOfGetter($oneOfFields = ["starred"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            StarAction.prototype.starred = false;
 
             /**
              * Creates a new StarAction instance using the specified properties.
@@ -17085,16 +15696,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            StarAction.decode = function decode(reader, length) {
+            StarAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.StarAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.starred = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.starred = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -17130,12 +15744,9 @@ $root.SyncAction = (function() {
             StarAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.starred != null && message.hasOwnProperty("starred")) {
-                    properties._starred = 1;
+                if (message.starred != null && message.hasOwnProperty("starred"))
                     if (typeof message.starred !== "boolean")
                         return "starred: boolean expected";
-                }
                 return null;
             };
 
@@ -17169,11 +15780,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.starred != null && message.hasOwnProperty("starred")) {
+                if (options.defaults)
+                    object.starred = false;
+                if (message.starred != null && message.hasOwnProperty("starred"))
                     object.starred = message.starred;
-                    if (options.oneofs)
-                        object._starred = "starred";
-                }
                 return object;
             };
 
@@ -17186,6 +15796,21 @@ $root.SyncAction = (function() {
              */
             StarAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for StarAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.StarAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            StarAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.StarAction";
             };
 
             return StarAction;
@@ -17217,25 +15842,11 @@ $root.SyncAction = (function() {
 
             /**
              * StatusPostOptInNotificationPreferencesAction enabled.
-             * @member {boolean|null|undefined} enabled
+             * @member {boolean} enabled
              * @memberof SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction
              * @instance
              */
-            StatusPostOptInNotificationPreferencesAction.prototype.enabled = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * StatusPostOptInNotificationPreferencesAction _enabled.
-             * @member {"enabled"|undefined} _enabled
-             * @memberof SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction
-             * @instance
-             */
-            Object.defineProperty(StatusPostOptInNotificationPreferencesAction.prototype, "_enabled", {
-                get: $util.oneOfGetter($oneOfFields = ["enabled"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            StatusPostOptInNotificationPreferencesAction.prototype.enabled = false;
 
             /**
              * Creates a new StatusPostOptInNotificationPreferencesAction instance using the specified properties.
@@ -17290,16 +15901,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            StatusPostOptInNotificationPreferencesAction.decode = function decode(reader, length) {
+            StatusPostOptInNotificationPreferencesAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.enabled = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.enabled = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -17335,12 +15949,9 @@ $root.SyncAction = (function() {
             StatusPostOptInNotificationPreferencesAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.enabled != null && message.hasOwnProperty("enabled")) {
-                    properties._enabled = 1;
+                if (message.enabled != null && message.hasOwnProperty("enabled"))
                     if (typeof message.enabled !== "boolean")
                         return "enabled: boolean expected";
-                }
                 return null;
             };
 
@@ -17374,11 +15985,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.enabled != null && message.hasOwnProperty("enabled")) {
+                if (options.defaults)
+                    object.enabled = false;
+                if (message.enabled != null && message.hasOwnProperty("enabled"))
                     object.enabled = message.enabled;
-                    if (options.oneofs)
-                        object._enabled = "enabled";
-                }
                 return object;
             };
 
@@ -17391,6 +16001,21 @@ $root.SyncAction = (function() {
              */
             StatusPostOptInNotificationPreferencesAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for StatusPostOptInNotificationPreferencesAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            StatusPostOptInNotificationPreferencesAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction";
             };
 
             return StatusPostOptInNotificationPreferencesAction;
@@ -17424,11 +16049,11 @@ $root.SyncAction = (function() {
 
             /**
              * StatusPrivacyAction mode.
-             * @member {SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode|null|undefined} mode
+             * @member {SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode} mode
              * @memberof SyncAction.SyncActionValue.StatusPrivacyAction
              * @instance
              */
-            StatusPrivacyAction.prototype.mode = null;
+            StatusPrivacyAction.prototype.mode = 0;
 
             /**
              * StatusPrivacyAction userJid.
@@ -17437,20 +16062,6 @@ $root.SyncAction = (function() {
              * @instance
              */
             StatusPrivacyAction.prototype.userJid = $util.emptyArray;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * StatusPrivacyAction _mode.
-             * @member {"mode"|undefined} _mode
-             * @memberof SyncAction.SyncActionValue.StatusPrivacyAction
-             * @instance
-             */
-            Object.defineProperty(StatusPrivacyAction.prototype, "_mode", {
-                get: $util.oneOfGetter($oneOfFields = ["mode"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * Creates a new StatusPrivacyAction instance using the specified properties.
@@ -17508,21 +16119,25 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            StatusPrivacyAction.decode = function decode(reader, length) {
+            StatusPrivacyAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.StatusPrivacyAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.mode = reader.int32();
-                        break;
-                    case 2:
-                        if (!(message.userJid && message.userJid.length))
-                            message.userJid = [];
-                        message.userJid.push(reader.string());
-                        break;
+                    case 1: {
+                            message.mode = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            if (!(message.userJid && message.userJid.length))
+                                message.userJid = [];
+                            message.userJid.push(reader.string());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -17558,9 +16173,7 @@ $root.SyncAction = (function() {
             StatusPrivacyAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.mode != null && message.hasOwnProperty("mode")) {
-                    properties._mode = 1;
+                if (message.mode != null && message.hasOwnProperty("mode"))
                     switch (message.mode) {
                     default:
                         return "mode: enum value expected";
@@ -17569,7 +16182,6 @@ $root.SyncAction = (function() {
                     case 2:
                         break;
                     }
-                }
                 if (message.userJid != null && message.hasOwnProperty("userJid")) {
                     if (!Array.isArray(message.userJid))
                         return "userJid: array expected";
@@ -17593,6 +16205,12 @@ $root.SyncAction = (function() {
                     return object;
                 var message = new $root.SyncAction.SyncActionValue.StatusPrivacyAction();
                 switch (object.mode) {
+                default:
+                    if (typeof object.mode === "number") {
+                        message.mode = object.mode;
+                        break;
+                    }
+                    break;
                 case "ALLOW_LIST":
                 case 0:
                     message.mode = 0;
@@ -17631,11 +16249,10 @@ $root.SyncAction = (function() {
                 var object = {};
                 if (options.arrays || options.defaults)
                     object.userJid = [];
-                if (message.mode != null && message.hasOwnProperty("mode")) {
-                    object.mode = options.enums === String ? $root.SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode[message.mode] : message.mode;
-                    if (options.oneofs)
-                        object._mode = "mode";
-                }
+                if (options.defaults)
+                    object.mode = options.enums === String ? "ALLOW_LIST" : 0;
+                if (message.mode != null && message.hasOwnProperty("mode"))
+                    object.mode = options.enums === String ? $root.SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode[message.mode] === undefined ? message.mode : $root.SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode[message.mode] : message.mode;
                 if (message.userJid && message.userJid.length) {
                     object.userJid = [];
                     for (var j = 0; j < message.userJid.length; ++j)
@@ -17653,6 +16270,21 @@ $root.SyncAction = (function() {
              */
             StatusPrivacyAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for StatusPrivacyAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.StatusPrivacyAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            StatusPrivacyAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.StatusPrivacyAction";
             };
 
             /**
@@ -17712,253 +16344,107 @@ $root.SyncAction = (function() {
 
             /**
              * StickerAction url.
-             * @member {string|null|undefined} url
+             * @member {string} url
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.url = null;
+            StickerAction.prototype.url = "";
 
             /**
              * StickerAction fileEncSha256.
-             * @member {Uint8Array|null|undefined} fileEncSha256
+             * @member {Uint8Array} fileEncSha256
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.fileEncSha256 = null;
+            StickerAction.prototype.fileEncSha256 = $util.newBuffer([]);
 
             /**
              * StickerAction mediaKey.
-             * @member {Uint8Array|null|undefined} mediaKey
+             * @member {Uint8Array} mediaKey
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.mediaKey = null;
+            StickerAction.prototype.mediaKey = $util.newBuffer([]);
 
             /**
              * StickerAction mimetype.
-             * @member {string|null|undefined} mimetype
+             * @member {string} mimetype
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.mimetype = null;
+            StickerAction.prototype.mimetype = "";
 
             /**
              * StickerAction height.
-             * @member {number|null|undefined} height
+             * @member {number} height
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.height = null;
+            StickerAction.prototype.height = 0;
 
             /**
              * StickerAction width.
-             * @member {number|null|undefined} width
+             * @member {number} width
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.width = null;
+            StickerAction.prototype.width = 0;
 
             /**
              * StickerAction directPath.
-             * @member {string|null|undefined} directPath
+             * @member {string} directPath
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.directPath = null;
+            StickerAction.prototype.directPath = "";
 
             /**
              * StickerAction fileLength.
-             * @member {number|Long|null|undefined} fileLength
+             * @member {number|Long} fileLength
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.fileLength = null;
+            StickerAction.prototype.fileLength = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
 
             /**
              * StickerAction isFavorite.
-             * @member {boolean|null|undefined} isFavorite
+             * @member {boolean} isFavorite
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.isFavorite = null;
+            StickerAction.prototype.isFavorite = false;
 
             /**
              * StickerAction deviceIdHint.
-             * @member {number|null|undefined} deviceIdHint
+             * @member {number} deviceIdHint
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.deviceIdHint = null;
+            StickerAction.prototype.deviceIdHint = 0;
 
             /**
              * StickerAction isLottie.
-             * @member {boolean|null|undefined} isLottie
+             * @member {boolean} isLottie
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.isLottie = null;
+            StickerAction.prototype.isLottie = false;
 
             /**
              * StickerAction imageHash.
-             * @member {string|null|undefined} imageHash
+             * @member {string} imageHash
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.imageHash = null;
+            StickerAction.prototype.imageHash = "";
 
             /**
              * StickerAction isAvatarSticker.
-             * @member {boolean|null|undefined} isAvatarSticker
+             * @member {boolean} isAvatarSticker
              * @memberof SyncAction.SyncActionValue.StickerAction
              * @instance
              */
-            StickerAction.prototype.isAvatarSticker = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * StickerAction _url.
-             * @member {"url"|undefined} _url
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_url", {
-                get: $util.oneOfGetter($oneOfFields = ["url"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _fileEncSha256.
-             * @member {"fileEncSha256"|undefined} _fileEncSha256
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_fileEncSha256", {
-                get: $util.oneOfGetter($oneOfFields = ["fileEncSha256"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _mediaKey.
-             * @member {"mediaKey"|undefined} _mediaKey
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_mediaKey", {
-                get: $util.oneOfGetter($oneOfFields = ["mediaKey"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _mimetype.
-             * @member {"mimetype"|undefined} _mimetype
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_mimetype", {
-                get: $util.oneOfGetter($oneOfFields = ["mimetype"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _height.
-             * @member {"height"|undefined} _height
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_height", {
-                get: $util.oneOfGetter($oneOfFields = ["height"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _width.
-             * @member {"width"|undefined} _width
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_width", {
-                get: $util.oneOfGetter($oneOfFields = ["width"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _directPath.
-             * @member {"directPath"|undefined} _directPath
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_directPath", {
-                get: $util.oneOfGetter($oneOfFields = ["directPath"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _fileLength.
-             * @member {"fileLength"|undefined} _fileLength
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_fileLength", {
-                get: $util.oneOfGetter($oneOfFields = ["fileLength"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _isFavorite.
-             * @member {"isFavorite"|undefined} _isFavorite
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_isFavorite", {
-                get: $util.oneOfGetter($oneOfFields = ["isFavorite"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _deviceIdHint.
-             * @member {"deviceIdHint"|undefined} _deviceIdHint
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_deviceIdHint", {
-                get: $util.oneOfGetter($oneOfFields = ["deviceIdHint"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _isLottie.
-             * @member {"isLottie"|undefined} _isLottie
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_isLottie", {
-                get: $util.oneOfGetter($oneOfFields = ["isLottie"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _imageHash.
-             * @member {"imageHash"|undefined} _imageHash
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_imageHash", {
-                get: $util.oneOfGetter($oneOfFields = ["imageHash"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StickerAction _isAvatarSticker.
-             * @member {"isAvatarSticker"|undefined} _isAvatarSticker
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
-            Object.defineProperty(StickerAction.prototype, "_isAvatarSticker", {
-                get: $util.oneOfGetter($oneOfFields = ["isAvatarSticker"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            StickerAction.prototype.isAvatarSticker = false;
 
             /**
              * Creates a new StickerAction instance using the specified properties.
@@ -18037,52 +16523,67 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            StickerAction.decode = function decode(reader, length) {
+            StickerAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.StickerAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.url = reader.string();
-                        break;
-                    case 2:
-                        message.fileEncSha256 = reader.bytes();
-                        break;
-                    case 3:
-                        message.mediaKey = reader.bytes();
-                        break;
-                    case 4:
-                        message.mimetype = reader.string();
-                        break;
-                    case 5:
-                        message.height = reader.uint32();
-                        break;
-                    case 6:
-                        message.width = reader.uint32();
-                        break;
-                    case 7:
-                        message.directPath = reader.string();
-                        break;
-                    case 8:
-                        message.fileLength = reader.uint64();
-                        break;
-                    case 9:
-                        message.isFavorite = reader.bool();
-                        break;
-                    case 10:
-                        message.deviceIdHint = reader.uint32();
-                        break;
-                    case 11:
-                        message.isLottie = reader.bool();
-                        break;
-                    case 12:
-                        message.imageHash = reader.string();
-                        break;
-                    case 13:
-                        message.isAvatarSticker = reader.bool();
-                        break;
+                    case 1: {
+                            message.url = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.fileEncSha256 = reader.bytes();
+                            break;
+                        }
+                    case 3: {
+                            message.mediaKey = reader.bytes();
+                            break;
+                        }
+                    case 4: {
+                            message.mimetype = reader.string();
+                            break;
+                        }
+                    case 5: {
+                            message.height = reader.uint32();
+                            break;
+                        }
+                    case 6: {
+                            message.width = reader.uint32();
+                            break;
+                        }
+                    case 7: {
+                            message.directPath = reader.string();
+                            break;
+                        }
+                    case 8: {
+                            message.fileLength = reader.uint64();
+                            break;
+                        }
+                    case 9: {
+                            message.isFavorite = reader.bool();
+                            break;
+                        }
+                    case 10: {
+                            message.deviceIdHint = reader.uint32();
+                            break;
+                        }
+                    case 11: {
+                            message.isLottie = reader.bool();
+                            break;
+                        }
+                    case 12: {
+                            message.imageHash = reader.string();
+                            break;
+                        }
+                    case 13: {
+                            message.isAvatarSticker = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -18118,72 +16619,45 @@ $root.SyncAction = (function() {
             StickerAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.url != null && message.hasOwnProperty("url")) {
-                    properties._url = 1;
+                if (message.url != null && message.hasOwnProperty("url"))
                     if (!$util.isString(message.url))
                         return "url: string expected";
-                }
-                if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256")) {
-                    properties._fileEncSha256 = 1;
+                if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
                     if (!(message.fileEncSha256 && typeof message.fileEncSha256.length === "number" || $util.isString(message.fileEncSha256)))
                         return "fileEncSha256: buffer expected";
-                }
-                if (message.mediaKey != null && message.hasOwnProperty("mediaKey")) {
-                    properties._mediaKey = 1;
+                if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
                     if (!(message.mediaKey && typeof message.mediaKey.length === "number" || $util.isString(message.mediaKey)))
                         return "mediaKey: buffer expected";
-                }
-                if (message.mimetype != null && message.hasOwnProperty("mimetype")) {
-                    properties._mimetype = 1;
+                if (message.mimetype != null && message.hasOwnProperty("mimetype"))
                     if (!$util.isString(message.mimetype))
                         return "mimetype: string expected";
-                }
-                if (message.height != null && message.hasOwnProperty("height")) {
-                    properties._height = 1;
+                if (message.height != null && message.hasOwnProperty("height"))
                     if (!$util.isInteger(message.height))
                         return "height: integer expected";
-                }
-                if (message.width != null && message.hasOwnProperty("width")) {
-                    properties._width = 1;
+                if (message.width != null && message.hasOwnProperty("width"))
                     if (!$util.isInteger(message.width))
                         return "width: integer expected";
-                }
-                if (message.directPath != null && message.hasOwnProperty("directPath")) {
-                    properties._directPath = 1;
+                if (message.directPath != null && message.hasOwnProperty("directPath"))
                     if (!$util.isString(message.directPath))
                         return "directPath: string expected";
-                }
-                if (message.fileLength != null && message.hasOwnProperty("fileLength")) {
-                    properties._fileLength = 1;
+                if (message.fileLength != null && message.hasOwnProperty("fileLength"))
                     if (!$util.isInteger(message.fileLength) && !(message.fileLength && $util.isInteger(message.fileLength.low) && $util.isInteger(message.fileLength.high)))
                         return "fileLength: integer|Long expected";
-                }
-                if (message.isFavorite != null && message.hasOwnProperty("isFavorite")) {
-                    properties._isFavorite = 1;
+                if (message.isFavorite != null && message.hasOwnProperty("isFavorite"))
                     if (typeof message.isFavorite !== "boolean")
                         return "isFavorite: boolean expected";
-                }
-                if (message.deviceIdHint != null && message.hasOwnProperty("deviceIdHint")) {
-                    properties._deviceIdHint = 1;
+                if (message.deviceIdHint != null && message.hasOwnProperty("deviceIdHint"))
                     if (!$util.isInteger(message.deviceIdHint))
                         return "deviceIdHint: integer expected";
-                }
-                if (message.isLottie != null && message.hasOwnProperty("isLottie")) {
-                    properties._isLottie = 1;
+                if (message.isLottie != null && message.hasOwnProperty("isLottie"))
                     if (typeof message.isLottie !== "boolean")
                         return "isLottie: boolean expected";
-                }
-                if (message.imageHash != null && message.hasOwnProperty("imageHash")) {
-                    properties._imageHash = 1;
+                if (message.imageHash != null && message.hasOwnProperty("imageHash"))
                     if (!$util.isString(message.imageHash))
                         return "imageHash: string expected";
-                }
-                if (message.isAvatarSticker != null && message.hasOwnProperty("isAvatarSticker")) {
-                    properties._isAvatarSticker = 1;
+                if (message.isAvatarSticker != null && message.hasOwnProperty("isAvatarSticker"))
                     if (typeof message.isAvatarSticker !== "boolean")
                         return "isAvatarSticker: boolean expected";
-                }
                 return null;
             };
 
@@ -18204,12 +16678,12 @@ $root.SyncAction = (function() {
                 if (object.fileEncSha256 != null)
                     if (typeof object.fileEncSha256 === "string")
                         $util.base64.decode(object.fileEncSha256, message.fileEncSha256 = $util.newBuffer($util.base64.length(object.fileEncSha256)), 0);
-                    else if (object.fileEncSha256.length)
+                    else if (object.fileEncSha256.length >= 0)
                         message.fileEncSha256 = object.fileEncSha256;
                 if (object.mediaKey != null)
                     if (typeof object.mediaKey === "string")
                         $util.base64.decode(object.mediaKey, message.mediaKey = $util.newBuffer($util.base64.length(object.mediaKey)), 0);
-                    else if (object.mediaKey.length)
+                    else if (object.mediaKey.length >= 0)
                         message.mediaKey = object.mediaKey;
                 if (object.mimetype != null)
                     message.mimetype = String(object.mimetype);
@@ -18254,74 +16728,66 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.url != null && message.hasOwnProperty("url")) {
+                if (options.defaults) {
+                    object.url = "";
+                    if (options.bytes === String)
+                        object.fileEncSha256 = "";
+                    else {
+                        object.fileEncSha256 = [];
+                        if (options.bytes !== Array)
+                            object.fileEncSha256 = $util.newBuffer(object.fileEncSha256);
+                    }
+                    if (options.bytes === String)
+                        object.mediaKey = "";
+                    else {
+                        object.mediaKey = [];
+                        if (options.bytes !== Array)
+                            object.mediaKey = $util.newBuffer(object.mediaKey);
+                    }
+                    object.mimetype = "";
+                    object.height = 0;
+                    object.width = 0;
+                    object.directPath = "";
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, true);
+                        object.fileLength = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.fileLength = options.longs === String ? "0" : 0;
+                    object.isFavorite = false;
+                    object.deviceIdHint = 0;
+                    object.isLottie = false;
+                    object.imageHash = "";
+                    object.isAvatarSticker = false;
+                }
+                if (message.url != null && message.hasOwnProperty("url"))
                     object.url = message.url;
-                    if (options.oneofs)
-                        object._url = "url";
-                }
-                if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256")) {
+                if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
                     object.fileEncSha256 = options.bytes === String ? $util.base64.encode(message.fileEncSha256, 0, message.fileEncSha256.length) : options.bytes === Array ? Array.prototype.slice.call(message.fileEncSha256) : message.fileEncSha256;
-                    if (options.oneofs)
-                        object._fileEncSha256 = "fileEncSha256";
-                }
-                if (message.mediaKey != null && message.hasOwnProperty("mediaKey")) {
+                if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
                     object.mediaKey = options.bytes === String ? $util.base64.encode(message.mediaKey, 0, message.mediaKey.length) : options.bytes === Array ? Array.prototype.slice.call(message.mediaKey) : message.mediaKey;
-                    if (options.oneofs)
-                        object._mediaKey = "mediaKey";
-                }
-                if (message.mimetype != null && message.hasOwnProperty("mimetype")) {
+                if (message.mimetype != null && message.hasOwnProperty("mimetype"))
                     object.mimetype = message.mimetype;
-                    if (options.oneofs)
-                        object._mimetype = "mimetype";
-                }
-                if (message.height != null && message.hasOwnProperty("height")) {
+                if (message.height != null && message.hasOwnProperty("height"))
                     object.height = message.height;
-                    if (options.oneofs)
-                        object._height = "height";
-                }
-                if (message.width != null && message.hasOwnProperty("width")) {
+                if (message.width != null && message.hasOwnProperty("width"))
                     object.width = message.width;
-                    if (options.oneofs)
-                        object._width = "width";
-                }
-                if (message.directPath != null && message.hasOwnProperty("directPath")) {
+                if (message.directPath != null && message.hasOwnProperty("directPath"))
                     object.directPath = message.directPath;
-                    if (options.oneofs)
-                        object._directPath = "directPath";
-                }
-                if (message.fileLength != null && message.hasOwnProperty("fileLength")) {
+                if (message.fileLength != null && message.hasOwnProperty("fileLength"))
                     if (typeof message.fileLength === "number")
                         object.fileLength = options.longs === String ? String(message.fileLength) : message.fileLength;
                     else
                         object.fileLength = options.longs === String ? $util.Long.prototype.toString.call(message.fileLength) : options.longs === Number ? new $util.LongBits(message.fileLength.low >>> 0, message.fileLength.high >>> 0).toNumber(true) : message.fileLength;
-                    if (options.oneofs)
-                        object._fileLength = "fileLength";
-                }
-                if (message.isFavorite != null && message.hasOwnProperty("isFavorite")) {
+                if (message.isFavorite != null && message.hasOwnProperty("isFavorite"))
                     object.isFavorite = message.isFavorite;
-                    if (options.oneofs)
-                        object._isFavorite = "isFavorite";
-                }
-                if (message.deviceIdHint != null && message.hasOwnProperty("deviceIdHint")) {
+                if (message.deviceIdHint != null && message.hasOwnProperty("deviceIdHint"))
                     object.deviceIdHint = message.deviceIdHint;
-                    if (options.oneofs)
-                        object._deviceIdHint = "deviceIdHint";
-                }
-                if (message.isLottie != null && message.hasOwnProperty("isLottie")) {
+                if (message.isLottie != null && message.hasOwnProperty("isLottie"))
                     object.isLottie = message.isLottie;
-                    if (options.oneofs)
-                        object._isLottie = "isLottie";
-                }
-                if (message.imageHash != null && message.hasOwnProperty("imageHash")) {
+                if (message.imageHash != null && message.hasOwnProperty("imageHash"))
                     object.imageHash = message.imageHash;
-                    if (options.oneofs)
-                        object._imageHash = "imageHash";
-                }
-                if (message.isAvatarSticker != null && message.hasOwnProperty("isAvatarSticker")) {
+                if (message.isAvatarSticker != null && message.hasOwnProperty("isAvatarSticker"))
                     object.isAvatarSticker = message.isAvatarSticker;
-                    if (options.oneofs)
-                        object._isAvatarSticker = "isAvatarSticker";
-                }
                 return object;
             };
 
@@ -18334,6 +16800,21 @@ $root.SyncAction = (function() {
              */
             StickerAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for StickerAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            StickerAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.StickerAction";
             };
 
             return StickerAction;
@@ -18367,63 +16848,27 @@ $root.SyncAction = (function() {
 
             /**
              * SubscriptionAction isDeactivated.
-             * @member {boolean|null|undefined} isDeactivated
+             * @member {boolean} isDeactivated
              * @memberof SyncAction.SyncActionValue.SubscriptionAction
              * @instance
              */
-            SubscriptionAction.prototype.isDeactivated = null;
+            SubscriptionAction.prototype.isDeactivated = false;
 
             /**
              * SubscriptionAction isAutoRenewing.
-             * @member {boolean|null|undefined} isAutoRenewing
+             * @member {boolean} isAutoRenewing
              * @memberof SyncAction.SyncActionValue.SubscriptionAction
              * @instance
              */
-            SubscriptionAction.prototype.isAutoRenewing = null;
+            SubscriptionAction.prototype.isAutoRenewing = false;
 
             /**
              * SubscriptionAction expirationDate.
-             * @member {number|Long|null|undefined} expirationDate
+             * @member {number|Long} expirationDate
              * @memberof SyncAction.SyncActionValue.SubscriptionAction
              * @instance
              */
-            SubscriptionAction.prototype.expirationDate = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * SubscriptionAction _isDeactivated.
-             * @member {"isDeactivated"|undefined} _isDeactivated
-             * @memberof SyncAction.SyncActionValue.SubscriptionAction
-             * @instance
-             */
-            Object.defineProperty(SubscriptionAction.prototype, "_isDeactivated", {
-                get: $util.oneOfGetter($oneOfFields = ["isDeactivated"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * SubscriptionAction _isAutoRenewing.
-             * @member {"isAutoRenewing"|undefined} _isAutoRenewing
-             * @memberof SyncAction.SyncActionValue.SubscriptionAction
-             * @instance
-             */
-            Object.defineProperty(SubscriptionAction.prototype, "_isAutoRenewing", {
-                get: $util.oneOfGetter($oneOfFields = ["isAutoRenewing"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * SubscriptionAction _expirationDate.
-             * @member {"expirationDate"|undefined} _expirationDate
-             * @memberof SyncAction.SyncActionValue.SubscriptionAction
-             * @instance
-             */
-            Object.defineProperty(SubscriptionAction.prototype, "_expirationDate", {
-                get: $util.oneOfGetter($oneOfFields = ["expirationDate"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            SubscriptionAction.prototype.expirationDate = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * Creates a new SubscriptionAction instance using the specified properties.
@@ -18482,22 +16927,27 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SubscriptionAction.decode = function decode(reader, length) {
+            SubscriptionAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SubscriptionAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.isDeactivated = reader.bool();
-                        break;
-                    case 2:
-                        message.isAutoRenewing = reader.bool();
-                        break;
-                    case 3:
-                        message.expirationDate = reader.int64();
-                        break;
+                    case 1: {
+                            message.isDeactivated = reader.bool();
+                            break;
+                        }
+                    case 2: {
+                            message.isAutoRenewing = reader.bool();
+                            break;
+                        }
+                    case 3: {
+                            message.expirationDate = reader.int64();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -18533,22 +16983,15 @@ $root.SyncAction = (function() {
             SubscriptionAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.isDeactivated != null && message.hasOwnProperty("isDeactivated")) {
-                    properties._isDeactivated = 1;
+                if (message.isDeactivated != null && message.hasOwnProperty("isDeactivated"))
                     if (typeof message.isDeactivated !== "boolean")
                         return "isDeactivated: boolean expected";
-                }
-                if (message.isAutoRenewing != null && message.hasOwnProperty("isAutoRenewing")) {
-                    properties._isAutoRenewing = 1;
+                if (message.isAutoRenewing != null && message.hasOwnProperty("isAutoRenewing"))
                     if (typeof message.isAutoRenewing !== "boolean")
                         return "isAutoRenewing: boolean expected";
-                }
-                if (message.expirationDate != null && message.hasOwnProperty("expirationDate")) {
-                    properties._expirationDate = 1;
+                if (message.expirationDate != null && message.hasOwnProperty("expirationDate"))
                     if (!$util.isInteger(message.expirationDate) && !(message.expirationDate && $util.isInteger(message.expirationDate.low) && $util.isInteger(message.expirationDate.high)))
                         return "expirationDate: integer|Long expected";
-                }
                 return null;
             };
 
@@ -18593,24 +17036,24 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.isDeactivated != null && message.hasOwnProperty("isDeactivated")) {
+                if (options.defaults) {
+                    object.isDeactivated = false;
+                    object.isAutoRenewing = false;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.expirationDate = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.expirationDate = options.longs === String ? "0" : 0;
+                }
+                if (message.isDeactivated != null && message.hasOwnProperty("isDeactivated"))
                     object.isDeactivated = message.isDeactivated;
-                    if (options.oneofs)
-                        object._isDeactivated = "isDeactivated";
-                }
-                if (message.isAutoRenewing != null && message.hasOwnProperty("isAutoRenewing")) {
+                if (message.isAutoRenewing != null && message.hasOwnProperty("isAutoRenewing"))
                     object.isAutoRenewing = message.isAutoRenewing;
-                    if (options.oneofs)
-                        object._isAutoRenewing = "isAutoRenewing";
-                }
-                if (message.expirationDate != null && message.hasOwnProperty("expirationDate")) {
+                if (message.expirationDate != null && message.hasOwnProperty("expirationDate"))
                     if (typeof message.expirationDate === "number")
                         object.expirationDate = options.longs === String ? String(message.expirationDate) : message.expirationDate;
                     else
                         object.expirationDate = options.longs === String ? $util.Long.prototype.toString.call(message.expirationDate) : options.longs === Number ? new $util.LongBits(message.expirationDate.low >>> 0, message.expirationDate.high >>> 0).toNumber() : message.expirationDate;
-                    if (options.oneofs)
-                        object._expirationDate = "expirationDate";
-                }
                 return object;
             };
 
@@ -18623,6 +17066,21 @@ $root.SyncAction = (function() {
              */
             SubscriptionAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for SubscriptionAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.SubscriptionAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            SubscriptionAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.SubscriptionAction";
             };
 
             return SubscriptionAction;
@@ -18663,36 +17121,11 @@ $root.SyncAction = (function() {
 
             /**
              * SyncActionMessage timestamp.
-             * @member {number|Long|null|undefined} timestamp
+             * @member {number|Long} timestamp
              * @memberof SyncAction.SyncActionValue.SyncActionMessage
              * @instance
              */
-            SyncActionMessage.prototype.timestamp = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * SyncActionMessage _key.
-             * @member {"key"|undefined} _key
-             * @memberof SyncAction.SyncActionValue.SyncActionMessage
-             * @instance
-             */
-            Object.defineProperty(SyncActionMessage.prototype, "_key", {
-                get: $util.oneOfGetter($oneOfFields = ["key"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * SyncActionMessage _timestamp.
-             * @member {"timestamp"|undefined} _timestamp
-             * @memberof SyncAction.SyncActionValue.SyncActionMessage
-             * @instance
-             */
-            Object.defineProperty(SyncActionMessage.prototype, "_timestamp", {
-                get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            SyncActionMessage.prototype.timestamp = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * Creates a new SyncActionMessage instance using the specified properties.
@@ -18749,19 +17182,23 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SyncActionMessage.decode = function decode(reader, length) {
+            SyncActionMessage.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SyncActionMessage();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.key = $root.Protocol.MessageKey.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.timestamp = reader.int64();
-                        break;
+                    case 1: {
+                            message.key = $root.Protocol.MessageKey.decode(reader, reader.uint32());
+                            break;
+                        }
+                    case 2: {
+                            message.timestamp = reader.int64();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -18797,20 +17234,14 @@ $root.SyncAction = (function() {
             SyncActionMessage.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
                 if (message.key != null && message.hasOwnProperty("key")) {
-                    properties._key = 1;
-                    {
-                        var error = $root.Protocol.MessageKey.verify(message.key);
-                        if (error)
-                            return "key." + error;
-                    }
+                    var error = $root.Protocol.MessageKey.verify(message.key);
+                    if (error)
+                        return "key." + error;
                 }
-                if (message.timestamp != null && message.hasOwnProperty("timestamp")) {
-                    properties._timestamp = 1;
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
                     if (!$util.isInteger(message.timestamp) && !(message.timestamp && $util.isInteger(message.timestamp.low) && $util.isInteger(message.timestamp.high)))
                         return "timestamp: integer|Long expected";
-                }
                 return null;
             };
 
@@ -18856,19 +17287,21 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.key != null && message.hasOwnProperty("key")) {
-                    object.key = $root.Protocol.MessageKey.toObject(message.key, options);
-                    if (options.oneofs)
-                        object._key = "key";
+                if (options.defaults) {
+                    object.key = null;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.timestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.timestamp = options.longs === String ? "0" : 0;
                 }
-                if (message.timestamp != null && message.hasOwnProperty("timestamp")) {
+                if (message.key != null && message.hasOwnProperty("key"))
+                    object.key = $root.Protocol.MessageKey.toObject(message.key, options);
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
                     if (typeof message.timestamp === "number")
                         object.timestamp = options.longs === String ? String(message.timestamp) : message.timestamp;
                     else
                         object.timestamp = options.longs === String ? $util.Long.prototype.toString.call(message.timestamp) : options.longs === Number ? new $util.LongBits(message.timestamp.low >>> 0, message.timestamp.high >>> 0).toNumber() : message.timestamp;
-                    if (options.oneofs)
-                        object._timestamp = "timestamp";
-                }
                 return object;
             };
 
@@ -18881,6 +17314,21 @@ $root.SyncAction = (function() {
              */
             SyncActionMessage.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for SyncActionMessage
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.SyncActionMessage
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            SyncActionMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.SyncActionMessage";
             };
 
             return SyncActionMessage;
@@ -18915,19 +17363,19 @@ $root.SyncAction = (function() {
 
             /**
              * SyncActionMessageRange lastMessageTimestamp.
-             * @member {number|Long|null|undefined} lastMessageTimestamp
+             * @member {number|Long} lastMessageTimestamp
              * @memberof SyncAction.SyncActionValue.SyncActionMessageRange
              * @instance
              */
-            SyncActionMessageRange.prototype.lastMessageTimestamp = null;
+            SyncActionMessageRange.prototype.lastMessageTimestamp = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * SyncActionMessageRange lastSystemMessageTimestamp.
-             * @member {number|Long|null|undefined} lastSystemMessageTimestamp
+             * @member {number|Long} lastSystemMessageTimestamp
              * @memberof SyncAction.SyncActionValue.SyncActionMessageRange
              * @instance
              */
-            SyncActionMessageRange.prototype.lastSystemMessageTimestamp = null;
+            SyncActionMessageRange.prototype.lastSystemMessageTimestamp = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * SyncActionMessageRange messages.
@@ -18936,31 +17384,6 @@ $root.SyncAction = (function() {
              * @instance
              */
             SyncActionMessageRange.prototype.messages = $util.emptyArray;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * SyncActionMessageRange _lastMessageTimestamp.
-             * @member {"lastMessageTimestamp"|undefined} _lastMessageTimestamp
-             * @memberof SyncAction.SyncActionValue.SyncActionMessageRange
-             * @instance
-             */
-            Object.defineProperty(SyncActionMessageRange.prototype, "_lastMessageTimestamp", {
-                get: $util.oneOfGetter($oneOfFields = ["lastMessageTimestamp"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * SyncActionMessageRange _lastSystemMessageTimestamp.
-             * @member {"lastSystemMessageTimestamp"|undefined} _lastSystemMessageTimestamp
-             * @memberof SyncAction.SyncActionValue.SyncActionMessageRange
-             * @instance
-             */
-            Object.defineProperty(SyncActionMessageRange.prototype, "_lastSystemMessageTimestamp", {
-                get: $util.oneOfGetter($oneOfFields = ["lastSystemMessageTimestamp"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * Creates a new SyncActionMessageRange instance using the specified properties.
@@ -19020,24 +17443,29 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SyncActionMessageRange.decode = function decode(reader, length) {
+            SyncActionMessageRange.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SyncActionMessageRange();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.lastMessageTimestamp = reader.int64();
-                        break;
-                    case 2:
-                        message.lastSystemMessageTimestamp = reader.int64();
-                        break;
-                    case 3:
-                        if (!(message.messages && message.messages.length))
-                            message.messages = [];
-                        message.messages.push($root.SyncAction.SyncActionValue.SyncActionMessage.decode(reader, reader.uint32()));
-                        break;
+                    case 1: {
+                            message.lastMessageTimestamp = reader.int64();
+                            break;
+                        }
+                    case 2: {
+                            message.lastSystemMessageTimestamp = reader.int64();
+                            break;
+                        }
+                    case 3: {
+                            if (!(message.messages && message.messages.length))
+                                message.messages = [];
+                            message.messages.push($root.SyncAction.SyncActionValue.SyncActionMessage.decode(reader, reader.uint32()));
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -19073,17 +17501,12 @@ $root.SyncAction = (function() {
             SyncActionMessageRange.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.lastMessageTimestamp != null && message.hasOwnProperty("lastMessageTimestamp")) {
-                    properties._lastMessageTimestamp = 1;
+                if (message.lastMessageTimestamp != null && message.hasOwnProperty("lastMessageTimestamp"))
                     if (!$util.isInteger(message.lastMessageTimestamp) && !(message.lastMessageTimestamp && $util.isInteger(message.lastMessageTimestamp.low) && $util.isInteger(message.lastMessageTimestamp.high)))
                         return "lastMessageTimestamp: integer|Long expected";
-                }
-                if (message.lastSystemMessageTimestamp != null && message.hasOwnProperty("lastSystemMessageTimestamp")) {
-                    properties._lastSystemMessageTimestamp = 1;
+                if (message.lastSystemMessageTimestamp != null && message.hasOwnProperty("lastSystemMessageTimestamp"))
                     if (!$util.isInteger(message.lastSystemMessageTimestamp) && !(message.lastSystemMessageTimestamp && $util.isInteger(message.lastSystemMessageTimestamp.low) && $util.isInteger(message.lastSystemMessageTimestamp.high)))
                         return "lastSystemMessageTimestamp: integer|Long expected";
-                }
                 if (message.messages != null && message.hasOwnProperty("messages")) {
                     if (!Array.isArray(message.messages))
                         return "messages: array expected";
@@ -19154,22 +17577,28 @@ $root.SyncAction = (function() {
                 var object = {};
                 if (options.arrays || options.defaults)
                     object.messages = [];
-                if (message.lastMessageTimestamp != null && message.hasOwnProperty("lastMessageTimestamp")) {
+                if (options.defaults) {
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.lastMessageTimestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.lastMessageTimestamp = options.longs === String ? "0" : 0;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.lastSystemMessageTimestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.lastSystemMessageTimestamp = options.longs === String ? "0" : 0;
+                }
+                if (message.lastMessageTimestamp != null && message.hasOwnProperty("lastMessageTimestamp"))
                     if (typeof message.lastMessageTimestamp === "number")
                         object.lastMessageTimestamp = options.longs === String ? String(message.lastMessageTimestamp) : message.lastMessageTimestamp;
                     else
                         object.lastMessageTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.lastMessageTimestamp) : options.longs === Number ? new $util.LongBits(message.lastMessageTimestamp.low >>> 0, message.lastMessageTimestamp.high >>> 0).toNumber() : message.lastMessageTimestamp;
-                    if (options.oneofs)
-                        object._lastMessageTimestamp = "lastMessageTimestamp";
-                }
-                if (message.lastSystemMessageTimestamp != null && message.hasOwnProperty("lastSystemMessageTimestamp")) {
+                if (message.lastSystemMessageTimestamp != null && message.hasOwnProperty("lastSystemMessageTimestamp"))
                     if (typeof message.lastSystemMessageTimestamp === "number")
                         object.lastSystemMessageTimestamp = options.longs === String ? String(message.lastSystemMessageTimestamp) : message.lastSystemMessageTimestamp;
                     else
                         object.lastSystemMessageTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.lastSystemMessageTimestamp) : options.longs === Number ? new $util.LongBits(message.lastSystemMessageTimestamp.low >>> 0, message.lastSystemMessageTimestamp.high >>> 0).toNumber() : message.lastSystemMessageTimestamp;
-                    if (options.oneofs)
-                        object._lastSystemMessageTimestamp = "lastSystemMessageTimestamp";
-                }
                 if (message.messages && message.messages.length) {
                     object.messages = [];
                     for (var j = 0; j < message.messages.length; ++j)
@@ -19187,6 +17616,21 @@ $root.SyncAction = (function() {
              */
             SyncActionMessageRange.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for SyncActionMessageRange
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.SyncActionMessageRange
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            SyncActionMessageRange.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.SyncActionMessageRange";
             };
 
             return SyncActionMessageRange;
@@ -19218,25 +17662,11 @@ $root.SyncAction = (function() {
 
             /**
              * TimeFormatAction isTwentyFourHourFormatEnabled.
-             * @member {boolean|null|undefined} isTwentyFourHourFormatEnabled
+             * @member {boolean} isTwentyFourHourFormatEnabled
              * @memberof SyncAction.SyncActionValue.TimeFormatAction
              * @instance
              */
-            TimeFormatAction.prototype.isTwentyFourHourFormatEnabled = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * TimeFormatAction _isTwentyFourHourFormatEnabled.
-             * @member {"isTwentyFourHourFormatEnabled"|undefined} _isTwentyFourHourFormatEnabled
-             * @memberof SyncAction.SyncActionValue.TimeFormatAction
-             * @instance
-             */
-            Object.defineProperty(TimeFormatAction.prototype, "_isTwentyFourHourFormatEnabled", {
-                get: $util.oneOfGetter($oneOfFields = ["isTwentyFourHourFormatEnabled"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            TimeFormatAction.prototype.isTwentyFourHourFormatEnabled = false;
 
             /**
              * Creates a new TimeFormatAction instance using the specified properties.
@@ -19291,16 +17721,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            TimeFormatAction.decode = function decode(reader, length) {
+            TimeFormatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.TimeFormatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.isTwentyFourHourFormatEnabled = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.isTwentyFourHourFormatEnabled = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -19336,12 +17769,9 @@ $root.SyncAction = (function() {
             TimeFormatAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.isTwentyFourHourFormatEnabled != null && message.hasOwnProperty("isTwentyFourHourFormatEnabled")) {
-                    properties._isTwentyFourHourFormatEnabled = 1;
+                if (message.isTwentyFourHourFormatEnabled != null && message.hasOwnProperty("isTwentyFourHourFormatEnabled"))
                     if (typeof message.isTwentyFourHourFormatEnabled !== "boolean")
                         return "isTwentyFourHourFormatEnabled: boolean expected";
-                }
                 return null;
             };
 
@@ -19375,11 +17805,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.isTwentyFourHourFormatEnabled != null && message.hasOwnProperty("isTwentyFourHourFormatEnabled")) {
+                if (options.defaults)
+                    object.isTwentyFourHourFormatEnabled = false;
+                if (message.isTwentyFourHourFormatEnabled != null && message.hasOwnProperty("isTwentyFourHourFormatEnabled"))
                     object.isTwentyFourHourFormatEnabled = message.isTwentyFourHourFormatEnabled;
-                    if (options.oneofs)
-                        object._isTwentyFourHourFormatEnabled = "isTwentyFourHourFormatEnabled";
-                }
                 return object;
             };
 
@@ -19392,6 +17821,21 @@ $root.SyncAction = (function() {
              */
             TimeFormatAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for TimeFormatAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.TimeFormatAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            TimeFormatAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.TimeFormatAction";
             };
 
             return TimeFormatAction;
@@ -19423,25 +17867,11 @@ $root.SyncAction = (function() {
 
             /**
              * UnarchiveChatsSetting unarchiveChats.
-             * @member {boolean|null|undefined} unarchiveChats
+             * @member {boolean} unarchiveChats
              * @memberof SyncAction.SyncActionValue.UnarchiveChatsSetting
              * @instance
              */
-            UnarchiveChatsSetting.prototype.unarchiveChats = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * UnarchiveChatsSetting _unarchiveChats.
-             * @member {"unarchiveChats"|undefined} _unarchiveChats
-             * @memberof SyncAction.SyncActionValue.UnarchiveChatsSetting
-             * @instance
-             */
-            Object.defineProperty(UnarchiveChatsSetting.prototype, "_unarchiveChats", {
-                get: $util.oneOfGetter($oneOfFields = ["unarchiveChats"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            UnarchiveChatsSetting.prototype.unarchiveChats = false;
 
             /**
              * Creates a new UnarchiveChatsSetting instance using the specified properties.
@@ -19496,16 +17926,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            UnarchiveChatsSetting.decode = function decode(reader, length) {
+            UnarchiveChatsSetting.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.UnarchiveChatsSetting();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.unarchiveChats = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.unarchiveChats = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -19541,12 +17974,9 @@ $root.SyncAction = (function() {
             UnarchiveChatsSetting.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.unarchiveChats != null && message.hasOwnProperty("unarchiveChats")) {
-                    properties._unarchiveChats = 1;
+                if (message.unarchiveChats != null && message.hasOwnProperty("unarchiveChats"))
                     if (typeof message.unarchiveChats !== "boolean")
                         return "unarchiveChats: boolean expected";
-                }
                 return null;
             };
 
@@ -19580,11 +18010,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.unarchiveChats != null && message.hasOwnProperty("unarchiveChats")) {
+                if (options.defaults)
+                    object.unarchiveChats = false;
+                if (message.unarchiveChats != null && message.hasOwnProperty("unarchiveChats"))
                     object.unarchiveChats = message.unarchiveChats;
-                    if (options.oneofs)
-                        object._unarchiveChats = "unarchiveChats";
-                }
                 return object;
             };
 
@@ -19597,6 +18026,21 @@ $root.SyncAction = (function() {
              */
             UnarchiveChatsSetting.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for UnarchiveChatsSetting
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.UnarchiveChatsSetting
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            UnarchiveChatsSetting.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.UnarchiveChatsSetting";
             };
 
             return UnarchiveChatsSetting;
@@ -19628,25 +18072,11 @@ $root.SyncAction = (function() {
 
             /**
              * UserStatusMuteAction muted.
-             * @member {boolean|null|undefined} muted
+             * @member {boolean} muted
              * @memberof SyncAction.SyncActionValue.UserStatusMuteAction
              * @instance
              */
-            UserStatusMuteAction.prototype.muted = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * UserStatusMuteAction _muted.
-             * @member {"muted"|undefined} _muted
-             * @memberof SyncAction.SyncActionValue.UserStatusMuteAction
-             * @instance
-             */
-            Object.defineProperty(UserStatusMuteAction.prototype, "_muted", {
-                get: $util.oneOfGetter($oneOfFields = ["muted"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            UserStatusMuteAction.prototype.muted = false;
 
             /**
              * Creates a new UserStatusMuteAction instance using the specified properties.
@@ -19701,16 +18131,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            UserStatusMuteAction.decode = function decode(reader, length) {
+            UserStatusMuteAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.UserStatusMuteAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.muted = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.muted = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -19746,12 +18179,9 @@ $root.SyncAction = (function() {
             UserStatusMuteAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.muted != null && message.hasOwnProperty("muted")) {
-                    properties._muted = 1;
+                if (message.muted != null && message.hasOwnProperty("muted"))
                     if (typeof message.muted !== "boolean")
                         return "muted: boolean expected";
-                }
                 return null;
             };
 
@@ -19785,11 +18215,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.muted != null && message.hasOwnProperty("muted")) {
+                if (options.defaults)
+                    object.muted = false;
+                if (message.muted != null && message.hasOwnProperty("muted"))
                     object.muted = message.muted;
-                    if (options.oneofs)
-                        object._muted = "muted";
-                }
                 return object;
             };
 
@@ -19802,6 +18231,21 @@ $root.SyncAction = (function() {
              */
             UserStatusMuteAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for UserStatusMuteAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.UserStatusMuteAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            UserStatusMuteAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.UserStatusMuteAction";
             };
 
             return UserStatusMuteAction;
@@ -19833,25 +18277,11 @@ $root.SyncAction = (function() {
 
             /**
              * UsernameChatStartModeAction chatStartMode.
-             * @member {SyncAction.SyncActionValue.UsernameChatStartModeAction.ChatStartMode|null|undefined} chatStartMode
+             * @member {SyncAction.SyncActionValue.UsernameChatStartModeAction.ChatStartMode} chatStartMode
              * @memberof SyncAction.SyncActionValue.UsernameChatStartModeAction
              * @instance
              */
-            UsernameChatStartModeAction.prototype.chatStartMode = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * UsernameChatStartModeAction _chatStartMode.
-             * @member {"chatStartMode"|undefined} _chatStartMode
-             * @memberof SyncAction.SyncActionValue.UsernameChatStartModeAction
-             * @instance
-             */
-            Object.defineProperty(UsernameChatStartModeAction.prototype, "_chatStartMode", {
-                get: $util.oneOfGetter($oneOfFields = ["chatStartMode"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            UsernameChatStartModeAction.prototype.chatStartMode = 1;
 
             /**
              * Creates a new UsernameChatStartModeAction instance using the specified properties.
@@ -19906,16 +18336,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            UsernameChatStartModeAction.decode = function decode(reader, length) {
+            UsernameChatStartModeAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.UsernameChatStartModeAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.chatStartMode = reader.int32();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.chatStartMode = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -19951,9 +18384,7 @@ $root.SyncAction = (function() {
             UsernameChatStartModeAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.chatStartMode != null && message.hasOwnProperty("chatStartMode")) {
-                    properties._chatStartMode = 1;
+                if (message.chatStartMode != null && message.hasOwnProperty("chatStartMode"))
                     switch (message.chatStartMode) {
                     default:
                         return "chatStartMode: enum value expected";
@@ -19961,7 +18392,6 @@ $root.SyncAction = (function() {
                     case 2:
                         break;
                     }
-                }
                 return null;
             };
 
@@ -19978,6 +18408,12 @@ $root.SyncAction = (function() {
                     return object;
                 var message = new $root.SyncAction.SyncActionValue.UsernameChatStartModeAction();
                 switch (object.chatStartMode) {
+                default:
+                    if (typeof object.chatStartMode === "number") {
+                        message.chatStartMode = object.chatStartMode;
+                        break;
+                    }
+                    break;
                 case "LID":
                 case 1:
                     message.chatStartMode = 1;
@@ -20003,11 +18439,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.chatStartMode != null && message.hasOwnProperty("chatStartMode")) {
-                    object.chatStartMode = options.enums === String ? $root.SyncAction.SyncActionValue.UsernameChatStartModeAction.ChatStartMode[message.chatStartMode] : message.chatStartMode;
-                    if (options.oneofs)
-                        object._chatStartMode = "chatStartMode";
-                }
+                if (options.defaults)
+                    object.chatStartMode = options.enums === String ? "LID" : 1;
+                if (message.chatStartMode != null && message.hasOwnProperty("chatStartMode"))
+                    object.chatStartMode = options.enums === String ? $root.SyncAction.SyncActionValue.UsernameChatStartModeAction.ChatStartMode[message.chatStartMode] === undefined ? message.chatStartMode : $root.SyncAction.SyncActionValue.UsernameChatStartModeAction.ChatStartMode[message.chatStartMode] : message.chatStartMode;
                 return object;
             };
 
@@ -20020,6 +18455,21 @@ $root.SyncAction = (function() {
              */
             UsernameChatStartModeAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for UsernameChatStartModeAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.UsernameChatStartModeAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            UsernameChatStartModeAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.UsernameChatStartModeAction";
             };
 
             /**
@@ -20065,25 +18515,11 @@ $root.SyncAction = (function() {
 
             /**
              * WaffleAccountLinkStateAction linkState.
-             * @member {SyncAction.SyncActionValue.WaffleAccountLinkStateAction.AccountLinkState|null|undefined} linkState
+             * @member {SyncAction.SyncActionValue.WaffleAccountLinkStateAction.AccountLinkState} linkState
              * @memberof SyncAction.SyncActionValue.WaffleAccountLinkStateAction
              * @instance
              */
-            WaffleAccountLinkStateAction.prototype.linkState = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * WaffleAccountLinkStateAction _linkState.
-             * @member {"linkState"|undefined} _linkState
-             * @memberof SyncAction.SyncActionValue.WaffleAccountLinkStateAction
-             * @instance
-             */
-            Object.defineProperty(WaffleAccountLinkStateAction.prototype, "_linkState", {
-                get: $util.oneOfGetter($oneOfFields = ["linkState"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            WaffleAccountLinkStateAction.prototype.linkState = 0;
 
             /**
              * Creates a new WaffleAccountLinkStateAction instance using the specified properties.
@@ -20138,16 +18574,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            WaffleAccountLinkStateAction.decode = function decode(reader, length) {
+            WaffleAccountLinkStateAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 2:
-                        message.linkState = reader.int32();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 2: {
+                            message.linkState = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -20183,16 +18622,13 @@ $root.SyncAction = (function() {
             WaffleAccountLinkStateAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.linkState != null && message.hasOwnProperty("linkState")) {
-                    properties._linkState = 1;
+                if (message.linkState != null && message.hasOwnProperty("linkState"))
                     switch (message.linkState) {
                     default:
                         return "linkState: enum value expected";
                     case 0:
                         break;
                     }
-                }
                 return null;
             };
 
@@ -20209,6 +18645,12 @@ $root.SyncAction = (function() {
                     return object;
                 var message = new $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction();
                 switch (object.linkState) {
+                default:
+                    if (typeof object.linkState === "number") {
+                        message.linkState = object.linkState;
+                        break;
+                    }
+                    break;
                 case "ACTIVE":
                 case 0:
                     message.linkState = 0;
@@ -20230,11 +18672,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.linkState != null && message.hasOwnProperty("linkState")) {
-                    object.linkState = options.enums === String ? $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction.AccountLinkState[message.linkState] : message.linkState;
-                    if (options.oneofs)
-                        object._linkState = "linkState";
-                }
+                if (options.defaults)
+                    object.linkState = options.enums === String ? "ACTIVE" : 0;
+                if (message.linkState != null && message.hasOwnProperty("linkState"))
+                    object.linkState = options.enums === String ? $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction.AccountLinkState[message.linkState] === undefined ? message.linkState : $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction.AccountLinkState[message.linkState] : message.linkState;
                 return object;
             };
 
@@ -20247,6 +18688,21 @@ $root.SyncAction = (function() {
              */
             WaffleAccountLinkStateAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for WaffleAccountLinkStateAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.WaffleAccountLinkStateAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            WaffleAccountLinkStateAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.WaffleAccountLinkStateAction";
             };
 
             /**
@@ -20290,25 +18746,11 @@ $root.SyncAction = (function() {
 
             /**
              * WamoUserIdentifierAction identifier.
-             * @member {string|null|undefined} identifier
+             * @member {string} identifier
              * @memberof SyncAction.SyncActionValue.WamoUserIdentifierAction
              * @instance
              */
-            WamoUserIdentifierAction.prototype.identifier = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * WamoUserIdentifierAction _identifier.
-             * @member {"identifier"|undefined} _identifier
-             * @memberof SyncAction.SyncActionValue.WamoUserIdentifierAction
-             * @instance
-             */
-            Object.defineProperty(WamoUserIdentifierAction.prototype, "_identifier", {
-                get: $util.oneOfGetter($oneOfFields = ["identifier"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            WamoUserIdentifierAction.prototype.identifier = "";
 
             /**
              * Creates a new WamoUserIdentifierAction instance using the specified properties.
@@ -20363,16 +18805,19 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            WamoUserIdentifierAction.decode = function decode(reader, length) {
+            WamoUserIdentifierAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.WamoUserIdentifierAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.identifier = reader.string();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.identifier = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -20408,12 +18853,9 @@ $root.SyncAction = (function() {
             WamoUserIdentifierAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.identifier != null && message.hasOwnProperty("identifier")) {
-                    properties._identifier = 1;
+                if (message.identifier != null && message.hasOwnProperty("identifier"))
                     if (!$util.isString(message.identifier))
                         return "identifier: string expected";
-                }
                 return null;
             };
 
@@ -20447,11 +18889,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.identifier != null && message.hasOwnProperty("identifier")) {
+                if (options.defaults)
+                    object.identifier = "";
+                if (message.identifier != null && message.hasOwnProperty("identifier"))
                     object.identifier = message.identifier;
-                    if (options.oneofs)
-                        object._identifier = "identifier";
-                }
                 return object;
             };
 
@@ -20464,6 +18905,21 @@ $root.SyncAction = (function() {
              */
             WamoUserIdentifierAction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for WamoUserIdentifierAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.WamoUserIdentifierAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            WamoUserIdentifierAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.WamoUserIdentifierAction";
             };
 
             return WamoUserIdentifierAction;
@@ -20513,107 +18969,107 @@ $root.SyncAction = (function() {
 
         /**
          * CallLogRecord callResult.
-         * @member {SyncAction.CallLogRecord.CallResult|null|undefined} callResult
+         * @member {SyncAction.CallLogRecord.CallResult} callResult
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.callResult = null;
+        CallLogRecord.prototype.callResult = 0;
 
         /**
          * CallLogRecord isDndMode.
-         * @member {boolean|null|undefined} isDndMode
+         * @member {boolean} isDndMode
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.isDndMode = null;
+        CallLogRecord.prototype.isDndMode = false;
 
         /**
          * CallLogRecord silenceReason.
-         * @member {SyncAction.CallLogRecord.SilenceReason|null|undefined} silenceReason
+         * @member {SyncAction.CallLogRecord.SilenceReason} silenceReason
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.silenceReason = null;
+        CallLogRecord.prototype.silenceReason = 0;
 
         /**
          * CallLogRecord duration.
-         * @member {number|Long|null|undefined} duration
+         * @member {number|Long} duration
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.duration = null;
+        CallLogRecord.prototype.duration = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
         /**
          * CallLogRecord startTime.
-         * @member {number|Long|null|undefined} startTime
+         * @member {number|Long} startTime
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.startTime = null;
+        CallLogRecord.prototype.startTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
         /**
          * CallLogRecord isIncoming.
-         * @member {boolean|null|undefined} isIncoming
+         * @member {boolean} isIncoming
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.isIncoming = null;
+        CallLogRecord.prototype.isIncoming = false;
 
         /**
          * CallLogRecord isVideo.
-         * @member {boolean|null|undefined} isVideo
+         * @member {boolean} isVideo
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.isVideo = null;
+        CallLogRecord.prototype.isVideo = false;
 
         /**
          * CallLogRecord isCallLink.
-         * @member {boolean|null|undefined} isCallLink
+         * @member {boolean} isCallLink
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.isCallLink = null;
+        CallLogRecord.prototype.isCallLink = false;
 
         /**
          * CallLogRecord callLinkToken.
-         * @member {string|null|undefined} callLinkToken
+         * @member {string} callLinkToken
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.callLinkToken = null;
+        CallLogRecord.prototype.callLinkToken = "";
 
         /**
          * CallLogRecord scheduledCallId.
-         * @member {string|null|undefined} scheduledCallId
+         * @member {string} scheduledCallId
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.scheduledCallId = null;
+        CallLogRecord.prototype.scheduledCallId = "";
 
         /**
          * CallLogRecord callId.
-         * @member {string|null|undefined} callId
+         * @member {string} callId
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.callId = null;
+        CallLogRecord.prototype.callId = "";
 
         /**
          * CallLogRecord callCreatorJid.
-         * @member {string|null|undefined} callCreatorJid
+         * @member {string} callCreatorJid
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.callCreatorJid = null;
+        CallLogRecord.prototype.callCreatorJid = "";
 
         /**
          * CallLogRecord groupJid.
-         * @member {string|null|undefined} groupJid
+         * @member {string} groupJid
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.groupJid = null;
+        CallLogRecord.prototype.groupJid = "";
 
         /**
          * CallLogRecord participants.
@@ -20625,168 +19081,11 @@ $root.SyncAction = (function() {
 
         /**
          * CallLogRecord callType.
-         * @member {SyncAction.CallLogRecord.CallType|null|undefined} callType
+         * @member {SyncAction.CallLogRecord.CallType} callType
          * @memberof SyncAction.CallLogRecord
          * @instance
          */
-        CallLogRecord.prototype.callType = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * CallLogRecord _callResult.
-         * @member {"callResult"|undefined} _callResult
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_callResult", {
-            get: $util.oneOfGetter($oneOfFields = ["callResult"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _isDndMode.
-         * @member {"isDndMode"|undefined} _isDndMode
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_isDndMode", {
-            get: $util.oneOfGetter($oneOfFields = ["isDndMode"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _silenceReason.
-         * @member {"silenceReason"|undefined} _silenceReason
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_silenceReason", {
-            get: $util.oneOfGetter($oneOfFields = ["silenceReason"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _duration.
-         * @member {"duration"|undefined} _duration
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_duration", {
-            get: $util.oneOfGetter($oneOfFields = ["duration"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _startTime.
-         * @member {"startTime"|undefined} _startTime
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_startTime", {
-            get: $util.oneOfGetter($oneOfFields = ["startTime"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _isIncoming.
-         * @member {"isIncoming"|undefined} _isIncoming
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_isIncoming", {
-            get: $util.oneOfGetter($oneOfFields = ["isIncoming"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _isVideo.
-         * @member {"isVideo"|undefined} _isVideo
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_isVideo", {
-            get: $util.oneOfGetter($oneOfFields = ["isVideo"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _isCallLink.
-         * @member {"isCallLink"|undefined} _isCallLink
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_isCallLink", {
-            get: $util.oneOfGetter($oneOfFields = ["isCallLink"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _callLinkToken.
-         * @member {"callLinkToken"|undefined} _callLinkToken
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_callLinkToken", {
-            get: $util.oneOfGetter($oneOfFields = ["callLinkToken"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _scheduledCallId.
-         * @member {"scheduledCallId"|undefined} _scheduledCallId
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_scheduledCallId", {
-            get: $util.oneOfGetter($oneOfFields = ["scheduledCallId"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _callId.
-         * @member {"callId"|undefined} _callId
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_callId", {
-            get: $util.oneOfGetter($oneOfFields = ["callId"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _callCreatorJid.
-         * @member {"callCreatorJid"|undefined} _callCreatorJid
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_callCreatorJid", {
-            get: $util.oneOfGetter($oneOfFields = ["callCreatorJid"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _groupJid.
-         * @member {"groupJid"|undefined} _groupJid
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_groupJid", {
-            get: $util.oneOfGetter($oneOfFields = ["groupJid"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * CallLogRecord _callType.
-         * @member {"callType"|undefined} _callType
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
-        Object.defineProperty(CallLogRecord.prototype, "_callType", {
-            get: $util.oneOfGetter($oneOfFields = ["callType"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        CallLogRecord.prototype.callType = 0;
 
         /**
          * Creates a new CallLogRecord instance using the specified properties.
@@ -20870,60 +19169,77 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CallLogRecord.decode = function decode(reader, length) {
+        CallLogRecord.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.CallLogRecord();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.callResult = reader.int32();
-                    break;
-                case 2:
-                    message.isDndMode = reader.bool();
-                    break;
-                case 3:
-                    message.silenceReason = reader.int32();
-                    break;
-                case 4:
-                    message.duration = reader.int64();
-                    break;
-                case 5:
-                    message.startTime = reader.int64();
-                    break;
-                case 6:
-                    message.isIncoming = reader.bool();
-                    break;
-                case 7:
-                    message.isVideo = reader.bool();
-                    break;
-                case 8:
-                    message.isCallLink = reader.bool();
-                    break;
-                case 9:
-                    message.callLinkToken = reader.string();
-                    break;
-                case 10:
-                    message.scheduledCallId = reader.string();
-                    break;
-                case 11:
-                    message.callId = reader.string();
-                    break;
-                case 12:
-                    message.callCreatorJid = reader.string();
-                    break;
-                case 13:
-                    message.groupJid = reader.string();
-                    break;
-                case 14:
-                    if (!(message.participants && message.participants.length))
-                        message.participants = [];
-                    message.participants.push($root.SyncAction.CallLogRecord.ParticipantInfo.decode(reader, reader.uint32()));
-                    break;
-                case 15:
-                    message.callType = reader.int32();
-                    break;
+                case 1: {
+                        message.callResult = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.isDndMode = reader.bool();
+                        break;
+                    }
+                case 3: {
+                        message.silenceReason = reader.int32();
+                        break;
+                    }
+                case 4: {
+                        message.duration = reader.int64();
+                        break;
+                    }
+                case 5: {
+                        message.startTime = reader.int64();
+                        break;
+                    }
+                case 6: {
+                        message.isIncoming = reader.bool();
+                        break;
+                    }
+                case 7: {
+                        message.isVideo = reader.bool();
+                        break;
+                    }
+                case 8: {
+                        message.isCallLink = reader.bool();
+                        break;
+                    }
+                case 9: {
+                        message.callLinkToken = reader.string();
+                        break;
+                    }
+                case 10: {
+                        message.scheduledCallId = reader.string();
+                        break;
+                    }
+                case 11: {
+                        message.callId = reader.string();
+                        break;
+                    }
+                case 12: {
+                        message.callCreatorJid = reader.string();
+                        break;
+                    }
+                case 13: {
+                        message.groupJid = reader.string();
+                        break;
+                    }
+                case 14: {
+                        if (!(message.participants && message.participants.length))
+                            message.participants = [];
+                        message.participants.push($root.SyncAction.CallLogRecord.ParticipantInfo.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 15: {
+                        message.callType = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -20959,9 +19275,7 @@ $root.SyncAction = (function() {
         CallLogRecord.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.callResult != null && message.hasOwnProperty("callResult")) {
-                properties._callResult = 1;
+            if (message.callResult != null && message.hasOwnProperty("callResult"))
                 switch (message.callResult) {
                 default:
                     return "callResult: enum value expected";
@@ -20978,14 +19292,10 @@ $root.SyncAction = (function() {
                 case 10:
                     break;
                 }
-            }
-            if (message.isDndMode != null && message.hasOwnProperty("isDndMode")) {
-                properties._isDndMode = 1;
+            if (message.isDndMode != null && message.hasOwnProperty("isDndMode"))
                 if (typeof message.isDndMode !== "boolean")
                     return "isDndMode: boolean expected";
-            }
-            if (message.silenceReason != null && message.hasOwnProperty("silenceReason")) {
-                properties._silenceReason = 1;
+            if (message.silenceReason != null && message.hasOwnProperty("silenceReason"))
                 switch (message.silenceReason) {
                 default:
                     return "silenceReason: enum value expected";
@@ -20995,57 +19305,36 @@ $root.SyncAction = (function() {
                 case 3:
                     break;
                 }
-            }
-            if (message.duration != null && message.hasOwnProperty("duration")) {
-                properties._duration = 1;
+            if (message.duration != null && message.hasOwnProperty("duration"))
                 if (!$util.isInteger(message.duration) && !(message.duration && $util.isInteger(message.duration.low) && $util.isInteger(message.duration.high)))
                     return "duration: integer|Long expected";
-            }
-            if (message.startTime != null && message.hasOwnProperty("startTime")) {
-                properties._startTime = 1;
+            if (message.startTime != null && message.hasOwnProperty("startTime"))
                 if (!$util.isInteger(message.startTime) && !(message.startTime && $util.isInteger(message.startTime.low) && $util.isInteger(message.startTime.high)))
                     return "startTime: integer|Long expected";
-            }
-            if (message.isIncoming != null && message.hasOwnProperty("isIncoming")) {
-                properties._isIncoming = 1;
+            if (message.isIncoming != null && message.hasOwnProperty("isIncoming"))
                 if (typeof message.isIncoming !== "boolean")
                     return "isIncoming: boolean expected";
-            }
-            if (message.isVideo != null && message.hasOwnProperty("isVideo")) {
-                properties._isVideo = 1;
+            if (message.isVideo != null && message.hasOwnProperty("isVideo"))
                 if (typeof message.isVideo !== "boolean")
                     return "isVideo: boolean expected";
-            }
-            if (message.isCallLink != null && message.hasOwnProperty("isCallLink")) {
-                properties._isCallLink = 1;
+            if (message.isCallLink != null && message.hasOwnProperty("isCallLink"))
                 if (typeof message.isCallLink !== "boolean")
                     return "isCallLink: boolean expected";
-            }
-            if (message.callLinkToken != null && message.hasOwnProperty("callLinkToken")) {
-                properties._callLinkToken = 1;
+            if (message.callLinkToken != null && message.hasOwnProperty("callLinkToken"))
                 if (!$util.isString(message.callLinkToken))
                     return "callLinkToken: string expected";
-            }
-            if (message.scheduledCallId != null && message.hasOwnProperty("scheduledCallId")) {
-                properties._scheduledCallId = 1;
+            if (message.scheduledCallId != null && message.hasOwnProperty("scheduledCallId"))
                 if (!$util.isString(message.scheduledCallId))
                     return "scheduledCallId: string expected";
-            }
-            if (message.callId != null && message.hasOwnProperty("callId")) {
-                properties._callId = 1;
+            if (message.callId != null && message.hasOwnProperty("callId"))
                 if (!$util.isString(message.callId))
                     return "callId: string expected";
-            }
-            if (message.callCreatorJid != null && message.hasOwnProperty("callCreatorJid")) {
-                properties._callCreatorJid = 1;
+            if (message.callCreatorJid != null && message.hasOwnProperty("callCreatorJid"))
                 if (!$util.isString(message.callCreatorJid))
                     return "callCreatorJid: string expected";
-            }
-            if (message.groupJid != null && message.hasOwnProperty("groupJid")) {
-                properties._groupJid = 1;
+            if (message.groupJid != null && message.hasOwnProperty("groupJid"))
                 if (!$util.isString(message.groupJid))
                     return "groupJid: string expected";
-            }
             if (message.participants != null && message.hasOwnProperty("participants")) {
                 if (!Array.isArray(message.participants))
                     return "participants: array expected";
@@ -21055,8 +19344,7 @@ $root.SyncAction = (function() {
                         return "participants." + error;
                 }
             }
-            if (message.callType != null && message.hasOwnProperty("callType")) {
-                properties._callType = 1;
+            if (message.callType != null && message.hasOwnProperty("callType"))
                 switch (message.callType) {
                 default:
                     return "callType: enum value expected";
@@ -21065,7 +19353,6 @@ $root.SyncAction = (function() {
                 case 2:
                     break;
                 }
-            }
             return null;
         };
 
@@ -21082,6 +19369,12 @@ $root.SyncAction = (function() {
                 return object;
             var message = new $root.SyncAction.CallLogRecord();
             switch (object.callResult) {
+            default:
+                if (typeof object.callResult === "number") {
+                    message.callResult = object.callResult;
+                    break;
+                }
+                break;
             case "CONNECTED":
             case 0:
                 message.callResult = 0;
@@ -21130,6 +19423,12 @@ $root.SyncAction = (function() {
             if (object.isDndMode != null)
                 message.isDndMode = Boolean(object.isDndMode);
             switch (object.silenceReason) {
+            default:
+                if (typeof object.silenceReason === "number") {
+                    message.silenceReason = object.silenceReason;
+                    break;
+                }
+                break;
             case "NONE":
             case 0:
                 message.silenceReason = 0;
@@ -21192,6 +19491,12 @@ $root.SyncAction = (function() {
                 }
             }
             switch (object.callType) {
+            default:
+                if (typeof object.callType === "number") {
+                    message.callType = object.callType;
+                    break;
+                }
+                break;
             case "REGULAR":
             case 0:
                 message.callType = 0;
@@ -21223,87 +19528,69 @@ $root.SyncAction = (function() {
             var object = {};
             if (options.arrays || options.defaults)
                 object.participants = [];
-            if (message.callResult != null && message.hasOwnProperty("callResult")) {
-                object.callResult = options.enums === String ? $root.SyncAction.CallLogRecord.CallResult[message.callResult] : message.callResult;
-                if (options.oneofs)
-                    object._callResult = "callResult";
+            if (options.defaults) {
+                object.callResult = options.enums === String ? "CONNECTED" : 0;
+                object.isDndMode = false;
+                object.silenceReason = options.enums === String ? "NONE" : 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.duration = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.duration = options.longs === String ? "0" : 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.startTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.startTime = options.longs === String ? "0" : 0;
+                object.isIncoming = false;
+                object.isVideo = false;
+                object.isCallLink = false;
+                object.callLinkToken = "";
+                object.scheduledCallId = "";
+                object.callId = "";
+                object.callCreatorJid = "";
+                object.groupJid = "";
+                object.callType = options.enums === String ? "REGULAR" : 0;
             }
-            if (message.isDndMode != null && message.hasOwnProperty("isDndMode")) {
+            if (message.callResult != null && message.hasOwnProperty("callResult"))
+                object.callResult = options.enums === String ? $root.SyncAction.CallLogRecord.CallResult[message.callResult] === undefined ? message.callResult : $root.SyncAction.CallLogRecord.CallResult[message.callResult] : message.callResult;
+            if (message.isDndMode != null && message.hasOwnProperty("isDndMode"))
                 object.isDndMode = message.isDndMode;
-                if (options.oneofs)
-                    object._isDndMode = "isDndMode";
-            }
-            if (message.silenceReason != null && message.hasOwnProperty("silenceReason")) {
-                object.silenceReason = options.enums === String ? $root.SyncAction.CallLogRecord.SilenceReason[message.silenceReason] : message.silenceReason;
-                if (options.oneofs)
-                    object._silenceReason = "silenceReason";
-            }
-            if (message.duration != null && message.hasOwnProperty("duration")) {
+            if (message.silenceReason != null && message.hasOwnProperty("silenceReason"))
+                object.silenceReason = options.enums === String ? $root.SyncAction.CallLogRecord.SilenceReason[message.silenceReason] === undefined ? message.silenceReason : $root.SyncAction.CallLogRecord.SilenceReason[message.silenceReason] : message.silenceReason;
+            if (message.duration != null && message.hasOwnProperty("duration"))
                 if (typeof message.duration === "number")
                     object.duration = options.longs === String ? String(message.duration) : message.duration;
                 else
                     object.duration = options.longs === String ? $util.Long.prototype.toString.call(message.duration) : options.longs === Number ? new $util.LongBits(message.duration.low >>> 0, message.duration.high >>> 0).toNumber() : message.duration;
-                if (options.oneofs)
-                    object._duration = "duration";
-            }
-            if (message.startTime != null && message.hasOwnProperty("startTime")) {
+            if (message.startTime != null && message.hasOwnProperty("startTime"))
                 if (typeof message.startTime === "number")
                     object.startTime = options.longs === String ? String(message.startTime) : message.startTime;
                 else
                     object.startTime = options.longs === String ? $util.Long.prototype.toString.call(message.startTime) : options.longs === Number ? new $util.LongBits(message.startTime.low >>> 0, message.startTime.high >>> 0).toNumber() : message.startTime;
-                if (options.oneofs)
-                    object._startTime = "startTime";
-            }
-            if (message.isIncoming != null && message.hasOwnProperty("isIncoming")) {
+            if (message.isIncoming != null && message.hasOwnProperty("isIncoming"))
                 object.isIncoming = message.isIncoming;
-                if (options.oneofs)
-                    object._isIncoming = "isIncoming";
-            }
-            if (message.isVideo != null && message.hasOwnProperty("isVideo")) {
+            if (message.isVideo != null && message.hasOwnProperty("isVideo"))
                 object.isVideo = message.isVideo;
-                if (options.oneofs)
-                    object._isVideo = "isVideo";
-            }
-            if (message.isCallLink != null && message.hasOwnProperty("isCallLink")) {
+            if (message.isCallLink != null && message.hasOwnProperty("isCallLink"))
                 object.isCallLink = message.isCallLink;
-                if (options.oneofs)
-                    object._isCallLink = "isCallLink";
-            }
-            if (message.callLinkToken != null && message.hasOwnProperty("callLinkToken")) {
+            if (message.callLinkToken != null && message.hasOwnProperty("callLinkToken"))
                 object.callLinkToken = message.callLinkToken;
-                if (options.oneofs)
-                    object._callLinkToken = "callLinkToken";
-            }
-            if (message.scheduledCallId != null && message.hasOwnProperty("scheduledCallId")) {
+            if (message.scheduledCallId != null && message.hasOwnProperty("scheduledCallId"))
                 object.scheduledCallId = message.scheduledCallId;
-                if (options.oneofs)
-                    object._scheduledCallId = "scheduledCallId";
-            }
-            if (message.callId != null && message.hasOwnProperty("callId")) {
+            if (message.callId != null && message.hasOwnProperty("callId"))
                 object.callId = message.callId;
-                if (options.oneofs)
-                    object._callId = "callId";
-            }
-            if (message.callCreatorJid != null && message.hasOwnProperty("callCreatorJid")) {
+            if (message.callCreatorJid != null && message.hasOwnProperty("callCreatorJid"))
                 object.callCreatorJid = message.callCreatorJid;
-                if (options.oneofs)
-                    object._callCreatorJid = "callCreatorJid";
-            }
-            if (message.groupJid != null && message.hasOwnProperty("groupJid")) {
+            if (message.groupJid != null && message.hasOwnProperty("groupJid"))
                 object.groupJid = message.groupJid;
-                if (options.oneofs)
-                    object._groupJid = "groupJid";
-            }
             if (message.participants && message.participants.length) {
                 object.participants = [];
                 for (var j = 0; j < message.participants.length; ++j)
                     object.participants[j] = $root.SyncAction.CallLogRecord.ParticipantInfo.toObject(message.participants[j], options);
             }
-            if (message.callType != null && message.hasOwnProperty("callType")) {
-                object.callType = options.enums === String ? $root.SyncAction.CallLogRecord.CallType[message.callType] : message.callType;
-                if (options.oneofs)
-                    object._callType = "callType";
-            }
+            if (message.callType != null && message.hasOwnProperty("callType"))
+                object.callType = options.enums === String ? $root.SyncAction.CallLogRecord.CallType[message.callType] === undefined ? message.callType : $root.SyncAction.CallLogRecord.CallType[message.callType] : message.callType;
             return object;
         };
 
@@ -21316,6 +19603,21 @@ $root.SyncAction = (function() {
          */
         CallLogRecord.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for CallLogRecord
+         * @function getTypeUrl
+         * @memberof SyncAction.CallLogRecord
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        CallLogRecord.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SyncAction.CallLogRecord";
         };
 
         /**
@@ -21393,44 +19695,19 @@ $root.SyncAction = (function() {
 
             /**
              * ParticipantInfo userJid.
-             * @member {string|null|undefined} userJid
+             * @member {string} userJid
              * @memberof SyncAction.CallLogRecord.ParticipantInfo
              * @instance
              */
-            ParticipantInfo.prototype.userJid = null;
+            ParticipantInfo.prototype.userJid = "";
 
             /**
              * ParticipantInfo callResult.
-             * @member {SyncAction.CallLogRecord.CallResult|null|undefined} callResult
+             * @member {SyncAction.CallLogRecord.CallResult} callResult
              * @memberof SyncAction.CallLogRecord.ParticipantInfo
              * @instance
              */
-            ParticipantInfo.prototype.callResult = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * ParticipantInfo _userJid.
-             * @member {"userJid"|undefined} _userJid
-             * @memberof SyncAction.CallLogRecord.ParticipantInfo
-             * @instance
-             */
-            Object.defineProperty(ParticipantInfo.prototype, "_userJid", {
-                get: $util.oneOfGetter($oneOfFields = ["userJid"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ParticipantInfo _callResult.
-             * @member {"callResult"|undefined} _callResult
-             * @memberof SyncAction.CallLogRecord.ParticipantInfo
-             * @instance
-             */
-            Object.defineProperty(ParticipantInfo.prototype, "_callResult", {
-                get: $util.oneOfGetter($oneOfFields = ["callResult"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            ParticipantInfo.prototype.callResult = 0;
 
             /**
              * Creates a new ParticipantInfo instance using the specified properties.
@@ -21487,19 +19764,23 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ParticipantInfo.decode = function decode(reader, length) {
+            ParticipantInfo.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.CallLogRecord.ParticipantInfo();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.userJid = reader.string();
-                        break;
-                    case 2:
-                        message.callResult = reader.int32();
-                        break;
+                    case 1: {
+                            message.userJid = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.callResult = reader.int32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -21535,14 +19816,10 @@ $root.SyncAction = (function() {
             ParticipantInfo.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.userJid != null && message.hasOwnProperty("userJid")) {
-                    properties._userJid = 1;
+                if (message.userJid != null && message.hasOwnProperty("userJid"))
                     if (!$util.isString(message.userJid))
                         return "userJid: string expected";
-                }
-                if (message.callResult != null && message.hasOwnProperty("callResult")) {
-                    properties._callResult = 1;
+                if (message.callResult != null && message.hasOwnProperty("callResult"))
                     switch (message.callResult) {
                     default:
                         return "callResult: enum value expected";
@@ -21559,7 +19836,6 @@ $root.SyncAction = (function() {
                     case 10:
                         break;
                     }
-                }
                 return null;
             };
 
@@ -21578,6 +19854,12 @@ $root.SyncAction = (function() {
                 if (object.userJid != null)
                     message.userJid = String(object.userJid);
                 switch (object.callResult) {
+                default:
+                    if (typeof object.callResult === "number") {
+                        message.callResult = object.callResult;
+                        break;
+                    }
+                    break;
                 case "CONNECTED":
                 case 0:
                     message.callResult = 0;
@@ -21639,16 +19921,14 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.userJid != null && message.hasOwnProperty("userJid")) {
+                if (options.defaults) {
+                    object.userJid = "";
+                    object.callResult = options.enums === String ? "CONNECTED" : 0;
+                }
+                if (message.userJid != null && message.hasOwnProperty("userJid"))
                     object.userJid = message.userJid;
-                    if (options.oneofs)
-                        object._userJid = "userJid";
-                }
-                if (message.callResult != null && message.hasOwnProperty("callResult")) {
-                    object.callResult = options.enums === String ? $root.SyncAction.CallLogRecord.CallResult[message.callResult] : message.callResult;
-                    if (options.oneofs)
-                        object._callResult = "callResult";
-                }
+                if (message.callResult != null && message.hasOwnProperty("callResult"))
+                    object.callResult = options.enums === String ? $root.SyncAction.CallLogRecord.CallResult[message.callResult] === undefined ? message.callResult : $root.SyncAction.CallLogRecord.CallResult[message.callResult] : message.callResult;
                 return object;
             };
 
@@ -21661,6 +19941,21 @@ $root.SyncAction = (function() {
              */
             ParticipantInfo.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ParticipantInfo
+             * @function getTypeUrl
+             * @memberof SyncAction.CallLogRecord.ParticipantInfo
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ParticipantInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.CallLogRecord.ParticipantInfo";
             };
 
             return ParticipantInfo;
@@ -21714,44 +20009,19 @@ $root.SyncAction = (function() {
 
         /**
          * RecentEmojiWeight emoji.
-         * @member {string|null|undefined} emoji
+         * @member {string} emoji
          * @memberof SyncAction.RecentEmojiWeight
          * @instance
          */
-        RecentEmojiWeight.prototype.emoji = null;
+        RecentEmojiWeight.prototype.emoji = "";
 
         /**
          * RecentEmojiWeight weight.
-         * @member {number|null|undefined} weight
+         * @member {number} weight
          * @memberof SyncAction.RecentEmojiWeight
          * @instance
          */
-        RecentEmojiWeight.prototype.weight = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * RecentEmojiWeight _emoji.
-         * @member {"emoji"|undefined} _emoji
-         * @memberof SyncAction.RecentEmojiWeight
-         * @instance
-         */
-        Object.defineProperty(RecentEmojiWeight.prototype, "_emoji", {
-            get: $util.oneOfGetter($oneOfFields = ["emoji"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * RecentEmojiWeight _weight.
-         * @member {"weight"|undefined} _weight
-         * @memberof SyncAction.RecentEmojiWeight
-         * @instance
-         */
-        Object.defineProperty(RecentEmojiWeight.prototype, "_weight", {
-            get: $util.oneOfGetter($oneOfFields = ["weight"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        RecentEmojiWeight.prototype.weight = 0;
 
         /**
          * Creates a new RecentEmojiWeight instance using the specified properties.
@@ -21808,19 +20078,23 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        RecentEmojiWeight.decode = function decode(reader, length) {
+        RecentEmojiWeight.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.RecentEmojiWeight();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.emoji = reader.string();
-                    break;
-                case 2:
-                    message.weight = reader.float();
-                    break;
+                case 1: {
+                        message.emoji = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.weight = reader.float();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -21856,17 +20130,12 @@ $root.SyncAction = (function() {
         RecentEmojiWeight.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.emoji != null && message.hasOwnProperty("emoji")) {
-                properties._emoji = 1;
+            if (message.emoji != null && message.hasOwnProperty("emoji"))
                 if (!$util.isString(message.emoji))
                     return "emoji: string expected";
-            }
-            if (message.weight != null && message.hasOwnProperty("weight")) {
-                properties._weight = 1;
+            if (message.weight != null && message.hasOwnProperty("weight"))
                 if (typeof message.weight !== "number")
                     return "weight: number expected";
-            }
             return null;
         };
 
@@ -21902,16 +20171,14 @@ $root.SyncAction = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.emoji != null && message.hasOwnProperty("emoji")) {
+            if (options.defaults) {
+                object.emoji = "";
+                object.weight = 0;
+            }
+            if (message.emoji != null && message.hasOwnProperty("emoji"))
                 object.emoji = message.emoji;
-                if (options.oneofs)
-                    object._emoji = "emoji";
-            }
-            if (message.weight != null && message.hasOwnProperty("weight")) {
+            if (message.weight != null && message.hasOwnProperty("weight"))
                 object.weight = options.json && !isFinite(message.weight) ? String(message.weight) : message.weight;
-                if (options.oneofs)
-                    object._weight = "weight";
-            }
             return object;
         };
 
@@ -21924,6 +20191,21 @@ $root.SyncAction = (function() {
          */
         RecentEmojiWeight.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for RecentEmojiWeight
+         * @function getTypeUrl
+         * @memberof SyncAction.RecentEmojiWeight
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        RecentEmojiWeight.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SyncAction.RecentEmojiWeight";
         };
 
         return RecentEmojiWeight;
@@ -21968,11 +20250,11 @@ $root.ChatLockSettings = (function() {
 
         /**
          * ChatLockSettings hideLockedChats.
-         * @member {boolean|null|undefined} hideLockedChats
+         * @member {boolean} hideLockedChats
          * @memberof ChatLockSettings.ChatLockSettings
          * @instance
          */
-        ChatLockSettings.prototype.hideLockedChats = null;
+        ChatLockSettings.prototype.hideLockedChats = false;
 
         /**
          * ChatLockSettings secretCode.
@@ -21981,31 +20263,6 @@ $root.ChatLockSettings = (function() {
          * @instance
          */
         ChatLockSettings.prototype.secretCode = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * ChatLockSettings _hideLockedChats.
-         * @member {"hideLockedChats"|undefined} _hideLockedChats
-         * @memberof ChatLockSettings.ChatLockSettings
-         * @instance
-         */
-        Object.defineProperty(ChatLockSettings.prototype, "_hideLockedChats", {
-            get: $util.oneOfGetter($oneOfFields = ["hideLockedChats"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * ChatLockSettings _secretCode.
-         * @member {"secretCode"|undefined} _secretCode
-         * @memberof ChatLockSettings.ChatLockSettings
-         * @instance
-         */
-        Object.defineProperty(ChatLockSettings.prototype, "_secretCode", {
-            get: $util.oneOfGetter($oneOfFields = ["secretCode"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
 
         /**
          * Creates a new ChatLockSettings instance using the specified properties.
@@ -22062,19 +20319,23 @@ $root.ChatLockSettings = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ChatLockSettings.decode = function decode(reader, length) {
+        ChatLockSettings.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ChatLockSettings.ChatLockSettings();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.hideLockedChats = reader.bool();
-                    break;
-                case 2:
-                    message.secretCode = $root.UserPassword.UserPassword.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.hideLockedChats = reader.bool();
+                        break;
+                    }
+                case 2: {
+                        message.secretCode = $root.UserPassword.UserPassword.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -22110,19 +20371,13 @@ $root.ChatLockSettings = (function() {
         ChatLockSettings.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.hideLockedChats != null && message.hasOwnProperty("hideLockedChats")) {
-                properties._hideLockedChats = 1;
+            if (message.hideLockedChats != null && message.hasOwnProperty("hideLockedChats"))
                 if (typeof message.hideLockedChats !== "boolean")
                     return "hideLockedChats: boolean expected";
-            }
             if (message.secretCode != null && message.hasOwnProperty("secretCode")) {
-                properties._secretCode = 1;
-                {
-                    var error = $root.UserPassword.UserPassword.verify(message.secretCode);
-                    if (error)
-                        return "secretCode." + error;
-                }
+                var error = $root.UserPassword.UserPassword.verify(message.secretCode);
+                if (error)
+                    return "secretCode." + error;
             }
             return null;
         };
@@ -22162,16 +20417,14 @@ $root.ChatLockSettings = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.hideLockedChats != null && message.hasOwnProperty("hideLockedChats")) {
+            if (options.defaults) {
+                object.hideLockedChats = false;
+                object.secretCode = null;
+            }
+            if (message.hideLockedChats != null && message.hasOwnProperty("hideLockedChats"))
                 object.hideLockedChats = message.hideLockedChats;
-                if (options.oneofs)
-                    object._hideLockedChats = "hideLockedChats";
-            }
-            if (message.secretCode != null && message.hasOwnProperty("secretCode")) {
+            if (message.secretCode != null && message.hasOwnProperty("secretCode"))
                 object.secretCode = $root.UserPassword.UserPassword.toObject(message.secretCode, options);
-                if (options.oneofs)
-                    object._secretCode = "secretCode";
-            }
             return object;
         };
 
@@ -22184,6 +20437,21 @@ $root.ChatLockSettings = (function() {
          */
         ChatLockSettings.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for ChatLockSettings
+         * @function getTypeUrl
+         * @memberof ChatLockSettings.ChatLockSettings
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        ChatLockSettings.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ChatLockSettings.ChatLockSettings";
         };
 
         return ChatLockSettings;
@@ -22231,19 +20499,19 @@ $root.UserPassword = (function() {
 
         /**
          * UserPassword encoding.
-         * @member {UserPassword.UserPassword.Encoding|null|undefined} encoding
+         * @member {UserPassword.UserPassword.Encoding} encoding
          * @memberof UserPassword.UserPassword
          * @instance
          */
-        UserPassword.prototype.encoding = null;
+        UserPassword.prototype.encoding = 0;
 
         /**
          * UserPassword transformer.
-         * @member {UserPassword.UserPassword.Transformer|null|undefined} transformer
+         * @member {UserPassword.UserPassword.Transformer} transformer
          * @memberof UserPassword.UserPassword
          * @instance
          */
-        UserPassword.prototype.transformer = null;
+        UserPassword.prototype.transformer = 0;
 
         /**
          * UserPassword transformerArg.
@@ -22255,47 +20523,11 @@ $root.UserPassword = (function() {
 
         /**
          * UserPassword transformedData.
-         * @member {Uint8Array|null|undefined} transformedData
+         * @member {Uint8Array} transformedData
          * @memberof UserPassword.UserPassword
          * @instance
          */
-        UserPassword.prototype.transformedData = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * UserPassword _encoding.
-         * @member {"encoding"|undefined} _encoding
-         * @memberof UserPassword.UserPassword
-         * @instance
-         */
-        Object.defineProperty(UserPassword.prototype, "_encoding", {
-            get: $util.oneOfGetter($oneOfFields = ["encoding"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * UserPassword _transformer.
-         * @member {"transformer"|undefined} _transformer
-         * @memberof UserPassword.UserPassword
-         * @instance
-         */
-        Object.defineProperty(UserPassword.prototype, "_transformer", {
-            get: $util.oneOfGetter($oneOfFields = ["transformer"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * UserPassword _transformedData.
-         * @member {"transformedData"|undefined} _transformedData
-         * @memberof UserPassword.UserPassword
-         * @instance
-         */
-        Object.defineProperty(UserPassword.prototype, "_transformedData", {
-            get: $util.oneOfGetter($oneOfFields = ["transformedData"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        UserPassword.prototype.transformedData = $util.newBuffer([]);
 
         /**
          * Creates a new UserPassword instance using the specified properties.
@@ -22357,27 +20589,33 @@ $root.UserPassword = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        UserPassword.decode = function decode(reader, length) {
+        UserPassword.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.encoding = reader.int32();
-                    break;
-                case 2:
-                    message.transformer = reader.int32();
-                    break;
-                case 3:
-                    if (!(message.transformerArg && message.transformerArg.length))
-                        message.transformerArg = [];
-                    message.transformerArg.push($root.UserPassword.UserPassword.TransformerArg.decode(reader, reader.uint32()));
-                    break;
-                case 4:
-                    message.transformedData = reader.bytes();
-                    break;
+                case 1: {
+                        message.encoding = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.transformer = reader.int32();
+                        break;
+                    }
+                case 3: {
+                        if (!(message.transformerArg && message.transformerArg.length))
+                            message.transformerArg = [];
+                        message.transformerArg.push($root.UserPassword.UserPassword.TransformerArg.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 4: {
+                        message.transformedData = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -22413,9 +20651,7 @@ $root.UserPassword = (function() {
         UserPassword.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.encoding != null && message.hasOwnProperty("encoding")) {
-                properties._encoding = 1;
+            if (message.encoding != null && message.hasOwnProperty("encoding"))
                 switch (message.encoding) {
                 default:
                     return "encoding: enum value expected";
@@ -22423,9 +20659,7 @@ $root.UserPassword = (function() {
                 case 1:
                     break;
                 }
-            }
-            if (message.transformer != null && message.hasOwnProperty("transformer")) {
-                properties._transformer = 1;
+            if (message.transformer != null && message.hasOwnProperty("transformer"))
                 switch (message.transformer) {
                 default:
                     return "transformer: enum value expected";
@@ -22434,7 +20668,6 @@ $root.UserPassword = (function() {
                 case 2:
                     break;
                 }
-            }
             if (message.transformerArg != null && message.hasOwnProperty("transformerArg")) {
                 if (!Array.isArray(message.transformerArg))
                     return "transformerArg: array expected";
@@ -22444,11 +20677,9 @@ $root.UserPassword = (function() {
                         return "transformerArg." + error;
                 }
             }
-            if (message.transformedData != null && message.hasOwnProperty("transformedData")) {
-                properties._transformedData = 1;
+            if (message.transformedData != null && message.hasOwnProperty("transformedData"))
                 if (!(message.transformedData && typeof message.transformedData.length === "number" || $util.isString(message.transformedData)))
                     return "transformedData: buffer expected";
-            }
             return null;
         };
 
@@ -22465,6 +20696,12 @@ $root.UserPassword = (function() {
                 return object;
             var message = new $root.UserPassword.UserPassword();
             switch (object.encoding) {
+            default:
+                if (typeof object.encoding === "number") {
+                    message.encoding = object.encoding;
+                    break;
+                }
+                break;
             case "UTF8":
             case 0:
                 message.encoding = 0;
@@ -22475,6 +20712,12 @@ $root.UserPassword = (function() {
                 break;
             }
             switch (object.transformer) {
+            default:
+                if (typeof object.transformer === "number") {
+                    message.transformer = object.transformer;
+                    break;
+                }
+                break;
             case "NONE":
             case 0:
                 message.transformer = 0;
@@ -22501,7 +20744,7 @@ $root.UserPassword = (function() {
             if (object.transformedData != null)
                 if (typeof object.transformedData === "string")
                     $util.base64.decode(object.transformedData, message.transformedData = $util.newBuffer($util.base64.length(object.transformedData)), 0);
-                else if (object.transformedData.length)
+                else if (object.transformedData.length >= 0)
                     message.transformedData = object.transformedData;
             return message;
         };
@@ -22521,26 +20764,28 @@ $root.UserPassword = (function() {
             var object = {};
             if (options.arrays || options.defaults)
                 object.transformerArg = [];
-            if (message.encoding != null && message.hasOwnProperty("encoding")) {
-                object.encoding = options.enums === String ? $root.UserPassword.UserPassword.Encoding[message.encoding] : message.encoding;
-                if (options.oneofs)
-                    object._encoding = "encoding";
+            if (options.defaults) {
+                object.encoding = options.enums === String ? "UTF8" : 0;
+                object.transformer = options.enums === String ? "NONE" : 0;
+                if (options.bytes === String)
+                    object.transformedData = "";
+                else {
+                    object.transformedData = [];
+                    if (options.bytes !== Array)
+                        object.transformedData = $util.newBuffer(object.transformedData);
+                }
             }
-            if (message.transformer != null && message.hasOwnProperty("transformer")) {
-                object.transformer = options.enums === String ? $root.UserPassword.UserPassword.Transformer[message.transformer] : message.transformer;
-                if (options.oneofs)
-                    object._transformer = "transformer";
-            }
+            if (message.encoding != null && message.hasOwnProperty("encoding"))
+                object.encoding = options.enums === String ? $root.UserPassword.UserPassword.Encoding[message.encoding] === undefined ? message.encoding : $root.UserPassword.UserPassword.Encoding[message.encoding] : message.encoding;
+            if (message.transformer != null && message.hasOwnProperty("transformer"))
+                object.transformer = options.enums === String ? $root.UserPassword.UserPassword.Transformer[message.transformer] === undefined ? message.transformer : $root.UserPassword.UserPassword.Transformer[message.transformer] : message.transformer;
             if (message.transformerArg && message.transformerArg.length) {
                 object.transformerArg = [];
                 for (var j = 0; j < message.transformerArg.length; ++j)
                     object.transformerArg[j] = $root.UserPassword.UserPassword.TransformerArg.toObject(message.transformerArg[j], options);
             }
-            if (message.transformedData != null && message.hasOwnProperty("transformedData")) {
+            if (message.transformedData != null && message.hasOwnProperty("transformedData"))
                 object.transformedData = options.bytes === String ? $util.base64.encode(message.transformedData, 0, message.transformedData.length) : options.bytes === Array ? Array.prototype.slice.call(message.transformedData) : message.transformedData;
-                if (options.oneofs)
-                    object._transformedData = "transformedData";
-            }
             return object;
         };
 
@@ -22553,6 +20798,21 @@ $root.UserPassword = (function() {
          */
         UserPassword.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for UserPassword
+         * @function getTypeUrl
+         * @memberof UserPassword.UserPassword
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        UserPassword.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/UserPassword.UserPassword";
         };
 
         /**
@@ -22612,11 +20872,11 @@ $root.UserPassword = (function() {
 
             /**
              * TransformerArg key.
-             * @member {string|null|undefined} key
+             * @member {string} key
              * @memberof UserPassword.UserPassword.TransformerArg
              * @instance
              */
-            TransformerArg.prototype.key = null;
+            TransformerArg.prototype.key = "";
 
             /**
              * TransformerArg value.
@@ -22625,31 +20885,6 @@ $root.UserPassword = (function() {
              * @instance
              */
             TransformerArg.prototype.value = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * TransformerArg _key.
-             * @member {"key"|undefined} _key
-             * @memberof UserPassword.UserPassword.TransformerArg
-             * @instance
-             */
-            Object.defineProperty(TransformerArg.prototype, "_key", {
-                get: $util.oneOfGetter($oneOfFields = ["key"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * TransformerArg _value.
-             * @member {"value"|undefined} _value
-             * @memberof UserPassword.UserPassword.TransformerArg
-             * @instance
-             */
-            Object.defineProperty(TransformerArg.prototype, "_value", {
-                get: $util.oneOfGetter($oneOfFields = ["value"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * Creates a new TransformerArg instance using the specified properties.
@@ -22706,19 +20941,23 @@ $root.UserPassword = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            TransformerArg.decode = function decode(reader, length) {
+            TransformerArg.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword.TransformerArg();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.key = reader.string();
-                        break;
-                    case 2:
-                        message.value = $root.UserPassword.UserPassword.TransformerArg.Value.decode(reader, reader.uint32());
-                        break;
+                    case 1: {
+                            message.key = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.value = $root.UserPassword.UserPassword.TransformerArg.Value.decode(reader, reader.uint32());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -22754,19 +20993,13 @@ $root.UserPassword = (function() {
             TransformerArg.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.key != null && message.hasOwnProperty("key")) {
-                    properties._key = 1;
+                if (message.key != null && message.hasOwnProperty("key"))
                     if (!$util.isString(message.key))
                         return "key: string expected";
-                }
                 if (message.value != null && message.hasOwnProperty("value")) {
-                    properties._value = 1;
-                    {
-                        var error = $root.UserPassword.UserPassword.TransformerArg.Value.verify(message.value);
-                        if (error)
-                            return "value." + error;
-                    }
+                    var error = $root.UserPassword.UserPassword.TransformerArg.Value.verify(message.value);
+                    if (error)
+                        return "value." + error;
                 }
                 return null;
             };
@@ -22806,16 +21039,14 @@ $root.UserPassword = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.key != null && message.hasOwnProperty("key")) {
+                if (options.defaults) {
+                    object.key = "";
+                    object.value = null;
+                }
+                if (message.key != null && message.hasOwnProperty("key"))
                     object.key = message.key;
-                    if (options.oneofs)
-                        object._key = "key";
-                }
-                if (message.value != null && message.hasOwnProperty("value")) {
+                if (message.value != null && message.hasOwnProperty("value"))
                     object.value = $root.UserPassword.UserPassword.TransformerArg.Value.toObject(message.value, options);
-                    if (options.oneofs)
-                        object._value = "value";
-                }
                 return object;
             };
 
@@ -22828,6 +21059,21 @@ $root.UserPassword = (function() {
              */
             TransformerArg.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for TransformerArg
+             * @function getTypeUrl
+             * @memberof UserPassword.UserPassword.TransformerArg
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            TransformerArg.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/UserPassword.UserPassword.TransformerArg";
             };
 
             TransformerArg.Value = (function() {
@@ -22940,19 +21186,23 @@ $root.UserPassword = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Value.decode = function decode(reader, length) {
+                Value.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword.TransformerArg.Value();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.asBlob = reader.bytes();
-                            break;
-                        case 2:
-                            message.asUnsignedInteger = reader.uint32();
-                            break;
+                        case 1: {
+                                message.asBlob = reader.bytes();
+                                break;
+                            }
+                        case 2: {
+                                message.asUnsignedInteger = reader.uint32();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -23019,7 +21269,7 @@ $root.UserPassword = (function() {
                     if (object.asBlob != null)
                         if (typeof object.asBlob === "string")
                             $util.base64.decode(object.asBlob, message.asBlob = $util.newBuffer($util.base64.length(object.asBlob)), 0);
-                        else if (object.asBlob.length)
+                        else if (object.asBlob.length >= 0)
                             message.asBlob = object.asBlob;
                     if (object.asUnsignedInteger != null)
                         message.asUnsignedInteger = object.asUnsignedInteger >>> 0;
@@ -23061,6 +21311,21 @@ $root.UserPassword = (function() {
                  */
                 Value.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for Value
+                 * @function getTypeUrl
+                 * @memberof UserPassword.UserPassword.TransformerArg.Value
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                Value.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/UserPassword.UserPassword.TransformerArg.Value";
                 };
 
                 return Value;
@@ -23112,11 +21377,11 @@ $root.DeviceCapabilities = (function() {
 
         /**
          * DeviceCapabilities chatLockSupportLevel.
-         * @member {DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel|null|undefined} chatLockSupportLevel
+         * @member {DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel} chatLockSupportLevel
          * @memberof DeviceCapabilities.DeviceCapabilities
          * @instance
          */
-        DeviceCapabilities.prototype.chatLockSupportLevel = null;
+        DeviceCapabilities.prototype.chatLockSupportLevel = 0;
 
         /**
          * DeviceCapabilities lidMigration.
@@ -23133,42 +21398,6 @@ $root.DeviceCapabilities = (function() {
          * @instance
          */
         DeviceCapabilities.prototype.businessBroadcast = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * DeviceCapabilities _chatLockSupportLevel.
-         * @member {"chatLockSupportLevel"|undefined} _chatLockSupportLevel
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
-        Object.defineProperty(DeviceCapabilities.prototype, "_chatLockSupportLevel", {
-            get: $util.oneOfGetter($oneOfFields = ["chatLockSupportLevel"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * DeviceCapabilities _lidMigration.
-         * @member {"lidMigration"|undefined} _lidMigration
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
-        Object.defineProperty(DeviceCapabilities.prototype, "_lidMigration", {
-            get: $util.oneOfGetter($oneOfFields = ["lidMigration"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * DeviceCapabilities _businessBroadcast.
-         * @member {"businessBroadcast"|undefined} _businessBroadcast
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
-        Object.defineProperty(DeviceCapabilities.prototype, "_businessBroadcast", {
-            get: $util.oneOfGetter($oneOfFields = ["businessBroadcast"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
 
         /**
          * Creates a new DeviceCapabilities instance using the specified properties.
@@ -23227,22 +21456,27 @@ $root.DeviceCapabilities = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        DeviceCapabilities.decode = function decode(reader, length) {
+        DeviceCapabilities.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DeviceCapabilities.DeviceCapabilities();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.chatLockSupportLevel = reader.int32();
-                    break;
-                case 2:
-                    message.lidMigration = $root.DeviceCapabilities.DeviceCapabilities.LIDMigration.decode(reader, reader.uint32());
-                    break;
-                case 3:
-                    message.businessBroadcast = $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.chatLockSupportLevel = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.lidMigration = $root.DeviceCapabilities.DeviceCapabilities.LIDMigration.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 3: {
+                        message.businessBroadcast = $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -23278,9 +21512,7 @@ $root.DeviceCapabilities = (function() {
         DeviceCapabilities.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.chatLockSupportLevel != null && message.hasOwnProperty("chatLockSupportLevel")) {
-                properties._chatLockSupportLevel = 1;
+            if (message.chatLockSupportLevel != null && message.hasOwnProperty("chatLockSupportLevel"))
                 switch (message.chatLockSupportLevel) {
                 default:
                     return "chatLockSupportLevel: enum value expected";
@@ -23289,22 +21521,15 @@ $root.DeviceCapabilities = (function() {
                 case 2:
                     break;
                 }
-            }
             if (message.lidMigration != null && message.hasOwnProperty("lidMigration")) {
-                properties._lidMigration = 1;
-                {
-                    var error = $root.DeviceCapabilities.DeviceCapabilities.LIDMigration.verify(message.lidMigration);
-                    if (error)
-                        return "lidMigration." + error;
-                }
+                var error = $root.DeviceCapabilities.DeviceCapabilities.LIDMigration.verify(message.lidMigration);
+                if (error)
+                    return "lidMigration." + error;
             }
             if (message.businessBroadcast != null && message.hasOwnProperty("businessBroadcast")) {
-                properties._businessBroadcast = 1;
-                {
-                    var error = $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast.verify(message.businessBroadcast);
-                    if (error)
-                        return "businessBroadcast." + error;
-                }
+                var error = $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast.verify(message.businessBroadcast);
+                if (error)
+                    return "businessBroadcast." + error;
             }
             return null;
         };
@@ -23322,6 +21547,12 @@ $root.DeviceCapabilities = (function() {
                 return object;
             var message = new $root.DeviceCapabilities.DeviceCapabilities();
             switch (object.chatLockSupportLevel) {
+            default:
+                if (typeof object.chatLockSupportLevel === "number") {
+                    message.chatLockSupportLevel = object.chatLockSupportLevel;
+                    break;
+                }
+                break;
             case "NONE":
             case 0:
                 message.chatLockSupportLevel = 0;
@@ -23361,21 +21592,17 @@ $root.DeviceCapabilities = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.chatLockSupportLevel != null && message.hasOwnProperty("chatLockSupportLevel")) {
-                object.chatLockSupportLevel = options.enums === String ? $root.DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel[message.chatLockSupportLevel] : message.chatLockSupportLevel;
-                if (options.oneofs)
-                    object._chatLockSupportLevel = "chatLockSupportLevel";
+            if (options.defaults) {
+                object.chatLockSupportLevel = options.enums === String ? "NONE" : 0;
+                object.lidMigration = null;
+                object.businessBroadcast = null;
             }
-            if (message.lidMigration != null && message.hasOwnProperty("lidMigration")) {
+            if (message.chatLockSupportLevel != null && message.hasOwnProperty("chatLockSupportLevel"))
+                object.chatLockSupportLevel = options.enums === String ? $root.DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel[message.chatLockSupportLevel] === undefined ? message.chatLockSupportLevel : $root.DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel[message.chatLockSupportLevel] : message.chatLockSupportLevel;
+            if (message.lidMigration != null && message.hasOwnProperty("lidMigration"))
                 object.lidMigration = $root.DeviceCapabilities.DeviceCapabilities.LIDMigration.toObject(message.lidMigration, options);
-                if (options.oneofs)
-                    object._lidMigration = "lidMigration";
-            }
-            if (message.businessBroadcast != null && message.hasOwnProperty("businessBroadcast")) {
+            if (message.businessBroadcast != null && message.hasOwnProperty("businessBroadcast"))
                 object.businessBroadcast = $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast.toObject(message.businessBroadcast, options);
-                if (options.oneofs)
-                    object._businessBroadcast = "businessBroadcast";
-            }
             return object;
         };
 
@@ -23388,6 +21615,21 @@ $root.DeviceCapabilities = (function() {
          */
         DeviceCapabilities.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for DeviceCapabilities
+         * @function getTypeUrl
+         * @memberof DeviceCapabilities.DeviceCapabilities
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        DeviceCapabilities.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/DeviceCapabilities.DeviceCapabilities";
         };
 
         DeviceCapabilities.BusinessBroadcast = (function() {
@@ -23416,25 +21658,11 @@ $root.DeviceCapabilities = (function() {
 
             /**
              * BusinessBroadcast importListEnabled.
-             * @member {boolean|null|undefined} importListEnabled
+             * @member {boolean} importListEnabled
              * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
              * @instance
              */
-            BusinessBroadcast.prototype.importListEnabled = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * BusinessBroadcast _importListEnabled.
-             * @member {"importListEnabled"|undefined} _importListEnabled
-             * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
-             * @instance
-             */
-            Object.defineProperty(BusinessBroadcast.prototype, "_importListEnabled", {
-                get: $util.oneOfGetter($oneOfFields = ["importListEnabled"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            BusinessBroadcast.prototype.importListEnabled = false;
 
             /**
              * Creates a new BusinessBroadcast instance using the specified properties.
@@ -23489,16 +21717,19 @@ $root.DeviceCapabilities = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BusinessBroadcast.decode = function decode(reader, length) {
+            BusinessBroadcast.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.importListEnabled = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.importListEnabled = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -23534,12 +21765,9 @@ $root.DeviceCapabilities = (function() {
             BusinessBroadcast.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.importListEnabled != null && message.hasOwnProperty("importListEnabled")) {
-                    properties._importListEnabled = 1;
+                if (message.importListEnabled != null && message.hasOwnProperty("importListEnabled"))
                     if (typeof message.importListEnabled !== "boolean")
                         return "importListEnabled: boolean expected";
-                }
                 return null;
             };
 
@@ -23573,11 +21801,10 @@ $root.DeviceCapabilities = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.importListEnabled != null && message.hasOwnProperty("importListEnabled")) {
+                if (options.defaults)
+                    object.importListEnabled = false;
+                if (message.importListEnabled != null && message.hasOwnProperty("importListEnabled"))
                     object.importListEnabled = message.importListEnabled;
-                    if (options.oneofs)
-                        object._importListEnabled = "importListEnabled";
-                }
                 return object;
             };
 
@@ -23590,6 +21817,21 @@ $root.DeviceCapabilities = (function() {
              */
             BusinessBroadcast.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BusinessBroadcast
+             * @function getTypeUrl
+             * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BusinessBroadcast.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/DeviceCapabilities.DeviceCapabilities.BusinessBroadcast";
             };
 
             return BusinessBroadcast;
@@ -23637,25 +21879,11 @@ $root.DeviceCapabilities = (function() {
 
             /**
              * LIDMigration chatDbMigrationTimestamp.
-             * @member {number|Long|null|undefined} chatDbMigrationTimestamp
+             * @member {number|Long} chatDbMigrationTimestamp
              * @memberof DeviceCapabilities.DeviceCapabilities.LIDMigration
              * @instance
              */
-            LIDMigration.prototype.chatDbMigrationTimestamp = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * LIDMigration _chatDbMigrationTimestamp.
-             * @member {"chatDbMigrationTimestamp"|undefined} _chatDbMigrationTimestamp
-             * @memberof DeviceCapabilities.DeviceCapabilities.LIDMigration
-             * @instance
-             */
-            Object.defineProperty(LIDMigration.prototype, "_chatDbMigrationTimestamp", {
-                get: $util.oneOfGetter($oneOfFields = ["chatDbMigrationTimestamp"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            LIDMigration.prototype.chatDbMigrationTimestamp = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
 
             /**
              * Creates a new LIDMigration instance using the specified properties.
@@ -23710,16 +21938,19 @@ $root.DeviceCapabilities = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LIDMigration.decode = function decode(reader, length) {
+            LIDMigration.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DeviceCapabilities.DeviceCapabilities.LIDMigration();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.chatDbMigrationTimestamp = reader.uint64();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.chatDbMigrationTimestamp = reader.uint64();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -23755,12 +21986,9 @@ $root.DeviceCapabilities = (function() {
             LIDMigration.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
-                if (message.chatDbMigrationTimestamp != null && message.hasOwnProperty("chatDbMigrationTimestamp")) {
-                    properties._chatDbMigrationTimestamp = 1;
+                if (message.chatDbMigrationTimestamp != null && message.hasOwnProperty("chatDbMigrationTimestamp"))
                     if (!$util.isInteger(message.chatDbMigrationTimestamp) && !(message.chatDbMigrationTimestamp && $util.isInteger(message.chatDbMigrationTimestamp.low) && $util.isInteger(message.chatDbMigrationTimestamp.high)))
                         return "chatDbMigrationTimestamp: integer|Long expected";
-                }
                 return null;
             };
 
@@ -23801,14 +22029,17 @@ $root.DeviceCapabilities = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (message.chatDbMigrationTimestamp != null && message.hasOwnProperty("chatDbMigrationTimestamp")) {
+                if (options.defaults)
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, true);
+                        object.chatDbMigrationTimestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.chatDbMigrationTimestamp = options.longs === String ? "0" : 0;
+                if (message.chatDbMigrationTimestamp != null && message.hasOwnProperty("chatDbMigrationTimestamp"))
                     if (typeof message.chatDbMigrationTimestamp === "number")
                         object.chatDbMigrationTimestamp = options.longs === String ? String(message.chatDbMigrationTimestamp) : message.chatDbMigrationTimestamp;
                     else
                         object.chatDbMigrationTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.chatDbMigrationTimestamp) : options.longs === Number ? new $util.LongBits(message.chatDbMigrationTimestamp.low >>> 0, message.chatDbMigrationTimestamp.high >>> 0).toNumber(true) : message.chatDbMigrationTimestamp;
-                    if (options.oneofs)
-                        object._chatDbMigrationTimestamp = "chatDbMigrationTimestamp";
-                }
                 return object;
             };
 
@@ -23821,6 +22052,21 @@ $root.DeviceCapabilities = (function() {
              */
             LIDMigration.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for LIDMigration
+             * @function getTypeUrl
+             * @memberof DeviceCapabilities.DeviceCapabilities.LIDMigration
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            LIDMigration.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/DeviceCapabilities.DeviceCapabilities.LIDMigration";
             };
 
             return LIDMigration;
@@ -23870,82 +22116,35 @@ $root.Protocol = (function() {
 
         /**
          * LimitSharing sharingLimited.
-         * @member {boolean|null|undefined} sharingLimited
+         * @member {boolean} sharingLimited
          * @memberof Protocol.LimitSharing
          * @instance
          */
-        LimitSharing.prototype.sharingLimited = null;
+        LimitSharing.prototype.sharingLimited = false;
 
         /**
          * LimitSharing trigger.
-         * @member {Protocol.LimitSharing.TriggerType|null|undefined} trigger
+         * @member {Protocol.LimitSharing.TriggerType} trigger
          * @memberof Protocol.LimitSharing
          * @instance
          */
-        LimitSharing.prototype.trigger = null;
+        LimitSharing.prototype.trigger = 0;
 
         /**
          * LimitSharing limitSharingSettingTimestamp.
-         * @member {number|Long|null|undefined} limitSharingSettingTimestamp
+         * @member {number|Long} limitSharingSettingTimestamp
          * @memberof Protocol.LimitSharing
          * @instance
          */
-        LimitSharing.prototype.limitSharingSettingTimestamp = null;
+        LimitSharing.prototype.limitSharingSettingTimestamp = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
         /**
          * LimitSharing initiatedByMe.
-         * @member {boolean|null|undefined} initiatedByMe
+         * @member {boolean} initiatedByMe
          * @memberof Protocol.LimitSharing
          * @instance
          */
-        LimitSharing.prototype.initiatedByMe = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * LimitSharing _sharingLimited.
-         * @member {"sharingLimited"|undefined} _sharingLimited
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
-        Object.defineProperty(LimitSharing.prototype, "_sharingLimited", {
-            get: $util.oneOfGetter($oneOfFields = ["sharingLimited"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * LimitSharing _trigger.
-         * @member {"trigger"|undefined} _trigger
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
-        Object.defineProperty(LimitSharing.prototype, "_trigger", {
-            get: $util.oneOfGetter($oneOfFields = ["trigger"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * LimitSharing _limitSharingSettingTimestamp.
-         * @member {"limitSharingSettingTimestamp"|undefined} _limitSharingSettingTimestamp
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
-        Object.defineProperty(LimitSharing.prototype, "_limitSharingSettingTimestamp", {
-            get: $util.oneOfGetter($oneOfFields = ["limitSharingSettingTimestamp"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * LimitSharing _initiatedByMe.
-         * @member {"initiatedByMe"|undefined} _initiatedByMe
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
-        Object.defineProperty(LimitSharing.prototype, "_initiatedByMe", {
-            get: $util.oneOfGetter($oneOfFields = ["initiatedByMe"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        LimitSharing.prototype.initiatedByMe = false;
 
         /**
          * Creates a new LimitSharing instance using the specified properties.
@@ -24006,25 +22205,31 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        LimitSharing.decode = function decode(reader, length) {
+        LimitSharing.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.LimitSharing();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.sharingLimited = reader.bool();
-                    break;
-                case 2:
-                    message.trigger = reader.int32();
-                    break;
-                case 3:
-                    message.limitSharingSettingTimestamp = reader.int64();
-                    break;
-                case 4:
-                    message.initiatedByMe = reader.bool();
-                    break;
+                case 1: {
+                        message.sharingLimited = reader.bool();
+                        break;
+                    }
+                case 2: {
+                        message.trigger = reader.int32();
+                        break;
+                    }
+                case 3: {
+                        message.limitSharingSettingTimestamp = reader.int64();
+                        break;
+                    }
+                case 4: {
+                        message.initiatedByMe = reader.bool();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -24060,14 +22265,10 @@ $root.Protocol = (function() {
         LimitSharing.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.sharingLimited != null && message.hasOwnProperty("sharingLimited")) {
-                properties._sharingLimited = 1;
+            if (message.sharingLimited != null && message.hasOwnProperty("sharingLimited"))
                 if (typeof message.sharingLimited !== "boolean")
                     return "sharingLimited: boolean expected";
-            }
-            if (message.trigger != null && message.hasOwnProperty("trigger")) {
-                properties._trigger = 1;
+            if (message.trigger != null && message.hasOwnProperty("trigger"))
                 switch (message.trigger) {
                 default:
                     return "trigger: enum value expected";
@@ -24077,17 +22278,12 @@ $root.Protocol = (function() {
                 case 3:
                     break;
                 }
-            }
-            if (message.limitSharingSettingTimestamp != null && message.hasOwnProperty("limitSharingSettingTimestamp")) {
-                properties._limitSharingSettingTimestamp = 1;
+            if (message.limitSharingSettingTimestamp != null && message.hasOwnProperty("limitSharingSettingTimestamp"))
                 if (!$util.isInteger(message.limitSharingSettingTimestamp) && !(message.limitSharingSettingTimestamp && $util.isInteger(message.limitSharingSettingTimestamp.low) && $util.isInteger(message.limitSharingSettingTimestamp.high)))
                     return "limitSharingSettingTimestamp: integer|Long expected";
-            }
-            if (message.initiatedByMe != null && message.hasOwnProperty("initiatedByMe")) {
-                properties._initiatedByMe = 1;
+            if (message.initiatedByMe != null && message.hasOwnProperty("initiatedByMe"))
                 if (typeof message.initiatedByMe !== "boolean")
                     return "initiatedByMe: boolean expected";
-            }
             return null;
         };
 
@@ -24106,6 +22302,12 @@ $root.Protocol = (function() {
             if (object.sharingLimited != null)
                 message.sharingLimited = Boolean(object.sharingLimited);
             switch (object.trigger) {
+            default:
+                if (typeof object.trigger === "number") {
+                    message.trigger = object.trigger;
+                    break;
+                }
+                break;
             case "UNKNOWN":
             case 0:
                 message.trigger = 0;
@@ -24150,29 +22352,27 @@ $root.Protocol = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.sharingLimited != null && message.hasOwnProperty("sharingLimited")) {
+            if (options.defaults) {
+                object.sharingLimited = false;
+                object.trigger = options.enums === String ? "UNKNOWN" : 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.limitSharingSettingTimestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.limitSharingSettingTimestamp = options.longs === String ? "0" : 0;
+                object.initiatedByMe = false;
+            }
+            if (message.sharingLimited != null && message.hasOwnProperty("sharingLimited"))
                 object.sharingLimited = message.sharingLimited;
-                if (options.oneofs)
-                    object._sharingLimited = "sharingLimited";
-            }
-            if (message.trigger != null && message.hasOwnProperty("trigger")) {
-                object.trigger = options.enums === String ? $root.Protocol.LimitSharing.TriggerType[message.trigger] : message.trigger;
-                if (options.oneofs)
-                    object._trigger = "trigger";
-            }
-            if (message.limitSharingSettingTimestamp != null && message.hasOwnProperty("limitSharingSettingTimestamp")) {
+            if (message.trigger != null && message.hasOwnProperty("trigger"))
+                object.trigger = options.enums === String ? $root.Protocol.LimitSharing.TriggerType[message.trigger] === undefined ? message.trigger : $root.Protocol.LimitSharing.TriggerType[message.trigger] : message.trigger;
+            if (message.limitSharingSettingTimestamp != null && message.hasOwnProperty("limitSharingSettingTimestamp"))
                 if (typeof message.limitSharingSettingTimestamp === "number")
                     object.limitSharingSettingTimestamp = options.longs === String ? String(message.limitSharingSettingTimestamp) : message.limitSharingSettingTimestamp;
                 else
                     object.limitSharingSettingTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.limitSharingSettingTimestamp) : options.longs === Number ? new $util.LongBits(message.limitSharingSettingTimestamp.low >>> 0, message.limitSharingSettingTimestamp.high >>> 0).toNumber() : message.limitSharingSettingTimestamp;
-                if (options.oneofs)
-                    object._limitSharingSettingTimestamp = "limitSharingSettingTimestamp";
-            }
-            if (message.initiatedByMe != null && message.hasOwnProperty("initiatedByMe")) {
+            if (message.initiatedByMe != null && message.hasOwnProperty("initiatedByMe"))
                 object.initiatedByMe = message.initiatedByMe;
-                if (options.oneofs)
-                    object._initiatedByMe = "initiatedByMe";
-            }
             return object;
         };
 
@@ -24185,6 +22385,21 @@ $root.Protocol = (function() {
          */
         LimitSharing.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for LimitSharing
+         * @function getTypeUrl
+         * @memberof Protocol.LimitSharing
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        LimitSharing.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Protocol.LimitSharing";
         };
 
         /**
@@ -24237,82 +22452,35 @@ $root.Protocol = (function() {
 
         /**
          * MessageKey remoteJid.
-         * @member {string|null|undefined} remoteJid
+         * @member {string} remoteJid
          * @memberof Protocol.MessageKey
          * @instance
          */
-        MessageKey.prototype.remoteJid = null;
+        MessageKey.prototype.remoteJid = "";
 
         /**
          * MessageKey fromMe.
-         * @member {boolean|null|undefined} fromMe
+         * @member {boolean} fromMe
          * @memberof Protocol.MessageKey
          * @instance
          */
-        MessageKey.prototype.fromMe = null;
+        MessageKey.prototype.fromMe = false;
 
         /**
          * MessageKey id.
-         * @member {string|null|undefined} id
+         * @member {string} id
          * @memberof Protocol.MessageKey
          * @instance
          */
-        MessageKey.prototype.id = null;
+        MessageKey.prototype.id = "";
 
         /**
          * MessageKey participant.
-         * @member {string|null|undefined} participant
+         * @member {string} participant
          * @memberof Protocol.MessageKey
          * @instance
          */
-        MessageKey.prototype.participant = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * MessageKey _remoteJid.
-         * @member {"remoteJid"|undefined} _remoteJid
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
-        Object.defineProperty(MessageKey.prototype, "_remoteJid", {
-            get: $util.oneOfGetter($oneOfFields = ["remoteJid"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * MessageKey _fromMe.
-         * @member {"fromMe"|undefined} _fromMe
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
-        Object.defineProperty(MessageKey.prototype, "_fromMe", {
-            get: $util.oneOfGetter($oneOfFields = ["fromMe"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * MessageKey _id.
-         * @member {"id"|undefined} _id
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
-        Object.defineProperty(MessageKey.prototype, "_id", {
-            get: $util.oneOfGetter($oneOfFields = ["id"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * MessageKey _participant.
-         * @member {"participant"|undefined} _participant
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
-        Object.defineProperty(MessageKey.prototype, "_participant", {
-            get: $util.oneOfGetter($oneOfFields = ["participant"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
+        MessageKey.prototype.participant = "";
 
         /**
          * Creates a new MessageKey instance using the specified properties.
@@ -24373,25 +22541,31 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        MessageKey.decode = function decode(reader, length) {
+        MessageKey.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.MessageKey();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.remoteJid = reader.string();
-                    break;
-                case 2:
-                    message.fromMe = reader.bool();
-                    break;
-                case 3:
-                    message.id = reader.string();
-                    break;
-                case 4:
-                    message.participant = reader.string();
-                    break;
+                case 1: {
+                        message.remoteJid = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.fromMe = reader.bool();
+                        break;
+                    }
+                case 3: {
+                        message.id = reader.string();
+                        break;
+                    }
+                case 4: {
+                        message.participant = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -24427,27 +22601,18 @@ $root.Protocol = (function() {
         MessageKey.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            var properties = {};
-            if (message.remoteJid != null && message.hasOwnProperty("remoteJid")) {
-                properties._remoteJid = 1;
+            if (message.remoteJid != null && message.hasOwnProperty("remoteJid"))
                 if (!$util.isString(message.remoteJid))
                     return "remoteJid: string expected";
-            }
-            if (message.fromMe != null && message.hasOwnProperty("fromMe")) {
-                properties._fromMe = 1;
+            if (message.fromMe != null && message.hasOwnProperty("fromMe"))
                 if (typeof message.fromMe !== "boolean")
                     return "fromMe: boolean expected";
-            }
-            if (message.id != null && message.hasOwnProperty("id")) {
-                properties._id = 1;
+            if (message.id != null && message.hasOwnProperty("id"))
                 if (!$util.isString(message.id))
                     return "id: string expected";
-            }
-            if (message.participant != null && message.hasOwnProperty("participant")) {
-                properties._participant = 1;
+            if (message.participant != null && message.hasOwnProperty("participant"))
                 if (!$util.isString(message.participant))
                     return "participant: string expected";
-            }
             return null;
         };
 
@@ -24487,26 +22652,20 @@ $root.Protocol = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.remoteJid != null && message.hasOwnProperty("remoteJid")) {
+            if (options.defaults) {
+                object.remoteJid = "";
+                object.fromMe = false;
+                object.id = "";
+                object.participant = "";
+            }
+            if (message.remoteJid != null && message.hasOwnProperty("remoteJid"))
                 object.remoteJid = message.remoteJid;
-                if (options.oneofs)
-                    object._remoteJid = "remoteJid";
-            }
-            if (message.fromMe != null && message.hasOwnProperty("fromMe")) {
+            if (message.fromMe != null && message.hasOwnProperty("fromMe"))
                 object.fromMe = message.fromMe;
-                if (options.oneofs)
-                    object._fromMe = "fromMe";
-            }
-            if (message.id != null && message.hasOwnProperty("id")) {
+            if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
-                if (options.oneofs)
-                    object._id = "id";
-            }
-            if (message.participant != null && message.hasOwnProperty("participant")) {
+            if (message.participant != null && message.hasOwnProperty("participant"))
                 object.participant = message.participant;
-                if (options.oneofs)
-                    object._participant = "participant";
-            }
             return object;
         };
 
@@ -24519,6 +22678,21 @@ $root.Protocol = (function() {
          */
         MessageKey.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for MessageKey
+         * @function getTypeUrl
+         * @memberof Protocol.MessageKey
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        MessageKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/Protocol.MessageKey";
         };
 
         return MessageKey;

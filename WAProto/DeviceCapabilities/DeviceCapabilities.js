@@ -161,22 +161,27 @@ $root.DeviceCapabilities = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        DeviceCapabilities.decode = function decode(reader, length) {
+        DeviceCapabilities.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DeviceCapabilities.DeviceCapabilities();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.chatLockSupportLevel = reader.int32();
-                    break;
-                case 2:
-                    message.lidMigration = $root.DeviceCapabilities.DeviceCapabilities.LIDMigration.decode(reader, reader.uint32());
-                    break;
-                case 3:
-                    message.businessBroadcast = $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.chatLockSupportLevel = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.lidMigration = $root.DeviceCapabilities.DeviceCapabilities.LIDMigration.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 3: {
+                        message.businessBroadcast = $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -256,6 +261,12 @@ $root.DeviceCapabilities = (function() {
                 return object;
             var message = new $root.DeviceCapabilities.DeviceCapabilities();
             switch (object.chatLockSupportLevel) {
+            default:
+                if (typeof object.chatLockSupportLevel === "number") {
+                    message.chatLockSupportLevel = object.chatLockSupportLevel;
+                    break;
+                }
+                break;
             case "NONE":
             case 0:
                 message.chatLockSupportLevel = 0;
@@ -296,7 +307,7 @@ $root.DeviceCapabilities = (function() {
                 options = {};
             var object = {};
             if (message.chatLockSupportLevel != null && message.hasOwnProperty("chatLockSupportLevel")) {
-                object.chatLockSupportLevel = options.enums === String ? $root.DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel[message.chatLockSupportLevel] : message.chatLockSupportLevel;
+                object.chatLockSupportLevel = options.enums === String ? $root.DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel[message.chatLockSupportLevel] === undefined ? message.chatLockSupportLevel : $root.DeviceCapabilities.DeviceCapabilities.ChatLockSupportLevel[message.chatLockSupportLevel] : message.chatLockSupportLevel;
                 if (options.oneofs)
                     object._chatLockSupportLevel = "chatLockSupportLevel";
             }
@@ -322,6 +333,21 @@ $root.DeviceCapabilities = (function() {
          */
         DeviceCapabilities.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for DeviceCapabilities
+         * @function getTypeUrl
+         * @memberof DeviceCapabilities.DeviceCapabilities
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        DeviceCapabilities.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/DeviceCapabilities.DeviceCapabilities";
         };
 
         DeviceCapabilities.BusinessBroadcast = (function() {
@@ -423,16 +449,19 @@ $root.DeviceCapabilities = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BusinessBroadcast.decode = function decode(reader, length) {
+            BusinessBroadcast.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.importListEnabled = reader.bool();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.importListEnabled = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -524,6 +553,21 @@ $root.DeviceCapabilities = (function() {
              */
             BusinessBroadcast.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BusinessBroadcast
+             * @function getTypeUrl
+             * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BusinessBroadcast.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/DeviceCapabilities.DeviceCapabilities.BusinessBroadcast";
             };
 
             return BusinessBroadcast;
@@ -644,16 +688,19 @@ $root.DeviceCapabilities = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LIDMigration.decode = function decode(reader, length) {
+            LIDMigration.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DeviceCapabilities.DeviceCapabilities.LIDMigration();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.chatDbMigrationTimestamp = reader.uint64();
+                    if (tag === error)
                         break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.chatDbMigrationTimestamp = reader.uint64();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -755,6 +802,21 @@ $root.DeviceCapabilities = (function() {
              */
             LIDMigration.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for LIDMigration
+             * @function getTypeUrl
+             * @memberof DeviceCapabilities.DeviceCapabilities.LIDMigration
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            LIDMigration.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/DeviceCapabilities.DeviceCapabilities.LIDMigration";
             };
 
             return LIDMigration;

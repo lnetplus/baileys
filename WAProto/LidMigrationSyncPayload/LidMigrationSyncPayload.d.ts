@@ -1,4 +1,5 @@
 import * as $protobuf from "protobufjs";
+import Long = require("long");
 /** Namespace LidMigrationSyncPayload. */
 export namespace LidMigrationSyncPayload {
 
@@ -25,10 +26,7 @@ export namespace LidMigrationSyncPayload {
         public pnToLidMappings: LidMigrationSyncPayload.ILIDMigrationMapping[];
 
         /** LIDMigrationMappingSyncPayload chatDbMigrationTimestamp. */
-        public chatDbMigrationTimestamp?: (number|Long|null);
-
-        /** LIDMigrationMappingSyncPayload _chatDbMigrationTimestamp. */
-        public _chatDbMigrationTimestamp?: "chatDbMigrationTimestamp";
+        public chatDbMigrationTimestamp: (number|Long);
 
         /**
          * Creates a new LIDMigrationMappingSyncPayload instance using the specified properties.
@@ -99,6 +97,13 @@ export namespace LidMigrationSyncPayload {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for LIDMigrationMappingSyncPayload
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a LIDMigrationMapping. */
@@ -130,10 +135,7 @@ export namespace LidMigrationSyncPayload {
         public assignedLid: (number|Long);
 
         /** LIDMigrationMapping latestLid. */
-        public latestLid?: (number|Long|null);
-
-        /** LIDMigrationMapping _latestLid. */
-        public _latestLid?: "latestLid";
+        public latestLid: (number|Long);
 
         /**
          * Creates a new LIDMigrationMapping instance using the specified properties.
@@ -204,5 +206,12 @@ export namespace LidMigrationSyncPayload {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for LIDMigrationMapping
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 }

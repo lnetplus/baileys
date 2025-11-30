@@ -161,22 +161,27 @@ $root.CompanionReg = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ClientPairingProps.decode = function decode(reader, length) {
+        ClientPairingProps.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.ClientPairingProps();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.isChatDbLidMigrated = reader.bool();
-                    break;
-                case 2:
-                    message.isSyncdPureLidSession = reader.bool();
-                    break;
-                case 3:
-                    message.isSyncdSnapshotRecoveryEnabled = reader.bool();
-                    break;
+                case 1: {
+                        message.isChatDbLidMigrated = reader.bool();
+                        break;
+                    }
+                case 2: {
+                        message.isSyncdPureLidSession = reader.bool();
+                        break;
+                    }
+                case 3: {
+                        message.isSyncdSnapshotRecoveryEnabled = reader.bool();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -292,6 +297,21 @@ $root.CompanionReg = (function() {
          */
         ClientPairingProps.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for ClientPairingProps
+         * @function getTypeUrl
+         * @memberof CompanionReg.ClientPairingProps
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        ClientPairingProps.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/CompanionReg.ClientPairingProps";
         };
 
         return ClientPairingProps;
@@ -418,19 +438,23 @@ $root.CompanionReg = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        EncryptedPairingRequest.decode = function decode(reader, length) {
+        EncryptedPairingRequest.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.EncryptedPairingRequest();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.encryptedPayload = reader.bytes();
-                    break;
-                case 2:
-                    message.iv = reader.bytes();
-                    break;
+                case 1: {
+                        message.encryptedPayload = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.iv = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -495,12 +519,12 @@ $root.CompanionReg = (function() {
             if (object.encryptedPayload != null)
                 if (typeof object.encryptedPayload === "string")
                     $util.base64.decode(object.encryptedPayload, message.encryptedPayload = $util.newBuffer($util.base64.length(object.encryptedPayload)), 0);
-                else if (object.encryptedPayload.length)
+                else if (object.encryptedPayload.length >= 0)
                     message.encryptedPayload = object.encryptedPayload;
             if (object.iv != null)
                 if (typeof object.iv === "string")
                     $util.base64.decode(object.iv, message.iv = $util.newBuffer($util.base64.length(object.iv)), 0);
-                else if (object.iv.length)
+                else if (object.iv.length >= 0)
                     message.iv = object.iv;
             return message;
         };
@@ -540,6 +564,21 @@ $root.CompanionReg = (function() {
          */
         EncryptedPairingRequest.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for EncryptedPairingRequest
+         * @function getTypeUrl
+         * @memberof CompanionReg.EncryptedPairingRequest
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        EncryptedPairingRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/CompanionReg.EncryptedPairingRequest";
         };
 
         return EncryptedPairingRequest;
@@ -688,22 +727,27 @@ $root.CompanionReg = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PairingRequest.decode = function decode(reader, length) {
+        PairingRequest.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.PairingRequest();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.companionPublicKey = reader.bytes();
-                    break;
-                case 2:
-                    message.companionIdentityKey = reader.bytes();
-                    break;
-                case 3:
-                    message.advSecret = reader.bytes();
-                    break;
+                case 1: {
+                        message.companionPublicKey = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.companionIdentityKey = reader.bytes();
+                        break;
+                    }
+                case 3: {
+                        message.advSecret = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -773,17 +817,17 @@ $root.CompanionReg = (function() {
             if (object.companionPublicKey != null)
                 if (typeof object.companionPublicKey === "string")
                     $util.base64.decode(object.companionPublicKey, message.companionPublicKey = $util.newBuffer($util.base64.length(object.companionPublicKey)), 0);
-                else if (object.companionPublicKey.length)
+                else if (object.companionPublicKey.length >= 0)
                     message.companionPublicKey = object.companionPublicKey;
             if (object.companionIdentityKey != null)
                 if (typeof object.companionIdentityKey === "string")
                     $util.base64.decode(object.companionIdentityKey, message.companionIdentityKey = $util.newBuffer($util.base64.length(object.companionIdentityKey)), 0);
-                else if (object.companionIdentityKey.length)
+                else if (object.companionIdentityKey.length >= 0)
                     message.companionIdentityKey = object.companionIdentityKey;
             if (object.advSecret != null)
                 if (typeof object.advSecret === "string")
                     $util.base64.decode(object.advSecret, message.advSecret = $util.newBuffer($util.base64.length(object.advSecret)), 0);
-                else if (object.advSecret.length)
+                else if (object.advSecret.length >= 0)
                     message.advSecret = object.advSecret;
             return message;
         };
@@ -828,6 +872,21 @@ $root.CompanionReg = (function() {
          */
         PairingRequest.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for PairingRequest
+         * @function getTypeUrl
+         * @memberof CompanionReg.PairingRequest
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        PairingRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/CompanionReg.PairingRequest";
         };
 
         return PairingRequest;
@@ -954,19 +1013,23 @@ $root.CompanionReg = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PrimaryEphemeralIdentity.decode = function decode(reader, length) {
+        PrimaryEphemeralIdentity.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.PrimaryEphemeralIdentity();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.publicKey = reader.bytes();
-                    break;
-                case 2:
-                    message.nonce = reader.bytes();
-                    break;
+                case 1: {
+                        message.publicKey = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.nonce = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1031,12 +1094,12 @@ $root.CompanionReg = (function() {
             if (object.publicKey != null)
                 if (typeof object.publicKey === "string")
                     $util.base64.decode(object.publicKey, message.publicKey = $util.newBuffer($util.base64.length(object.publicKey)), 0);
-                else if (object.publicKey.length)
+                else if (object.publicKey.length >= 0)
                     message.publicKey = object.publicKey;
             if (object.nonce != null)
                 if (typeof object.nonce === "string")
                     $util.base64.decode(object.nonce, message.nonce = $util.newBuffer($util.base64.length(object.nonce)), 0);
-                else if (object.nonce.length)
+                else if (object.nonce.length >= 0)
                     message.nonce = object.nonce;
             return message;
         };
@@ -1076,6 +1139,21 @@ $root.CompanionReg = (function() {
          */
         PrimaryEphemeralIdentity.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for PrimaryEphemeralIdentity
+         * @function getTypeUrl
+         * @memberof CompanionReg.PrimaryEphemeralIdentity
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        PrimaryEphemeralIdentity.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/CompanionReg.PrimaryEphemeralIdentity";
         };
 
         return PrimaryEphemeralIdentity;
@@ -1202,19 +1280,23 @@ $root.CompanionReg = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ProloguePayload.decode = function decode(reader, length) {
+        ProloguePayload.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.ProloguePayload();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.companionEphemeralIdentity = reader.bytes();
-                    break;
-                case 2:
-                    message.commitment = $root.CompanionReg.CompanionCommitment.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.companionEphemeralIdentity = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.commitment = $root.CompanionReg.CompanionCommitment.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1282,7 +1364,7 @@ $root.CompanionReg = (function() {
             if (object.companionEphemeralIdentity != null)
                 if (typeof object.companionEphemeralIdentity === "string")
                     $util.base64.decode(object.companionEphemeralIdentity, message.companionEphemeralIdentity = $util.newBuffer($util.base64.length(object.companionEphemeralIdentity)), 0);
-                else if (object.companionEphemeralIdentity.length)
+                else if (object.companionEphemeralIdentity.length >= 0)
                     message.companionEphemeralIdentity = object.companionEphemeralIdentity;
             if (object.commitment != null) {
                 if (typeof object.commitment !== "object")
@@ -1327,6 +1409,21 @@ $root.CompanionReg = (function() {
          */
         ProloguePayload.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for ProloguePayload
+         * @function getTypeUrl
+         * @memberof CompanionReg.ProloguePayload
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        ProloguePayload.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/CompanionReg.ProloguePayload";
         };
 
         return ProloguePayload;
@@ -1431,16 +1528,19 @@ $root.CompanionReg = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CompanionCommitment.decode = function decode(reader, length) {
+        CompanionCommitment.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.CompanionCommitment();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    message.hash = reader.bytes();
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.hash = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1500,7 +1600,7 @@ $root.CompanionReg = (function() {
             if (object.hash != null)
                 if (typeof object.hash === "string")
                     $util.base64.decode(object.hash, message.hash = $util.newBuffer($util.base64.length(object.hash)), 0);
-                else if (object.hash.length)
+                else if (object.hash.length >= 0)
                     message.hash = object.hash;
             return message;
         };
@@ -1535,6 +1635,21 @@ $root.CompanionReg = (function() {
          */
         CompanionCommitment.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for CompanionCommitment
+         * @function getTypeUrl
+         * @memberof CompanionReg.CompanionCommitment
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        CompanionCommitment.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/CompanionReg.CompanionCommitment";
         };
 
         return CompanionCommitment;
@@ -1683,22 +1798,27 @@ $root.CompanionReg = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CompanionEphemeralIdentity.decode = function decode(reader, length) {
+        CompanionEphemeralIdentity.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.CompanionEphemeralIdentity();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.publicKey = reader.bytes();
-                    break;
-                case 2:
-                    message.deviceType = reader.int32();
-                    break;
-                case 3:
-                    message.ref = reader.string();
-                    break;
+                case 1: {
+                        message.publicKey = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.deviceType = reader.int32();
+                        break;
+                    }
+                case 3: {
+                        message.ref = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1796,9 +1916,15 @@ $root.CompanionReg = (function() {
             if (object.publicKey != null)
                 if (typeof object.publicKey === "string")
                     $util.base64.decode(object.publicKey, message.publicKey = $util.newBuffer($util.base64.length(object.publicKey)), 0);
-                else if (object.publicKey.length)
+                else if (object.publicKey.length >= 0)
                     message.publicKey = object.publicKey;
             switch (object.deviceType) {
+            default:
+                if (typeof object.deviceType === "number") {
+                    message.deviceType = object.deviceType;
+                    break;
+                }
+                break;
             case "UNKNOWN":
             case 0:
                 message.deviceType = 0;
@@ -1924,7 +2050,7 @@ $root.CompanionReg = (function() {
                     object._publicKey = "publicKey";
             }
             if (message.deviceType != null && message.hasOwnProperty("deviceType")) {
-                object.deviceType = options.enums === String ? $root.CompanionReg.DeviceProps.PlatformType[message.deviceType] : message.deviceType;
+                object.deviceType = options.enums === String ? $root.CompanionReg.DeviceProps.PlatformType[message.deviceType] === undefined ? message.deviceType : $root.CompanionReg.DeviceProps.PlatformType[message.deviceType] : message.deviceType;
                 if (options.oneofs)
                     object._deviceType = "deviceType";
             }
@@ -1945,6 +2071,21 @@ $root.CompanionReg = (function() {
          */
         CompanionEphemeralIdentity.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for CompanionEphemeralIdentity
+         * @function getTypeUrl
+         * @memberof CompanionReg.CompanionEphemeralIdentity
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        CompanionEphemeralIdentity.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/CompanionReg.CompanionEphemeralIdentity";
         };
 
         return CompanionEphemeralIdentity;
@@ -2137,28 +2278,35 @@ $root.CompanionReg = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        DeviceProps.decode = function decode(reader, length) {
+        DeviceProps.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.DeviceProps();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.os = reader.string();
-                    break;
-                case 2:
-                    message.version = $root.CompanionReg.DeviceProps.AppVersion.decode(reader, reader.uint32());
-                    break;
-                case 3:
-                    message.platformType = reader.int32();
-                    break;
-                case 4:
-                    message.requireFullSync = reader.bool();
-                    break;
-                case 5:
-                    message.historySyncConfig = $root.CompanionReg.DeviceProps.HistorySyncConfig.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.os = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.version = $root.CompanionReg.DeviceProps.AppVersion.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 3: {
+                        message.platformType = reader.int32();
+                        break;
+                    }
+                case 4: {
+                        message.requireFullSync = reader.bool();
+                        break;
+                    }
+                case 5: {
+                        message.historySyncConfig = $root.CompanionReg.DeviceProps.HistorySyncConfig.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2277,6 +2425,12 @@ $root.CompanionReg = (function() {
                 message.version = $root.CompanionReg.DeviceProps.AppVersion.fromObject(object.version);
             }
             switch (object.platformType) {
+            default:
+                if (typeof object.platformType === "number") {
+                    message.platformType = object.platformType;
+                    break;
+                }
+                break;
             case "UNKNOWN":
             case 0:
                 message.platformType = 0;
@@ -2412,7 +2566,7 @@ $root.CompanionReg = (function() {
                     object._version = "version";
             }
             if (message.platformType != null && message.hasOwnProperty("platformType")) {
-                object.platformType = options.enums === String ? $root.CompanionReg.DeviceProps.PlatformType[message.platformType] : message.platformType;
+                object.platformType = options.enums === String ? $root.CompanionReg.DeviceProps.PlatformType[message.platformType] === undefined ? message.platformType : $root.CompanionReg.DeviceProps.PlatformType[message.platformType] : message.platformType;
                 if (options.oneofs)
                     object._platformType = "platformType";
             }
@@ -2438,6 +2592,21 @@ $root.CompanionReg = (function() {
          */
         DeviceProps.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for DeviceProps
+         * @function getTypeUrl
+         * @memberof CompanionReg.DeviceProps
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        DeviceProps.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/CompanionReg.DeviceProps";
         };
 
         DeviceProps.AppVersion = (function() {
@@ -2627,28 +2796,35 @@ $root.CompanionReg = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AppVersion.decode = function decode(reader, length) {
+            AppVersion.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.DeviceProps.AppVersion();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.primary = reader.uint32();
-                        break;
-                    case 2:
-                        message.secondary = reader.uint32();
-                        break;
-                    case 3:
-                        message.tertiary = reader.uint32();
-                        break;
-                    case 4:
-                        message.quaternary = reader.uint32();
-                        break;
-                    case 5:
-                        message.quinary = reader.uint32();
-                        break;
+                    case 1: {
+                            message.primary = reader.uint32();
+                            break;
+                        }
+                    case 2: {
+                            message.secondary = reader.uint32();
+                            break;
+                        }
+                    case 3: {
+                            message.tertiary = reader.uint32();
+                            break;
+                        }
+                    case 4: {
+                            message.quaternary = reader.uint32();
+                            break;
+                        }
+                    case 5: {
+                            message.quinary = reader.uint32();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -2788,6 +2964,21 @@ $root.CompanionReg = (function() {
              */
             AppVersion.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for AppVersion
+             * @function getTypeUrl
+             * @memberof CompanionReg.DeviceProps.AppVersion
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            AppVersion.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/CompanionReg.DeviceProps.AppVersion";
             };
 
             return AppVersion;
@@ -3244,64 +3435,83 @@ $root.CompanionReg = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            HistorySyncConfig.decode = function decode(reader, length) {
+            HistorySyncConfig.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CompanionReg.DeviceProps.HistorySyncConfig();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.fullSyncDaysLimit = reader.uint32();
-                        break;
-                    case 2:
-                        message.fullSyncSizeMbLimit = reader.uint32();
-                        break;
-                    case 3:
-                        message.storageQuotaMb = reader.uint32();
-                        break;
-                    case 4:
-                        message.inlineInitialPayloadInE2EeMsg = reader.bool();
-                        break;
-                    case 5:
-                        message.recentSyncDaysLimit = reader.uint32();
-                        break;
-                    case 6:
-                        message.supportCallLogHistory = reader.bool();
-                        break;
-                    case 7:
-                        message.supportBotUserAgentChatHistory = reader.bool();
-                        break;
-                    case 8:
-                        message.supportCagReactionsAndPolls = reader.bool();
-                        break;
-                    case 9:
-                        message.supportBizHostedMsg = reader.bool();
-                        break;
-                    case 10:
-                        message.supportRecentSyncChunkMessageCountTuning = reader.bool();
-                        break;
-                    case 11:
-                        message.supportHostedGroupMsg = reader.bool();
-                        break;
-                    case 12:
-                        message.supportFbidBotChatHistory = reader.bool();
-                        break;
-                    case 13:
-                        message.supportAddOnHistorySyncMigration = reader.bool();
-                        break;
-                    case 14:
-                        message.supportMessageAssociation = reader.bool();
-                        break;
-                    case 15:
-                        message.supportGroupHistory = reader.bool();
-                        break;
-                    case 16:
-                        message.onDemandReady = reader.bool();
-                        break;
-                    case 17:
-                        message.supportGuestChat = reader.bool();
-                        break;
+                    case 1: {
+                            message.fullSyncDaysLimit = reader.uint32();
+                            break;
+                        }
+                    case 2: {
+                            message.fullSyncSizeMbLimit = reader.uint32();
+                            break;
+                        }
+                    case 3: {
+                            message.storageQuotaMb = reader.uint32();
+                            break;
+                        }
+                    case 4: {
+                            message.inlineInitialPayloadInE2EeMsg = reader.bool();
+                            break;
+                        }
+                    case 5: {
+                            message.recentSyncDaysLimit = reader.uint32();
+                            break;
+                        }
+                    case 6: {
+                            message.supportCallLogHistory = reader.bool();
+                            break;
+                        }
+                    case 7: {
+                            message.supportBotUserAgentChatHistory = reader.bool();
+                            break;
+                        }
+                    case 8: {
+                            message.supportCagReactionsAndPolls = reader.bool();
+                            break;
+                        }
+                    case 9: {
+                            message.supportBizHostedMsg = reader.bool();
+                            break;
+                        }
+                    case 10: {
+                            message.supportRecentSyncChunkMessageCountTuning = reader.bool();
+                            break;
+                        }
+                    case 11: {
+                            message.supportHostedGroupMsg = reader.bool();
+                            break;
+                        }
+                    case 12: {
+                            message.supportFbidBotChatHistory = reader.bool();
+                            break;
+                        }
+                    case 13: {
+                            message.supportAddOnHistorySyncMigration = reader.bool();
+                            break;
+                        }
+                    case 14: {
+                            message.supportMessageAssociation = reader.bool();
+                            break;
+                        }
+                    case 15: {
+                            message.supportGroupHistory = reader.bool();
+                            break;
+                        }
+                    case 16: {
+                            message.onDemandReady = reader.bool();
+                            break;
+                        }
+                    case 17: {
+                            message.supportGuestChat = reader.bool();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -3585,6 +3795,21 @@ $root.CompanionReg = (function() {
              */
             HistorySyncConfig.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for HistorySyncConfig
+             * @function getTypeUrl
+             * @memberof CompanionReg.DeviceProps.HistorySyncConfig
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            HistorySyncConfig.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/CompanionReg.DeviceProps.HistorySyncConfig";
             };
 
             return HistorySyncConfig;

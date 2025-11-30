@@ -139,19 +139,23 @@ $root.ChatLockSettings = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ChatLockSettings.decode = function decode(reader, length) {
+        ChatLockSettings.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ChatLockSettings.ChatLockSettings();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.hideLockedChats = reader.bool();
-                    break;
-                case 2:
-                    message.secretCode = $root.UserPassword.UserPassword.decode(reader, reader.uint32());
-                    break;
+                case 1: {
+                        message.hideLockedChats = reader.bool();
+                        break;
+                    }
+                case 2: {
+                        message.secretCode = $root.UserPassword.UserPassword.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -261,6 +265,21 @@ $root.ChatLockSettings = (function() {
          */
         ChatLockSettings.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for ChatLockSettings
+         * @function getTypeUrl
+         * @memberof ChatLockSettings.ChatLockSettings
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        ChatLockSettings.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/ChatLockSettings.ChatLockSettings";
         };
 
         return ChatLockSettings;
@@ -434,27 +453,33 @@ $root.UserPassword = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        UserPassword.decode = function decode(reader, length) {
+        UserPassword.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.encoding = reader.int32();
-                    break;
-                case 2:
-                    message.transformer = reader.int32();
-                    break;
-                case 3:
-                    if (!(message.transformerArg && message.transformerArg.length))
-                        message.transformerArg = [];
-                    message.transformerArg.push($root.UserPassword.UserPassword.TransformerArg.decode(reader, reader.uint32()));
-                    break;
-                case 4:
-                    message.transformedData = reader.bytes();
-                    break;
+                case 1: {
+                        message.encoding = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.transformer = reader.int32();
+                        break;
+                    }
+                case 3: {
+                        if (!(message.transformerArg && message.transformerArg.length))
+                            message.transformerArg = [];
+                        message.transformerArg.push($root.UserPassword.UserPassword.TransformerArg.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 4: {
+                        message.transformedData = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -542,6 +567,12 @@ $root.UserPassword = (function() {
                 return object;
             var message = new $root.UserPassword.UserPassword();
             switch (object.encoding) {
+            default:
+                if (typeof object.encoding === "number") {
+                    message.encoding = object.encoding;
+                    break;
+                }
+                break;
             case "UTF8":
             case 0:
                 message.encoding = 0;
@@ -552,6 +583,12 @@ $root.UserPassword = (function() {
                 break;
             }
             switch (object.transformer) {
+            default:
+                if (typeof object.transformer === "number") {
+                    message.transformer = object.transformer;
+                    break;
+                }
+                break;
             case "NONE":
             case 0:
                 message.transformer = 0;
@@ -578,7 +615,7 @@ $root.UserPassword = (function() {
             if (object.transformedData != null)
                 if (typeof object.transformedData === "string")
                     $util.base64.decode(object.transformedData, message.transformedData = $util.newBuffer($util.base64.length(object.transformedData)), 0);
-                else if (object.transformedData.length)
+                else if (object.transformedData.length >= 0)
                     message.transformedData = object.transformedData;
             return message;
         };
@@ -599,12 +636,12 @@ $root.UserPassword = (function() {
             if (options.arrays || options.defaults)
                 object.transformerArg = [];
             if (message.encoding != null && message.hasOwnProperty("encoding")) {
-                object.encoding = options.enums === String ? $root.UserPassword.UserPassword.Encoding[message.encoding] : message.encoding;
+                object.encoding = options.enums === String ? $root.UserPassword.UserPassword.Encoding[message.encoding] === undefined ? message.encoding : $root.UserPassword.UserPassword.Encoding[message.encoding] : message.encoding;
                 if (options.oneofs)
                     object._encoding = "encoding";
             }
             if (message.transformer != null && message.hasOwnProperty("transformer")) {
-                object.transformer = options.enums === String ? $root.UserPassword.UserPassword.Transformer[message.transformer] : message.transformer;
+                object.transformer = options.enums === String ? $root.UserPassword.UserPassword.Transformer[message.transformer] === undefined ? message.transformer : $root.UserPassword.UserPassword.Transformer[message.transformer] : message.transformer;
                 if (options.oneofs)
                     object._transformer = "transformer";
             }
@@ -630,6 +667,21 @@ $root.UserPassword = (function() {
          */
         UserPassword.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for UserPassword
+         * @function getTypeUrl
+         * @memberof UserPassword.UserPassword
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        UserPassword.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/UserPassword.UserPassword";
         };
 
         /**
@@ -783,19 +835,23 @@ $root.UserPassword = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            TransformerArg.decode = function decode(reader, length) {
+            TransformerArg.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword.TransformerArg();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.key = reader.string();
-                        break;
-                    case 2:
-                        message.value = $root.UserPassword.UserPassword.TransformerArg.Value.decode(reader, reader.uint32());
-                        break;
+                    case 1: {
+                            message.key = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.value = $root.UserPassword.UserPassword.TransformerArg.Value.decode(reader, reader.uint32());
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -905,6 +961,21 @@ $root.UserPassword = (function() {
              */
             TransformerArg.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for TransformerArg
+             * @function getTypeUrl
+             * @memberof UserPassword.UserPassword.TransformerArg
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            TransformerArg.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/UserPassword.UserPassword.TransformerArg";
             };
 
             TransformerArg.Value = (function() {
@@ -1017,19 +1088,23 @@ $root.UserPassword = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Value.decode = function decode(reader, length) {
+                Value.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword.TransformerArg.Value();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.asBlob = reader.bytes();
-                            break;
-                        case 2:
-                            message.asUnsignedInteger = reader.uint32();
-                            break;
+                        case 1: {
+                                message.asBlob = reader.bytes();
+                                break;
+                            }
+                        case 2: {
+                                message.asUnsignedInteger = reader.uint32();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -1096,7 +1171,7 @@ $root.UserPassword = (function() {
                     if (object.asBlob != null)
                         if (typeof object.asBlob === "string")
                             $util.base64.decode(object.asBlob, message.asBlob = $util.newBuffer($util.base64.length(object.asBlob)), 0);
-                        else if (object.asBlob.length)
+                        else if (object.asBlob.length >= 0)
                             message.asBlob = object.asBlob;
                     if (object.asUnsignedInteger != null)
                         message.asUnsignedInteger = object.asUnsignedInteger >>> 0;
@@ -1138,6 +1213,21 @@ $root.UserPassword = (function() {
                  */
                 Value.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for Value
+                 * @function getTypeUrl
+                 * @memberof UserPassword.UserPassword.TransformerArg.Value
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                Value.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/UserPassword.UserPassword.TransformerArg.Value";
                 };
 
                 return Value;

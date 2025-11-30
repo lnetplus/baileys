@@ -105,18 +105,21 @@ $root.SignalLocalStorageProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SenderKeyRecordStructure.decode = function decode(reader, length) {
+        SenderKeyRecordStructure.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SenderKeyRecordStructure();
             while (reader.pos < end) {
                 var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1:
-                    if (!(message.senderKeyStates && message.senderKeyStates.length))
-                        message.senderKeyStates = [];
-                    message.senderKeyStates.push($root.SignalLocalStorageProtocol.SenderKeyStateStructure.decode(reader, reader.uint32()));
+                if (tag === error)
                     break;
+                switch (tag >>> 3) {
+                case 1: {
+                        if (!(message.senderKeyStates && message.senderKeyStates.length))
+                            message.senderKeyStates = [];
+                        message.senderKeyStates.push($root.SignalLocalStorageProtocol.SenderKeyStateStructure.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -221,6 +224,21 @@ $root.SignalLocalStorageProtocol = (function() {
          */
         SenderKeyRecordStructure.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SenderKeyRecordStructure
+         * @function getTypeUrl
+         * @memberof SignalLocalStorageProtocol.SenderKeyRecordStructure
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SenderKeyRecordStructure.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SignalLocalStorageProtocol.SenderKeyRecordStructure";
         };
 
         return SenderKeyRecordStructure;
@@ -382,27 +400,33 @@ $root.SignalLocalStorageProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SenderKeyStateStructure.decode = function decode(reader, length) {
+        SenderKeyStateStructure.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SenderKeyStateStructure();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.senderKeyId = reader.uint32();
-                    break;
-                case 2:
-                    message.senderChainKey = $root.SignalLocalStorageProtocol.SenderKeyStateStructure.SenderChainKey.decode(reader, reader.uint32());
-                    break;
-                case 3:
-                    message.senderSigningKey = $root.SignalLocalStorageProtocol.SenderKeyStateStructure.SenderSigningKey.decode(reader, reader.uint32());
-                    break;
-                case 4:
-                    if (!(message.senderMessageKeys && message.senderMessageKeys.length))
-                        message.senderMessageKeys = [];
-                    message.senderMessageKeys.push($root.SignalLocalStorageProtocol.SenderKeyStateStructure.SenderMessageKey.decode(reader, reader.uint32()));
-                    break;
+                case 1: {
+                        message.senderKeyId = reader.uint32();
+                        break;
+                    }
+                case 2: {
+                        message.senderChainKey = $root.SignalLocalStorageProtocol.SenderKeyStateStructure.SenderChainKey.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 3: {
+                        message.senderSigningKey = $root.SignalLocalStorageProtocol.SenderKeyStateStructure.SenderSigningKey.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 4: {
+                        if (!(message.senderMessageKeys && message.senderMessageKeys.length))
+                            message.senderMessageKeys = [];
+                        message.senderMessageKeys.push($root.SignalLocalStorageProtocol.SenderKeyStateStructure.SenderMessageKey.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -558,6 +582,21 @@ $root.SignalLocalStorageProtocol = (function() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
+        /**
+         * Gets the default type url for SenderKeyStateStructure
+         * @function getTypeUrl
+         * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SenderKeyStateStructure.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SignalLocalStorageProtocol.SenderKeyStateStructure";
+        };
+
         SenderKeyStateStructure.SenderChainKey = (function() {
 
             /**
@@ -679,19 +718,23 @@ $root.SignalLocalStorageProtocol = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SenderChainKey.decode = function decode(reader, length) {
+            SenderChainKey.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SenderKeyStateStructure.SenderChainKey();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.iteration = reader.uint32();
-                        break;
-                    case 2:
-                        message.seed = reader.bytes();
-                        break;
+                    case 1: {
+                            message.iteration = reader.uint32();
+                            break;
+                        }
+                    case 2: {
+                            message.seed = reader.bytes();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -758,7 +801,7 @@ $root.SignalLocalStorageProtocol = (function() {
                 if (object.seed != null)
                     if (typeof object.seed === "string")
                         $util.base64.decode(object.seed, message.seed = $util.newBuffer($util.base64.length(object.seed)), 0);
-                    else if (object.seed.length)
+                    else if (object.seed.length >= 0)
                         message.seed = object.seed;
                 return message;
             };
@@ -798,6 +841,21 @@ $root.SignalLocalStorageProtocol = (function() {
              */
             SenderChainKey.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for SenderChainKey
+             * @function getTypeUrl
+             * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure.SenderChainKey
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            SenderChainKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SignalLocalStorageProtocol.SenderKeyStateStructure.SenderChainKey";
             };
 
             return SenderChainKey;
@@ -924,19 +982,23 @@ $root.SignalLocalStorageProtocol = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SenderMessageKey.decode = function decode(reader, length) {
+            SenderMessageKey.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SenderKeyStateStructure.SenderMessageKey();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.iteration = reader.uint32();
-                        break;
-                    case 2:
-                        message.seed = reader.bytes();
-                        break;
+                    case 1: {
+                            message.iteration = reader.uint32();
+                            break;
+                        }
+                    case 2: {
+                            message.seed = reader.bytes();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1003,7 +1065,7 @@ $root.SignalLocalStorageProtocol = (function() {
                 if (object.seed != null)
                     if (typeof object.seed === "string")
                         $util.base64.decode(object.seed, message.seed = $util.newBuffer($util.base64.length(object.seed)), 0);
-                    else if (object.seed.length)
+                    else if (object.seed.length >= 0)
                         message.seed = object.seed;
                 return message;
             };
@@ -1043,6 +1105,21 @@ $root.SignalLocalStorageProtocol = (function() {
              */
             SenderMessageKey.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for SenderMessageKey
+             * @function getTypeUrl
+             * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure.SenderMessageKey
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            SenderMessageKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SignalLocalStorageProtocol.SenderKeyStateStructure.SenderMessageKey";
             };
 
             return SenderMessageKey;
@@ -1169,19 +1246,23 @@ $root.SignalLocalStorageProtocol = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SenderSigningKey.decode = function decode(reader, length) {
+            SenderSigningKey.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SenderKeyStateStructure.SenderSigningKey();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message["public"] = reader.bytes();
-                        break;
-                    case 2:
-                        message["private"] = reader.bytes();
-                        break;
+                    case 1: {
+                            message["public"] = reader.bytes();
+                            break;
+                        }
+                    case 2: {
+                            message["private"] = reader.bytes();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1246,12 +1327,12 @@ $root.SignalLocalStorageProtocol = (function() {
                 if (object["public"] != null)
                     if (typeof object["public"] === "string")
                         $util.base64.decode(object["public"], message["public"] = $util.newBuffer($util.base64.length(object["public"])), 0);
-                    else if (object["public"].length)
+                    else if (object["public"].length >= 0)
                         message["public"] = object["public"];
                 if (object["private"] != null)
                     if (typeof object["private"] === "string")
                         $util.base64.decode(object["private"], message["private"] = $util.newBuffer($util.base64.length(object["private"])), 0);
-                    else if (object["private"].length)
+                    else if (object["private"].length >= 0)
                         message["private"] = object["private"];
                 return message;
             };
@@ -1291,6 +1372,21 @@ $root.SignalLocalStorageProtocol = (function() {
              */
             SenderSigningKey.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for SenderSigningKey
+             * @function getTypeUrl
+             * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure.SenderSigningKey
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            SenderSigningKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SignalLocalStorageProtocol.SenderKeyStateStructure.SenderSigningKey";
             };
 
             return SenderSigningKey;
@@ -1420,19 +1516,23 @@ $root.SignalLocalStorageProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        IdentityKeyPairStructure.decode = function decode(reader, length) {
+        IdentityKeyPairStructure.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.IdentityKeyPairStructure();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.publicKey = reader.bytes();
-                    break;
-                case 2:
-                    message.privateKey = reader.bytes();
-                    break;
+                case 1: {
+                        message.publicKey = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.privateKey = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1497,12 +1597,12 @@ $root.SignalLocalStorageProtocol = (function() {
             if (object.publicKey != null)
                 if (typeof object.publicKey === "string")
                     $util.base64.decode(object.publicKey, message.publicKey = $util.newBuffer($util.base64.length(object.publicKey)), 0);
-                else if (object.publicKey.length)
+                else if (object.publicKey.length >= 0)
                     message.publicKey = object.publicKey;
             if (object.privateKey != null)
                 if (typeof object.privateKey === "string")
                     $util.base64.decode(object.privateKey, message.privateKey = $util.newBuffer($util.base64.length(object.privateKey)), 0);
-                else if (object.privateKey.length)
+                else if (object.privateKey.length >= 0)
                     message.privateKey = object.privateKey;
             return message;
         };
@@ -1542,6 +1642,21 @@ $root.SignalLocalStorageProtocol = (function() {
          */
         IdentityKeyPairStructure.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for IdentityKeyPairStructure
+         * @function getTypeUrl
+         * @memberof SignalLocalStorageProtocol.IdentityKeyPairStructure
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        IdentityKeyPairStructure.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SignalLocalStorageProtocol.IdentityKeyPairStructure";
         };
 
         return IdentityKeyPairStructure;
@@ -1734,28 +1849,35 @@ $root.SignalLocalStorageProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SignedPreKeyRecordStructure.decode = function decode(reader, length) {
+        SignedPreKeyRecordStructure.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SignedPreKeyRecordStructure();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.id = reader.uint32();
-                    break;
-                case 2:
-                    message.publicKey = reader.bytes();
-                    break;
-                case 3:
-                    message.privateKey = reader.bytes();
-                    break;
-                case 4:
-                    message.signature = reader.bytes();
-                    break;
-                case 5:
-                    message.timestamp = reader.fixed64();
-                    break;
+                case 1: {
+                        message.id = reader.uint32();
+                        break;
+                    }
+                case 2: {
+                        message.publicKey = reader.bytes();
+                        break;
+                    }
+                case 3: {
+                        message.privateKey = reader.bytes();
+                        break;
+                    }
+                case 4: {
+                        message.signature = reader.bytes();
+                        break;
+                    }
+                case 5: {
+                        message.timestamp = reader.fixed64();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1837,17 +1959,17 @@ $root.SignalLocalStorageProtocol = (function() {
             if (object.publicKey != null)
                 if (typeof object.publicKey === "string")
                     $util.base64.decode(object.publicKey, message.publicKey = $util.newBuffer($util.base64.length(object.publicKey)), 0);
-                else if (object.publicKey.length)
+                else if (object.publicKey.length >= 0)
                     message.publicKey = object.publicKey;
             if (object.privateKey != null)
                 if (typeof object.privateKey === "string")
                     $util.base64.decode(object.privateKey, message.privateKey = $util.newBuffer($util.base64.length(object.privateKey)), 0);
-                else if (object.privateKey.length)
+                else if (object.privateKey.length >= 0)
                     message.privateKey = object.privateKey;
             if (object.signature != null)
                 if (typeof object.signature === "string")
                     $util.base64.decode(object.signature, message.signature = $util.newBuffer($util.base64.length(object.signature)), 0);
-                else if (object.signature.length)
+                else if (object.signature.length >= 0)
                     message.signature = object.signature;
             if (object.timestamp != null)
                 if ($util.Long)
@@ -1914,6 +2036,21 @@ $root.SignalLocalStorageProtocol = (function() {
          */
         SignedPreKeyRecordStructure.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SignedPreKeyRecordStructure
+         * @function getTypeUrl
+         * @memberof SignalLocalStorageProtocol.SignedPreKeyRecordStructure
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SignedPreKeyRecordStructure.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SignalLocalStorageProtocol.SignedPreKeyRecordStructure";
         };
 
         return SignedPreKeyRecordStructure;
@@ -2062,22 +2199,27 @@ $root.SignalLocalStorageProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PreKeyRecordStructure.decode = function decode(reader, length) {
+        PreKeyRecordStructure.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.PreKeyRecordStructure();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.id = reader.uint32();
-                    break;
-                case 2:
-                    message.publicKey = reader.bytes();
-                    break;
-                case 3:
-                    message.privateKey = reader.bytes();
-                    break;
+                case 1: {
+                        message.id = reader.uint32();
+                        break;
+                    }
+                case 2: {
+                        message.publicKey = reader.bytes();
+                        break;
+                    }
+                case 3: {
+                        message.privateKey = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2149,12 +2291,12 @@ $root.SignalLocalStorageProtocol = (function() {
             if (object.publicKey != null)
                 if (typeof object.publicKey === "string")
                     $util.base64.decode(object.publicKey, message.publicKey = $util.newBuffer($util.base64.length(object.publicKey)), 0);
-                else if (object.publicKey.length)
+                else if (object.publicKey.length >= 0)
                     message.publicKey = object.publicKey;
             if (object.privateKey != null)
                 if (typeof object.privateKey === "string")
                     $util.base64.decode(object.privateKey, message.privateKey = $util.newBuffer($util.base64.length(object.privateKey)), 0);
-                else if (object.privateKey.length)
+                else if (object.privateKey.length >= 0)
                     message.privateKey = object.privateKey;
             return message;
         };
@@ -2199,6 +2341,21 @@ $root.SignalLocalStorageProtocol = (function() {
          */
         PreKeyRecordStructure.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for PreKeyRecordStructure
+         * @function getTypeUrl
+         * @memberof SignalLocalStorageProtocol.PreKeyRecordStructure
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        PreKeyRecordStructure.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SignalLocalStorageProtocol.PreKeyRecordStructure";
         };
 
         return PreKeyRecordStructure;
@@ -2316,21 +2473,25 @@ $root.SignalLocalStorageProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        RecordStructure.decode = function decode(reader, length) {
+        RecordStructure.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.RecordStructure();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.currentSession = $root.SignalLocalStorageProtocol.SessionStructure.decode(reader, reader.uint32());
-                    break;
-                case 2:
-                    if (!(message.previousSessions && message.previousSessions.length))
-                        message.previousSessions = [];
-                    message.previousSessions.push($root.SignalLocalStorageProtocol.SessionStructure.decode(reader, reader.uint32()));
-                    break;
+                case 1: {
+                        message.currentSession = $root.SignalLocalStorageProtocol.SessionStructure.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 2: {
+                        if (!(message.previousSessions && message.previousSessions.length))
+                            message.previousSessions = [];
+                        message.previousSessions.push($root.SignalLocalStorageProtocol.SessionStructure.decode(reader, reader.uint32()));
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2454,6 +2615,21 @@ $root.SignalLocalStorageProtocol = (function() {
          */
         RecordStructure.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for RecordStructure
+         * @function getTypeUrl
+         * @memberof SignalLocalStorageProtocol.RecordStructure
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        RecordStructure.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SignalLocalStorageProtocol.RecordStructure";
         };
 
         return RecordStructure;
@@ -2813,54 +2989,69 @@ $root.SignalLocalStorageProtocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SessionStructure.decode = function decode(reader, length) {
+        SessionStructure.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SessionStructure();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.sessionVersion = reader.uint32();
-                    break;
-                case 2:
-                    message.localIdentityPublic = reader.bytes();
-                    break;
-                case 3:
-                    message.remoteIdentityPublic = reader.bytes();
-                    break;
-                case 4:
-                    message.rootKey = reader.bytes();
-                    break;
-                case 5:
-                    message.previousCounter = reader.uint32();
-                    break;
-                case 6:
-                    message.senderChain = $root.SignalLocalStorageProtocol.SessionStructure.Chain.decode(reader, reader.uint32());
-                    break;
-                case 7:
-                    if (!(message.receiverChains && message.receiverChains.length))
-                        message.receiverChains = [];
-                    message.receiverChains.push($root.SignalLocalStorageProtocol.SessionStructure.Chain.decode(reader, reader.uint32()));
-                    break;
-                case 8:
-                    message.pendingKeyExchange = $root.SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange.decode(reader, reader.uint32());
-                    break;
-                case 9:
-                    message.pendingPreKey = $root.SignalLocalStorageProtocol.SessionStructure.PendingPreKey.decode(reader, reader.uint32());
-                    break;
-                case 10:
-                    message.remoteRegistrationId = reader.uint32();
-                    break;
-                case 11:
-                    message.localRegistrationId = reader.uint32();
-                    break;
-                case 12:
-                    message.needsRefresh = reader.bool();
-                    break;
-                case 13:
-                    message.aliceBaseKey = reader.bytes();
-                    break;
+                case 1: {
+                        message.sessionVersion = reader.uint32();
+                        break;
+                    }
+                case 2: {
+                        message.localIdentityPublic = reader.bytes();
+                        break;
+                    }
+                case 3: {
+                        message.remoteIdentityPublic = reader.bytes();
+                        break;
+                    }
+                case 4: {
+                        message.rootKey = reader.bytes();
+                        break;
+                    }
+                case 5: {
+                        message.previousCounter = reader.uint32();
+                        break;
+                    }
+                case 6: {
+                        message.senderChain = $root.SignalLocalStorageProtocol.SessionStructure.Chain.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 7: {
+                        if (!(message.receiverChains && message.receiverChains.length))
+                            message.receiverChains = [];
+                        message.receiverChains.push($root.SignalLocalStorageProtocol.SessionStructure.Chain.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 8: {
+                        message.pendingKeyExchange = $root.SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 9: {
+                        message.pendingPreKey = $root.SignalLocalStorageProtocol.SessionStructure.PendingPreKey.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 10: {
+                        message.remoteRegistrationId = reader.uint32();
+                        break;
+                    }
+                case 11: {
+                        message.localRegistrationId = reader.uint32();
+                        break;
+                    }
+                case 12: {
+                        message.needsRefresh = reader.bool();
+                        break;
+                    }
+                case 13: {
+                        message.aliceBaseKey = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2995,17 +3186,17 @@ $root.SignalLocalStorageProtocol = (function() {
             if (object.localIdentityPublic != null)
                 if (typeof object.localIdentityPublic === "string")
                     $util.base64.decode(object.localIdentityPublic, message.localIdentityPublic = $util.newBuffer($util.base64.length(object.localIdentityPublic)), 0);
-                else if (object.localIdentityPublic.length)
+                else if (object.localIdentityPublic.length >= 0)
                     message.localIdentityPublic = object.localIdentityPublic;
             if (object.remoteIdentityPublic != null)
                 if (typeof object.remoteIdentityPublic === "string")
                     $util.base64.decode(object.remoteIdentityPublic, message.remoteIdentityPublic = $util.newBuffer($util.base64.length(object.remoteIdentityPublic)), 0);
-                else if (object.remoteIdentityPublic.length)
+                else if (object.remoteIdentityPublic.length >= 0)
                     message.remoteIdentityPublic = object.remoteIdentityPublic;
             if (object.rootKey != null)
                 if (typeof object.rootKey === "string")
                     $util.base64.decode(object.rootKey, message.rootKey = $util.newBuffer($util.base64.length(object.rootKey)), 0);
-                else if (object.rootKey.length)
+                else if (object.rootKey.length >= 0)
                     message.rootKey = object.rootKey;
             if (object.previousCounter != null)
                 message.previousCounter = object.previousCounter >>> 0;
@@ -3043,7 +3234,7 @@ $root.SignalLocalStorageProtocol = (function() {
             if (object.aliceBaseKey != null)
                 if (typeof object.aliceBaseKey === "string")
                     $util.base64.decode(object.aliceBaseKey, message.aliceBaseKey = $util.newBuffer($util.base64.length(object.aliceBaseKey)), 0);
-                else if (object.aliceBaseKey.length)
+                else if (object.aliceBaseKey.length >= 0)
                     message.aliceBaseKey = object.aliceBaseKey;
             return message;
         };
@@ -3140,6 +3331,21 @@ $root.SignalLocalStorageProtocol = (function() {
          */
         SessionStructure.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for SessionStructure
+         * @function getTypeUrl
+         * @memberof SignalLocalStorageProtocol.SessionStructure
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        SessionStructure.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/SignalLocalStorageProtocol.SessionStructure";
         };
 
         SessionStructure.Chain = (function() {
@@ -3298,27 +3504,33 @@ $root.SignalLocalStorageProtocol = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Chain.decode = function decode(reader, length) {
+            Chain.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SessionStructure.Chain();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.senderRatchetKey = reader.bytes();
-                        break;
-                    case 2:
-                        message.senderRatchetKeyPrivate = reader.bytes();
-                        break;
-                    case 3:
-                        message.chainKey = $root.SignalLocalStorageProtocol.SessionStructure.Chain.ChainKey.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        if (!(message.messageKeys && message.messageKeys.length))
-                            message.messageKeys = [];
-                        message.messageKeys.push($root.SignalLocalStorageProtocol.SessionStructure.Chain.MessageKey.decode(reader, reader.uint32()));
-                        break;
+                    case 1: {
+                            message.senderRatchetKey = reader.bytes();
+                            break;
+                        }
+                    case 2: {
+                            message.senderRatchetKeyPrivate = reader.bytes();
+                            break;
+                        }
+                    case 3: {
+                            message.chainKey = $root.SignalLocalStorageProtocol.SessionStructure.Chain.ChainKey.decode(reader, reader.uint32());
+                            break;
+                        }
+                    case 4: {
+                            if (!(message.messageKeys && message.messageKeys.length))
+                                message.messageKeys = [];
+                            message.messageKeys.push($root.SignalLocalStorageProtocol.SessionStructure.Chain.MessageKey.decode(reader, reader.uint32()));
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -3400,12 +3612,12 @@ $root.SignalLocalStorageProtocol = (function() {
                 if (object.senderRatchetKey != null)
                     if (typeof object.senderRatchetKey === "string")
                         $util.base64.decode(object.senderRatchetKey, message.senderRatchetKey = $util.newBuffer($util.base64.length(object.senderRatchetKey)), 0);
-                    else if (object.senderRatchetKey.length)
+                    else if (object.senderRatchetKey.length >= 0)
                         message.senderRatchetKey = object.senderRatchetKey;
                 if (object.senderRatchetKeyPrivate != null)
                     if (typeof object.senderRatchetKeyPrivate === "string")
                         $util.base64.decode(object.senderRatchetKeyPrivate, message.senderRatchetKeyPrivate = $util.newBuffer($util.base64.length(object.senderRatchetKeyPrivate)), 0);
-                    else if (object.senderRatchetKeyPrivate.length)
+                    else if (object.senderRatchetKeyPrivate.length >= 0)
                         message.senderRatchetKeyPrivate = object.senderRatchetKeyPrivate;
                 if (object.chainKey != null) {
                     if (typeof object.chainKey !== "object")
@@ -3472,6 +3684,21 @@ $root.SignalLocalStorageProtocol = (function() {
              */
             Chain.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for Chain
+             * @function getTypeUrl
+             * @memberof SignalLocalStorageProtocol.SessionStructure.Chain
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            Chain.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SignalLocalStorageProtocol.SessionStructure.Chain";
             };
 
             Chain.ChainKey = (function() {
@@ -3595,19 +3822,23 @@ $root.SignalLocalStorageProtocol = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                ChainKey.decode = function decode(reader, length) {
+                ChainKey.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SessionStructure.Chain.ChainKey();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.index = reader.uint32();
-                            break;
-                        case 2:
-                            message.key = reader.bytes();
-                            break;
+                        case 1: {
+                                message.index = reader.uint32();
+                                break;
+                            }
+                        case 2: {
+                                message.key = reader.bytes();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -3674,7 +3905,7 @@ $root.SignalLocalStorageProtocol = (function() {
                     if (object.key != null)
                         if (typeof object.key === "string")
                             $util.base64.decode(object.key, message.key = $util.newBuffer($util.base64.length(object.key)), 0);
-                        else if (object.key.length)
+                        else if (object.key.length >= 0)
                             message.key = object.key;
                     return message;
                 };
@@ -3714,6 +3945,21 @@ $root.SignalLocalStorageProtocol = (function() {
                  */
                 ChainKey.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for ChainKey
+                 * @function getTypeUrl
+                 * @memberof SignalLocalStorageProtocol.SessionStructure.Chain.ChainKey
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                ChainKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/SignalLocalStorageProtocol.SessionStructure.Chain.ChainKey";
                 };
 
                 return ChainKey;
@@ -3884,25 +4130,31 @@ $root.SignalLocalStorageProtocol = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                MessageKey.decode = function decode(reader, length) {
+                MessageKey.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SessionStructure.Chain.MessageKey();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
-                        case 1:
-                            message.index = reader.uint32();
-                            break;
-                        case 2:
-                            message.cipherKey = reader.bytes();
-                            break;
-                        case 3:
-                            message.macKey = reader.bytes();
-                            break;
-                        case 4:
-                            message.iv = reader.bytes();
-                            break;
+                        case 1: {
+                                message.index = reader.uint32();
+                                break;
+                            }
+                        case 2: {
+                                message.cipherKey = reader.bytes();
+                                break;
+                            }
+                        case 3: {
+                                message.macKey = reader.bytes();
+                                break;
+                            }
+                        case 4: {
+                                message.iv = reader.bytes();
+                                break;
+                            }
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -3979,17 +4231,17 @@ $root.SignalLocalStorageProtocol = (function() {
                     if (object.cipherKey != null)
                         if (typeof object.cipherKey === "string")
                             $util.base64.decode(object.cipherKey, message.cipherKey = $util.newBuffer($util.base64.length(object.cipherKey)), 0);
-                        else if (object.cipherKey.length)
+                        else if (object.cipherKey.length >= 0)
                             message.cipherKey = object.cipherKey;
                     if (object.macKey != null)
                         if (typeof object.macKey === "string")
                             $util.base64.decode(object.macKey, message.macKey = $util.newBuffer($util.base64.length(object.macKey)), 0);
-                        else if (object.macKey.length)
+                        else if (object.macKey.length >= 0)
                             message.macKey = object.macKey;
                     if (object.iv != null)
                         if (typeof object.iv === "string")
                             $util.base64.decode(object.iv, message.iv = $util.newBuffer($util.base64.length(object.iv)), 0);
-                        else if (object.iv.length)
+                        else if (object.iv.length >= 0)
                             message.iv = object.iv;
                     return message;
                 };
@@ -4039,6 +4291,21 @@ $root.SignalLocalStorageProtocol = (function() {
                  */
                 MessageKey.prototype.toJSON = function toJSON() {
                     return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for MessageKey
+                 * @function getTypeUrl
+                 * @memberof SignalLocalStorageProtocol.SessionStructure.Chain.MessageKey
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                MessageKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/SignalLocalStorageProtocol.SessionStructure.Chain.MessageKey";
                 };
 
                 return MessageKey;
@@ -4278,34 +4545,43 @@ $root.SignalLocalStorageProtocol = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PendingKeyExchange.decode = function decode(reader, length) {
+            PendingKeyExchange.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.sequence = reader.uint32();
-                        break;
-                    case 2:
-                        message.localBaseKey = reader.bytes();
-                        break;
-                    case 3:
-                        message.localBaseKeyPrivate = reader.bytes();
-                        break;
-                    case 4:
-                        message.localRatchetKey = reader.bytes();
-                        break;
-                    case 5:
-                        message.localRatchetKeyPrivate = reader.bytes();
-                        break;
-                    case 7:
-                        message.localIdentityKey = reader.bytes();
-                        break;
-                    case 8:
-                        message.localIdentityKeyPrivate = reader.bytes();
-                        break;
+                    case 1: {
+                            message.sequence = reader.uint32();
+                            break;
+                        }
+                    case 2: {
+                            message.localBaseKey = reader.bytes();
+                            break;
+                        }
+                    case 3: {
+                            message.localBaseKeyPrivate = reader.bytes();
+                            break;
+                        }
+                    case 4: {
+                            message.localRatchetKey = reader.bytes();
+                            break;
+                        }
+                    case 5: {
+                            message.localRatchetKeyPrivate = reader.bytes();
+                            break;
+                        }
+                    case 7: {
+                            message.localIdentityKey = reader.bytes();
+                            break;
+                        }
+                    case 8: {
+                            message.localIdentityKeyPrivate = reader.bytes();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4397,32 +4673,32 @@ $root.SignalLocalStorageProtocol = (function() {
                 if (object.localBaseKey != null)
                     if (typeof object.localBaseKey === "string")
                         $util.base64.decode(object.localBaseKey, message.localBaseKey = $util.newBuffer($util.base64.length(object.localBaseKey)), 0);
-                    else if (object.localBaseKey.length)
+                    else if (object.localBaseKey.length >= 0)
                         message.localBaseKey = object.localBaseKey;
                 if (object.localBaseKeyPrivate != null)
                     if (typeof object.localBaseKeyPrivate === "string")
                         $util.base64.decode(object.localBaseKeyPrivate, message.localBaseKeyPrivate = $util.newBuffer($util.base64.length(object.localBaseKeyPrivate)), 0);
-                    else if (object.localBaseKeyPrivate.length)
+                    else if (object.localBaseKeyPrivate.length >= 0)
                         message.localBaseKeyPrivate = object.localBaseKeyPrivate;
                 if (object.localRatchetKey != null)
                     if (typeof object.localRatchetKey === "string")
                         $util.base64.decode(object.localRatchetKey, message.localRatchetKey = $util.newBuffer($util.base64.length(object.localRatchetKey)), 0);
-                    else if (object.localRatchetKey.length)
+                    else if (object.localRatchetKey.length >= 0)
                         message.localRatchetKey = object.localRatchetKey;
                 if (object.localRatchetKeyPrivate != null)
                     if (typeof object.localRatchetKeyPrivate === "string")
                         $util.base64.decode(object.localRatchetKeyPrivate, message.localRatchetKeyPrivate = $util.newBuffer($util.base64.length(object.localRatchetKeyPrivate)), 0);
-                    else if (object.localRatchetKeyPrivate.length)
+                    else if (object.localRatchetKeyPrivate.length >= 0)
                         message.localRatchetKeyPrivate = object.localRatchetKeyPrivate;
                 if (object.localIdentityKey != null)
                     if (typeof object.localIdentityKey === "string")
                         $util.base64.decode(object.localIdentityKey, message.localIdentityKey = $util.newBuffer($util.base64.length(object.localIdentityKey)), 0);
-                    else if (object.localIdentityKey.length)
+                    else if (object.localIdentityKey.length >= 0)
                         message.localIdentityKey = object.localIdentityKey;
                 if (object.localIdentityKeyPrivate != null)
                     if (typeof object.localIdentityKeyPrivate === "string")
                         $util.base64.decode(object.localIdentityKeyPrivate, message.localIdentityKeyPrivate = $util.newBuffer($util.base64.length(object.localIdentityKeyPrivate)), 0);
-                    else if (object.localIdentityKeyPrivate.length)
+                    else if (object.localIdentityKeyPrivate.length >= 0)
                         message.localIdentityKeyPrivate = object.localIdentityKeyPrivate;
                 return message;
             };
@@ -4487,6 +4763,21 @@ $root.SignalLocalStorageProtocol = (function() {
              */
             PendingKeyExchange.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PendingKeyExchange
+             * @function getTypeUrl
+             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PendingKeyExchange.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange";
             };
 
             return PendingKeyExchange;
@@ -4635,22 +4926,27 @@ $root.SignalLocalStorageProtocol = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PendingPreKey.decode = function decode(reader, length) {
+            PendingPreKey.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SignalLocalStorageProtocol.SessionStructure.PendingPreKey();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.preKeyId = reader.uint32();
-                        break;
-                    case 3:
-                        message.signedPreKeyId = reader.int32();
-                        break;
-                    case 2:
-                        message.baseKey = reader.bytes();
-                        break;
+                    case 1: {
+                            message.preKeyId = reader.uint32();
+                            break;
+                        }
+                    case 3: {
+                            message.signedPreKeyId = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.baseKey = reader.bytes();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4724,7 +5020,7 @@ $root.SignalLocalStorageProtocol = (function() {
                 if (object.baseKey != null)
                     if (typeof object.baseKey === "string")
                         $util.base64.decode(object.baseKey, message.baseKey = $util.newBuffer($util.base64.length(object.baseKey)), 0);
-                    else if (object.baseKey.length)
+                    else if (object.baseKey.length >= 0)
                         message.baseKey = object.baseKey;
                 return message;
             };
@@ -4769,6 +5065,21 @@ $root.SignalLocalStorageProtocol = (function() {
              */
             PendingPreKey.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for PendingPreKey
+             * @function getTypeUrl
+             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingPreKey
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            PendingPreKey.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SignalLocalStorageProtocol.SessionStructure.PendingPreKey";
             };
 
             return PendingPreKey;

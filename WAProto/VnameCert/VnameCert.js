@@ -271,37 +271,47 @@ $root.VnameCert = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BizIdentityInfo.decode = function decode(reader, length) {
+        BizIdentityInfo.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.VnameCert.BizIdentityInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.vlevel = reader.int32();
-                    break;
-                case 2:
-                    message.vnameCert = $root.VnameCert.VerifiedNameCertificate.decode(reader, reader.uint32());
-                    break;
-                case 3:
-                    message.signed = reader.bool();
-                    break;
-                case 4:
-                    message.revoked = reader.bool();
-                    break;
-                case 5:
-                    message.hostStorage = reader.int32();
-                    break;
-                case 6:
-                    message.actualActors = reader.int32();
-                    break;
-                case 7:
-                    message.privacyModeTs = reader.uint64();
-                    break;
-                case 8:
-                    message.featureControls = reader.uint64();
-                    break;
+                case 1: {
+                        message.vlevel = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.vnameCert = $root.VnameCert.VerifiedNameCertificate.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 3: {
+                        message.signed = reader.bool();
+                        break;
+                    }
+                case 4: {
+                        message.revoked = reader.bool();
+                        break;
+                    }
+                case 5: {
+                        message.hostStorage = reader.int32();
+                        break;
+                    }
+                case 6: {
+                        message.actualActors = reader.int32();
+                        break;
+                    }
+                case 7: {
+                        message.privacyModeTs = reader.uint64();
+                        break;
+                    }
+                case 8: {
+                        message.featureControls = reader.uint64();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -413,6 +423,12 @@ $root.VnameCert = (function() {
                 return object;
             var message = new $root.VnameCert.BizIdentityInfo();
             switch (object.vlevel) {
+            default:
+                if (typeof object.vlevel === "number") {
+                    message.vlevel = object.vlevel;
+                    break;
+                }
+                break;
             case "UNKNOWN":
             case 0:
                 message.vlevel = 0;
@@ -436,6 +452,12 @@ $root.VnameCert = (function() {
             if (object.revoked != null)
                 message.revoked = Boolean(object.revoked);
             switch (object.hostStorage) {
+            default:
+                if (typeof object.hostStorage === "number") {
+                    message.hostStorage = object.hostStorage;
+                    break;
+                }
+                break;
             case "ON_PREMISE":
             case 0:
                 message.hostStorage = 0;
@@ -446,6 +468,12 @@ $root.VnameCert = (function() {
                 break;
             }
             switch (object.actualActors) {
+            default:
+                if (typeof object.actualActors === "number") {
+                    message.actualActors = object.actualActors;
+                    break;
+                }
+                break;
             case "SELF":
             case 0:
                 message.actualActors = 0;
@@ -490,7 +518,7 @@ $root.VnameCert = (function() {
                 options = {};
             var object = {};
             if (message.vlevel != null && message.hasOwnProperty("vlevel")) {
-                object.vlevel = options.enums === String ? $root.VnameCert.BizIdentityInfo.VerifiedLevelValue[message.vlevel] : message.vlevel;
+                object.vlevel = options.enums === String ? $root.VnameCert.BizIdentityInfo.VerifiedLevelValue[message.vlevel] === undefined ? message.vlevel : $root.VnameCert.BizIdentityInfo.VerifiedLevelValue[message.vlevel] : message.vlevel;
                 if (options.oneofs)
                     object._vlevel = "vlevel";
             }
@@ -510,12 +538,12 @@ $root.VnameCert = (function() {
                     object._revoked = "revoked";
             }
             if (message.hostStorage != null && message.hasOwnProperty("hostStorage")) {
-                object.hostStorage = options.enums === String ? $root.VnameCert.BizIdentityInfo.HostStorageType[message.hostStorage] : message.hostStorage;
+                object.hostStorage = options.enums === String ? $root.VnameCert.BizIdentityInfo.HostStorageType[message.hostStorage] === undefined ? message.hostStorage : $root.VnameCert.BizIdentityInfo.HostStorageType[message.hostStorage] : message.hostStorage;
                 if (options.oneofs)
                     object._hostStorage = "hostStorage";
             }
             if (message.actualActors != null && message.hasOwnProperty("actualActors")) {
-                object.actualActors = options.enums === String ? $root.VnameCert.BizIdentityInfo.ActualActorsType[message.actualActors] : message.actualActors;
+                object.actualActors = options.enums === String ? $root.VnameCert.BizIdentityInfo.ActualActorsType[message.actualActors] === undefined ? message.actualActors : $root.VnameCert.BizIdentityInfo.ActualActorsType[message.actualActors] : message.actualActors;
                 if (options.oneofs)
                     object._actualActors = "actualActors";
             }
@@ -547,6 +575,21 @@ $root.VnameCert = (function() {
          */
         BizIdentityInfo.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BizIdentityInfo
+         * @function getTypeUrl
+         * @memberof VnameCert.BizIdentityInfo
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BizIdentityInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/VnameCert.BizIdentityInfo";
         };
 
         /**
@@ -783,28 +826,35 @@ $root.VnameCert = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BizAccountLinkInfo.decode = function decode(reader, length) {
+        BizAccountLinkInfo.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.VnameCert.BizAccountLinkInfo();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.whatsappBizAcctFbid = reader.uint64();
-                    break;
-                case 2:
-                    message.whatsappAcctNumber = reader.string();
-                    break;
-                case 3:
-                    message.issueTime = reader.uint64();
-                    break;
-                case 4:
-                    message.hostStorage = reader.int32();
-                    break;
-                case 5:
-                    message.accountType = reader.int32();
-                    break;
+                case 1: {
+                        message.whatsappBizAcctFbid = reader.uint64();
+                        break;
+                    }
+                case 2: {
+                        message.whatsappAcctNumber = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.issueTime = reader.uint64();
+                        break;
+                    }
+                case 4: {
+                        message.hostStorage = reader.int32();
+                        break;
+                    }
+                case 5: {
+                        message.accountType = reader.int32();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -911,6 +961,12 @@ $root.VnameCert = (function() {
                 else if (typeof object.issueTime === "object")
                     message.issueTime = new $util.LongBits(object.issueTime.low >>> 0, object.issueTime.high >>> 0).toNumber(true);
             switch (object.hostStorage) {
+            default:
+                if (typeof object.hostStorage === "number") {
+                    message.hostStorage = object.hostStorage;
+                    break;
+                }
+                break;
             case "ON_PREMISE":
             case 0:
                 message.hostStorage = 0;
@@ -921,6 +977,12 @@ $root.VnameCert = (function() {
                 break;
             }
             switch (object.accountType) {
+            default:
+                if (typeof object.accountType === "number") {
+                    message.accountType = object.accountType;
+                    break;
+                }
+                break;
             case "ENTERPRISE":
             case 0:
                 message.accountType = 0;
@@ -964,12 +1026,12 @@ $root.VnameCert = (function() {
                     object._issueTime = "issueTime";
             }
             if (message.hostStorage != null && message.hasOwnProperty("hostStorage")) {
-                object.hostStorage = options.enums === String ? $root.VnameCert.BizAccountLinkInfo.HostStorageType[message.hostStorage] : message.hostStorage;
+                object.hostStorage = options.enums === String ? $root.VnameCert.BizAccountLinkInfo.HostStorageType[message.hostStorage] === undefined ? message.hostStorage : $root.VnameCert.BizAccountLinkInfo.HostStorageType[message.hostStorage] : message.hostStorage;
                 if (options.oneofs)
                     object._hostStorage = "hostStorage";
             }
             if (message.accountType != null && message.hasOwnProperty("accountType")) {
-                object.accountType = options.enums === String ? $root.VnameCert.BizAccountLinkInfo.AccountType[message.accountType] : message.accountType;
+                object.accountType = options.enums === String ? $root.VnameCert.BizAccountLinkInfo.AccountType[message.accountType] === undefined ? message.accountType : $root.VnameCert.BizAccountLinkInfo.AccountType[message.accountType] : message.accountType;
                 if (options.oneofs)
                     object._accountType = "accountType";
             }
@@ -985,6 +1047,21 @@ $root.VnameCert = (function() {
          */
         BizAccountLinkInfo.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BizAccountLinkInfo
+         * @function getTypeUrl
+         * @memberof VnameCert.BizAccountLinkInfo
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BizAccountLinkInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/VnameCert.BizAccountLinkInfo";
         };
 
         /**
@@ -1137,19 +1214,23 @@ $root.VnameCert = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        BizAccountPayload.decode = function decode(reader, length) {
+        BizAccountPayload.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.VnameCert.BizAccountPayload();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.vnameCert = $root.VnameCert.VerifiedNameCertificate.decode(reader, reader.uint32());
-                    break;
-                case 2:
-                    message.bizAcctLinkInfo = reader.bytes();
-                    break;
+                case 1: {
+                        message.vnameCert = $root.VnameCert.VerifiedNameCertificate.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 2: {
+                        message.bizAcctLinkInfo = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1222,7 +1303,7 @@ $root.VnameCert = (function() {
             if (object.bizAcctLinkInfo != null)
                 if (typeof object.bizAcctLinkInfo === "string")
                     $util.base64.decode(object.bizAcctLinkInfo, message.bizAcctLinkInfo = $util.newBuffer($util.base64.length(object.bizAcctLinkInfo)), 0);
-                else if (object.bizAcctLinkInfo.length)
+                else if (object.bizAcctLinkInfo.length >= 0)
                     message.bizAcctLinkInfo = object.bizAcctLinkInfo;
             return message;
         };
@@ -1262,6 +1343,21 @@ $root.VnameCert = (function() {
          */
         BizAccountPayload.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BizAccountPayload
+         * @function getTypeUrl
+         * @memberof VnameCert.BizAccountPayload
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BizAccountPayload.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/VnameCert.BizAccountPayload";
         };
 
         return BizAccountPayload;
@@ -1410,22 +1506,27 @@ $root.VnameCert = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        VerifiedNameCertificate.decode = function decode(reader, length) {
+        VerifiedNameCertificate.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.VnameCert.VerifiedNameCertificate();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.details = reader.bytes();
-                    break;
-                case 2:
-                    message.signature = reader.bytes();
-                    break;
-                case 3:
-                    message.serverSignature = reader.bytes();
-                    break;
+                case 1: {
+                        message.details = reader.bytes();
+                        break;
+                    }
+                case 2: {
+                        message.signature = reader.bytes();
+                        break;
+                    }
+                case 3: {
+                        message.serverSignature = reader.bytes();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -1495,17 +1596,17 @@ $root.VnameCert = (function() {
             if (object.details != null)
                 if (typeof object.details === "string")
                     $util.base64.decode(object.details, message.details = $util.newBuffer($util.base64.length(object.details)), 0);
-                else if (object.details.length)
+                else if (object.details.length >= 0)
                     message.details = object.details;
             if (object.signature != null)
                 if (typeof object.signature === "string")
                     $util.base64.decode(object.signature, message.signature = $util.newBuffer($util.base64.length(object.signature)), 0);
-                else if (object.signature.length)
+                else if (object.signature.length >= 0)
                     message.signature = object.signature;
             if (object.serverSignature != null)
                 if (typeof object.serverSignature === "string")
                     $util.base64.decode(object.serverSignature, message.serverSignature = $util.newBuffer($util.base64.length(object.serverSignature)), 0);
-                else if (object.serverSignature.length)
+                else if (object.serverSignature.length >= 0)
                     message.serverSignature = object.serverSignature;
             return message;
         };
@@ -1550,6 +1651,21 @@ $root.VnameCert = (function() {
          */
         VerifiedNameCertificate.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for VerifiedNameCertificate
+         * @function getTypeUrl
+         * @memberof VnameCert.VerifiedNameCertificate
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        VerifiedNameCertificate.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/VnameCert.VerifiedNameCertificate";
         };
 
         VerifiedNameCertificate.Details = (function() {
@@ -1730,30 +1846,37 @@ $root.VnameCert = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Details.decode = function decode(reader, length) {
+            Details.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.VnameCert.VerifiedNameCertificate.Details();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
-                    case 1:
-                        message.serial = reader.uint64();
-                        break;
-                    case 2:
-                        message.issuer = reader.string();
-                        break;
-                    case 4:
-                        message.verifiedName = reader.string();
-                        break;
-                    case 8:
-                        if (!(message.localizedNames && message.localizedNames.length))
-                            message.localizedNames = [];
-                        message.localizedNames.push($root.VnameCert.LocalizedName.decode(reader, reader.uint32()));
-                        break;
-                    case 10:
-                        message.issueTime = reader.uint64();
-                        break;
+                    case 1: {
+                            message.serial = reader.uint64();
+                            break;
+                        }
+                    case 2: {
+                            message.issuer = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            message.verifiedName = reader.string();
+                            break;
+                        }
+                    case 8: {
+                            if (!(message.localizedNames && message.localizedNames.length))
+                                message.localizedNames = [];
+                            message.localizedNames.push($root.VnameCert.LocalizedName.decode(reader, reader.uint32()));
+                            break;
+                        }
+                    case 10: {
+                            message.issueTime = reader.uint64();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -1929,6 +2052,21 @@ $root.VnameCert = (function() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
+            /**
+             * Gets the default type url for Details
+             * @function getTypeUrl
+             * @memberof VnameCert.VerifiedNameCertificate.Details
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            Details.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/VnameCert.VerifiedNameCertificate.Details";
+            };
+
             return Details;
         })();
 
@@ -2078,22 +2216,27 @@ $root.VnameCert = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        LocalizedName.decode = function decode(reader, length) {
+        LocalizedName.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.VnameCert.LocalizedName();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
-                case 1:
-                    message.lg = reader.string();
-                    break;
-                case 2:
-                    message.lc = reader.string();
-                    break;
-                case 3:
-                    message.verifiedName = reader.string();
-                    break;
+                case 1: {
+                        message.lg = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.lc = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.verifiedName = reader.string();
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -2209,6 +2352,21 @@ $root.VnameCert = (function() {
          */
         LocalizedName.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for LocalizedName
+         * @function getTypeUrl
+         * @memberof VnameCert.LocalizedName
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        LocalizedName.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/VnameCert.LocalizedName";
         };
 
         return LocalizedName;
