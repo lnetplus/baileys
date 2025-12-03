@@ -32,11 +32,20 @@ export declare const isJidMetaAI: (jid: string | undefined) => boolean | undefin
 /** is the jid a user */
 export declare const areJidsSameUser: (jid1: string | undefined, jid2: string | undefined) => boolean
 
-/** is the lid a user */
+/** is the jid a PN user */
+export declare const isPnUser: (jid: string | undefined) => boolean | undefined
+
+/** is the jid a user */
 export declare const isJidUser: (jid: string | undefined) => boolean | undefined
 
-/** is the jid a group */
+/** is the jid a LID user */
 export declare const isLidUser: (jid: string | undefined) => boolean | undefined
+
+/** is the jid a hosted PN */
+export declare const isHostedPnUser: (jid: string | undefined) => boolean | undefined
+
+/** is the jid a hosted LID */
+export declare const isHostedLidUser: (jid: string | undefined) => boolean | undefined
 
 /** is the jid a broadcast */
 export declare const isJidBroadcast: (jid: string | undefined) => boolean | undefined
